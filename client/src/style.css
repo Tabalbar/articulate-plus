@@ -1,0 +1,48 @@
+.ChartSelection {
+    background: black;
+    position: absolute;
+    right: 0;
+    width: 22%;
+    height: 101vh;
+    align-content: center;
+    margin: 0px;
+    top: -5px;
+    /* border-left: solid grey 5px; */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+
+.SelectionPlaceholder {
+    background: grey;
+    height: 400px;
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    border-radius: 20px;
+    border: solid black 3px;
+}
+
+.ChosenPlaceholder {
+    background: grey;
+    height: 650px;
+    width: 850px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    border: solid black 3px;
+
+}
+
+.ChosenCharts {
+    width: 80%;
+}
+
+.FileInput {
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 80%;
+}
