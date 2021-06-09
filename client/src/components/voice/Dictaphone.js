@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Container } from 'semantic-ui-react'
+import { Container, Input, Button } from 'semantic-ui-react'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
+import "../../style.css"
 
 const Dictaphone = ({
     //   createChartWithVoice,
@@ -12,6 +13,7 @@ const Dictaphone = ({
     const [listening, setListening] = useState(false)
     const [command, setCommand] = useState("")
     const [newTranscript, setNewTranscript] = useState("")
+    const [testCommand, setTestCommand] = useState("")
 
     let commands = [
         {
@@ -62,13 +64,15 @@ const Dictaphone = ({
         SpeechRecognition.startListening({ continuous: true })
 
     }
-
+    console.log(testCommand)
     return (
-        <div>
+        <div className="voiceStyle">
             <Container>
                 <p>{transcript}</p>
             </Container>
             <button onClick={()=>createCharts()}>Test Request</button>
+            <Input type="text" onChange={(e)=>setTestCommand(e.target.value)}/>
+            <Button onClick={()=>createCharts(testCommand)} color="green">GO</Button>
         </div>
     )
 }

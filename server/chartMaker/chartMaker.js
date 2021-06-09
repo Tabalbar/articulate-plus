@@ -12,7 +12,7 @@ const plotlyPipeline = require('./plotly/plotlyPipeline')
 // chartObj.push(chartMaker.chartMaker(response.classifications[i].intent, synonymCommand, attributes, data, headerMatrix, command, headerFreq))
 
 module.exports = {
-    chartMaker: function chartMaker(chartMsg) {
+    chartMaker: function chartMaker(intent, command, headers, data, headerMatrix, actualCommand, headerFreq, randomChart) {
         let filteredHeaders = extractFilteredHeaders(command, headerMatrix, data, headers, command)
         let extractedHeaders = extractHeaders(command, headers, data)
         let normalize = checkNormalize(command)

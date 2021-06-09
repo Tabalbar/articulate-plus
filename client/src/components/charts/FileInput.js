@@ -81,7 +81,7 @@ function FileInput({
                 <Grid centered={true}>
                     <Grid.Row columns={2}>
                         <Grid.Column>
-                            <Input type="file" onChange={loadData}></Input>
+                            <Input type="file" onChange={loadData}/>
                         </Grid.Column>
                         <Grid.Column></Grid.Column>
                     </Grid.Row>

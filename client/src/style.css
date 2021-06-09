@@ -3,38 +3,55 @@
     position: absolute;
     right: 0;
     width: 22%;
-    height: 101vh;
+    height: 100vh;
     align-content: center;
     margin: 0px;
-    top: -5px;
+    top: 0px;
     /* border-left: solid grey 5px; */
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 1;
 }
 
 
 .SelectionPlaceholder {
-    background: grey;
-    height: 400px;
-    width: 500px;
+    background: transparent;
+    height: 25vh;
+    width: 20vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
+    align-content: center;
+    cursor: pointer;
+    z-index: 3;
+
+}
+
+.VegaLiteDivSelection {
+    cursor: pointer;
+    position: relative;
+    background: white;
+    border: solid white 3px;
     border-radius: 20px;
-    border: solid black 3px;
+    height: 25vh;
+    width: 20vw;
+    z-index: -1;
 }
 
 .ChosenPlaceholder {
-    background: grey;
-    height: 650px;
-    width: 850px;
+    background: white;
+    height: 40vh;
+    width: 30vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
     border: solid black 3px;
+}
 
+.VegaLiteDivChosen {
+    margin-left: 12px;
 }
 
 .ChosenCharts {
@@ -45,4 +62,15 @@
     margin-left: 10px;
     margin-top: 10px;
     width: 80%;
+}
+
+.voiceStyle {
+    background-color: rgb(0, 37, 40);
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    border-top:#C24C3D solid; 
 }

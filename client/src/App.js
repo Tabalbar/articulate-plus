@@ -19,18 +19,28 @@ function App() {
     explicitChart: "",
     frequencyChart: "",
     windowChart: "",
-    assistantResponse: ""
+    assistantResponse: "",
+    errMsg: []
 })
   // React.useEffect(() => {
   //   fetch("/initialize", )
   //     .then((res) => res.json())
   //     .then((data) => setData(data.message));
   // }, []);
-  const createCharts = (commad) => {
-
+  const createCharts = (command) => {
+    if(command) {
+      chartMsg.command = command
+    }
     serverRequest(chartMsg, setChartMsg)
-}
-console.log(chartMsg)
+  }
+  const [charts, setCharts] = useState([])
+  const chooseChart = (chosenChart) => {
+    setCharts(prev=>[...prev, chosenChart])
+    chartMsg.explicitChart = ""
+    chartMsg.frequencyChart = ""
+    chartMsg.windowChart = ""
+
+} 
   return (
     <>
       <div className="App">
@@ -42,6 +52,8 @@ console.log(chartMsg)
                 overHearingData={overHearingData}
                 chartMsg={chartMsg}
                 setChartMsg={setChartMsg}
+                chooseChart={chooseChart}
+                charts={charts}
               />
             } />
             <Route path="/diagnostics" exact component={() =>

@@ -77,7 +77,6 @@ app.post("/createCharts", async (req, res) => {
   const normalizedCommand = normalizeCommand("show me a bar chart of monkeys")
   const { generalizedCommand, synonymCommand } = generalizeCommand(normalizedCommand, chartMsg.attributes,
     chartMsg.data, chartMsg.featureMatrix, chartMsg.synonymMatrix)
-
   /**
   * Getting ExplicitChart
   */
@@ -91,16 +90,16 @@ app.post("/createCharts", async (req, res) => {
   /**
    * Inferred implicit chart
    */
-  const response = await manager.process('en', generalizedCommand)
-  console.log(response.intent !== "none")
-  if (response.intent) {
-    // chartMsg.frequencyChart = frequencyChart(chartMsg, response.intent)
-  } else {
-    chartMsg.frequencyChart = null
-  }
+  // const response = await manager.process('en', generalizedCommand)
+  // console.log(response.intent !== "none")
+  // if (response.intent) {
+  //   // chartMsg.frequencyChart = frequencyChart(chartMsg, response.intent)
+  // } else {
+  //   chartMsg.frequencyChart = null
+  // }
 
 
-
+  console.log(chartMsg.explicitChart)
   res.send({ chartMsg })
 });
 // All other GET requests not handled before will return our React app

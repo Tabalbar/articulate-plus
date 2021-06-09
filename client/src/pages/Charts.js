@@ -7,9 +7,10 @@ function Charts({
     setOverHearingData,
     overHearingData,
     chartMsg, 
-    setChartMsg
+    setChartMsg,
+    charts,
+    chooseChart
 }) {
-
 
 
 
@@ -19,10 +20,12 @@ function Charts({
                 setChartMsg={setChartMsg}
             />
             <ChartSelection
-
+                chartMsg={chartMsg}
+                chooseChart={chooseChart}
             />
             <ChosenCharts
-
+                chartMsg={chartMsg}
+                charts={charts}
             />
         </>
     )
