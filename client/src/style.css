@@ -1,13 +1,12 @@
 .ChartSelection {
-    background: black;
+    background: grey;
     position: absolute;
-    right: 0;
-    width: 22%;
-    height: 100vh;
+    bottom: 0;
+    width: 100vw;
+    height: 35%;
     align-content: center;
     margin: 0px;
-    top: 0px;
-    /* border-left: solid grey 5px; */
+    border-top: solid 5px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     z-index: 1;
@@ -21,7 +20,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 10px;
     align-content: center;
     cursor: pointer;
     z-index: 3;
@@ -39,15 +38,12 @@
     z-index: -1;
 }
 
-.ChosenPlaceholder {
-    background: white;
-    height: 40vh;
-    width: 30vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-    border: solid black 3px;
+.Charts {
+    box-shadow: 10px 5px 5px rgb(71, 71, 71);
+    border: solid 1px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
 }
 
 .VegaLiteDivChosen {
@@ -55,7 +51,8 @@
 }
 
 .ChosenCharts {
-    width: 80%;
+    height: 100vh;
+    background:blueviolet;
 }
 
 .FileInput {

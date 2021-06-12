@@ -9,6 +9,7 @@ module.exports = (chartObj, intent, extractedHeaders, data) => {
     // if(intent == "parallelCoordinates") {
     //     return parallelCoordinates(chartObj, extractedHeaders, data, headerFreq)
     // }   
+
     switch (numHeaders) {
         case 1:
             chartObj.charts.spec.encoding.x = {
@@ -29,10 +30,12 @@ module.exports = (chartObj, intent, extractedHeaders, data) => {
                 field: extractedHeaders[1],
                 type: findType(extractedHeaders[1], data)
             }
+            console.log(chartObj.charts.spec.mark)
             return chartObj
         case 3:
+
             extractedHeaders = findQuantitative(extractedHeaders, data)
-            extractedHeaders = reorderLowestCountForColor(extractedHeeaders, data)
+            extractedHeaders = reorderLowestCountForColor(extractedHeaders, data)
             chartObj.charts.spec.encoding.columns = {
                 field: extractedHeaders[2],
                 type: findType(extractedHeaders[2], data)
@@ -51,6 +54,7 @@ module.exports = (chartObj, intent, extractedHeaders, data) => {
             }
             return chartObj
         default:
+
             chartObj.errMsg = "Error"
             return chartObj
     }
@@ -108,14 +112,17 @@ function createLayers(extractedHeaders, data) {
 }
 
 
-function reorderLowestCountForColor(extractedHeeaders, data) {
+function reorderLowestCountForColor(extractedHeaders, data) {
     const uniqueLengthOne = [...new Set(data.map(item => item[extractedHeaders[0]]))];
     const uniqueLengthtwo = [...new Set(data.map(item => item[extractedHeaders[2]]))];
+    console.log(uniqueLengthOne, uniqueLengthtwo)
+    if(uniqueLengthOne <= uniqueLengthtwo) {
+        extractedHeaders =  switchHeaders(extractedHeaders, 2, 0)
 
-    if(uniqueLengthOne <= uniqueLengthTwo) {
-        return switchHeaders(extractedHeaders, 2, 0)
-
-    } else {
-        return extractedHeaders
     }
+    if(findType(extractedHeaders[2], data) == "quantitative") {
+        extractedHeaders = switchHeaders(extractedHeaders, 2, 0)
+    }
+
+    return extractedHeaders
 }

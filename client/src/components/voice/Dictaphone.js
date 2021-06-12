@@ -64,13 +64,12 @@ const Dictaphone = ({
         SpeechRecognition.startListening({ continuous: true })
 
     }
-    console.log(testCommand)
+
     return (
         <div className="voiceStyle">
             <Container>
-                <p>{transcript}</p>
+                {/* <p>{transcript}</p> */}
             </Container>
-            <button onClick={()=>createCharts()}>Test Request</button>
             <Input type="text" onChange={(e)=>setTestCommand(e.target.value)}/>
             <Button onClick={()=>createCharts(testCommand)} color="green">GO</Button>
         </div>

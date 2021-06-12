@@ -7,6 +7,7 @@ function FileInput({
     setChartMsg
 }) {
 
+    // const [attributes, setAttributes] = useState("")
 
     const processData = async (data) => {
         const dataStringLines = data.split(/\r\n|\n/);

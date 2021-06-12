@@ -7,7 +7,7 @@ const transform = require('./transform')
 // let chart = chartMaker.chartMaker(explicitChart, synonymCommand, attributes, data, headerMatrix, command, headerFreq, randomChart)
 
 module.exports = (intent, chartMsg) => {
-    let extractedHeaders = extractHeaders(chartMsg.command, chartMsg.attributes)
+    let extractedHeaders = extractHeaders(chartMsg.synonymCommand, chartMsg.attributes)
     const headerMatrix = createVector(chartMsg.attributes, chartMsg.data)
     let filteredHeaders = extractFilteredHeaders(chartMsg.command, headerMatrix)
     let chartObj = {
@@ -20,20 +20,18 @@ module.exports = (intent, chartMsg) => {
                 transform: [],
                 concat: [],
                 encoding: {
-                    column: {},
                     y: {},
                     x: {},
-                    color: {}
                 },
                 data: { name: 'table' }, // note: vega-lite data attribute is a plain object instead of an array
 
             }
         }
     };
-
     chartObj = mark(chartObj, intent)
     chartObj = encoding(chartObj, intent, extractedHeaders, chartMsg.data)
     chartObj = transform(chartMsg.data, filteredHeaders, chartObj)
+    console.log(chartObj.charts.spec)
     return chartObj
 }
 

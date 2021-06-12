@@ -74,13 +74,14 @@ const explicitChart = require('./chartMaker/explicit/explicitChart')
 
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg
-  const normalizedCommand = normalizeCommand("show me a bar chart of monkeys")
+  const normalizedCommand = normalizeCommand(chartMsg.command)
   const { generalizedCommand, synonymCommand } = generalizeCommand(normalizedCommand, chartMsg.attributes,
     chartMsg.data, chartMsg.featureMatrix, chartMsg.synonymMatrix)
+    chartMsg.synonymCommand = synonymCommand
   /**
   * Getting ExplicitChart
   */
-  let explicitChartType = getExplicitChartType(normalizedCommand)
+  let explicitChartType = getExplicitChartType(synonymCommand)
   if (explicitChartType) {
     chartMsg.explicitChart = explicitChart(explicitChartType, chartMsg)
   } else {
@@ -99,7 +100,6 @@ app.post("/createCharts", async (req, res) => {
   // }
 
 
-  console.log(chartMsg.explicitChart)
   res.send({ chartMsg })
 });
 // All other GET requests not handled before will return our React app

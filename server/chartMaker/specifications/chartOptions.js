@@ -1,14 +1,10 @@
 module.exports = [
     {
-        key: "stacked bar",
-        mark: "stackedBar"
-    },
-    {
-        key: "normalized stacked bar",
-        mark: "normalizedStackedBar"
-    },
-    {
         key: "bar",
+        mark: "bar"
+    },
+    {
+        key: "histogram",
         mark: "bar"
     },
     {
@@ -20,32 +16,11 @@ module.exports = [
         mark: "scatter"
     },
     {
-        key: "pie",
-        mark: "pie"
+        key: "point",
+        mark: "scatter"
     },
     {
-        key: "marginal",
-        mark: "marginalHistogram"
-    },
-    {
-        key: "histogram",
-        mark: "bar"
-    },
-    {
-        key: "heat map",
-        mark: "heatmap"
-    },
-    {
-        key: "area",
-        mark: "lineArea"
-    },
-
-    {
-        key: "candle stick",
-        mark: "candleStick"
-    },
-    {
-        key: "parallel coordinates",
-        mark: "parallelCoordinates"
-    },
+        key: "bubble",
+        mark: "scatter"
+    }
 ]

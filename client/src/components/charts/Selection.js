@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { Grid, Placeholder } from 'semantic-ui-react'
 import '../../style.css'
 import { VegaLite } from 'react-vega'
+import Attributes from '../TreeMenu'
+
 
 function ChartSelection({
     chartMsg,
@@ -12,8 +14,8 @@ function ChartSelection({
         <>
             <div className="ChartSelection">
                 <Grid centered={true}>
-                    <Grid.Column>
-                        <Grid.Row>
+                    <Grid.Row columns={4}>
+                        <Grid.Column>
                             {
                                 chartMsg.explicitChart ?
                                     <ChartPlaceholder
@@ -26,8 +28,8 @@ function ChartSelection({
                                     null
                             }
 
-                        </Grid.Row>
-                        <Grid.Row>
+                        </Grid.Column>
+                        <Grid.Column>
                             {
                                 chartMsg.explicitChart ?
                                     <ChartPlaceholder
@@ -39,8 +41,8 @@ function ChartSelection({
                                     :
                                     null
                             }
-                        </Grid.Row>
-                        <Grid.Row>
+                        </Grid.Column>
+                        <Grid.Column>
                             {
                                 chartMsg.explicitChart ?
                                     <ChartPlaceholder
@@ -52,8 +54,11 @@ function ChartSelection({
                                     :
                                     null
                             }
-                        </Grid.Row>
-                    </Grid.Column>
+                        </Grid.Column>
+                        <Grid.Column>
+                            <Attributes/>
+                        </Grid.Column>
+                    </Grid.Row>
                 </Grid>
             </div>
         </>
@@ -90,13 +95,11 @@ function ChartPlaceholder({
         { a: 'I', b: 52 },
     ]
 
-    useEffect(() => {
-        specification.width = 400
-        specification.width = 300
-    }, [])
+    specification.x = 0
+    specification.y = 0
     return (
         <>
-            <div onClick={()=>chooseChart(specification)} className="SelectionPlaceholder">
+            <div onClick={() => chooseChart(specification)} className="SelectionPlaceholder">
                 <div className="VegaLiteDivSelection">
                     <VegaLite style={{ marginLeft: 10 }} spec={specification} data={{ table: data }} />
                 </div>
@@ -106,3 +109,4 @@ function ChartPlaceholder({
 }
 
 export default ChartSelection
+

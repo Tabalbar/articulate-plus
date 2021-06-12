@@ -8,7 +8,7 @@ module.exports = (chartObj, intent, extractedHeaders, data) => {
     // if (numHeaders > 3) {
     //     numHeaders = 4
     // }
-    if(intent == "line" || intent == "bar") {
+    if(intent == "line" || intent == "bar" || intent == "scatter") {
         chartObj = lineBar(chartObj, intent, extractedHeaders, data);
     }
     return chartObj

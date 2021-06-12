@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import ChartSelection from '../components/charts/ChartSelection'
-import ChosenCharts from '../components/charts/ChosenCharts'
+import ChartSelection from '../components/charts/Selection'
+import ChosenCharts from '../components/charts/Chosen'
 import FileInput from '../components/charts/FileInput'
 
 function Charts({
@@ -9,6 +9,7 @@ function Charts({
     chartMsg, 
     setChartMsg,
     charts,
+    setCharts,
     chooseChart
 }) {
 
@@ -26,6 +27,7 @@ function Charts({
             <ChosenCharts
                 chartMsg={chartMsg}
                 charts={charts}
+                setCharts={setCharts}
             />
         </>
     )

@@ -40,10 +40,11 @@ function App() {
     chartMsg.frequencyChart = ""
     chartMsg.windowChart = ""
 
-} 
+  }  
   return (
     <>
       <div className="App">
+        
         <Router>
           <Switch>
             <Route path="/" exact component={() =>
@@ -54,6 +55,7 @@ function App() {
                 setChartMsg={setChartMsg}
                 chooseChart={chooseChart}
                 charts={charts}
+                setCharts={setCharts}
               />
             } />
             <Route path="/diagnostics" exact component={() =>
