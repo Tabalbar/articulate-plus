@@ -1,40 +1,47 @@
 
 const nlp = require('compromise')
-// const findType = require('./findType')
-// const findMissing = require('./findMissing').findMissing
-// const title = require('./specifications/title')
-// const size = require('./specifications/size')
-// const mark = require('./specifications/mark')
-// const encoding = require('./specifications/encoding')
-// const transform = require('./specifications/transform')
-// const plotlyPipeline = require('./plotly/plotlyPipeline')
 const createVector = require('../createVector')
 const countVector = require('../countVector')
+const transform = require('../helperFunctions/transform')
 const mark = require('../helperFunctions/mark')
+const findType = require('../helperFunctions/findType')
+const encoding = require('./encoding')
+const createDate = require('../helperFunctions/createDate')
+const title = require('../helperFunctions/title')
+
 
 // let chart = chartMaker.chartMaker(explicitChart, synonymCommand, attributes, data, headerMatrix, command, headerFreq, randomChart)
 // chartObj.push(chartMaker.chartMaker(response.classifications[i].intent, synonymCommand, attributes, data, headerMatrix, command, headerFreq))
 
 module.exports = (intent, chartMsg) => {
-    const headerMatrix = createVector(chartMsg.attributes, chartMsg.data)
-    let filteredHeaders = extractFilteredHeaders(chartMsg.command, headerMatrix, chartMsg.data, chartMsg.attributes, chartMsg.command)
-    let extractedHeaders = extractHeaders(chartMsg.command, chartMsg.attributes, chartMsg.data)
-    const { headerFreq } = countVector(chartMsg.transcript, chartMsg.featureMatrix, chartMsg.synonymMatrix, chartMsg.data)
 
+    const headerMatrix = createVector(chartMsg.attributes, chartMsg.data)
+    let filteredHeaders = extractFilteredHeaders(chartMsg.synonymCommand, headerMatrix, chartMsg.data, chartMsg.attributes, chartMsg.command)
+    let extractedHeaders = extractHeaders(chartMsg.synonymCommand, chartMsg.attributes, chartMsg.data)
+    const { headerFreq } = countVector(chartMsg.transcript, chartMsg.featureMatrix, chartMsg.synonymMatrix, chartMsg.data)
     const headerKeys = Object.keys(headerFreq)
     for (let i = 0; i < headerKeys.length; i++) {
         for (let j = 0; j < headerFreq[headerKeys[i]].length; j++) {
             if (headerFreq[headerKeys[i]][j].count >= 5) {
-                extractedHeaders.push(headerFreq[headerKeys[i]][j].header)
+                let found = false
+                for (let n = 0; n < extractedHeaders.length; n++) {
+                    if (extractedHeaders[n] == headerFreq[headerKeys[i]][j].header) {
+                        found = true
+                    }
+                }
+                if (!found) {
+                    extractedHeaders.push(headerFreq[headerKeys[i]][j].header)
+                }
             }
         }
     }
+
     let chartObj = {
         charts: {
             spec: {
                 title: "",
                 width: 400,
-                height: 300,
+                height: 270,
                 mark: "",
                 transform: [],
                 concat: [],
@@ -42,18 +49,27 @@ module.exports = (intent, chartMsg) => {
                     column: {},
                     y: {},
                     x: {},
-                    color: {}
+                    axis: {
+                        format: "%Y",
+                        labelAngle: 45
+                    }
                 },
+                initialized: createDate(),
+                timeChosen: '',
+                timeClosed: '',
+                timeSpentHovered: 0,
                 data: { name: 'table' }, // note: vega-lite data attribute is a plain object instead of an array
+                command: chartMsg.command
+            },
 
-            }
         }
     };
     // chartObj = title(chartObj, actualCommand)
     chartObj = mark(chartObj, intent)
     chartObj = encoding(chartObj, intent, extractedHeaders, chartMsg.data, headerFreq, chartMsg.command)
-    chartObj = transform(data, filteredHeaders, chartObj)
-    charts.push(chartObj)
+    chartObj = transform(chartMsg.data, filteredHeaders, chartObj)
+    chartObj.charts.spec.title = title(extractedHeaders, intent)
+
     return chartObj
 }
 
@@ -63,7 +79,6 @@ function extractHeaders(command, headers, data) {
 
     let doc = nlp(command)
     let extractedHeaders = []
-
     for (let i = 0; i < headers.length; i++) {
         if (doc.has(headers[i].toLowerCase())) {
             extractedHeaders.push(headers[i])

@@ -1,5 +1,5 @@
 import UseVoice from '../components/voice/UseVoice'
-export async function serverRequest(chartMsg, setChartMsg) {
+export async function serverRequest(chartMsg, setChartMsg, withClippy) {
 
 
     const response = await fetch('/createCharts', {
@@ -17,8 +17,14 @@ export async function serverRequest(chartMsg, setChartMsg) {
     // console.log(JSON.parse(body.chartMsg))
     const responseChartMsg = JSON.parse(body)
     let tmpChartMsg = responseChartMsg.chartMsg
-    console.log(tmpChartMsg)
-    setChartMsg(tmpChartMsg)
-    let utterance = UseVoice(tmpChartMsg.assistantResponse)
-    return utterance
+    setChartMsg(prev=> {return {
+        ...tmpChartMsg,
+        charts: [...prev.charts, tmpChartMsg.explicitChart, tmpChartMsg.inferredChart, tmpChartMsg.modifiedChart]
+    }})
+    
+    withClippy((clippy) => clippy.speak(tmpChartMsg.assistantResponse))
+    // let utterance = UseVoice(tmpChartMsg.assistantResponse)
+
+    return 
 }
+

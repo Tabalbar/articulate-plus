@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ChartSelection from '../components/charts/Selection'
 import ChosenCharts from '../components/charts/Chosen'
 import FileInput from '../components/charts/FileInput'
 
 function Charts({
-    setOverHearingData,
-    overHearingData,
     chartMsg, 
     setChartMsg,
     charts,
@@ -17,9 +15,6 @@ function Charts({
 
     return (
         <>
-            <FileInput 
-                setChartMsg={setChartMsg}
-            />
             <ChartSelection
                 chartMsg={chartMsg}
                 chooseChart={chooseChart}

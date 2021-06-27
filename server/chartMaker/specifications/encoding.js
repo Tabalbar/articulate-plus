@@ -57,7 +57,6 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
             return chartObj
         case 3:
             extractedHeaders = findQuantitative(extractedHeaders, data, headerFreq, command)
-            console.log(extractedHeaders, )
 
             if(extractedHeaders.length !== 3) {
                 chartObj.errMsg("I tried to make a " + intent + ", but i coldn't find the right data")

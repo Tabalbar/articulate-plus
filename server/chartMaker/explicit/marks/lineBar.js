@@ -1,4 +1,4 @@
-const findType = require("../findType")
+const findType = require("../../helperFunctions/findType")
 
 module.exports = (chartObj, intent, extractedHeaders, data) => {
     let numHeaders = extractedHeaders.length
@@ -30,7 +30,6 @@ module.exports = (chartObj, intent, extractedHeaders, data) => {
                 field: extractedHeaders[1],
                 type: findType(extractedHeaders[1], data)
             }
-            console.log(chartObj.charts.spec.mark)
             return chartObj
         case 3:
 
@@ -115,7 +114,6 @@ function createLayers(extractedHeaders, data) {
 function reorderLowestCountForColor(extractedHeaders, data) {
     const uniqueLengthOne = [...new Set(data.map(item => item[extractedHeaders[0]]))];
     const uniqueLengthtwo = [...new Set(data.map(item => item[extractedHeaders[2]]))];
-    console.log(uniqueLengthOne, uniqueLengthtwo)
     if(uniqueLengthOne <= uniqueLengthtwo) {
         extractedHeaders =  switchHeaders(extractedHeaders, 2, 0)
 

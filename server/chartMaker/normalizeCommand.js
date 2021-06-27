@@ -5,7 +5,7 @@ const lemmatize = require('wink-lemmatizer')
 module.exports = (command) => {
     let doc = nlp(command)
     
-    // let newCommand = doc.nouns().toSingular()
-    // console.log(newCommand.text())
+    doc.nouns().toSingular()
+    console.log(doc.text())
     return doc.text()
 }

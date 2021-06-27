@@ -8,6 +8,7 @@ const createMatrixForAll = require('./createMatrixForAll')
 module.exports = (command, attributes, data, featureMatrix, synonymMatrix) => {
     let doc = nlp(command)
     let catchSynonymCommand = nlp(command);
+    console.log(command)
     // const {featureMatrix, synonymMatrix} = createMatrixForAll(attributes, data)
     for(let i = 0; i < attributes.length; i++) {
         if(doc.match(attributes[i])) {
@@ -25,12 +26,14 @@ module.exports = (command, attributes, data, featureMatrix, synonymMatrix) => {
     doc.dates().replaceWith("temporal")
     for(let i = 0; i < synonymMatrix.length; i++){
         for(let n = 0; n < synonymMatrix[i].length; n++){
+            // console.log(catchSynonymCommand.text(), synonymMatrix[i][n])
+
             if(catchSynonymCommand.text().includes(synonymMatrix[i][n].toLowerCase())){
+
                 catchSynonymCommand.replace(synonymMatrix[i][n], synonymMatrix[i][0])
             }
         }
     }
-
     generalizedCommand = doc.text()
     synonymCommand = catchSynonymCommand.text()
     return {generalizedCommand, synonymCommand}

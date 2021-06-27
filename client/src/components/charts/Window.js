@@ -1,5 +1,4 @@
-import React, {useState, PureComponent} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import Draggable from 'react-draggable';
 import { VegaLite } from 'react-vega'
 import '../../style.css'
@@ -38,7 +37,6 @@ class Window extends React.PureComponent {
         let tmpCharts = this.props.charts
         tmpCharts[this.props.index].x = data.x
         tmpCharts[this.props.index].y = data.y
-        console.log(tmpCharts)
         this.props.setCharts(tmpCharts)
         console.log('Event: ', e);
         console.log('Data: ', data);
@@ -63,13 +61,12 @@ class Window extends React.PureComponent {
                     onStart={this.handleStart}
                     onDrag={this.handleDrag}
                     onStop={this.eventLogger}>
-                    <div className="Charts" onClick={this.handleClick} style={{ zIndex: this.state.z_index, width: 500, height: 500 }}>
-                        <div className="handle">
-                            <Menu size="mini" color="black" inverted >
+                    <div className="Charts" onClick={this.handleClick} style={{ zIndex: this.state.z_index, width: 570, height: 500 }}>
+                        <div className="handle" style={{cursor: "move"}}>
+                            <Menu size="small" inverted >
                                 <Menu.Item
                                     icon="x"
-                                    color="red"
-                                    inverted
+                                    style={{background: "red"}}
                                     onClick={() => this.props.handleDelete(this.props.index)}
                                     position="right"
                                 />

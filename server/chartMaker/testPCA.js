@@ -46,7 +46,6 @@ module.exports = (data) => {
     }
     const pca = new PCA(testPCAData)
     // console.log(testPCAData)
-    console.log(pca.getLoadings());
 
     // let vectors = PCA.getEigenVectors(testPCAData)
     // const first = PCA.computePercentageExplained(vectors, vectors[0])

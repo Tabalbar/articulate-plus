@@ -8,11 +8,8 @@ const findMissing = require("../findMissing").findMissing
 
 module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command, normalize) => {
     let numHeaders = extractedHeaders.length
-    if (numHeaders > 3) {
-        numHeaders = 3
-    }
 
-    if(intent == "parallelCoordinates") {
+    if(intent == "parallelCoordinates" || numHeaders > 3) {
         return parallelCoordinates(chartObj, extractedHeaders, data, headerFreq, command)
     }
     switch (numHeaders) {
@@ -26,8 +23,8 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
             }
             return chartObj
         case 2:
-            extractedHeaders = findQuantitative(extractedHeaders, data, headerFreq, command)
-            if(extractedHeaders.length !== 2) {
+            extractedHeaders = findQuantitative(extractedHeaders, data, headerFreq, command, 2)
+            if(extractedHeaders.length < 2) {
                 chartObj.errMsg = "I tried to make a " + intent + " chart, but i coldn't find the right data"
             }
             chartObj.charts.spec.encoding.x = {
@@ -38,12 +35,13 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
                 field: extractedHeaders[1],
                 type: findType(extractedHeaders[1], data)
             }
-            return chartObj
+            if(extractedHeaders.length === 2) {
+                return chartObj
+            }
         case 3:
-            extractedHeaders = findQuantitative(extractedHeaders, data, headerFreq, command)
-            console.log(extractedHeaders, )
-
-            if(extractedHeaders.length !== 3) {
+            extractedHeaders = findQuantitative(extractedHeaders, data, headerFreq, command, 3)
+            extractedHeaders = reorderLowestCountForColor(extractedHeaders, data)
+            if(extractedHeaders.length !== 3) {  
                 chartObj.errMsg("I tried to make a " + intent + ", but i coldn't find the right data")
             }
             chartObj.charts.spec.encoding.columns = {
@@ -63,11 +61,6 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
                 type: findType(extractedHeaders[2], data)
             }
             return chartObj
-        case 4:
-            chartObj.charts.spec.columns = extractedHeaders.length - 1
-            chartObj.charts.spec.concat = createLayers(extractedHeaders, data)
-            delete chartObj.charts.spec.encoding
-            return chartObj
         default:
             chartObj.errMsg = "Error"
             return chartObj
@@ -81,7 +74,7 @@ function switchHeaders(extractedHeaders, targetIndex, sourceIndex) {
     return extractedHeaders
 }
 
-function findQuantitative(extractedHeaders, data, headerFreq, command) {
+function findQuantitative(extractedHeaders, data, headerFreq, command, expectedHeaderLength) {
     let quantitativeFound = false;
     for(let i = 0; i < extractedHeaders.length; i++) {
         if(findType(extractedHeaders[i], data) == "temporal") {
@@ -98,34 +91,23 @@ function findQuantitative(extractedHeaders, data, headerFreq, command) {
         return extractedHeaders
 
     } else {
-        return findMissing(extractedHeaders, data, 2, headerFreq, command, "NQT")
+        return findMissing(extractedHeaders, data, expectedHeaderLength, headerFreq, command, "NQT")
     }
 }
 
-function createLayers(extractedHeaders, data) {
-    let layers = [];
-    for (let i = 0; i < extractedHeaders.length; i++) {
-        if (findType(extractedHeaders[i], data) === "quantitative") {
-            let tmpHeader = extractedHeaders[0];
-            extractedHeaders[0] = extractedHeaders[i];
-            extractedHeaders[i] = tmpHeader;
-            break;
 
-        }
-    }
-    for (let i = 1; i < extractedHeaders.length; i++) {
-        layers.push({
-            layer: [
-                {
-                    mark: layerMark,
-                    encoding: {
-                        x: { field: extractedHeaders[i], type: findType(extractedHeaders[i], data) },
-                        y: { field: extractedHeaders[0], type: findType(extractedHeaders[0], data) }
+function reorderLowestCountForColor(extractedHeaders, data) {
+    console.log(extractedHeaders, 'here')
 
-                    }
-                }
-            ]
-        })
+    const uniqueLengthOne = [...new Set(data.map(item => item[extractedHeaders[0]]))];
+    const uniqueLengthtwo = [...new Set(data.map(item => item[extractedHeaders[2]]))];
+    if (uniqueLengthOne <= uniqueLengthtwo) {
+        extractedHeaders = switchHeaders(extractedHeaders, 2, 0)
+
     }
-    return layers
+    if (findType(extractedHeaders[2], data) == "quantitative") {
+        extractedHeaders = switchHeaders(extractedHeaders, 2, 0)
+    }
+
+    return extractedHeaders
 }

@@ -15,6 +15,7 @@ module.exports = (headers, data) => {
         } else {
             featureMatrix.push([headers[i]])
         }
+    
     }
     return featureMatrix
 }

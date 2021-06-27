@@ -3,7 +3,7 @@
     position: absolute;
     bottom: 0;
     width: 100vw;
-    height: 35%;
+    height: 30%;
     align-content: center;
     margin: 0px;
     border-top: solid 5px;
@@ -16,7 +16,7 @@
 .SelectionPlaceholder {
     background: transparent;
     height: 25vh;
-    width: 20vw;
+    width: 23vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -31,16 +31,27 @@
     cursor: pointer;
     position: relative;
     background: white;
-    border: solid white 3px;
-    border-radius: 20px;
+    /* border: solid grey 1px; */
+    /* border-radius: 20px; */
     height: 25vh;
-    width: 20vw;
+    width: 23vw;
     z-index: -1;
+}
+.VegaLiteHover{
+    cursor: pointer;
+    position: relative;
+    background: white;
+    border: solid grey 3px;
+    border-radius: 20px;
+    height: 50vh;
+    width: 37vw;
+    z-index: 0;
+    top: -400px
 }
 
 .Charts {
     box-shadow: 10px 5px 5px rgb(71, 71, 71);
-    border: solid 1px;
+    border: solid 0.1px;
     background-color: white;
     border-radius: 10px;
     position: absolute;
@@ -71,3 +82,9 @@
     z-index: 1;
     border-top:#C24C3D solid; 
 }
+
+.expandedVegaLiteSelection {
+    height: 50%;
+    background: red;
+}
+

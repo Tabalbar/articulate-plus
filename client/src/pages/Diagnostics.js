@@ -1,18 +1,32 @@
 import React, { useEffect } from 'react'
+import { Grid } from 'semantic-ui-react'
+import StreamGraph from '../components/diagnostics/StreamGraph'
 
 function Diagnostics({
-    overHearingData
+    overHearingData,
+    chartMsg
 }) {
 
-    
 
-    useEffect(() => {
 
-    },[overHearingData])
+    // useEffect(() => {
+
+    // }, [overHearingData])
 
     return (
         <>
-            <h1>Diagnostics page</h1>
+            {
+                chartMsg.attributes.length ?
+                    <StreamGraph
+                        overHearingData={overHearingData}
+                        attributes={chartMsg.attributes}
+                        synonymAttributes={chartMsg.synonymMatrix}
+                        featureAttributes={chartMsg.featureMatrix}
+                    />
+                    :
+                    null
+            }
+
         </>
     )
 }

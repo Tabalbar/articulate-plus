@@ -31,6 +31,7 @@
     "express": "^4.17.1",
     "node-nlp": "^4.22.1",
     "nodemon": "^2.0.7",
+    "sentiment": "^5.0.2",
     "thesaurus": "0.0.1",
     "wink-lemmatizer": "^3.0.2"
   },
