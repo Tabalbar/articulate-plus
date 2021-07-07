@@ -5,3 +5,4 @@ export const thinking = [
     "I need to think about that"
 ]
 
+

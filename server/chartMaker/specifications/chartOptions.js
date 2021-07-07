@@ -22,5 +22,9 @@ module.exports = [
     {
         key: "bubble",
         mark: "scatter"
+    },
+    {
+        key: "map",
+        mark: "map"
     }
 ]

@@ -16,14 +16,17 @@ module.exports = (headers, data) => {
                 if (flags[data[n][headers[i]]]) continue;
                 flags[data[n][headers[i]]] = true;
                 output.push(data[n][headers[i]]);
-                output.push(thesaurus.find(data[n][headers[i]]))
+                // output.push(thesaurus.find(data[n][headers[i]]))
                 output = output.flat()
             }
+            console.log(output)
             featureMatrix.push(output)
         } else {
             var output = [headers[i]]
             featureMatrix.push(output)
+            
         }
+
 
         if(headers[i].match(/\W/g)){
             let words = headers[i].split(/\W/g)

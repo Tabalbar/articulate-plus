@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.13",
     "@chakra-ui/react": "^1.6.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
@@ -23,6 +24,7 @@
     "react-speech-recognition": "^3.8.0",
     "react-vega": "^7.4.3",
     "react-wordcloud": "^1.2.7",
+    "recoil": "^0.3.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
     "sentiment": "^5.0.2",

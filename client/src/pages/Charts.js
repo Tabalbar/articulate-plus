@@ -1,16 +1,17 @@
 import React from 'react'
 import ChartSelection from '../components/charts/Selection'
 import ChosenCharts from '../components/charts/Chosen'
-import FileInput from '../components/charts/FileInput'
 
 function Charts({
     chartMsg, 
     setChartMsg,
     charts,
     setCharts,
-    chooseChart
+    chooseChart,
+    mute,
+    setMute,
+    clearCharts
 }) {
-
 
 
     return (
@@ -18,6 +19,9 @@ function Charts({
             <ChartSelection
                 chartMsg={chartMsg}
                 chooseChart={chooseChart}
+                mute={mute}
+                setMute={setMute}
+                clearCharts={clearCharts}
             />
             <ChosenCharts
                 chartMsg={chartMsg}

@@ -5,11 +5,15 @@ const encoding = require('./encoding')
 const transform = require('../helperFunctions/transform')
 const createDate = require('../helperFunctions/createDate')
 const title = require('../helperFunctions/title')
+const map = require('../specialGraphs/map')
 
 // let chart = chartMaker.chartMaker(explicitChart, synonymCommand, attributes, data, headerMatrix, command, headerFreq, randomChart)
 
 module.exports = (intent, chartMsg) => {
     let extractedHeaders = extractHeaders(chartMsg.synonymCommand, chartMsg.attributes)
+    if(extractedHeaders.length == 0) {
+        return ""
+    }
     const headerMatrix = createVector(chartMsg.attributes, chartMsg.data)
     let filteredHeaders = extractFilteredHeaders(chartMsg.command, headerMatrix)
     let chartObj = {
@@ -24,11 +28,7 @@ module.exports = (intent, chartMsg) => {
                 encoding: {
                     column: {},
                     y: {},
-                    x: {},
-                    axis: {
-                        format: "%Y",
-                        labelAngle: 45
-                    }
+                    x: {}
                 },
                 initialized: createDate(),
                 timeChosen: '',
@@ -40,9 +40,12 @@ module.exports = (intent, chartMsg) => {
         }
     };
     chartObj = mark(chartObj, intent)
-    chartObj = encoding(chartObj, intent, extractedHeaders, chartMsg.data)
-    chartObj = transform(chartMsg.data, filteredHeaders, chartObj)
-    chartObj.charts.spec.title = title(extractedHeaders, intent)
+    chartObj = encoding(chartObj, intent, extractedHeaders, chartMsg.data, chartMsg.command)
+    if(chartObj== "") {
+        return ""
+    }
+    chartObj = transform(chartMsg.data, filteredHeaders, chartObj, intent)
+    chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders)
     return chartObj
 }
 
@@ -61,6 +64,8 @@ function extractHeaders(command, headers) {
 function extractFilteredHeaders(command, headerMatrix) {
     let doc = nlp(command)
     let extractedFilteredHeaders = []
+    doc.nouns().toSingular()
+
     for(let i = 0; i < headerMatrix.length; i++) {
         extractedFilteredHeaders[headerMatrix[i][0]] = []
         for(let j = 1; j < headerMatrix[i].length; j++) {

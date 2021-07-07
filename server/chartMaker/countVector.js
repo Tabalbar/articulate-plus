@@ -37,10 +37,10 @@ module.exports = (transcript, headerMatrix, synonymAttributes, data) => {
             for(let j = 0; j < synonymsAndFeatures.length; j++) {
                 for(let n = 0; n < synonymsAndFeatures[j].length; n++) {
 
-                    if(synonymsAndFeatures[j][n].includes(nouns[w])){
-                        
+                    if(synonymsAndFeatures[j][n].includes(nouns[w].toLowerCase())){
                         const sentiment = new Sentiment();
                         const result = sentiment.analyze(sentences[i]);
+
                         wordCount[j].count += result.score
                     }
                 }
@@ -49,6 +49,7 @@ module.exports = (transcript, headerMatrix, synonymAttributes, data) => {
     }
 
     for(let i = 0; i < wordCount.length; i++) {
+        
         headerFreq[findType(wordCount[i].header, data)].push(wordCount[i])
     }
     return {headerFreq}

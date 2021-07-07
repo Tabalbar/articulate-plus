@@ -51,7 +51,7 @@
 
 .Charts {
     box-shadow: 10px 5px 5px rgb(71, 71, 71);
-    border: solid 0.1px;
+    border: solid 1px;
     background-color: white;
     border-radius: 10px;
     position: absolute;
@@ -88,3 +88,11 @@
     background: red;
 }
 
+::-webkit-resizer {
+    background: gray;
+
+    /*size does not work*/  
+    display:block;  
+    width: 300px !important;
+    height: 300px !important;
+}

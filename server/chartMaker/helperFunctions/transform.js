@@ -1,6 +1,6 @@
 const findType = require("../findType")
 
-module.exports = (data, filteredHeaders, chartObj) => {
+module.exports = (data, filteredHeaders, chartObj, intent) => {
     let accessors = []
     let keys = Object.keys(filteredHeaders);
     for (let i = 0; i < keys.length; i++) {
@@ -16,5 +16,21 @@ module.exports = (data, filteredHeaders, chartObj) => {
             }
         }
     }
+    if (intent == "map") {
+        chartObj.charts.spec.transform.push(
+        {
+            lookup: "map",
+                from: {
+                data: {
+                    url: "https://raw.githubusercontent.com/vega/vega/master/docs/data/us-10m.json",
+                        format: { type: "topojson", feature: "counties" }
+                },
+                key: "id"
+            },
+            as: "geo"
+        })
+
+    }
+
     return chartObj
 }

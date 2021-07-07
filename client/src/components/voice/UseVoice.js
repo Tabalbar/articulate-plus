@@ -1,14 +1,15 @@
-function UseVoice(text) {
+function UseVoice(text, mute) {
     var msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();
     msg.voice = voices[1];
-    console.log(voices) 
     msg.volume = 1; // From 0 to 1
     msg.rate = 1; // From 0.1 to 10
     msg.pitch = 0; // From 0 to 2
     msg.text = text
-    window.speechSynthesis.speak(msg);
-    console.log(msg)
+    if(!mute) {
+        window.speechSynthesis.speak(msg);
+
+    }
     return msg
 }
 

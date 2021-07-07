@@ -2,7 +2,8 @@ import React from 'react';
 import Draggable from 'react-draggable';
 import { VegaLite } from 'react-vega'
 import '../../style.css'
-import { Menu } from 'semantic-ui-react'
+import { Box, IconButton, Spacer } from '@chakra-ui/react'
+import { CloseIcon } from '@chakra-ui/icons'
 
 
 // function Window({
@@ -31,7 +32,7 @@ class Window extends React.PureComponent {
         super(props);
         // Don't call this.setState() here!
         this.state = { z_index: 0 };
-        this.handleClick = this.handleClick.bind(this);
+
     }
     eventLogger = (e, data) => {
         let tmpCharts = this.props.charts
@@ -39,15 +40,22 @@ class Window extends React.PureComponent {
         tmpCharts[this.props.index].y = data.y
         this.props.setCharts(tmpCharts)
         console.log('Event: ', e);
-        console.log('Data: ', data);
+        console.log('Data: ', data.x);
+
     };
-    handleClick = () => {
-        this.setState({ z_index: 0 })
-        this.setState({ z_index: 1 })
+
+
+    onStart(e) {
+        let elems = document.getElementsByClassName('react-draggable');
+        for(let i = 0; i < elems.length; i++) {
+          elems[i].style.zIndex = 10;
+          e.currentTarget.style.zIndex = 12;
+        }
     }
+    
+
 
     render() {
-        console.log(this.props.charts)
 
         return (
             <>
@@ -57,29 +65,49 @@ class Window extends React.PureComponent {
                     scale={1}
                     bounds={{ bottom: 385, left: 0 }}
                     defaultPosition={{ x: this.props.charts[this.props.index].x, y: this.props.charts[this.props.index].y }}
-                    // position={null}
-                    onStart={this.handleStart}
+                    
+                    onStart={this.onStart.bind(this)}
                     onDrag={this.handleDrag}
                     onStop={this.eventLogger}>
-                    <div className="Charts" onClick={this.handleClick} style={{ zIndex: this.state.z_index, width: 570, height: 500 }}>
-                        <div className="handle" style={{cursor: "move"}}>
-                            <Menu size="small" inverted >
-                                <Menu.Item
-                                    icon="x"
-                                    style={{background: "red"}}
+                    <Box
+                        position="absolute"
+                        bg="white"
+                        overflow="auto"
+                        border="1px"
+                        boxShadow="2xl"
+                        borderColor="black"
+                        borderRadius="sm"
+                        resize="both"
+                        
+                        onClick={this.handleClick}
+                        style={{ zIndex: this.state.z_index, width: 570, height: 500 }}
+                    >
+                        <div className="handle" style={{ cursor: "move", width: "auto" }}>
+                            <Box borderTopRadius="sm" bg="teal.800"  >
+                                <IconButton
+                                    colorScheme="red"
+                                    borderRadius="sm"
+                                    // ml={"38rem"}
+                                    aria-label="Search database"
+                                    icon={<CloseIcon />}
                                     onClick={() => this.props.handleDelete(this.props.index)}
-                                    position="right"
                                 />
-                            </Menu>
-                        </div>
+                                {/* <Menu.Item
+                                icon="x"
+                                style={{ background: "red" }}
+                                position="right"
+                            /> */}
+                            </Box>
                         <VegaLite spec={this.props.specification} data={{ table: this.props.data }} />
+                        </div>
 
-                    </div>
+                    </Box>
                 </Draggable>
 
             </>
         );
     }
 }
+
 
 export default React.memo(Window)

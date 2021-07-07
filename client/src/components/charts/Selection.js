@@ -1,62 +1,130 @@
 import React, { useEffect, useState } from 'react'
 import '../../style.css'
 import { VegaLite } from 'react-vega'
-import Attributes from '../TreeMenu'
-import { Box, Grid, HStack, Tooltip, Text } from "@chakra-ui/react"
+import {
+    Box,
+    Grid,
+    HStack,
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionIcon,
+    AccordionPanel,
+    UnorderedList,
+    ListItem,
+    Button,
+    IconButton
+} from "@chakra-ui/react"
+import { DeleteIcon } from '@chakra-ui/icons'
 
 
 function ChartSelection({
     chartMsg,
-    chooseChart
+    chooseChart,
+    mute,
+    setMute,
+    clearCharts
 }) {
-
-    useEffect(() => {
-
-    }, [])
-    const numAttributes = chartMsg.attributes.length
+    // const [charts, setCharts] = useState([])
+    // useEffect(() => {
+    //     let tmpCharts = []
+    //     for(let i = chartMsg.charts.length-1; i >= 0; i--) {
+    //         tmpCharts.push(chartMsg.charts[i])
+    //     }
+    //     setCharts(tmpCharts)
+    // }, [chartMsg])
+    // console.log(charts)
     return (
         <>
 
-            <Box bg="gray.800"
+            <Box
                 position="absolute"
                 bottom="0"
+                bg="gray.700"
                 width="100vw"
-                height="33rem"
+                height="30rem"
                 zIndex="1"
                 borderTop="2px"
                 borderColor="black"
             >
-                <Box position="relative"  borderColor="black"
-                    borderBottom="2px" bg="white" overflow="hidden"  height="4rem">
-                    <Grid templateColumns={`repeat(${numAttributes}, 1fr)`} gap={1}>
+                {
+                    mute ?
+                        <Button bg='teal.300' mt={2} ml={"1rem"} onClick={() => setMute(false)}>Unmute</Button>
+                        :
+                        <Button bg='teal.300' mt={2} ml={"1rem"} onClick={() => setMute(true)}>Mute</Button>
+
+                }
+                <IconButton colorScheme="red" borderRadius="lg" mt={2} ml={"1rem"} onClick={clearCharts} aria-label="Search database" icon={<DeleteIcon />} />
+                <Box
+                    borderColor="black"
+                    border="2px"
+                    zIndex={4}
+                    m="1rem"
+                    width="25rem"
+                    bg="white"
+                    overflowY="scroll"
+                    height="25rem"
+                    position="absolute"
+                    bottom="0"
+                >
+
+                    <Accordion allowMultiple>
                         {chartMsg.attributes.map((value, index) => {
                             return (
-                                <Tooltip placement="top" label="Insert filter Attributes Here" aria-label="A tooltip">
+                                <AccordionItem>
+                                    <h2>
+                                        <AccordionButton>
+                                            <Box flex="1" textAlign="left">
+                                                {value}
+                                            </Box>
+                                            <AccordionIcon />
+                                        </AccordionButton>
+                                    </h2>
+                                    <AccordionPanel pb={4}>
+                                        <UnorderedList>
 
-                                    <Text fontSize="xl">
-                                        {value}
-                                    </Text>
-                                </Tooltip>
+                                            {chartMsg.featureMatrix[index].map((value, index) => {
+                                                return (
+                                                    index > 0 ?
+                                                        <ListItem>{value}</ListItem>
+                                                        :
+                                                        null
+                                                )
+                                            })}
+                                        </UnorderedList>
+
+
+                                    </AccordionPanel>
+                                </AccordionItem>
+                                // <Tooltip placement="top" label="Insert filter Attributes Here" aria-label="A tooltip">
+
+                                //     <Text ml={10} fontSize="xl">
+                                //         {value}
+                                //     </Text>
+                                // </Tooltip>
                             )
                         })}
-                    </Grid>
+                    </Accordion>
                 </Box>
-                
 
-            </Box>
-            <Box position="fixed" zIndex={3} bottom="5" height="26rem"  overflowX="scroll" >
-                    <HStack spacing="5rem" width="100vw" >
+
+
+                <Box zIndex={3} bottom="0" position="absolute" right="0" height="50rem" width="80vw" overflowY="hidden" overflowX="scroll" >
+                    <HStack whiteSpace="nowrap" spacing={100} flexDirection="row-reverse"  >
+
                         {
-                            chartMsg.charts.slice(0).reverse().map((chart, index) => {
+                            chartMsg.charts.map((chart, index) => {
                                 return (
                                     <>
                                         {
                                             chart ?
+                                                <div style={{ width: "1000px" }}>
                                                     <ChartPlaceholder
                                                         specification={chart.charts.spec}
                                                         data={chartMsg.data}
                                                         chooseChart={chooseChart}
                                                     />
+                                                </div>
                                                 :
                                                 null
                                         }
@@ -65,8 +133,8 @@ function ChartSelection({
                             })
                         }
                     </HStack>
-                    </Box>
-        
+                </Box>
+            </Box>
         </>
     )
 }
@@ -88,8 +156,8 @@ function ChartPlaceholder({
         setSpec(prev => {
             return {
                 ...prev,
-                width: "800",
-                height: 600
+                width: 700,
+                height: 500
             }
         })
         setHovered(true)
@@ -112,25 +180,45 @@ function ChartPlaceholder({
 
     return (
         <>
- 
+
             <Box
                 bg="transparent"
-                // height="25vh"
-                zIndex="3"
-                onClick={() => { endTimer(); chooseChart(specification); setClicked(true) }}
+                // height="28rem"
+                zIndex={hovered ? 10 : 3}
+                onClick={clicked ? null : () => { endTimer(); chooseChart(specification); setClicked(true) }}
                 onMouseOver={startTimer}
                 onMouseLeave={endTimer}
-                position="relative"
+                opacity={clicked ? .5 : null}
+                position="absolute"
                 bottom="0"
-                display={clicked ? "None" : null}
-                m={1}
+
             >
-                <Box bg="white" width={hovered ? "65rem" : null}  zIndex={hovered ? "10" : null} borderColor="black" bottom="1" borderWidth="3px" rounded="lg" >
+                <Box bg="white" height={hovered ? "40rem" : "28rem"} borderColor="black" borderWidth="3px" rounded="lg" >
                     <VegaLite style={{ marginLeft: 10 }} spec={spec} data={{ table: data }} />
                 </Box>
+                {/* {
+                    hovered ?
+                    <HoveredChart
+                    spec={spec}
+                    data={data}
+                    />
+                    :
+          
+                } */}
+
             </Box>
 
 
+        </>
+    )
+}
+
+function HoveredChart({ spec, data }) {
+    return (
+        <>
+            <Box bg="white" borderColor="black" bottom="1" borderWidth="3px" rounded="lg" >
+                <VegaLite style={{ marginLeft: 10 }} spec={spec} data={{ table: data }} />
+            </Box>
         </>
     )
 }

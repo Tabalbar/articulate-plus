@@ -1,13 +1,11 @@
 import React from 'react'
-import { Input, Grid } from 'semantic-ui-react'
 import '../../style.css'
 import XLSX from 'xlsx'
+import {Input} from '@chakra-ui/react'
 
 function FileInput({
     setChartMsg
 }) {
-
-    // const [attributes, setAttributes] = useState("")
 
     const processData = async (data) => {
         const dataStringLines = data.split(/\r\n|\n/);
@@ -51,8 +49,8 @@ function FileInput({
         });
         const body = await response.text()
         const { synonymMatrix, featureMatrix } = JSON.parse(body)
-        setChartMsg(prev=> {
-            return {...prev, synonymMatrix: synonymMatrix, featureMatrix: featureMatrix, attributes: headers, data: list}
+        setChartMsg(prev => {
+            return { ...prev, synonymMatrix: synonymMatrix, featureMatrix: featureMatrix, attributes: headers, data: list }
         })
     }
     const loadData = (e) => {
@@ -78,17 +76,9 @@ function FileInput({
 
     return (
         <>
-            <div className="FileInput">
-                <Grid centered={true}>
-                    <Grid.Row columns={2}>
-                        <Grid.Column>
-                            <Input type="file" onChange={loadData}/>
-                        </Grid.Column>
-                        <Grid.Column></Grid.Column>
-                    </Grid.Row>
 
-                </Grid>
-            </div>
+            <Input p={1} type="file" onChange={loadData} />
+
         </>
     )
 }

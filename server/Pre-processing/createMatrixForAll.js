@@ -16,24 +16,44 @@ module.exports = (headers, data) => {
                 if (flags[data[n][headers[i]]]) continue;
                 flags[data[n][headers[i]]] = true;
                 output.push(data[n][headers[i]]);
-                output.push(thesaurus.find(data[n][headers[i]]))
+                // output.push(thesaurus.find(data[n][headers[i]]))
                 output = output.flat()
             }
+            featureMatrix.push(output)
+        } else if (findType(headers[i], data) === "quantitative") {
+            var output = []
+            output.push(headers[i])
+            let quantitativeData = []
+            for (let j = 0; j < data.length; j++) {
+                let num = parseFloat(data[j][headers[i]])
+                if (isNaN(num)) {
+                    console.log(num)
+                } else {
+                    quantitativeData.push(num)
+
+                }
+
+            }
+
+
+            output.push(Math.min(...quantitativeData).toString() + " - " + Math.max(...quantitativeData).toString())
+            output = output.flat()
+
             featureMatrix.push(output)
         } else {
             var output = [headers[i]]
             featureMatrix.push(output)
         }
 
-        if(headers[i].match(/\W/g)){
+        if (headers[i].match(/\W/g)) {
             let words = headers[i].split(/\W/g)
-            for(let i = 0; i < words.length; i++){
+            for (let i = 0; i < words.length; i++) {
                 let doc = nlp(words[i])
-                if(doc.has('#Noun')){
+                if (doc.has('#Noun')) {
                     synonyms.push(words[i])
                     synonyms.push(thesaurus.find(words[i]))
-                
-                } else if(i == 0) {                    
+
+                } else if (i == 0) {
                     synonyms.push(words[i])
                     synonyms.push(thesaurus.find(words[i]))
                 }
@@ -47,21 +67,21 @@ module.exports = (headers, data) => {
 
     }
 
-    for(let i = 0; i < synonymMatrix.length; i++) {
-        for(let j = 1; j < synonymMatrix[i].length; j++) {
-            for(let n = 0; n <  headers.length; n++) {
-                if(synonymMatrix[i][j] === headers[n].toLowerCase()) {
+    for (let i = 0; i < synonymMatrix.length; i++) {
+        for (let j = 1; j < synonymMatrix[i].length; j++) {
+            for (let n = 0; n < headers.length; n++) {
+                if (synonymMatrix[i][j] === headers[n].toLowerCase()) {
                     synonymMatrix[i].splice(j, 1)
                 }
             }
         }
     }
-    for(let i = 0; i < synonymMatrix.length; i++) {
-        if(synonymMatrix[i].length > 19) {
-            synonymMatrix[i] = synonymMatrix[i].splice(0, 20)
+    for (let i = 0; i < synonymMatrix.length; i++) {
+        if (synonymMatrix[i].length > 18) {
+            synonymMatrix[i] = synonymMatrix[i].splice(0, 19)
 
         }
-        
+
     }
-    return {featureMatrix, synonymMatrix}
+    return { featureMatrix, synonymMatrix }
 }

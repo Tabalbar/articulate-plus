@@ -55,7 +55,7 @@ function findInferHeader(command, headerFreq, type, extractedHeaders) {
             headerIndex = i
         }
     }
-
+    console.log(headerToAdd)
     for (let i = 0; i < extractedHeaders.length; i++) {
         if (extractedHeaders[i] == headerFreq[type][headerIndex].header) {
             headerFreq[type].splice(headerIndex, 1)
@@ -63,7 +63,6 @@ function findInferHeader(command, headerFreq, type, extractedHeaders) {
         }
     }
     extractedHeaders.push(headerToAdd)
-
 
     command += " " + headerToAdd
     return extractedHeaders
@@ -116,7 +115,7 @@ function reorder(extractedHeaders, targetHeaderLength, data, sequence) {
             }
 
             //for length 3
-            if (targetHeaderLength == 3) {
+            if (targetHeaderLength >= 3) {
                 for (let i = 0; i < extractedHeaders.length; i++) {
                     if (findType(extractedHeaders[i], data) == 'nominal') {
                         extractedHeaders = switchHeaders(extractedHeaders, 0, i)
@@ -235,7 +234,7 @@ function reorder(extractedHeaders, targetHeaderLength, data, sequence) {
             //for length 3
             if (targetHeaderLength >= 3) {
                 for (let i = 0; i < extractedHeaders.length; i++) {
-                    if (findType(extractedHeaders[i], data) == 'quantitative') {
+                    if (findType(extractedHeaders[i], data) == 'nominal') {
                         extractedHeaders = switchHeaders(extractedHeaders, 0, i)
                         missing.n = false
                         break

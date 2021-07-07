@@ -1,11 +1,11 @@
 
 const nlp = require('compromise')
 const createVector = require('../createVector')
-const countVector = require('../countVector')
+const countVector = require('./countVector')
 const transform = require('../helperFunctions/transform')
 const mark = require('../helperFunctions/mark')
 const findType = require('../helperFunctions/findType')
-const encoding = require('./encoding')
+const encoding = require('../inferred/encoding')
 const createDate = require('../helperFunctions/createDate')
 const title = require('../helperFunctions/title')
 
@@ -13,17 +13,15 @@ const title = require('../helperFunctions/title')
 // let chart = chartMaker.chartMaker(explicitChart, synonymCommand, attributes, data, headerMatrix, command, headerFreq, randomChart)
 // chartObj.push(chartMaker.chartMaker(response.classifications[i].intent, synonymCommand, attributes, data, headerMatrix, command, headerFreq))
 
-module.exports = (intent, chartMsg) => {
-
+module.exports = (intent, chartMsg, modifiedChartOptions) => {
     const headerMatrix = createVector(chartMsg.attributes, chartMsg.data)
     let filteredHeaders = extractFilteredHeaders(chartMsg.synonymCommand, headerMatrix, chartMsg.data, chartMsg.attributes, chartMsg.command)
     let extractedHeaders = extractHeaders(chartMsg.synonymCommand, chartMsg.attributes, chartMsg.data, intent)
-    console.log(chartMsg.synonymCommand)
+
     if(extractedHeaders.length == 0) {
         return ""
     }
-
-    const { headerFreq } = countVector(chartMsg.transcript, chartMsg.featureMatrix, chartMsg.synonymMatrix, chartMsg.data)
+    const { headerFreq } = countVector(chartMsg.transcript, chartMsg.featureMatrix, chartMsg.synonymMatrix, chartMsg.data, modifiedChartOptions)
     const headerKeys = Object.keys(headerFreq)
     for (let i = 0; i < headerKeys.length; i++) {
         for (let j = 0; j < headerFreq[headerKeys[i]].length; j++) {
@@ -65,7 +63,6 @@ module.exports = (intent, chartMsg) => {
 
         }
     };
-    console.log(headerFreq)
     // chartObj = title(chartObj, actualCommand)
     chartObj = mark(chartObj, intent)
     chartObj = encoding(chartObj, intent, extractedHeaders, chartMsg.data, headerFreq, chartMsg.command)

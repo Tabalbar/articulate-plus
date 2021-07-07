@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { VegaLite } from 'react-vega'
 import nlp from 'compromise'
+import {transcriptState} from '../../shared/overHearing'
+import {useRecoilValue} from 'recoil'
 
 const StreamGraph = ({
-    overHearingData,
     attributes,
     synonymAttributes,
     featureAttributes
@@ -11,6 +12,7 @@ const StreamGraph = ({
 
     const [streamData, setStreamData] = useState([])
     const [nounsLength, setNounsLength] = useState(0)
+    const transcriptText = useRecoilValue(transcriptState)
     
     const specification = {
         width: 150,
@@ -42,7 +44,7 @@ const StreamGraph = ({
     }, [attributes])
 
     useEffect(() => {
-        let doc = nlp(overHearingData)
+        let doc = nlp(transcriptText)
         let nouns = doc.nouns().out('array')
         setNounsLength(nouns.length)
 
@@ -74,7 +76,8 @@ const StreamGraph = ({
             }
         }
         setStreamData(tmpStreamData.flat())
-    }, [overHearingData])
+    }, [transcriptText])
+    
     return (
         <>
             <VegaLite spec={specification} data={{ table: streamData }} />

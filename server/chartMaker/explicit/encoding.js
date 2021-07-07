@@ -1,20 +1,29 @@
 const findType = require("../findType")
 const lineBar = require('./marks/lineBar')
 const parallelCoordinates = require('../specialGraphs/parallelCoordinates')
+const map = require('../specialGraphs/map')
+
 const findMissing = require("../findMissing").findMissing
 
-module.exports = (chartObj, intent, extractedHeaders, data) => {
+module.exports = (chartObj, intent, extractedHeaders, data, command) => {
     let numHeaders = extractedHeaders.length
+    let headerFreq = {quantitative: [],nominal: [],temporal: []}
 
     if (intent == "parallelCoordinates" || numHeaders > 3) {
         return parallelCoordinates(chartObj, extractedHeaders, data, headerFreq, command)
     }
 
+    if(intent == "map") {
+        return map(chartObj, extractedHeaders, data, headerFreq, command)
+    }
+
+
     switch (numHeaders) {
         case 1:
             chartObj.charts.spec.encoding.x = {
                 field: extractedHeaders[0],
-                type: findType(extractedHeaders[0], data)
+                type: findType(extractedHeaders[0], data),
+                axis: {labelAngle: -50}
             }
             chartObj.charts.spec.encoding.y = {
                 aggregate: 'count'
@@ -25,6 +34,7 @@ module.exports = (chartObj, intent, extractedHeaders, data) => {
             chartObj.charts.spec.encoding.x = {
                 field: extractedHeaders[0],
                 type: findType(extractedHeaders[0], data),
+                axis: {labelAngle: -50}
             }
             chartObj.charts.spec.encoding.y = {
                 field: extractedHeaders[1],
@@ -35,13 +45,14 @@ module.exports = (chartObj, intent, extractedHeaders, data) => {
 
             extractedHeaders = findQuantitative(extractedHeaders, data)
             extractedHeaders = reorderLowestCountForColor(extractedHeaders, data)
-            chartObj.charts.spec.encoding.columns = {
+            chartObj.charts.spec.encoding.column = {
                 field: extractedHeaders[2],
                 type: findType(extractedHeaders[2], data)
             }
             chartObj.charts.spec.encoding.x = {
                 field: extractedHeaders[0],
-                type: findType(extractedHeaders[0], data)
+                type: findType(extractedHeaders[0], data),
+                axis: {labelAngle: -50}
             }
             chartObj.charts.spec.encoding.y = {
                 field: extractedHeaders[1],

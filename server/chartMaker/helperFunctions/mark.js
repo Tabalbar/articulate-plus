@@ -15,7 +15,8 @@ module.exports = (chartObj, intent) => {
         case "parallelCoordinates":
             chartObj.charts.spec.mark = "line"
             return chartObj
-
+        case "map":
+            chartObj.charts.spec.mark = {type: "geoshape", stroke: "black"}
 
     }
     return chartObj

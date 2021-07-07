@@ -6,6 +6,5 @@ module.exports = (command) => {
     let doc = nlp(command)
     
     doc.nouns().toSingular()
-    console.log(doc.text())
     return doc.text()
 }

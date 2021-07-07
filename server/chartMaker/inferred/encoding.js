@@ -1,8 +1,6 @@
 const findType = require("../findType")
 const heatmap = require("../specialGraphs/heatmap")
-const pie = require('../specialGraphs/pie')
-const marginalHistogram = require('../specialGraphs/marginalHistogram')
-const stackedBar = require('../specialGraphs/stackedBar')
+const map = require('../specialGraphs/map')
 const parallelCoordinates = require('../specialGraphs/parallelCoordinates')
 const findMissing = require("../findMissing").findMissing
 
@@ -12,11 +10,17 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
     if(intent == "parallelCoordinates" || numHeaders > 3) {
         return parallelCoordinates(chartObj, extractedHeaders, data, headerFreq, command)
     }
+
+    if(intent == "map") {
+        return map(chartObj, extractedHeaders, data, headerFreq, command)
+    }
+
     switch (numHeaders) {
         case 1:
             chartObj.charts.spec.encoding.x = {
                 field: extractedHeaders[0],
-                type: findType(extractedHeaders[0], data)
+                type: findType(extractedHeaders[0], data),
+                axis: {labelAngle: -50}
             }
             chartObj.charts.spec.encoding.y = {
                 aggregate: 'count'
@@ -30,6 +34,7 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
             chartObj.charts.spec.encoding.x = {
                 field: extractedHeaders[0],
                 type: findType(extractedHeaders[0], data),
+                axis: {labelAngle: -50}
             }
             chartObj.charts.spec.encoding.y = {
                 field: extractedHeaders[1],
@@ -41,16 +46,14 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
         case 3:
             extractedHeaders = findQuantitative(extractedHeaders, data, headerFreq, command, 3)
             extractedHeaders = reorderLowestCountForColor(extractedHeaders, data)
-            if(extractedHeaders.length !== 3) {  
-                chartObj.errMsg("I tried to make a " + intent + ", but i coldn't find the right data")
-            }
-            chartObj.charts.spec.encoding.columns = {
+            chartObj.charts.spec.encoding.column = {
                 field: extractedHeaders[2],
                 type: findType(extractedHeaders[2], data)
             }
             chartObj.charts.spec.encoding.x = {
                 field: extractedHeaders[0],
-                type: findType(extractedHeaders[0], data)
+                type: findType(extractedHeaders[0], data),
+                axis: {labelAngle: -50}
             }
             chartObj.charts.spec.encoding.y = {
                 field: extractedHeaders[1],
@@ -91,14 +94,12 @@ function findQuantitative(extractedHeaders, data, headerFreq, command, expectedH
         return extractedHeaders
 
     } else {
-        return findMissing(extractedHeaders, data, expectedHeaderLength, headerFreq, command, "NQT")
+        return findMissing(extractedHeaders, data, expectedHeaderLength, headerFreq, command, "NQN")
     }
 }
 
 
 function reorderLowestCountForColor(extractedHeaders, data) {
-    console.log(extractedHeaders, 'here')
-
     const uniqueLengthOne = [...new Set(data.map(item => item[extractedHeaders[0]]))];
     const uniqueLengthtwo = [...new Set(data.map(item => item[extractedHeaders[2]]))];
     if (uniqueLengthOne <= uniqueLengthtwo) {

@@ -10,7 +10,7 @@ const ExtendNLP = require('./Pre-processing/ExtendNLP')
  */
 const { NlpManager } = require('node-nlp');
 
-const manager = new NlpManager({ languages: ['en'], forceNER: true });
+const manager = new NlpManager({ languages: ['en'], forceNER: true, nlu: {log: false} });
 
 manager.addDocument('en', 'I want to see the comparison of nominal and quantitative', 'bar');
 manager.addDocument('en', 'show me a a comparison of nominal and quantitative', 'bar');
@@ -41,6 +41,9 @@ manager.addAnswer('en', 'scatter', 'scatter');
 manager.addDocument('en', 'I want to see the difference of nominal by quantitative quantitative and quantitative', 'parallelCoordinates');
 manager.addAnswer('en', 'parallelCoordinates', 'parallelCoordinates');
 
+manager.addDocument('en', 'show me a quantitative of nominal', 'map');
+manager.addAnswer('en', 'map', 'map');
+
 // Train and save the model.
 (async () => {
   await manager.train();
@@ -59,7 +62,7 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
  */
 app.post("/initialize", (req, res) => {
   // console.log(req.body)
-  console.log('called')
+  console.log('Initialized Attributes')
   const { featureMatrix, synonymMatrix } = ExtendNLP(req.body.attributes, req.body.data)
   if (featureMatrix === null || synonymMatrix === null) {
     console.log("Error in pre-processing")
@@ -79,11 +82,12 @@ const getExplicitChartType = require('./chartMaker/specifications/ExplicitChart'
 const explicitChart = require('./chartMaker/explicit/explicitChart')
 const inferredChart = require('./chartMaker/inferred/inferredChart')
 const headerVector = require('./chartMaker/helperFunctions/headerVector')
-const CompareCharts = require('./CompareCharts')
+const CompareCharts = require('./CompareCharts');
+const modifiedChart = require("./chartMaker/modified/modifiedChart");
 
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg
-
+  let modifiedChartOptions = req.body.modifiedChartOptions
   //Remove stop words and change known acronyms 
   const normalizedCommand = normalizeCommand(chartMsg.command)
 
@@ -108,7 +112,7 @@ app.post("/createCharts", async (req, res) => {
    * Inferred implicit chart
    */
   const inferredResponse = await manager.process('en', chartMsg.generalizedCommand)
-
+  console.log(inferredResponse.intent)
   if (inferredResponse.intent !== "None") {
     chartMsg.inferredChart = inferredChart(inferredResponse.intent, chartMsg)
   } else {
@@ -119,11 +123,10 @@ app.post("/createCharts", async (req, res) => {
    */
   const modifiedResponse = await manager.process('en', chartMsg.generalizedCommand)
   if (modifiedResponse.intent !== "None") {
-    chartMsg.modifiedChart = inferredChart(modifiedResponse.intent, chartMsg)
+    chartMsg.modifiedChart = modifiedChart(modifiedResponse.intent, chartMsg, modifiedChartOptions)
   } else {
     chartMsg.modifiedChart = ""
   }
-
   CompareCharts(chartMsg)
 
   res.send({ chartMsg })

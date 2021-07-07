@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import "../../style.css"
-import talking from '../../images/talking.gif'
-import notTalking from '../../images/notTalking.png'
-import { Box, Image, Center, Input, Button } from "@chakra-ui/react"
-import Siriwave from 'react-siriwave';
+import { Box, Center } from "@chakra-ui/react"
 import Audio from './Audio'
+import {transcriptState} from '../../shared/overHearing'
+import {useRecoilState} from 'recoil'
+import nlp from 'compromise'
 
 const Dictaphone = ({
     //   createChartWithVoice,
     setChartMsg,
     createCharts,
-    setOverHearingData,
     chartMsg
 }) => {
 
     const [listening, setListening] = useState(false)
     const [command, setCommand] = useState("")
-    const [testCommand, setTestCommand] = useState("")
+    const [text, setText] = useRecoilState(transcriptState)
 
     let commands = [
         {
@@ -34,20 +33,20 @@ const Dictaphone = ({
         if (command === "") {
             return
         }
-
-        if (command.includes("show")) {
-            createCharts(command)
-        }
+        setText((prev)=>prev+ " " + command)
         setChartMsg(prev => {
             return { ...prev, transcript: prev.transcript + ". " + command }
         })
+        if (command.includes("show") && checkForAttributes(command, chartMsg.synonymMatrix)) {
+            createCharts(command)
+        }
+
     }, [command])
 
     useEffect(() => {
         if (listening) {
             const timer = setTimeout(() => {
                 setListening(false)
-                console.log('not listening')
             }, 2000)
             return () => {
                 clearTimeout(timer)
@@ -58,17 +57,9 @@ const Dictaphone = ({
 
     const { transcript } = useSpeechRecognition({ commands })
 
-    // useEffect(() => {
-    //     console.log(chartMsg.transcript)
-    // }, [transcript])
-
 
     useEffect(() => {
-        // setChartMsg(prev=>{
-        //     return{}
-        // })
-
-        setOverHearingData(transcript)
+        // setOverHearingData(transcript)
     }, [transcript])
 
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -80,16 +71,6 @@ const Dictaphone = ({
 
 
 
-    // .voiceStyle {
-    //     background-color: rgb(0, 37, 40);
-    //     overflow: hidden;
-    //     position: fixed;
-    //     bottom: 0;
-    //     width: 100%;
-    //     height: 50px;
-    //     z-index: 1;
-    //     border-top:#C24C3D solid; 
-    // }
     return (
         <>
         <Center>
@@ -98,8 +79,8 @@ const Dictaphone = ({
                 top="0"
                 overflow="hidden"
                 zIndex="2"
-                position="sticky"
-                bg="black"
+                position="absolute"
+                bg="white"
                 // width="10vw"
                 // border="black"
                 // borderRadius="lg"
@@ -130,6 +111,18 @@ const Dictaphone = ({
             </Box> */}
         </>
     )
+}
+
+function checkForAttributes(command, attributes) {
+    
+    for(let i = 0; i < attributes.length; i++ ) {
+        for(let j = 0; j < attributes[i].length; j++) {
+            if(command.includes(attributes[i][j])){
+                return true
+            }
+        }
+    }
+    return false
 }
 
 export default Dictaphone
