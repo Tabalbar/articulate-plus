@@ -63,7 +63,7 @@ class Window extends React.PureComponent {
                     handle=".handle"
                     grid={[1, 1]}
                     scale={1}
-                    bounds={{ bottom: 385, left: 0 }}
+                    bounds={{ bottom: 510, left: 0 }}
                     defaultPosition={{ x: this.props.charts[this.props.index].x, y: this.props.charts[this.props.index].y }}
                     
                     onStart={this.onStart.bind(this)}
@@ -98,7 +98,7 @@ class Window extends React.PureComponent {
                                 position="right"
                             /> */}
                             </Box>
-                        <VegaLite spec={this.props.specification} data={{ table: this.props.data }} />
+                        <VegaLite width={420} height={350} spec={this.props.specification} data={{ table: this.props.data }} />
                         </div>
 
                     </Box>

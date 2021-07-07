@@ -13,7 +13,8 @@ import {
     UnorderedList,
     ListItem,
     Button,
-    IconButton
+    IconButton,
+    VStack
 } from "@chakra-ui/react"
 import { DeleteIcon } from '@chakra-ui/icons'
 
@@ -109,8 +110,8 @@ function ChartSelection({
 
 
 
-                <Box zIndex={3} bottom="0" position="absolute" right="0" height="50rem" width="80vw" overflowY="hidden" overflowX="scroll" >
-                    <HStack whiteSpace="nowrap" spacing={100} flexDirection="row-reverse"  >
+                <Box zIndex={3} bottom="0" position="absolute" right="0" height="28rem" width="100vw" overflowY="scroll" overflowX="scroll" >
+                    <VStack  direction="column-reverse" >
 
                         {
                             chartMsg.charts.map((chart, index) => {
@@ -132,7 +133,7 @@ function ChartSelection({
                                 )
                             })
                         }
-                    </HStack>
+                    </VStack>
                 </Box>
             </Box>
         </>
@@ -153,13 +154,13 @@ function ChartPlaceholder({
     specification.y = window.innerHeight / 4
     const startTimer = () => {
         setStartTime(performance.now())
-        setSpec(prev => {
-            return {
-                ...prev,
-                width: 700,
-                height: 500
-            }
-        })
+        // setSpec(prev => {
+        //     return {
+        //         ...prev,
+        //         width: 700,
+        //         height: 500
+        //     }
+        // })
         setHovered(true)
     }
 
@@ -167,13 +168,13 @@ function ChartPlaceholder({
         var timeDiff = performance.now() - startTime
         timeDiff /= 1000;
         specification.timeSpentHovered += parseFloat(Number(timeDiff).toFixed(2))
-        setSpec(prev => {
-            return {
-                ...prev,
-                width: 400,
-                height: 270
-            }
-        })
+        // setSpec(prev => {
+        //     return {
+        //         ...prev,
+        //         width: 400,
+        //         height: 270
+        //     }
+        // })
         setHovered(false)
     }
 
@@ -189,12 +190,11 @@ function ChartPlaceholder({
                 onMouseOver={startTimer}
                 onMouseLeave={endTimer}
                 opacity={clicked ? .5 : null}
-                position="absolute"
                 bottom="0"
 
             >
-                <Box bg="white" height={hovered ? "40rem" : "28rem"} borderColor="black" borderWidth="3px" rounded="lg" >
-                    <VegaLite style={{ marginLeft: 10 }} spec={spec} data={{ table: data }} />
+                <Box bg="white" height={hovered ? "100%" : "100%"} width={hovered ? "100%" : "100%"} borderColor="black" borderWidth="3px" rounded="lg" >
+                    <VegaLite width={hovered ? 800 : 400} height={hovered ? 640 : 320} style={{ marginLeft: 10 }} spec={spec} data={{ table: data }} />
                 </Box>
                 {/* {
                     hovered ?
