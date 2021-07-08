@@ -110,7 +110,7 @@ function ChartSelection({
 
 
 
-                <Box zIndex={3} bottom="0" position="absolute" right="0" height="28rem" width="100vw" overflowY="scroll" overflowX="scroll" >
+                <Box zIndex={3} bottom="0" position="absolute" right="0" height="28rem" width="85vw" overflowY="scroll" overflowX="scroll" >
                     <VStack  direction="column-reverse" >
 
                         {
