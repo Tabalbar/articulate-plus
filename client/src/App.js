@@ -103,27 +103,14 @@ function App() {
     })
 }
 
-
+console.log(chartMsg.charts)
   return (
     <>
       <RecoilRoot>
         <ChakraProvider>
           
-          <Button  mt={10} onClick={downloadFile}>Test</Button>
 
-          {/* <Button onClick={()=>createCharts("Show me a map of uninsured rate")}></Button> */}
-          {/* <VegaLite spec={chartSpec} data={{ table: chartMsg.data }} /> */}
-          {/* <Router>
-          <Switch>
-            <Route path="/" exact component={() =>
-
-            } />
-            <Route path="/diagnostics" exact component={() =>
-
-            } />
-          </Switch>
-        </Router> */}
-          {/* <Button onClick={()=>UseVoice("speak")}></Button> */}
+  
           <div style={{ display: chartsPage ? null : "None" }}>
             <Charts
               chartMsg={chartMsg}
@@ -150,6 +137,7 @@ function App() {
             setChartMsg={setChartMsg}
             modifiedChartOptions={modifiedChartOptions}
             setModifiedChartOptions={setModifiedChartOptions}
+            chartMsg={chartMsg}
           />
 
           <Box right="0" >

@@ -45,8 +45,6 @@ module.exports = (intent, chartMsg) => {
         charts: {
             spec: {
                 title: "",
-                width: "container",
-                height: "container",
                 mark: "",
                 transform: [],
                 concat: [],
@@ -65,7 +63,6 @@ module.exports = (intent, chartMsg) => {
 
         }
     };
-    console.log(headerFreq)
     // chartObj = title(chartObj, actualCommand)
     chartObj = mark(chartObj, intent)
     chartObj = encoding(chartObj, intent, extractedHeaders, chartMsg.data, headerFreq, chartMsg.command)

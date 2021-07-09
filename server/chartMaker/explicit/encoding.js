@@ -47,7 +47,8 @@ module.exports = (chartObj, intent, extractedHeaders, data, command) => {
             extractedHeaders = reorderLowestCountForColor(extractedHeaders, data)
             chartObj.charts.spec.encoding.column = {
                 field: extractedHeaders[2],
-                type: findType(extractedHeaders[2], data)
+                type: findType(extractedHeaders[2], data),
+                spacing: 1
             }
             chartObj.charts.spec.encoding.x = {
                 field: extractedHeaders[0],
@@ -59,9 +60,11 @@ module.exports = (chartObj, intent, extractedHeaders, data, command) => {
                 type: findType(extractedHeaders[1], data)
             }
             chartObj.charts.spec.encoding.color = {
-                field: extractedHeaders[2],
-                type: findType(extractedHeaders[2], data)
+                field: extractedHeaders[0],
+                type: findType(extractedHeaders[0], data)
             }
+            chartObj.charts.spec.width = {step: 1}
+
             return chartObj
         default:
             chartObj.errMsg = "Error"

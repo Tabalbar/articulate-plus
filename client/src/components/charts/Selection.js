@@ -48,70 +48,17 @@ function ChartSelection({
                 borderTop="2px"
                 borderColor="black"
             >
-                {
+                {/* {
                     mute ?
                         <Button bg='teal.300' mt={2} ml={"1rem"} onClick={() => setMute(false)}>Unmute</Button>
                         :
                         <Button bg='teal.300' mt={2} ml={"1rem"} onClick={() => setMute(true)}>Mute</Button>
 
                 }
-                <IconButton colorScheme="red" borderRadius="lg" mt={2} ml={"1rem"} onClick={clearCharts} aria-label="Search database" icon={<DeleteIcon />} />
-                <Box
-                    borderColor="black"
-                    border="2px"
-                    zIndex={4}
-                    m="1rem"
-                    width="25rem"
-                    bg="white"
-                    overflowY="scroll"
-                    height="25rem"
-                    position="absolute"
-                    bottom="0"
-                >
+                <IconButton colorScheme="red" borderRadius="lg" mt={2} ml={"1rem"} onClick={clearCharts} aria-label="Search database" icon={<DeleteIcon />} /> */}
 
-                    <Accordion allowMultiple>
-                        {chartMsg.attributes.map((value, index) => {
-                            return (
-                                <AccordionItem>
-                                    <h2>
-                                        <AccordionButton>
-                                            <Box flex="1" textAlign="left">
-                                                {value}
-                                            </Box>
-                                            <AccordionIcon />
-                                        </AccordionButton>
-                                    </h2>
-                                    <AccordionPanel pb={4}>
-                                        <UnorderedList>
-
-                                            {chartMsg.featureMatrix[index].map((value, index) => {
-                                                return (
-                                                    index > 0 ?
-                                                        <ListItem>{value}</ListItem>
-                                                        :
-                                                        null
-                                                )
-                                            })}
-                                        </UnorderedList>
-
-
-                                    </AccordionPanel>
-                                </AccordionItem>
-                                // <Tooltip placement="top" label="Insert filter Attributes Here" aria-label="A tooltip">
-
-                                //     <Text ml={10} fontSize="xl">
-                                //         {value}
-                                //     </Text>
-                                // </Tooltip>
-                            )
-                        })}
-                    </Accordion>
-                </Box>
-
-
-
-                <Box zIndex={3} bottom="0" position="absolute" right="0" height="28rem" width="85vw" overflowY="scroll" overflowX="scroll" >
-                    <VStack  direction="column-reverse" >
+                <Box zIndex={3} bottom="0" position="absolute"  height="28rem" width="full" overflowY="scroll" overflowX="scroll" >
+                    <VStack display="flex"  flexDirection="column-reverse" >
 
                         {
                             chartMsg.charts.map((chart, index) => {
@@ -119,7 +66,7 @@ function ChartSelection({
                                     <>
                                         {
                                             chart ?
-                                                <div style={{ width: "1000px" }}>
+                                                <div >
                                                     <ChartPlaceholder
                                                         specification={chart.charts.spec}
                                                         data={chartMsg.data}
@@ -194,7 +141,7 @@ function ChartPlaceholder({
 
             >
                 <Box bg="white" height={hovered ? "100%" : "100%"} width={hovered ? "100%" : "100%"} borderColor="black" borderWidth="3px" rounded="lg" >
-                    <VegaLite width={hovered ? 800 : 400} height={hovered ? 640 : 320} style={{ marginLeft: 10 }} spec={spec} data={{ table: data }} />
+                    <VegaLite  spec={spec} data={{ table: data }} />
                 </Box>
                 {/* {
                     hovered ?
