@@ -57,8 +57,8 @@ function ChartSelection({
                 }
                 <IconButton colorScheme="red" borderRadius="lg" mt={2} ml={"1rem"} onClick={clearCharts} aria-label="Search database" icon={<DeleteIcon />} /> */}
 
-                <Box zIndex={3} bottom="0" position="absolute"  height="28rem" width="full" overflowY="scroll" overflowX="scroll" >
-                    <VStack display="flex"  flexDirection="column-reverse" >
+                <Box zIndex={3} ml={"30rem"} bottom="0" position="absolute"  height="28rem" width="full" overflowY="scroll" overflowX="scroll" >
+                    <HStack width="1000rem"  spacing={10} direction="row-reverse" whiteSpace="nowrap">
 
                         {
                             chartMsg.charts.map((chart, index) => {
@@ -80,7 +80,7 @@ function ChartSelection({
                                 )
                             })
                         }
-                    </VStack>
+                    </HStack>
                 </Box>
             </Box>
         </>
@@ -140,8 +140,8 @@ function ChartPlaceholder({
                 bottom="0"
 
             >
-                <Box bg="white" height={hovered ? "100%" : "100%"} width={hovered ? "100%" : "100%"} borderColor="black" borderWidth="3px" rounded="lg" >
-                    <VegaLite  spec={spec} data={{ table: data }} />
+                <Box bg="white" height="100%" width="100%" borderColor="black" borderWidth="3px" rounded="lg" >
+                    <VegaLite  height="250" width="300" spec={spec} data={{ table: data }} />
                 </Box>
                 {/* {
                     hovered ?
@@ -164,7 +164,7 @@ function HoveredChart({ spec, data }) {
     return (
         <>
             <Box bg="white" borderColor="black" bottom="1" borderWidth="3px" rounded="lg" >
-                <VegaLite style={{ marginLeft: 10 }} spec={spec} data={{ table: data }} />
+                <VegaLite width={"500px"} height={100} style={{ marginLeft: 10 }} spec={spec} data={{ table: data }} />
             </Box>
         </>
     )

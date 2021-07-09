@@ -40,6 +40,7 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
                 field: extractedHeaders[1],
                 type: findType(extractedHeaders[1], data)
             }
+
             if(extractedHeaders.length === 2) {
                 return chartObj
             }
@@ -49,7 +50,7 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
             chartObj.charts.spec.encoding.column = {
                 field: extractedHeaders[2],
                 type: findType(extractedHeaders[2], data),
-                spacing: 12
+                spacing: 15
             }
             chartObj.charts.spec.encoding.x = {
                 field: extractedHeaders[0],
@@ -64,7 +65,6 @@ module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command,
                 field: extractedHeaders[0],
                 type: findType(extractedHeaders[0], data)
             }
-            chartObj.charts.spec.width = {step: 12}
             return chartObj
         default:
             chartObj.errMsg = "Error"
