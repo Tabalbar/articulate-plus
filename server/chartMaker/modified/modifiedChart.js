@@ -43,7 +43,6 @@ module.exports = (intent, chartMsg, modifiedChartOptions) => {
         charts: {
             spec: {
                 title: "",
-                width: {step: 15},
                 mark: "",
                 transform: [],
                 concat: [],

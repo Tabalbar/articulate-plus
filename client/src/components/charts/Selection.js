@@ -57,8 +57,8 @@ function ChartSelection({
                 }
                 <IconButton colorScheme="red" borderRadius="lg" mt={2} ml={"1rem"} onClick={clearCharts} aria-label="Search database" icon={<DeleteIcon />} /> */}
 
-                <Box zIndex={3} ml={"30rem"} bottom="0" position="absolute"  height="28rem" width="full" overflowY="scroll" overflowX="scroll" >
-                    <HStack width="1000rem"  spacing={10} direction="row-reverse" whiteSpace="nowrap">
+                <Box zIndex={3} ml={"30rem"} bottom="0" position="absolute"  height="40rem" width="full" overflowY="scroll" overflowX="scroll" >
+                    <HStack   spacing={300} direction="row-reverse" whiteSpace="nowrap">
 
                         {
                             chartMsg.charts.map((chart, index) => {
@@ -66,13 +66,13 @@ function ChartSelection({
                                     <>
                                         {
                                             chart ?
-                                                <div >
+                                                <Box width="full">
                                                     <ChartPlaceholder
                                                         specification={chart.charts.spec}
                                                         data={chartMsg.data}
                                                         chooseChart={chooseChart}
                                                     />
-                                                </div>
+                                                </Box>
                                                 :
                                                 null
                                         }
@@ -101,13 +101,13 @@ function ChartPlaceholder({
     specification.y = window.innerHeight / 4
     const startTimer = () => {
         setStartTime(performance.now())
-        // setSpec(prev => {
-        //     return {
-        //         ...prev,
-        //         width: 700,
-        //         height: 500
-        //     }
-        // })
+        setSpec(prev => {
+            return {
+                ...prev,
+                width: 700,
+                height: 500
+            }
+        })
         setHovered(true)
     }
 
@@ -115,13 +115,13 @@ function ChartPlaceholder({
         var timeDiff = performance.now() - startTime
         timeDiff /= 1000;
         specification.timeSpentHovered += parseFloat(Number(timeDiff).toFixed(2))
-        // setSpec(prev => {
-        //     return {
-        //         ...prev,
-        //         width: 400,
-        //         height: 270
-        //     }
-        // })
+        setSpec(prev => {
+            return {
+                ...prev,
+                width: 400,
+                height: 200
+            }
+        })
         setHovered(false)
     }
 
@@ -138,10 +138,10 @@ function ChartPlaceholder({
                 onMouseLeave={endTimer}
                 opacity={clicked ? .5 : null}
                 bottom="0"
-
+                position="absolute"
             >
-                <Box bg="white" height="100%" width="100%" borderColor="black" borderWidth="3px" rounded="lg" >
-                    <VegaLite  height="250" width="300" spec={spec} data={{ table: data }} />
+                <Box bg="white"  borderColor="black" borderWidth="3px" rounded="lg" >
+                    <VegaLite   spec={spec} data={{ table: data }} />
                 </Box>
                 {/* {
                     hovered ?
