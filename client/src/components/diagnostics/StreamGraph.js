@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { VegaLite } from 'react-vega'
-import nlp from 'compromise'
-import {transcriptState} from '../../shared/overHearing'
-import {useRecoilValue} from 'recoil'
 
 const StreamGraph = ({
     attributes,
     synonymAttributes,
-    featureAttributes
+    featureAttributes,
+    overHearingData
 }) => {
 
     const [streamData, setStreamData] = useState([])
-    const [nounsLength, setNounsLength] = useState(0)
-    const transcriptText = useRecoilValue(transcriptState)
+    const [sentecesLength, setSentencesLength] = useState(0)
     
     const specification = {
-        width: 150,
-        height: 150,
+        width: 500,
+        height: 500,
         mark: "area",
         encoding: {
             x: {
@@ -34,26 +31,26 @@ const StreamGraph = ({
         },
         data: { name: 'table' }
     }
-
     useEffect(() => {
         let tmpStreamData = []
         for (let i = 0; i < attributes.length; i++) {
             tmpStreamData.push({ header: attributes[i], count: 0, date: new Date() })
         }
+        console.log(tmpStreamData)
+
         setStreamData(tmpStreamData)
     }, [attributes])
 
     useEffect(() => {
-        let doc = nlp(transcriptText)
-        let nouns = doc.nouns().out('array')
-        setNounsLength(nouns.length)
-
+        let sentences = overHearingData.split('.')
+        setSentencesLength(sentences.length)
+        console.log(sentences)
         let tmpStreamData = streamData
-        if (nouns.length > nounsLength) {
-            let lastTerm = nouns[nouns.length - 1]
+        if (sentences.length > sentecesLength) {
+            let lastSentence = sentences[sentences.length - 1]
             for (let i = 0; i < synonymAttributes.length; i++) {
                 for (let j = 0; j < synonymAttributes[i].length; j++) {
-                    if (lastTerm.toLowerCase() === synonymAttributes[i][j].toLowerCase()) {
+                    if (lastSentence.toLowerCase().includes(synonymAttributes[i][j].toLowerCase())) {
                         tmpStreamData.push({
                             header: synonymAttributes[i][0],
                             count: 1,
@@ -64,7 +61,7 @@ const StreamGraph = ({
             }
             for (let i = 0; i < featureAttributes.length; i++) {
                 for (let j = 0; j < featureAttributes[i].length; j++) {
-                    if (lastTerm.toLowerCase() === featureAttributes[i][j].toLowerCase()) {
+                    if (lastSentence.toLowerCase().includes(featureAttributes[i][j].toLowerCase())) {
                         tmpStreamData.push({
                             header: featureAttributes[i][0],
                             count: 1,
@@ -75,9 +72,10 @@ const StreamGraph = ({
                 }
             }
         }
+        console.log(overHearingData)
+
         setStreamData(tmpStreamData.flat())
-    }, [transcriptText])
-    
+    }, [overHearingData])
     return (
         <>
             <VegaLite spec={specification} data={{ table: streamData }} />

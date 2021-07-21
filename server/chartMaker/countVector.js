@@ -27,25 +27,25 @@ module.exports = (transcript, headerMatrix, synonymAttributes, data) => {
     }
 
     let sentences = transcript.split('.')
-    for(let i = 0; i < sentences.length; i ++) {
-        let sentence = nlp(sentences[i])
-        sentence.nouns().toSingular()
+        // let sentence = nlp(sentences[i])
+        // sentence.nouns().toSingular()
 
-        const nouns = sentence.nouns().out('array')
+        // const nouns = sentence.nouns().out('array')
 
-        for(let w = 0; w < nouns.length; w++) {
+        for(let w = 0; w < sentences.length; w++) {
             for(let j = 0; j < synonymsAndFeatures.length; j++) {
                 for(let n = 0; n < synonymsAndFeatures[j].length; n++) {
-
-                    if(synonymsAndFeatures[j][n].includes(nouns[w].toLowerCase())){
+                    if(sentences[w].toLowerCase().includes(synonymsAndFeatures[j][n].toLowerCase())){
                         const sentiment = new Sentiment();
-                        const result = sentiment.analyze(sentences[i]);
-
-                        wordCount[j].count += result.score
+                        const result = sentiment.analyze(sentences[w]);
+                        if(result.score >= 0) {
+                            wordCount[j].count += 1
+                        } else {
+                            wordCount[j].count -= 1
+                        }
                     }
                 }
             }
-        }
     }
 
     for(let i = 0; i < wordCount.length; i++) {

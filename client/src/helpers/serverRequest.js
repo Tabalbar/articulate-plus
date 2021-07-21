@@ -19,8 +19,9 @@ export async function serverRequest(chartMsg, setChartMsg, withClippy, modifiedC
     let tmpChartMsg = responseChartMsg.chartMsg
     setChartMsg(prev => {
         return {
-            ...tmpChartMsg,
-            charts: [...prev.charts, tmpChartMsg.explicitChart, tmpChartMsg.inferredChart, tmpChartMsg.modifiedChart]
+            ...prev,
+            charts: [...prev.charts, tmpChartMsg.explicitChart, tmpChartMsg.inferredChart, tmpChartMsg.modifiedChart],
+            headerFreq: tmpChartMsg.headerFreq.headerFreq
         }
     })
     let count = 0;

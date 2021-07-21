@@ -19,7 +19,6 @@ module.exports = (chartObj, extractedHeaders, data, headerFreq, command) => {
         extractedHeaders = switchHeaders(extractedHeaders, 0, extractedHeaders.length-1)
     }
     console.log(extractedHeaders)
-
     if(extractedHeaders == "") {
         return ""
     }
@@ -52,7 +51,6 @@ function sortArray(header, data) {
     let order = [];
     const unique = [...new Set(data.map(item => item[header]))];
     if(unique.length < 10) {
-console.log(unique.length)
     for (let i = 0; i < unique.length; i++) {
         let doc = nlp(unique[i])
         if (doc.has("very high")) {
@@ -94,7 +92,6 @@ console.log(unique.length)
         }
     }
     }
-    console.log("end")
 
     return unique
 

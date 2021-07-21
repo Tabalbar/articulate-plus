@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Charts from "./pages/Charts";
 import 'semantic-ui-css/semantic.min.css'
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -8,14 +8,14 @@ import { serverRequest } from './helpers/serverRequest'
 import createDate from './helpers/createDate'
 import { ChakraProvider } from "@chakra-ui/react"
 import { useClippy } from "use-clippy-now";
-import { Button, Box } from '@chakra-ui/react'
+import { Button, Box, Input, IconButton } from '@chakra-ui/react'
 import { thinking } from './components/voice/assistantVoiceOptions'
 import UseVoice from './components/voice/UseVoice'
 import SideMenu from './components/sideMenu/SideMenu'
 import {
   RecoilRoot
 } from 'recoil'
-import { VegaLite } from 'react-vega'
+
 
 function App() {
 
@@ -32,7 +32,7 @@ function App() {
     neuralNetwork: true
   })
 
-  const [chartMsg, setChartMsg] = useState({
+  const [chartMsg, setChartMsg] = useState(JSON.parse(localStorage.getItem("chartMsg")) || {
     command: "",
     attributes: [],
     data: "",
@@ -45,45 +45,30 @@ function App() {
     modifiedChart: "",
     assistantResponse: "",
     errMsg: [],
-    charts: []
+    charts: [],
+    headerFreq: { quantitative: [], nominal: [], temporal: [] }
   })
-  // React.useEffect(() => {
-  //   fetch("/initialize", )
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.message));
-  // }, []);
+
+
 
   const createCharts = (command) => {
-    console.log(command)
 
     if (command) {
       chartMsg.command = command
     }
     let thinkingResponse = thinking[Math.floor(Math.random() * 4)]
     withClippy((clippy) => clippy.speak(thinkingResponse))
-    withClippy((clippy) => clippy.play("Processing"))
+    setTimeout(() => {
+      withClippy((clippy) => clippy.play("Processing"))
+
+    }, 1000)
 
     UseVoice(thinkingResponse, mute)
     serverRequest(chartMsg, setChartMsg, withClippy, modifiedChartOptions, mute)
 
   }
 
-  const downloadFile = async () => {
-    let myData = {
-      transcript: chartMsg.transcript,
-      charts: chartMsg.charts
-    }
-    const fileName = "file";
-    const json = JSON.stringify(myData);
-    const blob = new Blob([json],{type:'application/json'});
-    const href = await URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = href;
-    link.download = fileName + ".json";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
+  
 
   const chooseChart = (chosenChart) => {
     chosenChart.timeChosen = createDate()
@@ -95,23 +80,38 @@ function App() {
     chartMsg.modifiedChart = ""
   }
   const clearCharts = () => {
-    setChartMsg(prev=>{
-        return {
-            ...prev,
-            charts: []
-        }
-    })
-}
+    localStorage.removeItem("chartMsg")
+  }
+  const [text, setText] = useState("")
 
-console.log(chartMsg.charts)
+  const handleMute = () => {
+    setMute(prev=>{
+      if(prev){
+        withClippy((clippy)=>clippy.play("Greeting"))
+      } else {
+        withClippy((clippy)=>clippy.play("DeepIdleA"))
+
+      }
+      return !prev
+    })
+
+  }
   return (
     <>
       <RecoilRoot>
         <ChakraProvider>
-          
-
-  
           <div style={{ display: chartsPage ? null : "None" }}>
+            <Box position="absolute"  zIndex={10} width={"15vw"} minWidth={"17rem"} bottom={"31rem"}>
+            {
+              mute ?
+                <Button float={"right"} bg='teal.300'  onClick={handleMute}>Unmute</Button>
+                :
+                <Button float={"right"} bg='teal.300'  onClick={handleMute}>Mute</Button>
+
+            }
+            </Box>
+            <Input position="absolute" ml="40rem" bg="white" zIndex={20} width={"10rem"} onChange={(e) => setText(e.target.value)}></Input>
+            <Button position="absolute" ml={"50rem"} zIndex={20} onClick={() => createCharts(text)}>Test</Button>
             <Charts
               chartMsg={chartMsg}
               setChartMsg={setChartMsg}
@@ -119,9 +119,16 @@ console.log(chartMsg.charts)
               charts={charts}
               setCharts={setCharts}
               mute={mute}
-              setMute={setMute}
+            />
+
+            <SideMenu
+              setChartMsg={setChartMsg}
+              modifiedChartOptions={modifiedChartOptions}
+              setModifiedChartOptions={setModifiedChartOptions}
+              chartMsg={chartMsg}
               clearCharts={clearCharts}
             />
+
           </div>
           <div style={{ display: !chartsPage ? null : "None" }}>
             <Diagnostics
@@ -132,16 +139,11 @@ console.log(chartMsg.charts)
             createCharts={createCharts}
             setChartMsg={setChartMsg}
             chartMsg={chartMsg}
-          />
-          <SideMenu
-            setChartMsg={setChartMsg}
-            modifiedChartOptions={modifiedChartOptions}
-            setModifiedChartOptions={setModifiedChartOptions}
-            chartMsg={chartMsg}
+            withClippy={withClippy}
           />
 
-          <Box right="0" >
-            {/* <Button onClick={() => setChartsPage(prev => !prev)}>{chartsPage ? "Diagnostics" : "Charts"}</Button> */}
+          <Box position="absolute" top="0" right="0" >
+            <Button onClick={() => setChartsPage(prev => !prev)}>{chartsPage ? "Diagnostics" : "Charts"}</Button>
           </Box>
         </ChakraProvider>
       </RecoilRoot>

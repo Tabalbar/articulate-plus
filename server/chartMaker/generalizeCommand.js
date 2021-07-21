@@ -23,13 +23,14 @@ module.exports = (command, attributes, data, featureMatrix, synonymMatrix) => {
     }
     doc.numbers().replaceWith("quantitative")
     doc.dates().replaceWith("temporal")
+
     for(let i = 0; i < synonymMatrix.length; i++){
         for(let n = 0; n < synonymMatrix[i].length; n++){
             // console.log(catchSynonymCommand.text(), synonymMatrix[i][n])
 
             if(catchSynonymCommand.text().includes(synonymMatrix[i][n].toLowerCase())){
                 console.log(synonymMatrix[i][n].toLowerCase(), 'llllllllll')
-                catchSynonymCommand.replace(synonymMatrix[i][n], synonymMatrix[i][0])
+                // catchSynonymCommand.replace(synonymMatrix[i][n], synonymMatrix[i][0])
             }
         }
     }

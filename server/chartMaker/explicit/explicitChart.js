@@ -21,6 +21,8 @@ module.exports = (intent, chartMsg) => {
             spec: {
                 title: "",
                 mark: "",
+                width: 400,
+                height: 220,
                 transform: [],
                 concat: [],
                 encoding: {

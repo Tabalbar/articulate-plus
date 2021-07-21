@@ -41,8 +41,11 @@ module.exports = (transcript, headerMatrix, synonymAttributes, data, modifiedCha
                             
                             const sentiment = new Sentiment();
                             const result = sentiment.analyze(sentences[i]);
-                            wordCount[j].count += result.score
-                        }
+                            if(result.score >= 0) {
+                                wordCount[j].count += 1
+                            } else {
+                                wordCount[j].count -= 1
+                            }                        }
                     }
                 }
             }

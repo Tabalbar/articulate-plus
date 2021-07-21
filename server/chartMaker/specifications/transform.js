@@ -16,5 +16,8 @@ module.exports = (data, filteredHeaders, chartObj) => {
             }
         }
     }
+    chartObj.charts.spec.transform.push({
+        filterInvalid: true
+    })
     return chartObj
 }

@@ -9,8 +9,6 @@ function Charts({
     setCharts,
     chooseChart,
     mute,
-    setMute,
-    clearCharts
 }) {
 
 
@@ -20,8 +18,6 @@ function Charts({
                 chartMsg={chartMsg}
                 chooseChart={chooseChart}
                 mute={mute}
-                setMute={setMute}
-                clearCharts={clearCharts}
             />
             <ChosenCharts
                 chartMsg={chartMsg}

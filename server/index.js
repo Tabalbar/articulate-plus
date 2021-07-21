@@ -2,7 +2,6 @@ const express = require("express");
 const PORT = process.env.PORT || 6000;
 const app = express();
 const path = require('path');
-
 const ExtendNLP = require('./Pre-processing/ExtendNLP')
 
 /**
@@ -10,7 +9,7 @@ const ExtendNLP = require('./Pre-processing/ExtendNLP')
  */
 const { NlpManager } = require('node-nlp');
 
-const manager = new NlpManager({ languages: ['en'], forceNER: true, nlu: {log: false} });
+const manager = new NlpManager({ languages: ['en'], forceNER: true, nlu: { log: false } });
 
 manager.addDocument('en', 'I want to see the comparison of nominal and quantitative', 'bar');
 manager.addDocument('en', 'show me a a comparison of nominal and quantitative', 'bar');
@@ -77,13 +76,12 @@ app.post("/initialize", (req, res) => {
  */
 const normalizeCommand = require('./chartMaker/normalizeCommand')
 const generalizeCommand = require('./chartMaker/generalizeCommand')
-const chartMaker = require("./chartMaker/chartMaker")
 const getExplicitChartType = require('./chartMaker/specifications/ExplicitChart')
 const explicitChart = require('./chartMaker/explicit/explicitChart')
 const inferredChart = require('./chartMaker/inferred/inferredChart')
-const headerVector = require('./chartMaker/helperFunctions/headerVector')
 const CompareCharts = require('./CompareCharts');
 const modifiedChart = require("./chartMaker/modified/modifiedChart");
+const countVector = require('./chartMaker/countVector')
 
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg
@@ -91,8 +89,8 @@ app.post("/createCharts", async (req, res) => {
   //Remove stop words and change known acronyms 
   const normalizedCommand = normalizeCommand(chartMsg.command)
 
- //Explicit chart commands
-  let {generalizedCommand, synonymCommand} = generalizeCommand(normalizedCommand, chartMsg.attributes,
+  //Explicit chart commands
+  let { generalizedCommand, synonymCommand } = generalizeCommand(normalizedCommand, chartMsg.attributes,
     chartMsg.data, chartMsg.featureMatrix, chartMsg.synonymMatrix)
   chartMsg.synonymCommand = synonymCommand
   chartMsg.generalizedCommand = generalizedCommand
@@ -112,7 +110,6 @@ app.post("/createCharts", async (req, res) => {
    * Inferred implicit chart
    */
   const inferredResponse = await manager.process('en', chartMsg.generalizedCommand)
-  console.log(inferredResponse.intent)
   if (inferredResponse.intent !== "None") {
     chartMsg.inferredChart = inferredChart(inferredResponse.intent, chartMsg)
   } else {
@@ -128,7 +125,7 @@ app.post("/createCharts", async (req, res) => {
     chartMsg.modifiedChart = ""
   }
   CompareCharts(chartMsg)
-
+  chartMsg.headerFreq = countVector(chartMsg.transcript, chartMsg.featureMatrix, chartMsg.synonymMatrix, chartMsg.data)
   res.send({ chartMsg })
 });
 
@@ -140,3 +137,4 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+

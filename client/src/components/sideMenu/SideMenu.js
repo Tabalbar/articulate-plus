@@ -22,18 +22,16 @@ import {
     Stack,
     Radio,
     Input,
-    Textarea
+    HStack
 } from "@chakra-ui/react"
-import { ArrowRightIcon } from '@chakra-ui/icons'
+import { DeleteIcon } from '@chakra-ui/icons'
 import FileInput from './FileInput'
 import { useRecoilState } from 'recoil'
 import { transcriptState } from '../../shared/overHearing'
 
-function SideMenu({ setChartMsg, modifiedChartOptions, setModifiedChartOptions, chartMsg }) {
+function SideMenu({ setChartMsg, modifiedChartOptions, setModifiedChartOptions, chartMsg, clearCharts }) {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [transcriptText, setTranscriptText] = useRecoilState(transcriptState)
-    const [text, setText] = useState("")
 
     const btnRef = React.useRef()
     const handleWindowPastSenteces = (e) => {
@@ -55,13 +53,13 @@ function SideMenu({ setChartMsg, modifiedChartOptions, setModifiedChartOptions, 
 
     return (
         <>
-            {/* <Box position="absolute" left="0" top="50%" zIndex="10">
-                <IconButton variant="outline" colorScheme="teal" size="lg" aria-label="Search database" onClick={onOpen} icon={<ArrowRightIcon />} />
-            </Box> */}
-            <Box position="absolute" left="0" p={"2rem"} height="full" width="25rem" bg="gray.700"  color="white" zIndex="9">
-                <Text fontWeight="bold"  fontSize="lg">Admin</Text>
-                <br/>
-                <br/>
+            <Box position="absolute" minWidth="13rem" left="0" p={"2rem"} height="full" width="12vw" bg="gray.700" color="white" zIndex="9">
+                <HStack>
+                    <Text fontWeight="bold" fontSize="lg">Admin</Text>
+                    <IconButton borderRadius="lg" colorScheme="red" size="sm" aria-label="Search database" onClick={clearCharts} icon={<DeleteIcon />} />
+                </HStack>
+                <br />
+                <br />
                 <Text fontWeight="bold" ml={1}>Load Dataset</Text>
                 <FileInput
                     setChartMsg={setChartMsg}
@@ -78,7 +76,7 @@ function SideMenu({ setChartMsg, modifiedChartOptions, setModifiedChartOptions, 
                             </Radio>
                     {
                         modifiedChartOptions.window.toggle ?
-                            <Input type="number" value={modifiedChartOptions.window.pastSentences} onChange={handleWindowPastSenteces} />
+                            <Input bg="white" color="black" type="number" value={modifiedChartOptions.window.pastSentences} onChange={handleWindowPastSenteces} />
                             :
                             null
                     }
@@ -104,11 +102,12 @@ function SideMenu({ setChartMsg, modifiedChartOptions, setModifiedChartOptions, 
                     borderColor="black"
                     border="2px"
                     zIndex={4}
-                    width="21rem"
+                    width="10vw"
                     bg="white"
                     overflowY="scroll"
                     height="40vh"
                     bottom="0"
+                    minWidth="8rem"
                     position="absolute"
                     mb="1rem"
                     color="black"

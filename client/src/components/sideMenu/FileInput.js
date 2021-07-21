@@ -77,7 +77,7 @@ function FileInput({
     return (
         <>
 
-            <Input p={1} type="file" onChange={loadData} />
+            <Input bg="white" color="black" p={1} type="file" onChange={loadData} />
 
         </>
     )

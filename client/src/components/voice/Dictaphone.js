@@ -11,7 +11,8 @@ const Dictaphone = ({
     //   createChartWithVoice,
     setChartMsg,
     createCharts,
-    chartMsg
+    chartMsg,
+    withClippy
 }) => {
 
     const [listening, setListening] = useState(false)
@@ -33,7 +34,7 @@ const Dictaphone = ({
         if (command === "") {
             return
         }
-        setText((prev)=>prev+ " " + command)
+        // setText((prev)=>prev+ " " + command)
         setChartMsg(prev => {
             return { ...prev, transcript: prev.transcript + ". " + command }
         })
@@ -57,10 +58,6 @@ const Dictaphone = ({
 
     const { transcript } = useSpeechRecognition({ commands })
 
-
-    useEffect(() => {
-        // setOverHearingData(transcript)
-    }, [transcript])
 
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
         return null
@@ -86,7 +83,7 @@ const Dictaphone = ({
                 // borderRadius="lg"
             >   
                     {/* <Siriwave curveDefinition={<Audio/>} style="ios9" amplitude={listening ? 5 : 0} /> */}
-                    <Audio/>
+                    {/* <Audio/> */}
                 {/* <Image   marginLeft="auto" height="full" marginRight="auto" width="5vw" position="relative" src={listening ? talking : notTalking}></Image> */}
 
             </Box>

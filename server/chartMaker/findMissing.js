@@ -55,7 +55,6 @@ function findInferHeader(command, headerFreq, type, extractedHeaders) {
             headerIndex = i
         }
     }
-    console.log(headerToAdd)
     for (let i = 0; i < extractedHeaders.length; i++) {
         if (extractedHeaders[i] == headerFreq[type][headerIndex].header) {
             headerFreq[type].splice(headerIndex, 1)

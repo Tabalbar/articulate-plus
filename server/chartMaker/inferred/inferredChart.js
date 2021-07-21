@@ -18,7 +18,6 @@ module.exports = (intent, chartMsg) => {
     const headerMatrix = createVector(chartMsg.attributes, chartMsg.data)
     let filteredHeaders = extractFilteredHeaders(chartMsg.synonymCommand, headerMatrix, chartMsg.data, chartMsg.attributes, chartMsg.command)
     let extractedHeaders = extractHeaders(chartMsg.synonymCommand, chartMsg.attributes, chartMsg.data, intent)
-    console.log(chartMsg.synonymCommand)
     if(extractedHeaders.length == 0) {
         return ""
     }
@@ -45,6 +44,8 @@ module.exports = (intent, chartMsg) => {
         charts: {
             spec: {
                 title: "",
+                width: 400,
+                height: 220,
                 mark: "",
                 transform: [],
                 concat: [],
@@ -79,7 +80,7 @@ function extractHeaders(command, headers, data, intent) {
     let doc = nlp(command)
     let extractedHeaders = []
     for (let i = 0; i < headers.length; i++) {
-        if (doc.has(headers[i].toLowerCase())) {
+        if (doc.has(headers[i].toLowerCase()) || doc.has(headers[i].toLowerCase().toLowerCase())) {
             extractedHeaders.push(headers[i])
         }
     }
