@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Charts from "./pages/Charts";
 import 'semantic-ui-css/semantic.min.css'
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -8,9 +8,8 @@ import { serverRequest } from './helpers/serverRequest'
 import createDate from './helpers/createDate'
 import { ChakraProvider } from "@chakra-ui/react"
 import { useClippy } from "use-clippy-now";
-import { Button, Box, Input, IconButton } from '@chakra-ui/react'
+import { Button, Box } from '@chakra-ui/react'
 import { thinking } from './components/voice/assistantVoiceOptions'
-import UseVoice from './components/voice/UseVoice'
 import SideMenu from './components/sideMenu/SideMenu'
 import {
   RecoilRoot
@@ -31,7 +30,6 @@ function App() {
     },
     neuralNetwork: true
   })
-
   const [chartMsg, setChartMsg] = useState(JSON.parse(localStorage.getItem("chartMsg")) || {
     command: "",
     attributes: [],
@@ -49,6 +47,9 @@ function App() {
     headerFreq: { quantitative: [], nominal: [], temporal: [] }
   })
 
+  useEffect(() => {
+    localStorage.setItem("chartMsg", JSON.stringify(chartMsg))
+  },[chartMsg])
 
 
   const createCharts = (command) => {
@@ -63,8 +64,7 @@ function App() {
 
     }, 1000)
 
-    UseVoice(thinkingResponse, mute)
-    serverRequest(chartMsg, setChartMsg, withClippy, modifiedChartOptions, mute)
+    return serverRequest(chartMsg, setChartMsg, withClippy, modifiedChartOptions, mute)
 
   }
 
@@ -82,7 +82,6 @@ function App() {
   const clearCharts = () => {
     localStorage.removeItem("chartMsg")
   }
-  const [text, setText] = useState("")
 
   const handleMute = () => {
     setMute(prev=>{
@@ -110,8 +109,8 @@ function App() {
 
             }
             </Box>
-            <Input position="absolute" ml="40rem" bg="white" zIndex={20} width={"10rem"} onChange={(e) => setText(e.target.value)}></Input>
-            <Button position="absolute" ml={"50rem"} zIndex={20} onClick={() => createCharts(text)}>Test</Button>
+            {/* <Input position="absolute" ml="40rem" bg="white" zIndex={20} width={"10rem"} onChange={(e) => setText(e.target.value)}></Input>
+            <Button position="absolute" ml={"50rem"} zIndex={20} onClick={() => createCharts(text)}>Test</Button> */}
             <Charts
               chartMsg={chartMsg}
               setChartMsg={setChartMsg}
@@ -133,6 +132,7 @@ function App() {
           <div style={{ display: !chartsPage ? null : "None" }}>
             <Diagnostics
               chartMsg={chartMsg}
+              mute={mute}
             />
           </div>
           <Dictaphone

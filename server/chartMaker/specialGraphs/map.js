@@ -18,7 +18,6 @@ module.exports = (chartObj, extractedHeaders, data, headerFreq, command) => {
     if(extractedHeaders[0] !== "map") {
         extractedHeaders = switchHeaders(extractedHeaders, 0, extractedHeaders.length-1)
     }
-    console.log(extractedHeaders)
     if(extractedHeaders == "") {
         return ""
     }

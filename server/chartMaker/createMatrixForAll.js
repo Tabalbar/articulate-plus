@@ -19,7 +19,6 @@ module.exports = (headers, data) => {
                 // output.push(thesaurus.find(data[n][headers[i]]))
                 output = output.flat()
             }
-            console.log(output)
             featureMatrix.push(output)
         } else {
             var output = [headers[i]]

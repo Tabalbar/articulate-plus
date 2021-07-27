@@ -106,6 +106,7 @@ app.post("/createCharts", async (req, res) => {
   }
 
 
+
   /**
    * Inferred implicit chart
    */
@@ -124,6 +125,8 @@ app.post("/createCharts", async (req, res) => {
   } else {
     chartMsg.modifiedChart = ""
   }
+
+
   CompareCharts(chartMsg)
   chartMsg.headerFreq = countVector(chartMsg.transcript, chartMsg.featureMatrix, chartMsg.synonymMatrix, chartMsg.data)
   res.send({ chartMsg })

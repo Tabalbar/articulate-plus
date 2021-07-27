@@ -26,8 +26,6 @@ import {
 } from "@chakra-ui/react"
 import { DeleteIcon } from '@chakra-ui/icons'
 import FileInput from './FileInput'
-import { useRecoilState } from 'recoil'
-import { transcriptState } from '../../shared/overHearing'
 
 function SideMenu({ setChartMsg, modifiedChartOptions, setModifiedChartOptions, chartMsg, clearCharts }) {
 

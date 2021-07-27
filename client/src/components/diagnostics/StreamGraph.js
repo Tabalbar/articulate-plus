@@ -36,7 +36,6 @@ const StreamGraph = ({
         for (let i = 0; i < attributes.length; i++) {
             tmpStreamData.push({ header: attributes[i], count: 0, date: new Date() })
         }
-        console.log(tmpStreamData)
 
         setStreamData(tmpStreamData)
     }, [attributes])
@@ -44,7 +43,6 @@ const StreamGraph = ({
     useEffect(() => {
         let sentences = overHearingData.split('.')
         setSentencesLength(sentences.length)
-        console.log(sentences)
         let tmpStreamData = streamData
         if (sentences.length > sentecesLength) {
             let lastSentence = sentences[sentences.length - 1]
@@ -72,7 +70,6 @@ const StreamGraph = ({
                 }
             }
         }
-        console.log(overHearingData)
 
         setStreamData(tmpStreamData.flat())
     }, [overHearingData])

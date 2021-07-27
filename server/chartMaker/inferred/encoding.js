@@ -5,7 +5,7 @@ const parallelCoordinates = require('../specialGraphs/parallelCoordinates')
 const findMissing = require("../findMissing").findMissing
 const nlp = require("compromise")
 
-module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command, normalize) => {
+module.exports = (chartObj, intent, extractedHeaders, data, headerFreq, command) => {
     let numHeaders = extractedHeaders.length
     let quantitativeFound = false
 

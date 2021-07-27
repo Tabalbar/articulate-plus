@@ -48,11 +48,11 @@ function WordCloud({
         enableTooltip: true,
         deterministic: true,
         rotations: 0,
-        fontSizes: [20, 50]
+        fontSizes: [10, 30]
     }
     return (
         <>
-            <div style={{ height: 500, width: 600 }}>
+            <div style={{ height: 600, width: 600 }}>
                 <ReactWordCloud  words={words} options={options} />
             </div>
         </>

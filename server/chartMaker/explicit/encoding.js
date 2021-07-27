@@ -1,5 +1,4 @@
 const findType = require("../findType")
-const lineBar = require('./marks/lineBar')
 const parallelCoordinates = require('../specialGraphs/parallelCoordinates')
 const map = require('../specialGraphs/map')
 const nlp = require('compromise')

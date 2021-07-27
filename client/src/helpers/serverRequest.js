@@ -17,6 +17,7 @@ export async function serverRequest(chartMsg, setChartMsg, withClippy, modifiedC
     // console.log(JSON.parse(body.chartMsg))
     const responseChartMsg = JSON.parse(body)
     let tmpChartMsg = responseChartMsg.chartMsg
+
     setChartMsg(prev => {
         return {
             ...prev,
@@ -24,6 +25,7 @@ export async function serverRequest(chartMsg, setChartMsg, withClippy, modifiedC
             headerFreq: tmpChartMsg.headerFreq.headerFreq
         }
     })
+
     let count = 0;
     if (tmpChartMsg.explicitChart !== "") {
         count++
@@ -61,8 +63,8 @@ export async function serverRequest(chartMsg, setChartMsg, withClippy, modifiedC
         }
     }
     withClippy((clippy) => clippy.speak(assistantResponse))
-    UseVoice(assistantResponse, mute)
+    let msg = UseVoice(assistantResponse, mute)
 
-    return
+    return msg
 }
 

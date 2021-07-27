@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Draggable from 'react-draggable';
 import { VegaLite } from 'react-vega'
 import '../../style.css'
-import { Box, IconButton, Spacer } from '@chakra-ui/react'
+import { Box, IconButton } from '@chakra-ui/react'
 import { CloseIcon } from '@chakra-ui/icons'
 import ReactResizeDetector from 'react-resize-detector'
 
@@ -13,8 +13,6 @@ function Window(props) {
         tmpCharts[props.index].x = data.x
         tmpCharts[props.index].y = data.y
         props.setCharts(tmpCharts)
-        console.log('Event: ', e);
-        console.log('Data: ', data);
 
     };
 
