@@ -40,7 +40,7 @@ function App() {
       assistantResponse: "",
       errMsg: [],
       charts: [],
-      headerFreq: { quantitative: [], nominal: [], temporal: [] },
+      headerFrequencyCount: { quantitative: [], nominal: [], temporal: [] },
     }
   );
 
@@ -79,7 +79,7 @@ function App() {
   const clearCharts = () => {
     localStorage.removeItem("chartMsg");
   };
-
+  console.log(chartMsg.headerFreq);
   const handleMute = () => {
     setMute((prev) => {
       if (prev) {

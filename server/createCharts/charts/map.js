@@ -2,7 +2,14 @@ const findType = require("../helperFunctions/findType");
 const findMissing = require("../helperFunctions/findMissing").findMissing;
 const nlp = require("compromise");
 
-module.exports = (chartObj, extractedHeaders, data, headerFreq, command) => {
+module.exports = (
+  chartObj,
+  extractedHeaders,
+  data,
+  headerFreq,
+  command,
+  options
+) => {
   // if(extractedHeaders.length == 0) {
   //     extractedHeaders =  findMissing(extractedHeaders, data, 1, headerFreq, command, "NQT")
   // }
@@ -11,6 +18,7 @@ module.exports = (chartObj, extractedHeaders, data, headerFreq, command) => {
   //         chartObj.charts.spec.encoding.color = { field: extractedHeaders[i], type: findType(extractedHeaders[i], data) }
   chartObj.charts.spec.projection = { type: "albersUsa" };
   extractedHeaders = findAndAddMapAttribute(extractedHeaders);
+
   if (extractedHeaders.length < 2) {
     extractedHeaders = findMissing(
       extractedHeaders,
@@ -29,9 +37,7 @@ module.exports = (chartObj, extractedHeaders, data, headerFreq, command) => {
       extractedHeaders.length - 1
     );
   }
-  if (extractedHeaders == "") {
-    return "";
-  }
+
   chartObj.charts.spec.encoding = {
     shape: {
       field: "geo",

@@ -1,9 +1,7 @@
 const nlp = require("compromise");
 nlp.extend(require("compromise-numbers"));
 nlp.extend(require("compromise-dates"));
-var thesaurus = require("thesaurus");
 const findType = require("./findType");
-const createMatrixForAll = require("./createMatrixForAll");
 
 module.exports = (command, attributes, data, featureMatrix, synonymMatrix) => {
   let doc = nlp(command);

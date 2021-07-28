@@ -139,14 +139,10 @@ app.post("/initialize", (req, res) => {
 /**
  * Generalize the command and send through chartMaker pipeline
  */
-const normalizeCommand = require("./chartMaker/normalizeCommand");
-const generalizeCommand = require("./chartMaker/generalizeCommand");
-const getExplicitChartType = require("./chartMaker/specifications/ExplicitChart");
-const explicitChart = require("./chartMaker/explicit/explicitChart");
-const inferredChart = require("./chartMaker/inferred/inferredChart");
+const generalizeCommand = require("./generalizeCommand");
+const getExplicitChartType = require("./createCharts/explicit/ExplicitChart");
 const CompareCharts = require("./CompareCharts");
-const modifiedChart = require("./chartMaker/modified/modifiedChart");
-const countVector = require("./chartMaker/countVector");
+const countHeaderFrequency = require("./createCharts/countHeaderFrequency");
 
 const createCharts = require("./createCharts/createCharts");
 
@@ -226,11 +222,19 @@ app.post("/createCharts", async (req, res) => {
   }
 
   CompareCharts(chartMsg);
-  chartMsg.headerFreq = countVector(
+  chartMsg.headerFrequencyCount = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
     chartMsg.synonymMatrix,
-    chartMsg.data
+    chartMsg.data,
+    {
+      semanticAnalysis: true,
+      window: {
+        toggle: true,
+        pastSentences: 999,
+      },
+      neuralNetwork: true,
+    }
   );
   res.send({ chartMsg });
 });

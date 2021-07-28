@@ -12,6 +12,7 @@ module.exports = {
     if (extractedHeaders.length == 0) {
       return "";
     }
+
     let missing = reorder(extractedHeaders, targetHeaderLength, data, sequence);
     if (missing.n) {
       extractedHeaders = findInferHeader(
@@ -126,6 +127,11 @@ function findInferHeader(command, headerFreq, type, extractedHeaders) {
   extractedHeaders.push(headerToAdd);
 
   command += " " + headerToAdd;
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    if (extractedHeaders[i] == undefined) {
+      extractedHeaders.splice(i, 1);
+    }
+  }
   return extractedHeaders;
 }
 
@@ -163,9 +169,15 @@ function reorder(extractedHeaders, targetHeaderLength, data, sequence) {
       if (targetHeaderLength == 2) {
         missing.t = false;
         for (let i = 0; i < extractedHeaders.length; i++) {
+          console.log(extractedHeaders);
           if (findType(extractedHeaders[i], data) == "nominal") {
             extractedHeaders = switchHeaders(extractedHeaders, 0, i);
             missing.n = false;
+            break;
+          }
+          if (findType(extractedHeaders[i], data) == "quantitative") {
+            extractedHeaders = switchHeaders(extractedHeaders, 1, i);
+            missing.q = false;
             break;
           }
         }

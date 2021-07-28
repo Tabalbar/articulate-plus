@@ -1,5 +1,5 @@
 const nlp = require("compromise");
-const createVector = require("../createVector");
+const createVector = require("../chartMaker/createVector");
 const countVector = require("./countVector");
 const transform = require("../helperFunctions/transform");
 const mark = require("../helperFunctions/mark");

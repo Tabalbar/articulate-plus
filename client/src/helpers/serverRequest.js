@@ -32,7 +32,8 @@ export async function serverRequest(
         tmpChartMsg.inferredChart,
         tmpChartMsg.modifiedChart,
       ],
-      headerFreq: tmpChartMsg.headerFreq.headerFreq,
+      headerFrequencyCount:
+        tmpChartMsg.headerFrequencyCount.headerFrequencyCount,
     };
   });
 

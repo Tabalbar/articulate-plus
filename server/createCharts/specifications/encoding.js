@@ -9,11 +9,11 @@ module.exports = (
   extractedHeaders,
   data,
   headerFreq,
-  command
+  command,
+  options
 ) => {
   let numHeaders = extractedHeaders.length;
   let quantitativeFound = false;
-  console.log(intent);
   if (intent == "parallelCoordinates" || numHeaders > 3) {
     intent = parallelCoordinates;
     chartObj.charts.spec.mark = "line";
@@ -28,7 +28,7 @@ module.exports = (
   }
 
   if (intent == "map") {
-    return map(chartObj, extractedHeaders, data, headerFreq, command);
+    return map(chartObj, extractedHeaders, data, headerFreq, command, options);
   }
   switch (numHeaders) {
     case 1:

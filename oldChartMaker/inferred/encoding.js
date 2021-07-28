@@ -1,6 +1,6 @@
-const findType = require("../findType");
-const map = require("../specialGraphs/map");
-const parallelCoordinates = require("../specialGraphs/parallelCoordinates");
+const findType = require("../chartMaker/findType");
+const map = require("../chartMaker/specialGraphs/map");
+const parallelCoordinates = require("../chartMaker/specialGraphs/parallelCoordinates");
 const nlp = require("compromise");
 
 module.exports = (

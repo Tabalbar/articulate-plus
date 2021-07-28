@@ -78,7 +78,8 @@ module.exports = (intent, chartMsg, options) => {
     extractedHeaders,
     chartMsg.data,
     headerFrequencyCount,
-    chartMsg.command
+    chartMsg.command,
+    options
   );
   chartObj = transform(chartMsg.data, filteredHeaders, chartObj, intent);
   chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
