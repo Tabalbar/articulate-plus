@@ -1,4 +1,4 @@
-export default function createDate() {
+module.exports = () => {
   let date = new Date();
   const [month, day, year] = [
     date.getMonth(),
@@ -40,4 +40,4 @@ export default function createDate() {
     " " +
     amOrPm;
   return date;
-}
+};

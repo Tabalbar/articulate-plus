@@ -1,4 +1,3 @@
-const nlp = require("compromise");
 const findType = require("./findType");
 
 module.exports = {

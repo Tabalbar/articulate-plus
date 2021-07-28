@@ -1,6 +1,6 @@
-const findType = require("../findType");
-const map = require("../specialGraphs/map");
-const parallelCoordinates = require("../specialGraphs/parallelCoordinates");
+const findType = require("../helperFunctions/findType");
+const map = require("../charts/map");
+const parallelCoordinates = require("../charts/parallelCoordinates");
 const nlp = require("compromise");
 
 module.exports = (
@@ -13,8 +13,11 @@ module.exports = (
 ) => {
   let numHeaders = extractedHeaders.length;
   let quantitativeFound = false;
+  console.log(intent);
+  if (intent == "parallelCoordinates" || numHeaders > 3) {
+    intent = parallelCoordinates;
+    chartObj.charts.spec.mark = "line";
 
-  if (intent == "parallelCoordinates") {
     return parallelCoordinates(
       chartObj,
       extractedHeaders,
@@ -102,26 +105,68 @@ module.exports = (
         command,
         3
       );
-      extractedHeaders = reorderLowestCountForColor(extractedHeaders, data);
-      chartObj.charts.spec.encoding.column = {
-        field: extractedHeaders[2],
-        type: findType(extractedHeaders[2], data),
-        spacing: 20,
-      };
+      if (extractedHeaders.length < 3) {
+        chartObj.errMsg =
+          "I tried to make a " +
+          intent +
+          " chart, but i coldn't find the right data";
+      }
+
       chartObj.charts.spec.encoding.x = {
         field: extractedHeaders[0],
         type: findType(extractedHeaders[0], data),
-        axis: { labelAngle: -50 },
+        axis: { labelAngle: -50, title: "" },
+        sort: sortArray(extractedHeaders[0], data),
       };
       chartObj.charts.spec.encoding.y = {
+        aggregate: "count",
+      };
+      chartObj.charts.spec.encoding.column = {
         field: extractedHeaders[1],
         type: findType(extractedHeaders[1], data),
+        sort: sortArray(extractedHeaders[1], data),
+        spacing: 40,
       };
       chartObj.charts.spec.encoding.color = {
-        field: extractedHeaders[0],
-        type: findType(extractedHeaders[0], data),
+        field: extractedHeaders[2],
+        type: findType(extractedHeaders[2], data),
+        scale: {
+          range: createColors(extractedHeaders[2], data),
+        },
+        sort: sortArray(extractedHeaders[2], data),
       };
+      chartObj.charts.spec.width = 60;
+
       return chartObj;
+
+      break;
+    // quantitativeFound = findQuantitative(
+    //   extractedHeaders,
+    //   data,
+    //   headerFreq,
+    //   command,
+    //   3
+    // );
+    // extractedHeaders = reorderLowestCountForColor(extractedHeaders, data);
+    // chartObj.charts.spec.encoding.column = {
+    //   field: extractedHeaders[2],
+    //   type: findType(extractedHeaders[2], data),
+    //   spacing: 20,
+    // };
+    // chartObj.charts.spec.encoding.x = {
+    //   field: extractedHeaders[0],
+    //   type: findType(extractedHeaders[0], data),
+    //   axis: { labelAngle: -50 },
+    // };
+    // chartObj.charts.spec.encoding.y = {
+    //   field: extractedHeaders[1],
+    //   type: findType(extractedHeaders[1], data),
+    // };
+    // chartObj.charts.spec.encoding.color = {
+    //   field: extractedHeaders[0],
+    //   type: findType(extractedHeaders[0], data),
+    // };
+    // return chartObj;
     default:
       chartObj.errMsg = "Error";
       return chartObj;

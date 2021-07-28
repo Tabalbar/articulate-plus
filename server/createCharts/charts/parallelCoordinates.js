@@ -1,6 +1,5 @@
-const findType = require("../findType");
+const findType = require("../helperFunctions/findType");
 const pearsonCorrelation = require("../helperFunctions/pearsonCorrelation");
-const findMissing = require("../findMissing").findMissing;
 
 module.exports = (chartObj, extractedHeaders, data, headerFreq, command) => {
   let folds = reorderForParallel(extractedHeaders, data);
@@ -11,7 +10,7 @@ module.exports = (chartObj, extractedHeaders, data, headerFreq, command) => {
   chartObj.charts.spec.encoding.detail = { type: "nominal", field: "index" };
   chartObj.charts.spec.encoding.opacity = { value: 0.3 };
   chartObj.charts.spec.encoding.x = { type: "nominal", field: "key" };
-  chartObj.charts.spec.encoding.y = { type: "quantitative", field: "value" };
+  chartObj.charts.spec.encoding.y = { field: "value" };
 
   chartObj.charts.spec.transform = [
     { window: [{ op: "count", as: "index" }] },

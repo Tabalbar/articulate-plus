@@ -1,65 +1,59 @@
 const nlp = require("compromise");
-const createVector = require("../createVector");
-const countVector = require("./countVector");
-const transform = require("../helperFunctions/transform");
-const mark = require("../helperFunctions/mark");
-const findType = require("../helperFunctions/findType");
-const encoding = require("../inferred/encoding");
-const createDate = require("../helperFunctions/createDate");
-const title = require("../helperFunctions/title");
+const findFiltersInData = require("./findFiltersInData");
+const countHeaderFrequency = require("./countHeaderFrequency");
+const findType = require("./helperFunctions/findType");
+const createDate = require("./helperFunctions/createDate");
 
-// let chart = chartMaker.chartMaker(explicitChart, synonymCommand, attributes, data, headerMatrix, command, headerFreq, randomChart)
-// chartObj.push(chartMaker.chartMaker(response.classifications[i].intent, synonymCommand, attributes, data, headerMatrix, command, headerFreq))
+const transform = require("./specifications/transform");
+const mark = require("./specifications/mark");
+const encoding = require("./specifications/encoding");
+const title = require("./specifications/title");
 
-module.exports = (intent, chartMsg, modifiedChartOptions) => {
-  const headerMatrix = createVector(chartMsg.attributes, chartMsg.data);
-  let filteredHeaders = extractFilteredHeaders(
-    chartMsg.command,
-    headerMatrix,
-    chartMsg.data,
-    chartMsg.attributes,
-    chartMsg.command
-  );
+module.exports = (intent, chartMsg, options) => {
   let extractedHeaders = extractHeaders(
     chartMsg.command,
     chartMsg.attributes,
     chartMsg.data,
     intent
   );
-
-  if (extractedHeaders.length == 0) {
-    return "";
-  }
-  const { headerFreq } = countVector(
+  let filteredHeaders = extractFilteredHeaders(
+    chartMsg.command,
+    chartMsg.data,
+    chartMsg.attributes,
+    chartMsg.command
+  );
+  const { headerFrequencyCount } = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
     chartMsg.synonymMatrix,
     chartMsg.data,
-    modifiedChartOptions
+    options
   );
-  const headerKeys = Object.keys(headerFreq);
+  const headerKeys = Object.keys(headerFrequencyCount);
   for (let i = 0; i < headerKeys.length; i++) {
-    for (let j = 0; j < headerFreq[headerKeys[i]].length; j++) {
-      if (headerFreq[headerKeys[i]][j].count >= 5) {
+    for (let j = 0; j < headerFrequencyCount[headerKeys[i]].length; j++) {
+      if (headerFrequencyCount[headerKeys[i]][j].count >= 5) {
         let found = false;
         for (let n = 0; n < extractedHeaders.length; n++) {
-          if (extractedHeaders[n] == headerFreq[headerKeys[i]][j].header) {
+          if (
+            extractedHeaders[n] == headerFrequencyCount[headerKeys[i]][j].header
+          ) {
             found = true;
           }
         }
         if (!found) {
-          extractedHeaders.push(headerFreq[headerKeys[i]][j].header);
+          extractedHeaders.push(headerFrequencyCount[headerKeys[i]][j].header);
         }
       }
     }
   }
-
+  let charts = [];
   let chartObj = {
     charts: {
       spec: {
         title: "",
         width: 400,
-        height: 270,
+        height: 220,
         mark: "",
         transform: [],
         concat: [],
@@ -77,19 +71,17 @@ module.exports = (intent, chartMsg, modifiedChartOptions) => {
       },
     },
   };
-  // chartObj = title(chartObj, actualCommand)
   chartObj = mark(chartObj, intent);
   chartObj = encoding(
     chartObj,
     intent,
     extractedHeaders,
     chartMsg.data,
-    headerFreq,
+    headerFrequencyCount,
     chartMsg.command
   );
   chartObj = transform(chartMsg.data, filteredHeaders, chartObj, intent);
   chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
-
   return chartObj;
 };
 
@@ -97,7 +89,10 @@ function extractHeaders(command, headers, data, intent) {
   let doc = nlp(command);
   let extractedHeaders = [];
   for (let i = 0; i < headers.length; i++) {
-    if (doc.has(headers[i].toLowerCase())) {
+    if (
+      doc.has(headers[i].toLowerCase()) ||
+      doc.has(headers[i].toLowerCase().toLowerCase())
+    ) {
       extractedHeaders.push(headers[i]);
     }
   }
@@ -118,21 +113,6 @@ function extractHeaders(command, headers, data, intent) {
       }
     }
   }
-  // let keys = Object.keys(filteredHeaders);
-  // for (let i = 0; i < keys.length; i++) {
-  //     let found = false;
-  //     if (filteredHeaders[keys[i]].length > 0 ) {
-  //         for (let n = 0; n < extractedHeaders.length; n++) {
-  //             if (extractedHeaders[n] === keys[i]) {
-  //                 found = true
-  //             }
-  //         }
-  //         if (!found) {
-  //             extractedHeaders.push(keys[i])
-  //         }
-  //     }
-
-  // }
 
   if (doc.has("overtime") || doc.has("time")) {
     let foundTime = false;
@@ -154,7 +134,8 @@ function extractHeaders(command, headers, data, intent) {
   return extractedHeaders;
 }
 
-function extractFilteredHeaders(command, headerMatrix, data, headers, command) {
+function extractFilteredHeaders(command, data, headers, command) {
+  const headerMatrix = findFiltersInData(headers, data);
   let doc = nlp(command);
   let extractedFilteredHeaders = [];
   let foundTimeHeader = false;
@@ -221,20 +202,4 @@ function extractFilteredHeaders(command, headerMatrix, data, headers, command) {
     return { foundTime, timeHeader };
   }
   return extractedFilteredHeaders;
-}
-
-/* 
-Function used to calculate the number of unique words for a category.
-This is used to infer what to parse in the comparison branch
- 
-Args:
-    Extracted headers -> keyword attributes extracted from the command
-    Data: Actual data from data set
- 
-Returns: 
-    Vector length of unique words from every attribute header
-*/
-function countCategories(extractedHeeader, data) {
-  const unique = [...new Set(data.map((item) => item[extractedHeeader]))];
-  return unique.length;
 }

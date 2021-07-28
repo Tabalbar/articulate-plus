@@ -1,188 +1,58 @@
-const findType = require("../findType");
-const map = require("../specialGraphs/map");
-const parallelCoordinates = require("../specialGraphs/parallelCoordinates");
+const findType = require("../helperFunctions/findType");
+const findMissing = require("../helperFunctions/findMissing").findMissing;
 const nlp = require("compromise");
 
-module.exports = (
-  chartObj,
-  intent,
-  extractedHeaders,
-  data,
-  headerFreq,
-  command
-) => {
-  let numHeaders = extractedHeaders.length;
-  let quantitativeFound = false;
+module.exports = (chartObj, extractedHeaders, data, headerFreq, command) => {
+  // if(extractedHeaders.length == 0) {
+  //     extractedHeaders =  findMissing(extractedHeaders, data, 1, headerFreq, command, "NQT")
+  // }
 
-  if (intent == "parallelCoordinates") {
-    return parallelCoordinates(
-      chartObj,
+  //         chartObj.charts.spec.encoding.theta = { aggregate: "count" }
+  //         chartObj.charts.spec.encoding.color = { field: extractedHeaders[i], type: findType(extractedHeaders[i], data) }
+  chartObj.charts.spec.projection = { type: "albersUsa" };
+  extractedHeaders = findAndAddMapAttribute(extractedHeaders);
+  if (extractedHeaders.length < 2) {
+    extractedHeaders = findMissing(
       extractedHeaders,
       data,
+      2,
       headerFreq,
-      command
+      command,
+      "NQT"
     );
   }
 
-  if (intent == "map") {
-    return map(chartObj, extractedHeaders, data, headerFreq, command);
+  if (extractedHeaders[0] !== "map") {
+    extractedHeaders = switchHeaders(
+      extractedHeaders,
+      0,
+      extractedHeaders.length - 1
+    );
   }
-  switch (numHeaders) {
-    case 1:
-      chartObj.charts.spec.encoding.x = {
-        field: extractedHeaders[0],
-        type: findType(extractedHeaders[0], data),
-        axis: { labelAngle: -50 },
-      };
-      chartObj.charts.spec.encoding.y = {
-        aggregate: "count",
-      };
-      return chartObj;
-    case 2:
-      quantitativeFound = findQuantitative(
-        extractedHeaders,
-        data,
-        headerFreq,
-        command,
-        2
-      );
-      if (extractedHeaders.length < 2) {
-        chartObj.errMsg =
-          "I tried to make a " +
-          intent +
-          " chart, but i coldn't find the right data";
-      }
-
-      if (quantitativeFound) {
-        chartObj.charts.spec.encoding.x = {
-          field: extractedHeaders[0],
-          type: findType(extractedHeaders[0], data),
-          axis: { labelAngle: -50 },
-        };
-        chartObj.charts.spec.encoding.y = {
-          field: extractedHeaders[0],
-          type: findType(extractedHeaders[0], data),
-        };
-      } else {
-        chartObj.charts.spec.encoding.x = {
-          field: extractedHeaders[0],
-          type: findType(extractedHeaders[0], data),
-          axis: { labelAngle: -50, title: "" },
-          sort: sortArray(extractedHeaders[0], data),
-        };
-        chartObj.charts.spec.encoding.y = {
-          aggregate: "count",
-        };
-        chartObj.charts.spec.encoding.column = {
-          field: extractedHeaders[1],
-          type: findType(extractedHeaders[1], data),
-          sort: sortArray(extractedHeaders[1], data),
-          spacing: 40,
-        };
-        chartObj.charts.spec.encoding.color = {
-          field: extractedHeaders[0],
-          type: findType(extractedHeaders[0], data),
-          scale: {
-            range: createColors(extractedHeaders[0], data),
-          },
-          sort: sortArray(extractedHeaders[0], data),
-        };
-        chartObj.charts.spec.width = 60;
-      }
-
-      if (extractedHeaders.length === 2) {
-        return chartObj;
-      }
-      break;
-    case 3:
-      quantitativeFound = findQuantitative(
-        extractedHeaders,
-        data,
-        headerFreq,
-        command,
-        3
-      );
-      extractedHeaders = reorderLowestCountForColor(extractedHeaders, data);
-      chartObj.charts.spec.encoding.column = {
-        field: extractedHeaders[2],
-        type: findType(extractedHeaders[2], data),
-        spacing: 20,
-      };
-      chartObj.charts.spec.encoding.x = {
-        field: extractedHeaders[0],
-        type: findType(extractedHeaders[0], data),
-        axis: { labelAngle: -50 },
-      };
-      chartObj.charts.spec.encoding.y = {
-        field: extractedHeaders[1],
-        type: findType(extractedHeaders[1], data),
-      };
-      chartObj.charts.spec.encoding.color = {
-        field: extractedHeaders[0],
-        type: findType(extractedHeaders[0], data),
-      };
-      return chartObj;
-    default:
-      chartObj.errMsg = "Error";
-      return chartObj;
+  if (extractedHeaders == "") {
+    return "";
   }
+  chartObj.charts.spec.encoding = {
+    shape: {
+      field: "geo",
+      type: "geojson",
+    },
+    color: {
+      field: extractedHeaders[1],
+      type: findType(extractedHeaders[1], data),
+      scale: {
+        range: createColors(extractedHeaders[1], data),
+      },
+      sort: sortArray(extractedHeaders[1], data),
+    },
+  };
+  return chartObj;
 };
 
 function switchHeaders(extractedHeaders, targetIndex, sourceIndex) {
   let tmpHeader = extractedHeaders[targetIndex];
   extractedHeaders[targetIndex] = extractedHeaders[sourceIndex];
   extractedHeaders[sourceIndex] = tmpHeader;
-  return extractedHeaders;
-}
-
-function createColors(header, data) {
-  let colorArray = [];
-  const unique = [...new Set(data.map((item) => item[header]))];
-
-  let colorGradient = new Rainbow();
-  for (let i = 0; i < unique.length; i++) {
-    colorArray.push("#" + colorGradient.colourAt(i * 10));
-  }
-
-  return colorArray;
-}
-
-function findQuantitative(
-  extractedHeaders,
-  data,
-  headerFreq,
-  command,
-  expectedHeaderLength
-) {
-  let quantitativeFound = false;
-  for (let i = 0; i < extractedHeaders.length; i++) {
-    if (findType(extractedHeaders[i], data) == "temporal") {
-      extractedHeaders = switchHeaders(extractedHeaders, 0, i);
-    }
-  }
-  for (let i = 0; i < extractedHeaders.length; i++) {
-    if (findType(extractedHeaders[i], data) == "quantitative") {
-      extractedHeaders = switchHeaders(extractedHeaders, 1, i);
-      quantitativeFound = true;
-    }
-  }
-  return quantitativeFound;
-}
-
-function reorderLowestCountForColor(extractedHeaders, data) {
-  const uniqueLengthOne = [
-    ...new Set(data.map((item) => item[extractedHeaders[0]])),
-  ];
-  const uniqueLengthtwo = [
-    ...new Set(data.map((item) => item[extractedHeaders[2]])),
-  ];
-  if (uniqueLengthOne <= uniqueLengthtwo) {
-    extractedHeaders = switchHeaders(extractedHeaders, 2, 0);
-  }
-  if (findType(extractedHeaders[2], data) == "quantitative") {
-    extractedHeaders = switchHeaders(extractedHeaders, 2, 0);
-  }
-
   return extractedHeaders;
 }
 
@@ -232,6 +102,45 @@ function sortArray(header, data) {
   }
 
   return unique;
+}
+
+function findAndAddMapAttribute(extractedHeaders) {
+  let mapFound = false;
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    if (extractedHeaders[i] === "map") {
+      mapFound = true;
+      if (i > 0) {
+        extractedHeaders = switchHeaders(
+          extractedHeaders,
+          0,
+          extractedHeaders.length - 1
+        );
+      }
+      break;
+    }
+  }
+  if (!mapFound) {
+    extractedHeaders.push("map");
+
+    extractedHeaders = switchHeaders(
+      extractedHeaders,
+      0,
+      extractedHeaders.length - 1
+    );
+  }
+  return extractedHeaders;
+}
+
+function createColors(header, data) {
+  let colorArray = [];
+  const unique = [...new Set(data.map((item) => item[header]))];
+
+  let colorGradient = new Rainbow();
+  for (let i = 0; i < unique.length; i++) {
+    colorArray.push("#" + colorGradient.colourAt(i * 10));
+  }
+
+  return colorArray;
 }
 
 function Rainbow() {

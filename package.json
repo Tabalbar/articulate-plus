@@ -9,7 +9,7 @@
     "build": "cd client && npm install && npm run build",
     "server": "nodemon server/index.js",
     "client": "cd client && npm start",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "dev": "concurrently --names \"SERVER,CLIENT\" -c \"blue,yellow\" --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "repository": {
     "type": "git",
