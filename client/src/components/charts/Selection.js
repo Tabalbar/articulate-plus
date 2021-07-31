@@ -30,7 +30,7 @@ function ChartSelection({ chartMsg, chooseChart }) {
               return (
                 <>
                   {chart ? (
-                    <Box zIndex={20} p={2}>
+                    <Box zIndex={20} p={2} key={index}>
                       <ChartPlaceholder
                         specification={chart.charts.spec}
                         data={chartMsg.data}
@@ -67,14 +67,13 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
     specification.timeSpentHovered += parseFloat(Number(timeDiff).toFixed(2));
     setHovered(false);
   };
-
   return (
     <>
       <Box
         bg="transparent"
         zIndex={hovered ? 10 : 3}
         onClick={
-          clicked
+          specification.visible
             ? null
             : () => {
                 endTimer();
@@ -84,7 +83,7 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
         }
         onMouseOver={startTimer}
         onMouseLeave={endTimer}
-        opacity={clicked ? 0.5 : null}
+        opacity={specification.visible ? 0.5 : null}
       >
         <Box bg="white" borderColor="black" borderWidth="3px" rounded="lg">
           <VegaLite spec={spec} data={{ table: data }} />

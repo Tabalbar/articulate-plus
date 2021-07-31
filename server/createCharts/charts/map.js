@@ -10,12 +10,6 @@ module.exports = (
   command,
   options
 ) => {
-  // if(extractedHeaders.length == 0) {
-  //     extractedHeaders =  findMissing(extractedHeaders, data, 1, headerFreq, command, "NQT")
-  // }
-
-  //         chartObj.charts.spec.encoding.theta = { aggregate: "count" }
-  //         chartObj.charts.spec.encoding.color = { field: extractedHeaders[i], type: findType(extractedHeaders[i], data) }
   chartObj.charts.spec.projection = { type: "albersUsa" };
   extractedHeaders = findAndAddMapAttribute(extractedHeaders);
 
@@ -26,8 +20,11 @@ module.exports = (
       2,
       headerFreq,
       command,
-      "NQT"
+      "MN"
     );
+  }
+  if (extractedHeaders == "") {
+    return "";
   }
 
   if (extractedHeaders[0] !== "map") {
@@ -37,7 +34,6 @@ module.exports = (
       extractedHeaders.length - 1
     );
   }
-
   chartObj.charts.spec.encoding = {
     shape: {
       field: "geo",

@@ -1,5 +1,5 @@
 const nlp = require("compromise");
-const findType = require("./helperFunctions/findType");
+const findType = require("../createCharts/helperFunctions/findType");
 const Sentiment = require("sentiment");
 
 module.exports = (
@@ -15,6 +15,7 @@ module.exports = (
     nominal: [],
     quantitative: [],
     temporal: [],
+    map: [],
   };
   for (let i = 0; i < headerMatrix.length; i++) {
     synonymsAndFeatures.push(headerMatrix[i].concat(tmpSynonymAttributes[i]));
@@ -26,6 +27,7 @@ module.exports = (
     wordCount.push({ header: synonymsAndFeatures[i][0], count: 0 });
   }
   let sentences = transcript.split(".");
+  sentences.splice(0, modifiedChartOptions.window.pastSenteces);
   if (
     modifiedChartOptions.semanticAnalysis &&
     modifiedChartOptions.window.toggle
@@ -52,7 +54,6 @@ module.exports = (
         }
       }
     }
-
     for (let i = 0; i < wordCount.length; i++) {
       headerFrequencyCount[findType(wordCount[i].header, data)].push(
         wordCount[i]

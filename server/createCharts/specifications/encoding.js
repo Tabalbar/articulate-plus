@@ -14,19 +14,24 @@ module.exports = (
 ) => {
   let numHeaders = extractedHeaders.length;
   let quantitativeFound = false;
-  if (intent == "parallelCoordinates" || numHeaders > 3) {
-    intent = parallelCoordinates;
-    chartObj.charts.spec.mark = "line";
+  // if (intent == "parallelCoordinates" || numHeaders > 3) {
+  //   intent = parallelCoordinates;
+  //   chartObj.charts.spec.mark = "line";
 
-    return parallelCoordinates(
-      chartObj,
-      extractedHeaders,
-      data,
-      headerFreq,
-      command
-    );
+  //   return parallelCoordinates(
+  //     chartObj,
+  //     extractedHeaders,
+  //     data,
+  //     headerFreq,
+  //     command
+  //   );
+  // }
+
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    if (extractedHeaders[i] == "map") {
+      intent = "map";
+    }
   }
-
   if (intent == "map") {
     return map(chartObj, extractedHeaders, data, headerFreq, command, options);
   }
@@ -75,12 +80,13 @@ module.exports = (
         };
         chartObj.charts.spec.encoding.y = {
           aggregate: "count",
+          axis: { grid: false },
         };
         chartObj.charts.spec.encoding.column = {
           field: extractedHeaders[1],
           type: findType(extractedHeaders[1], data),
           sort: sortArray(extractedHeaders[1], data),
-          spacing: 40,
+          spacing: 60,
         };
         chartObj.charts.spec.encoding.color = {
           field: extractedHeaders[0],
@@ -89,6 +95,9 @@ module.exports = (
             range: createColors(extractedHeaders[0], data),
           },
           sort: sortArray(extractedHeaders[0], data),
+        };
+        chartObj.charts.spec.config = {
+          view: { stroke: "transparent" },
         };
         chartObj.charts.spec.width = 60;
       }

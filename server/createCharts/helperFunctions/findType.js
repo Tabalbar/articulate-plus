@@ -1,5 +1,12 @@
+let specialTypes = [{ header: "map", type: "map" }];
+
 module.exports = (header, data) => {
   let lowerCaseHeader = header.toLowerCase();
+  for (let i = 0; i < specialTypes.length; i++) {
+    if (header === specialTypes[i].header) {
+      return specialTypes[i].type;
+    }
+  }
   if (
     lowerCaseHeader.includes("date") ||
     lowerCaseHeader.includes("year") ||

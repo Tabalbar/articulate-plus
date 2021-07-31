@@ -170,7 +170,7 @@ app.post("/createCharts", async (req, res) => {
       semanticAnalysis: false,
       window: {
         toggle: false,
-        pastSentences: 999,
+        pastSentences: 20,
       },
       neuralNetwork: false,
     };
@@ -179,7 +179,7 @@ app.post("/createCharts", async (req, res) => {
   } else {
     chartMsg.explicitChart = "";
   }
-
+  console.log(chartMsg.explicitChart.charts);
   /**
    * Inferred implicit chart
    */
@@ -192,7 +192,7 @@ app.post("/createCharts", async (req, res) => {
       semanticAnalysis: true,
       window: {
         toggle: true,
-        pastSentences: 999,
+        pastSentences: 20,
       },
       neuralNetwork: true,
     };
@@ -220,7 +220,7 @@ app.post("/createCharts", async (req, res) => {
   } else {
     chartMsg.modifiedChart = "";
   }
-
+  console.log(chartMsg.explicitChart);
   CompareCharts(chartMsg);
   chartMsg.headerFrequencyCount = countHeaderFrequency(
     chartMsg.transcript,

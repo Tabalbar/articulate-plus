@@ -48,6 +48,49 @@ module.exports = (intent, chartMsg, options) => {
     }
   }
   let charts = [];
+  if (extractedHeaders.length == 1) {
+    let chartObj = runAlgortihm(
+      intent,
+      extractedHeaders,
+      chartMsg.data,
+      headerFrequencyCount,
+      chartMsg.command,
+      options,
+      filteredHeaders
+    );
+    charts.push(chartObj);
+  } else {
+    for (let i = 0; i < extractedHeaders.length; i++) {
+      for (let j = i + 1; j < extractedHeaders.length; j++) {
+        let twoExtractedHeaders = [];
+
+        twoExtractedHeaders.push(extractedHeaders[i], extractedHeaders[j]);
+        let chartObj = runAlgortihm(
+          intent,
+          twoExtractedHeaders,
+          chartMsg.data,
+          headerFrequencyCount,
+          chartMsg.command,
+          options,
+          filteredHeaders
+        );
+        charts.push(chartObj);
+      }
+    }
+  }
+
+  return charts;
+};
+
+function runAlgortihm(
+  intent,
+  twoExtractedHeaders,
+  data,
+  headerFrequencyCount,
+  command,
+  options,
+  filteredHeaders
+) {
   let chartObj = {
     charts: {
       spec: {
@@ -63,11 +106,11 @@ module.exports = (intent, chartMsg, options) => {
           x: {},
         },
         initialized: createDate(),
-        timeChosen: "",
-        timeClosed: "",
+        timeChosen: [],
+        timeClosed: [],
         timeSpentHovered: 0,
         data: { name: "table" }, // note: vega-lite data attribute is a plain object instead of an array
-        command: chartMsg.command,
+        command: command,
       },
     },
   };
@@ -75,16 +118,23 @@ module.exports = (intent, chartMsg, options) => {
   chartObj = encoding(
     chartObj,
     intent,
-    extractedHeaders,
-    chartMsg.data,
+    twoExtractedHeaders,
+    data,
     headerFrequencyCount,
-    chartMsg.command,
+    command,
     options
   );
-  chartObj = transform(chartMsg.data, filteredHeaders, chartObj, intent);
-  chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
+  if (chartObj == "") {
+    charts.push("");
+  }
+  chartObj = transform(data, filteredHeaders, chartObj, intent);
+  chartObj.charts.spec.title = title(
+    twoExtractedHeaders,
+    intent,
+    filteredHeaders
+  );
   return chartObj;
-};
+}
 
 function extractHeaders(command, headers, data, intent) {
   let doc = nlp(command);

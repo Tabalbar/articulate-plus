@@ -11,6 +11,7 @@ import { useClippy } from "use-clippy-now";
 import { Button, Box, Input } from "@chakra-ui/react";
 import { thinking } from "./components/voice/assistantVoiceOptions";
 import SideMenu from "./components/sideMenu/SideMenu";
+import UseVoice from "./components/voice/UseVoice";
 
 function App() {
   const withClippy = useClippy("Links");
@@ -18,10 +19,10 @@ function App() {
   const [chartsPage, setChartsPage] = useState(true);
   const [charts, setCharts] = useState([]);
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
-    semanticAnalysis: true,
+    semanticAnalysis: false,
     window: {
       toggle: true,
-      pastSentences: 999,
+      pastSentences: 20,
     },
     neuralNetwork: true,
   });
@@ -40,10 +41,14 @@ function App() {
       assistantResponse: "",
       errMsg: [],
       charts: [],
-      headerFrequencyCount: { quantitative: [], nominal: [], temporal: [] },
+      headerFrequencyCount: {
+        quantitative: [],
+        nominal: [],
+        temporal: [],
+        map: [],
+      },
     }
   );
-
   useEffect(() => {
     localStorage.setItem("chartMsg", JSON.stringify(chartMsg));
   }, [chartMsg]);
@@ -57,7 +62,7 @@ function App() {
     setTimeout(() => {
       withClippy((clippy) => clippy.play("Processing"));
     }, 1000);
-
+    let msg = UseVoice(thinkingResponse, mute);
     return serverRequest(
       chartMsg,
       setChartMsg,
@@ -68,7 +73,7 @@ function App() {
   };
 
   const chooseChart = (chosenChart) => {
-    chosenChart.timeChosen = createDate();
+    chosenChart.timeChosen.push(createDate());
     chosenChart.visible = true;
     setCharts((prev) => [...prev, chosenChart]);
 
@@ -79,7 +84,7 @@ function App() {
   const clearCharts = () => {
     localStorage.removeItem("chartMsg");
   };
-  console.log(chartMsg.headerFreq);
+
   const handleMute = () => {
     setMute((prev) => {
       if (prev) {

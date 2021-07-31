@@ -1,7 +1,7 @@
 const nlp = require("compromise");
 nlp.extend(require("compromise-numbers"));
 nlp.extend(require("compromise-dates"));
-const findType = require("./findType");
+const findType = require("./createCharts/helperFunctions/findType");
 
 module.exports = (command, attributes, data, featureMatrix, synonymMatrix) => {
   let doc = nlp(command);

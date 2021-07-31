@@ -14,6 +14,7 @@ module.exports = {
     }
 
     let missing = reorder(extractedHeaders, targetHeaderLength, data, sequence);
+    console.log(missing);
     if (missing.n) {
       extractedHeaders = findInferHeader(
         command,
@@ -94,6 +95,22 @@ module.exports = {
         sequence
       );
     }
+    if (missing.m) {
+      extractedHeaders = findInferHeader(
+        command,
+        headerFreq,
+        "map",
+        extractedHeaders
+      );
+      return module.exports.findMissing(
+        extractedHeaders,
+        data,
+        targetHeaderLength,
+        headerFreq,
+        command,
+        sequence
+      );
+    }
     return extractedHeaders;
   },
 };
@@ -107,11 +124,11 @@ function switchHeaders(extractedHeaders, targetIndex, sourceIndex) {
 
 function findInferHeader(command, headerFreq, type, extractedHeaders) {
   let headerIndex = 0;
+
   if (headerFreq[type].length == 0) {
     return "";
   }
   let headerToAdd = headerFreq[type][headerIndex].header;
-
   for (let i = 1; i < headerFreq[type].length; i++) {
     if (headerFreq[type][headerIndex].count < headerFreq[type][i].count) {
       headerToAdd = headerFreq[type][i].header;
@@ -144,6 +161,28 @@ function reorder(extractedHeaders, targetHeaderLength, data, sequence) {
     q3: true,
   };
   switch (sequence) {
+    case "MN":
+      missing = {
+        n: true,
+        q: false,
+        t: false,
+        q2: false,
+        q3: false,
+        m: true,
+      };
+      if (targetHeaderLength == 2) {
+        for (let i = 0; i < extractedHeaders.length; i++) {
+          if (findType(extractedHeaders[i], data) == "map") {
+            missing.m = false;
+          }
+          if (findType(extractedHeaders[i], data) == "nominal") {
+            missing.n = false;
+          }
+        }
+        console.log(missing);
+      }
+      return missing;
+
     case "NQT":
       missing = {
         n: true,
@@ -151,6 +190,7 @@ function reorder(extractedHeaders, targetHeaderLength, data, sequence) {
         t: true,
         q2: false,
         q3: false,
+        m: false,
       };
       //For length 1
       if (targetHeaderLength == 1) {
@@ -223,6 +263,7 @@ function reorder(extractedHeaders, targetHeaderLength, data, sequence) {
         t: false,
         q2: true,
         q3: true,
+        m: false,
       };
       //For length 2
       if (targetHeaderLength == 2) {
@@ -275,6 +316,7 @@ function reorder(extractedHeaders, targetHeaderLength, data, sequence) {
         t: false,
         q2: false,
         q3: false,
+        m: false,
       };
 
       //For length 1

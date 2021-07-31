@@ -2,7 +2,7 @@ import React from "react";
 import Draggable from "react-draggable";
 import { VegaLite } from "react-vega";
 import "../../style.css";
-import { Box, IconButton } from "@chakra-ui/react";
+import { Box, IconButton, Text } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 
 function Window(props) {
@@ -26,8 +26,9 @@ function Window(props) {
       <Draggable
         handle=".handle"
         grid={[1, 1]}
+        className="react-draggable"
         scale={1}
-        bounds={{ bottom: 510, left: 0 }}
+        bounds="parent"
         defaultPosition={{
           x: props.charts[props.index].x,
           y: props.charts[props.index].y,
@@ -46,16 +47,25 @@ function Window(props) {
           resize="both"
           width={900}
           height={500}
+          className="react-draggable"
         >
           <div className="handle" style={{ cursor: "move", width: "auto" }}>
-            <Box borderTopRadius="sm" bg="teal.800" height="full">
+            <Box
+              borderTopRadius="sm"
+              color="white"
+              fontWeight="bold"
+              bg="blue.800"
+              height="full"
+            >
               <IconButton
                 colorScheme="red"
                 borderRadius="sm"
                 aria-label="Search database"
                 icon={<CloseIcon />}
+                mr={2}
                 onClick={() => props.handleDelete(props.index)}
               />
+              {props.specification.title}
             </Box>
             <VegaLite
               // width={width - 200}

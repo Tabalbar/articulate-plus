@@ -22,66 +22,68 @@ export async function serverRequest(
   // console.log(JSON.parse(body.chartMsg))
   const responseChartMsg = JSON.parse(body);
   let tmpChartMsg = responseChartMsg.chartMsg;
-
+  let newCharts = [
+    ...tmpChartMsg.explicitChart,
+    ...tmpChartMsg.inferredChart,
+    ...tmpChartMsg.modifiedChart,
+  ];
+  newCharts = newCharts.filter((x) => {
+    return x !== "";
+  });
   setChartMsg((prev) => {
     return {
       ...prev,
-      charts: [
-        ...prev.charts,
-        tmpChartMsg.explicitChart,
-        tmpChartMsg.inferredChart,
-        tmpChartMsg.modifiedChart,
-      ],
+      charts: [...prev.charts, ...newCharts],
       headerFrequencyCount:
         tmpChartMsg.headerFrequencyCount.headerFrequencyCount,
     };
   });
 
-  let count = 0;
-  if (tmpChartMsg.explicitChart !== "") {
-    count++;
-  }
-  if (tmpChartMsg.inferredChart !== "") {
-    count++;
-  }
-  if (tmpChartMsg.modifiedChart !== "") {
-    count++;
-  }
-  let assistantResponse = "";
+  // let count = 0;
+  // if (tmpChartMsg.explicitChart !== "") {
+  //   count++;
+  // }
+  // if (tmpChartMsg.inferredChart !== "") {
+  //   count++;
+  // }
+  // if (tmpChartMsg.modifiedChart !== "") {
+  //   count++;
+  // }
+  // let assistantResponse = "";
 
-  if (count == 0) {
-    assistantResponse = "I couldn't find any charts for you";
-  } else {
-    assistantResponse = "I have " + count.toString() + " charts for you.";
-    if (tmpChartMsg.explicitChart !== "") {
-      assistantResponse +=
-        " I have a " + tmpChartMsg.explicitChart.charts.spec.title + "...";
-    }
-    if (tmpChartMsg.inferredChart !== "") {
-      if (assistantResponse.substring(assistantResponse.length - 3) == "...") {
-        assistantResponse +=
-          " Then I have a " +
-          tmpChartMsg.inferredChart.charts.spec.title +
-          "...";
-      } else {
-        assistantResponse +=
-          " I have a " + tmpChartMsg.inferredChart.charts.spec.title + "...";
-      }
-    }
-    if (tmpChartMsg.modifiedChart !== "") {
-      if (assistantResponse.substring(assistantResponse.length - 3) == "...") {
-        assistantResponse +=
-          " Then I have a " +
-          tmpChartMsg.modifiedChart.charts.spec.title +
-          "...";
-      } else {
-        assistantResponse +=
-          " I have a " + tmpChartMsg.modifiedChart.charts.spec.title + ".";
-      }
-    }
-  }
-  withClippy((clippy) => clippy.speak(assistantResponse));
-  let msg = UseVoice(assistantResponse, mute);
+  // if (count == 0) {
+  //   assistantResponse = "I couldn't find any charts for you";
+  // } else {
+  //   assistantResponse = "I have " + count.toString() + " charts for you.";
+  //   if (tmpChartMsg.explicitChart !== "") {
+  //     assistantResponse +=
+  //       " I have a " + tmpChartMsg.explicitChart.charts.spec.title + "...";
+  //   }
+  //   if (tmpChartMsg.inferredChart !== "") {
+  //     if (assistantResponse.substring(assistantResponse.length - 3) == "...") {
+  //       assistantResponse +=
+  //         " Then I have a " +
+  //         tmpChartMsg.inferredChart.charts.spec.title +
+  //         "...";
+  //     } else {
+  //       assistantResponse +=
+  //         " I have a " + tmpChartMsg.inferredChart.charts.spec.title + "...";
+  //     }
+  //   }
+  //   if (tmpChartMsg.modifiedChart !== "") {
+  //     if (assistantResponse.substring(assistantResponse.length - 3) == "...") {
+  //       assistantResponse +=
+  //         " Then I have a " +
+  //         tmpChartMsg.modifiedChart.charts.spec.title +
+  //         "...";
+  //     } else {
+  //       assistantResponse +=
+  //         " I have a " + tmpChartMsg.modifiedChart.charts.spec.title + ".";
+  //     }
+  //   }
+  // }
+  withClippy((clippy) => clippy.speak("done"));
+  let msg = UseVoice("done", mute);
 
   return msg;
 }

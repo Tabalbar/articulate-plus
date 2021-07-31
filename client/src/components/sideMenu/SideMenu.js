@@ -175,7 +175,9 @@ function SideMenu({
                   <AccordionPanel pb={4}>
                     <UnorderedList>
                       {chartMsg.featureMatrix[index].map((value, index) => {
-                        return index > 0 ? <ListItem>{value}</ListItem> : null;
+                        return index > 0 ? (
+                          <ListItem key={index}>{value}</ListItem>
+                        ) : null;
                       })}
                     </UnorderedList>
                   </AccordionPanel>

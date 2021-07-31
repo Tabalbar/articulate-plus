@@ -96,10 +96,20 @@ function Diagnostics({ chartMsg }) {
                 <Th>Attribute</Th>
                 <Th>Frequency Count</Th>
               </Tr>
-              {chartMsg.headerFrequencyCount.nominal.map((value, index) => {
+              {chartMsg.headerFrequencyCount.map.map((value, index) => {
                 return (
                   <>
                     <Tr>
+                      <Td key={index}> {value.header}</Td>
+                      <Td> {value.count}</Td>
+                    </Tr>
+                  </>
+                );
+              })}
+              {chartMsg.headerFrequencyCount.nominal.map((value, index) => {
+                return (
+                  <>
+                    <Tr key={index}>
                       <Td> {value.header}</Td>
                       <Td> {value.count}</Td>
                     </Tr>
@@ -111,7 +121,7 @@ function Diagnostics({ chartMsg }) {
                   return (
                     <>
                       <Tr>
-                        <Td> {value.header}</Td>
+                        <Td key={index}> {value.header}</Td>
                         <Td> {value.count}</Td>
                       </Tr>
                     </>
