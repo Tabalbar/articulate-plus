@@ -23,7 +23,7 @@ module.exports = (chartMsg) => {
       }
     }
   }
-  console.log(chartMsg.explicitChart);
+  // console.log(chartMsg.explicitChart);
 
   //Check if Explicit equal inferred and modified
   for (let i = 0; i < chartMsg.explicitChart.length; i++) {
@@ -106,7 +106,8 @@ function isChartsEqual(chartOne, chartTwo) {
   if (
     JSON.stringify(chartOne.encoding) == JSON.stringify(chartTwo.encoding) &&
     JSON.stringify(chartOne.mark) == JSON.stringify(chartTwo.mark) &&
-    JSON.stringify(chartOne.transform) == JSON.stringify(chartTwo.transform)
+    JSON.stringify(chartOne.transform) == JSON.stringify(chartTwo.transform) &&
+    JSON.stringify(chartOne.layer) == JSON.stringify(chartTwo.layer)
   ) {
     return true;
   } else {

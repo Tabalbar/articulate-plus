@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import { VegaLite } from "react-vega";
 import "../../style.css";
 import { Box, IconButton, Text } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
+import { useResizeDetector } from "react-resize-detector";
 
 function Window(props) {
+  const { width, height, ref } = useResizeDetector();
+  const [specification, setSpecification] = useState(props.specification);
+  const [chartData, setChartData] = useState(props.data);
   const eventLogger = (e, data) => {
     let tmpCharts = props.charts;
     tmpCharts[props.index].x = data.x;
@@ -20,6 +24,25 @@ function Window(props) {
       e.currentTarget.style.zIndex = 12;
     }
   };
+  useEffect(() => {
+    if (specification.hasOwnProperty("layer")) {
+      fetch(
+        "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+      )
+        .then((response) => response.json())
+        .then((csvData) => setChartData(csvData));
+    }
+  }, []);
+
+  useEffect(() => {
+    setSpecification((prev) => {
+      return {
+        ...prev,
+        width: parseInt(width) - 225,
+        height: parseInt(height) - 200,
+      };
+    });
+  }, [width, height]);
 
   return (
     <>
@@ -42,11 +65,13 @@ function Window(props) {
           overflow="auto"
           border="1px"
           boxShadow="2xl"
+          ref={ref}
           borderColor="black"
           borderRadius="sm"
           resize="both"
           width={900}
           height={500}
+          onClick={(e) => onStart(e)}
           className="react-draggable"
         >
           <div className="handle" style={{ cursor: "move", width: "auto" }}>
@@ -65,13 +90,13 @@ function Window(props) {
                 mr={2}
                 onClick={() => props.handleDelete(props.index)}
               />
-              {props.specification.title}
+              {specification.title}
             </Box>
             <VegaLite
               // width={width - 200}
               // height={height - 200}
-              spec={props.specification}
-              data={{ table: props.data }}
+              spec={specification}
+              data={{ table: chartData }}
             />
           </div>
         </Box>

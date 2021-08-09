@@ -6,15 +6,18 @@ import Diagnostics from "./pages/Diagnostics";
 import Dictaphone from "./components/voice/Dictaphone";
 import { serverRequest } from "./helpers/serverRequest";
 import createDate from "./helpers/createDate";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, VStack } from "@chakra-ui/react";
 import { useClippy } from "use-clippy-now";
-import { Button, Box, Input } from "@chakra-ui/react";
+import { Button, Box, Input, Image } from "@chakra-ui/react";
 import { thinking } from "./components/voice/assistantVoiceOptions";
 import SideMenu from "./components/sideMenu/SideMenu";
 import UseVoice from "./components/voice/UseVoice";
+import listeningImage from "./clippyImages/Listening.png";
+import muteImage from "./clippyImages/Mute.png";
+import thinkingImage from "./clippyImages/Thinking.png";
 
 function App() {
-  const withClippy = useClippy("Links");
+  const [forceUpdate, setForceUpdate] = useState(true);
   const [mute, setMute] = useState(false);
   const [chartsPage, setChartsPage] = useState(true);
   const [charts, setCharts] = useState([]);
@@ -49,33 +52,51 @@ function App() {
       },
     }
   );
+  const [clippyImage, setClippyImage] = useState(listeningImage);
+  const [voiceMsg, setVoiceMsg] = useState(null);
   useEffect(() => {
-    localStorage.setItem("chartMsg", JSON.stringify(chartMsg));
+    // localStorage.setItem("chartMsg", JSON.stringify(chartMsg));
   }, [chartMsg]);
-
   const createCharts = (command) => {
     if (command) {
       chartMsg.command = command;
     }
     let thinkingResponse = thinking[Math.floor(Math.random() * 4)];
-    withClippy((clippy) => clippy.speak(thinkingResponse));
-    setTimeout(() => {
-      withClippy((clippy) => clippy.play("Processing"));
-    }, 1000);
+    setClippyImage(thinkingImage);
     let msg = UseVoice(thinkingResponse, mute);
-    return serverRequest(
+    serverRequest(
       chartMsg,
       setChartMsg,
-      withClippy,
       modifiedChartOptions,
-      mute
-    );
+      mute,
+      setClippyImage,
+      thinkingImage
+    ).then(() => {
+      if (mute) {
+        setClippyImage(muteImage);
+      } else {
+        setClippyImage(listeningImage);
+      }
+    });
+    msg.onend(() => {
+      console.log("dne");
+    });
   };
 
   const chooseChart = (chosenChart) => {
     chosenChart.timeChosen.push(createDate());
     chosenChart.visible = true;
-    setCharts((prev) => [...prev, chosenChart]);
+    let found = false;
+    for (let i = 0; i < charts.length; i++) {
+      if (chosenChart == charts[i]) {
+        found = true;
+      }
+    }
+    if (!found) {
+      setCharts((prev) => [...prev, chosenChart]);
+    } else {
+      setForceUpdate((prev) => !prev);
+    }
 
     chartMsg.explicitChart = "";
     chartMsg.inferredChart = "";
@@ -83,19 +104,18 @@ function App() {
   };
   const clearCharts = () => {
     localStorage.removeItem("chartMsg");
+    localStorage.clear();
   };
-
   const handleMute = () => {
     setMute((prev) => {
-      if (prev) {
-        withClippy((clippy) => clippy.play("Greeting"));
+      if (mute) {
+        setClippyImage(listeningImage);
       } else {
-        withClippy((clippy) => clippy.play("DeepIdleA"));
+        setClippyImage(muteImage);
       }
       return !prev;
     });
   };
-  console.log(chartMsg.charts);
   const [text, setText] = useState("");
   return (
     <>
@@ -103,20 +123,35 @@ function App() {
         <div style={{ display: chartsPage ? null : "None" }}>
           <Box
             position="absolute"
-            zIndex={10}
-            width={"15vw"}
-            minWidth={"17rem"}
-            bottom={"31rem"}
+            zIndex={9}
+            // bg="red"
+            ml={"3rem"}
+            width={"14vw"}
+            minWidth={"16rem"}
+            bottom={"31em"}
           >
-            {mute ? (
-              <Button float={"right"} bg="teal.300" onClick={handleMute}>
-                Unmute
-              </Button>
-            ) : (
-              <Button float={"right"} bg="teal.300" onClick={handleMute}>
-                Mute
-              </Button>
-            )}
+            <VStack float="right" spacing={".5px"}>
+              <Image boxSize="90px" float="right" src={clippyImage} />
+              {mute ? (
+                <Button
+                  width={"5rem"}
+                  float={"right"}
+                  bg="teal.300"
+                  onClick={handleMute}
+                >
+                  Unmute
+                </Button>
+              ) : (
+                <Button
+                  width={"5rem"}
+                  float={"right"}
+                  bg="teal.300"
+                  onClick={handleMute}
+                >
+                  Mute
+                </Button>
+              )}
+            </VStack>
           </Box>
           <Input
             position="absolute"
@@ -158,7 +193,7 @@ function App() {
           createCharts={createCharts}
           setChartMsg={setChartMsg}
           chartMsg={chartMsg}
-          withClippy={withClippy}
+          voiceMsg={voiceMsg}
         />
         <Box position="absolute" top="0" right="0">
           <Button onClick={() => setChartsPage((prev) => !prev)}>

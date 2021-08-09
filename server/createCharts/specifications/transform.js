@@ -32,6 +32,34 @@ module.exports = (data, filteredHeaders, chartObj, intent) => {
       },
       as: "geo",
     });
+    let obj = {
+      data: chartObj.charts.spec.data,
+      mark: chartObj.charts.spec.mark,
+      transform: chartObj.charts.spec.transform,
+      encoding: chartObj.charts.spec.encoding,
+    };
+    delete chartObj.charts.spec.data;
+    delete chartObj.charts.spec.mark;
+    delete chartObj.charts.spec.transform;
+    delete chartObj.charts.spec.encoding;
+    delete chartObj.charts.spec.concat;
+    chartObj.charts.spec.layer = [
+      {
+        data: {
+          url: "https://raw.githubusercontent.com/vega/vega/master/docs/data/us-10m.json",
+          format: {
+            type: "topojson",
+            feature: "states",
+          },
+        },
+        mark: {
+          type: "geoshape",
+          fill: "lightgray",
+          stroke: "white",
+        },
+      },
+      obj,
+    ];
   }
 
   return chartObj;

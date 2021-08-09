@@ -3,9 +3,10 @@ import UseVoice from "../components/voice/UseVoice";
 export async function serverRequest(
   chartMsg,
   setChartMsg,
-  withClippy,
   modifiedChartOptions,
-  mute
+  mute,
+  setClippyImage,
+  thinkingImage
 ) {
   const response = await fetch("/createCharts", {
     method: "POST",
@@ -19,6 +20,7 @@ export async function serverRequest(
     },
   });
   const body = await response.text();
+
   // console.log(JSON.parse(body.chartMsg))
   const responseChartMsg = JSON.parse(body);
   let tmpChartMsg = responseChartMsg.chartMsg;
@@ -38,52 +40,25 @@ export async function serverRequest(
         tmpChartMsg.headerFrequencyCount.headerFrequencyCount,
     };
   });
+  let count = newCharts.length;
+  let assistantResponse;
 
-  // let count = 0;
-  // if (tmpChartMsg.explicitChart !== "") {
-  //   count++;
-  // }
-  // if (tmpChartMsg.inferredChart !== "") {
-  //   count++;
-  // }
-  // if (tmpChartMsg.modifiedChart !== "") {
-  //   count++;
-  // }
-  // let assistantResponse = "";
+  console.log(newCharts[0]);
+  if (count == 0) {
+    assistantResponse = "I couldn't find any charts for you";
+  } else {
+    assistantResponse = "I have " + count.toString() + " charts for you.";
+    assistantResponse += " I have a " + newCharts[0].charts.spec.title + "...";
 
-  // if (count == 0) {
-  //   assistantResponse = "I couldn't find any charts for you";
-  // } else {
-  //   assistantResponse = "I have " + count.toString() + " charts for you.";
-  //   if (tmpChartMsg.explicitChart !== "") {
-  //     assistantResponse +=
-  //       " I have a " + tmpChartMsg.explicitChart.charts.spec.title + "...";
-  //   }
-  //   if (tmpChartMsg.inferredChart !== "") {
-  //     if (assistantResponse.substring(assistantResponse.length - 3) == "...") {
-  //       assistantResponse +=
-  //         " Then I have a " +
-  //         tmpChartMsg.inferredChart.charts.spec.title +
-  //         "...";
-  //     } else {
-  //       assistantResponse +=
-  //         " I have a " + tmpChartMsg.inferredChart.charts.spec.title + "...";
-  //     }
-  //   }
-  //   if (tmpChartMsg.modifiedChart !== "") {
-  //     if (assistantResponse.substring(assistantResponse.length - 3) == "...") {
-  //       assistantResponse +=
-  //         " Then I have a " +
-  //         tmpChartMsg.modifiedChart.charts.spec.title +
-  //         "...";
-  //     } else {
-  //       assistantResponse +=
-  //         " I have a " + tmpChartMsg.modifiedChart.charts.spec.title + ".";
-  //     }
-  //   }
-  // }
-  withClippy((clippy) => clippy.speak("done"));
-  let msg = UseVoice("done", mute);
+    for (let i = 1; i < newCharts.length - 1; i++) {
+      assistantResponse += newCharts[i].charts.spec.title + "...";
+    }
+    if (newCharts.length > 1) {
+      assistantResponse +=
+        " and a " + newCharts[newCharts.length - 1].charts.spec.title;
+    }
+  }
+  let msg = UseVoice(assistantResponse, mute);
 
-  return msg;
+  return;
 }

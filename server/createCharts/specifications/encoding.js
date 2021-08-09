@@ -41,6 +41,15 @@ module.exports = (
         field: extractedHeaders[0],
         type: findType(extractedHeaders[0], data),
         axis: { labelAngle: -50 },
+        sort: sortArray(extractedHeaders[0], data),
+      };
+      chartObj.charts.spec.encoding.color = {
+        field: extractedHeaders[0],
+        type: findType(extractedHeaders[0], data),
+        scale: {
+          range: createColors(extractedHeaders[0], data),
+        },
+        sort: sortArray(extractedHeaders[0], data),
       };
       chartObj.charts.spec.encoding.y = {
         aggregate: "count",
@@ -75,31 +84,24 @@ module.exports = (
         chartObj.charts.spec.encoding.x = {
           field: extractedHeaders[0],
           type: findType(extractedHeaders[0], data),
-          axis: { labelAngle: -50, title: "" },
+          axis: { labelAngle: -50 },
           sort: sortArray(extractedHeaders[0], data),
         };
         chartObj.charts.spec.encoding.y = {
-          aggregate: "count",
-          axis: { grid: false },
-        };
-        chartObj.charts.spec.encoding.column = {
           field: extractedHeaders[1],
           type: findType(extractedHeaders[1], data),
           sort: sortArray(extractedHeaders[1], data),
-          spacing: 60,
         };
         chartObj.charts.spec.encoding.color = {
-          field: extractedHeaders[0],
-          type: findType(extractedHeaders[0], data),
-          scale: {
-            range: createColors(extractedHeaders[0], data),
-          },
-          sort: sortArray(extractedHeaders[0], data),
+          field: "map",
+          type: "quantitative",
+          aggregate: "count",
+          scale: { scheme: "reds" },
         };
         chartObj.charts.spec.config = {
-          view: { stroke: "transparent" },
+          axis: { ticks: false, labelPadding: 10, domain: false },
+          view: { strokeWidth: 0 },
         };
-        chartObj.charts.spec.width = 60;
       }
 
       if (extractedHeaders.length === 2) {

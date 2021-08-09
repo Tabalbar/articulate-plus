@@ -43,66 +43,66 @@ manager.addDocument(
 );
 manager.addAnswer("en", "bar", "bar");
 
-manager.addDocument(
-  "en",
-  "I want to see the comparison of quantitative over time",
-  "line"
-);
-manager.addDocument(
-  "en",
-  "show me the comparison of quantitative over temporal",
-  "line"
-);
-manager.addDocument(
-  "en",
-  "Show me the temoral over the years of nominal and quantitative",
-  "line"
-);
-manager.addDocument(
-  "en",
-  "show me a line chart of nominal and quantitative",
-  "line"
-);
-manager.addAnswer("en", "line", "line");
+// manager.addDocument(
+//   "en",
+//   "I want to see the comparison of quantitative over time",
+//   "line"
+// );
+// manager.addDocument(
+//   "en",
+//   "show me the comparison of quantitative over temporal",
+//   "line"
+// );
+// manager.addDocument(
+//   "en",
+//   "Show me the temoral over the years of nominal and quantitative",
+//   "line"
+// );
+// manager.addDocument(
+//   "en",
+//   "show me a line chart of nominal and quantitative",
+//   "line"
+// );
+// manager.addAnswer("en", "line", "line");
 
-manager.addDocument(
-  "en",
-  "Show me the relationship of quantitative and quantitative",
-  "scatter"
-);
-manager.addDocument(
-  "en",
-  "I want to see quantitative by quantitative",
-  "scatter"
-);
-manager.addDocument("en", "show me quantiative by quantitative", "scatter");
-manager.addDocument(
-  "en",
-  "show me a scatter plot of quantitative and quantitative",
-  "scatter"
-);
-manager.addDocument(
-  "en",
-  "show me a point chart of quantitative and quantitative",
-  "scatter"
-);
-manager.addDocument(
-  "en",
-  "show me a bubble chart of quantitative and quantitative colored by nominal",
-  "scatter"
-);
-manager.addAnswer("en", "scatter", "scatter");
+// manager.addDocument(
+//   "en",
+//   "Show me the relationship of quantitative and quantitative",
+//   "scatter"
+// );
+// manager.addDocument(
+//   "en",
+//   "I want to see quantitative by quantitative",
+//   "scatter"
+// );
+// manager.addDocument("en", "show me quantiative by quantitative", "scatter");
+// manager.addDocument(
+//   "en",
+//   "show me a scatter plot of quantitative and quantitative",
+//   "scatter"
+// );
+// manager.addDocument(
+//   "en",
+//   "show me a point chart of quantitative and quantitative",
+//   "scatter"
+// );
+// manager.addDocument(
+//   "en",
+//   "show me a bubble chart of quantitative and quantitative colored by nominal",
+//   "scatter"
+// );
+// manager.addAnswer("en", "scatter", "scatter");
 
 // manager.addDocument('en', 'show me the distribution of quantitative and quantitative', 'heatmap');
 // manager.addDocument('en', 'show me a 2D heatmap', 'heatmap');
 // manager.addAnswer('en', 'heatmap', 'heatmap');
 
-manager.addDocument(
-  "en",
-  "I want to see the difference of nominal by quantitative quantitative and quantitative",
-  "parallelCoordinates"
-);
-manager.addAnswer("en", "parallelCoordinates", "parallelCoordinates");
+// manager.addDocument(
+//   "en",
+//   "I want to see the difference of nominal by quantitative quantitative and quantitative",
+//   "parallelCoordinates"
+// );
+// manager.addAnswer("en", "parallelCoordinates", "parallelCoordinates");
 
 manager.addDocument("en", "show me a quantitative of nominal", "map");
 manager.addAnswer("en", "map", "map");
@@ -177,9 +177,29 @@ app.post("/createCharts", async (req, res) => {
     chartMsg.explicitChart = createCharts(explicitChartType, chartMsg, options);
     // chartMsg.explicitChart = explicitChart(explicitChartType, chartMsg);
   } else {
-    chartMsg.explicitChart = "";
+    const explicitResponse = await manager.process(
+      "en",
+      chartMsg.generalizedCommand
+    );
+    if (explicitResponse.intent !== "None") {
+      let options = {
+        semanticAnalysis: false,
+        window: {
+          toggle: false,
+          pastSentences: 20,
+        },
+        neuralNetwork: false,
+      };
+      chartMsg.explicitChart = createCharts(
+        explicitResponse.intent,
+        chartMsg,
+        options
+      );
+    } else {
+      chartMsg.explicitChart = "";
+    }
   }
-  console.log(chartMsg.explicitChart.charts);
+
   /**
    * Inferred implicit chart
    */
@@ -204,6 +224,7 @@ app.post("/createCharts", async (req, res) => {
   } else {
     chartMsg.inferredChart = "";
   }
+
   /**
    * modified implicit chart
    */
@@ -220,7 +241,6 @@ app.post("/createCharts", async (req, res) => {
   } else {
     chartMsg.modifiedChart = "";
   }
-  console.log(chartMsg.explicitChart);
   CompareCharts(chartMsg);
   chartMsg.headerFrequencyCount = countHeaderFrequency(
     chartMsg.transcript,

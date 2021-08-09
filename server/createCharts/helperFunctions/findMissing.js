@@ -14,7 +14,6 @@ module.exports = {
     }
 
     let missing = reorder(extractedHeaders, targetHeaderLength, data, sequence);
-    console.log(missing);
     if (missing.n) {
       extractedHeaders = findInferHeader(
         command,
@@ -179,7 +178,6 @@ function reorder(extractedHeaders, targetHeaderLength, data, sequence) {
             missing.n = false;
           }
         }
-        console.log(missing);
       }
       return missing;
 
@@ -209,7 +207,6 @@ function reorder(extractedHeaders, targetHeaderLength, data, sequence) {
       if (targetHeaderLength == 2) {
         missing.t = false;
         for (let i = 0; i < extractedHeaders.length; i++) {
-          console.log(extractedHeaders);
           if (findType(extractedHeaders[i], data) == "nominal") {
             extractedHeaders = switchHeaders(extractedHeaders, 0, i);
             missing.n = false;

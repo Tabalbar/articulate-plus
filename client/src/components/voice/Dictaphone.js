@@ -41,7 +41,7 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg }) => {
     if (!listening) {
       const timer = setTimeout(() => {
         setListening(true);
-      }, 2000);
+      }, 5000);
       return () => {
         clearTimeout(timer);
       };

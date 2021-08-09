@@ -133,7 +133,7 @@ function SideMenu({
             </Radio>
           ) : null}
 
-          <Radio
+          {/* <Radio
             isChecked={modifiedChartOptions.neuralNetwork}
             onClick={() =>
               setModifiedChartOptions((prev) => {
@@ -144,7 +144,7 @@ function SideMenu({
             colorScheme="teal"
           >
             Neural Network (NodeNLP)
-          </Radio>
+          </Radio> */}
         </Stack>
         <Box
           borderColor="black"

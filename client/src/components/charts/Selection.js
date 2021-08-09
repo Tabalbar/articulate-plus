@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../style.css";
 import { VegaLite } from "react-vega";
 import { Box, HStack } from "@chakra-ui/react";
@@ -53,9 +53,20 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
   const [spec, setSpec] = useState(specification);
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const [chartData, setChartData] = useState(data);
 
   specification.x = window.innerWidth / 2;
   specification.y = window.innerHeight / 4;
+  useEffect(() => {
+    if (specification.hasOwnProperty("layer")) {
+      fetch(
+        "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+      )
+        .then((response) => response.json())
+        .then((csvData) => setChartData(csvData));
+    }
+  }, []);
+
   const startTimer = () => {
     setStartTime(performance.now());
     setHovered(true);
@@ -86,7 +97,7 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
         opacity={specification.visible ? 0.5 : null}
       >
         <Box bg="white" borderColor="black" borderWidth="3px" rounded="lg">
-          <VegaLite spec={spec} data={{ table: data }} />
+          <VegaLite spec={spec} data={{ table: chartData }} />
         </Box>
       </Box>
     </>

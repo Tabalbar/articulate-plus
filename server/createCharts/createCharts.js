@@ -60,22 +60,20 @@ module.exports = (intent, chartMsg, options) => {
     );
     charts.push(chartObj);
   } else {
-    for (let i = 0; i < extractedHeaders.length; i++) {
-      for (let j = i + 1; j < extractedHeaders.length; j++) {
-        let twoExtractedHeaders = [];
+    for (let j = 1; j < extractedHeaders.length; j++) {
+      let twoExtractedHeaders = [];
 
-        twoExtractedHeaders.push(extractedHeaders[i], extractedHeaders[j]);
-        let chartObj = runAlgortihm(
-          intent,
-          twoExtractedHeaders,
-          chartMsg.data,
-          headerFrequencyCount,
-          chartMsg.command,
-          options,
-          filteredHeaders
-        );
-        charts.push(chartObj);
-      }
+      twoExtractedHeaders.push(extractedHeaders[0], extractedHeaders[j]);
+      let chartObj = runAlgortihm(
+        intent,
+        twoExtractedHeaders,
+        chartMsg.data,
+        headerFrequencyCount,
+        chartMsg.command,
+        options,
+        filteredHeaders
+      );
+      charts.push(chartObj);
     }
   }
 
@@ -114,6 +112,12 @@ function runAlgortihm(
       },
     },
   };
+  for (let i = 0; i < twoExtractedHeaders.length; i++) {
+    if (twoExtractedHeaders[i] == "map" && intent !== "map") {
+      twoExtractedHeaders.splice(i, 1);
+      break;
+    }
+  }
   chartObj = mark(chartObj, intent);
   chartObj = encoding(
     chartObj,
@@ -147,6 +151,19 @@ function extractHeaders(command, headers, data, intent) {
       extractedHeaders.push(headers[i]);
     }
   }
+  let wordPosition = [];
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    wordPosition.push({
+      index: command.indexOf(extractedHeaders[i].toLowerCase()),
+      header: extractedHeaders[i],
+    });
+  }
+  wordPosition.sort((a, b) => a.index - b.index);
+  extractedHeaders = [];
+  for (let i = 0; i < wordPosition.length; i++) {
+    extractedHeaders.push(wordPosition[i].header);
+  }
+
   let accessors = [];
 
   if (intent === "map") {
@@ -190,7 +207,6 @@ function extractFilteredHeaders(command, data, headers, command) {
   let doc = nlp(command);
   let extractedFilteredHeaders = [];
   let foundTimeHeader = false;
-  doc.nouns().toSingular();
   for (let i = 0; i < headerMatrix.length; i++) {
     extractedFilteredHeaders[headerMatrix[i][0]] = [];
     for (let n = 1; n < headerMatrix[i].length; n++) {
