@@ -93,7 +93,6 @@ module.exports = (
           sort: sortArray(extractedHeaders[1], data),
         };
         chartObj.charts.spec.encoding.color = {
-          field: "map",
           type: "quantitative",
           aggregate: "count",
           scale: { scheme: "reds" },

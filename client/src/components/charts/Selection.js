@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../style.css";
 import { VegaLite } from "react-vega";
 import { Box, HStack } from "@chakra-ui/react";
+import processData from "../../helpers/processData";
 
 function ChartSelection({ chartMsg, chooseChart }) {
   return (
@@ -58,15 +59,15 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
   specification.x = window.innerWidth / 2;
   specification.y = window.innerHeight / 4;
   useEffect(() => {
-    if (specification.hasOwnProperty("layer")) {
+    if (specification.hasOwnProperty("layer") || specification.mark == "bar") {
       fetch(
         "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
       )
-        .then((response) => response.json())
-        .then((csvData) => setChartData(csvData));
+        .then((response) => response.text())
+        .then(async (csvData) => setChartData(await processData(csvData)));
     }
   }, []);
-
+  console.log(chartData);
   const startTimer = () => {
     setStartTime(performance.now());
     setHovered(true);

@@ -5,6 +5,7 @@ import "../../style.css";
 import { Box, IconButton, Text } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 import { useResizeDetector } from "react-resize-detector";
+import processData from "../../helpers/processData";
 
 function Window(props) {
   const { width, height, ref } = useResizeDetector();
@@ -25,12 +26,12 @@ function Window(props) {
     }
   };
   useEffect(() => {
-    if (specification.hasOwnProperty("layer")) {
+    if (specification.hasOwnProperty("layer") || specification.mark == "bar") {
       fetch(
         "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
       )
-        .then((response) => response.json())
-        .then((csvData) => setChartData(csvData));
+        .then((response) => response.text())
+        .then(async (csvData) => setChartData(await processData(csvData)));
     }
   }, []);
 
@@ -38,7 +39,7 @@ function Window(props) {
     setSpecification((prev) => {
       return {
         ...prev,
-        width: parseInt(width) - 225,
+        width: parseInt(width) - 300,
         height: parseInt(height) - 200,
       };
     });
@@ -68,6 +69,7 @@ function Window(props) {
           ref={ref}
           borderColor="black"
           borderRadius="sm"
+          borderTopRadius="sm"
           resize="both"
           width={900}
           height={500}
@@ -78,6 +80,7 @@ function Window(props) {
             <Box
               borderTopRadius="sm"
               color="white"
+              width="full"
               fontWeight="bold"
               bg="blue.800"
               height="full"
