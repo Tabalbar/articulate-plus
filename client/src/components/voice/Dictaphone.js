@@ -33,6 +33,7 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg }) => {
       command.includes("show") &&
       checkForAttributes(command, chartMsg.synonymMatrix)
     ) {
+      console.log("called");
       createCharts(command);
     }
   }, [command]);

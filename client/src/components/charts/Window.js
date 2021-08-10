@@ -34,7 +34,6 @@ function Window(props) {
         .then(async (csvData) => setChartData(await processData(csvData)));
     }
   }, []);
-
   useEffect(() => {
     setSpecification((prev) => {
       return {

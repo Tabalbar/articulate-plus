@@ -48,7 +48,7 @@ module.exports = (intent, chartMsg, options) => {
     }
   }
   let charts = [];
-  console.log(extractedHeaders);
+  console.log(intent);
   if (extractedHeaders.length == 1) {
     let chartObj = runAlgortihm(
       intent,
@@ -107,6 +107,7 @@ module.exports = (intent, chartMsg, options) => {
           options,
           filteredHeaders
         );
+        console.log(twoExtractedHeaders);
         charts.push(chartObj);
       }
     }
@@ -219,27 +220,25 @@ function extractHeaders(command, headers, data, intent) {
       }
     }
   }
+  let dateFound = false;
+  let casesFound = false;
 
-  if (intent === "line") {
-    let dateFound = false;
-    let casesFound = false;
-
-    for (let i = 0; i < extractedHeaders.length; i++) {
-      if (extractedHeaders[i] == "cases") {
-        casesFound = true;
-      }
-      if (extractedHeaders[i] == "date") {
-        dateFound = true;
-      }
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    if (extractedHeaders[i] == "cases") {
+      casesFound = true;
     }
-
-    if (!dateFound) {
-      extractedHeaders.push("date");
-    }
-    if (!casesFound) {
-      extractedHeaders.push("cases");
+    if (extractedHeaders[i] == "date") {
+      dateFound = true;
     }
   }
+
+  if (!dateFound) {
+    extractedHeaders.push("date");
+  }
+  if (!casesFound) {
+    extractedHeaders.push("cases");
+  }
+  intent = "line";
 
   if (doc.has("overtime") || doc.has("time")) {
     let foundTime = false;

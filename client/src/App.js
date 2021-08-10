@@ -78,11 +78,11 @@ function App() {
         setClippyImage(listeningImage);
       }
     });
-    msg.onend(() => {
-      console.log("dne");
-    });
+    // msg.onend(() => {
+    //   console.log("dne");
+    // });
   };
-
+  console.log(chartMsg.charts);
   const chooseChart = (chosenChart) => {
     chosenChart.timeChosen.push(createDate());
     chosenChart.visible = true;
