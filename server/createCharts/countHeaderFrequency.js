@@ -44,6 +44,7 @@ module.exports = (
             if (synonymsAndFeatures[j][n].includes(nouns[w])) {
               const sentiment = new Sentiment();
               const result = sentiment.analyze(sentences[i]);
+              // console.log(synonymsAndFeatures[j][n], nouns[w]);
               if (result.score >= 0) {
                 wordCount[j].count += 1;
               } else {

@@ -6,7 +6,7 @@ module.exports = (chartObj, intent) => {
     case "line":
       chartObj.charts.spec.mark = {
         type: "line",
-        point: true,
+        point: { size: 100 },
       };
       return chartObj;
     // case "scatter":

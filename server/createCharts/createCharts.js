@@ -10,18 +10,6 @@ const encoding = require("./specifications/encoding");
 const title = require("./specifications/title");
 
 module.exports = (intent, chartMsg, options) => {
-  let extractedHeaders = extractHeaders(
-    chartMsg.command,
-    chartMsg.attributes,
-    chartMsg.data,
-    intent
-  );
-  let filteredHeaders = extractFilteredHeaders(
-    chartMsg.command,
-    chartMsg.data,
-    chartMsg.attributes,
-    chartMsg.command
-  );
   const { headerFrequencyCount } = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
@@ -29,26 +17,40 @@ module.exports = (intent, chartMsg, options) => {
     chartMsg.data,
     options
   );
-  const headerKeys = Object.keys(headerFrequencyCount);
-  for (let i = 0; i < headerKeys.length; i++) {
-    for (let j = 0; j < headerFrequencyCount[headerKeys[i]].length; j++) {
-      if (headerFrequencyCount[headerKeys[i]][j].count >= 5) {
-        let found = false;
-        for (let n = 0; n < extractedHeaders.length; n++) {
-          if (
-            extractedHeaders[n] == headerFrequencyCount[headerKeys[i]][j].header
-          ) {
-            found = true;
-          }
-        }
-        if (!found) {
-          extractedHeaders.push(headerFrequencyCount[headerKeys[i]][j].header);
-        }
+
+  let extractedHeaders = [];
+  extractedHeaders = extractHeaders(
+    chartMsg.command,
+    chartMsg.attributes,
+    chartMsg.data,
+    intent
+  );
+  if (options.window.toggle) {
+    const headerKeys = Object.keys(headerFrequencyCount);
+    let headersToSort = [];
+    for (let i = 0; i < headerKeys.length; i++) {
+      for (let j = 0; j < headerFrequencyCount[headerKeys[i]].length; j++) {
+        headersToSort.push(headerFrequencyCount[headerKeys[i]][j]);
       }
     }
+    headersToSort.sort((a, b) => (a.count < b.count ? 1 : -1));
+    //**POSSIBLE BUG INDEX OUT OF RANGE**.
+    for (let i = 0; i < 4; i++) {
+      if (headersToSort[i].count >= 5) {
+        extractedHeaders.push(headersToSort[i].header);
+      }
+    }
+    console.log(extractedHeaders);
   }
+
+  let filteredHeaders = extractFilteredHeaders(
+    chartMsg.command,
+    chartMsg.data,
+    chartMsg.attributes,
+    chartMsg.command
+  );
+
   let charts = [];
-  console.log(intent);
   if (extractedHeaders.length == 1) {
     let chartObj = runAlgortihm(
       intent,
@@ -59,6 +61,7 @@ module.exports = (intent, chartMsg, options) => {
       options,
       filteredHeaders
     );
+
     charts.push(chartObj);
   } else {
     if (intent == "line") {
@@ -76,12 +79,12 @@ module.exports = (intent, chartMsg, options) => {
         charts.push(chartObj);
       }
       for (let j = 2; j < extractedHeaders.length; j++) {
-        let threeExtractedHeaders = [];
-        threeExtractedHeaders.push(
+        let threeExtractedHeaders = [
           extractedHeaders[0],
           extractedHeaders[1],
-          extractedHeaders[j]
-        );
+          extractedHeaders[j],
+        ];
+
         let chartObj = runAlgortihm(
           intent,
           threeExtractedHeaders,
@@ -133,7 +136,6 @@ function runAlgortihm(
         height: 220,
         mark: "",
         transform: [],
-        concat: [],
         encoding: {
           column: {},
           y: {},
@@ -145,6 +147,7 @@ function runAlgortihm(
         timeSpentHovered: 0,
         data: { name: "table" }, // note: vega-lite data attribute is a plain object instead of an array
         command: command,
+        headerFrequencyCount: headerFrequencyCount,
       },
     },
   };
@@ -163,6 +166,7 @@ function runAlgortihm(
       break;
     }
   }
+
   chartObj = mark(chartObj, intent);
   chartObj = encoding(
     chartObj,
@@ -178,16 +182,18 @@ function runAlgortihm(
   }
   chartObj = transform(data, filteredHeaders, chartObj, intent);
   chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
+
   return chartObj;
 }
 
 function extractHeaders(command, headers, data, intent) {
   let doc = nlp(command);
+  let docSingular = nlp(command).nouns().toSingular();
   let extractedHeaders = [];
   for (let i = 0; i < headers.length; i++) {
     if (
       doc.has(headers[i].toLowerCase()) ||
-      doc.has(headers[i].toLowerCase().toLowerCase())
+      docSingular.has(headers[i].toLowerCase())
     ) {
       extractedHeaders.push(headers[i]);
     }
@@ -220,25 +226,38 @@ function extractHeaders(command, headers, data, intent) {
       }
     }
   }
-  let dateFound = false;
-  let casesFound = false;
+  if (intent === "line") {
+    let dateFound = false;
+    let casesFound = false;
 
-  for (let i = 0; i < extractedHeaders.length; i++) {
-    if (extractedHeaders[i] == "cases") {
-      casesFound = true;
+    for (let i = 0; i < extractedHeaders.length; i++) {
+      if (extractedHeaders[i] == "cases") {
+        casesFound = true;
+      }
+      if (extractedHeaders[i] == "date") {
+        dateFound = true;
+      }
     }
-    if (extractedHeaders[i] == "date") {
-      dateFound = true;
-    }
-  }
 
-  if (!dateFound) {
-    extractedHeaders.push("date");
+    if (!dateFound) {
+      extractedHeaders.unshift("date");
+    }
+    if (!casesFound) {
+      extractedHeaders.unshift("cases");
+    }
+    for (let i = 0; i < extractedHeaders.length; i++) {
+      if (extractedHeaders[i] == "cases") {
+        let tmpHeader = extractedHeaders[0];
+        extractedHeaders[0] = extractedHeaders[i];
+        extractedHeaders[i] = tmpHeader;
+      }
+      if (extractedHeaders[i] == "date") {
+        let tmpHeader = extractedHeaders[1];
+        extractedHeaders[1] = extractedHeaders[i];
+        extractedHeaders[i] = tmpHeader;
+      }
+    }
   }
-  if (!casesFound) {
-    extractedHeaders.push("cases");
-  }
-  intent = "line";
 
   if (doc.has("overtime") || doc.has("time")) {
     let foundTime = false;

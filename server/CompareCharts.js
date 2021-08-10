@@ -1,32 +1,28 @@
 module.exports = (chartMsg) => {
-  console.log(
-    isChartsEqual(chartMsg.explicitChart[0], chartMsg.inferredChart[0])
-  );
-
-  // for (let i = 0; i < chartMsg.charts.length; i++) {
-  //   for (let j = 0; j < chartMsg.explicitChart.length; j++) {
-  //     if (isChartsEqual(chartMsg.explicitChart[j], chartMsg.charts[i])) {
-  //       chartMsg.explicitChart[j] = "";
-  //       break;
-  //     }
-  //   }
-  // }
-  // for (let i = 0; i < chartMsg.charts.length; i++) {
-  //   for (let j = 0; j < chartMsg.inferredChart.length; j++) {
-  //     if (isChartsEqual(chartMsg.inferredChart[j], chartMsg.charts[i])) {
-  //       chartMsg.inferredChart[j] = "";
-  //       break;
-  //     }
-  //   }
-  // }
-  // for (let i = 0; i < chartMsg.charts.length; i++) {
-  //   for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
-  //     if (isChartsEqual(chartMsg.modifiedChart[j], chartMsg.charts[i])) {
-  //       chartMsg.modifiedChart[j] = "";
-  //       break;
-  //     }
-  //   }
-  // }
+  for (let i = 0; i < chartMsg.charts.length; i++) {
+    for (let j = 0; j < chartMsg.explicitChart.length; j++) {
+      if (isChartsEqual(chartMsg.explicitChart[j], chartMsg.charts[i])) {
+        chartMsg.explicitChart[j] = "";
+        break;
+      }
+    }
+  }
+  for (let i = 0; i < chartMsg.charts.length; i++) {
+    for (let j = 0; j < chartMsg.inferredChart.length; j++) {
+      if (isChartsEqual(chartMsg.inferredChart[j], chartMsg.charts[i])) {
+        chartMsg.inferredChart[j] = "";
+        break;
+      }
+    }
+  }
+  for (let i = 0; i < chartMsg.charts.length; i++) {
+    for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
+      if (isChartsEqual(chartMsg.modifiedChart[j], chartMsg.charts[i])) {
+        chartMsg.modifiedChart[j] = "";
+        break;
+      }
+    }
+  }
 
   //Check if Explicit equal inferred and modified
   for (let i = 0; i < chartMsg.explicitChart.length; i++) {
@@ -63,7 +59,6 @@ module.exports = (chartMsg) => {
       }
     }
   }
-  console.log(chartMsg.modifiedChart[0], chartMsg.modifiedChart[1]);
   //   if (
   //     isChartsEqual(chartMsg.explicitChart, chartMsg.inferredChart) &&
   //     isChartsEqual(chartMsg.explicitChart, chartMsg.modifiedChart) &&
@@ -111,13 +106,11 @@ function isChartsEqual(chartOne, chartTwo) {
   if (
     JSON.stringify(chartOne.encoding) == JSON.stringify(chartTwo.encoding) &&
     JSON.stringify(chartOne.mark) == JSON.stringify(chartTwo.mark) &&
-    JSON.stringify(chartOne.transform) == JSON.stringify(chartTwo.transform)
+    JSON.stringify(chartOne.transform) == JSON.stringify(chartTwo.transform) &&
+    JSON.stringify(chartOne.layer) == JSON.stringify(chartTwo.layer)
   ) {
     return true;
   } else {
-    if (JSON.stringify(chartOne.layer) == JSON.stringify(chartTwo.layer)) {
-      return true;
-    }
     return false;
   }
 }

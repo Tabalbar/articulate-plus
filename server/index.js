@@ -15,47 +15,25 @@ const manager = new NlpManager({
   nlu: { log: false },
 });
 
-manager.addDocument(
-  "en",
-  "I want to see the comparison of nominal and quantitative",
-  "bar"
-);
-manager.addDocument(
-  "en",
-  "show me a a comparison of nominal and quantitative",
-  "bar"
-);
 manager.addDocument("en", "show me the distribution of nominal", "bar");
-manager.addDocument(
-  "en",
-  "show me a graph with nominal nominal and quantitative",
-  "bar"
-);
-manager.addDocument(
-  "en",
-  "show me the data for nominal nominal and quantitative",
-  "bar"
-);
-manager.addDocument(
-  "en",
-  "show me a bar chart of nominal and quantitative",
-  "bar"
-);
+manager.addDocument("en", "show me a graph with nominal and nominal", "bar");
+manager.addDocument("en", "show me a bar chart of nominal and nominal", "bar");
 manager.addAnswer("en", "bar", "bar");
 
 manager.addDocument(
   "en",
-  "I want to see the comparison of quantitative over time",
+  "I want to see the comparison of nominal over time",
+  "line"
+);
+manager.addDocument("en", "show me nominal by date", "line");
+manager.addDocument(
+  "en",
+  "show me the comparison of nominal over temporal",
   "line"
 );
 manager.addDocument(
   "en",
-  "show me the comparison of quantitative over temporal",
-  "line"
-);
-manager.addDocument(
-  "en",
-  "Show me the temoral over the years of nominal and quantitative",
+  "Show me the temporal over the year of nominal and quantitative",
   "line"
 );
 manager.addDocument(
@@ -65,46 +43,8 @@ manager.addDocument(
 );
 manager.addAnswer("en", "line", "line");
 
-// manager.addDocument(
-//   "en",
-//   "Show me the relationship of quantitative and quantitative",
-//   "scatter"
-// );
-// manager.addDocument(
-//   "en",
-//   "I want to see quantitative by quantitative",
-//   "scatter"
-// );
-// manager.addDocument("en", "show me quantiative by quantitative", "scatter");
-// manager.addDocument(
-//   "en",
-//   "show me a scatter plot of quantitative and quantitative",
-//   "scatter"
-// );
-// manager.addDocument(
-//   "en",
-//   "show me a point chart of quantitative and quantitative",
-//   "scatter"
-// );
-// manager.addDocument(
-//   "en",
-//   "show me a bubble chart of quantitative and quantitative colored by nominal",
-//   "scatter"
-// );
-// manager.addAnswer("en", "scatter", "scatter");
-
-// manager.addDocument('en', 'show me the distribution of quantitative and quantitative', 'heatmap');
-// manager.addDocument('en', 'show me a 2D heatmap', 'heatmap');
-// manager.addAnswer('en', 'heatmap', 'heatmap');
-
-// manager.addDocument(
-//   "en",
-//   "I want to see the difference of nominal by quantitative quantitative and quantitative",
-//   "parallelCoordinates"
-// );
-// manager.addAnswer("en", "parallelCoordinates", "parallelCoordinates");
-
 manager.addDocument("en", "show me a map of nominal", "map");
+
 manager.addAnswer("en", "map", "map");
 
 // Train and save the model.

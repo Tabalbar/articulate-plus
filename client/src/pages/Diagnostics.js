@@ -1,5 +1,15 @@
 import React, { useEffect } from "react";
-import { Grid, Textarea, Box, Table, Tr, Td, Th } from "@chakra-ui/react";
+import {
+  Grid,
+  Textarea,
+  Box,
+  Table,
+  Tr,
+  Td,
+  Th,
+  Center,
+  Button,
+} from "@chakra-ui/react";
 import StreamGraph from "../components/diagnostics/StreamGraph";
 import WordCloud from "../components/diagnostics/WordCloud";
 
@@ -25,6 +35,9 @@ function Diagnostics({ chartMsg }) {
   };
   return (
     <>
+      <Center>
+        <Button onClick={downloadFile}>Save</Button>
+      </Center>
       <Grid
         h="full"
         templateRows="repeat(2, 1fr)"

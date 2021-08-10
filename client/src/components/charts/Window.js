@@ -11,6 +11,7 @@ function Window(props) {
   const { width, height, ref } = useResizeDetector();
   const [specification, setSpecification] = useState(props.specification);
   const [chartData, setChartData] = useState(props.data);
+  const [startTime, setStartTime] = useState(0);
   const eventLogger = (e, data) => {
     let tmpCharts = props.charts;
     tmpCharts[props.index].x = data.x;
@@ -43,7 +44,14 @@ function Window(props) {
       };
     });
   }, [width, height]);
-
+  const startTimer = () => {
+    setStartTime(performance.now());
+  };
+  const endTimer = () => {
+    var timeDiff = performance.now() - startTime;
+    timeDiff /= 1000;
+    specification.timeSpentHovered += parseFloat(Number(timeDiff).toFixed(2));
+  };
   return (
     <>
       <Draggable
@@ -72,6 +80,8 @@ function Window(props) {
           resize="both"
           width={900}
           height={500}
+          onMouseOver={startTimer}
+          onMouseLeave={endTimer}
           onClick={(e) => onStart(e)}
           className="react-draggable"
         >
