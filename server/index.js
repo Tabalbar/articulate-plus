@@ -43,27 +43,27 @@ manager.addDocument(
 );
 manager.addAnswer("en", "bar", "bar");
 
-// manager.addDocument(
-//   "en",
-//   "I want to see the comparison of quantitative over time",
-//   "line"
-// );
-// manager.addDocument(
-//   "en",
-//   "show me the comparison of quantitative over temporal",
-//   "line"
-// );
-// manager.addDocument(
-//   "en",
-//   "Show me the temoral over the years of nominal and quantitative",
-//   "line"
-// );
-// manager.addDocument(
-//   "en",
-//   "show me a line chart of nominal and quantitative",
-//   "line"
-// );
-// manager.addAnswer("en", "line", "line");
+manager.addDocument(
+  "en",
+  "I want to see the comparison of quantitative over time",
+  "line"
+);
+manager.addDocument(
+  "en",
+  "show me the comparison of quantitative over temporal",
+  "line"
+);
+manager.addDocument(
+  "en",
+  "Show me the temoral over the years of nominal and quantitative",
+  "line"
+);
+manager.addDocument(
+  "en",
+  "show me a line chart of nominal and quantitative",
+  "line"
+);
+manager.addAnswer("en", "line", "line");
 
 // manager.addDocument(
 //   "en",
@@ -104,7 +104,7 @@ manager.addAnswer("en", "bar", "bar");
 // );
 // manager.addAnswer("en", "parallelCoordinates", "parallelCoordinates");
 
-manager.addDocument("en", "show me a quantitative of nominal", "map");
+manager.addDocument("en", "show me a map of nominal", "map");
 manager.addAnswer("en", "map", "map");
 
 // Train and save the model.

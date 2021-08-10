@@ -62,13 +62,30 @@
             "intent": "bar",
             "domain": "default"
           },
-          "a,me,nomin,of,quantit,show": {
+          "comparison,i,of,over,quantit,see,the,time,to,want": {
+            "intent": "line",
+            "domain": "default"
+          },
+          "comparison,me,of,over,quantit,show,tempor,the": {
+            "intent": "line",
+            "domain": "default"
+          },
+          "and,me,nomin,of,over,quantit,show,temor,the,year": {
+            "intent": "line",
+            "domain": "default"
+          },
+          "a,and,chart,line,me,nomin,of,quantit,show": {
+            "intent": "line",
+            "domain": "default"
+          },
+          "a,map,me,nomin,of,show": {
             "intent": "map",
             "domain": "default"
           }
         },
         "intentDict": {
           "bar": "default",
+          "line": "default",
           "map": "default"
         },
         "sentences": [
@@ -104,7 +121,27 @@
           },
           {
             "domain": "default",
-            "utterance": "show me a quantitative of nominal",
+            "utterance": "I want to see the comparison of quantitative over time",
+            "intent": "line"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me the comparison of quantitative over temporal",
+            "intent": "line"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me the temoral over the years of nominal and quantitative",
+            "intent": "line"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me a line chart of nominal and quantitative",
+            "intent": "line"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me a map of nominal",
             "intent": "map"
           }
         ],
@@ -141,10 +178,18 @@
               "data": 1,
               "for": 1,
               "bar": 1,
-              "chart": 1
+              "chart": 1,
+              "over": 1,
+              "time": 1,
+              "tempor": 1,
+              "temor": 1,
+              "year": 1,
+              "line": 1,
+              "map": 1
             },
             "intents": {
               "bar": 1,
+              "line": 1,
               "map": 1
             },
             "intentFeatures": {
@@ -170,59 +215,93 @@
                 "bar": 1,
                 "chart": 1
               },
+              "line": {
+                "i": 1,
+                "want": 1,
+                "to": 1,
+                "see": 1,
+                "the": 1,
+                "comparison": 1,
+                "of": 1,
+                "quantit": 1,
+                "over": 1,
+                "time": 1,
+                "show": 1,
+                "me": 1,
+                "tempor": 1,
+                "temor": 1,
+                "year": 1,
+                "nomin": 1,
+                "and": 1,
+                "a": 1,
+                "line": 1,
+                "chart": 1
+              },
               "map": {
                 "show": 1,
                 "me": 1,
                 "a": 1,
-                "quantit": 1,
+                "map": 1,
                 "of": 1,
                 "nomin": 1
               }
             },
             "featuresToIntent": {
               "i": [
-                "bar"
+                "bar",
+                "line"
               ],
               "want": [
-                "bar"
+                "bar",
+                "line"
               ],
               "to": [
-                "bar"
+                "bar",
+                "line"
               ],
               "see": [
-                "bar"
+                "bar",
+                "line"
               ],
               "the": [
-                "bar"
+                "bar",
+                "line"
               ],
               "comparison": [
-                "bar"
+                "bar",
+                "line"
               ],
               "of": [
                 "bar",
+                "line",
                 "map"
               ],
               "nomin": [
                 "bar",
+                "line",
                 "map"
               ],
               "and": [
-                "bar"
+                "bar",
+                "line"
               ],
               "quantit": [
                 "bar",
-                "map"
+                "line"
               ],
               "show": [
                 "bar",
+                "line",
                 "map"
               ],
               "me": [
                 "bar",
+                "line",
                 "map"
               ],
               "a": [
                 "bar",
+                "line",
                 "map"
               ],
               "distribut": [
@@ -244,7 +323,29 @@
                 "bar"
               ],
               "chart": [
-                "bar"
+                "bar",
+                "line"
+              ],
+              "over": [
+                "line"
+              ],
+              "time": [
+                "line"
+              ],
+              "tempor": [
+                "line"
+              ],
+              "temor": [
+                "line"
+              ],
+              "year": [
+                "line"
+              ],
+              "line": [
+                "line"
+              ],
+              "map": [
+                "map"
               ]
             },
             "neuralNetwork": {
@@ -278,58 +379,110 @@
                 "data",
                 "for",
                 "bar",
-                "chart"
+                "chart",
+                "over",
+                "time",
+                "tempor",
+                "temor",
+                "year",
+                "line",
+                "map"
               ],
               "intents": [
                 "bar",
+                "line",
                 "map"
               ],
               "perceptrons": [
                 [
-                  -0.4758899509906769,
-                  -0.4758899509906769,
-                  -0.4758899509906769,
-                  -0.4758899509906769,
-                  3.6924924850463867,
-                  4.882038593292236,
-                  -0.2858753502368927,
-                  1.4514164924621582,
-                  9.097831726074219,
-                  -3.333189010620117,
-                  1.9307584762573242,
-                  1.9307584762573242,
-                  -2.2415454387664795,
-                  4.7787556648254395,
-                  2.3480491638183594,
-                  2.3480491638183594,
-                  -0.6110134124755859,
-                  -0.6110134124755859,
-                  2.470757007598877,
-                  2.470757007598877,
-                  0.721478798178862
+                  0.044466786086559296,
+                  0.044466786086559296,
+                  0.044466786086559296,
+                  0.044466786086559296,
+                  1.6103113889694214,
+                  3.946255922317505,
+                  -0.9196012020111084,
+                  4.470500469207764,
+                  3.9019646644592285,
+                  0.5638452768325806,
+                  1.091111421585083,
+                  1.091111421585083,
+                  -0.4774675965309143,
+                  6.329158782958984,
+                  1.5459997653961182,
+                  1.5459997653961182,
+                  0.5101543068885803,
+                  0.5101543068885803,
+                  5.899789333343506,
+                  -2.124173402786255,
+                  -6.575972557067871,
+                  -1.279251217842102,
+                  -1.812657356262207,
+                  -3.1477222442626953,
+                  -3.1477222442626953,
+                  -8.032477378845215,
+                  -5.758927345275879,
+                  0.5629553236615501
                 ],
                 [
-                  -0.17041034996509552,
-                  -0.17041034996509552,
-                  -0.17041034996509552,
-                  -0.17041034996509552,
-                  -3.2172460556030273,
-                  -5.046541690826416,
-                  2.3853342533111572,
-                  0.9418609738349915,
-                  -9.03506851196289,
-                  3.8434054851531982,
-                  1.1774725914001465,
-                  1.1774725914001465,
-                  4.162328243255615,
-                  -2.8983254432678223,
-                  -1.359326958656311,
-                  -1.359326958656311,
-                  -0.04311228543519974,
-                  -0.04311228543519974,
-                  -2.537540912628174,
-                  -2.537540912628174,
-                  0.47378330282995995
+                  -0.06883908063173294,
+                  -0.06883908063173294,
+                  -0.06883908063173294,
+                  -0.06883908063173294,
+                  1.0626122951507568,
+                  -1.5510907173156738,
+                  2.000603437423706,
+                  -3.8857157230377197,
+                  -0.9474931955337524,
+                  3.3566431999206543,
+                  0.48739340901374817,
+                  0.48739340901374817,
+                  -0.6409121751785278,
+                  -1.5908271074295044,
+                  -0.3915349245071411,
+                  -0.3915349245071411,
+                  -1.0986119508743286,
+                  -1.0986119508743286,
+                  -4.916543483734131,
+                  4.072647571563721,
+                  6.7258076667785645,
+                  2.769862174987793,
+                  1.5353137254714966,
+                  2.4209554195404053,
+                  2.4209554195404053,
+                  8.996894836425781,
+                  -1.1201882362365723,
+                  0.2139272631528345
+                ],
+                [
+                  -0.07620619237422943,
+                  -0.07620619237422943,
+                  -0.07620619237422943,
+                  -0.07620619237422943,
+                  -2.4247374534606934,
+                  -1.604691982269287,
+                  1.3218780755996704,
+                  0.8739995956420898,
+                  -3.182389259338379,
+                  -3.182389259338379,
+                  1.0211362838745117,
+                  1.0211362838745117,
+                  3.299589157104492,
+                  -2.2436132431030273,
+                  -0.36123016476631165,
+                  -0.36123016476631165,
+                  -0.01765831559896469,
+                  -0.01765831559896469,
+                  -0.644477128982544,
+                  -1.1292287111282349,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.47807058691978455,
+                  6.300055503845215,
+                  0.43726753725725753
                 ]
               ]
             }
@@ -365,7 +518,23 @@
       ],
       [
         "en",
-        "show me a quantitative of nominal"
+        "I want to see the comparison of quantitative over time"
+      ],
+      [
+        "en",
+        "show me the comparison of quantitative over temporal"
+      ],
+      [
+        "en",
+        "Show me the temoral over the years of nominal and quantitative"
+      ],
+      [
+        "en",
+        "show me a line chart of nominal and quantitative"
+      ],
+      [
+        "en",
+        "show me a map of nominal"
       ]
     ]
   },
@@ -386,6 +555,11 @@
         "bar": [
           {
             "answer": "bar"
+          }
+        ],
+        "line": [
+          {
+            "answer": "line"
           }
         ],
         "map": [

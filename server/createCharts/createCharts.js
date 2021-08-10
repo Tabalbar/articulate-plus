@@ -48,6 +48,7 @@ module.exports = (intent, chartMsg, options) => {
     }
   }
   let charts = [];
+  console.log(extractedHeaders);
   if (extractedHeaders.length == 1) {
     let chartObj = runAlgortihm(
       intent,
@@ -60,20 +61,54 @@ module.exports = (intent, chartMsg, options) => {
     );
     charts.push(chartObj);
   } else {
-    for (let j = 1; j < extractedHeaders.length; j++) {
-      let twoExtractedHeaders = [];
+    if (intent == "line") {
+      if (extractedHeaders.length < 3) {
+        let twoExtractedHeaders = [extractedHeaders[0], extractedHeaders[1]];
+        let chartObj = runAlgortihm(
+          intent,
+          twoExtractedHeaders,
+          chartMsg.data,
+          headerFrequencyCount,
+          chartMsg.command,
+          options,
+          filteredHeaders
+        );
+        charts.push(chartObj);
+      }
+      for (let j = 2; j < extractedHeaders.length; j++) {
+        let threeExtractedHeaders = [];
+        threeExtractedHeaders.push(
+          extractedHeaders[0],
+          extractedHeaders[1],
+          extractedHeaders[j]
+        );
+        let chartObj = runAlgortihm(
+          intent,
+          threeExtractedHeaders,
+          chartMsg.data,
+          headerFrequencyCount,
+          chartMsg.command,
+          options,
+          filteredHeaders
+        );
+        charts.push(chartObj);
+      }
+    } else {
+      for (let j = 1; j < extractedHeaders.length; j++) {
+        let twoExtractedHeaders = [];
 
-      twoExtractedHeaders.push(extractedHeaders[0], extractedHeaders[j]);
-      let chartObj = runAlgortihm(
-        intent,
-        twoExtractedHeaders,
-        chartMsg.data,
-        headerFrequencyCount,
-        chartMsg.command,
-        options,
-        filteredHeaders
-      );
-      charts.push(chartObj);
+        twoExtractedHeaders.push(extractedHeaders[0], extractedHeaders[j]);
+        let chartObj = runAlgortihm(
+          intent,
+          twoExtractedHeaders,
+          chartMsg.data,
+          headerFrequencyCount,
+          chartMsg.command,
+          options,
+          filteredHeaders
+        );
+        charts.push(chartObj);
+      }
     }
   }
 
@@ -82,7 +117,7 @@ module.exports = (intent, chartMsg, options) => {
 
 function runAlgortihm(
   intent,
-  twoExtractedHeaders,
+  extractedHeaders,
   data,
   headerFrequencyCount,
   command,
@@ -112,9 +147,18 @@ function runAlgortihm(
       },
     },
   };
-  for (let i = 0; i < twoExtractedHeaders.length; i++) {
-    if (twoExtractedHeaders[i] == "map" && intent !== "map") {
-      twoExtractedHeaders.splice(i, 1);
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    if (extractedHeaders[i] == "map" && intent !== "map") {
+      extractedHeaders.splice(i, 1);
+      break;
+    }
+  }
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    if (
+      (extractedHeaders[i] == "cases" || extractedHeaders[i] == "date") &&
+      intent !== "line"
+    ) {
+      extractedHeaders.splice(i, 1);
       break;
     }
   }
@@ -122,7 +166,7 @@ function runAlgortihm(
   chartObj = encoding(
     chartObj,
     intent,
-    twoExtractedHeaders,
+    extractedHeaders,
     data,
     headerFrequencyCount,
     command,
@@ -132,11 +176,7 @@ function runAlgortihm(
     charts.push("");
   }
   chartObj = transform(data, filteredHeaders, chartObj, intent);
-  chartObj.charts.spec.title = title(
-    twoExtractedHeaders,
-    intent,
-    filteredHeaders
-  );
+  chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
   return chartObj;
 }
 
@@ -164,8 +204,6 @@ function extractHeaders(command, headers, data, intent) {
     extractedHeaders.push(wordPosition[i].header);
   }
 
-  let accessors = [];
-
   if (intent === "map") {
     let mapFound = false;
     for (let i = 0; i < extractedHeaders.length; i++) {
@@ -179,6 +217,27 @@ function extractHeaders(command, headers, data, intent) {
           extractedHeaders.push(headers[i]);
         }
       }
+    }
+  }
+
+  if (intent === "line") {
+    let dateFound = false;
+    let casesFound = false;
+
+    for (let i = 0; i < extractedHeaders.length; i++) {
+      if (extractedHeaders[i] == "cases") {
+        casesFound = true;
+      }
+      if (extractedHeaders[i] == "date") {
+        dateFound = true;
+      }
+    }
+
+    if (!dateFound) {
+      extractedHeaders.push("date");
+    }
+    if (!casesFound) {
+      extractedHeaders.push("cases");
     }
   }
 

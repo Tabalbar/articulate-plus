@@ -67,12 +67,10 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
         .then(async (csvData) => setChartData(await processData(csvData)));
     }
   }, []);
-  console.log(chartData);
   const startTimer = () => {
     setStartTime(performance.now());
     setHovered(true);
   };
-
   const endTimer = () => {
     var timeDiff = performance.now() - startTime;
     timeDiff /= 1000;

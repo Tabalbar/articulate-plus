@@ -35,6 +35,7 @@ module.exports = (
   if (intent == "map") {
     return map(chartObj, extractedHeaders, data, headerFreq, command, options);
   }
+
   switch (numHeaders) {
     case 1:
       chartObj.charts.spec.encoding.x = {
@@ -77,8 +78,9 @@ module.exports = (
           axis: { labelAngle: -50 },
         };
         chartObj.charts.spec.encoding.y = {
-          field: extractedHeaders[0],
-          type: findType(extractedHeaders[0], data),
+          field: extractedHeaders[1],
+          type: findType(extractedHeaders[1], data),
+          aggregate: "sum",
         };
       } else {
         chartObj.charts.spec.encoding.x = {
@@ -115,12 +117,6 @@ module.exports = (
         command,
         3
       );
-      if (extractedHeaders.length < 3) {
-        chartObj.errMsg =
-          "I tried to make a " +
-          intent +
-          " chart, but i coldn't find the right data";
-      }
 
       chartObj.charts.spec.encoding.x = {
         field: extractedHeaders[0],
@@ -128,15 +124,24 @@ module.exports = (
         axis: { labelAngle: -50, title: "" },
         sort: sortArray(extractedHeaders[0], data),
       };
-      chartObj.charts.spec.encoding.y = {
-        aggregate: "count",
-      };
-      chartObj.charts.spec.encoding.column = {
-        field: extractedHeaders[1],
-        type: findType(extractedHeaders[1], data),
-        sort: sortArray(extractedHeaders[1], data),
-        spacing: 40,
-      };
+      if (intent === "line") {
+        chartObj.charts.spec.encoding.y = {
+          aggregate: "sum",
+          field: extractedHeaders[1],
+        };
+      } else {
+        chartObj.charts.spec.encoding.y = {
+          aggregate: "count",
+          field: extractedHeaders[1],
+        };
+      }
+
+      // chartObj.charts.spec.encoding.column = {
+      //   field: extractedHeaders[1],
+      //   type: findType(extractedHeaders[1], data),
+      //   sort: sortArray(extractedHeaders[1], data),
+      //   spacing: 40,
+      // };
       chartObj.charts.spec.encoding.color = {
         field: extractedHeaders[2],
         type: findType(extractedHeaders[2], data),
@@ -145,7 +150,6 @@ module.exports = (
         },
         sort: sortArray(extractedHeaders[2], data),
       };
-      chartObj.charts.spec.width = 60;
 
       return chartObj;
 

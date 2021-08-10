@@ -11,10 +11,10 @@ module.exports = [
   //   key: "parallel coordinates",
   //   mark: "parallelCoordinates",
   // },
-  // {
-  //   key: "line",
-  //   mark: "line",
-  // },
+  {
+    key: "line",
+    mark: "line",
+  },
   // {
   //   key: "scatter",
   //   mark: "scatter",
