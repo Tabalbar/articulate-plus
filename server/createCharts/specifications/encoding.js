@@ -41,7 +41,7 @@ module.exports = (
       chartObj.charts.spec.encoding.x = {
         field: extractedHeaders[0],
         type: findType(extractedHeaders[0], data),
-        axis: { labelAngle: -50 },
+        axis: { labelAngle: -50, grid: false },
         sort: sortArray(extractedHeaders[0], data),
       };
       chartObj.charts.spec.encoding.color = {
@@ -75,7 +75,7 @@ module.exports = (
         chartObj.charts.spec.encoding.x = {
           field: extractedHeaders[0],
           type: findType(extractedHeaders[0], data),
-          axis: { labelAngle: -50 },
+          axis: { grid: false, labelAngle: -50 },
         };
         chartObj.charts.spec.encoding.y = {
           field: extractedHeaders[1],
@@ -86,7 +86,7 @@ module.exports = (
         chartObj.charts.spec.encoding.x = {
           field: extractedHeaders[0],
           type: findType(extractedHeaders[0], data),
-          axis: { labelAngle: -50 },
+          axis: { labelAngle: -50, grid: false },
           sort: sortArray(extractedHeaders[0], data),
         };
         chartObj.charts.spec.encoding.y = {
@@ -123,6 +123,7 @@ module.exports = (
         type: findType(extractedHeaders[0], data),
         axis: { labelAngle: -50, title: "" },
         sort: sortArray(extractedHeaders[0], data),
+        axis: { grid: false },
       };
       if (intent === "line") {
         chartObj.charts.spec.encoding.y = {

@@ -27,7 +27,7 @@ module.exports = (
     wordCount.push({ header: synonymsAndFeatures[i][0], count: 0 });
   }
   let sentences = transcript.split(".");
-  sentences.splice(0, modifiedChartOptions.window.pastSenteces);
+  sentences = sentences.slice(-20);
   if (
     modifiedChartOptions.semanticAnalysis &&
     modifiedChartOptions.window.toggle

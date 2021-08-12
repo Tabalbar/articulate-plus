@@ -6,7 +6,8 @@ export async function serverRequest(
   modifiedChartOptions,
   mute,
   setClippyImage,
-  thinkingImage
+  thinkingImage,
+  setVoiceMsg
 ) {
   const response = await fetch("/createCharts", {
     method: "POST",
@@ -59,6 +60,6 @@ export async function serverRequest(
     }
   }
   let msg = UseVoice(assistantResponse, mute);
-
+  setVoiceMsg(assistantResponse);
   return;
 }

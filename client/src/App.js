@@ -8,7 +8,7 @@ import { serverRequest } from "./helpers/serverRequest";
 import createDate from "./helpers/createDate";
 import { ChakraProvider, VStack } from "@chakra-ui/react";
 import { useClippy } from "use-clippy-now";
-import { Button, Box, Input, Image } from "@chakra-ui/react";
+import { Button, Box, Input, Image, Tooltip } from "@chakra-ui/react";
 import { thinking } from "./components/voice/assistantVoiceOptions";
 import SideMenu from "./components/sideMenu/SideMenu";
 import UseVoice from "./components/voice/UseVoice";
@@ -54,6 +54,15 @@ function App() {
   );
   const [clippyImage, setClippyImage] = useState(listeningImage);
   const [voiceMsg, setVoiceMsg] = useState(null);
+  const [showTooltip, setShowTooltip] = useState(false);
+  useEffect(() => {
+    if (showTooltip) {
+      setTimeout(() => {
+        setShowTooltip(false);
+      }, 8000);
+    }
+  }, [showTooltip]);
+
   useEffect(() => {
     // localStorage.setItem("chartMsg", JSON.stringify(chartMsg));
   }, [chartMsg]);
@@ -64,13 +73,16 @@ function App() {
     let thinkingResponse = thinking[Math.floor(Math.random() * 4)];
     setClippyImage(thinkingImage);
     let msg = UseVoice(thinkingResponse, mute);
+    setVoiceMsg(thinkingResponse);
+    setShowTooltip(true);
     serverRequest(
       chartMsg,
       setChartMsg,
       modifiedChartOptions,
       mute,
       setClippyImage,
-      thinkingImage
+      thinkingImage,
+      setVoiceMsg
     ).then(() => {
       if (mute) {
         setClippyImage(muteImage);
@@ -132,7 +144,16 @@ function App() {
             bottom={"31em"}
           >
             <VStack float="right" spacing={".5px"}>
-              <Image boxSize="90px" float="right" src={clippyImage} />
+              <Tooltip
+                zIndex="10"
+                label={voiceMsg}
+                fontSize="3xl"
+                placement="right-start"
+                isOpen={showTooltip}
+                hasArrow
+              >
+                <Image boxSize="90px" float="right" src={clippyImage} />
+              </Tooltip>
               {mute ? (
                 <Button
                   width={"5rem"}

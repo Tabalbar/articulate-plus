@@ -37,10 +37,17 @@ module.exports = (intent, chartMsg, options) => {
     //**POSSIBLE BUG INDEX OUT OF RANGE**.
     for (let i = 0; i < 4; i++) {
       if (headersToSort[i].count >= 5) {
-        extractedHeaders.push(headersToSort[i].header);
+        let found = false;
+        for (let j = 0; j < extractedHeaders.length; j++) {
+          if (headersToSort[i] == extractedHeaders[j]) {
+            found = true;
+          }
+        }
+        if (!found) {
+          extractedHeaders.push(headersToSort[i].header);
+        }
       }
     }
-    console.log(extractedHeaders);
   }
 
   let filteredHeaders = extractFilteredHeaders(

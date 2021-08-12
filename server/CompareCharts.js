@@ -59,6 +59,12 @@ module.exports = (chartMsg) => {
       }
     }
   }
+
+  for (let i = 0; i < chartMsg.modifiedChart.length; i++) {
+    if (chartMsg.modifiedChart[i] !== "") {
+      chartMsg.modifiedChart[i].charts.spec.chartSelection = "Modified";
+    }
+  }
   //   if (
   //     isChartsEqual(chartMsg.explicitChart, chartMsg.inferredChart) &&
   //     isChartsEqual(chartMsg.explicitChart, chartMsg.modifiedChart) &&

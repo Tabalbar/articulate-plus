@@ -17,7 +17,7 @@ const manager = new NlpManager({
 
 manager.addDocument("en", "show me the distribution of nominal", "bar");
 manager.addDocument("en", "show me a graph with nominal and nominal", "bar");
-manager.addDocument("en", "show me a bar chart of nominal and nominal", "bar");
+manager.addDocument("en", "show me a chart of nominal and nominal", "bar");
 manager.addAnswer("en", "bar", "bar");
 
 manager.addDocument(
