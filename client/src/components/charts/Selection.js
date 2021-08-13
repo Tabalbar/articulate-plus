@@ -1,12 +1,54 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../style.css";
 import { VegaLite } from "react-vega";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, Button } from "@chakra-ui/react";
 import processData from "../../helpers/processData";
 
 function ChartSelection({ chartMsg, chooseChart }) {
+  useEffect(() => {
+    let scrollableElement = document.getElementById("scrollable");
+    scrollableElement.scrollLeft =
+      scrollableElement.scrollWidth - scrollableElement.clientWidth;
+
+    let slideTimer = setInterval(() => {
+      scrollableElement.scrollLeft += 5;
+      if (
+        scrollableElement.scrollLeft + scrollableElement.clientWidth >=
+        scrollableElement.scrollWidth
+      ) {
+        clearInterval(slideTimer);
+      }
+    }, 35);
+  }, [chartMsg.charts]);
+
+  function sideScroll(element, direction, speed, step) {
+    let scrollAmount = 0;
+    var slideTimer = setInterval(function () {
+      if (direction == "left") {
+        element.scrollLeft -= step;
+      } else {
+        element.scrollLeft += step;
+      }
+      scrollAmount += step;
+
+      if (element.scrollLeft + element.clientWidth >= element.scrollWidth) {
+        window.clearInterval(slideTimer);
+      }
+      // if(userDidScroll) {
+      //   window.clearInterval(slideTimer);
+      // }
+    }, speed);
+  }
+
   return (
     <>
+      {/* <Button
+        onClick={() =>
+          sideScroll(document.getElementById("scrollable"), "right", 35, 5)
+        }
+      >
+        Next
+      </Button> */}
       <Box
         position="absolute"
         bottom="0"
@@ -24,9 +66,10 @@ function ChartSelection({ chartMsg, chooseChart }) {
           width="86vw"
           overflowX="auto"
           display="flex"
+          id="scrollable"
           flex={1}
         >
-          <HStack spacing={100} display="flex" flexDirection={"row-reverse"}>
+          <HStack spacing={100}>
             {chartMsg.charts.map((chart, index) => {
               return (
                 <>

@@ -64,6 +64,9 @@ module.exports = (
         command,
         2
       );
+      if (intent == "bar") {
+        chartObj.charts.spec.mark = "rect";
+      }
       if (extractedHeaders.length < 2) {
         chartObj.errMsg =
           "I tried to make a " +

@@ -54,13 +54,19 @@ module.exports = (extractedHeaders, intent, filteredHeaders) => {
         }
         break;
       case 2:
-        chartTitle +=
-          intent.charAt(0).toUpperCase() +
-          intent.slice(1) +
-          " Chart of " +
-          headerTitles[1] +
-          " vs. " +
-          headerTitles[0];
+        if (intent == "bar") {
+          chartTitle +=
+            "Heatmap of " + headerTitles[1] + "vs. " + headerTitles[0];
+        } else {
+          chartTitle +=
+            intent.charAt(0).toUpperCase() +
+            intent.slice(1) +
+            " Chart of " +
+            headerTitles[1] +
+            " vs. " +
+            headerTitles[0];
+        }
+
         break;
 
       case 3:

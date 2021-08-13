@@ -49,7 +49,9 @@ module.exports = (intent, chartMsg, options) => {
       }
     }
   }
+  extractedHeaders.push("date", "date", "date");
 
+  extractedHeaders = checkDuplicates(extractedHeaders);
   let filteredHeaders = extractFilteredHeaders(
     chartMsg.command,
     chartMsg.data,
@@ -353,4 +355,16 @@ function extractFilteredHeaders(command, data, headers, command) {
     return { foundTime, timeHeader };
   }
   return extractedFilteredHeaders;
+}
+
+function checkDuplicates(extractedHeaders) {
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    for (let j = i + 1; j < extractedHeaders.length; j++) {
+      if (extractedHeaders[i] == extractedHeaders[j]) {
+        extractedHeaders.splice(j);
+        break;
+      }
+    }
+  }
+  return extractedHeaders;
 }

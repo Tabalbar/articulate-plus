@@ -15,10 +15,10 @@ module.exports = [
     key: "line",
     mark: "line",
   },
-  // {
-  //   key: "scatter",
-  //   mark: "scatter",
-  // },
+  {
+    key: "heatmap",
+    mark: "bar",
+  },
   // {
   //   key: "point",
   //   mark: "scatter",

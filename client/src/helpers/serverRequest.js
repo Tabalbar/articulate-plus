@@ -49,15 +49,15 @@ export async function serverRequest(
     assistantResponse = "I couldn't find any charts for you";
   } else {
     assistantResponse = "I have " + count.toString() + " charts for you.";
-    assistantResponse += " I have a " + newCharts[0].charts.spec.title + "...";
+    // assistantResponse += " I have a " + newCharts[0].charts.spec.title + "...";
 
-    for (let i = 1; i < newCharts.length - 1; i++) {
-      assistantResponse += newCharts[i].charts.spec.title + "...";
-    }
-    if (newCharts.length > 1) {
-      assistantResponse +=
-        " and a " + newCharts[newCharts.length - 1].charts.spec.title;
-    }
+    // for (let i = 1; i < newCharts.length - 1; i++) {
+    //   assistantResponse += newCharts[i].charts.spec.title + "...";
+    // }
+    // if (newCharts.length > 1) {
+    //   assistantResponse +=
+    //     " and a " + newCharts[newCharts.length - 1].charts.spec.title;
+    // }
   }
   let msg = UseVoice(assistantResponse, mute);
   setVoiceMsg(assistantResponse);
