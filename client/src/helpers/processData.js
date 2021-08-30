@@ -1,3 +1,8 @@
+/**
+ * Processes the CSV text file
+ * @param {JSON Object} data
+ * @returns JSON obj with the data points
+ */
 async function processData(data) {
   const dataStringLines = data.split(/\r\n|\n/);
   const headers = dataStringLines[0].split(

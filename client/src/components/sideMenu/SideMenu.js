@@ -1,4 +1,6 @@
 import React from "react";
+
+//Chakra UI Elements
 import {
   Drawer,
   DrawerBody,
@@ -23,19 +25,40 @@ import {
   Radio,
   Input,
   HStack,
+  Image,
+  Tooltip,
+  VStack,
 } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
+
+//Handle dataset
 import FileInput from "./FileInput";
 
+/**
+ * Side menu for dashboard that holds loading the dataset, setting the
+ * options for chart generation, and tree for attributes and unqiue data values
+ *
+ * @param {function} setChartMsg State of message to send to server
+ * @param {object} modifiedChartOptions object that holds options to toggle algorithm
+ * @param {function} setModifiedChartOptions to change state of toggling algorithm
+ * @param {chartMSg}  chartMsg State to send to server
+ * @param {clearCharts} remove charts from selection
+ * @returns
+ */
 function SideMenu({
   setChartMsg,
   modifiedChartOptions,
   setModifiedChartOptions,
   chartMsg,
   clearCharts,
+  clippyImage,
+  handleMute,
+  voiceMsg,
+  mute,
+  showTooltip,
 }) {
+  //
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const btnRef = React.useRef();
   const handleWindowPastSenteces = (e) => {
     e.preventDefault();
@@ -69,14 +92,6 @@ function SideMenu({
           <Text fontWeight="bold" fontSize="lg">
             Admin
           </Text>
-          <IconButton
-            borderRadius="lg"
-            colorScheme="red"
-            size="sm"
-            aria-label="Search database"
-            onClick={clearCharts}
-            icon={<DeleteIcon />}
-          />
         </HStack>
         <br />
         <br />
@@ -132,6 +147,44 @@ function SideMenu({
               Sentiment Analysis
             </Radio>
           ) : null}
+          <Box
+            zIndex={9}
+            // bg="red"
+            zIndex="4"
+          >
+            <VStack>
+              <Tooltip
+                zIndex="10"
+                label={voiceMsg}
+                fontSize="3xl"
+                placement="right-start"
+                isOpen={showTooltip}
+                bg="green.600"
+                hasArrow
+              >
+                <Image ml="3rem" boxSize="200px" src={clippyImage} />
+              </Tooltip>
+              {mute ? (
+                <Button
+                  width={"10rem"}
+                  bg="teal.400"
+                  color="black"
+                  onClick={handleMute}
+                >
+                  Not Listening
+                </Button>
+              ) : (
+                <Button
+                  width={"10rem"}
+                  bg="teal.200"
+                  color="black"
+                  onClick={handleMute}
+                >
+                  Listening
+                </Button>
+              )}
+            </VStack>
+          </Box>
 
           {/* <Radio
             isChecked={modifiedChartOptions.neuralNetwork}
@@ -146,6 +199,8 @@ function SideMenu({
             Neural Network (NodeNLP)
           </Radio> */}
         </Stack>
+        <br />
+        <br />
         <Box
           borderColor="black"
           border="2px"
@@ -156,8 +211,6 @@ function SideMenu({
           height="40vh"
           bottom="0"
           minWidth="8rem"
-          position="absolute"
-          mb="1rem"
           color="black"
         >
           <Accordion allowMultiple>

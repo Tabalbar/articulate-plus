@@ -5,50 +5,26 @@ import { Box, HStack, Button } from "@chakra-ui/react";
 import processData from "../../helpers/processData";
 
 function ChartSelection({ chartMsg, chooseChart }) {
+  const [hovered, setHovered] = useState(false);
+  const slideTimer = useRef(null);
   useEffect(() => {
     let scrollableElement = document.getElementById("scrollable");
     scrollableElement.scrollLeft =
       scrollableElement.scrollWidth - scrollableElement.clientWidth;
 
-    let slideTimer = setInterval(() => {
+    slideTimer.current = setInterval(() => {
       scrollableElement.scrollLeft += 5;
       if (
         scrollableElement.scrollLeft + scrollableElement.clientWidth >=
         scrollableElement.scrollWidth
       ) {
-        clearInterval(slideTimer);
+        clearInterval(slideTimer.current);
       }
     }, 35);
   }, [chartMsg.charts]);
 
-  function sideScroll(element, direction, speed, step) {
-    let scrollAmount = 0;
-    var slideTimer = setInterval(function () {
-      if (direction == "left") {
-        element.scrollLeft -= step;
-      } else {
-        element.scrollLeft += step;
-      }
-      scrollAmount += step;
-
-      if (element.scrollLeft + element.clientWidth >= element.scrollWidth) {
-        window.clearInterval(slideTimer);
-      }
-      // if(userDidScroll) {
-      //   window.clearInterval(slideTimer);
-      // }
-    }, speed);
-  }
-
   return (
     <>
-      {/* <Button
-        onClick={() =>
-          sideScroll(document.getElementById("scrollable"), "right", 35, 5)
-        }
-      >
-        Next
-      </Button> */}
       <Box
         position="absolute"
         bottom="0"
@@ -74,7 +50,14 @@ function ChartSelection({ chartMsg, chooseChart }) {
               return (
                 <>
                   {chart ? (
-                    <Box zIndex={20} p={2} key={index}>
+                    <Box
+                      onMouseEnter={() => {
+                        clearInterval(slideTimer.current);
+                      }}
+                      zIndex={20}
+                      p={2}
+                      key={index}
+                    >
                       <ChartPlaceholder
                         specification={chart.charts.spec}
                         data={chartMsg.data}

@@ -1,26 +1,48 @@
-import React, { useState, useEffect } from "react";
-import Charts from "./pages/Charts";
+import React, { useState, useEffect, useRef } from "react";
 import "semantic-ui-css/semantic.min.css";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+//Pages
 import Diagnostics from "./pages/Diagnostics";
+import Charts from "./pages/Charts";
+
+//Components
 import Dictaphone from "./components/voice/Dictaphone";
+import SideMenu from "./components/sideMenu/SideMenu";
+
+//Helper functions
 import { serverRequest } from "./helpers/serverRequest";
 import createDate from "./helpers/createDate";
-import { ChakraProvider, VStack } from "@chakra-ui/react";
-import { useClippy } from "use-clippy-now";
-import { Button, Box, Input, Image, Tooltip } from "@chakra-ui/react";
+
+import {
+  ChakraProvider,
+  VStack,
+  Button,
+  Box,
+  Input,
+  Image,
+  Tooltip,
+} from "@chakra-ui/react";
+
+//For computer talking
+import listeningImage from "./images/idle.gif";
+import talkingImage from "./images/talking.gif";
+import muteImage from "./images/mute.gif";
+import thinkingImage from "./images/thinking.gif";
 import { thinking } from "./components/voice/assistantVoiceOptions";
-import SideMenu from "./components/sideMenu/SideMenu";
-import UseVoice from "./components/voice/UseVoice";
-import listeningImage from "./clippyImages/Listening.png";
-import muteImage from "./clippyImages/Mute.png";
-import thinkingImage from "./clippyImages/Thinking.png";
 
 function App() {
-  const [forceUpdate, setForceUpdate] = useState(true);
+  const [, setForceUpdate] = useState(true);
+
+  //Mute for synthesizer
   const [mute, setMute] = useState(false);
+
+  // State for dashboard or diagnostics page
   const [chartsPage, setChartsPage] = useState(true);
+
+  //Charts held in Chosen component
   const [charts, setCharts] = useState([]);
+
+  //Toggle options for algorithm
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
     semanticAnalysis: false,
     window: {
@@ -29,14 +51,19 @@ function App() {
     },
     neuralNetwork: true,
   });
+
+  // Chart message to send to server
   const [chartMsg, setChartMsg] = useState(
     JSON.parse(localStorage.getItem("chartMsg")) || {
-      command: "",
+      command: "", //Query
       attributes: [],
       data: "",
       transcript: "",
-      synonymMatrix: [],
-      featureMatrix: [],
+      uncontrolledTranscript: "",
+      loggedTranscript: [], // {sentence: string, date: createDate()}
+      loggedUncontrolledTranscript: [],
+      synonymMatrix: [], //Synonyms used in attributes
+      featureMatrix: [], //Unique data values
       currentCharts: [],
       explicitChart: "",
       inferredChart: "",
@@ -44,7 +71,13 @@ function App() {
       assistantResponse: "",
       errMsg: [],
       charts: [],
-      headerFrequencyCount: {
+      window_semantic: {
+        quantitative: [],
+        nominal: [],
+        temporal: [],
+        map: [],
+      },
+      window: {
         quantitative: [],
         nominal: [],
         temporal: [],
@@ -52,8 +85,13 @@ function App() {
       },
     }
   );
+
+  //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
+
   const [voiceMsg, setVoiceMsg] = useState(null);
+
+  // Handler to show thought bubble for clippy
   const [showTooltip, setShowTooltip] = useState(false);
   useEffect(() => {
     if (showTooltip) {
@@ -63,18 +101,19 @@ function App() {
     }
   }, [showTooltip]);
 
-  useEffect(() => {
-    // localStorage.setItem("chartMsg", JSON.stringify(chartMsg));
-  }, [chartMsg]);
+  // Handle Request to server
   const createCharts = (command) => {
     if (command) {
       chartMsg.command = command;
     }
+    //Pick a random thinking response
     let thinkingResponse = thinking[Math.floor(Math.random() * 4)];
     setClippyImage(thinkingImage);
-    let msg = UseVoice(thinkingResponse, mute);
     setVoiceMsg(thinkingResponse);
+
     setShowTooltip(true);
+
+    //Actual request to server
     serverRequest(
       chartMsg,
       setChartMsg,
@@ -87,14 +126,16 @@ function App() {
       if (mute) {
         setClippyImage(muteImage);
       } else {
-        setClippyImage(listeningImage);
+        setClippyImage(talkingImage);
+        setTimeout(() => {
+          setClippyImage(listeningImage);
+        }, 3000);
       }
     });
-    // msg.onend(() => {
-    //   console.log("dne");
-    // });
   };
-  console.log(chartMsg.charts);
+
+  //In chartSelection component, handles choosing the chart to add in
+  //Chosen component
   const chooseChart = (chosenChart) => {
     chosenChart.timeChosen.push(createDate());
     chosenChart.visible = true;
@@ -128,22 +169,22 @@ function App() {
       return !prev;
     });
   };
-  const [text, setText] = useState("");
+  const textRef = useRef("");
 
   return (
     <>
       <ChakraProvider>
         <div style={{ display: chartsPage ? null : "None" }}>
-          <Box
+          {/* <Box
             position="absolute"
             zIndex={9}
             // bg="red"
-            ml={"3rem"}
+            zIndex="10"
             width={"14vw"}
             minWidth={"16rem"}
             bottom={"31em"}
           >
-            <VStack float="right" spacing={".5px"}>
+            <VStack spacing={".5px"}>
               <Tooltip
                 zIndex="10"
                 label={voiceMsg}
@@ -152,42 +193,32 @@ function App() {
                 isOpen={showTooltip}
                 hasArrow
               >
-                <Image boxSize="90px" float="right" src={clippyImage} />
+                <Image ml="3rem" src={clippyImage} />
               </Tooltip>
               {mute ? (
-                <Button
-                  width={"5rem"}
-                  float={"right"}
-                  bg="teal.300"
-                  onClick={handleMute}
-                >
-                  Unmute
+                <Button width={"10rem"} bg="teal.300" onClick={handleMute}>
+                  Not Listening
                 </Button>
               ) : (
-                <Button
-                  width={"5rem"}
-                  float={"right"}
-                  bg="teal.300"
-                  onClick={handleMute}
-                >
-                  Mute
+                <Button width={"10rem"} bg="teal.300" onClick={handleMute}>
+                  Listening
                 </Button>
               )}
             </VStack>
-          </Box>
+          </Box> */}
           <Input
             position="absolute"
             ml="40rem"
             bg="white"
             zIndex={20}
             width={"10rem"}
-            onChange={(e) => setText(e.target.value)}
+            ref={textRef}
           ></Input>
           <Button
             position="absolute"
             ml={"50rem"}
             zIndex={20}
-            onClick={() => createCharts(text)}
+            onClick={() => createCharts(textRef.current.value)}
           >
             Test
           </Button>
@@ -205,7 +236,12 @@ function App() {
             modifiedChartOptions={modifiedChartOptions}
             setModifiedChartOptions={setModifiedChartOptions}
             chartMsg={chartMsg}
+            clippyImage={clippyImage}
+            handleMute={handleMute}
             clearCharts={clearCharts}
+            voiceMsg={voiceMsg}
+            mute={mute}
+            showTooltip={showTooltip}
           />
         </div>
         <div style={{ display: !chartsPage ? null : "None" }}>
@@ -216,6 +252,7 @@ function App() {
           setChartMsg={setChartMsg}
           chartMsg={chartMsg}
           voiceMsg={voiceMsg}
+          mute={mute}
         />
         <Box position="absolute" top="0" right="0">
           <Button onClick={() => setChartsPage((prev) => !prev)}>

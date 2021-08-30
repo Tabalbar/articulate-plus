@@ -10,7 +10,7 @@ const encoding = require("./specifications/encoding");
 const title = require("./specifications/title");
 
 module.exports = (intent, chartMsg, options) => {
-  const { headerFrequencyCount } = countHeaderFrequency(
+  const headerFrequencyCount = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
     chartMsg.synonymMatrix,
@@ -36,7 +36,7 @@ module.exports = (intent, chartMsg, options) => {
     headersToSort.sort((a, b) => (a.count < b.count ? 1 : -1));
     //**POSSIBLE BUG INDEX OUT OF RANGE**.
     for (let i = 0; i < 4; i++) {
-      if (headersToSort[i].count >= 5) {
+      if (headersToSort[i].count >= 3) {
         let found = false;
         for (let j = 0; j < extractedHeaders.length; j++) {
           if (headersToSort[i] == extractedHeaders[j]) {
@@ -49,7 +49,6 @@ module.exports = (intent, chartMsg, options) => {
       }
     }
   }
-  extractedHeaders.push("date", "date", "date");
 
   extractedHeaders = checkDuplicates(extractedHeaders);
   let filteredHeaders = extractFilteredHeaders(
@@ -338,7 +337,6 @@ function extractFilteredHeaders(command, data, headers, command) {
   }
 
   function extractHeadersWithoutFilter(docCommand, headers, data) {
-    let extractedHeaders = [];
     let foundTime = false;
     let index;
     for (let i = 0; i < headers.length; i++) {

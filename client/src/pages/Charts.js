@@ -1,14 +1,29 @@
 import React, { useState } from "react";
+
+//Components
 import ChartSelection from "../components/charts/Selection";
 import ChosenCharts from "../components/charts/Chosen";
+
+//Helpers
 import createDate from "../helpers/createDate";
 
+/**
+ * handles components for chart selection and chosen charts
+ *
+ * @param {object} chartMsg State to send to server
+ * @param {object} charts Chosen charts
+ * @param {function} setCharts set State of chosen charts
+ * @param {function} chooseChart handler for choosing a chart
+ * @param {boolean} mute for soive synthesizer
+ * @returns
+ */
 function Charts({ chartMsg, charts, setCharts, chooseChart, mute }) {
+  //to Rerender when deleteing charts on chosen charts component
   const [, setForceUpdate] = useState(true);
+  //Deleting charts from chosen charts
   const handleDelete = (index) => {
     charts[index].visible = false;
     charts[index].timeClosed.push(createDate());
-
     setForceUpdate((prev) => !prev);
   };
   return (

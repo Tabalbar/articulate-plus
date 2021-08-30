@@ -31,10 +31,9 @@ module.exports = (chartMsg) => {
         isChartsEqual(chartMsg.explicitChart[i], chartMsg.inferredChart[j]) &&
         chartMsg.explicitChart[i] !== ""
       ) {
-        console.log("called");
         chartMsg.inferredChart[j] = "";
         chartMsg.explicitChart[i].charts.spec.chartSelection =
-          "Explicit Window";
+          "explicit window+semantic";
       }
     }
     for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
@@ -43,7 +42,7 @@ module.exports = (chartMsg) => {
         chartMsg.explicitChart[i] !== ""
       ) {
         chartMsg.modifiedChart[j] = "";
-        chartMsg.explicitChart[i].charts.spec.chartSelection += " Modified";
+        chartMsg.explicitChart[i].charts.spec.chartSelection += " Window";
       }
     }
   }
@@ -55,14 +54,14 @@ module.exports = (chartMsg) => {
       ) {
         chartMsg.modifiedChart[j] = "";
         chartMsg.inferredChart[i].charts.spec.chartSelection =
-          "Window Modified";
+          "window+semantic window";
       }
     }
   }
 
   for (let i = 0; i < chartMsg.modifiedChart.length; i++) {
     if (chartMsg.modifiedChart[i] !== "") {
-      chartMsg.modifiedChart[i].charts.spec.chartSelection = "Modified";
+      chartMsg.modifiedChart[i].charts.spec.chartSelection = "window";
     }
   }
   //   if (

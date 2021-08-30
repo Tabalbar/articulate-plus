@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { VegaLite } from "react-vega";
+import { Box } from "@chakra-ui/react";
 
 const StreamGraph = ({
   attributes,
@@ -12,12 +13,12 @@ const StreamGraph = ({
 
   const specification = {
     width: 500,
-    height: 500,
+    height: 250,
     mark: "area",
     encoding: {
       x: {
         field: "date",
-        axis: null,
+        // axis: null,
       },
       y: {
         aggregate: "sum",
@@ -79,7 +80,11 @@ const StreamGraph = ({
   }, [overHearingData]);
   return (
     <>
-      <VegaLite spec={specification} data={{ table: streamData }} />
+      <VegaLite
+        width={parseInt(window.innerWidth - 250)}
+        spec={specification}
+        data={{ table: streamData }}
+      />
     </>
   );
 };

@@ -1,3 +1,10 @@
+/**
+ * Create current dates for logging:
+ * transcript
+ * When Charts were chosen
+ * When charts were deleted
+ * @returns Current Date (string)
+ */
 export default function createDate() {
   let date = new Date();
   const [month, day, year] = [

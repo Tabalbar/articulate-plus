@@ -141,13 +141,13 @@ app.post("/createCharts", async (req, res) => {
   }
 
   /**
-   * Inferred implicit chart
+   * Window & Semantic call
    */
-  const inferredResponse = await manager.process(
+  const windowSemanticResponse = await manager.process(
     "en",
     chartMsg.generalizedCommand
   );
-  if (inferredResponse.intent !== "None") {
+  if (windowSemanticResponse.intent !== "None") {
     let options = {
       semanticAnalysis: true,
       window: {
@@ -157,7 +157,7 @@ app.post("/createCharts", async (req, res) => {
       neuralNetwork: true,
     };
     chartMsg.inferredChart = createCharts(
-      inferredResponse.intent,
+      windowSemanticResponse.intent,
       chartMsg,
       options
     );
@@ -168,13 +168,13 @@ app.post("/createCharts", async (req, res) => {
   /**
    * modified implicit chart
    */
-  const modifiedResponse = await manager.process(
+  const windowResponse = await manager.process(
     "en",
     chartMsg.generalizedCommand
   );
-  if (modifiedResponse.intent !== "None") {
+  if (windowResponse.intent !== "None") {
     chartMsg.modifiedChart = createCharts(
-      modifiedResponse.intent,
+      windowResponse.intent,
       chartMsg,
       modifiedChartOptions
     );
@@ -182,7 +182,7 @@ app.post("/createCharts", async (req, res) => {
     chartMsg.modifiedChart = "";
   }
   CompareCharts(chartMsg);
-  chartMsg.headerFrequencyCount = countHeaderFrequency(
+  chartMsg.window_semantic = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
     chartMsg.synonymMatrix,
@@ -191,7 +191,22 @@ app.post("/createCharts", async (req, res) => {
       semanticAnalysis: true,
       window: {
         toggle: true,
-        pastSentences: 999,
+        pastSentences: 20,
+      },
+      neuralNetwork: true,
+    }
+  );
+
+  chartMsg.window = countHeaderFrequency(
+    chartMsg.transcript,
+    chartMsg.featureMatrix,
+    chartMsg.synonymMatrix,
+    chartMsg.data,
+    {
+      semanticAnalysis: false,
+      window: {
+        toggle: true,
+        pastSentences: 20,
       },
       neuralNetwork: true,
     }
