@@ -14,31 +14,41 @@ const StreamGraph = ({
   const specification = {
     width: 500,
     height: 250,
-    mark: { type: "area", interpolate: "step" },
+    mark: "rect",
     encoding: {
       x: {
-        field: "date",
-        axis: null,
+        field: "sentence",
+        type: "ordinal",
       },
       y: {
-        aggregate: "count",
+        type: "nominal",
         field: "header",
       },
-      color: { field: "header" },
+      color: {
+        aggregate: "count",
+        scale: { scheme: "reds" },
+        type: "quantitative",
+      },
+      tooltip: { field: "header", type: "nominal" },
+    },
+    config: {
+      axis: { grid: true, tickBand: "extent" },
     },
     data: { name: "table" },
   };
-  //   useEffect(() => {
-  //     let tmpStreamData = [];
-  //     for (let i = 0; i < attributes.length; i++) {
-  //       tmpStreamData.push({ header: attributes[i], count: 0, date: new Date() });
-  //     }
-
-  //     setStreamData(tmpStreamData);
-  //   }, [attributes]);
-
+  useEffect(() => {
+    if (streamData.length == 0) {
+      let tmpStreamData = [];
+      for (let i = 0; i < synonymAttributes.length; i++) {
+        tmpStreamData.push({ header: synonymAttributes[i][0], sentence: 0 });
+      }
+      setStreamData(tmpStreamData.flat());
+    }
+  }, []);
+  console.log(streamData);
   useEffect(() => {
     let sentences = overHearingData.split(".");
+    let transcriptLength = sentences.length;
     // if (sentences.length % 5 == 0) {
     let tmpSynonymAttributes = synonymAttributes;
     let synonymsAndFeatures = [];
@@ -50,24 +60,34 @@ const StreamGraph = ({
     }
     let tmpStreamData = streamData;
     sentences = sentences.slice(-1);
+    let attributesWereFound = false;
     for (let i = 0; i < sentences.length; i++) {
-      for (let j = 0; j < synonymsAndFeatures.length; j++) {
-        for (let w = 0; w < synonymsAndFeatures[j].length; w++) {
-          if (
-            sentences[i]
-              .toLowerCase()
-              .includes(synonymsAndFeatures[j][w].toLowerCase())
-          ) {
-            tmpStreamData.push({
-              header: synonymsAndFeatures[j][0],
-              date: new Date(),
-            });
-            break;
+      let words = sentences[i].split(" ");
+      for (let m = 0; m < words.length; m++) {
+        for (let j = 0; j < synonymsAndFeatures.length; j++) {
+          let found = false;
+          for (let w = 0; w < synonymsAndFeatures[j].length; w++) {
+            if (
+              words[m]
+                .toLowerCase()
+                .includes(synonymsAndFeatures[j][w].toLowerCase())
+            ) {
+              tmpStreamData.push({
+                header: synonymsAndFeatures[j][0],
+                sentence: transcriptLength,
+              });
+              found = true;
+              attributesWereFound = true;
+              break;
+            }
           }
+          if (found) break;
         }
       }
     }
-    setStreamData(tmpStreamData.flat());
+    if (tmpStreamData.length > 0) {
+      setStreamData(tmpStreamData.flat());
+    }
   }, [overHearingData]);
   return (
     <>

@@ -44,6 +44,7 @@ manager.addDocument(
 manager.addAnswer("en", "line", "line");
 
 manager.addDocument("en", "show me a map of nominal", "map");
+manager.addDocument("en", "show me where nominal", "map");
 
 manager.addAnswer("en", "map", "map");
 
@@ -107,12 +108,13 @@ app.post("/createCharts", async (req, res) => {
   let explicitChartType = getExplicitChartType(chartMsg.command);
   if (explicitChartType) {
     let options = {
-      semanticAnalysis: false,
+      sentimentAnalysis: false,
       window: {
         toggle: false,
         pastSentences: 20,
       },
       neuralNetwork: false,
+      useSynonyms: false,
     };
     chartMsg.explicitChart = createCharts(explicitChartType, chartMsg, options);
     // chartMsg.explicitChart = explicitChart(explicitChartType, chartMsg);
@@ -123,12 +125,13 @@ app.post("/createCharts", async (req, res) => {
     );
     if (explicitResponse.intent !== "None") {
       let options = {
-        semanticAnalysis: false,
+        sentimentAnalysis: false,
         window: {
           toggle: false,
           pastSentences: 20,
         },
         neuralNetwork: false,
+        useSynonyms: false,
       };
       chartMsg.explicitChart = createCharts(
         explicitResponse.intent,
@@ -141,23 +144,24 @@ app.post("/createCharts", async (req, res) => {
   }
 
   /**
-   * Window & Semantic call
+   * Window & Sentiment call
    */
-  const windowSemanticResponse = await manager.process(
+  const windowSentimentResponse = await manager.process(
     "en",
     chartMsg.generalizedCommand
   );
-  if (windowSemanticResponse.intent !== "None") {
+  if (windowSentimentResponse.intent !== "None") {
     let options = {
-      semanticAnalysis: true,
+      sentimentAnalysis: true,
       window: {
         toggle: true,
-        pastSentences: 20,
+        pastSentences: modifiedChartOptions.window.pastSentences,
       },
       neuralNetwork: true,
+      useSynonyms: modifiedChartOptions.useSynonyms,
     };
     chartMsg.inferredChart = createCharts(
-      windowSemanticResponse.intent,
+      windowSentimentResponse.intent,
       chartMsg,
       options
     );
@@ -182,16 +186,16 @@ app.post("/createCharts", async (req, res) => {
     chartMsg.modifiedChart = "";
   }
   CompareCharts(chartMsg);
-  chartMsg.window_semantic = countHeaderFrequency(
+  chartMsg.window_sentiment = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
     chartMsg.synonymMatrix,
     chartMsg.data,
     {
-      semanticAnalysis: true,
+      sentimentAnalysis: true,
       window: {
         toggle: true,
-        pastSentences: 20,
+        pastSentences: modifiedChartOptions.window.pastSentences,
       },
       neuralNetwork: true,
     }
@@ -202,11 +206,18 @@ app.post("/createCharts", async (req, res) => {
     chartMsg.featureMatrix,
     chartMsg.synonymMatrix,
     chartMsg.data,
+    modifiedChartOptions
+  );
+  chartMsg.total = countHeaderFrequency(
+    chartMsg.transcript,
+    chartMsg.featureMatrix,
+    chartMsg.synonymMatrix,
+    chartMsg.data,
     {
-      semanticAnalysis: false,
+      sentimentAnalysis: false,
       window: {
         toggle: true,
-        pastSentences: 20,
+        pastSentences: 99999,
       },
       neuralNetwork: true,
     }

@@ -40,6 +40,7 @@ function Diagnostics({ chartMsg }) {
       uncontrolledTranscript: chartMsg.uncontrolledTranscript,
       loggedUncontrolledTranscript: chartMsg.loggedUncontrolledTranscript,
       charts: chartMsg.charts,
+      synonymsAndFeatures: chartMsg.synonymMatrix,
     };
     const fileName = "file";
     const json = JSON.stringify(myData);
@@ -65,13 +66,16 @@ function Diagnostics({ chartMsg }) {
     }
 
     let words = tmpTranscript.split(" ");
-    console.log(words);
     for (let i = 0; i < words.length; i++) {
       let found = false;
       for (let j = 0; j < synonymsAndFeatures.length; j++) {
         for (let w = 0; w < synonymsAndFeatures[j].length; w++) {
           if (words[i].toLowerCase().includes(synonymsAndFeatures[j][w])) {
-            tmpTranscriptData.push({ word: words[i], bold: true });
+            tmpTranscriptData.push({
+              word: words[i],
+              bold: true,
+              header: synonymsAndFeatures[j][0],
+            });
             found = true;
             break;
           }
@@ -84,7 +88,6 @@ function Diagnostics({ chartMsg }) {
     }
     setTranscriptData(tmpTranscriptData);
   }, [chartMsg.transcript]);
-
   return (
     <>
       <Center>
@@ -141,7 +144,11 @@ function Diagnostics({ chartMsg }) {
               <p>
                 {transcriptData.map((value, index) => {
                   if (value.bold) {
-                    return <strong>{value.word} </strong>;
+                    return (
+                      <strong>
+                        {value.word} ({value.header}){" "}
+                      </strong>
+                    );
                   } else {
                     return value.word + " ";
                   }
@@ -153,13 +160,13 @@ function Diagnostics({ chartMsg }) {
             <div>
               <HStack>
                 <Table>
-                  <Text fontWeight="bold">Window + Semantic</Text>
+                  <Text fontWeight="bold">Total</Text>
 
                   <Tr>
                     <Th>Attribute</Th>
                     <Th>Frequency Count</Th>
                   </Tr>
-                  {chartMsg.window_semantic.map.map((value, index) => {
+                  {chartMsg.total.map.map((value, index) => {
                     return (
                       <>
                         <Tr>
@@ -169,7 +176,7 @@ function Diagnostics({ chartMsg }) {
                       </>
                     );
                   })}
-                  {chartMsg.window_semantic.nominal.map((value, index) => {
+                  {chartMsg.total.nominal.map((value, index) => {
                     return (
                       <>
                         <Tr key={index}>
@@ -179,7 +186,7 @@ function Diagnostics({ chartMsg }) {
                       </>
                     );
                   })}
-                  {chartMsg.window_semantic.quantitative.map((value, index) => {
+                  {chartMsg.total.quantitative.map((value, index) => {
                     return (
                       <>
                         <Tr>
@@ -189,6 +196,46 @@ function Diagnostics({ chartMsg }) {
                       </>
                     );
                   })}
+                </Table>
+                <Table>
+                  <Text fontWeight="bold">Window + Sentiment</Text>
+
+                  <Tr>
+                    <Th>Attribute</Th>
+                    <Th>Frequency Count</Th>
+                  </Tr>
+                  {chartMsg.window_sentiment.map.map((value, index) => {
+                    return (
+                      <>
+                        <Tr>
+                          <Td key={index}> {value.header}</Td>
+                          <Td> {value.count}</Td>
+                        </Tr>
+                      </>
+                    );
+                  })}
+                  {chartMsg.window_sentiment.nominal.map((value, index) => {
+                    return (
+                      <>
+                        <Tr key={index}>
+                          <Td> {value.header}</Td>
+                          <Td> {value.count}</Td>
+                        </Tr>
+                      </>
+                    );
+                  })}
+                  {chartMsg.window_sentiment.quantitative.map(
+                    (value, index) => {
+                      return (
+                        <>
+                          <Tr>
+                            <Td key={index}> {value.header}</Td>
+                            <Td> {value.count}</Td>
+                          </Tr>
+                        </>
+                      );
+                    }
+                  )}
                 </Table>
                 <Table>
                   <Text fontWeight="bold">Window</Text>

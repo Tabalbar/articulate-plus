@@ -23,7 +23,9 @@ module.exports = (intent, chartMsg, options) => {
     chartMsg.command,
     chartMsg.attributes,
     chartMsg.data,
-    intent
+    intent,
+    options,
+    chartMsg
   );
   if (options.window.toggle) {
     const headerKeys = Object.keys(headerFrequencyCount);
@@ -36,7 +38,7 @@ module.exports = (intent, chartMsg, options) => {
     headersToSort.sort((a, b) => (a.count < b.count ? 1 : -1));
     //**POSSIBLE BUG INDEX OUT OF RANGE**.
     for (let i = 0; i < 4; i++) {
-      if (headersToSort[i].count >= 3) {
+      if (headersToSort[i].count >= 5) {
         let found = false;
         for (let j = 0; j < extractedHeaders.length; j++) {
           if (headersToSort[i] == extractedHeaders[j]) {
@@ -118,7 +120,6 @@ module.exports = (intent, chartMsg, options) => {
           options,
           filteredHeaders
         );
-        console.log(twoExtractedHeaders);
         charts.push(chartObj);
       }
     }
@@ -194,7 +195,7 @@ function runAlgortihm(
   return chartObj;
 }
 
-function extractHeaders(command, headers, data, intent) {
+function extractHeaders(command, headers, data, intent, options, chartMsg) {
   let doc = nlp(command);
   let docSingular = nlp(command).nouns().toSingular();
   let extractedHeaders = [];
@@ -206,6 +207,17 @@ function extractHeaders(command, headers, data, intent) {
       extractedHeaders.push(headers[i]);
     }
   }
+
+  if (options.useSynonyms) {
+    for (let i = 0; i < chartMsg.synonymMatrix.length; i++) {
+      for (let j = 0; j < chartMsg.synonymMatrix[i].length; j++) {
+        if (doc.has(chartMsg.synonymMatrix[i][j].toLowerCase())) {
+          extractedHeaders.push(chartMsg.synonymMatrix[i][0]);
+        }
+      }
+    }
+  }
+
   let wordPosition = [];
   for (let i = 0; i < extractedHeaders.length; i++) {
     wordPosition.push({

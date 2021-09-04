@@ -50,14 +50,25 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
     //Set state for message to send to node service
     if (!mute) {
       setChartMsg((prev) => {
-        return {
-          ...prev,
-          transcript: prev.transcript + ". " + command,
-          loggedTranscript: [
-            ...prev.loggedTranscript,
-            { sentence: command, date: createDate() },
-          ],
-        };
+        if (prev.transcript !== "") {
+          return {
+            ...prev,
+            transcript: prev.transcript + ". " + command,
+            loggedTranscript: [
+              ...prev.loggedTranscript,
+              { sentence: command, date: createDate() },
+            ],
+          };
+        } else {
+          return {
+            ...prev,
+            transcript: prev.transcript + "" + command,
+            loggedTranscript: [
+              ...prev.loggedTranscript,
+              { sentence: command, date: createDate() },
+            ],
+          };
+        }
       });
     } else {
       setChartMsg((prev) => {

@@ -16,7 +16,7 @@ function ChartSelection({ chartMsg, chooseChart }) {
       scrollableElement.scrollLeft += 5;
       if (
         scrollableElement.scrollLeft + scrollableElement.clientWidth >=
-        scrollableElement.scrollWidth
+        scrollableElement.scrollWidth - 10
       ) {
         clearInterval(slideTimer.current);
       }

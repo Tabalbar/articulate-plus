@@ -61,7 +61,7 @@ function switchHeaders(extractedHeaders, targetIndex, sourceIndex) {
 function sortArray(header, data) {
   let order = [];
   const unique = [...new Set(data.map((item) => item[header]))];
-  if (unique.length < 10) {
+  if (unique.length == 5) {
     for (let i = 0; i < unique.length; i++) {
       let doc = nlp(unique[i]);
       if (doc.has("very high")) {
@@ -102,6 +102,40 @@ function sortArray(header, data) {
       }
     }
   }
+  if (unique.length == 4) {
+    for (let i = 0; i < unique.length; i++) {
+      let doc = nlp(unique[i]);
+      if (doc.has("high")) {
+        switchHeaders(unique, 0, i);
+        break;
+      }
+    }
+
+    for (let i = 1; i < unique.length; i++) {
+      let doc = nlp(unique[i]);
+      if (doc.has("moderate") || doc.has("medium")) {
+        switchHeaders(unique, 1, i);
+        break;
+      }
+    }
+
+    for (let i = 2; i < unique.length; i++) {
+      let doc = nlp(unique[i]);
+      if (doc.has("low")) {
+        switchHeaders(unique, 2, i);
+        break;
+      }
+    }
+
+    for (let i = 3; i < unique.length; i++) {
+      let doc = nlp(unique[i]);
+      if (doc.has("very low")) {
+        switchHeaders(unique, 3, i);
+        break;
+      }
+    }
+  }
+  console.log(unique);
 
   return unique;
 }
@@ -136,11 +170,11 @@ function findAndAddMapAttribute(extractedHeaders) {
 function createColors(header, data) {
   let colorArray = [];
   const unique = [...new Set(data.map((item) => item[header]))];
-
   let colorGradient = new Rainbow();
   for (let i = 0; i < unique.length; i++) {
-    colorArray.push("#" + colorGradient.colourAt(i * 10));
+    colorArray.push("#" + colorGradient.colourAt(i * 20));
   }
+  colorArray.push("#80807f");
 
   return colorArray;
 }

@@ -32,7 +32,7 @@ module.exports = (
   }
   let sentences = transcript.split(".");
   if (
-    modifiedChartOptions.semanticAnalysis &&
+    modifiedChartOptions.window_sentiment &&
     modifiedChartOptions.window.toggle
   ) {
     for (let i = 0; i < sentences.length; i++) {

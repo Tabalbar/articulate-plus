@@ -18,7 +18,7 @@ function UseVoice(text, mute) {
   if (!mute) {
     window.speechSynthesis.speak(msg);
     msg.onend = (event) => {
-      console.log(event.elapsedTime);
+      // console.log(event.elapsedTime);
     };
   }
   return msg;

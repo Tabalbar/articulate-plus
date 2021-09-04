@@ -43,14 +43,14 @@ export async function serverRequest(
   newCharts = newCharts.filter((x) => {
     return x !== "";
   });
-  console.log(tmpChartMsg.window_semantic);
   //Put new charts into state
   setChartMsg((prev) => {
     return {
       ...prev,
       charts: [...prev.charts, ...newCharts],
-      window_semantic: tmpChartMsg.window_semantic,
+      window_sentiment: tmpChartMsg.window_sentiment,
       window: tmpChartMsg.window,
+      total: tmpChartMsg.total,
     };
   });
 

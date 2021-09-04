@@ -44,12 +44,13 @@ function App() {
 
   //Toggle options for algorithm
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
-    semanticAnalysis: false,
+    sentimentAnalysis: false,
     window: {
       toggle: true,
       pastSentences: 20,
     },
     neuralNetwork: true,
+    useSynonyms: true,
   });
 
   // Chart message to send to server
@@ -71,7 +72,7 @@ function App() {
       assistantResponse: "",
       errMsg: [],
       charts: [],
-      window_semantic: {
+      window_sentiment: {
         quantitative: [],
         nominal: [],
         temporal: [],
@@ -83,9 +84,15 @@ function App() {
         temporal: [],
         map: [],
       },
+      total: {
+        quantitative: [],
+        nominal: [],
+        temporal: [],
+        map: [],
+      },
     }
   );
-
+  console.log(charts);
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 
@@ -100,7 +107,6 @@ function App() {
       }, 8000);
     }
   }, [showTooltip]);
-
   // Handle Request to server
   const createCharts = (command) => {
     if (command) {

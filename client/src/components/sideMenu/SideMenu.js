@@ -135,10 +135,13 @@ function SideMenu({
           ) : null}
           {modifiedChartOptions.window.toggle ? (
             <Radio
-              isChecked={modifiedChartOptions.semanticAnalysis}
+              isChecked={modifiedChartOptions.sentimentAnalysis}
               onClick={() =>
                 setModifiedChartOptions((prev) => {
-                  return { ...prev, semanticAnalysis: !prev.semanticAnalysis };
+                  return {
+                    ...prev,
+                    sentimentAnalysis: !prev.sentimentAnalysis,
+                  };
                 })
               }
               size="lg"
@@ -147,6 +150,18 @@ function SideMenu({
               Sentiment Analysis
             </Radio>
           ) : null}
+          <Radio
+            isChecked={modifiedChartOptions.useSynonyms}
+            onClick={() =>
+              setModifiedChartOptions((prev) => {
+                return { ...prev, useSynonyms: !prev.useSynonyms };
+              })
+            }
+            size="lg"
+            colorScheme="teal"
+          >
+            Use Synonyms
+          </Radio>
           <Box
             zIndex={9}
             // bg="red"
@@ -171,7 +186,7 @@ function SideMenu({
                   color="black"
                   onClick={handleMute}
                 >
-                  Not Listening
+                  Awake
                 </Button>
               ) : (
                 <Button
@@ -180,7 +195,7 @@ function SideMenu({
                   color="black"
                   onClick={handleMute}
                 >
-                  Listening
+                  Sleep
                 </Button>
               )}
             </VStack>
@@ -291,12 +306,12 @@ function SideMenu({
               ) : null}
               {modifiedChartOptions.window.toggle ? (
                 <Radio
-                  isChecked={modifiedChartOptions.semanticAnalysis}
+                  isChecked={modifiedChartOptions.sentimentAnalysis}
                   onClick={() =>
                     setModifiedChartOptions((prev) => {
                       return {
                         ...prev,
-                        semanticAnalysis: !prev.semanticAnalysis,
+                        sentimentAnalysis: !prev.sentimentAnalysis,
                       };
                     })
                   }

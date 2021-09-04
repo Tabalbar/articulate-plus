@@ -33,7 +33,7 @@ module.exports = (chartMsg) => {
       ) {
         chartMsg.inferredChart[j] = "";
         chartMsg.explicitChart[i].charts.spec.chartSelection =
-          "explicit window+semantic";
+          "explicit window+sentiment";
       }
     }
     for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
@@ -54,7 +54,7 @@ module.exports = (chartMsg) => {
       ) {
         chartMsg.modifiedChart[j] = "";
         chartMsg.inferredChart[i].charts.spec.chartSelection =
-          "window+semantic window";
+          "window+sentiment window";
       }
     }
   }
