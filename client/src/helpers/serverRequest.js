@@ -12,8 +12,8 @@ export async function serverRequest(
   chartMsg,
   setChartMsg,
   modifiedChartOptions,
-  mute,
-  setVoiceMsg
+  setVoiceMsg,
+  setShowTooltip
 ) {
   //API request
   const response = await fetch("/createCharts", {
@@ -54,7 +54,7 @@ export async function serverRequest(
     };
   });
 
-  // How many charts were genderated
+  // How many charts were generated
   let count = newCharts.length;
   let assistantResponse;
 
@@ -67,5 +67,6 @@ export async function serverRequest(
   }
   //Voice syntheiszer
   setVoiceMsg(assistantResponse);
+
   return;
 }

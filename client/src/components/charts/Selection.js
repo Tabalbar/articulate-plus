@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../style.css";
 import { VegaLite } from "react-vega";
-import { Box, HStack, Button } from "@chakra-ui/react";
+import { Box, HStack, Button, useTimeout } from "@chakra-ui/react";
 import processData from "../../helpers/processData";
 
 function ChartSelection({ chartMsg, chooseChart }) {
-  const [hovered, setHovered] = useState(false);
   const slideTimer = useRef(null);
   useEffect(() => {
+    if (slideTimer) {
+      clearInterval(slideTimer.current);
+    }
     let scrollableElement = document.getElementById("scrollable");
     scrollableElement.scrollLeft =
       scrollableElement.scrollWidth - scrollableElement.clientWidth;
-
     slideTimer.current = setInterval(() => {
       scrollableElement.scrollLeft += 5;
       if (
@@ -29,7 +30,7 @@ function ChartSelection({ chartMsg, chooseChart }) {
         position="absolute"
         bottom="0"
         bg="gray.700"
-        width="88vw"
+        width="100vw"
         height="31rem"
         zIndex="1"
         right="0"
@@ -39,7 +40,7 @@ function ChartSelection({ chartMsg, chooseChart }) {
         <Box
           zIndex={3}
           bottom="0"
-          width="86vw"
+          width="100vw"
           overflowX="auto"
           display="flex"
           id="scrollable"
@@ -53,6 +54,8 @@ function ChartSelection({ chartMsg, chooseChart }) {
                     <Box
                       onMouseEnter={() => {
                         clearInterval(slideTimer.current);
+                        let scrollableElement =
+                          document.getElementById("scrollable");
                       }}
                       zIndex={20}
                       p={2}

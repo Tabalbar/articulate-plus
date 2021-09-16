@@ -57,9 +57,8 @@ function Window(props) {
       <Draggable
         handle=".handle"
         grid={[1, 1]}
-        className="react-draggable"
         scale={1}
-        bounds="parent"
+        bounds={{ bottom: 3000, top: 0 }}
         defaultPosition={{
           x: props.charts[props.index].x,
           y: props.charts[props.index].y,

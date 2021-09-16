@@ -1,28 +1,28 @@
 module.exports = (chartMsg) => {
-  for (let i = 0; i < chartMsg.charts.length; i++) {
-    for (let j = 0; j < chartMsg.explicitChart.length; j++) {
-      if (isChartsEqual(chartMsg.explicitChart[j], chartMsg.charts[i])) {
-        chartMsg.explicitChart[j] = "";
-        break;
-      }
-    }
-  }
-  for (let i = 0; i < chartMsg.charts.length; i++) {
-    for (let j = 0; j < chartMsg.inferredChart.length; j++) {
-      if (isChartsEqual(chartMsg.inferredChart[j], chartMsg.charts[i])) {
-        chartMsg.inferredChart[j] = "";
-        break;
-      }
-    }
-  }
-  for (let i = 0; i < chartMsg.charts.length; i++) {
-    for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
-      if (isChartsEqual(chartMsg.modifiedChart[j], chartMsg.charts[i])) {
-        chartMsg.modifiedChart[j] = "";
-        break;
-      }
-    }
-  }
+  // for (let i = 0; i < chartMsg.charts.length; i++) {
+  //   for (let j = 0; j < chartMsg.explicitChart.length; j++) {
+  //     if (isChartsEqual(chartMsg.explicitChart[j], chartMsg.charts[i])) {
+  //       chartMsg.explicitChart[j] = "";
+  //       break;
+  //     }
+  //   }
+  // }
+  // for (let i = 0; i < chartMsg.charts.length; i++) {
+  //   for (let j = 0; j < chartMsg.inferredChart.length; j++) {
+  //     if (isChartsEqual(chartMsg.inferredChart[j], chartMsg.charts[i])) {
+  //       chartMsg.inferredChart[j] = "";
+  //       break;
+  //     }
+  //   }
+  // }
+  // for (let i = 0; i < chartMsg.charts.length; i++) {
+  //   for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
+  //     if (isChartsEqual(chartMsg.modifiedChart[j], chartMsg.charts[i])) {
+  //       chartMsg.modifiedChart[j] = "";
+  //       break;
+  //     }
+  //   }
+  // }
 
   //Check if Explicit equal inferred and modified
   for (let i = 0; i < chartMsg.explicitChart.length; i++) {

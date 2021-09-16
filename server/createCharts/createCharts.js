@@ -35,18 +35,20 @@ module.exports = (intent, chartMsg, options) => {
         headersToSort.push(headerFrequencyCount[headerKeys[i]][j]);
       }
     }
-    headersToSort.sort((a, b) => (a.count < b.count ? 1 : -1));
+    let sortedHeaders = headersToSort.sort((a, b) =>
+      a.count < b.count ? 1 : -1
+    );
     //**POSSIBLE BUG INDEX OUT OF RANGE**.
     for (let i = 0; i < 4; i++) {
-      if (headersToSort[i].count >= 5) {
+      if (sortedHeaders[i].count >= 5) {
         let found = false;
         for (let j = 0; j < extractedHeaders.length; j++) {
-          if (headersToSort[i] == extractedHeaders[j]) {
+          if (sortedHeaders[i] == extractedHeaders[j]) {
             found = true;
           }
         }
         if (!found) {
-          extractedHeaders.push(headersToSort[i].header);
+          extractedHeaders.push(sortedHeaders[i].header);
         }
       }
     }
@@ -195,19 +197,21 @@ function runAlgortihm(
   return chartObj;
 }
 
+/**
+ * Extract headers from the command
+ * @returns
+ */
 function extractHeaders(command, headers, data, intent, options, chartMsg) {
+  //Extract explicit headers from the command
   let doc = nlp(command);
-  let docSingular = nlp(command).nouns().toSingular();
   let extractedHeaders = [];
   for (let i = 0; i < headers.length; i++) {
-    if (
-      doc.has(headers[i].toLowerCase()) ||
-      docSingular.has(headers[i].toLowerCase())
-    ) {
+    if (doc.has(headers[i].toLowerCase())) {
       extractedHeaders.push(headers[i]);
     }
   }
 
+  //Use synonyms from the command
   if (options.useSynonyms) {
     for (let i = 0; i < chartMsg.synonymMatrix.length; i++) {
       for (let j = 0; j < chartMsg.synonymMatrix[i].length; j++) {
@@ -218,6 +222,10 @@ function extractHeaders(command, headers, data, intent, options, chartMsg) {
     }
   }
 
+  /**
+   * Extracts headers relative to what header was spoken first
+   * This is later used to recursivly iterate over the first spoken header
+   */
   let wordPosition = [];
   for (let i = 0; i < extractedHeaders.length; i++) {
     wordPosition.push({
@@ -231,21 +239,25 @@ function extractHeaders(command, headers, data, intent, options, chartMsg) {
     extractedHeaders.push(wordPosition[i].header);
   }
 
+  //If the intent is map, find map header in attributes
   if (intent === "map") {
-    let mapFound = false;
+    let mapFoundInExtractedHeaders = false;
+    let mapFoundInDataset = false;
     for (let i = 0; i < extractedHeaders.length; i++) {
       if (extractedHeaders[i] == "map") {
-        mapFound = true;
+        mapFoundInExtractedHeaders = true;
       }
     }
-    if (!mapFound) {
+    if (!mapFoundInExtractedHeaders) {
       for (let i = 0; i < headers.length; i++) {
         if (headers[i] == "map") {
+          mapFoundInDataset = true;
           extractedHeaders.push(headers[i]);
         }
       }
     }
   }
+
   if (intent === "line") {
     let dateFound = false;
     let casesFound = false;

@@ -3,10 +3,10 @@ const PORT = process.env.PORT || 6000;
 const app = express();
 const path = require("path");
 const ExtendNLP = require("./Pre-processing/ExtendNLP");
+app.use(express.json({ limit: "500mb" }));
+app.use(express.urlencoded({ extended: true, limit: "500mb" }));
 
-/**
- * This is for the Neural Network
- */
+app.use(express.static(path.resolve(__dirname, "../client/build")));
 const { NlpManager } = require("node-nlp");
 
 const manager = new NlpManager({
@@ -55,11 +55,6 @@ manager.addAnswer("en", "map", "map");
 })();
 //***************** */
 
-app.use(express.json({ limit: "500mb" }));
-app.use(express.urlencoded({ extended: true, limit: "500mb" }));
-
-app.use(express.static(path.resolve(__dirname, "../client/build")));
-
 /**
  * Initialize
  */
@@ -101,13 +96,18 @@ app.post("/createCharts", async (req, res) => {
     chartMsg.synonymMatrix
   );
   chartMsg.generalizedCommand = generalizedCommand;
-
   /**
    * Getting ExplicitChart
    */
-  let explicitChartType = getExplicitChartType(chartMsg.command);
-  if (explicitChartType) {
-    let options = {
+  let intent = getExplicitChartType(chartMsg.command);
+  if (!intent) {
+    intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
+  }
+  if (intent !== "None") {
+    /**
+     * Explicit Chart
+     */
+    let explicitChartOptions = {
       sentimentAnalysis: false,
       window: {
         toggle: false,
@@ -116,42 +116,16 @@ app.post("/createCharts", async (req, res) => {
       neuralNetwork: false,
       useSynonyms: false,
     };
-    chartMsg.explicitChart = createCharts(explicitChartType, chartMsg, options);
-    // chartMsg.explicitChart = explicitChart(explicitChartType, chartMsg);
-  } else {
-    const explicitResponse = await manager.process(
-      "en",
-      chartMsg.generalizedCommand
+    chartMsg.explicitChart = createCharts(
+      intent,
+      chartMsg,
+      explicitChartOptions
     );
-    if (explicitResponse.intent !== "None") {
-      let options = {
-        sentimentAnalysis: false,
-        window: {
-          toggle: false,
-          pastSentences: 20,
-        },
-        neuralNetwork: false,
-        useSynonyms: false,
-      };
-      chartMsg.explicitChart = createCharts(
-        explicitResponse.intent,
-        chartMsg,
-        options
-      );
-    } else {
-      chartMsg.explicitChart = "";
-    }
-  }
 
-  /**
-   * Window & Sentiment call
-   */
-  const windowSentimentResponse = await manager.process(
-    "en",
-    chartMsg.generalizedCommand
-  );
-  if (windowSentimentResponse.intent !== "None") {
-    let options = {
+    /**
+     * Window + Sentiment Chart
+     */
+    let windowSentimentOptions = {
       sentimentAnalysis: true,
       window: {
         toggle: true,
@@ -161,31 +135,28 @@ app.post("/createCharts", async (req, res) => {
       useSynonyms: modifiedChartOptions.useSynonyms,
     };
     chartMsg.inferredChart = createCharts(
-      windowSentimentResponse.intent,
+      intent,
       chartMsg,
-      options
+      windowSentimentOptions
     );
-  } else {
-    chartMsg.inferredChart = "";
-  }
 
-  /**
-   * modified implicit chart
-   */
-  const windowResponse = await manager.process(
-    "en",
-    chartMsg.generalizedCommand
-  );
-  if (windowResponse.intent !== "None") {
+    /**
+     * modified implicit chart
+     */
+
     chartMsg.modifiedChart = createCharts(
-      windowResponse.intent,
+      intent,
       chartMsg,
       modifiedChartOptions
     );
+    CompareCharts(chartMsg);
   } else {
+    //If Neural Network has no match for intent, no charts are made
+    chartMsg.explicitChart = "";
+    chartMsg.inferredChart = "";
     chartMsg.modifiedChart = "";
   }
-  CompareCharts(chartMsg);
+
   chartMsg.window_sentiment = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,

@@ -7,7 +7,7 @@ import Charts from "./pages/Charts";
 
 //Components
 import Dictaphone from "./components/voice/Dictaphone";
-import SideMenu from "./components/sideMenu/SideMenu";
+import ArtyContainer from "./components/staticWindows/ArtyContainer";
 
 //Helper functions
 import { serverRequest } from "./helpers/serverRequest";
@@ -29,6 +29,7 @@ import talkingImage from "./images/talking.gif";
 import muteImage from "./images/mute.gif";
 import thinkingImage from "./images/thinking.gif";
 import { thinking } from "./components/voice/assistantVoiceOptions";
+import AttributeContainer from "./components/staticWindows/AttributeContainer";
 
 function App() {
   const [, setForceUpdate] = useState(true);
@@ -92,7 +93,6 @@ function App() {
       },
     }
   );
-  console.log(charts);
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 
@@ -124,10 +124,8 @@ function App() {
       chartMsg,
       setChartMsg,
       modifiedChartOptions,
-      mute,
-      setClippyImage,
-      thinkingImage,
-      setVoiceMsg
+      setVoiceMsg,
+      setShowTooltip
     ).then(() => {
       if (mute) {
         setClippyImage(muteImage);
@@ -181,37 +179,6 @@ function App() {
     <>
       <ChakraProvider>
         <div style={{ display: chartsPage ? null : "None" }}>
-          {/* <Box
-            position="absolute"
-            zIndex={9}
-            // bg="red"
-            zIndex="10"
-            width={"14vw"}
-            minWidth={"16rem"}
-            bottom={"31em"}
-          >
-            <VStack spacing={".5px"}>
-              <Tooltip
-                zIndex="10"
-                label={voiceMsg}
-                fontSize="3xl"
-                placement="right-start"
-                isOpen={showTooltip}
-                hasArrow
-              >
-                <Image ml="3rem" src={clippyImage} />
-              </Tooltip>
-              {mute ? (
-                <Button width={"10rem"} bg="teal.300" onClick={handleMute}>
-                  Not Listening
-                </Button>
-              ) : (
-                <Button width={"10rem"} bg="teal.300" onClick={handleMute}>
-                  Listening
-                </Button>
-              )}
-            </VStack>
-          </Box> */}
           <Input
             position="absolute"
             ml="40rem"
@@ -228,6 +195,21 @@ function App() {
           >
             Test
           </Button>
+          <ArtyContainer
+            clippyImage={clippyImage}
+            handleMute={handleMute}
+            clearCharts={clearCharts}
+            voiceMsg={voiceMsg}
+            mute={mute}
+            showTooltip={showTooltip}
+          />
+          <AttributeContainer
+            setChartMsg={setChartMsg}
+            modifiedChartOptions={modifiedChartOptions}
+            setModifiedChartOptions={setModifiedChartOptions}
+            chartMsg={chartMsg}
+          />
+
           <Charts
             chartMsg={chartMsg}
             setChartMsg={setChartMsg}
@@ -235,19 +217,6 @@ function App() {
             charts={charts}
             setCharts={setCharts}
             mute={mute}
-          />
-
-          <SideMenu
-            setChartMsg={setChartMsg}
-            modifiedChartOptions={modifiedChartOptions}
-            setModifiedChartOptions={setModifiedChartOptions}
-            chartMsg={chartMsg}
-            clippyImage={clippyImage}
-            handleMute={handleMute}
-            clearCharts={clearCharts}
-            voiceMsg={voiceMsg}
-            mute={mute}
-            showTooltip={showTooltip}
           />
         </div>
         <div style={{ display: !chartsPage ? null : "None" }}>
