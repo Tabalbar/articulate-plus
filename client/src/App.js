@@ -67,9 +67,9 @@ function App() {
       synonymMatrix: [], //Synonyms used in attributes
       featureMatrix: [], //Unique data values
       currentCharts: [],
-      explicitChart: "",
-      inferredChart: "",
-      modifiedChart: "",
+      explicitChart: [],
+      inferredChart: [],
+      modifiedChart: [],
       assistantResponse: "",
       errMsg: [],
       charts: [],
@@ -93,6 +93,7 @@ function App() {
       },
     }
   );
+
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 

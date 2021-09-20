@@ -1,6 +1,6 @@
 const findType = require("../chartMaker/findType");
-const map = require("../chartMaker/specialGraphs/map");
-const parallelCoordinates = require("../chartMaker/specialGraphs/parallelCoordinates");
+// const map = require("../chartMaker/specialGraphs/map");
+// const parallelCoordinates = require("../chartMaker/specialGraphs/parallelCoordinates");
 const nlp = require("compromise");
 
 module.exports = (
@@ -14,19 +14,19 @@ module.exports = (
   let numHeaders = extractedHeaders.length;
   let quantitativeFound = false;
 
-  if (intent == "parallelCoordinates") {
-    return parallelCoordinates(
-      chartObj,
-      extractedHeaders,
-      data,
-      headerFreq,
-      command
-    );
-  }
+  // if (intent == "parallelCoordinates") {
+  //   return parallelCoordinates(
+  //     chartObj,
+  //     extractedHeaders,
+  //     data,
+  //     headerFreq,
+  //     command
+  //   );
+  // }
 
-  if (intent == "map") {
-    return map(chartObj, extractedHeaders, data, headerFreq, command);
-  }
+  // if (intent == "map") {
+  //   return map(chartObj, extractedHeaders, data, headerFreq, command);
+  // }
   switch (numHeaders) {
     case 1:
       chartObj.charts.spec.encoding.x = {
@@ -60,8 +60,8 @@ module.exports = (
           axis: { labelAngle: -50 },
         };
         chartObj.charts.spec.encoding.y = {
-          field: extractedHeaders[0],
-          type: findType(extractedHeaders[0], data),
+          field: extractedHeaders[1],
+          type: findType(extractedHeaders[1], data),
         };
       } else {
         chartObj.charts.spec.encoding.x = {

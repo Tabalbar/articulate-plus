@@ -4,7 +4,7 @@ const countVector = require("./countVector");
 const transform = require("../helperFunctions/transform");
 const mark = require("../helperFunctions/mark");
 const findType = require("../helperFunctions/findType");
-const encoding = require("../inferred/encoding");
+const encoding = require("../specifications/encoding");
 const createDate = require("../helperFunctions/createDate");
 const title = require("../helperFunctions/title");
 
@@ -53,13 +53,12 @@ module.exports = (intent, chartMsg, modifiedChartOptions) => {
       }
     }
   }
-
   let chartObj = {
     charts: {
       spec: {
         title: "",
         width: 400,
-        height: 270,
+        height: 220,
         mark: "",
         transform: [],
         concat: [],
@@ -69,8 +68,8 @@ module.exports = (intent, chartMsg, modifiedChartOptions) => {
           x: {},
         },
         initialized: createDate(),
-        timeChosen: "",
-        timeClosed: "",
+        timeChosen: [],
+        timeClosed: [],
         timeSpentHovered: 0,
         data: { name: "table" }, // note: vega-lite data attribute is a plain object instead of an array
         command: chartMsg.command,
@@ -90,7 +89,7 @@ module.exports = (intent, chartMsg, modifiedChartOptions) => {
   chartObj = transform(chartMsg.data, filteredHeaders, chartObj, intent);
   chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
 
-  return chartObj;
+  return [chartObj];
 };
 
 function extractHeaders(command, headers, data, intent) {

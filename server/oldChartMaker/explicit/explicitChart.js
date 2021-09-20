@@ -1,11 +1,11 @@
-const createVector = require("../createVector");
+const createVector = require("../chartMaker/createVector");
 const nlp = require("compromise");
 const mark = require("../helperFunctions/mark");
-const encoding = require("./encoding");
+const encoding = require("../specifications/encoding");
 const transform = require("../helperFunctions/transform");
 const createDate = require("../helperFunctions/createDate");
 const title = require("../helperFunctions/title");
-const map = require("../specialGraphs/map");
+// const map = require("../specialGraphs/map");
 
 // let chart = chartMaker.chartMaker(explicitChart, synonymCommand, attributes, data, headerMatrix, command, headerFreq, randomChart)
 
@@ -31,13 +31,18 @@ module.exports = (intent, chartMsg) => {
           x: {},
         },
         initialized: createDate(),
-        timeChosen: "",
-        timeClosed: "",
+        timeChosen: [],
+        timeClosed: [],
         timeSpentHovered: 0,
         data: { name: "table" }, // note: vega-lite data attribute is a plain object instead of an array
         command: chartMsg.command,
       },
     },
+  };
+  let headerFreq = {
+    nominal: [],
+    quantitative: [],
+    temporal: [],
   };
   chartObj = mark(chartObj, intent);
   chartObj = encoding(
@@ -45,14 +50,23 @@ module.exports = (intent, chartMsg) => {
     intent,
     extractedHeaders,
     chartMsg.data,
-    chartMsg.command
+    headerFreq,
+    chartMsg.command,
+    false
   );
+  // chartObj = encoding(
+  //   chartObj,
+  //   intent,
+  //   extractedHeaders,
+  //   chartMsg.data,
+  //   chartMsg.command
+  // );
   if (chartObj == "") {
     return "";
   }
   chartObj = transform(chartMsg.data, filteredHeaders, chartObj, intent);
   chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
-  return chartObj;
+  return [chartObj];
 };
 
 function extractHeaders(command, headers) {

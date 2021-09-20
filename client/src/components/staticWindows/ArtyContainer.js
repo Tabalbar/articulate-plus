@@ -29,11 +29,11 @@ function ArtyContainer({
         grid={[1, 1]}
         scale={1}
         defaultPosition={{
-          x: 100,
-          y: 100,
+          x: 600,
+          y: 600,
         }}
         bounds={{ bottom: 1000, left: 0, top: 0 }}
-        zIndex={100}
+        zIndex={12}
         onStart={onStart.bind(this)}
         onStop={eventLogger}
       >

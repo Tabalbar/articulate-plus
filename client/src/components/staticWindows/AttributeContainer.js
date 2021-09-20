@@ -60,17 +60,17 @@ function AttributeContainer({
         grid={[1, 1]}
         scale={1}
         defaultPosition={{
-          x: 400,
+          x: 600,
           y: 100,
         }}
-        bounds={{ bottom: 680, left: 0, top: 0 }}
-        zIndex={100}
+        bounds={{ bottom: 1000, left: 0, top: 0 }}
+        zIndex={10}
         onStart={onStart.bind(this)}
         onStop={eventLogger}
       >
         <Box
-          position="absolute"
           bg="white"
+          position="absolute"
           overflow="auto"
           border="1px"
           boxShadow="2xl"

@@ -17,7 +17,6 @@ module.exports = (intent, chartMsg, options) => {
     chartMsg.data,
     options
   );
-
   let extractedHeaders = [];
   extractedHeaders = extractHeaders(
     chartMsg.command,
