@@ -30,6 +30,7 @@ import muteImage from "./images/mute.gif";
 import thinkingImage from "./images/thinking.gif";
 import { thinking } from "./components/voice/assistantVoiceOptions";
 import AttributeContainer from "./components/staticWindows/AttributeContainer";
+import ChartObj from "./ChartObj";
 
 function App() {
   const [, setForceUpdate] = useState(true);
@@ -98,6 +99,17 @@ function App() {
       },
     }
   );
+
+  const makeObj = () => {
+    const chart = new ChartObj(
+      chartMsg.data,
+      chartMsg.attributes,
+      chartMsg.synonymMatrix,
+      chartMsg.featureMatrix,
+      modifiedChartOptions
+    );
+    console.log(chart);
+  };
 
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
@@ -196,6 +208,7 @@ function App() {
   return (
     <>
       <ChakraProvider>
+        <Button onClick={makeObj}>click</Button>
         <div style={{ display: chartsPage ? null : "None" }}>
           <Input
             position="absolute"
