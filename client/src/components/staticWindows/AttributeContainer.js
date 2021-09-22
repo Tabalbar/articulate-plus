@@ -53,6 +53,21 @@ function AttributeContainer({
     });
   };
 
+  const handleRandomChartsMinutes = (e) => {
+    e.preventDefault();
+    let numMinutes = e.target.value;
+
+    setModifiedChartOptions((prev) => {
+      return {
+        ...prev,
+        randomCharts: {
+          toggle: true,
+          minutes: parseInt(numMinutes),
+        },
+      };
+    });
+  };
+
   return (
     <>
       <Draggable
@@ -213,6 +228,31 @@ function AttributeContainer({
                     >
                       Neural Network (NodeNLP)
                     </Radio>
+                    <Radio
+                      isChecked={modifiedChartOptions.randomCharts.toggle}
+                      onClick={() =>
+                        setModifiedChartOptions((prev) => {
+                          return {
+                            ...prev,
+                            randomCharts: {
+                              toggle: !prev.randomCharts.toggle,
+                              minutes: prev.randomCharts.minutes,
+                            },
+                          };
+                        })
+                      }
+                      size="lg"
+                      colorScheme="teal"
+                    >
+                      Show Random Charts
+                    </Radio>
+                    {modifiedChartOptions.randomCharts.toggle ? (
+                      <Input
+                        type="number"
+                        value={modifiedChartOptions.randomCharts.minutes}
+                        onChange={handleRandomChartsMinutes}
+                      />
+                    ) : null}
                   </Stack>
 
                   <Button

@@ -26,15 +26,15 @@ function Window(props) {
       e.currentTarget.style.zIndex = 12;
     }
   };
-  // useEffect(() => {
-  //   if (specification.hasOwnProperty("layer") || specification.mark == "bar") {
-  //     fetch(
-  //       "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-  //     )
-  //       .then((response) => response.text())
-  //       .then(async (csvData) => setChartData(await processData(csvData)));
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (specification.hasOwnProperty("layer") || specification.mark == "bar") {
+      fetch(
+        "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+      )
+        .then((response) => response.text())
+        .then(async (csvData) => setChartData(await processData(csvData)));
+    }
+  }, []);
   useEffect(() => {
     setSpecification((prev) => {
       return {

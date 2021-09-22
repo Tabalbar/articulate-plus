@@ -84,18 +84,17 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [chartData, setChartData] = useState(data);
-  console.log(data);
   specification.x = window.innerWidth / 2;
   specification.y = window.innerHeight / 4;
-  // useEffect(() => {
-  //   if (specification.hasOwnProperty("layer") || specification.mark == "bar") {
-  //     fetch(
-  //       "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-  //     )
-  //       .then((response) => response.text())
-  //       .then(async (csvData) => setChartData(await processData(csvData)));
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (specification.hasOwnProperty("layer") || specification.mark == "bar") {
+      fetch(
+        "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+      )
+        .then((response) => response.text())
+        .then(async (csvData) => setChartData(await processData(csvData)));
+    }
+  }, []);
   const startTimer = () => {
     setStartTime(performance.now());
     setHovered(true);

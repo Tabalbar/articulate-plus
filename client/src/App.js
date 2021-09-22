@@ -45,6 +45,7 @@ function App() {
 
   //Toggle options for algorithm
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
+    useCovidData: false,
     sentimentAnalysis: false,
     window: {
       toggle: true,
@@ -52,6 +53,10 @@ function App() {
     },
     neuralNetwork: true,
     useSynonyms: true,
+    randomCharts: {
+      toggle: false,
+      minutes: 10,
+    },
   });
 
   // Chart message to send to server
@@ -99,6 +104,8 @@ function App() {
 
   const [voiceMsg, setVoiceMsg] = useState(null);
 
+  const randomChartIntervalId = useRef(null);
+
   // Handler to show thought bubble for clippy
   const [showTooltip, setShowTooltip] = useState(false);
   useEffect(() => {
@@ -138,6 +145,16 @@ function App() {
       }
     });
   };
+
+  useEffect(() => {
+    if (modifiedChartOptions.randomCharts.toggle) {
+      randomChartIntervalId.current = setInterval(() => {
+        createCharts("");
+      }, modifiedChartOptions.randomCharts.minutes * 60 * 1000);
+    } else {
+      clearInterval(randomChartIntervalId.current);
+    }
+  }, [modifiedChartOptions.randomCharts.toggle]);
 
   //In chartSelection component, handles choosing the chart to add in
   //Chosen component

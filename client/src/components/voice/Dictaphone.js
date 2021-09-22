@@ -85,7 +85,12 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
 
     //Only send command if includes the word "show"
     // & if attrbutes were spoke
-    if (command.includes("show") && !mute) {
+    if (
+      (command.includes("where") ||
+        command.includes("see") ||
+        command.includes("show")) &&
+      !mute
+    ) {
       createCharts(command);
     }
   }, [command]);

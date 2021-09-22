@@ -15,6 +15,39 @@ const manager = new NlpManager({
   nlu: { log: false },
 });
 
+const neuralNetworkData = require("./neuralNetworkData");
+// manager.addDocument(
+//   "en",
+//   "I want to see quantitative by quantitative",
+//   "scatter"
+// );
+// manager.addDocument(
+//   "en",
+//   "show me the relationship of quantitative and quantitative",
+//   "scatter"
+// );
+// manager.addDocument(
+//   "en",
+//   "what is the quantitative of quantitative",
+//   "scatter"
+// );
+// manager.addAnswer("en", "scatter", "scatter");
+for (let i = 0; i < neuralNetworkData.queries.length; i++) {
+  manager.addDocument(
+    "en",
+    neuralNetworkData.queries[i].query,
+    neuralNetworkData.queries[i].chartType
+  );
+}
+
+for (let i = 0; i < neuralNetworkData.answers.length; i++) {
+  manager.addAnswer(
+    "en",
+    neuralNetworkData.answers[i],
+    neuralNetworkData.answers[i]
+  );
+}
+
 // Train and save the model.
 (async () => {
   await manager.train();
@@ -83,18 +116,38 @@ app.post("/createCharts", async (req, res) => {
     /**
      * Explicit Chart
      */
-    chartMsg.explicitChart = explicitChart(intent, chartMsg);
+    // chartMsg.explicitChart = explicitChart(intent, chartMsg);
+    chartMsg.explicitChart = createCharts(intent, chartMsg, {
+      sentimentAnalysis: false,
+      window: {
+        toggle: false,
+        pastSentences: 99999,
+      },
+      neuralNetwork: false,
+    });
 
     /**
      * Window + Sentiment Chart
      */
-    chartMsg.inferredChart = inferredChart(intent, chartMsg);
-
+    // chartMsg.inferredChart = inferredChart(intent, chartMsg);
+    chartMsg.inferredChart = createCharts(intent, chartMsg, {
+      sentimentAnalysis: true,
+      window: {
+        toggle: modifiedChartOptions.window.toggle,
+        pastSentences: modifiedChartOptions.window.pastSentences,
+      },
+      neuralNetwork: modifiedChartOptions.neuralNetwork,
+    });
     /**
      * modified implicit chart
      */
 
-    chartMsg.modifiedChart = modifiedChart(
+    // chartMsg.modifiedChart = modifiedChart(
+    //   intent,
+    //   chartMsg,
+    //   modifiedChartOptions
+    // );
+    chartMsg.modifiedChart = createCharts(
       intent,
       chartMsg,
       modifiedChartOptions

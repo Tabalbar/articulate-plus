@@ -37,9 +37,105 @@
           },
           "useStemDict": true
         },
-        "stemDict": {},
-        "intentDict": {},
-        "sentences": [],
+        "stemDict": {
+          "distribut,me,nomin,of,show,the": {
+            "intent": "bar",
+            "domain": "default"
+          },
+          "a,and,graph,me,nomin,show,with": {
+            "intent": "bar",
+            "domain": "default"
+          },
+          "a,and,chart,me,nomin,of,show": {
+            "intent": "bar",
+            "domain": "default"
+          },
+          "comparison,i,nomin,of,over,see,the,time,to,want": {
+            "intent": "line",
+            "domain": "default"
+          },
+          "by,date,me,nomin,show": {
+            "intent": "line",
+            "domain": "default"
+          },
+          "comparison,me,nomin,of,over,show,tempor,the": {
+            "intent": "line",
+            "domain": "default"
+          },
+          "and,me,nomin,of,over,quantit,show,tempor,the,year": {
+            "intent": "line",
+            "domain": "default"
+          },
+          "is,me,nomin,show,where": {
+            "intent": "map",
+            "domain": "default"
+          },
+          "is,nomin,where": {
+            "intent": "map",
+            "domain": "default"
+          },
+          "i,map,nomin,on,see,the,to,want": {
+            "intent": "map",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "bar": "default",
+          "line": "default",
+          "map": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "show me the distribution of nominal",
+            "intent": "bar"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me a graph with nominal and nominal",
+            "intent": "bar"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me a chart of nominal and nominal",
+            "intent": "bar"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to see the comparison of nominal over time",
+            "intent": "line"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me nominal by date",
+            "intent": "line"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me the comparison of nominal over temporal",
+            "intent": "line"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me the temporal over the year of nominal and quantitative",
+            "intent": "line"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me where is nominal",
+            "intent": "map"
+          },
+          {
+            "domain": "default",
+            "utterance": "Where is nominal",
+            "intent": "map"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to see nominal on the map",
+            "intent": "map"
+          }
+        ],
         "domains": {
           "master_domain": {
             "settings": {
@@ -53,10 +149,186 @@
               "filterZeros": true,
               "log": true
             },
-            "features": {},
-            "intents": {},
-            "intentFeatures": {},
-            "featuresToIntent": {},
+            "features": {
+              "show": 1,
+              "me": 1,
+              "the": 1,
+              "distribut": 1,
+              "of": 1,
+              "nomin": 1,
+              "a": 1,
+              "graph": 1,
+              "with": 1,
+              "and": 1,
+              "chart": 1,
+              "i": 1,
+              "want": 1,
+              "to": 1,
+              "see": 1,
+              "comparison": 1,
+              "over": 1,
+              "time": 1,
+              "by": 1,
+              "date": 1,
+              "tempor": 1,
+              "year": 1,
+              "quantit": 1,
+              "where": 1,
+              "is": 1,
+              "on": 1,
+              "map": 1
+            },
+            "intents": {
+              "bar": 1,
+              "line": 1,
+              "map": 1
+            },
+            "intentFeatures": {
+              "bar": {
+                "show": 1,
+                "me": 1,
+                "the": 1,
+                "distribut": 1,
+                "of": 1,
+                "nomin": 1,
+                "a": 1,
+                "graph": 1,
+                "with": 1,
+                "and": 1,
+                "chart": 1
+              },
+              "line": {
+                "i": 1,
+                "want": 1,
+                "to": 1,
+                "see": 1,
+                "the": 1,
+                "comparison": 1,
+                "of": 1,
+                "nomin": 1,
+                "over": 1,
+                "time": 1,
+                "show": 1,
+                "me": 1,
+                "by": 1,
+                "date": 1,
+                "tempor": 1,
+                "year": 1,
+                "and": 1,
+                "quantit": 1
+              },
+              "map": {
+                "show": 1,
+                "me": 1,
+                "where": 1,
+                "is": 1,
+                "nomin": 1,
+                "i": 1,
+                "want": 1,
+                "to": 1,
+                "see": 1,
+                "on": 1,
+                "the": 1,
+                "map": 1
+              }
+            },
+            "featuresToIntent": {
+              "show": [
+                "bar",
+                "line",
+                "map"
+              ],
+              "me": [
+                "bar",
+                "line",
+                "map"
+              ],
+              "the": [
+                "bar",
+                "line",
+                "map"
+              ],
+              "distribut": [
+                "bar"
+              ],
+              "of": [
+                "bar",
+                "line"
+              ],
+              "nomin": [
+                "bar",
+                "line",
+                "map"
+              ],
+              "a": [
+                "bar"
+              ],
+              "graph": [
+                "bar"
+              ],
+              "with": [
+                "bar"
+              ],
+              "and": [
+                "bar",
+                "line"
+              ],
+              "chart": [
+                "bar"
+              ],
+              "i": [
+                "line",
+                "map"
+              ],
+              "want": [
+                "line",
+                "map"
+              ],
+              "to": [
+                "line",
+                "map"
+              ],
+              "see": [
+                "line",
+                "map"
+              ],
+              "comparison": [
+                "line"
+              ],
+              "over": [
+                "line"
+              ],
+              "time": [
+                "line"
+              ],
+              "by": [
+                "line"
+              ],
+              "date": [
+                "line"
+              ],
+              "tempor": [
+                "line"
+              ],
+              "year": [
+                "line"
+              ],
+              "quantit": [
+                "line"
+              ],
+              "where": [
+                "map"
+              ],
+              "is": [
+                "map"
+              ],
+              "on": [
+                "map"
+              ],
+              "map": [
+                "map"
+              ]
+            },
             "neuralNetwork": {
               "settings": {
                 "locale": "en",
@@ -67,14 +339,181 @@
                 "spellCheck": false,
                 "spellCheckDistance": 1,
                 "filterZeros": true
-              }
+              },
+              "features": [
+                "show",
+                "me",
+                "the",
+                "distribut",
+                "of",
+                "nomin",
+                "a",
+                "graph",
+                "with",
+                "and",
+                "chart",
+                "i",
+                "want",
+                "to",
+                "see",
+                "comparison",
+                "over",
+                "time",
+                "by",
+                "date",
+                "tempor",
+                "year",
+                "quantit",
+                "where",
+                "is",
+                "on",
+                "map"
+              ],
+              "intents": [
+                "bar",
+                "line",
+                "map"
+              ],
+              "perceptrons": [
+                [
+                  1.4776827096939087,
+                  1.4776827096939087,
+                  1.484447717666626,
+                  5.381923675537109,
+                  3.123136043548584,
+                  0.8555334806442261,
+                  3.6829934120178223,
+                  2.252593994140625,
+                  2.252593994140625,
+                  1.8271069526672363,
+                  1.4297491312026978,
+                  -0.5859956741333008,
+                  -0.5859956741333008,
+                  -0.5859956741333008,
+                  -0.5859956741333008,
+                  -1.8352104425430298,
+                  -3.6911303997039795,
+                  -0.2508559823036194,
+                  -2.178961992263794,
+                  -2.178961992263794,
+                  -3.316033124923706,
+                  -1.8520457744598389,
+                  -1.8520457744598389,
+                  -2.113388776779175,
+                  -2.113388776779175,
+                  -0.2108994871377945,
+                  -0.2108994871377945,
+                  0.42722005167069926
+                ],
+                [
+                  0.9117473363876343,
+                  0.9117473363876343,
+                  -0.27123773097991943,
+                  -3.4734771251678467,
+                  0.17188218235969543,
+                  1.147481083869934,
+                  -2.0614657402038574,
+                  -0.660365641117096,
+                  -0.660365641117096,
+                  -0.3202921152114868,
+                  -1.3283312320709229,
+                  0.5281175971031189,
+                  0.5281175971031189,
+                  0.5281175971031189,
+                  0.5281175971031189,
+                  3.2375032901763916,
+                  4.977755546569824,
+                  2.296980619430542,
+                  5.356825828552246,
+                  5.356825828552246,
+                  2.676987648010254,
+                  1.7399988174438477,
+                  1.7399988174438477,
+                  -1.8584219217300415,
+                  -1.8584219217300415,
+                  -1.7708183526992798,
+                  -1.7708183526992798,
+                  0.5732161207370264
+                ],
+                [
+                  -0.3155975937843323,
+                  -0.3155975937843323,
+                  0.12236202508211136,
+                  -0.8405510187149048,
+                  -3.099382162094116,
+                  2.66681170463562,
+                  -1.0690760612487793,
+                  -0.7272103428840637,
+                  -0.7272103428840637,
+                  -1.0690760612487793,
+                  -0.2572757303714752,
+                  1.0733219385147095,
+                  1.0733219385147095,
+                  1.0733219385147095,
+                  1.0733219385147095,
+                  -1.8528213500976562,
+                  -1.8528213500976562,
+                  -1.8254421949386597,
+                  -1.6112531423568726,
+                  -1.6112531423568726,
+                  -0.01350377220660448,
+                  0,
+                  0,
+                  5.297064304351807,
+                  5.297064304351807,
+                  2.9296865463256836,
+                  2.9296865463256836,
+                  1.331621701428508
+                ]
+              ]
             }
           }
         }
       }
     },
     "intentDomains": {},
-    "extraSentences": []
+    "extraSentences": [
+      [
+        "en",
+        "show me the distribution of nominal"
+      ],
+      [
+        "en",
+        "show me a graph with nominal and nominal"
+      ],
+      [
+        "en",
+        "show me a chart of nominal and nominal"
+      ],
+      [
+        "en",
+        "I want to see the comparison of nominal over time"
+      ],
+      [
+        "en",
+        "show me nominal by date"
+      ],
+      [
+        "en",
+        "show me the comparison of nominal over temporal"
+      ],
+      [
+        "en",
+        "Show me the temporal over the year of nominal and quantitative"
+      ],
+      [
+        "en",
+        "Show me where is nominal"
+      ],
+      [
+        "en",
+        "Where is nominal"
+      ],
+      [
+        "en",
+        "I want to see nominal on the map"
+      ]
+    ]
   },
   "ner": {
     "settings": {
@@ -88,7 +527,25 @@
     "settings": {
       "tag": "nlg-manager"
     },
-    "responses": {}
+    "responses": {
+      "en": {
+        "bar": [
+          {
+            "answer": "bar"
+          }
+        ],
+        "line": [
+          {
+            "answer": "line"
+          }
+        ],
+        "map": [
+          {
+            "answer": "map"
+          }
+        ]
+      }
+    }
   },
   "actionManager": {
     "settings": {
