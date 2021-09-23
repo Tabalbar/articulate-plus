@@ -247,11 +247,14 @@ function AttributeContainer({
                       Show Random Charts
                     </Radio>
                     {modifiedChartOptions.randomCharts.toggle ? (
-                      <Input
-                        type="number"
-                        value={modifiedChartOptions.randomCharts.minutes}
-                        onChange={handleRandomChartsMinutes}
-                      />
+                      <>
+                        Minutes:
+                        <Input
+                          type="number"
+                          value={modifiedChartOptions.randomCharts.minutes}
+                          onChange={handleRandomChartsMinutes}
+                        />
+                      </>
                     ) : null}
                   </Stack>
 

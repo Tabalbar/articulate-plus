@@ -111,6 +111,8 @@ function App() {
     console.log(chart);
   };
 
+  console.log(charts);
+
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 

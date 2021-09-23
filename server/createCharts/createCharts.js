@@ -52,7 +52,10 @@ module.exports = (intent, chartMsg, options) => {
       }
     }
   }
-
+  console.log(extractedHeaders);
+  if (extractedHeaders.length < 1) {
+    return "";
+  }
   extractedHeaders = checkDuplicates(extractedHeaders);
   let filteredHeaders = extractFilteredHeaders(
     chartMsg.command,
