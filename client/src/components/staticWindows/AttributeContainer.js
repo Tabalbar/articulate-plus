@@ -18,7 +18,7 @@ import {
   Radio,
   Input,
 } from "@chakra-ui/react";
-import FileInput from "../sideMenu/FileInput";
+import FileInput from "./FileInput";
 
 function AttributeContainer({
   setChartMsg,

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../style.css";
 import { VegaLite } from "react-vega";
-import { Box, HStack, Button, useTimeout } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import processData from "../../helpers/processData";
 
 function ChartSelection({ chartMsg, chooseChart }) {

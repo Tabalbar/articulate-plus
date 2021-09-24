@@ -12,8 +12,7 @@ export async function serverRequest(
   chartMsg,
   setChartMsg,
   modifiedChartOptions,
-  setVoiceMsg,
-  setShowTooltip
+  setVoiceMsg
 ) {
   //API request
   const response = await fetch("/createCharts", {

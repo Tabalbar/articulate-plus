@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import { VegaLite } from "react-vega";
 import "../../style.css";
-import { Box, IconButton, Text } from "@chakra-ui/react";
+import { Box, IconButton } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 import { useResizeDetector } from "react-resize-detector";
 import processData from "../../helpers/processData";
@@ -103,12 +103,7 @@ function Window(props) {
               />
               {specification.title}
             </Box>
-            <VegaLite
-              // width={width - 200}
-              // height={height - 200}
-              spec={specification}
-              data={{ table: chartData }}
-            />
+            <VegaLite spec={specification} data={{ table: chartData }} />
           </div>
         </Box>
       </Draggable>

@@ -1,19 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../style.css";
 import Window from "./Window";
-import { Box } from "@chakra-ui/react";
 
 function ChosenCharts({ charts, chartMsg, setCharts, handleDelete }) {
   return (
     <>
-      {/* <Box
-        position="absolute"
-        right={0}
-        width="100vw"
-        height="52vw"
-        bg="red"
-        zIndex={0}
-      > */}
       {charts.map((chart, i) => {
         if (chart.visible) {
           return (
@@ -31,7 +22,6 @@ function ChosenCharts({ charts, chartMsg, setCharts, handleDelete }) {
           return null;
         }
       })}
-      {/* </Box> */}
     </>
   );
 }

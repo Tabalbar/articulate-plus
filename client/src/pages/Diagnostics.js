@@ -124,14 +124,6 @@ function Diagnostics({ chartMsg }) {
       <Center>
         <HStack>
           <Box>
-            {/* <div>
-              <Textarea
-                width="40vw"
-                height="40vh"
-                value={chartMsg.transcript}
-                readOnly={true}
-              />
-            </div> */}
             <Box
               width="40vw"
               height="40vh"

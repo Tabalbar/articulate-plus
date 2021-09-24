@@ -13,15 +13,7 @@ import ArtyContainer from "./components/staticWindows/ArtyContainer";
 import { serverRequest } from "./helpers/serverRequest";
 import createDate from "./helpers/createDate";
 
-import {
-  ChakraProvider,
-  VStack,
-  Button,
-  Box,
-  Input,
-  Image,
-  Tooltip,
-} from "@chakra-ui/react";
+import { ChakraProvider, Button, Box, Input } from "@chakra-ui/react";
 
 //For computer talking
 import listeningImage from "./images/idle.gif";
@@ -30,11 +22,6 @@ import muteImage from "./images/mute.gif";
 import thinkingImage from "./images/thinking.gif";
 import { thinking } from "./components/voice/assistantVoiceOptions";
 import AttributeContainer from "./components/staticWindows/AttributeContainer";
-import ChartObj from "./shared/ChartObj";
-
-import { RecoilRoot, atom, selector, useRecoilState } from "recoil";
-
-import { chartObjState } from "./shared/chartObjState";
 
 function App() {
   const [, setForceUpdate] = useState(true);
@@ -76,7 +63,6 @@ function App() {
       loggedUncontrolledTranscript: [],
       synonymMatrix: [], //Synonyms used in attributes
       featureMatrix: [], //Unique data values
-      currentCharts: [],
       explicitChart: [],
       inferredChart: [],
       modifiedChart: [],
@@ -103,19 +89,6 @@ function App() {
       },
     }
   );
-
-  const makeObj = () => {
-    const chart = new ChartObj(
-      chartMsg.data,
-      chartMsg.attributes,
-      chartMsg.synonymMatrix,
-      chartMsg.featureMatrix,
-      modifiedChartOptions
-    );
-    console.log(chart);
-  };
-
-  console.log(charts);
 
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
@@ -164,6 +137,7 @@ function App() {
     });
   };
 
+  //Set up interval to test ranondom chart generation
   useEffect(() => {
     if (modifiedChartOptions.randomCharts.toggle) {
       randomChartIntervalId.current = setInterval(() => {
@@ -213,67 +187,64 @@ function App() {
 
   return (
     <>
-      <RecoilRoot>
-        <ChakraProvider>
-          <Button onClick={makeObj}>click</Button>
-          <div style={{ display: chartsPage ? null : "None" }}>
-            <Input
-              position="absolute"
-              ml="40rem"
-              bg="white"
-              zIndex={20}
-              width={"10rem"}
-              ref={textRef}
-            ></Input>
-            <Button
-              position="absolute"
-              ml={"50rem"}
-              zIndex={20}
-              onClick={() => createCharts(textRef.current.value)}
-            >
-              Test
-            </Button>
-            <ArtyContainer
-              clippyImage={clippyImage}
-              handleMute={handleMute}
-              clearCharts={clearCharts}
-              voiceMsg={voiceMsg}
-              mute={mute}
-              showTooltip={showTooltip}
-            />
-            <AttributeContainer
-              setChartMsg={setChartMsg}
-              modifiedChartOptions={modifiedChartOptions}
-              setModifiedChartOptions={setModifiedChartOptions}
-              chartMsg={chartMsg}
-            />
-
-            <Charts
-              chartMsg={chartMsg}
-              setChartMsg={setChartMsg}
-              chooseChart={chooseChart}
-              charts={charts}
-              setCharts={setCharts}
-              mute={mute}
-            />
-          </div>
-          <div style={{ display: !chartsPage ? null : "None" }}>
-            <Diagnostics chartMsg={chartMsg} mute={mute} />
-          </div>
-          <Dictaphone
-            createCharts={createCharts}
-            setChartMsg={setChartMsg}
-            chartMsg={chartMsg}
+      <ChakraProvider>
+        <div style={{ display: chartsPage ? null : "None" }}>
+          <Input
+            position="absolute"
+            ml="40rem"
+            bg="white"
+            zIndex={20}
+            width={"10rem"}
+            ref={textRef}
+          ></Input>
+          <Button
+            position="absolute"
+            ml={"50rem"}
+            zIndex={20}
+            onClick={() => createCharts(textRef.current.value)}
+          >
+            Test
+          </Button>
+          <ArtyContainer
+            clippyImage={clippyImage}
+            handleMute={handleMute}
+            clearCharts={clearCharts}
             voiceMsg={voiceMsg}
             mute={mute}
+            showTooltip={showTooltip}
           />
-          <Box position="absolute" top="0" right="0">
-            <Button onClick={() => setChartsPage((prev) => !prev)}>
-              {chartsPage ? "Diagnostics" : "Charts"}
-            </Button>
-          </Box>
-        </ChakraProvider>
-      </RecoilRoot>
+          <AttributeContainer
+            setChartMsg={setChartMsg}
+            modifiedChartOptions={modifiedChartOptions}
+            setModifiedChartOptions={setModifiedChartOptions}
+            chartMsg={chartMsg}
+          />
+
+          <Charts
+            chartMsg={chartMsg}
+            setChartMsg={setChartMsg}
+            chooseChart={chooseChart}
+            charts={charts}
+            setCharts={setCharts}
+            mute={mute}
+          />
+        </div>
+        <div style={{ display: !chartsPage ? null : "None" }}>
+          <Diagnostics chartMsg={chartMsg} mute={mute} />
+        </div>
+        <Dictaphone
+          createCharts={createCharts}
+          setChartMsg={setChartMsg}
+          chartMsg={chartMsg}
+          voiceMsg={voiceMsg}
+          mute={mute}
+        />
+        <Box position="absolute" top="0" right="0">
+          <Button onClick={() => setChartsPage((prev) => !prev)}>
+            {chartsPage ? "Diagnostics" : "Charts"}
+          </Button>
+        </Box>
+      </ChakraProvider>
     </>
   );
 }
