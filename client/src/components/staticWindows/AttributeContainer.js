@@ -18,8 +18,9 @@ import {
   Radio,
   Input,
 } from "@chakra-ui/react";
-import FileInput from "../sideMenu/FileInput";
-
+import { chartObjState } from "../../shared/chartObjState";
+import { useRecoilState } from "recoil";
+import ChartObj from "../../shared/ChartObj";
 function AttributeContainer({
   setChartMsg,
   modifiedChartOptions,
@@ -27,6 +28,7 @@ function AttributeContainer({
   chartMsg,
 }) {
   const [start, setStart] = useState(false);
+  const [dataLoaded, setDataLoaded] = useState(false);
   const eventLogger = (e, data) => {
     console.log(e);
   };
@@ -67,7 +69,14 @@ function AttributeContainer({
       };
     });
   };
+  const [chart, setChart] = useRecoilState(chartObjState);
 
+  const loadData = async (e) => {
+    const response = chart.loadData(e);
+    if (response) {
+      setDataLoaded(true);
+    }
+  };
   return (
     <>
       <Draggable
@@ -133,7 +142,7 @@ function AttributeContainer({
                 resize="both"
               >
                 <Accordion allowMultiple>
-                  {chartMsg.attributes.map((value, index) => {
+                  {ChartObj.attributes.map((value, index) => {
                     return (
                       <AccordionItem>
                         <h2>
@@ -146,7 +155,7 @@ function AttributeContainer({
                         </h2>
                         <AccordionPanel pb={4}>
                           <UnorderedList>
-                            {chartMsg.featureMatrix[index].map(
+                            {ChartObj.featureMatrix[index].map(
                               (value, index) => {
                                 return index > 0 ? (
                                   <ListItem key={index}>{value}</ListItem>
@@ -163,7 +172,22 @@ function AttributeContainer({
             </>
           ) : (
             <>
-              <Center>
+              <Input
+                bg="white"
+                color="black"
+                p={1}
+                type="file"
+                onChange={loadData}
+              />
+
+              <Button
+                disabled={!dataLoaded}
+                colorScheme="teal"
+                onClick={() => setStart(true)}
+              >
+                Start
+              </Button>
+              {/* <Center>
                 <VStack>
                   <FileInput setChartMsg={setChartMsg} />
                   <Text fontWeight="bold" ml={1}>
@@ -171,7 +195,7 @@ function AttributeContainer({
                   </Text>
                   <Stack>
                     <Radio
-                      isChecked={modifiedChartOptions.window.toggle}
+                      isChecked={ChartObj.options.window.toggle}
                       onClick={() =>
                         setModifiedChartOptions((prev) => {
                           return {
@@ -188,16 +212,16 @@ function AttributeContainer({
                     >
                       Sentence Window
                     </Radio>
-                    {modifiedChartOptions.window.toggle ? (
+                    {ChartObj.options.window.toggle ? (
                       <Input
                         type="number"
-                        value={modifiedChartOptions.window.pastSentences}
+                        value={ChartObj.options.window.pastSentences}
                         onChange={handleWindowPastSenteces}
                       />
                     ) : null}
-                    {modifiedChartOptions.window.toggle ? (
+                    {ChartObj.options.window.toggle ? (
                       <Radio
-                        isChecked={modifiedChartOptions.sentimentAnalysis}
+                        isChecked={ChartObj.options.sentimentAnalysis}
                         onClick={() =>
                           setModifiedChartOptions((prev) => {
                             return {
@@ -213,7 +237,7 @@ function AttributeContainer({
                       </Radio>
                     ) : null}
                     <Radio
-                      isChecked={modifiedChartOptions.neuralNetwork}
+                      isChecked={ChartObj.options.neuralNetwork}
                       onClick={() =>
                         setModifiedChartOptions((prev) => {
                           return {
@@ -264,14 +288,14 @@ function AttributeContainer({
                   </Stack>
 
                   <Button
-                    disabled={!chartMsg.attributes.length}
+                    disabled={!ChartObj.attributes.length}
                     colorScheme="teal"
                     onClick={() => setStart(true)}
                   >
                     Start
                   </Button>
                 </VStack>
-              </Center>
+              </Center> */}
               <br />
             </>
           )}

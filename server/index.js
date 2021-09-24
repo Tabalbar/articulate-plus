@@ -108,7 +108,7 @@ app.post("/createCharts", async (req, res) => {
   // const chartObj = new ChartInfo(chartMsg, modifiedChartOptions, intent);
   // let testing = chartObj.extractHeaders();
   // let testing2 = chartObj.extractFilteredHeaders();
-  // console.log(testing, testing2);
+  console.log(intent);
   if (!intent) {
     intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
   }

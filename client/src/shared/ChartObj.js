@@ -2,7 +2,7 @@ import XLSX from "xlsx";
 const { default: createDate } = require("../helpers/createDate");
 
 export default class ChartObj {
-  static command = "asdf";
+  static command = "";
   static transcript = "";
   static uncontrolledTranscript = "";
   static loggedTranscript = [];
@@ -33,7 +33,21 @@ export default class ChartObj {
   static attributes = [];
   static synonymMatrix = [];
   static featureMatrix = [];
-  static options = [];
+  static options = {
+    sentimentAnalysis: false,
+    window: {
+      toggle: true,
+      pastSentences: 20,
+    },
+    neuralNetwork: true,
+    useSynonyms: true,
+    randomCharts: {
+      toggle: false,
+      minutes: 10,
+    },
+    threshold: 5,
+  };
+
   wasInitialized = false;
 
   constructor() {
@@ -44,7 +58,7 @@ export default class ChartObj {
     //   this.featureMatrix = featureMatrix;
     //   // this.options = options;
   }
-  static initialize() {
+  static initialize(options) {
     if (this.wasInitialized) {
       return this;
     } else {
@@ -54,13 +68,21 @@ export default class ChartObj {
     }
   }
 
-  static addToTranscripts(sentence) {
-    if (this.transcript !== "") {
-      this.transcript += ". " + sentence;
-      this.loggedTranscript.push({ sentence: sentence, date: createDate() });
+  static addToTranscripts(sentence, mute) {
+    if (!mute) {
+      if (this.transcript !== "") {
+        this.transcript += ". " + sentence;
+        this.loggedTranscript.push({ sentence: sentence, date: createDate() });
+      } else {
+        this.transcript = sentence;
+        this.loggedTranscript.push({ sentence: sentence, date: createDate() });
+      }
     } else {
-      this.transcript = sentence;
-      this.loggedTranscript.push({ sentence: sentence, date: createDate() });
+      this.uncontrolledTranscript += ". " + sentence;
+      this.loggedUncontrolledTranscript.push({
+        sentence: sentence,
+        date: createDate(),
+      });
     }
   }
   static async loadData(e) {
@@ -124,18 +146,34 @@ export default class ChartObj {
         this.featureMatrix = featureMatrix;
         this.attributes = headers;
         this.data = list;
-        return resolve({ synonymMatrix, featureMatrix, headers, list });
+        return resolve(true);
       };
       reader.readAsBinaryString(file);
     });
   }
 
-  static async serverRequest(setVoiceMsg) {
-    return Promise(async (resolve) => {
+  static async serverRequest(command) {
+    this.command = command;
+    return new Promise(async (resolve) => {
+      const chartMsg = {
+        command: this.command,
+        transcript: this.transcript,
+        explicitChart: this.explicitChart,
+        windowSentimentChart: this.windowSentimentChart,
+        windowChart: this.windowChart,
+        data: this.data,
+        attributes: this.attributes,
+        synonymMatrix: this.synonymMatrix,
+        featureMatrix: this.featureMatrix,
+        options: this.options,
+        window_sentiment: this.window_sentiment,
+        window: this.window,
+        total: this.total,
+      };
       const response = await fetch("/createCharts", {
         method: "POST",
         body: JSON.stringify({
-          chartMsg: this,
+          chartMsg: chartMsg,
           modifiedChartOptions: this.options,
         }),
         headers: {
@@ -176,9 +214,12 @@ export default class ChartObj {
       } else {
         assistantResponse = "I have " + count.toString() + " charts for you.";
       }
-      //Voice syntheiszer
-      setVoiceMsg(assistantResponse);
       return resolve();
+    });
+  }
+  static async getCharts() {
+    return new Promise((resolve, reject) => {
+      resolve(this.charts);
     });
   }
 }

@@ -7,18 +7,17 @@ import { useRecoilState } from "recoil";
 import ChartObj from "../../shared/ChartObj";
 
 function FileInput({ setChartMsg }) {
-  const loadData = async (e) => {
-    ChartObj.initialize();
+  // const [chart, setChart] = useRecoilState(chartObjState);
 
-    const something = await ChartObj.loadData(e);
-    something.featurematrix;
-  };
+  // const loadData = async (e) => {
+  //   // ChartObj.initialize();
 
-  return (
-    <>
-      <Input bg="white" color="black" p={1} type="file" onChange={loadData} />
-    </>
-  );
+  //   const response = chart.loadData(e);
+  //   setChart(prev=> {return({...prev, })}
+  //   // if(response)
+  // };
+
+  return <></>;
 }
 
 export default FileInput;

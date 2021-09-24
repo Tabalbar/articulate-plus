@@ -19,6 +19,7 @@ import {
 import StreamGraph from "../components/diagnostics/StreamGraph";
 import WordCloud from "../components/diagnostics/WordCloud";
 import LineTheme from "../components/diagnostics/LineTheme";
+import ChartObj from "../shared/ChartObj";
 
 /**
  * Diagnostics page for Researcher to analyze data
@@ -28,9 +29,6 @@ import LineTheme from "../components/diagnostics/LineTheme";
  */
 function Diagnostics({ chartMsg }) {
   const [transcriptData, setTranscriptData] = useState([]);
-  useEffect(() => {
-    localStorage.getItem(chartMsg);
-  }, [chartMsg]);
 
   //Download user's data, charts made, looged transcripts,an
   const downloadFile = async () => {
@@ -87,7 +85,7 @@ function Diagnostics({ chartMsg }) {
       }
     }
     setTranscriptData(tmpTranscriptData);
-  }, [chartMsg.transcript]);
+  }, [ChartObj.transcript]);
   return (
     <>
       <Center>

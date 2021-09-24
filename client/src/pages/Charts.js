@@ -6,7 +6,8 @@ import ChosenCharts from "../components/charts/Chosen";
 
 //Helpers
 import createDate from "../helpers/createDate";
-
+import { chartObjState } from "../shared/chartObjState";
+import { useRecoilValue } from "recoil";
 /**
  * handles components for chart selection and chosen charts
  *
@@ -17,7 +18,9 @@ import createDate from "../helpers/createDate";
  * @param {boolean} mute for soive synthesizer
  * @returns
  */
-function Charts({ chartMsg, charts, setCharts, chooseChart, mute }) {
+function Charts({ chartMsg, charts, setCharts, mute }) {
+  const chartObj = useRecoilValue(chartObjState);
+  const [chosenCharts, setChosenCharts] = useState([]);
   //to Rerender when deleteing charts on chosen charts component
   const [, setForceUpdate] = useState(true);
   //Deleting charts from chosen charts
@@ -25,6 +28,25 @@ function Charts({ chartMsg, charts, setCharts, chooseChart, mute }) {
     charts[index].visible = false;
     charts[index].timeClosed.push(createDate());
     setForceUpdate((prev) => !prev);
+  };
+  const chooseChart = (chosenChart) => {
+    chosenChart.timeChosen.push(createDate());
+    chosenChart.visible = true;
+    let found = false;
+    for (let i = 0; i < charts.length; i++) {
+      if (chosenChart == charts[i]) {
+        found = true;
+      }
+    }
+    if (!found) {
+      setChosenCharts((prev) => [...prev, chosenChart]);
+    } else {
+      setForceUpdate((prev) => !prev);
+    }
+
+    chartObj.explicitChart = "";
+    chartObj.inferredChart = "";
+    chartObj.modifiedChart = "";
   };
   return (
     <>
@@ -36,7 +58,7 @@ function Charts({ chartMsg, charts, setCharts, chooseChart, mute }) {
       <ChosenCharts
         handleDelete={handleDelete}
         chartMsg={chartMsg}
-        charts={charts}
+        chosenCharts={chosenCharts}
         setCharts={setCharts}
       />
     </>

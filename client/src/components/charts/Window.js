@@ -12,12 +12,6 @@ function Window(props) {
   const [specification, setSpecification] = useState(props.specification);
   const [chartData, setChartData] = useState(props.data);
   const [startTime, setStartTime] = useState(0);
-  const eventLogger = (e, data) => {
-    let tmpCharts = props.charts;
-    tmpCharts[props.index].x = data.x;
-    tmpCharts[props.index].y = data.y;
-    props.setCharts(tmpCharts);
-  };
 
   const onStart = (e) => {
     let elems = document.getElementsByClassName("react-draggable");
@@ -60,11 +54,10 @@ function Window(props) {
         scale={1}
         bounds={{ bottom: 3000, top: 0 }}
         defaultPosition={{
-          x: props.charts[props.index].x,
-          y: props.charts[props.index].y,
+          x: props.chosenCharts[props.index].x,
+          y: props.chosenCharts[props.index].y,
         }}
         onStart={onStart.bind(this)}
-        onStop={eventLogger}
       >
         <Box
           position="absolute"

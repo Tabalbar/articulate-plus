@@ -1,18 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../style.css";
 import { VegaLite } from "react-vega";
-import { Box, HStack, Button, useTimeout } from "@chakra-ui/react";
+import { Box, HStack, Button, Input } from "@chakra-ui/react";
 import processData from "../../helpers/processData";
-
+import ChartObj from "../../shared/ChartObj";
+import { chartObjState } from "../../shared/chartObjState";
+import { useRecoilValue } from "recoil";
 function ChartSelection({ chartMsg, chooseChart }) {
+  const chartObj = useRecoilValue(chartObjState);
   const slideTimer = useRef(null);
+  const [charts, setCharts] = useState([]);
   useEffect(() => {
     if (slideTimer) {
       clearInterval(slideTimer.current);
     }
     let scrollableElement = document.getElementById("scrollable");
-    scrollableElement.scrollLeft =
-      scrollableElement.scrollWidth - scrollableElement.clientWidth;
+    // scrollableElement.scrollLeft =
+    //   scrollableElement.scrollWidth - scrollableElement.clientWidth;
     slideTimer.current = setInterval(() => {
       scrollableElement.scrollLeft += 5;
       if (
@@ -22,10 +26,29 @@ function ChartSelection({ chartMsg, chooseChart }) {
         clearInterval(slideTimer.current);
       }
     }, 35);
-  }, [chartMsg.charts]);
+  }, [charts]);
 
+  const getCharts = () => {
+    chartObj
+      .serverRequest(textRef.current.value)
+      .then(() => setCharts((prev) => [...prev, chartObj.getCharts()]));
+  };
+
+  const textRef = useRef(null);
+  console.log(chartObj.charts);
   return (
     <>
+      <Input
+        position="absolute"
+        ml="40rem"
+        bg="red"
+        zIndex={20}
+        width={"10rem"}
+        ref={textRef}
+      ></Input>
+      <Button position="absolute" ml={"50rem"} zIndex={20} onClick={getCharts}>
+        Test
+      </Button>
       <Box
         position="absolute"
         bottom="0"
@@ -47,7 +70,7 @@ function ChartSelection({ chartMsg, chooseChart }) {
           flex={1}
         >
           <HStack spacing={100}>
-            {chartMsg.charts.map((chart, index) => {
+            {chartObj.charts.map((chart, index) => {
               return (
                 <>
                   {chart ? (
@@ -63,7 +86,7 @@ function ChartSelection({ chartMsg, chooseChart }) {
                     >
                       <ChartPlaceholder
                         specification={chart.charts.spec}
-                        data={chartMsg.data}
+                        data={chartObj.data}
                         chooseChart={chooseChart}
                       />
                     </Box>

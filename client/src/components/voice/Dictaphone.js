@@ -13,18 +13,17 @@ import { Box, Center } from "@chakra-ui/react";
 
 //helper function
 import createDate from "../../helpers/createDate";
+import ChartObj from "../../shared/ChartObj";
 
 /**
  * Uses react-speech-recognition API that uses the browser to translate
  * spoken language into text
  *
  * @param {function} setChartMsg callback to set the state of chartMsg
- * @param {function} createCharts API call to server to request charts
  * @param {object} chartMsg state of the chartMsg for API call
  * @returns
  */
-const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
-  const [listening, setListening] = useState(true);
+const Dictaphone = ({ setChartMsg, mute }) => {
   const [command, setCommand] = useState("");
 
   //commands that the browser will listen to
@@ -32,11 +31,7 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
     {
       command: "*", // '*' means listen to everything and let useEffect below handle
       callback: (message) => {
-        setListening(false); // Currently not used
         setCommand(message); // set state for command to query
-        setChartMsg((prev) => {
-          return { ...prev, command: message };
-        });
       },
     },
   ];
@@ -49,27 +44,7 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
 
     //Set state for message to send to node service
     if (!mute) {
-      setChartMsg((prev) => {
-        if (prev.transcript !== "") {
-          return {
-            ...prev,
-            transcript: prev.transcript + ". " + command,
-            loggedTranscript: [
-              ...prev.loggedTranscript,
-              { sentence: command, date: createDate() },
-            ],
-          };
-        } else {
-          return {
-            ...prev,
-            transcript: prev.transcript + "" + command,
-            loggedTranscript: [
-              ...prev.loggedTranscript,
-              { sentence: command, date: createDate() },
-            ],
-          };
-        }
-      });
+      ChartObj.addToTranscripts(command, mute);
     } else {
       setChartMsg((prev) => {
         return {
@@ -91,25 +66,10 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
         command.includes("show")) &&
       !mute
     ) {
-      createCharts(command);
+      ChartObj.serverRequest(command);
     }
   }, [command]);
 
-  //Currently not working
-  //todo find a way to have browser's voice sythensizer not listen to itself
-
-  // useEffect(() => {
-  //   if (!listening) {
-  //     const timer = setTimeout(() => {
-  //       setListening(true);
-  //     }, 5000);
-  //     return () => {
-  //       clearTimeout(timer);
-  //     };
-  //   }
-  // }, [listening]);
-
-  //Supplay commands commands
   const { transcript } = useSpeechRecognition({ commands });
 
   //Check if able to use browser's speech recognition
