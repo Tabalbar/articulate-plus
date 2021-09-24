@@ -15,18 +15,6 @@ module.exports = (
 ) => {
   let numHeaders = extractedHeaders.length;
   let quantitativeFound = false;
-  // if (intent == "parallelCoordinates" || numHeaders > 3) {
-  //   intent = parallelCoordinates;
-  //   chartObj.charts.spec.mark = "line";
-
-  //   return parallelCoordinates(
-  //     chartObj,
-  //     extractedHeaders,
-  //     data,
-  //     headerFreq,
-  //     command
-  //   );
-  // }
 
   for (let i = 0; i < extractedHeaders.length; i++) {
     if (extractedHeaders[i] == "map") {
@@ -36,6 +24,7 @@ module.exports = (
   if (intent == "map") {
     return map(chartObj, extractedHeaders, data, headerFreq, command, options);
   }
+  console.log(numHeaders);
 
   switch (numHeaders) {
     case 1:
@@ -158,36 +147,8 @@ module.exports = (
 
       return chartObj;
 
-      break;
-    // quantitativeFound = findQuantitative(
-    //   extractedHeaders,
-    //   data,
-    //   headerFreq,
-    //   command,
-    //   3
-    // );
-    // extractedHeaders = reorderLowestCountForColor(extractedHeaders, data);
-    // chartObj.charts.spec.encoding.column = {
-    //   field: extractedHeaders[2],
-    //   type: findType(extractedHeaders[2], data),
-    //   spacing: 20,
-    // };
-    // chartObj.charts.spec.encoding.x = {
-    //   field: extractedHeaders[0],
-    //   type: findType(extractedHeaders[0], data),
-    //   axis: { labelAngle: -50 },
-    // };
-    // chartObj.charts.spec.encoding.y = {
-    //   field: extractedHeaders[1],
-    //   type: findType(extractedHeaders[1], data),
-    // };
-    // chartObj.charts.spec.encoding.color = {
-    //   field: extractedHeaders[0],
-    //   type: findType(extractedHeaders[0], data),
-    // };
-    // return chartObj;
     default:
-      chartObj.errMsg = "Error";
+      chartObj = "";
       return chartObj;
   }
 };

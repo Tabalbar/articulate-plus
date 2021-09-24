@@ -124,6 +124,7 @@ app.post("/createCharts", async (req, res) => {
         pastSentences: 99999,
       },
       neuralNetwork: false,
+      threshold: 0,
     });
 
     /**
@@ -137,10 +138,8 @@ app.post("/createCharts", async (req, res) => {
         pastSentences: modifiedChartOptions.window.pastSentences,
       },
       neuralNetwork: modifiedChartOptions.neuralNetwork,
+      threshold: modifiedChartOptions.threshold,
     });
-    /**
-     * modified implicit chart
-     */
 
     // chartMsg.modifiedChart = modifiedChart(
     //   intent,

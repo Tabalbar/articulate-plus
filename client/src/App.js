@@ -30,7 +30,11 @@ import muteImage from "./images/mute.gif";
 import thinkingImage from "./images/thinking.gif";
 import { thinking } from "./components/voice/assistantVoiceOptions";
 import AttributeContainer from "./components/staticWindows/AttributeContainer";
-import ChartObj from "./ChartObj";
+import ChartObj from "./shared/ChartObj";
+
+import { RecoilRoot, atom, selector, useRecoilState } from "recoil";
+
+import { chartObjState } from "./shared/chartObjState";
 
 function App() {
   const [, setForceUpdate] = useState(true);
@@ -46,7 +50,6 @@ function App() {
 
   //Toggle options for algorithm
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
-    useCovidData: false,
     sentimentAnalysis: false,
     window: {
       toggle: true,
@@ -58,6 +61,7 @@ function App() {
       toggle: false,
       minutes: 10,
     },
+    threshold: 5,
   });
 
   // Chart message to send to server
@@ -209,65 +213,67 @@ function App() {
 
   return (
     <>
-      <ChakraProvider>
-        <Button onClick={makeObj}>click</Button>
-        <div style={{ display: chartsPage ? null : "None" }}>
-          <Input
-            position="absolute"
-            ml="40rem"
-            bg="white"
-            zIndex={20}
-            width={"10rem"}
-            ref={textRef}
-          ></Input>
-          <Button
-            position="absolute"
-            ml={"50rem"}
-            zIndex={20}
-            onClick={() => createCharts(textRef.current.value)}
-          >
-            Test
-          </Button>
-          <ArtyContainer
-            clippyImage={clippyImage}
-            handleMute={handleMute}
-            clearCharts={clearCharts}
+      <RecoilRoot>
+        <ChakraProvider>
+          <Button onClick={makeObj}>click</Button>
+          <div style={{ display: chartsPage ? null : "None" }}>
+            <Input
+              position="absolute"
+              ml="40rem"
+              bg="white"
+              zIndex={20}
+              width={"10rem"}
+              ref={textRef}
+            ></Input>
+            <Button
+              position="absolute"
+              ml={"50rem"}
+              zIndex={20}
+              onClick={() => createCharts(textRef.current.value)}
+            >
+              Test
+            </Button>
+            <ArtyContainer
+              clippyImage={clippyImage}
+              handleMute={handleMute}
+              clearCharts={clearCharts}
+              voiceMsg={voiceMsg}
+              mute={mute}
+              showTooltip={showTooltip}
+            />
+            <AttributeContainer
+              setChartMsg={setChartMsg}
+              modifiedChartOptions={modifiedChartOptions}
+              setModifiedChartOptions={setModifiedChartOptions}
+              chartMsg={chartMsg}
+            />
+
+            <Charts
+              chartMsg={chartMsg}
+              setChartMsg={setChartMsg}
+              chooseChart={chooseChart}
+              charts={charts}
+              setCharts={setCharts}
+              mute={mute}
+            />
+          </div>
+          <div style={{ display: !chartsPage ? null : "None" }}>
+            <Diagnostics chartMsg={chartMsg} mute={mute} />
+          </div>
+          <Dictaphone
+            createCharts={createCharts}
+            setChartMsg={setChartMsg}
+            chartMsg={chartMsg}
             voiceMsg={voiceMsg}
             mute={mute}
-            showTooltip={showTooltip}
           />
-          <AttributeContainer
-            setChartMsg={setChartMsg}
-            modifiedChartOptions={modifiedChartOptions}
-            setModifiedChartOptions={setModifiedChartOptions}
-            chartMsg={chartMsg}
-          />
-
-          <Charts
-            chartMsg={chartMsg}
-            setChartMsg={setChartMsg}
-            chooseChart={chooseChart}
-            charts={charts}
-            setCharts={setCharts}
-            mute={mute}
-          />
-        </div>
-        <div style={{ display: !chartsPage ? null : "None" }}>
-          <Diagnostics chartMsg={chartMsg} mute={mute} />
-        </div>
-        <Dictaphone
-          createCharts={createCharts}
-          setChartMsg={setChartMsg}
-          chartMsg={chartMsg}
-          voiceMsg={voiceMsg}
-          mute={mute}
-        />
-        <Box position="absolute" top="0" right="0">
-          <Button onClick={() => setChartsPage((prev) => !prev)}>
-            {chartsPage ? "Diagnostics" : "Charts"}
-          </Button>
-        </Box>
-      </ChakraProvider>
+          <Box position="absolute" top="0" right="0">
+            <Button onClick={() => setChartsPage((prev) => !prev)}>
+              {chartsPage ? "Diagnostics" : "Charts"}
+            </Button>
+          </Box>
+        </ChakraProvider>
+      </RecoilRoot>
     </>
   );
 }

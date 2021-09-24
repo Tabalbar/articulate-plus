@@ -21,6 +21,7 @@
     "react-speech-recognition": "^3.8.0",
     "react-vega": "^7.4.3",
     "react-wordcloud": "^1.2.7",
+    "recoil": "^0.4.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
     "use-clippy-now": "^0.3.0",

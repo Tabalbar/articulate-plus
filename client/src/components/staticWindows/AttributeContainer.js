@@ -212,7 +212,6 @@ function AttributeContainer({
                         Sentiment Analysis
                       </Radio>
                     ) : null}
-
                     <Radio
                       isChecked={modifiedChartOptions.neuralNetwork}
                       onClick={() =>
@@ -228,6 +227,12 @@ function AttributeContainer({
                     >
                       Neural Network (NodeNLP)
                     </Radio>
+                    <p>Attribute Threshold Count:</p>
+                    <Input
+                      type="number"
+                      value={modifiedChartOptions.threshold}
+                      onChange={handleWindowPastSenteces}
+                    />
                     <Radio
                       isChecked={modifiedChartOptions.randomCharts.toggle}
                       onClick={() =>

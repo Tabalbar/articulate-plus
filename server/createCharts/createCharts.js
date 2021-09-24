@@ -39,7 +39,7 @@ module.exports = (intent, chartMsg, options) => {
     );
     //**POSSIBLE BUG INDEX OUT OF RANGE**.
     for (let i = 0; i < 4; i++) {
-      if (sortedHeaders[i].count >= 5) {
+      if (sortedHeaders[i].count >= options.threshold) {
         let found = false;
         for (let j = 0; j < extractedHeaders.length; j++) {
           if (sortedHeaders[i] == extractedHeaders[j]) {
@@ -52,10 +52,7 @@ module.exports = (intent, chartMsg, options) => {
       }
     }
   }
-  console.log(extractedHeaders);
-  if (extractedHeaders.length < 1) {
-    return "";
-  }
+
   extractedHeaders = checkDuplicates(extractedHeaders);
   let filteredHeaders = extractFilteredHeaders(
     chartMsg.command,
@@ -191,7 +188,7 @@ function runAlgortihm(
     options
   );
   if (chartObj == "") {
-    charts.push("");
+    return chartObj;
   }
   chartObj = transform(data, filteredHeaders, chartObj, intent);
   chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
