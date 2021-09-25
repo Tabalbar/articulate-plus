@@ -10,7 +10,8 @@ module.exports = (
   data,
   headerFreq,
   command,
-  options
+  options,
+  headers
 ) => {
   let numHeaders = extractedHeaders.length;
   let quantitativeFound = false;

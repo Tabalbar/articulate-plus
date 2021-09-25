@@ -14,6 +14,9 @@ import { Box, Center } from "@chakra-ui/react";
 //helper function
 import createDate from "../../helpers/createDate";
 
+import listeningImage from "../../images/cyclops_idle.gif";
+import idleImage from "../../images/idle.gif";
+
 /**
  * Uses react-speech-recognition API that uses the browser to translate
  * spoken language into text
@@ -23,8 +26,14 @@ import createDate from "../../helpers/createDate";
  * @param {object} chartMsg state of the chartMsg for API call
  * @returns
  */
-const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
-  const [listening, setListening] = useState(true);
+const Dictaphone = ({
+  setChartMsg,
+  createCharts,
+  chartMsg,
+  mute,
+  setClippyImage,
+}) => {
+  const [listening, setListening] = useState(false);
   const [command, setCommand] = useState("");
 
   //commands that the browser will listen to
@@ -32,7 +41,7 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
     {
       command: "*", // '*' means listen to everything and let useEffect below handle
       callback: (message) => {
-        setListening(false); // Currently not used
+        setListening(true); // Currently not used
         setCommand(message); // set state for command to query
         setChartMsg((prev) => {
           return { ...prev, command: message };
@@ -40,6 +49,14 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
       },
     },
   ];
+
+  useEffect(() => {
+    if (listening) {
+      setClippyImage(listeningImage);
+    } else {
+      setClippyImage(idleImage);
+    }
+  }, [listening]);
 
   useEffect(() => {
     //Check if words were actually spoken
@@ -93,6 +110,7 @@ const Dictaphone = ({ setChartMsg, createCharts, chartMsg, mute }) => {
     ) {
       createCharts(command);
     }
+    setListening(false);
   }, [command]);
 
   //Currently not working

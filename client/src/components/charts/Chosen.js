@@ -16,6 +16,7 @@ function ChosenCharts({ charts, chartMsg, setCharts, handleDelete }) {
               key={i}
               setCharts={setCharts}
               charts={charts}
+              id={i}
             />
           );
         } else {

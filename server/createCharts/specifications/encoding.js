@@ -11,7 +11,8 @@ module.exports = (
   data,
   headerFreq,
   command,
-  options
+  options,
+  headers
 ) => {
   let numHeaders = extractedHeaders.length;
   let quantitativeFound = false;
@@ -24,7 +25,6 @@ module.exports = (
   if (intent == "map") {
     return map(chartObj, extractedHeaders, data, headerFreq, command, options);
   }
-  console.log(numHeaders);
 
   switch (numHeaders) {
     case 1:
@@ -44,6 +44,7 @@ module.exports = (
       };
       chartObj.charts.spec.encoding.y = {
         aggregate: "count",
+        title: "Number of Counties",
       };
       return chartObj;
     case 2:
@@ -110,7 +111,6 @@ module.exports = (
         command,
         3
       );
-
       chartObj.charts.spec.encoding.x = {
         field: extractedHeaders[0],
         type: findType(extractedHeaders[0], data),
@@ -119,6 +119,7 @@ module.exports = (
         axis: { grid: false },
       };
       if (intent === "line") {
+        console.log("here");
         chartObj.charts.spec.encoding.y = {
           aggregate: "sum",
           field: extractedHeaders[1],

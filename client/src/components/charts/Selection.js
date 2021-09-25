@@ -84,8 +84,7 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [chartData, setChartData] = useState(data);
-  specification.x = window.innerWidth / 2;
-  specification.y = window.innerHeight / 4;
+
   useEffect(() => {
     if (specification.hasOwnProperty("layer") || specification.mark == "bar") {
       fetch(
@@ -105,6 +104,12 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
     specification.timeSpentHovered += parseFloat(Number(timeDiff).toFixed(2));
     setHovered(false);
   };
+  const testClick = (e) => {
+    specification.x = e.clientX - 250;
+    specification.y = e.clientY - 800;
+  };
+  console.log(spec);
+
   return (
     <>
       <Box
@@ -113,7 +118,8 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
         onClick={
           specification.visible
             ? null
-            : () => {
+            : (e) => {
+                testClick(e);
                 endTimer();
                 chooseChart(specification);
                 setClicked(true);

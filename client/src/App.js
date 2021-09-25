@@ -59,6 +59,7 @@ function App() {
       data: "",
       transcript: "",
       uncontrolledTranscript: "",
+      datasetTitle: "",
       loggedTranscript: [], // {sentence: string, date: createDate()}
       loggedUncontrolledTranscript: [],
       synonymMatrix: [], //Synonyms used in attributes
@@ -66,6 +67,7 @@ function App() {
       explicitChart: [],
       inferredChart: [],
       modifiedChart: [],
+      deltaTime: 0,
       assistantResponse: "",
       errMsg: [],
       charts: [],
@@ -238,6 +240,7 @@ function App() {
           chartMsg={chartMsg}
           voiceMsg={voiceMsg}
           mute={mute}
+          setClippyImage={setClippyImage}
         />
         <Box position="absolute" top="0" right="0">
           <Button onClick={() => setChartsPage((prev) => !prev)}>

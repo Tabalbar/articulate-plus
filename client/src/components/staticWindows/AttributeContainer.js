@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import "../../style.css";
 import {
@@ -30,6 +30,13 @@ function AttributeContainer({
   const eventLogger = (e, data) => {
     console.log(e);
   };
+  useEffect(() => {
+    if (start) {
+      setChartMsg((prev) => {
+        return { ...prev, deltaTime: new Date() };
+      });
+    }
+  }, [start]);
 
   const onStart = (e) => {
     let elems = document.getElementsByClassName("react-draggable");
@@ -67,7 +74,6 @@ function AttributeContainer({
       };
     });
   };
-
   return (
     <>
       <Draggable
@@ -75,8 +81,8 @@ function AttributeContainer({
         grid={[1, 1]}
         scale={1}
         defaultPosition={{
-          x: 600,
-          y: 100,
+          x: window.innerWidth / 2.2,
+          y: window.innerHeight / 6,
         }}
         bounds={{ bottom: 1000, left: 0, top: 0 }}
         zIndex={10}
@@ -117,21 +123,11 @@ function AttributeContainer({
             }}
             className="handle"
           >
-            {start ? "Attributes" : "Admin"}
+            {start ? `${chartMsg.datasetTitle} Attributes` : "Admin"}
           </Box>
           {start ? (
             <>
-              <Box
-                borderColor="black"
-                border="2px"
-                zIndex={4}
-                width="20rem"
-                bg="white"
-                overflowY="scroll"
-                height="15rem"
-                color="black"
-                resize="both"
-              >
+              <Box className="scrollBar">
                 <Accordion allowMultiple>
                   {chartMsg.attributes.map((value, index) => {
                     return (

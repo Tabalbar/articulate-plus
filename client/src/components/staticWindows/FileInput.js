@@ -4,7 +4,7 @@ import XLSX from "xlsx";
 import { Input } from "@chakra-ui/react";
 
 function FileInput({ setChartMsg }) {
-  const processData = async (data) => {
+  const processData = async (data, fileName) => {
     const dataStringLines = data.split(/\r\n|\n/);
     const headers = dataStringLines[0].split(
       /,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/
@@ -55,12 +55,14 @@ function FileInput({ setChartMsg }) {
         featureMatrix: featureMatrix,
         attributes: headers,
         data: list,
+        datasetTitle: fileName,
       };
     });
   };
   const loadData = (e) => {
     e.preventDefault();
     const file = e.target.files[0];
+    const fileName = file.name.split(".")[0];
     if (file) {
       var reader = new FileReader();
       reader.onload = function (e) {
@@ -72,7 +74,7 @@ function FileInput({ setChartMsg }) {
         const ws = wb.Sheets[wsname];
         /* Convert array of arrays */
         const data = XLSX.utils.sheet_to_csv(ws, { header: 1 });
-        processData(data);
+        processData(data, fileName);
       };
       reader.readAsBinaryString(file);
     }
