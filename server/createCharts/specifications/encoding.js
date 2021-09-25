@@ -11,22 +11,11 @@ module.exports = (
   data,
   headerFreq,
   command,
-  options
+  options,
+  headers
 ) => {
   let numHeaders = extractedHeaders.length;
   let quantitativeFound = false;
-  // if (intent == "parallelCoordinates" || numHeaders > 3) {
-  //   intent = parallelCoordinates;
-  //   chartObj.charts.spec.mark = "line";
-
-  //   return parallelCoordinates(
-  //     chartObj,
-  //     extractedHeaders,
-  //     data,
-  //     headerFreq,
-  //     command
-  //   );
-  // }
 
   for (let i = 0; i < extractedHeaders.length; i++) {
     if (extractedHeaders[i] == "map") {
@@ -55,6 +44,7 @@ module.exports = (
       };
       chartObj.charts.spec.encoding.y = {
         aggregate: "count",
+        title: "Number of Counties",
       };
       return chartObj;
     case 2:
@@ -121,7 +111,6 @@ module.exports = (
         command,
         3
       );
-
       chartObj.charts.spec.encoding.x = {
         field: extractedHeaders[0],
         type: findType(extractedHeaders[0], data),
@@ -130,6 +119,7 @@ module.exports = (
         axis: { grid: false },
       };
       if (intent === "line") {
+        console.log("here");
         chartObj.charts.spec.encoding.y = {
           aggregate: "sum",
           field: extractedHeaders[1],
@@ -158,36 +148,8 @@ module.exports = (
 
       return chartObj;
 
-      break;
-    // quantitativeFound = findQuantitative(
-    //   extractedHeaders,
-    //   data,
-    //   headerFreq,
-    //   command,
-    //   3
-    // );
-    // extractedHeaders = reorderLowestCountForColor(extractedHeaders, data);
-    // chartObj.charts.spec.encoding.column = {
-    //   field: extractedHeaders[2],
-    //   type: findType(extractedHeaders[2], data),
-    //   spacing: 20,
-    // };
-    // chartObj.charts.spec.encoding.x = {
-    //   field: extractedHeaders[0],
-    //   type: findType(extractedHeaders[0], data),
-    //   axis: { labelAngle: -50 },
-    // };
-    // chartObj.charts.spec.encoding.y = {
-    //   field: extractedHeaders[1],
-    //   type: findType(extractedHeaders[1], data),
-    // };
-    // chartObj.charts.spec.encoding.color = {
-    //   field: extractedHeaders[0],
-    //   type: findType(extractedHeaders[0], data),
-    // };
-    // return chartObj;
     default:
-      chartObj.errMsg = "Error";
+      chartObj = "";
       return chartObj;
   }
 };

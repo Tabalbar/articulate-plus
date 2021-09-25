@@ -29,11 +29,11 @@ function ArtyContainer({
         grid={[1, 1]}
         scale={1}
         defaultPosition={{
-          x: 100,
-          y: 100,
+          x: window.innerWidth - 200,
+          y: window.innerHeight / 2,
         }}
         bounds={{ bottom: 1000, left: 0, top: 0 }}
-        zIndex={100}
+        zIndex={12}
         onStart={onStart.bind(this)}
         onStop={eventLogger}
       >
@@ -54,7 +54,7 @@ function ArtyContainer({
                 zIndex="10"
                 label={voiceMsg}
                 fontSize="3xl"
-                placement="right-start"
+                placement="left-start"
                 isOpen={showTooltip}
                 bg="green.600"
                 hasArrow

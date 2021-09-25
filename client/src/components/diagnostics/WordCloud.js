@@ -8,7 +8,6 @@ function WordCloud({
   featureAttributes,
 }) {
   const [words, setWords] = useState([]);
-  const [setnencesLength, setSentencesLength] = useState(0);
 
   useEffect(() => {
     let tmpWords = [];
@@ -28,7 +27,6 @@ function WordCloud({
         );
       }
       let sentences = overHearingData.split(".");
-      // setSentencesLength(sentences.length);
       let lastSentence = sentences.slice(-1)[0];
       let tmpWords = words;
       for (let i = 0; i < featureAttributes.length; i++) {

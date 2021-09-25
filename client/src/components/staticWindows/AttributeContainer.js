@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import "../../style.css";
 import {
@@ -18,7 +18,7 @@ import {
   Radio,
   Input,
 } from "@chakra-ui/react";
-import FileInput from "../sideMenu/FileInput";
+import FileInput from "./FileInput";
 
 function AttributeContainer({
   setChartMsg,
@@ -30,6 +30,13 @@ function AttributeContainer({
   const eventLogger = (e, data) => {
     console.log(e);
   };
+  useEffect(() => {
+    if (start) {
+      setChartMsg((prev) => {
+        return { ...prev, deltaTime: new Date() };
+      });
+    }
+  }, [start]);
 
   const onStart = (e) => {
     let elems = document.getElementsByClassName("react-draggable");
@@ -53,6 +60,20 @@ function AttributeContainer({
     });
   };
 
+  const handleRandomChartsMinutes = (e) => {
+    e.preventDefault();
+    let numMinutes = e.target.value;
+
+    setModifiedChartOptions((prev) => {
+      return {
+        ...prev,
+        randomCharts: {
+          toggle: true,
+          minutes: parseInt(numMinutes),
+        },
+      };
+    });
+  };
   return (
     <>
       <Draggable
@@ -60,17 +81,17 @@ function AttributeContainer({
         grid={[1, 1]}
         scale={1}
         defaultPosition={{
-          x: 400,
-          y: 100,
+          x: window.innerWidth / 2.2,
+          y: window.innerHeight / 6,
         }}
-        bounds={{ bottom: 680, left: 0, top: 0 }}
-        zIndex={100}
+        bounds={{ bottom: 1000, left: 0, top: 0 }}
+        zIndex={10}
         onStart={onStart.bind(this)}
         onStop={eventLogger}
       >
         <Box
-          position="absolute"
           bg="white"
+          position="absolute"
           overflow="auto"
           border="1px"
           boxShadow="2xl"
@@ -102,21 +123,11 @@ function AttributeContainer({
             }}
             className="handle"
           >
-            {start ? "Attributes" : "Admin"}
+            {start ? `${chartMsg.datasetTitle} Attributes` : "Admin"}
           </Box>
           {start ? (
             <>
-              <Box
-                borderColor="black"
-                border="2px"
-                zIndex={4}
-                width="20rem"
-                bg="white"
-                overflowY="scroll"
-                height="15rem"
-                color="black"
-                resize="both"
-              >
+              <Box className="scrollBar">
                 <Accordion allowMultiple>
                   {chartMsg.attributes.map((value, index) => {
                     return (
@@ -197,7 +208,6 @@ function AttributeContainer({
                         Sentiment Analysis
                       </Radio>
                     ) : null}
-
                     <Radio
                       isChecked={modifiedChartOptions.neuralNetwork}
                       onClick={() =>
@@ -213,6 +223,40 @@ function AttributeContainer({
                     >
                       Neural Network (NodeNLP)
                     </Radio>
+                    <p>Attribute Threshold Count:</p>
+                    <Input
+                      type="number"
+                      value={modifiedChartOptions.threshold}
+                      onChange={handleWindowPastSenteces}
+                    />
+                    <Radio
+                      isChecked={modifiedChartOptions.randomCharts.toggle}
+                      onClick={() =>
+                        setModifiedChartOptions((prev) => {
+                          return {
+                            ...prev,
+                            randomCharts: {
+                              toggle: !prev.randomCharts.toggle,
+                              minutes: prev.randomCharts.minutes,
+                            },
+                          };
+                        })
+                      }
+                      size="lg"
+                      colorScheme="teal"
+                    >
+                      Show Random Charts
+                    </Radio>
+                    {modifiedChartOptions.randomCharts.toggle ? (
+                      <>
+                        Minutes:
+                        <Input
+                          type="number"
+                          value={modifiedChartOptions.randomCharts.minutes}
+                          onChange={handleRandomChartsMinutes}
+                        />
+                      </>
+                    ) : null}
                   </Stack>
 
                   <Button

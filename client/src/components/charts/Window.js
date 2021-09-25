@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Draggable from "react-draggable";
 import { VegaLite } from "react-vega";
 import "../../style.css";
-import { Box, IconButton, Text } from "@chakra-ui/react";
+import { Box, IconButton } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 import { useResizeDetector } from "react-resize-detector";
 import processData from "../../helpers/processData";
@@ -13,10 +13,10 @@ function Window(props) {
   const [chartData, setChartData] = useState(props.data);
   const [startTime, setStartTime] = useState(0);
   const eventLogger = (e, data) => {
-    let tmpCharts = props.charts;
-    tmpCharts[props.index].x = data.x;
-    tmpCharts[props.index].y = data.y;
-    props.setCharts(tmpCharts);
+    // let tmpCharts = props.charts;
+    // tmpCharts[props.index].x = data.x;
+    // tmpCharts[props.index].y = data.y;
+    // props.setCharts(tmpCharts);
   };
 
   const onStart = (e) => {
@@ -52,6 +52,15 @@ function Window(props) {
     timeDiff /= 1000;
     specification.timeSpentHovered += parseFloat(Number(timeDiff).toFixed(2));
   };
+  useEffect(() => {
+    let elem = document.getElementById(props.id);
+    let elems = document.getElementsByClassName("react-draggable");
+    for (let i = 0; i < elems.length; i++) {
+      elems[i].style.zIndex = 10;
+    }
+    elem.style.zIndex = 13;
+  }, []);
+  console.log(props.charts[props.index]);
   return (
     <>
       <Draggable
@@ -73,6 +82,7 @@ function Window(props) {
           border="1px"
           boxShadow="2xl"
           ref={ref}
+          id={props.id}
           borderColor="black"
           borderRadius="sm"
           borderTopRadius="sm"
@@ -103,12 +113,7 @@ function Window(props) {
               />
               {specification.title}
             </Box>
-            <VegaLite
-              // width={width - 200}
-              // height={height - 200}
-              spec={specification}
-              data={{ table: chartData }}
-            />
+            <VegaLite spec={specification} data={{ table: chartData }} />
           </div>
         </Box>
       </Draggable>

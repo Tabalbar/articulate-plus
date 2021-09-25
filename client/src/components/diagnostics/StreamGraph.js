@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { VegaLite } from "react-vega";
-import { Box } from "@chakra-ui/react";
 
 const StreamGraph = ({
   attributes,

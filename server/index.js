@@ -15,38 +15,38 @@ const manager = new NlpManager({
   nlu: { log: false },
 });
 
-manager.addDocument("en", "show me the distribution of nominal", "bar");
-manager.addDocument("en", "show me a graph with nominal and nominal", "bar");
-manager.addDocument("en", "show me a chart of nominal and nominal", "bar");
-manager.addAnswer("en", "bar", "bar");
+const neuralNetworkData = require("./neuralNetworkData");
+// manager.addDocument(
+//   "en",
+//   "I want to see quantitative by quantitative",
+//   "scatter"
+// );
+// manager.addDocument(
+//   "en",
+//   "show me the relationship of quantitative and quantitative",
+//   "scatter"
+// );
+// manager.addDocument(
+//   "en",
+//   "what is the quantitative of quantitative",
+//   "scatter"
+// );
+// manager.addAnswer("en", "scatter", "scatter");
+for (let i = 0; i < neuralNetworkData.queries.length; i++) {
+  manager.addDocument(
+    "en",
+    neuralNetworkData.queries[i].query,
+    neuralNetworkData.queries[i].chartType
+  );
+}
 
-manager.addDocument(
-  "en",
-  "I want to see the comparison of nominal over time",
-  "line"
-);
-manager.addDocument("en", "show me nominal by date", "line");
-manager.addDocument(
-  "en",
-  "show me the comparison of nominal over temporal",
-  "line"
-);
-manager.addDocument(
-  "en",
-  "Show me the temporal over the year of nominal and quantitative",
-  "line"
-);
-manager.addDocument(
-  "en",
-  "show me a line chart of nominal and quantitative",
-  "line"
-);
-manager.addAnswer("en", "line", "line");
-
-manager.addDocument("en", "show me a map of nominal", "map");
-manager.addDocument("en", "show me where nominal", "map");
-
-manager.addAnswer("en", "map", "map");
+for (let i = 0; i < neuralNetworkData.answers.length; i++) {
+  manager.addAnswer(
+    "en",
+    neuralNetworkData.answers[i],
+    neuralNetworkData.answers[i]
+  );
+}
 
 // Train and save the model.
 (async () => {
@@ -81,6 +81,11 @@ const CompareCharts = require("./CompareCharts");
 const countHeaderFrequency = require("./createCharts/countHeaderFrequency");
 
 const createCharts = require("./createCharts/createCharts");
+const ChartInfo = require("../newCreateCharts/chartObj/ChartInfo");
+
+const explicitChart = require("./oldChartMaker/explicit/explicitChart");
+const inferredChart = require("./oldChartMaker/inferred/inferredChart");
+const modifiedChart = require("./oldChartMaker/modified/modifiedChart");
 
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg;
@@ -100,6 +105,10 @@ app.post("/createCharts", async (req, res) => {
    * Getting ExplicitChart
    */
   let intent = getExplicitChartType(chartMsg.command);
+  // const chartObj = new ChartInfo(chartMsg, modifiedChartOptions, intent);
+  // let testing = chartObj.extractHeaders();
+  // let testing2 = chartObj.extractFilteredHeaders();
+  // console.log(testing, testing2);
   if (!intent) {
     intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
   }
@@ -107,48 +116,42 @@ app.post("/createCharts", async (req, res) => {
     /**
      * Explicit Chart
      */
-    let explicitChartOptions = {
+    // chartMsg.explicitChart = explicitChart(intent, chartMsg);
+    chartMsg.explicitChart = createCharts(intent, chartMsg, {
       sentimentAnalysis: false,
       window: {
         toggle: false,
-        pastSentences: 20,
+        pastSentences: 99999,
       },
       neuralNetwork: false,
-      useSynonyms: false,
-    };
-    chartMsg.explicitChart = createCharts(
-      intent,
-      chartMsg,
-      explicitChartOptions
-    );
+      threshold: 0,
+    });
 
     /**
      * Window + Sentiment Chart
      */
-    let windowSentimentOptions = {
+    // chartMsg.inferredChart = inferredChart(intent, chartMsg);
+    chartMsg.inferredChart = createCharts(intent, chartMsg, {
       sentimentAnalysis: true,
       window: {
-        toggle: true,
+        toggle: modifiedChartOptions.window.toggle,
         pastSentences: modifiedChartOptions.window.pastSentences,
       },
-      neuralNetwork: true,
-      useSynonyms: modifiedChartOptions.useSynonyms,
-    };
-    chartMsg.inferredChart = createCharts(
-      intent,
-      chartMsg,
-      windowSentimentOptions
-    );
+      neuralNetwork: modifiedChartOptions.neuralNetwork,
+      threshold: modifiedChartOptions.threshold,
+    });
 
-    /**
-     * modified implicit chart
-     */
-
+    // chartMsg.modifiedChart = modifiedChart(
+    //   intent,
+    //   chartMsg,
+    //   modifiedChartOptions
+    // );
     chartMsg.modifiedChart = createCharts(
       intent,
       chartMsg,
       modifiedChartOptions
     );
+
     CompareCharts(chartMsg);
   } else {
     //If Neural Network has no match for intent, no charts are made
@@ -203,4 +206,11 @@ app.get("*", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
+});
+process.on("SIGINT", function () {
+  // this is only called on ctrl+c, not restart
+  process.kill(process.pid, "SIGINT");
+});
+process.once("SIGUSR2", function () {
+  process.kill(process.pid, "SIGUSR2");
 });

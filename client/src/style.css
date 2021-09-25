@@ -1,98 +1,113 @@
 .ChartSelection {
-    background: grey;
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 30%;
-    align-content: center;
-    margin: 0px;
-    border-top: solid 5px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    z-index: 1;
+  background: grey;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 30%;
+  align-content: center;
+  margin: 0px;
+  border-top: solid 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index: 1;
 }
 
-
 .SelectionPlaceholder {
-    background: transparent;
-    height: 25vh;
-    width: 23vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    align-content: center;
-    cursor: pointer;
-    z-index: 3;
-
+  background: transparent;
+  height: 25vh;
+  width: 23vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  align-content: center;
+  cursor: pointer;
+  z-index: 3;
 }
 
 .VegaLiteDivSelection {
-    cursor: pointer;
-    position: relative;
-    background: white;
-    /* border: solid grey 1px; */
-    /* border-radius: 20px; */
-    height: 25vh;
-    width: 23vw;
-    z-index: -1;
+  cursor: pointer;
+  position: relative;
+  background: white;
+  /* border: solid grey 1px; */
+  /* border-radius: 20px; */
+  height: 25vh;
+  width: 23vw;
+  z-index: -1;
 }
-.VegaLiteHover{
-    cursor: pointer;
-    position: relative;
-    background: white;
-    border: solid grey 3px;
-    border-radius: 20px;
-    height: 50vh;
-    width: 37vw;
-    z-index: 0;
-    top: -400px
+.VegaLiteHover {
+  cursor: pointer;
+  position: relative;
+  background: white;
+  border: solid grey 3px;
+  border-radius: 20px;
+  height: 50vh;
+  width: 37vw;
+  z-index: 0;
+  top: -400px;
 }
 
 .Charts {
-    box-shadow: 10px 5px 5px rgb(71, 71, 71);
-    border: solid 1px;
-    background-color: white;
-    border-radius: 10px;
-    position: absolute;
+  box-shadow: 10px 5px 5px rgb(71, 71, 71);
+  border: solid 1px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
 }
 
 .VegaLiteDivChosen {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 .ChosenCharts {
-    height: 100vh;
-    background:blueviolet;
+  height: 100vh;
+  background: blueviolet;
 }
 
 .FileInput {
-    margin-left: 10px;
-    margin-top: 10px;
-    width: 80%;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 80%;
 }
 
 .voiceStyle {
-    background-color: rgb(0, 37, 40);
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    z-index: 1;
-    border-top:#C24C3D solid; 
+  background-color: rgb(0, 37, 40);
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+  border-top: #c24c3d solid;
 }
 
 .expandedVegaLiteSelection {
-    height: 50%;
-    background: red;
+  height: 50%;
+  background: red;
 }
 
 ::-webkit-resizer {
-    background: gray;
+  background: gray;
 
-    /*size does not work*/  
-    display:block;  
-    width: 300px !important;
-    height: 300px !important;
+  /*size does not work*/
+  display: block;
+  width: 300px !important;
+  height: 300px !important;
+}
+
+.scrollBar {
+  overflow-y: scroll;
+  border-color: black;
+  border: 2px;
+  z-index: 4;
+  width: 20rem;
+  background-color: white;
+  resize: both;
+  height: 20rem;
+  color: black;
+  scrollbar-width: thin;
+}
+
+.scrollBar::-webkit-scrollbar {
+  width: 20px;
 }

@@ -13,15 +13,7 @@ import ArtyContainer from "./components/staticWindows/ArtyContainer";
 import { serverRequest } from "./helpers/serverRequest";
 import createDate from "./helpers/createDate";
 
-import {
-  ChakraProvider,
-  VStack,
-  Button,
-  Box,
-  Input,
-  Image,
-  Tooltip,
-} from "@chakra-ui/react";
+import { ChakraProvider, Button, Box, Input } from "@chakra-ui/react";
 
 //For computer talking
 import listeningImage from "./images/idle.gif";
@@ -52,6 +44,11 @@ function App() {
     },
     neuralNetwork: true,
     useSynonyms: true,
+    randomCharts: {
+      toggle: false,
+      minutes: 10,
+    },
+    threshold: 5,
   });
 
   // Chart message to send to server
@@ -62,14 +59,15 @@ function App() {
       data: "",
       transcript: "",
       uncontrolledTranscript: "",
+      datasetTitle: "",
       loggedTranscript: [], // {sentence: string, date: createDate()}
       loggedUncontrolledTranscript: [],
       synonymMatrix: [], //Synonyms used in attributes
       featureMatrix: [], //Unique data values
-      currentCharts: [],
-      explicitChart: "",
-      inferredChart: "",
-      modifiedChart: "",
+      explicitChart: [],
+      inferredChart: [],
+      modifiedChart: [],
+      deltaTime: 0,
       assistantResponse: "",
       errMsg: [],
       charts: [],
@@ -93,10 +91,13 @@ function App() {
       },
     }
   );
+
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 
   const [voiceMsg, setVoiceMsg] = useState(null);
+
+  const randomChartIntervalId = useRef(null);
 
   // Handler to show thought bubble for clippy
   const [showTooltip, setShowTooltip] = useState(false);
@@ -137,6 +138,17 @@ function App() {
       }
     });
   };
+
+  //Set up interval to test ranondom chart generation
+  useEffect(() => {
+    if (modifiedChartOptions.randomCharts.toggle) {
+      randomChartIntervalId.current = setInterval(() => {
+        createCharts("");
+      }, modifiedChartOptions.randomCharts.minutes * 60 * 1000);
+    } else {
+      clearInterval(randomChartIntervalId.current);
+    }
+  }, [modifiedChartOptions.randomCharts.toggle]);
 
   //In chartSelection component, handles choosing the chart to add in
   //Chosen component
@@ -228,6 +240,7 @@ function App() {
           chartMsg={chartMsg}
           voiceMsg={voiceMsg}
           mute={mute}
+          setClippyImage={setClippyImage}
         />
         <Box position="absolute" top="0" right="0">
           <Button onClick={() => setChartsPage((prev) => !prev)}>

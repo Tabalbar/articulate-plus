@@ -56,7 +56,7 @@ module.exports = (extractedHeaders, intent, filteredHeaders) => {
       case 2:
         if (intent == "bar") {
           chartTitle +=
-            "Heatmap of " + headerTitles[1] + "vs. " + headerTitles[0];
+            "Heatmap Sum of " + headerTitles[1] + "vs. " + headerTitles[0];
         } else {
           chartTitle +=
             intent.charAt(0).toUpperCase() +

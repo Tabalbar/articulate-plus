@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { VegaLite } from "react-vega";
-import { Box } from "@chakra-ui/react";
 
 const StreamGraph = ({
   attributes,
@@ -9,7 +8,6 @@ const StreamGraph = ({
   overHearingData,
 }) => {
   const [streamData, setStreamData] = useState([]);
-  const [sentecesLength, setSentencesLength] = useState(0);
 
   const specification = {
     width: 500,

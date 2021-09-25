@@ -4,6 +4,8 @@ const countHeaderFrequency = require("./countHeaderFrequency");
 const findType = require("./helperFunctions/findType");
 const createDate = require("./helperFunctions/createDate");
 
+const levenshtein = require("fast-levenshtein");
+
 const transform = require("./specifications/transform");
 const mark = require("./specifications/mark");
 const encoding = require("./specifications/encoding");
@@ -17,7 +19,6 @@ module.exports = (intent, chartMsg, options) => {
     chartMsg.data,
     options
   );
-
   let extractedHeaders = [];
   extractedHeaders = extractHeaders(
     chartMsg.command,
@@ -40,7 +41,7 @@ module.exports = (intent, chartMsg, options) => {
     );
     //**POSSIBLE BUG INDEX OUT OF RANGE**.
     for (let i = 0; i < 4; i++) {
-      if (sortedHeaders[i].count >= 5) {
+      if (sortedHeaders[i].count >= options.threshold) {
         let found = false;
         for (let j = 0; j < extractedHeaders.length; j++) {
           if (sortedHeaders[i] == extractedHeaders[j]) {
@@ -71,7 +72,9 @@ module.exports = (intent, chartMsg, options) => {
       headerFrequencyCount,
       chartMsg.command,
       options,
-      filteredHeaders
+      filteredHeaders,
+      chartMsg.attributes,
+      chartMsg.deltaTime
     );
 
     charts.push(chartObj);
@@ -86,7 +89,9 @@ module.exports = (intent, chartMsg, options) => {
           headerFrequencyCount,
           chartMsg.command,
           options,
-          filteredHeaders
+          filteredHeaders,
+          chartMsg.attributes,
+          chartMsg.deltaTime
         );
         charts.push(chartObj);
       }
@@ -104,7 +109,9 @@ module.exports = (intent, chartMsg, options) => {
           headerFrequencyCount,
           chartMsg.command,
           options,
-          filteredHeaders
+          filteredHeaders,
+          chartMsg.attributes,
+          chartMsg.deltaTime
         );
         charts.push(chartObj);
       }
@@ -120,7 +127,9 @@ module.exports = (intent, chartMsg, options) => {
           headerFrequencyCount,
           chartMsg.command,
           options,
-          filteredHeaders
+          filteredHeaders,
+          chartMsg.attributes,
+          chartMsg.deltaTime
         );
         charts.push(chartObj);
       }
@@ -137,8 +146,12 @@ function runAlgortihm(
   headerFrequencyCount,
   command,
   options,
-  filteredHeaders
+  filteredHeaders,
+  headers,
+  deltaTime
 ) {
+  let time = (new Date() - new Date(deltaTime)) / 1000 / 60;
+  time = Math.round(time * 100) / 100;
   let chartObj = {
     charts: {
       spec: {
@@ -155,6 +168,7 @@ function runAlgortihm(
         initialized: createDate(),
         timeChosen: [],
         timeClosed: [],
+        deltaTime: time,
         timeSpentHovered: 0,
         data: { name: "table" }, // note: vega-lite data attribute is a plain object instead of an array
         command: command,
@@ -186,10 +200,11 @@ function runAlgortihm(
     data,
     headerFrequencyCount,
     command,
-    options
+    options,
+    headers
   );
   if (chartObj == "") {
-    charts.push("");
+    return chartObj;
   }
   chartObj = transform(data, filteredHeaders, chartObj, intent);
   chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
@@ -316,11 +331,26 @@ function extractFilteredHeaders(command, data, headers, command) {
   let doc = nlp(command);
   let extractedFilteredHeaders = [];
   let foundTimeHeader = false;
+  let words = command.split(" ");
+
   for (let i = 0; i < headerMatrix.length; i++) {
     extractedFilteredHeaders[headerMatrix[i][0]] = [];
     for (let n = 1; n < headerMatrix[i].length; n++) {
       if (doc.has(headerMatrix[i][n])) {
         extractedFilteredHeaders[headerMatrix[i][0]].push(headerMatrix[i][n]);
+      } else {
+        for (let j = 0; j < words.length; j++) {
+          if (
+            levenshtein.get(
+              words[j].toLowerCase(),
+              headerMatrix[i][n].toLowerCase()
+            ) == 1
+          ) {
+            extractedFilteredHeaders[headerMatrix[i][0]].push(
+              headerMatrix[i][n]
+            );
+          }
+        }
       }
     }
 
