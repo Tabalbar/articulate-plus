@@ -17,7 +17,14 @@ import createDate from "../helpers/createDate";
  * @param {boolean} mute for soive synthesizer
  * @returns
  */
-function Charts({ chartMsg, charts, setCharts, chooseChart, mute }) {
+function Charts({
+  chartMsg,
+  charts,
+  setCharts,
+  chooseChart,
+  mute,
+  modifiedChartOptions,
+}) {
   //to Rerender when deleteing charts on chosen charts component
   const [, setForceUpdate] = useState(true);
   //Deleting charts from chosen charts
@@ -32,12 +39,14 @@ function Charts({ chartMsg, charts, setCharts, chooseChart, mute }) {
         chartMsg={chartMsg}
         chooseChart={chooseChart}
         mute={mute}
+        modifiedChartOptions={modifiedChartOptions}
       />
       <ChosenCharts
         handleDelete={handleDelete}
         chartMsg={chartMsg}
         charts={charts}
         setCharts={setCharts}
+        modifiedChartOptions={modifiedChartOptions}
       />
     </>
   );

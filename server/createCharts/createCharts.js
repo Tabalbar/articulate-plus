@@ -10,6 +10,7 @@ const transform = require("./specifications/transform");
 const mark = require("./specifications/mark");
 const encoding = require("./specifications/encoding");
 const title = require("./specifications/title");
+const countFilterFrequency = require("./countFilterFrequency");
 
 module.exports = (intent, chartMsg, options) => {
   const headerFrequencyCount = countHeaderFrequency(
@@ -19,6 +20,7 @@ module.exports = (intent, chartMsg, options) => {
     chartMsg.data,
     options
   );
+
   let extractedHeaders = [];
   extractedHeaders = extractHeaders(
     chartMsg.command,
@@ -62,6 +64,12 @@ module.exports = (intent, chartMsg, options) => {
     chartMsg.attributes,
     chartMsg.command
   );
+  const filterFrequencyCount = countFilterFrequency(
+    chartMsg.transcript,
+    chartMsg.featureMatrix,
+    chartMsg.data,
+    options
+  );
 
   let charts = [];
   if (extractedHeaders.length == 1) {
@@ -74,7 +82,8 @@ module.exports = (intent, chartMsg, options) => {
       options,
       filteredHeaders,
       chartMsg.attributes,
-      chartMsg.deltaTime
+      chartMsg.deltaTime,
+      filterFrequencyCount
     );
 
     charts.push(chartObj);
@@ -91,7 +100,8 @@ module.exports = (intent, chartMsg, options) => {
           options,
           filteredHeaders,
           chartMsg.attributes,
-          chartMsg.deltaTime
+          chartMsg.deltaTime,
+          filterFrequencyCount
         );
         charts.push(chartObj);
       }
@@ -111,7 +121,8 @@ module.exports = (intent, chartMsg, options) => {
           options,
           filteredHeaders,
           chartMsg.attributes,
-          chartMsg.deltaTime
+          chartMsg.deltaTime,
+          filterFrequencyCount
         );
         charts.push(chartObj);
       }
@@ -129,7 +140,8 @@ module.exports = (intent, chartMsg, options) => {
           options,
           filteredHeaders,
           chartMsg.attributes,
-          chartMsg.deltaTime
+          chartMsg.deltaTime,
+          filterFrequencyCount
         );
         charts.push(chartObj);
       }
@@ -148,7 +160,8 @@ function runAlgortihm(
   options,
   filteredHeaders,
   headers,
-  deltaTime
+  deltaTime,
+  filterFrequencyCount
 ) {
   let time = (new Date() - new Date(deltaTime)) / 1000 / 60;
   time = Math.round(time * 100) / 100;
@@ -206,7 +219,14 @@ function runAlgortihm(
   if (chartObj == "") {
     return chartObj;
   }
-  chartObj = transform(data, filteredHeaders, chartObj, intent);
+  chartObj = transform(
+    data,
+    filteredHeaders,
+    chartObj,
+    intent,
+    filterFrequencyCount,
+    options
+  );
   chartObj.charts.spec.title = title(extractedHeaders, intent, filteredHeaders);
 
   return chartObj;

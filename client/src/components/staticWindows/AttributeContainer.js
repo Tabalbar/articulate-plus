@@ -25,18 +25,19 @@ function AttributeContainer({
   modifiedChartOptions,
   setModifiedChartOptions,
   chartMsg,
+  startStudy,
+  setStartStudy,
 }) {
-  const [start, setStart] = useState(false);
   const eventLogger = (e, data) => {
     console.log(e);
   };
   useEffect(() => {
-    if (start) {
+    if (startStudy) {
       setChartMsg((prev) => {
         return { ...prev, deltaTime: new Date() };
       });
     }
-  }, [start]);
+  }, [startStudy]);
 
   const onStart = (e) => {
     let elems = document.getElementsByClassName("react-draggable");
@@ -53,8 +54,38 @@ function AttributeContainer({
       return {
         ...prev,
         window: {
-          toggle: true,
+          ...prev.window,
           pastSentences: parseInt(pastSentences),
+        },
+      };
+    });
+  };
+
+  const handleFilterPastSentences = (e) => {
+    e.preventDefault();
+    let pastSentences = e.target.value;
+
+    setModifiedChartOptions((prev) => {
+      return {
+        ...prev,
+        filter: {
+          ...prev.filter,
+          pastSentences: parseInt(pastSentences),
+        },
+      };
+    });
+  };
+
+  const handleFilterThreshold = (e) => {
+    e.preventDefault();
+    let threshold = e.target.value;
+
+    setModifiedChartOptions((prev) => {
+      return {
+        ...prev,
+        filter: {
+          ...prev.filter,
+          threshold: parseInt(threshold),
         },
       };
     });
@@ -123,9 +154,9 @@ function AttributeContainer({
             }}
             className="handle"
           >
-            {start ? `${chartMsg.datasetTitle} Attributes` : "Admin"}
+            {startStudy ? `${chartMsg.datasetTitle} Attributes` : "Admin"}
           </Box>
-          {start ? (
+          {startStudy ? (
             <>
               <Box className="scrollBar">
                 <Accordion allowMultiple>
@@ -161,7 +192,10 @@ function AttributeContainer({
             <>
               <Center>
                 <VStack>
-                  <FileInput setChartMsg={setChartMsg} />
+                  <FileInput
+                    setChartMsg={setChartMsg}
+                    setModifiedChartOptions={setModifiedChartOptions}
+                  />
                   <Text fontWeight="bold" ml={1}>
                     Modified Chart Options
                   </Text>
@@ -185,11 +219,14 @@ function AttributeContainer({
                       Sentence Window
                     </Radio>
                     {modifiedChartOptions.window.toggle ? (
-                      <Input
-                        type="number"
-                        value={modifiedChartOptions.window.pastSentences}
-                        onChange={handleWindowPastSenteces}
-                      />
+                      <>
+                        Size of Sentence Window
+                        <Input
+                          type="number"
+                          value={modifiedChartOptions.window.pastSentences}
+                          onChange={handleWindowPastSenteces}
+                        />
+                      </>
                     ) : null}
                     {modifiedChartOptions.window.toggle ? (
                       <Radio
@@ -257,12 +294,47 @@ function AttributeContainer({
                         />
                       </>
                     ) : null}
+                    <Radio
+                      isChecked={modifiedChartOptions.filter.toggle}
+                      onClick={() =>
+                        setModifiedChartOptions((prev) => {
+                          return {
+                            ...prev,
+                            filter: {
+                              ...prev.filter,
+
+                              toggle: !prev.filter.toggle,
+                            },
+                          };
+                        })
+                      }
+                      size="lg"
+                      colorScheme="teal"
+                    >
+                      Filter Sentence Window
+                    </Radio>
+                    {modifiedChartOptions.filter.toggle ? (
+                      <>
+                        Filter Threshold:
+                        <Input
+                          type="number"
+                          value={modifiedChartOptions.filter.threshold}
+                          onChange={handleFilterThreshold}
+                        />
+                        Size of Sentence Window
+                        <Input
+                          type="number"
+                          value={modifiedChartOptions.filter.pastSentences}
+                          onChange={handleFilterPastSentences}
+                        />
+                      </>
+                    ) : null}
                   </Stack>
 
                   <Button
                     disabled={!chartMsg.attributes.length}
                     colorScheme="teal"
-                    onClick={() => setStart(true)}
+                    onClick={() => setStartStudy(true)}
                   >
                     Start
                   </Button>

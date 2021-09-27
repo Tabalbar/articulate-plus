@@ -3,7 +3,7 @@ import "../../style.css";
 import XLSX from "xlsx";
 import { Input } from "@chakra-ui/react";
 
-function FileInput({ setChartMsg }) {
+function FileInput({ setChartMsg, setModifiedChartOptions }) {
   const processData = async (data, fileName) => {
     const dataStringLines = data.split(/\r\n|\n/);
     const headers = dataStringLines[0].split(
@@ -63,6 +63,14 @@ function FileInput({ setChartMsg }) {
     e.preventDefault();
     const file = e.target.files[0];
     const fileName = file.name.split(".")[0];
+    if (fileName.toLowerCase().includes("covid")) {
+      setModifiedChartOptions((prev) => {
+        return {
+          ...prev,
+          useCovidDataset: true,
+        };
+      });
+    }
     if (file) {
       var reader = new FileReader();
       reader.onload = function (e) {

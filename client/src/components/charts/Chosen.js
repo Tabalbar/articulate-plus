@@ -2,7 +2,13 @@ import React from "react";
 import "../../style.css";
 import Window from "./Window";
 
-function ChosenCharts({ charts, chartMsg, setCharts, handleDelete }) {
+function ChosenCharts({
+  charts,
+  chartMsg,
+  setCharts,
+  handleDelete,
+  modifiedChartOptions,
+}) {
   return (
     <>
       {charts.map((chart, i) => {
@@ -17,6 +23,7 @@ function ChosenCharts({ charts, chartMsg, setCharts, handleDelete }) {
               setCharts={setCharts}
               charts={charts}
               id={i}
+              modifiedChartOptions={modifiedChartOptions}
             />
           );
         } else {

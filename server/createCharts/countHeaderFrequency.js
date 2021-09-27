@@ -39,7 +39,7 @@ module.exports = (
       for (let j = 0; j < words.length; j++) {
         for (let w = 0; w < synonymsAndFeatures.length; w++) {
           for (let n = 0; n < synonymsAndFeatures[w].length; n++) {
-            if (words[j].includes(synonymsAndFeatures[w][n])) {
+            if (words[j].toLowerCase().includes(synonymsAndFeatures[w][n])) {
               const sentiment = new Sentiment();
               const result = sentiment.analyze(sentences[i]);
               if (result.score >= 0) {
@@ -60,7 +60,7 @@ module.exports = (
     }
     return headerFrequencyCount;
   } else if (modifiedChartOptions.window.toggle) {
-    sentences.slice(-modifiedChartOptions.window.pastSenteces);
+    sentences.slice(-modifiedChartOptions.window.pastSentences);
 
     for (let i = 0; i < sentences.length; i++) {
       let words = sentences[i].split(" ");
@@ -68,7 +68,7 @@ module.exports = (
         for (let w = 0; w < synonymsAndFeatures.length; w++) {
           let found = false;
           for (let n = 0; n < synonymsAndFeatures[w].length; n++) {
-            if (words[j].includes(synonymsAndFeatures[w][n])) {
+            if (words[j].toLowerCase().includes(synonymsAndFeatures[w][n])) {
               wordCount[w].count += 1;
               found = true;
               break;

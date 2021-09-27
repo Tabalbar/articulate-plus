@@ -27,12 +27,17 @@ function Window(props) {
     }
   };
   useEffect(() => {
-    if (specification.hasOwnProperty("layer") || specification.mark == "bar") {
-      fetch(
-        "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-      )
-        .then((response) => response.text())
-        .then(async (csvData) => setChartData(await processData(csvData)));
+    if (props.modifiedChartOptions.useCovidDataset == true) {
+      if (
+        specification.hasOwnProperty("layer") ||
+        specification.mark == "bar"
+      ) {
+        fetch(
+          "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+        )
+          .then((response) => response.text())
+          .then(async (csvData) => setChartData(await processData(csvData)));
+      }
     }
   }, []);
   useEffect(() => {

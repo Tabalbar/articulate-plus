@@ -24,6 +24,9 @@ import { thinking } from "./components/voice/assistantVoiceOptions";
 import AttributeContainer from "./components/staticWindows/AttributeContainer";
 
 function App() {
+  //Start Dictaphone to start listening
+  const [startStudy, setStartStudy] = useState(false);
+
   const [, setForceUpdate] = useState(true);
 
   //Mute for synthesizer
@@ -37,6 +40,7 @@ function App() {
 
   //Toggle options for algorithm
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
+    useCovidDataset: false,
     sentimentAnalysis: false,
     window: {
       toggle: true,
@@ -49,6 +53,11 @@ function App() {
       minutes: 10,
     },
     threshold: 3,
+    filter: {
+      toggle: false,
+      pastSentences: 20,
+      threshold: 3,
+    },
   });
 
   // Chart message to send to server
@@ -186,7 +195,7 @@ function App() {
     });
   };
   const textRef = useRef("");
-
+  console.log(modifiedChartOptions);
   return (
     <>
       <ChakraProvider>
@@ -220,6 +229,8 @@ function App() {
             modifiedChartOptions={modifiedChartOptions}
             setModifiedChartOptions={setModifiedChartOptions}
             chartMsg={chartMsg}
+            setStartStudy={setStartStudy}
+            startStudy={startStudy}
           />
 
           <Charts
@@ -229,6 +240,7 @@ function App() {
             charts={charts}
             setCharts={setCharts}
             mute={mute}
+            modifiedChartOptions={modifiedChartOptions}
           />
         </div>
         <div style={{ display: !chartsPage ? null : "None" }}>
@@ -240,6 +252,7 @@ function App() {
           chartMsg={chartMsg}
           voiceMsg={voiceMsg}
           mute={mute}
+          startStudy={startStudy}
           setClippyImage={setClippyImage}
         />
         <Box position="absolute" top="0" right="0">

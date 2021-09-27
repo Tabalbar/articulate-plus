@@ -4,7 +4,7 @@ import { VegaLite } from "react-vega";
 import { Box, HStack } from "@chakra-ui/react";
 import processData from "../../helpers/processData";
 
-function ChartSelection({ chartMsg, chooseChart }) {
+function ChartSelection({ chartMsg, chooseChart, modifiedChartOptions }) {
   const slideTimer = useRef(null);
   useEffect(() => {
     if (slideTimer) {
@@ -65,6 +65,7 @@ function ChartSelection({ chartMsg, chooseChart }) {
                         specification={chart.charts.spec}
                         data={chartMsg.data}
                         chooseChart={chooseChart}
+                        modifiedChartOptions={modifiedChartOptions}
                       />
                     </Box>
                   ) : null}
@@ -78,7 +79,12 @@ function ChartSelection({ chartMsg, chooseChart }) {
   );
 }
 
-function ChartPlaceholder({ specification, data, chooseChart }) {
+function ChartPlaceholder({
+  specification,
+  data,
+  chooseChart,
+  modifiedChartOptions,
+}) {
   const [startTime, setStartTime] = useState("");
   const [spec, setSpec] = useState(specification);
   const [hovered, setHovered] = useState(false);
@@ -86,12 +92,17 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
   const [chartData, setChartData] = useState(data);
 
   useEffect(() => {
-    if (specification.hasOwnProperty("layer") || specification.mark == "bar") {
-      fetch(
-        "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-      )
-        .then((response) => response.text())
-        .then(async (csvData) => setChartData(await processData(csvData)));
+    if (modifiedChartOptions.useCovidDataset == true) {
+      if (
+        specification.hasOwnProperty("layer") ||
+        specification.mark == "bar"
+      ) {
+        fetch(
+          "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+        )
+          .then((response) => response.text())
+          .then(async (csvData) => setChartData(await processData(csvData)));
+      }
     }
   }, []);
   const startTimer = () => {
@@ -108,7 +119,6 @@ function ChartPlaceholder({ specification, data, chooseChart }) {
     specification.x = e.clientX - 250;
     specification.y = e.clientY - 800;
   };
-  console.log(spec);
 
   return (
     <>

@@ -16,22 +16,7 @@ const manager = new NlpManager({
 });
 
 const neuralNetworkData = require("./neuralNetworkData");
-// manager.addDocument(
-//   "en",
-//   "I want to see quantitative by quantitative",
-//   "scatter"
-// );
-// manager.addDocument(
-//   "en",
-//   "show me the relationship of quantitative and quantitative",
-//   "scatter"
-// );
-// manager.addDocument(
-//   "en",
-//   "what is the quantitative of quantitative",
-//   "scatter"
-// );
-// manager.addAnswer("en", "scatter", "scatter");
+
 for (let i = 0; i < neuralNetworkData.queries.length; i++) {
   manager.addDocument(
     "en",
@@ -113,45 +98,57 @@ app.post("/createCharts", async (req, res) => {
     intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
   }
   if (intent !== "None") {
-    /**
-     * Explicit Chart
-     */
-    // chartMsg.explicitChart = explicitChart(intent, chartMsg);
-    chartMsg.explicitChart = createCharts(intent, chartMsg, {
-      sentimentAnalysis: false,
-      window: {
-        toggle: false,
-        pastSentences: 99999,
-      },
-      neuralNetwork: false,
-      threshold: 0,
-    });
+    if (modifiedChartOptions.useCovidDataset == true) {
+      /**
+       * Explicit Chart
+       */
+      chartMsg.explicitChart = createCharts(intent, chartMsg, {
+        sentimentAnalysis: false,
+        window: {
+          toggle: false,
+          pastSentences: 99999,
+        },
+        neuralNetwork: false,
+        threshold: 0,
+        filter: {
+          toggle: false,
+          pastSentences: 99999,
+          threshold: 999,
+        },
+      });
 
-    /**
-     * Window + Sentiment Chart
-     */
-    // chartMsg.inferredChart = inferredChart(intent, chartMsg);
-    chartMsg.inferredChart = createCharts(intent, chartMsg, {
-      sentimentAnalysis: true,
-      window: {
-        toggle: modifiedChartOptions.window.toggle,
-        pastSentences: modifiedChartOptions.window.pastSentences,
-      },
-      neuralNetwork: modifiedChartOptions.neuralNetwork,
-      threshold: modifiedChartOptions.threshold,
-    });
+      /**
+       * Window + Sentiment Chart
+       */
+      chartMsg.inferredChart = createCharts(intent, chartMsg, {
+        sentimentAnalysis: true,
+        window: {
+          toggle: modifiedChartOptions.window.toggle,
+          pastSentences: modifiedChartOptions.window.pastSentences,
+        },
+        neuralNetwork: modifiedChartOptions.neuralNetwork,
+        threshold: modifiedChartOptions.threshold,
+        filter: {
+          toggle: modifiedChartOptions.filter.toggle,
+          pastSentences: modifiedChartOptions.filter.pastSentences,
+          threshold: modifiedChartOptions.filter.threshold,
+        },
+      });
+    } else {
+      chartMsg.modifiedChart = createCharts(
+        intent,
+        chartMsg,
+        modifiedChartOptions
+      );
+      chartMsg.inferredChart = inferredChart(intent, chartMsg);
 
-    // chartMsg.modifiedChart = modifiedChart(
-    //   intent,
-    //   chartMsg,
-    //   modifiedChartOptions
-    // );
-    chartMsg.modifiedChart = createCharts(
-      intent,
-      chartMsg,
-      modifiedChartOptions
-    );
-
+      chartMsg.explicitChart = explicitChart(intent, chartMsg);
+      chartMsg.modifiedChart = modifiedChart(
+        intent,
+        chartMsg,
+        modifiedChartOptions
+      );
+    }
     CompareCharts(chartMsg);
   } else {
     //If Neural Network has no match for intent, no charts are made
@@ -172,6 +169,11 @@ app.post("/createCharts", async (req, res) => {
         pastSentences: modifiedChartOptions.window.pastSentences,
       },
       neuralNetwork: true,
+      filter: {
+        toggle: modifiedChartOptions.filter.toggle,
+        pastSentences: modifiedChartOptions.filter.pastSentences,
+        threshold: modifiedChartOptions.filter.threshold,
+      },
     }
   );
 
@@ -194,6 +196,11 @@ app.post("/createCharts", async (req, res) => {
         pastSentences: 99999,
       },
       neuralNetwork: true,
+      filter: {
+        toggle: false,
+        pastSentences: modifiedChartOptions.filter.pastSentences,
+        threshold: modifiedChartOptions.filter.threshold,
+      },
     }
   );
   res.send({ chartMsg });

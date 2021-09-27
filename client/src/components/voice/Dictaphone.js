@@ -32,6 +32,7 @@ const Dictaphone = ({
   chartMsg,
   mute,
   setClippyImage,
+  startStudy,
 }) => {
   const [listening, setListening] = useState(false);
   const [command, setCommand] = useState("");
@@ -134,7 +135,9 @@ const Dictaphone = ({
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null;
   } else {
-    SpeechRecognition.startListening({ continuous: true });
+    if (startStudy) {
+      SpeechRecognition.startListening({ continuous: true });
+    }
   }
 
   return (

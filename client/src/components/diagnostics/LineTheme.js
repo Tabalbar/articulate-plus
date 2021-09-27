@@ -43,7 +43,6 @@ const StreamGraph = ({
       setStreamData(tmpStreamData.flat());
     }
   }, []);
-  console.log(streamData);
   useEffect(() => {
     let sentences = overHearingData.split(".");
     let transcriptLength = sentences.length;
