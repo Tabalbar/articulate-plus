@@ -48,7 +48,7 @@ function App() {
       toggle: false,
       minutes: 10,
     },
-    threshold: 5,
+    threshold: 3,
   });
 
   // Chart message to send to server

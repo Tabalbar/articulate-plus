@@ -33,7 +33,7 @@ module.exports = class ChartInfo {
     //Extract explicit headers from the command
     let doc = nlp(this.command);
     let extractedHeaders = [];
-    const thresholdValue = 5;
+    const thresholdValue = options.threshold;
     let maxLengthOfIntents = allIntents.length;
 
     for (let i = 0; i < this.headers.length; i++) {
