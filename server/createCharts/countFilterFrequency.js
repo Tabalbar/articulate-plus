@@ -25,7 +25,6 @@ module.exports = (transcript, featureMatrix, data, modifiedChartOptions) => {
             if (words[j].toLowerCase().includes(featureMatrix[w][n])) {
               const sentiment = new Sentiment();
               const result = sentiment.analyze(sentences[i]);
-              console.log(featureMatrix[w][n]);
               if (result.score >= 0) {
                 wordCount[w].filters[n - 1].count += 1;
               } else {
