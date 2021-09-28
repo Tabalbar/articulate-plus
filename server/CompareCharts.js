@@ -1,60 +1,39 @@
 module.exports = (chartMsg) => {
-  // for (let i = 0; i < chartMsg.charts.length; i++) {
-  //   for (let j = 0; j < chartMsg.explicitChart.length; j++) {
-  //     if (isChartsEqual(chartMsg.explicitChart[j], chartMsg.charts[i])) {
-  //       chartMsg.explicitChart[j] = "";
-  //       break;
-  //     }
-  //   }
-  // }
-  // for (let i = 0; i < chartMsg.charts.length; i++) {
-  //   for (let j = 0; j < chartMsg.inferredChart.length; j++) {
-  //     if (isChartsEqual(chartMsg.inferredChart[j], chartMsg.charts[i])) {
-  //       chartMsg.inferredChart[j] = "";
-  //       break;
-  //     }
-  //   }
-  // }
-  // for (let i = 0; i < chartMsg.charts.length; i++) {
-  //   for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
-  //     if (isChartsEqual(chartMsg.modifiedChart[j], chartMsg.charts[i])) {
-  //       chartMsg.modifiedChart[j] = "";
-  //       break;
-  //     }
-  //   }
-  // }
-
-  //Check if Explicit equal inferred and modified
   for (let i = 0; i < chartMsg.explicitChart.length; i++) {
+    if (chartMsg.explicitChart[i] !== "") {
+      chartMsg.explicitChart[i].charts.spec.chartSelection = "explicit";
+    }
     for (let j = 0; j < chartMsg.inferredChart.length; j++) {
-      if (
-        isChartsEqual(chartMsg.explicitChart[i], chartMsg.inferredChart[j]) &&
-        chartMsg.explicitChart[i] !== ""
-      ) {
+      if (isChartsEqual(chartMsg.explicitChart[i], chartMsg.inferredChart[j])) {
         chartMsg.inferredChart[j] = "";
-        chartMsg.explicitChart[i].charts.spec.chartSelection =
-          "explicit window+sentiment";
+        chartMsg.explicitChart[i].charts.spec.chartSelection +=
+          " window+sentiment";
       }
     }
-    for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
+    console.log(chartMsg.modifiedChart);
+
+    for (let n = 0; n < chartMsg.modifiedChart.length; n++) {
       if (
-        isChartsEqual(chartMsg.explicitChart[i], chartMsg.modifiedChart[j]) &&
+        isChartsEqual(chartMsg.explicitChart[i], chartMsg.modifiedChart[n]) &&
         chartMsg.explicitChart[i] !== ""
       ) {
-        chartMsg.modifiedChart[j] = "";
-        chartMsg.explicitChart[i].charts.spec.chartSelection += " Window";
+        chartMsg.modifiedChart[n] = "";
+        chartMsg.explicitChart[i].charts.spec.chartSelection += " window";
       }
     }
   }
+
   for (let i = 0; i < chartMsg.inferredChart.length; i++) {
+    if (chartMsg.inferredChart[i] !== "") {
+      chartMsg.inferredChart[i].charts.spec.chartSelection = "window+sentiment";
+    }
     for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
       if (
         isChartsEqual(chartMsg.inferredChart[i], chartMsg.modifiedChart[j]) &&
-        chartMsg.inferredChart[i] !== ""
+        chartMsg.explicitChart[i] !== ""
       ) {
         chartMsg.modifiedChart[j] = "";
-        chartMsg.inferredChart[i].charts.spec.chartSelection =
-          "window+sentiment window";
+        chartMsg.explicitChart[i].charts.spec.chartSelection += " window";
       }
     }
   }
@@ -64,35 +43,6 @@ module.exports = (chartMsg) => {
       chartMsg.modifiedChart[i].charts.spec.chartSelection = "window";
     }
   }
-  //   if (
-  //     isChartsEqual(chartMsg.explicitChart, chartMsg.inferredChart) &&
-  //     isChartsEqual(chartMsg.explicitChart, chartMsg.modifiedChart) &&
-  //     chartMsg.explicitChart !== ""
-  //   ) {
-  //     chartMsg.inferredChart = "";
-  //     chartMsg.modifiedChart = "";
-  //     chartMsg.explicitChart.charts.spec.chartSelection =
-  //       "Explicit and Window and Modifed";
-  //   } else if (
-  //     isChartsEqual(chartMsg.explicitChart, chartMsg.inferredChart) &&
-  //     chartMsg.explicitChart !== ""
-  //   ) {
-  //     chartMsg.inferredChart = "";
-  //     chartMsg.explicitChart.charts.spec.chartSelection = "Explicit and Window";
-  //   } else if (
-  //     isChartsEqual(chartMsg.explicitChart, chartMsg.modifiedChart) &&
-  //     chartMsg.explicitChart !== ""
-  //   ) {
-  //     chartMsg.inferredChart = "";
-  //     chartMsg.explicitChart.charts.spec.chartSelection = "Explicit and Modified";
-  //   } else
-  //   if (
-  //     isChartsEqual(chartMsg.inferredChart, chartMsg.modifiedChart) &&
-  //     chartMsg.inferredChart !== ""
-  //   ) {
-  //     chartMsg.modifiedChart = "";
-  //     chartMsg.inferredChart.charts.spec.chartSelection = "Window and Modified";
-  //   }
 };
 
 function isChartsEqual(chartOne, chartTwo) {

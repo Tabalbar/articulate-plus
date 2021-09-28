@@ -195,7 +195,6 @@ function App() {
     });
   };
   const textRef = useRef("");
-  console.log(modifiedChartOptions);
   return (
     <>
       <ChakraProvider>

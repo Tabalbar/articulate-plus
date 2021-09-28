@@ -14,7 +14,7 @@ import { Box, Center } from "@chakra-ui/react";
 //helper function
 import createDate from "../../helpers/createDate";
 
-import listeningImage from "../../images/cyclops_idle.gif";
+import attentiveImage from "../../images/attentive.gif";
 import idleImage from "../../images/idle.gif";
 
 /**
@@ -53,7 +53,7 @@ const Dictaphone = ({
 
   useEffect(() => {
     if (listening) {
-      setClippyImage(listeningImage);
+      setClippyImage(attentiveImage);
     } else {
       setClippyImage(idleImage);
     }

@@ -134,12 +134,16 @@ app.post("/createCharts", async (req, res) => {
           threshold: modifiedChartOptions.filter.threshold,
         },
       });
-    } else {
+
+      /**
+       * Window Chart
+       */
       chartMsg.modifiedChart = createCharts(
         intent,
         chartMsg,
         modifiedChartOptions
       );
+    } else {
       chartMsg.inferredChart = inferredChart(intent, chartMsg);
 
       chartMsg.explicitChart = explicitChart(intent, chartMsg);
