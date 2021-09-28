@@ -21,10 +21,11 @@ module.exports = (transcript, featureMatrix, data, modifiedChartOptions) => {
       let words = sentences[i].split(" ");
       for (let j = 0; j < words.length; j++) {
         for (let w = 0; w < featureMatrix.length; w++) {
-          for (let n = 0; n < featureMatrix[w].length; n++) {
+          for (let n = 1; n < featureMatrix[w].length; n++) {
             if (words[j].toLowerCase().includes(featureMatrix[w][n])) {
               const sentiment = new Sentiment();
               const result = sentiment.analyze(sentences[i]);
+              console.log(featureMatrix[w][n]);
               if (result.score >= 0) {
                 wordCount[w].filters[n - 1].count += 1;
               } else {
@@ -43,7 +44,7 @@ module.exports = (transcript, featureMatrix, data, modifiedChartOptions) => {
       for (let j = 0; j < words.length; j++) {
         for (let w = 0; w < featureMatrix.length; w++) {
           let found = false;
-          for (let n = 0; n < featureMatrix[w].length; n++) {
+          for (let n = 1; n < featureMatrix[w].length; n++) {
             if (words[j].toLowerCase().includes(featureMatrix[w][n])) {
               wordCount[w].filters[n - 1].count += 1;
               found = true;
