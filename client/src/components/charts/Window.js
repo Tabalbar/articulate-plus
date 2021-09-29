@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Draggable from "react-draggable";
 import { VegaLite } from "react-vega";
 import "../../style.css";
-import { Box, IconButton } from "@chakra-ui/react";
+import { Box, IconButton, Checkbox } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 import { useResizeDetector } from "react-resize-detector";
 import processData from "../../helpers/processData";
@@ -65,7 +65,6 @@ function Window(props) {
     }
     elem.style.zIndex = 13;
   }, []);
-  console.log(props.charts[props.index]);
   return (
     <>
       <Draggable
@@ -107,6 +106,7 @@ function Window(props) {
               fontWeight="bold"
               bg="blue.800"
               height="full"
+              position="relative"
             >
               <IconButton
                 colorScheme="red"
@@ -116,6 +116,23 @@ function Window(props) {
                 mr={2}
                 onClick={() => props.handleDelete(props.index)}
               />
+              {props.modifiedChartOptions.pivotCharts ? (
+                <Checkbox
+                  isChecked={specification.pivotThis}
+                  onChange={() => {
+                    setSpecification((prev) => {
+                      return { ...prev, pivotThis: !prev.pivotThis };
+                    });
+                    props.handlePivot(props.index);
+                  }}
+                  position="absolute"
+                  right="0"
+                  mt={1}
+                >
+                  Pivot
+                </Checkbox>
+              ) : null}
+
               {specification.title}
             </Box>
             <VegaLite spec={specification} data={{ table: chartData }} />

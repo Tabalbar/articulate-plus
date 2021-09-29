@@ -12,14 +12,17 @@ export async function serverRequest(
   chartMsg,
   setChartMsg,
   modifiedChartOptions,
-  setVoiceMsg
+  setVoiceMsg,
+  charts
 ) {
+  console.log(charts);
   //API request
   const response = await fetch("/createCharts", {
     method: "POST",
     body: JSON.stringify({
       chartMsg,
       modifiedChartOptions,
+      charts,
     }),
     headers: {
       "Content-Type": "application/json",

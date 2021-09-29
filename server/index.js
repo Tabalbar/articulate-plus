@@ -45,11 +45,27 @@ for (let i = 0; i < neuralNetworkData.answers.length; i++) {
  */
 app.post("/initialize", (req, res) => {
   // console.log(req.body)
+  const modifiedChartOptions = req.body.modifiedChartOptions;
   console.log("Initialized Attributes");
   const { featureMatrix, synonymMatrix } = ExtendNLP(
     req.body.attributes,
     req.body.data
   );
+  if (modifiedChartOptions.pivotCharts) {
+    for (let i = 0; i < neuralNetworkData.pivotChartQueries.length; i++) {
+      manager.addDocument(
+        "en",
+        neuralNetworkData.pivotChartQueries[i].query,
+        neuralNetworkData.pivotChartQueries[i].chartType
+      );
+    }
+    manager.addAnswer("en", "pivot", "pivot");
+    (async () => {
+      await manager.train();
+      manager.save();
+    })();
+    console.log("Added Pivot to Neural Network");
+  }
   if (featureMatrix === null || synonymMatrix === null) {
     console.log("Error in pre-processing");
     res.status(405).send("Error in pre-processing");
@@ -75,6 +91,7 @@ const modifiedChart = require("./oldChartMaker/modified/modifiedChart");
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg;
   let modifiedChartOptions = req.body.modifiedChartOptions;
+  let charts = req.body.charts;
   //Remove stop words and change known synonyms
 
   //Explicit chart commands
@@ -90,14 +107,16 @@ app.post("/createCharts", async (req, res) => {
    * Getting ExplicitChart
    */
   let intent = getExplicitChartType(chartMsg.command);
-  // const chartObj = new ChartInfo(chartMsg, modifiedChartOptions, intent);
-  // let testing = chartObj.extractHeaders();
-  // let testing2 = chartObj.extractFilteredHeaders();
-  // console.log(testing, testing2);
+
   if (!intent) {
     intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
   }
-  if (intent !== "None") {
+  console.log(intent);
+  if (intent == "pivot") {
+    for (let i = 0; i < charts.length; i++) {
+      console.log(charts[0].pivotThis);
+    }
+  } else if (intent !== "None") {
     if (modifiedChartOptions.useCovidDataset == true) {
       /**
        * Explicit Chart

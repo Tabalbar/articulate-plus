@@ -33,6 +33,12 @@ function Charts({
     charts[index].timeClosed.push(createDate());
     setForceUpdate((prev) => !prev);
   };
+
+  const handlePivot = (index) => {
+    console.log("called");
+    charts[index].pivotThis = !charts[index].pivotThis;
+    setForceUpdate((prev) => !prev);
+  };
   return (
     <>
       <ChartSelection
@@ -43,6 +49,7 @@ function Charts({
       />
       <ChosenCharts
         handleDelete={handleDelete}
+        handlePivot={handlePivot}
         chartMsg={chartMsg}
         charts={charts}
         setCharts={setCharts}

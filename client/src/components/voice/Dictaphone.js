@@ -55,7 +55,16 @@ const Dictaphone = ({
     if (listening) {
       setClippyImage(attentiveImage);
     } else {
-      setClippyImage(idleImage);
+      if (
+        !(
+          (command.includes("where") ||
+            command.includes("see") ||
+            command.includes("show")) &&
+          !mute
+        )
+      ) {
+        setClippyImage(idleImage);
+      }
     }
   }, [listening]);
 

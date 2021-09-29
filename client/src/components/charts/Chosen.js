@@ -8,6 +8,7 @@ function ChosenCharts({
   setCharts,
   handleDelete,
   modifiedChartOptions,
+  handlePivot,
 }) {
   return (
     <>
@@ -22,6 +23,7 @@ function ChosenCharts({
               key={i}
               setCharts={setCharts}
               charts={charts}
+              handlePivot={handlePivot}
               id={i}
               modifiedChartOptions={modifiedChartOptions}
             />

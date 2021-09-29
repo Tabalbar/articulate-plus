@@ -195,6 +195,7 @@ function AttributeContainer({
                   <FileInput
                     setChartMsg={setChartMsg}
                     setModifiedChartOptions={setModifiedChartOptions}
+                    modifiedChartOptions={modifiedChartOptions}
                   />
                   <Text fontWeight="bold" ml={1}>
                     Modified Chart Options
@@ -329,6 +330,21 @@ function AttributeContainer({
                         />
                       </>
                     ) : null}
+                    <Radio
+                      isChecked={modifiedChartOptions.pivotCharts}
+                      onClick={() =>
+                        setModifiedChartOptions((prev) => {
+                          return {
+                            ...prev,
+                            pivotCharts: !prev.pivotCharts,
+                          };
+                        })
+                      }
+                      size="lg"
+                      colorScheme="teal"
+                    >
+                      Pivot
+                    </Radio>
                   </Stack>
 
                   <Button

@@ -185,6 +185,7 @@ function runAlgortihm(
         timeSpentHovered: 0,
         data: { name: "table" }, // note: vega-lite data attribute is a plain object instead of an array
         command: command,
+        pivotThis: false,
         headerFrequencyCount: headerFrequencyCount,
       },
     },

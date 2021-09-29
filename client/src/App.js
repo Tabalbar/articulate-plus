@@ -58,6 +58,7 @@ function App() {
       pastSentences: 20,
       threshold: 3,
     },
+    pivotCharts: false,
   });
 
   // Chart message to send to server
@@ -107,7 +108,6 @@ function App() {
   const [voiceMsg, setVoiceMsg] = useState(null);
 
   const randomChartIntervalId = useRef(null);
-
   // Handler to show thought bubble for clippy
   const [showTooltip, setShowTooltip] = useState(false);
   useEffect(() => {
@@ -135,7 +135,7 @@ function App() {
       setChartMsg,
       modifiedChartOptions,
       setVoiceMsg,
-      setShowTooltip
+      charts
     ).then(() => {
       if (mute) {
         setClippyImage(muteImage);

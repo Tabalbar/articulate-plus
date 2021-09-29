@@ -3,7 +3,11 @@ import "../../style.css";
 import XLSX from "xlsx";
 import { Input } from "@chakra-ui/react";
 
-function FileInput({ setChartMsg, setModifiedChartOptions }) {
+function FileInput({
+  setChartMsg,
+  setModifiedChartOptions,
+  modifiedChartOptions,
+}) {
   const processData = async (data, fileName) => {
     const dataStringLines = data.split(/\r\n|\n/);
     const headers = dataStringLines[0].split(
@@ -40,7 +44,11 @@ function FileInput({ setChartMsg, setModifiedChartOptions }) {
     }
     const response = await fetch("/initialize", {
       method: "POST",
-      body: JSON.stringify({ attributes: headers, data: list }),
+      body: JSON.stringify({
+        attributes: headers,
+        data: list,
+        modifiedChartOptions: modifiedChartOptions,
+      }),
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
