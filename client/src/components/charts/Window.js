@@ -114,6 +114,7 @@ function Window(props) {
                 aria-label="Search database"
                 icon={<CloseIcon />}
                 mr={2}
+                onTouchStart={() => props.handleDelete(props.index)}
                 onClick={() => props.handleDelete(props.index)}
               />
               {props.modifiedChartOptions.pivotCharts ? (

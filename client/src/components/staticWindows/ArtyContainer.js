@@ -83,6 +83,7 @@ function ArtyContainer({
                   bg="teal.200"
                   color="black"
                   onClick={handleMute}
+                  onTouchStart={handleMute}
                 >
                   Sleep
                 </Button>
