@@ -1,13 +1,6 @@
 const findType = require("../helperFunctions/findType");
 
-module.exports = (
-  data,
-  filteredHeaders,
-  chartObj,
-  intent,
-  filterFrequencyCount,
-  options
-) => {
+module.exports = (data, filteredHeaders, chartObj, intent) => {
   let accessors = [];
   let keys = Object.keys(filteredHeaders);
   for (let i = 0; i < keys.length; i++) {
@@ -24,22 +17,6 @@ module.exports = (
             range: [filteredHeaders[keys[i]][0], filteredHeaders[keys[i]][1]],
           },
         });
-      }
-    }
-  }
-  for (let i = 0; i < filterFrequencyCount.length; i++) {
-    for (let j = 0; j < filterFrequencyCount[i].filters.length; j++) {
-      if (findType(filterFrequencyCount[i].header, data) === "nominal") {
-        if (
-          filterFrequencyCount[i].filters[j].count >= options.filter.threshold
-        ) {
-          chartObj.charts.spec.transform.push({
-            filter: {
-              field: filterFrequencyCount[i].header,
-              oneOf: [filterFrequencyCount[i].filters[j].filter],
-            },
-          });
-        }
       }
     }
   }

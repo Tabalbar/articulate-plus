@@ -67,7 +67,8 @@ function App() {
       command: "", //Query
       attributes: [],
       data: "",
-      transcript: "",
+      transcript:
+        "Midwest. (region) show me a map. (map) show me a histogram of Midway. (access to doctors) show me a histogram of region. (region) so it looks like there's a lot of counties in the Midwest (region) and the southeast. (region) I am the Pacific (region) seems very low. non-contiguous is very low. show me covid (covid risk) risk in the Midwest (region) and Southeast. (region) when the Midwest (region) it has very low covid (covid risk) risk index. Southeast. (region) higher. show me cases (cases) filterbuy Midwest. (region) show me cases (cases) filtered by Southeast. (region) to the covid (covid risk) cases (cases) in the Midwest. (region) exact same chart. chart. it's like there's a lot more cases (cases) in the midwest (region) compared to the southeast. (region) show me the correlation between cardiovascular (cardiovascular disease) disease (cardiovascular disease) and covid (covid risk) risk. show me the correlation between cardiovascular (cardiovascular disease) disease (cardiovascular disease) and covid (covid risk) risk. show me the correlation between cardiovascular (cardiovascular disease) disease (cardiovascular disease) and covid (covid risk) risk. Whole Foods near me",
       uncontrolledTranscript: "",
       datasetTitle: "",
       loggedTranscript: [], // {sentence: string, date: createDate()}

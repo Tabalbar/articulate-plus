@@ -2,23 +2,25 @@ module.exports = (chartMsg) => {
   for (let i = 0; i < chartMsg.explicitChart.length; i++) {
     if (chartMsg.explicitChart[i] !== "") {
       chartMsg.explicitChart[i].charts.spec.chartSelection = "explicit";
-    }
-    for (let j = 0; j < chartMsg.inferredChart.length; j++) {
-      if (isChartsEqual(chartMsg.explicitChart[i], chartMsg.inferredChart[j])) {
-        chartMsg.inferredChart[j] = "";
-        chartMsg.explicitChart[i].charts.spec.chartSelection +=
-          " window+sentiment";
-      }
-    }
-    console.log(chartMsg.modifiedChart);
 
-    for (let n = 0; n < chartMsg.modifiedChart.length; n++) {
-      if (
-        isChartsEqual(chartMsg.explicitChart[i], chartMsg.modifiedChart[n]) &&
-        chartMsg.explicitChart[i] !== ""
-      ) {
-        chartMsg.modifiedChart[n] = "";
-        chartMsg.explicitChart[i].charts.spec.chartSelection += " window";
+      for (let j = 0; j < chartMsg.inferredChart.length; j++) {
+        if (
+          isChartsEqual(chartMsg.explicitChart[i], chartMsg.inferredChart[j])
+        ) {
+          chartMsg.inferredChart[j] = "";
+          chartMsg.explicitChart[i].charts.spec.chartSelection +=
+            " window+sentiment";
+        }
+      }
+
+      for (let n = 0; n < chartMsg.modifiedChart.length; n++) {
+        if (
+          isChartsEqual(chartMsg.explicitChart[i], chartMsg.modifiedChart[n]) &&
+          chartMsg.explicitChart[i] !== ""
+        ) {
+          chartMsg.modifiedChart[n] = "";
+          chartMsg.explicitChart[i].charts.spec.chartSelection += " window";
+        }
       }
     }
   }
@@ -26,14 +28,15 @@ module.exports = (chartMsg) => {
   for (let i = 0; i < chartMsg.inferredChart.length; i++) {
     if (chartMsg.inferredChart[i] !== "") {
       chartMsg.inferredChart[i].charts.spec.chartSelection = "window+sentiment";
-    }
-    for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
-      if (
-        isChartsEqual(chartMsg.inferredChart[i], chartMsg.modifiedChart[j]) &&
-        chartMsg.explicitChart[i] !== ""
-      ) {
-        chartMsg.modifiedChart[j] = "";
-        chartMsg.explicitChart[i].charts.spec.chartSelection += " window";
+
+      for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
+        if (
+          isChartsEqual(chartMsg.inferredChart[i], chartMsg.modifiedChart[j]) &&
+          chartMsg.explicitChart[i] !== ""
+        ) {
+          chartMsg.modifiedChart[j] = "";
+          chartMsg.explicitChart[i].charts.spec.chartSelection += " window";
+        }
       }
     }
   }

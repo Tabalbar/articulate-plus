@@ -58,16 +58,41 @@ module.exports = (intent, chartMsg, options) => {
   }
 
   extractedHeaders = checkDuplicates(extractedHeaders);
-  let filteredHeaders = extractFilteredHeaders(
-    chartMsg.command,
-    chartMsg.data,
-    chartMsg.attributes,
-    chartMsg.command
-  );
+  let casesFound = false;
+  let dateFound = false;
+  if (intent !== "line") {
+    for (let i = 0; i < extractedHeaders.length; i++) {
+      if (extractedHeaders[i] == "cases") {
+        casesFound = true;
+      }
+      if (extractedHeaders[i] == "date") {
+        dateFound = true;
+      }
+
+      if (casesFound && dateFound) {
+        intent = "line";
+      }
+    }
+
+    if (casesFound && !dateFound) {
+      extractedHeaders.unshift("date");
+    }
+    if (!casesFound && dateFound) {
+      extractedHeaders.unshift("cases");
+    }
+  }
   const filterFrequencyCount = countFilterFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
     chartMsg.data,
+    options
+  );
+  let filteredHeaders = extractFilteredHeaders(
+    chartMsg.command,
+    chartMsg.data,
+    chartMsg.attributes,
+    chartMsg.command,
+    filterFrequencyCount,
     options
   );
 
@@ -104,27 +129,28 @@ module.exports = (intent, chartMsg, options) => {
           filterFrequencyCount
         );
         charts.push(chartObj);
-      }
-      for (let j = 2; j < extractedHeaders.length; j++) {
-        let threeExtractedHeaders = [
-          extractedHeaders[0],
-          extractedHeaders[1],
-          extractedHeaders[j],
-        ];
+      } else {
+        for (let j = 2; j < extractedHeaders.length; j++) {
+          let threeExtractedHeaders = [
+            extractedHeaders[0],
+            extractedHeaders[1],
+            extractedHeaders[j],
+          ];
 
-        let chartObj = runAlgortihm(
-          intent,
-          threeExtractedHeaders,
-          chartMsg.data,
-          headerFrequencyCount,
-          chartMsg.command,
-          options,
-          filteredHeaders,
-          chartMsg.attributes,
-          chartMsg.deltaTime,
-          filterFrequencyCount
-        );
-        charts.push(chartObj);
+          let chartObj = runAlgortihm(
+            intent,
+            threeExtractedHeaders,
+            chartMsg.data,
+            headerFrequencyCount,
+            chartMsg.command,
+            options,
+            filteredHeaders,
+            chartMsg.attributes,
+            chartMsg.deltaTime,
+            filterFrequencyCount
+          );
+          charts.push(chartObj);
+        }
       }
     } else {
       for (let j = 1; j < extractedHeaders.length; j++) {
@@ -197,15 +223,17 @@ function runAlgortihm(
     }
   }
   for (let i = 0; i < extractedHeaders.length; i++) {
-    if (
-      (extractedHeaders[i] == "cases" || extractedHeaders[i] == "date") &&
-      intent !== "line"
-    ) {
+    if (extractedHeaders[i] == "cases" && intent !== "line") {
       extractedHeaders.splice(i, 1);
-      break;
+      i = 0;
     }
   }
-
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    if (extractedHeaders[i] == "date" && intent !== "line") {
+      extractedHeaders.splice(i, 1);
+      i = 0;
+    }
+  }
   chartObj = mark(chartObj, intent);
   chartObj = encoding(
     chartObj,
@@ -294,10 +322,10 @@ function extractHeaders(command, headers, data, intent, options, chartMsg) {
     }
   }
 
-  if (intent === "line") {
-    let dateFound = false;
-    let casesFound = false;
+  let dateFound = false;
+  let casesFound = false;
 
+  if (intent === "line") {
     for (let i = 0; i < extractedHeaders.length; i++) {
       if (extractedHeaders[i] == "cases") {
         casesFound = true;
@@ -326,7 +354,6 @@ function extractHeaders(command, headers, data, intent, options, chartMsg) {
       }
     }
   }
-
   if (doc.has("overtime") || doc.has("time")) {
     let foundTime = false;
     for (let i = 0; i < extractedHeaders.length; i++) {
@@ -347,7 +374,14 @@ function extractHeaders(command, headers, data, intent, options, chartMsg) {
   return extractedHeaders;
 }
 
-function extractFilteredHeaders(command, data, headers, command) {
+function extractFilteredHeaders(
+  command,
+  data,
+  headers,
+  command,
+  filterFrequencyCount,
+  options
+) {
   const headerMatrix = findFiltersInData(headers, data);
   let doc = nlp(command);
   let extractedFilteredHeaders = [];
@@ -393,6 +427,25 @@ function extractFilteredHeaders(command, data, headers, command) {
       }
     }
   }
+  for (let i = 0; i < filterFrequencyCount.length; i++) {
+    for (let j = 0; j < filterFrequencyCount[i].filters.length; j++) {
+      if (findType(filterFrequencyCount[i].header, data) === "nominal") {
+        if (
+          filterFrequencyCount[i].filters[j].count >= options.filter.threshold
+        ) {
+          extractedFilteredHeaders[headerMatrix[i][0]].push(
+            filterFrequencyCount[i].filters[j].filter
+          );
+          // chartObj.charts.spec.transform.push({
+          //   filter: {
+          //     field: filterFrequencyCount[i].header,
+          //     oneOf: [filterFrequencyCount[i].filters[j].filter],
+          //   },
+          // });
+        }
+      }
+    }
+  }
 
   function findDates(docCommand, header) {
     if (
@@ -427,6 +480,8 @@ function extractFilteredHeaders(command, data, headers, command) {
     let timeHeader = headers[index];
     return { foundTime, timeHeader };
   }
+
+  checkExtratedFiltersDuplicates(extractedFilteredHeaders);
   return extractedFilteredHeaders;
 }
 
@@ -440,4 +495,18 @@ function checkDuplicates(extractedHeaders) {
     }
   }
   return extractedHeaders;
+}
+
+function checkExtratedFiltersDuplicates(extractedFilteredHeaders) {
+  console.log(extractedFilteredHeaders);
+  for (let i = 0; i < extractedFilteredHeaders.length; i++) {
+    for (let j = 0; j < extractedFilteredHeaders[i].length; j++) {
+      for (let k = j + 1; k < extractedFilteredHeaders[i].length; k++) {
+        if (extractedFilteredHeaders[i][j] == extractedFilteredHeaders[i][k]) {
+          extractedFilteredHeaders[i].splice(j, 1);
+        }
+      }
+    }
+  }
+  return extractedFilteredHeaders;
 }
