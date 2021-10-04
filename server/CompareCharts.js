@@ -35,7 +35,7 @@ module.exports = (chartMsg) => {
           chartMsg.explicitChart[i] !== ""
         ) {
           chartMsg.modifiedChart[j] = "";
-          chartMsg.explicitChart[i].charts.spec.chartSelection += " window";
+          chartMsg.inferredChart[i].charts.spec.chartSelection += " window";
         }
       }
     }

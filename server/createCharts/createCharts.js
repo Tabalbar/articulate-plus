@@ -194,6 +194,7 @@ function runAlgortihm(
   let chartObj = {
     charts: {
       spec: {
+        id: 0,
         title: "",
         width: 400,
         height: 220,
@@ -498,7 +499,6 @@ function checkDuplicates(extractedHeaders) {
 }
 
 function checkExtratedFiltersDuplicates(extractedFilteredHeaders) {
-  console.log(extractedFilteredHeaders);
   for (let i = 0; i < extractedFilteredHeaders.length; i++) {
     for (let j = 0; j < extractedFilteredHeaders[i].length; j++) {
       for (let k = j + 1; k < extractedFilteredHeaders[i].length; k++) {

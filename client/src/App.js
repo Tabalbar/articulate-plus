@@ -60,7 +60,6 @@ function App() {
     },
     pivotCharts: false,
   });
-
   // Chart message to send to server
   const [chartMsg, setChartMsg] = useState(
     JSON.parse(localStorage.getItem("chartMsg")) || {
@@ -77,6 +76,7 @@ function App() {
       explicitChart: [],
       inferredChart: [],
       modifiedChart: [],
+      pivotChart: [],
       deltaTime: 0,
       assistantResponse: "",
       errMsg: [],
@@ -101,6 +101,7 @@ function App() {
       },
     }
   );
+  console.log(chartMsg.charts);
 
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
@@ -135,7 +136,8 @@ function App() {
       setChartMsg,
       modifiedChartOptions,
       setVoiceMsg,
-      charts
+      charts,
+      setCharts
     ).then(() => {
       if (mute) {
         setClippyImage(muteImage);

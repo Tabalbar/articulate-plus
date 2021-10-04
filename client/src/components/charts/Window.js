@@ -119,11 +119,8 @@ function Window(props) {
               />
               {props.modifiedChartOptions.pivotCharts ? (
                 <Checkbox
-                  isChecked={specification.pivotThis}
+                  isChecked={props.specification.pivotThis}
                   onChange={() => {
-                    setSpecification((prev) => {
-                      return { ...prev, pivotThis: !prev.pivotThis };
-                    });
                     props.handlePivot(props.index);
                   }}
                   position="absolute"

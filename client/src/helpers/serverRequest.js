@@ -13,16 +13,24 @@ export async function serverRequest(
   setChartMsg,
   modifiedChartOptions,
   setVoiceMsg,
-  charts
+  charts,
+  setCharts
 ) {
-  console.log(charts);
+  //Check charts to pivot
+  let pivotTheseCharts = [];
+  for (let i = 0; i < charts.length; i++) {
+    if (charts[i].pivotThis) {
+      pivotTheseCharts.push(charts[i]);
+    }
+  }
+
   //API request
   const response = await fetch("/createCharts", {
     method: "POST",
     body: JSON.stringify({
       chartMsg,
       modifiedChartOptions,
-      charts,
+      pivotTheseCharts,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -40,16 +48,30 @@ export async function serverRequest(
     ...tmpChartMsg.explicitChart,
     ...tmpChartMsg.inferredChart,
     ...tmpChartMsg.modifiedChart,
+    ...tmpChartMsg.pivotChart,
   ];
   //Clean up for charts that weren't generated
   newCharts = newCharts.filter((x) => {
     return x !== "";
   });
+
+  //id on charts
+  let startingId = chartMsg.charts.length;
+  for (let i = 0; i < newCharts.length; i++) {
+    newCharts[i].charts.spec.id = startingId + i;
+  }
+
+  //cleaning up for pivot
+  let tmpCharts = chartMsg.charts;
+  for (let i = 0; i < tmpCharts.length; i++) {
+    tmpCharts[i].charts.spec.pivotThis = false;
+  }
+
   //Put new charts into state
   setChartMsg((prev) => {
     return {
       ...prev,
-      charts: [...prev.charts, ...newCharts],
+      charts: [...tmpCharts, ...newCharts],
       window_sentiment: tmpChartMsg.window_sentiment,
       window: tmpChartMsg.window,
       total: tmpChartMsg.total,

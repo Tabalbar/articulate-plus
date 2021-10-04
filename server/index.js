@@ -51,21 +51,21 @@ app.post("/initialize", (req, res) => {
     req.body.attributes,
     req.body.data
   );
-  if (modifiedChartOptions.pivotCharts) {
-    for (let i = 0; i < neuralNetworkData.pivotChartQueries.length; i++) {
-      manager.addDocument(
-        "en",
-        neuralNetworkData.pivotChartQueries[i].query,
-        neuralNetworkData.pivotChartQueries[i].chartType
-      );
-    }
-    manager.addAnswer("en", "pivot", "pivot");
-    (async () => {
-      await manager.train();
-      manager.save();
-    })();
-    console.log("Added Pivot to Neural Network");
-  }
+  // if (modifiedChartOptions.pivotCharts) {
+  //   for (let i = 0; i < neuralNetworkData.pivotChartQueries.length; i++) {
+  //     manager.addDocument(
+  //       "en",
+  //       neuralNetworkData.pivotChartQueries[i].query,
+  //       neuralNetworkData.pivotChartQueries[i].chartType
+  //     );
+  //   }
+  //   manager.addAnswer("en", "pivot", "pivot");
+  //   (async () => {
+  //     await manager.train();
+  //     manager.save();
+  //   })();
+  //   console.log("Added Pivot to Neural Network");
+  // }
   if (featureMatrix === null || synonymMatrix === null) {
     console.log("Error in pre-processing");
     res.status(405).send("Error in pre-processing");
@@ -87,11 +87,12 @@ const ChartInfo = require("../newCreateCharts/chartObj/ChartInfo");
 const explicitChart = require("./oldChartMaker/explicit/explicitChart");
 const inferredChart = require("./oldChartMaker/inferred/inferredChart");
 const modifiedChart = require("./oldChartMaker/modified/modifiedChart");
+const pivotCharts = require("./createCharts/pivotCharts/pivotCharts");
 
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg;
   let modifiedChartOptions = req.body.modifiedChartOptions;
-  let charts = req.body.charts;
+  let pivotTheseCharts = req.body.pivotTheseCharts;
   //Remove stop words and change known synonyms
 
   //Explicit chart commands
@@ -111,11 +112,8 @@ app.post("/createCharts", async (req, res) => {
   if (!intent) {
     intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
   }
-  console.log(intent);
-  if (intent == "pivot") {
-    for (let i = 0; i < charts.length; i++) {
-      console.log(charts[0].pivotThis);
-    }
+  if (pivotTheseCharts.length > 0) {
+    chartMsg.pivotChart = pivotCharts(pivotTheseCharts, chartMsg);
   } else if (intent !== "None") {
     if (modifiedChartOptions.useCovidDataset == true) {
       /**

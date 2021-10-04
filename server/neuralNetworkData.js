@@ -7,12 +7,16 @@ if (devPivotData) {
       { query: "show me a graph with nominal and nominal", chartType: "bar" },
       { query: "show me a chart of nominal and nominal", chartType: "bar" },
       {
+        query: "what is the correlation between nominal and nominal",
+        chartType: "bar",
+      },
+      {
         query: "I want to see the comparison of nominal over time",
         chartType: "line",
       },
-      { query: "show me nominal by date", chartType: "line" },
+      { query: "show me quantitative by temporal", chartType: "line" },
       {
-        query: "show me the comparison of nominal over temporal",
+        query: "show me the quantitative for nominal",
         chartType: "line",
       },
       {
@@ -28,16 +32,16 @@ if (devPivotData) {
         chartType: "map",
       },
       { query: "I want to see nominal on the map", chartType: "map" },
-      { query: "show me this but for nominal", chartType: "pivot" },
-      { query: "I want to see this but for nominal", chartType: "pivot" },
-      { query: "can i see this but filtered by nominal", chartType: "pivot" },
+      // { query: "show me this but for nominal", chartType: "pivot" },
+      // { query: "I want to see this but for nominal", chartType: "pivot" },
+      // { query: "can i see this but filtered by nominal", chartType: "pivot" },
     ],
     answers: ["bar", "line", "map", "pivot"],
-    pivotChartQueries: [
-      { query: "show me this but for nominal", chartType: "pivot" },
-      { query: "I want to see this but for nominal", chartType: "pivot" },
-      { query: "can i see this but filtered by nominal", chartType: "pivot" },
-    ],
+    // pivotChartQueries: [
+    //   { query: "show me this but for nominal", chartType: "pivot" },
+    //   { query: "I want to see this but for nominal", chartType: "pivot" },
+    //   { query: "can i see this but filtered by nominal", chartType: "pivot" },
+    // ],
   };
 } else {
   module.exports = {
@@ -45,6 +49,7 @@ if (devPivotData) {
       { query: "show me the distribution of nominal", chartType: "bar" },
       { query: "show me a graph with nominal and nominal", chartType: "bar" },
       { query: "show me a chart of nominal and nominal", chartType: "bar" },
+
       {
         query: "I want to see the comparison of nominal over time",
         chartType: "line",

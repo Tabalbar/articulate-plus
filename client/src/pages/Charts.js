@@ -31,12 +31,13 @@ function Charts({
   const handleDelete = (index) => {
     charts[index].visible = false;
     charts[index].timeClosed.push(createDate());
+    charts[index].pivotThis = false;
     setForceUpdate((prev) => !prev);
   };
 
   const handlePivot = (index) => {
-    console.log("called");
     charts[index].pivotThis = !charts[index].pivotThis;
+    console.log(charts[index].pivotThis);
     setForceUpdate((prev) => !prev);
   };
   return (
