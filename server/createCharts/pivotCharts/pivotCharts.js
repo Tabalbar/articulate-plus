@@ -1,8 +1,11 @@
 const levenshtein = require("fast-levenshtein");
 const createDate = require("../helperFunctions/createDate");
 const findType = require("../helperFunctions/findType");
+const CovidColors = require("../static/CovidColors");
+const CovidSort = require("../static/CovidSort");
+const getExplicitChartType = require("../explicit/ExplicitChart");
 
-module.exports = (charts, chartMsg) => {
+module.exports = (charts, chartMsg, modifiedChartOptions) => {
   let { extractedHeaders, extractedFilters, extractedMarkType } =
     extractInfo(chartMsg);
   let chartsToReturn = [];
@@ -13,9 +16,7 @@ module.exports = (charts, chartMsg) => {
       charts: { spec: {} },
     };
     for (let j = 0; j < extractedHeaders.length; j++) {
-      if (extractedFilters[j].filters.length > 0) {
-        chart = createChartWithHeader(chart, extractedHeader[j], chartMsg);
-      }
+      chart = createChartWithHeader(chart, extractedHeaders[j], chartMsg);
     }
     for (let j = 0; j < extractedFilters.length; j++) {
       if (extractedFilters[j].filters.length > 0) {
@@ -40,11 +41,18 @@ module.exports = (charts, chartMsg) => {
 function extractInfo(chartMsg) {
   let words = chartMsg.command.split(" ");
   console.log(chartMsg.command);
+
+  //extract default values
   let extractedHeaders = [];
   let extractedFilters = [];
   let extractedMarkType = "map";
 
-  //Checking or spoken attributes
+  //Checking for spoken mark types
+  if (getExplicitChartType(command)) {
+    extractedMarkType = getExplicitChartType(command);
+  }
+
+  //Checking for spoken attributes
   for (let i = 0; i < chartMsg.attributes.length; i++) {
     if (
       chartMsg.command
@@ -105,6 +113,12 @@ function createChartWithFilter(chart, extractedFilter, chartMsg) {
 function createChartWithHeader(chart, extractedHeader, chartMsg) {
   if (chart.spec.hasOwnProperty("layer")) {
     chart.spec.layer[1].encoding.color.field = extractedHeader;
+    chart.spec.layer[1].encoding.color.scale.range =
+      CovidColors(extractedHeader);
+    chart.spec.layer[1].encoding.color.sort = CovidSort(
+      extractedHeader,
+      chartMsg.data
+    );
   }
 
   return chart;

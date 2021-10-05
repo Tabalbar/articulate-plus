@@ -113,7 +113,11 @@ app.post("/createCharts", async (req, res) => {
     intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
   }
   if (pivotTheseCharts.length > 0) {
-    chartMsg.pivotChart = pivotCharts(pivotTheseCharts, chartMsg);
+    chartMsg.pivotChart = pivotCharts(
+      pivotTheseCharts,
+      chartMsg,
+      modifiedChartOptions
+    );
   } else if (intent !== "None") {
     if (modifiedChartOptions.useCovidDataset == true) {
       /**
