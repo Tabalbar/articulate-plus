@@ -5,7 +5,7 @@ module.exports = [
   },
   {
     key: "histogram",
-    mark: "bar",
+    mark: "histogram",
   },
   // {
   //   key: "parallel coordinates",
@@ -16,8 +16,8 @@ module.exports = [
     mark: "line",
   },
   {
-    key: "heatmap",
-    mark: "bar",
+    key: "heat map",
+    mark: "heatmap",
   },
   // {
   //   key: "point",

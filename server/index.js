@@ -81,17 +81,18 @@ const getExplicitChartType = require("./createCharts/explicit/ExplicitChart");
 const CompareCharts = require("./CompareCharts");
 const countHeaderFrequency = require("./createCharts/countHeaderFrequency");
 
-const createCharts = require("./createCharts/createCharts");
-const ChartInfo = require("../newCreateCharts/chartObj/ChartInfo");
+// const createCharts = require("./createCharts/createCharts");
 
-const explicitChart = require("./oldChartMaker/explicit/explicitChart");
-const inferredChart = require("./oldChartMaker/inferred/inferredChart");
-const modifiedChart = require("./oldChartMaker/modified/modifiedChart");
+// const explicitChart = require("./oldChartMaker/explicit/explicitChart");
+// const inferredChart = require("./oldChartMaker/inferred/inferredChart");
+// const modifiedChart = require("./oldChartMaker/modified/modifiedChart");
 const pivotCharts = require("./createCharts/pivotCharts/pivotCharts");
+
+const createCharts = require("./createChartsV3/createCharts");
 
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg;
-  let modifiedChartOptions = req.body.modifiedChartOptions;
+  let options = req.body.modifiedChartOptions;
   let pivotTheseCharts = req.body.pivotTheseCharts;
   //Remove stop words and change known synonyms
 
@@ -104,110 +105,128 @@ app.post("/createCharts", async (req, res) => {
     chartMsg.synonymMatrix
   );
   chartMsg.generalizedCommand = generalizedCommand;
+
   /**
-   * Getting ExplicitChart
+   * Getting expicit mark type
    */
   let intent = getExplicitChartType(chartMsg.command);
-
-  if (!intent) {
-    intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
-  }
+  console.log(chartMsg.pivotChart);
+  //Check if pivot
   if (pivotTheseCharts.length > 0) {
-    chartMsg.pivotChart = pivotCharts(
-      pivotTheseCharts,
-      chartMsg,
-      modifiedChartOptions
-    );
-  } else if (intent !== "None") {
-    if (modifiedChartOptions.useCovidDataset == true) {
-      /**
-       * Explicit Chart
-       */
-      chartMsg.explicitChart = createCharts(intent, chartMsg, {
+    chartMsg.pivotChart = pivotCharts(pivotTheseCharts, chartMsg, options);
+  } else if (intent) {
+    chartMsg.explicitChart = createCharts(intent, chartMsg, {
+      useCovidDataset: options.useCovidDataset,
+      sentimentAnalysis: false,
+      window: {
+        toggle: false,
+        pastSentences: 20,
+      },
+      neuralNetwork: false,
+      useSynonyms: false,
+      randomCharts: {
+        toggle: false,
+        minutes: 10,
+      },
+      threshold: 3,
+      filter: {
+        toggle: false,
+        pastSentences: 20,
+        threshold: 5,
+      },
+      pivotCharts: false,
+    });
+    chartMsg.mainAI = createCharts(intent, chartMsg, {
+      useCovidDataset: options.useCovidDataset,
+      sentimentAnalysis: false,
+      window: {
+        toggle: false,
+        pastSentences: 20,
+      },
+      neuralNetwork: true,
+      useSynonyms: true,
+      randomCharts: {
+        toggle: true,
+        minutes: 10,
+      },
+      threshold: 3,
+      filter: {
+        toggle: false,
+        pastSentences: 20,
+        threshold: 5,
+      },
+      pivotCharts: false,
+    });
+    chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
+    CompareCharts(chartMsg);
+  } else {
+    intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
+    if (intent !== "None") {
+      chartMsg.mainAI = createCharts(intent, chartMsg, {
+        useCovidDataset: options.useCovidDataset,
         sentimentAnalysis: false,
         window: {
           toggle: false,
-          pastSentences: 99999,
+          pastSentences: 20,
         },
-        neuralNetwork: false,
-        threshold: 0,
+        neuralNetwork: true,
+        useSynonyms: true,
+        randomCharts: {
+          toggle: true,
+          minutes: 10,
+        },
+        threshold: 3,
         filter: {
           toggle: false,
-          pastSentences: 99999,
-          threshold: 999,
+          pastSentences: 20,
+          threshold: 5,
         },
+        pivotCharts: false,
       });
-
-      /**
-       * Window + Sentiment Chart
-       */
-      chartMsg.inferredChart = createCharts(intent, chartMsg, {
-        sentimentAnalysis: true,
-        window: {
-          toggle: modifiedChartOptions.window.toggle,
-          pastSentences: modifiedChartOptions.window.pastSentences,
-        },
-        neuralNetwork: modifiedChartOptions.neuralNetwork,
-        threshold: modifiedChartOptions.threshold,
-        filter: {
-          toggle: modifiedChartOptions.filter.toggle,
-          pastSentences: modifiedChartOptions.filter.pastSentences,
-          threshold: modifiedChartOptions.filter.threshold,
-        },
-      });
-
-      /**
-       * Window Chart
-       */
-      chartMsg.modifiedChart = createCharts(
-        intent,
-        chartMsg,
-        modifiedChartOptions
-      );
+      chartMsg.mainAIOverhearing = createCharts(intents, chartMsg, options);
+      CompareCharts(chartMsg);
     } else {
-      chartMsg.inferredChart = inferredChart(intent, chartMsg);
-
-      chartMsg.explicitChart = explicitChart(intent, chartMsg);
-      chartMsg.modifiedChart = modifiedChart(
-        intent,
-        chartMsg,
-        modifiedChartOptions
-      );
+      //If Neural Network has no match for intent, no charts are made
+      chartMsg.explicitChart = "";
+      chartMsg.inferredChart = "";
+      chartMsg.modifiedChart = "";
     }
-    CompareCharts(chartMsg);
-  } else {
-    //If Neural Network has no match for intent, no charts are made
-    chartMsg.explicitChart = "";
-    chartMsg.inferredChart = "";
-    chartMsg.modifiedChart = "";
   }
 
-  chartMsg.window_sentiment = countHeaderFrequency(
+  chartMsg.mainAICount = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
     chartMsg.synonymMatrix,
     chartMsg.data,
     {
-      sentimentAnalysis: true,
+      useCovidDataset: options.useCovidDataset,
+      sentimentAnalysis: false,
       window: {
-        toggle: true,
-        pastSentences: modifiedChartOptions.window.pastSentences,
+        toggle: false,
+        pastSentences: 20,
       },
       neuralNetwork: true,
-      filter: {
-        toggle: modifiedChartOptions.filter.toggle,
-        pastSentences: modifiedChartOptions.filter.pastSentences,
-        threshold: modifiedChartOptions.filter.threshold,
+      useSynonyms: true,
+      randomCharts: {
+        toggle: true,
+        minutes: 10,
       },
+      threshold: 3,
+      filter: {
+        toggle: false,
+        pastSentences: 20,
+        threshold: 5,
+      },
+      pivotCharts: false,
     }
   );
 
-  chartMsg.window = countHeaderFrequency(
+  chartMsg.mainAIOverhearingCount = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
     chartMsg.synonymMatrix,
     chartMsg.data,
-    modifiedChartOptions
+    options
   );
   chartMsg.total = countHeaderFrequency(
     chartMsg.transcript,
@@ -223,8 +242,8 @@ app.post("/createCharts", async (req, res) => {
       neuralNetwork: true,
       filter: {
         toggle: false,
-        pastSentences: modifiedChartOptions.filter.pastSentences,
-        threshold: modifiedChartOptions.filter.threshold,
+        pastSentences: options.filter.pastSentences,
+        threshold: options.filter.threshold,
       },
     }
   );

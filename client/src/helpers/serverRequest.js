@@ -43,11 +43,12 @@ export async function serverRequest(
 
   //tmp var to hold charts
   let tmpChartMsg = responseChartMsg.chartMsg;
+  console.log(tmpChartMsg.mainAI);
   //Must add explicit first
   let newCharts = [
     ...tmpChartMsg.explicitChart,
-    ...tmpChartMsg.inferredChart,
-    ...tmpChartMsg.modifiedChart,
+    ...tmpChartMsg.mainAI,
+    ...tmpChartMsg.mainAIOverhearing,
     ...tmpChartMsg.pivotChart,
   ];
   //Clean up for charts that weren't generated
@@ -58,22 +59,22 @@ export async function serverRequest(
   //id on charts
   let startingId = chartMsg.charts.length;
   for (let i = 0; i < newCharts.length; i++) {
-    newCharts[i].charts.spec.id = startingId + i;
+    newCharts[i].id = startingId + i;
   }
 
   //cleaning up for pivot
   let tmpCharts = chartMsg.charts;
   for (let i = 0; i < tmpCharts.length; i++) {
-    tmpCharts[i].charts.spec.pivotThis = false;
+    tmpCharts[i].pivotThis = false;
   }
 
-  //Put new charts into state
+  //Put header frequency count into state
   setChartMsg((prev) => {
     return {
       ...prev,
       charts: [...tmpCharts, ...newCharts],
-      window_sentiment: tmpChartMsg.window_sentiment,
-      window: tmpChartMsg.window,
+      mainAICount: tmpChartMsg.mainAICount,
+      mainAIOverhearingCount: tmpChartMsg.mainAIOverhearingCount,
       total: tmpChartMsg.total,
     };
   });

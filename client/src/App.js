@@ -41,7 +41,7 @@ function App() {
   //Toggle options for algorithm
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
     useCovidDataset: false,
-    sentimentAnalysis: false,
+    sentimentAnalysis: true,
     window: {
       toggle: true,
       pastSentences: 20,
@@ -49,16 +49,16 @@ function App() {
     neuralNetwork: true,
     useSynonyms: true,
     randomCharts: {
-      toggle: false,
+      toggle: true,
       minutes: 10,
     },
     threshold: 3,
     filter: {
-      toggle: false,
+      toggle: true,
       pastSentences: 20,
-      threshold: 3,
+      threshold: 5,
     },
-    pivotCharts: false,
+    pivotCharts: true,
   });
   // Chart message to send to server
   const [chartMsg, setChartMsg] = useState(
@@ -74,20 +74,20 @@ function App() {
       synonymMatrix: [], //Synonyms used in attributes
       featureMatrix: [], //Unique data values
       explicitChart: [],
-      inferredChart: [],
-      modifiedChart: [],
+      mainAI: [],
+      mainAIOverhearing: [],
       pivotChart: [],
       deltaTime: 0,
       assistantResponse: "",
       errMsg: [],
       charts: [],
-      window_sentiment: {
+      mainAI: {
         quantitative: [],
         nominal: [],
         temporal: [],
         map: [],
       },
-      window: {
+      mainAIOverhearing: {
         quantitative: [],
         nominal: [],
         temporal: [],
@@ -179,8 +179,8 @@ function App() {
     }
 
     chartMsg.explicitChart = "";
-    chartMsg.inferredChart = "";
-    chartMsg.modifiedChart = "";
+    chartMsg.mainAI = "";
+    chartMsg.mainAIOverhearing = "";
   };
   const clearCharts = () => {
     localStorage.removeItem("chartMsg");

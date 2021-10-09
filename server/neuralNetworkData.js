@@ -5,10 +5,10 @@ if (devPivotData) {
     queries: [
       { query: "show me the distribution of nominal", chartType: "bar" },
       { query: "show me a graph with nominal and nominal", chartType: "bar" },
-      { query: "show me a chart of nominal and nominal", chartType: "bar" },
+      { query: "show me a chart of nominal and nominal", chartType: "heatmap" },
       {
         query: "what is the correlation between nominal and nominal",
-        chartType: "bar",
+        chartType: "heatmap",
       },
       {
         query: "I want to see the comparison of nominal over time",
@@ -36,7 +36,7 @@ if (devPivotData) {
       // { query: "I want to see this but for nominal", chartType: "pivot" },
       // { query: "can i see this but filtered by nominal", chartType: "pivot" },
     ],
-    answers: ["bar", "line", "map", "pivot"],
+    answers: ["bar", "line", "map", "pivot", "heatmap"],
     // pivotChartQueries: [
     //   { query: "show me this but for nominal", chartType: "pivot" },
     //   { query: "I want to see this but for nominal", chartType: "pivot" },

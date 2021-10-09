@@ -1,49 +1,50 @@
 module.exports = (chartMsg) => {
   for (let i = 0; i < chartMsg.explicitChart.length; i++) {
     if (chartMsg.explicitChart[i] !== "") {
-      chartMsg.explicitChart[i].charts.spec.chartSelection = "explicit";
+      chartMsg.explicitChart[i].chartSelection = "explicit_point";
 
-      for (let j = 0; j < chartMsg.inferredChart.length; j++) {
-        if (
-          isChartsEqual(chartMsg.explicitChart[i], chartMsg.inferredChart[j])
-        ) {
-          chartMsg.inferredChart[j] = "";
-          chartMsg.explicitChart[i].charts.spec.chartSelection +=
-            " window+sentiment";
+      for (let j = 0; j < chartMsg.mainAI.length; j++) {
+        if (isChartsEqual(chartMsg.explicitChart[i], chartMsg.mainAI[j])) {
+          chartMsg.mainAI[j] = "";
+          chartMsg.explicitChart[i].chartSelection += " mainAI_point";
         }
       }
 
-      for (let n = 0; n < chartMsg.modifiedChart.length; n++) {
+      for (let n = 0; n < chartMsg.mainAIOverhearing.length; n++) {
         if (
-          isChartsEqual(chartMsg.explicitChart[i], chartMsg.modifiedChart[n]) &&
+          isChartsEqual(
+            chartMsg.explicitChart[i],
+            chartMsg.mainAIOverhearing[n]
+          ) &&
           chartMsg.explicitChart[i] !== ""
         ) {
-          chartMsg.modifiedChart[n] = "";
-          chartMsg.explicitChart[i].charts.spec.chartSelection += " window";
+          chartMsg.mainAIOverhearing[n] = "";
+          chartMsg.explicitChart[i].chartSelection +=
+            " mainAIOverhearing_point";
         }
       }
     }
   }
 
-  for (let i = 0; i < chartMsg.inferredChart.length; i++) {
-    if (chartMsg.inferredChart[i] !== "") {
-      chartMsg.inferredChart[i].charts.spec.chartSelection = "window+sentiment";
+  for (let i = 0; i < chartMsg.mainAI.length; i++) {
+    if (chartMsg.mainAI[i] !== "") {
+      chartMsg.mainAI[i].chartSelection = "mainAI_point";
 
-      for (let j = 0; j < chartMsg.modifiedChart.length; j++) {
+      for (let j = 0; j < chartMsg.mainAIOverhearing.length; j++) {
         if (
-          isChartsEqual(chartMsg.inferredChart[i], chartMsg.modifiedChart[j]) &&
+          isChartsEqual(chartMsg.mainAI[i], chartMsg.mainAIOverhearing[j]) &&
           chartMsg.explicitChart[i] !== ""
         ) {
-          chartMsg.modifiedChart[j] = "";
-          chartMsg.inferredChart[i].charts.spec.chartSelection += " window";
+          chartMsg.mainAIOverhearing[j] = "";
+          chartMsg.mainAI[i].chartSelection += " mainAIOverhearing_point";
         }
       }
     }
   }
 
-  for (let i = 0; i < chartMsg.modifiedChart.length; i++) {
-    if (chartMsg.modifiedChart[i] !== "") {
-      chartMsg.modifiedChart[i].charts.spec.chartSelection = "window";
+  for (let i = 0; i < chartMsg.mainAIOverhearing.length; i++) {
+    if (chartMsg.mainAIOverhearing[i] !== "") {
+      chartMsg.mainAIOverhearing[i].chartSelection = "mainAIOverhearing_point";
     }
   }
 };
@@ -58,8 +59,8 @@ function isChartsEqual(chartOne, chartTwo) {
   if (chartOne !== "" && chartTwo == "") {
     return false;
   }
-  chartOne = chartOne.charts.spec;
-  chartTwo = chartTwo.charts.spec;
+  // chartOne = chartOne.charts.spec;
+  // chartTwo = chartTwo.charts.spec;
 
   if (
     JSON.stringify(chartOne.encoding) == JSON.stringify(chartTwo.encoding) &&

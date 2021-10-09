@@ -5,6 +5,7 @@ const CovidColors = require("../static/CovidColors");
 const CovidSort = require("../static/CovidSort");
 const getExplicitChartType = require("../explicit/ExplicitChart");
 
+//****Pivotting mark types only works with covid dataset
 module.exports = (charts, chartMsg, modifiedChartOptions) => {
   let { extractedHeaders, extractedFilters, extractedMarkType } =
     extractInfo(chartMsg);
@@ -15,12 +16,22 @@ module.exports = (charts, chartMsg, modifiedChartOptions) => {
     let chartObj = {
       charts: { spec: {} },
     };
-    for (let j = 0; j < extractedHeaders.length; j++) {
-      chart = createChartWithHeader(chart, extractedHeaders[j], chartMsg);
-    }
-    for (let j = 0; j < extractedFilters.length; j++) {
-      if (extractedFilters[j].filters.length > 0) {
-        chart = createChartWithFilter(chart, extractedFilters[j], chartMsg);
+
+    // if (modifiedChartOptions.useCovidDataset) {
+    //   if (extractedMarkType.length > 0) {
+    //     chart = createChartWithMarkType(chart, extractedMarkType, chartMsg);
+    //   }
+    // }
+    // extractedHeaders.push(chart.spec.defaultHeader);
+    // console.log(extractedHeaders);
+    if (!chart.spec.defaultHeader) {
+      for (let j = 0; j < extractedHeaders.length; j++) {
+        chart = createChartWithHeader(chart, extractedHeaders[j], chartMsg);
+      }
+      for (let j = 0; j < extractedFilters.length; j++) {
+        if (extractedFilters[j].filters.length > 0) {
+          chart = createChartWithFilter(chart, extractedFilters[j], chartMsg);
+        }
       }
     }
     chart = cleanChart(
@@ -40,24 +51,23 @@ module.exports = (charts, chartMsg, modifiedChartOptions) => {
 
 function extractInfo(chartMsg) {
   let words = chartMsg.command.split(" ");
-  console.log(chartMsg.command);
 
-  //extract default values
+  //Initialize values
+  let extractedMarkType = "";
   let extractedHeaders = [];
   let extractedFilters = [];
-  let extractedMarkType = "map";
 
   //Checking for spoken mark types
-  if (getExplicitChartType(command)) {
-    extractedMarkType = getExplicitChartType(command);
+  if (getExplicitChartType(chartMsg.command)) {
+    extractedMarkType = getExplicitChartType(chartMsg.command);
   }
-
   //Checking for spoken attributes
   for (let i = 0; i < chartMsg.attributes.length; i++) {
     if (
       chartMsg.command
         .toLowerCase()
-        .includes(chartMsg.attributes[i].toLowerCase())
+        .includes(chartMsg.attributes[i].toLowerCase()) &&
+      findType(chartMsg.attributes[i], chartMsg.data) == "nominal"
     ) {
       extractedHeaders.push(chartMsg.attributes[i]);
     }
@@ -110,6 +120,74 @@ function createChartWithFilter(chart, extractedFilter, chartMsg) {
   return chart;
 }
 
+function createChartWithMarkType(chart, extractedMarkType, chartMsg) {
+  if (chart.spec.hasOwnProperty("layer") && extractedMarkType !== "map") {
+    chart.spec.defaultHeader = chart.spec.layer[1].encoding.color.field;
+    delete chart.spec.projection;
+    delete chart.spec.layer;
+  } else {
+    chart.spec.defaultHeader = chart.spec.encoding.color.field;
+  }
+  if (extractedMarkType == "bar") {
+    chart.spec.mark = "bar";
+    chart.spec.defaultHeader = chart.spec.encoding.color.field;
+  } else if (extractedMarkType == "line") {
+    chart.spec.mark = "line";
+    chart.spec.defaultHeader = chart.spec.encoding.color.field;
+  } else if (extractedMarkType == "map") {
+    let obj = {
+      data: chart.spec.data,
+      mark: { type: "geoshape", stroke: "black" },
+      transform: [
+        {
+          lookup: "map",
+          from: {
+            data: {
+              url: "https://raw.githubusercontent.com/vega/vega/master/docs/data/us-10m.json",
+              format: { type: "topojson", feature: "counties" },
+            },
+            key: "id",
+          },
+          as: "geo",
+        },
+      ],
+      encoding: {
+        color: {
+          field: chart.spec.encoding.color.field,
+          type: "nominal",
+          scale: { range: CovidColors(chart.spec.encoding.color.field) },
+          sort: CovidSort(chart.spec.encoding.color.field, chartMsg.data),
+        },
+        shape: { field: "geo", type: "geojson" },
+      },
+    };
+    delete chart.spec.data;
+    delete chart.spec.mark;
+    delete chart.spec.transform;
+    delete chart.spec.encoding;
+    delete chart.spec.concat;
+    chart.spec.projection = { type: "albersUsa" };
+    chart.spec.layer = [
+      {
+        data: {
+          url: "https://raw.githubusercontent.com/vega/vega/master/docs/data/us-10m.json",
+          format: {
+            type: "topojson",
+            feature: "states",
+          },
+        },
+        mark: {
+          type: "geoshape",
+          fill: "lightgray",
+          stroke: "white",
+        },
+      },
+      obj,
+    ];
+  }
+  return chart;
+}
+
 function createChartWithHeader(chart, extractedHeader, chartMsg) {
   if (chart.spec.hasOwnProperty("layer")) {
     chart.spec.layer[1].encoding.color.field = extractedHeader;
@@ -121,31 +199,6 @@ function createChartWithHeader(chart, extractedHeader, chartMsg) {
     );
   }
 
-  return chart;
-}
-
-function cleanChart(
-  chart,
-  chartMsg,
-  extractedHeaders,
-  extractedFilters,
-  extractedMarkType
-) {
-  let time = (new Date() - new Date(chartMsg.deltaTime)) / 1000 / 60;
-  time = Math.round(time * 100) / 100;
-  chart.spec.deltaTime = time;
-  chart.spec.visible = false;
-  chart.spec.timeChosen = [];
-  chart.spec.timeClosed = [];
-  chart.spec.initialized = createDate();
-  chart.spec.pivotFromId = chart.spec.id;
-  chart.spec.pivotThis = false;
-  chart.spec.title = createNewTitle(
-    chart,
-    extractedHeaders,
-    extractedFilters,
-    extractedMarkType
-  );
   return chart;
 }
 
@@ -284,6 +337,31 @@ function createNewTitle(
   }
   console.log(filteredHeaderLength);
   return chartTitle;
+}
+
+function cleanChart(
+  chart,
+  chartMsg,
+  extractedHeaders,
+  extractedFilters,
+  extractedMarkType
+) {
+  let time = (new Date() - new Date(chartMsg.deltaTime)) / 1000 / 60;
+  time = Math.round(time * 100) / 100;
+  chart.spec.deltaTime = time;
+  chart.spec.visible = false;
+  chart.spec.timeChosen = [];
+  chart.spec.timeClosed = [];
+  chart.spec.initialized = createDate();
+  chart.spec.pivotFromId = chart.spec.id;
+  chart.spec.pivotThis = false;
+  chart.spec.title = createNewTitle(
+    chart,
+    extractedHeaders,
+    extractedFilters,
+    extractedMarkType
+  );
+  return chart;
 }
 
 //TODO create = function that checks if charts were actually made.

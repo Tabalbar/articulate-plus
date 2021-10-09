@@ -62,7 +62,7 @@ function ChartSelection({ chartMsg, chooseChart, modifiedChartOptions }) {
                       key={index}
                     >
                       <ChartPlaceholder
-                        specification={chart.charts.spec}
+                        specification={chart}
                         data={chartMsg.data}
                         chooseChart={chooseChart}
                         modifiedChartOptions={modifiedChartOptions}
@@ -90,7 +90,7 @@ function ChartPlaceholder({
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [chartData, setChartData] = useState(data);
-
+  console.log(specification);
   useEffect(() => {
     if (modifiedChartOptions.useCovidDataset == true) {
       if (

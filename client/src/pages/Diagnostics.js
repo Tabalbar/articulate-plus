@@ -88,6 +88,7 @@ function Diagnostics({ chartMsg }) {
     }
     setTranscriptData(tmpTranscriptData);
   }, [chartMsg.transcript]);
+  console.log(chartMsg.mainAI);
   return (
     <>
       <Center>
@@ -190,13 +191,13 @@ function Diagnostics({ chartMsg }) {
                   })}
                 </Table>
                 <Table>
-                  <Text fontWeight="bold">Window + Sentiment</Text>
+                  <Text fontWeight="bold">Main AI</Text>
 
                   <Tr>
                     <Th>Attribute</Th>
                     <Th>Frequency Count</Th>
                   </Tr>
-                  {chartMsg.window_sentiment.map.map((value, index) => {
+                  {chartMsg.mainAICount.map.map((value, index) => {
                     return (
                       <>
                         <Tr>
@@ -206,7 +207,7 @@ function Diagnostics({ chartMsg }) {
                       </>
                     );
                   })}
-                  {chartMsg.window_sentiment.nominal.map((value, index) => {
+                  {chartMsg.mainAICount.nominal.map((value, index) => {
                     return (
                       <>
                         <Tr key={index}>
@@ -216,7 +217,47 @@ function Diagnostics({ chartMsg }) {
                       </>
                     );
                   })}
-                  {chartMsg.window_sentiment.quantitative.map(
+                  {chartMsg.mainAICount.quantitative.map((value, index) => {
+                    return (
+                      <>
+                        <Tr>
+                          <Td key={index}> {value.header}</Td>
+                          <Td> {value.count}</Td>
+                        </Tr>
+                      </>
+                    );
+                  })}
+                </Table>
+                <Table>
+                  <Text fontWeight="bold">Main AI With Overhearing</Text>
+
+                  <Tr>
+                    <Th>Attribute</Th>
+                    <Th>Frequency Count</Th>
+                  </Tr>
+                  {chartMsg.mainAIOverhearingCount.map.map((value, index) => {
+                    return (
+                      <>
+                        <Tr>
+                          <Td key={index}> {value.header}</Td>
+                          <Td> {value.count}</Td>
+                        </Tr>
+                      </>
+                    );
+                  })}
+                  {chartMsg.mainAIOverhearingCount.nominal.map(
+                    (value, index) => {
+                      return (
+                        <>
+                          <Tr key={index}>
+                            <Td> {value.header}</Td>
+                            <Td> {value.count}</Td>
+                          </Tr>
+                        </>
+                      );
+                    }
+                  )}
+                  {chartMsg.mainAIOverhearingCount.quantitative.map(
                     (value, index) => {
                       return (
                         <>
@@ -228,44 +269,6 @@ function Diagnostics({ chartMsg }) {
                       );
                     }
                   )}
-                </Table>
-                <Table>
-                  <Text fontWeight="bold">Window</Text>
-
-                  <Tr>
-                    <Th>Attribute</Th>
-                    <Th>Frequency Count</Th>
-                  </Tr>
-                  {chartMsg.window.map.map((value, index) => {
-                    return (
-                      <>
-                        <Tr>
-                          <Td key={index}> {value.header}</Td>
-                          <Td> {value.count}</Td>
-                        </Tr>
-                      </>
-                    );
-                  })}
-                  {chartMsg.window.nominal.map((value, index) => {
-                    return (
-                      <>
-                        <Tr key={index}>
-                          <Td> {value.header}</Td>
-                          <Td> {value.count}</Td>
-                        </Tr>
-                      </>
-                    );
-                  })}
-                  {chartMsg.window.quantitative.map((value, index) => {
-                    return (
-                      <>
-                        <Tr>
-                          <Td key={index}> {value.header}</Td>
-                          <Td> {value.count}</Td>
-                        </Tr>
-                      </>
-                    );
-                  })}
                 </Table>
               </HStack>
             </div>

@@ -117,7 +117,7 @@ const Dictaphone = ({
       (command.includes("where") ||
         command.includes("see") ||
         command.includes("show") ||
-        command.includes("show")) &&
+        command.includes("what")) &&
       !mute
     ) {
       createCharts(command);
