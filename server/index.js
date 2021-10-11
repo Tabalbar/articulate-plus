@@ -86,7 +86,7 @@ const countHeaderFrequency = require("./createCharts/countHeaderFrequency");
 // const explicitChart = require("./oldChartMaker/explicit/explicitChart");
 // const inferredChart = require("./oldChartMaker/inferred/inferredChart");
 // const modifiedChart = require("./oldChartMaker/modified/modifiedChart");
-const pivotCharts = require("./createCharts/pivotCharts/pivotCharts");
+const pivotChartsV2 = require("./createCharts/pivotCharts/pivotChartsV2");
 
 const createCharts = require("./createChartsV3/createCharts");
 
@@ -113,7 +113,7 @@ app.post("/createCharts", async (req, res) => {
   console.log(chartMsg.pivotChart);
   //Check if pivot
   if (pivotTheseCharts.length > 0) {
-    chartMsg.pivotChart = pivotCharts(pivotTheseCharts, chartMsg, options);
+    chartMsg.pivotChart = pivotChartsV2(pivotTheseCharts, chartMsg, options);
   } else if (intent) {
     chartMsg.explicitChart = createCharts(intent, chartMsg, {
       useCovidDataset: options.useCovidDataset,
@@ -183,7 +183,7 @@ app.post("/createCharts", async (req, res) => {
         },
         pivotCharts: false,
       });
-      chartMsg.mainAIOverhearing = createCharts(intents, chartMsg, options);
+      chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
       CompareCharts(chartMsg);
     } else {
       //If Neural Network has no match for intent, no charts are made

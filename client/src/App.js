@@ -81,13 +81,13 @@ function App() {
       assistantResponse: "",
       errMsg: [],
       charts: [],
-      mainAI: {
+      mainAICount: {
         quantitative: [],
         nominal: [],
         temporal: [],
         map: [],
       },
-      mainAIOverhearing: {
+      mainAIOverhearingCount: {
         quantitative: [],
         nominal: [],
         temporal: [],
@@ -178,9 +178,9 @@ function App() {
       setForceUpdate((prev) => !prev);
     }
 
-    chartMsg.explicitChart = "";
-    chartMsg.mainAI = "";
-    chartMsg.mainAIOverhearing = "";
+    chartMsg.explicitChart = [];
+    chartMsg.mainAI = [];
+    chartMsg.mainAIOverhearing = [];
   };
   const clearCharts = () => {
     localStorage.removeItem("chartMsg");

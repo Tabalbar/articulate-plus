@@ -139,7 +139,7 @@ function Diagnostics({ chartMsg }) {
                   if (value.bold) {
                     return (
                       <strong>
-                        {value.word} ({value.header}){" "}
+                        {value.word} ({value.header})
                       </strong>
                     );
                   } else {

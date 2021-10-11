@@ -11,22 +11,23 @@ module.exports = (
   headerFrequencyCount
 ) => {
   let chart = createChartTemplate(chartMsg, headerFrequencyCount);
+  chart.transform.push({
+    lookup: "map",
+    from: {
+      data: {
+        url: "https://raw.githubusercontent.com/vega/vega/master/docs/data/us-10m.json",
+        format: { type: "topojson", feature: "counties" },
+      },
+      key: "id",
+    },
+    as: "geo",
+  });
+  chart = createTransform(chart, chartMsg, extractedFilteredValues);
+
   let obj = {
     data: chart.data,
     mark: { type: "geoshape", stroke: "black" },
-    transform: [
-      {
-        lookup: "map",
-        from: {
-          data: {
-            url: "https://raw.githubusercontent.com/vega/vega/master/docs/data/us-10m.json",
-            format: { type: "topojson", feature: "counties" },
-          },
-          key: "id",
-        },
-        as: "geo",
-      },
-    ],
+    transform: chart.transform,
     encoding: {
       color: {
         field: extractedHeaders[1],
@@ -61,6 +62,5 @@ module.exports = (
   ];
 
   chart = createTitle(chart, extractedHeaders, "map", extractedFilteredValues);
-  chart = createTransform(chart, chartMsg, extractedFilteredValues);
   return chart;
 };
