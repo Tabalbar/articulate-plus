@@ -29,7 +29,6 @@ module.exports = (intent, chartMsg, options) => {
 
   //Holds all charts
   let charts = [];
-  console.log(intent);
 
   switch (intent) {
     case "histogram":
@@ -53,7 +52,6 @@ module.exports = (intent, chartMsg, options) => {
           "quantitative"
         );
         extractedHeaders = findQuantitative.extractedHeaders;
-        console.log(extractedHeaders);
 
         if (!findQuantitative.typeFound) {
           for (let i = 0; i < extractedHeaders.length; i++) {
@@ -103,7 +101,6 @@ module.exports = (intent, chartMsg, options) => {
         extractedHeaders
       );
       extractedHeaders = findTemporalAndQuantitativeObj.extractedHeaders;
-      console.log(findTemporalAndQuantitativeObj.quantitativeFound);
 
       if (
         !findTemporalAndQuantitativeObj.temporalFound ||

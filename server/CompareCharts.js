@@ -47,6 +47,16 @@ module.exports = (chartMsg) => {
       chartMsg.mainAIOverhearing[i].chartSelection = "mainAIOverhearing_point";
     }
   }
+
+  for (let i = 0; i < chartMsg.pivotChart.length; i++) {
+    for (let j = i + 1; j < chartMsg.pivotChart.length; j++) {
+      if (isChartsEqual(chartMsg.pivotChart[i], chartMsg.pivotChart[j])) {
+        chartMsg.pivotChart[j] = "";
+        console.log(chartMsg.pivotChart[j]);
+        break;
+      }
+    }
+  }
 };
 
 function isChartsEqual(chartOne, chartTwo) {
@@ -61,7 +71,14 @@ function isChartsEqual(chartOne, chartTwo) {
   }
   // chartOne = chartOne.charts.spec;
   // chartTwo = chartTwo.charts.spec;
-
+  console.log(
+    JSON.stringify(chartOne.encoding) == JSON.stringify(chartTwo.encoding)
+  );
+  console.log(JSON.stringify(chartOne.mark) == JSON.stringify(chartTwo.mark));
+  console.log(
+    JSON.stringify(chartOne.transform) == JSON.stringify(chartTwo.transform)
+  );
+  console.log(JSON.stringify(chartOne.layer) == JSON.stringify(chartTwo.layer));
   if (
     JSON.stringify(chartOne.encoding) == JSON.stringify(chartTwo.encoding) &&
     JSON.stringify(chartOne.mark) == JSON.stringify(chartTwo.mark) &&

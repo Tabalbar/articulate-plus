@@ -110,10 +110,11 @@ app.post("/createCharts", async (req, res) => {
    * Getting expicit mark type
    */
   let intent = getExplicitChartType(chartMsg.command);
-  console.log(chartMsg.pivotChart);
   //Check if pivot
+
   if (pivotTheseCharts.length > 0) {
     chartMsg.pivotChart = pivotChartsV2(pivotTheseCharts, chartMsg, options);
+    CompareCharts(chartMsg);
   } else if (intent) {
     chartMsg.explicitChart = createCharts(intent, chartMsg, {
       useCovidDataset: options.useCovidDataset,
@@ -172,7 +173,7 @@ app.post("/createCharts", async (req, res) => {
         neuralNetwork: true,
         useSynonyms: true,
         randomCharts: {
-          toggle: true,
+          toggle: false,
           minutes: 10,
         },
         threshold: 3,

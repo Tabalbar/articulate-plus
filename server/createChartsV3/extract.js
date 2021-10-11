@@ -130,12 +130,9 @@ function checkDuplicates(extractedHeaders) {
   let j = 0;
   for (let i = 0; i < extractedHeaders.length; i++) {
     for (j = i + 1; j < extractedHeaders.length; j++) {
-      console.log(i, j);
-
       if (extractedHeaders[i] == extractedHeaders[j] && i !== j) {
         extractedHeaders.splice(j, 1);
         j = 0;
-        console.log(j);
       }
     }
   }
