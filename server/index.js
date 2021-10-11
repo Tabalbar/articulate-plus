@@ -89,6 +89,7 @@ const countHeaderFrequency = require("./createCharts/countHeaderFrequency");
 const pivotChartsV2 = require("./createCharts/pivotCharts/pivotChartsV2");
 
 const createCharts = require("./createChartsV3/createCharts");
+const chartOptions = require("./createCharts/explicit/chartOptions");
 
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg;
@@ -111,10 +112,11 @@ app.post("/createCharts", async (req, res) => {
    */
   let intent = getExplicitChartType(chartMsg.command);
   //Check if pivot
-
-  if (pivotTheseCharts.length > 0) {
+  if (chartMsg.command == "random") {
+    let intent = chartOptions[Math.floor(Math.random() * 5)];
+    chartMsg.randomCharts = createCharts(intent.mark, chartMsg, options);
+  } else if (pivotTheseCharts.length > 0) {
     chartMsg.pivotChart = pivotChartsV2(pivotTheseCharts, chartMsg, options);
-    CompareCharts(chartMsg);
   } else if (intent) {
     chartMsg.explicitChart = createCharts(intent, chartMsg, {
       useCovidDataset: options.useCovidDataset,
@@ -159,7 +161,6 @@ app.post("/createCharts", async (req, res) => {
       pivotCharts: false,
     });
     chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
-    CompareCharts(chartMsg);
   } else {
     intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
     if (intent !== "None") {
@@ -185,7 +186,6 @@ app.post("/createCharts", async (req, res) => {
         pivotCharts: false,
       });
       chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
-      CompareCharts(chartMsg);
     } else {
       //If Neural Network has no match for intent, no charts are made
       chartMsg.explicitChart = "";
@@ -193,6 +193,7 @@ app.post("/createCharts", async (req, res) => {
       chartMsg.modifiedChart = "";
     }
   }
+  CompareCharts(chartMsg);
 
   chartMsg.mainAICount = countHeaderFrequency(
     chartMsg.transcript,

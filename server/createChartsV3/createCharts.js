@@ -26,7 +26,7 @@ module.exports = (intent, chartMsg, options) => {
     filterFrequencyCount,
     options
   );
-
+  console.log(intent, extractedHeaders);
   //Holds all charts
   let charts = [];
 
@@ -183,5 +183,6 @@ module.exports = (intent, chartMsg, options) => {
     default:
       break;
   }
+  console.log(charts);
   return charts;
 };

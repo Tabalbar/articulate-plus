@@ -7,10 +7,7 @@ module.exports = [
     key: "histogram",
     mark: "histogram",
   },
-  // {
-  //   key: "parallel coordinates",
-  //   mark: "parallelCoordinates",
-  // },
+
   {
     key: "line",
     mark: "line",
@@ -19,6 +16,14 @@ module.exports = [
     key: "heat map",
     mark: "heatmap",
   },
+  {
+    key: "map",
+    mark: "map",
+  },
+  // {
+  //   key: "parallel coordinates",
+  //   mark: "parallelCoordinates",
+  // },
   // {
   //   key: "point",
   //   mark: "scatter",
@@ -27,8 +32,4 @@ module.exports = [
   //   key: "bubble",
   //   mark: "scatter",
   // },
-  {
-    key: "map",
-    mark: "map",
-  },
 ];

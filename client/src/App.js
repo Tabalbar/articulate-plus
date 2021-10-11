@@ -74,6 +74,7 @@ function App() {
       synonymMatrix: [], //Synonyms used in attributes
       featureMatrix: [], //Unique data values
       explicitChart: [],
+      randomCharts: [],
       mainAI: [],
       mainAIOverhearing: [],
       pivotChart: [],
@@ -154,7 +155,7 @@ function App() {
   useEffect(() => {
     if (modifiedChartOptions.randomCharts.toggle) {
       randomChartIntervalId.current = setInterval(() => {
-        createCharts("");
+        createCharts("random");
       }, modifiedChartOptions.randomCharts.minutes * 60 * 1000);
     } else {
       clearInterval(randomChartIntervalId.current);
