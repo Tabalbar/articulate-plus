@@ -32,7 +32,6 @@ module.exports = (
     axis: { ticks: false, labelPadding: 10, domain: false },
     view: { strokeWidth: 0 },
   };
-  console.log(extractedHeaders);
   chart = createTitle(
     chart,
     extractedHeaders,

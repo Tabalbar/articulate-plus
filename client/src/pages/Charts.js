@@ -37,7 +37,6 @@ function Charts({
 
   const handlePivot = (index) => {
     charts[index].pivotThis = !charts[index].pivotThis;
-    console.log(charts[index].pivotThis);
     setForceUpdate((prev) => !prev);
   };
   return (

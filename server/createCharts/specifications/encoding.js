@@ -120,7 +120,6 @@ module.exports = (
         axis: { grid: false },
       };
       if (intent === "line") {
-        console.log("here");
         chartObj.charts.spec.encoding.y = {
           aggregate: "sum",
           field: extractedHeaders[1],

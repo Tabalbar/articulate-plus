@@ -47,6 +47,7 @@ module.exports = {
           headersToSort.push(headerFrequencyCount[headerKeys[i]][j]);
         }
       }
+
       let sortedHeaders = headersToSort.sort((a, b) =>
         a.count < b.count ? 1 : -1
       );

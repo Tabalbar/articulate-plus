@@ -22,6 +22,7 @@ import muteImage from "./images/mute.gif";
 import thinkingImage from "./images/thinking.gif";
 import { thinking } from "./components/voice/assistantVoiceOptions";
 import AttributeContainer from "./components/staticWindows/AttributeContainer";
+import useInterval from "./helpers/useInterval";
 
 function App() {
   //Start Dictaphone to start listening
@@ -39,77 +40,77 @@ function App() {
   const [charts, setCharts] = useState([]);
 
   //Toggle options for algorithm
-  const [modifiedChartOptions, setModifiedChartOptions] = useState({
-    useCovidDataset: false,
-    sentimentAnalysis: true,
-    window: {
-      toggle: true,
-      pastSentences: 20,
-    },
-    neuralNetwork: true,
-    useSynonyms: true,
-    randomCharts: {
-      toggle: true,
-      minutes: 10,
-    },
-    threshold: 3,
-    filter: {
-      toggle: true,
-      pastSentences: 20,
-      threshold: 5,
-    },
-    pivotCharts: true,
-  });
-  // Chart message to send to server
-  const [chartMsg, setChartMsg] = useState(
-    JSON.parse(localStorage.getItem("chartMsg")) || {
-      command: "", //Query
-      attributes: [],
-      data: "",
-      transcript: "",
-      uncontrolledTranscript: "",
-      datasetTitle: "",
-      loggedTranscript: [], // {sentence: string, date: createDate()}
-      loggedUncontrolledTranscript: [],
-      synonymMatrix: [], //Synonyms used in attributes
-      featureMatrix: [], //Unique data values
-      explicitChart: [],
-      randomCharts: [],
-      mainAI: [],
-      mainAIOverhearing: [],
-      pivotChart: [],
-      deltaTime: 0,
-      assistantResponse: "",
-      errMsg: [],
-      charts: [],
-      mainAICount: {
-        quantitative: [],
-        nominal: [],
-        temporal: [],
-        map: [],
+  const [modifiedChartOptions, setModifiedChartOptions] = useState(
+    JSON.parse(localStorage.getItem("chartOptions")) || {
+      useCovidDataset: false,
+      sentimentAnalysis: true,
+      window: {
+        toggle: true,
+        pastSentences: 20,
       },
-      mainAIOverhearingCount: {
-        quantitative: [],
-        nominal: [],
-        temporal: [],
-        map: [],
+      neuralNetwork: true,
+      useSynonyms: true,
+      randomCharts: {
+        toggle: true,
+        minutes: 10,
       },
-      total: {
-        quantitative: [],
-        nominal: [],
-        temporal: [],
-        map: [],
+      threshold: 3,
+      filter: {
+        toggle: true,
+        pastSentences: 20,
+        threshold: 5,
       },
+      pivotCharts: true,
     }
   );
-  console.log(chartMsg.charts);
+
+  // Chart message to send to server
+  const [chartMsg, setChartMsg] = useState({
+    command: "", //Query
+    attributes: [],
+    data: "",
+    transcript:
+      "diabetes diabetes diabetes diabetes diabetes diabetes diabetes diabetes diabetes diabetes",
+    uncontrolledTranscript: "",
+    datasetTitle: "",
+    loggedTranscript: [], // {sentence: string, date: createDate()}
+    loggedUncontrolledTranscript: [],
+    synonymMatrix: [], //Synonyms used in attributes
+    featureMatrix: [], //Unique data values
+    explicitChart: [],
+    randomCharts: [],
+    mainAI: [],
+    mainAIOverhearing: [],
+    pivotChart: [],
+    deltaTime: 0,
+    assistantResponse: "",
+    errMsg: [],
+    charts: [],
+    mainAICount: {
+      quantitative: [],
+      nominal: [],
+      temporal: [],
+      map: [],
+    },
+    mainAIOverhearingCount: {
+      quantitative: [],
+      nominal: [],
+      temporal: [],
+      map: [],
+    },
+    total: {
+      quantitative: [],
+      nominal: [],
+      temporal: [],
+      map: [],
+    },
+  });
 
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 
   const [voiceMsg, setVoiceMsg] = useState(null);
 
-  const randomChartIntervalId = useRef(null);
   // Handler to show thought bubble for clippy
   const [showTooltip, setShowTooltip] = useState(false);
   useEffect(() => {
@@ -151,16 +152,12 @@ function App() {
     });
   };
 
-  //Set up interval to test ranondom chart generation
-  useEffect(() => {
-    if (modifiedChartOptions.randomCharts.toggle) {
-      randomChartIntervalId.current = setInterval(() => {
-        createCharts("random");
-      }, modifiedChartOptions.randomCharts.minutes * 60 * 1000);
-    } else {
-      clearInterval(randomChartIntervalId.current);
+  //Create charts at a random interval
+  useInterval(() => {
+    if (modifiedChartOptions.randomCharts.toggle && startStudy) {
+      createCharts("random");
     }
-  }, [modifiedChartOptions.randomCharts.toggle]);
+  }, modifiedChartOptions.randomCharts.minutes * 60 * 1000);
 
   //In chartSelection component, handles choosing the chart to add in
   //Chosen component
@@ -183,10 +180,7 @@ function App() {
     chartMsg.mainAI = [];
     chartMsg.mainAIOverhearing = [];
   };
-  const clearCharts = () => {
-    localStorage.removeItem("chartMsg");
-    localStorage.clear();
-  };
+
   const handleMute = () => {
     setMute((prev) => {
       if (mute) {
@@ -221,7 +215,6 @@ function App() {
           <ArtyContainer
             clippyImage={clippyImage}
             handleMute={handleMute}
-            clearCharts={clearCharts}
             voiceMsg={voiceMsg}
             mute={mute}
             showTooltip={showTooltip}

@@ -33,6 +33,10 @@ function AttributeContainer({
   };
   useEffect(() => {
     if (startStudy) {
+      localStorage.setItem(
+        "chartOptions",
+        JSON.stringify(modifiedChartOptions)
+      );
       setChartMsg((prev) => {
         return { ...prev, deltaTime: new Date() };
       });
@@ -46,6 +50,7 @@ function AttributeContainer({
       e.currentTarget.style.zIndex = 12;
     }
   };
+
   const handleWindowPastSenteces = (e) => {
     e.preventDefault();
     let pastSentences = e.target.value;

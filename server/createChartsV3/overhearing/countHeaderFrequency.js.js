@@ -17,7 +17,6 @@ module.exports = (chartMsg, options) => {
   }
 
   let wordCount = [];
-
   for (let i = 0; i < synonymsAndFeatures.length; i++) {
     wordCount.push({ header: synonymsAndFeatures[i][0], count: 0 });
   }

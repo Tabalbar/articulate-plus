@@ -8,6 +8,5 @@ module.exports = (chartMsg, extractedHeaders, typeToKeep) => {
     }
   }
 
-  console.log(newExtractedHeaders);
   return newExtractedHeaders;
 };

@@ -43,9 +43,9 @@ export async function serverRequest(
 
   //tmp var to hold charts
   let tmpChartMsg = responseChartMsg.chartMsg;
-  console.log(tmpChartMsg.mainAI);
   //Must add explicit first
   let newCharts = [
+    ...tmpChartMsg.randomCharts,
     ...tmpChartMsg.explicitChart,
     ...tmpChartMsg.mainAI,
     ...tmpChartMsg.mainAIOverhearing,

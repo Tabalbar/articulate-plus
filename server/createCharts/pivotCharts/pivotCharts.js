@@ -230,10 +230,7 @@ function createNewTitle(
     for (let n = 0; n < headers.length; n++) {
       title += headers[n].charAt(0).toUpperCase() + headers[n].slice(1) + " ";
     }
-    console.log(title);
     if (!(chart.spec.hasOwnProperty("layer") && extractedHeaders[i] == "map")) {
-      console.log(i, "jjd");
-
       headerTitles.push(title);
     }
   }

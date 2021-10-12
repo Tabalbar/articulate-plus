@@ -88,7 +88,6 @@ function Diagnostics({ chartMsg }) {
     }
     setTranscriptData(tmpTranscriptData);
   }, [chartMsg.transcript]);
-  console.log(chartMsg.mainAI);
   return (
     <>
       <Center>
