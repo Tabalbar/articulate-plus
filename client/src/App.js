@@ -239,7 +239,7 @@ function App() {
           />
         </div>
         <div style={{ display: !chartsPage ? null : "None" }}>
-          <Diagnostics chartMsg={chartMsg} mute={mute} />
+          <Diagnostics chartMsg={chartMsg} mute={mute} charts={charts} />
         </div>
         <Dictaphone
           createCharts={createCharts}

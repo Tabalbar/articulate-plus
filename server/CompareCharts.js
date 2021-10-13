@@ -54,6 +54,9 @@ module.exports = (chartMsg) => {
         chartMsg.pivotChart[j] = "";
         break;
       }
+      if (chartMsg.pivotChart[i] !== "") {
+        chartMsg.pivotChart[i].chartSelection = "pivot_point";
+      }
     }
   }
 
@@ -62,6 +65,9 @@ module.exports = (chartMsg) => {
       if (isChartsEqual(chartMsg.randomCharts[i], chartMsg.charts[j])) {
         chartMsg.randomCharts[i] = "";
       }
+    }
+    if (chartMsg.randomCharts[i] !== "") {
+      chartMsg.randomCharts[i].chartSelection = "random_point";
     }
   }
 };

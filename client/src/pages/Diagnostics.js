@@ -26,7 +26,7 @@ import LineTheme from "../components/diagnostics/LineTheme";
  * @param {object} chartMsg State to send to server
  * @returns
  */
-function Diagnostics({ chartMsg }) {
+function Diagnostics({ chartMsg, charts }) {
   const [transcriptData, setTranscriptData] = useState([]);
   useEffect(() => {
     localStorage.getItem(chartMsg);
@@ -35,6 +35,8 @@ function Diagnostics({ chartMsg }) {
   //Download user's data, charts made, looged transcripts,an
   const downloadFile = async () => {
     let myData = {
+      count: makeCount(charts, chartMsg),
+      chosenCharts: charts,
       transcript: chartMsg.transcript,
       loggedTranscript: chartMsg.loggedTranscript,
       uncontrolledTranscript: chartMsg.uncontrolledTranscript,
@@ -279,3 +281,64 @@ function Diagnostics({ chartMsg }) {
 }
 
 export default Diagnostics;
+
+function makeCount(charts, chartMsg) {
+  let chosenCharts = {
+    explicit: 0,
+    mainAI: 0,
+    mainAIOverhearing: 0,
+    pivot: 0,
+    random: 0,
+  };
+  let total = {
+    explicit: 0,
+    mainAI: 0,
+    mainAIOverhearing: 0,
+    pivot: 0,
+    random: 0,
+  };
+
+  for (let i = 0; i < charts.length; i++) {
+    console.log(charts[i]);
+    if (charts[i].chartSelection.includes("explicit_point")) {
+      chosenCharts.explicit++;
+    }
+    if (charts[i].chartSelection.includes("mainAI_point")) {
+      chosenCharts.mainAI++;
+    }
+    if (charts[i].chartSelection.includes("mainAIOverhearing_point")) {
+      chosenCharts.mainAIOverhearing++;
+    }
+    if (charts[i].chartSelection.includes("pivot_point")) {
+      chosenCharts.pivot++;
+    }
+    if (charts[i].chartSelection.includes("random_point")) {
+      chosenCharts.random++;
+    }
+  }
+  for (let i = 0; i < chartMsg.charts.length; i++) {
+    if (chartMsg.charts[i].chartSelection.includes("explicit_point")) {
+      total.explicit++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("mainAI_point")) {
+      total.mainAI++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("mainAIOverhearing_point")) {
+      total.mainAIOverhearing++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("pivot_point")) {
+      total.pivot++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("random_point")) {
+      total.random++;
+    }
+  }
+
+  total.explicit += chosenCharts.explicit;
+  total.mainAI += chosenCharts.mainAI;
+  total.mainAIOverhearing += chosenCharts.mainAIOverhearing;
+  total.pivot += chosenCharts.pivot;
+  total.random += chosenCharts.random;
+
+  return { chosenCharts: chosenCharts, total: total };
+}

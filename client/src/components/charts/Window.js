@@ -12,6 +12,7 @@ function Window(props) {
   const [specification, setSpecification] = useState(props.specification);
   const [chartData, setChartData] = useState(props.data);
   const [startTime, setStartTime] = useState(0);
+  const resizeTimeout = useRef(null);
   const eventLogger = (e, data) => {
     // let tmpCharts = props.charts;
     // tmpCharts[props.index].x = data.x;
@@ -20,7 +21,11 @@ function Window(props) {
   };
 
   const onStart = (e) => {
+    e.preventDefault();
     let elems = document.getElementsByClassName("react-draggable");
+    if (props.modifiedChartOptions.pivotCharts) {
+      props.handlePivot(props.index);
+    }
     for (let i = 0; i < elems.length; i++) {
       elems[i].style.zIndex = 10;
       e.currentTarget.style.zIndex = 12;
@@ -41,13 +46,19 @@ function Window(props) {
     }
   }, []);
   useEffect(() => {
-    setSpecification((prev) => {
-      return {
-        ...prev,
-        width: parseInt(width) - 300,
-        height: parseInt(height) - 200,
-      };
-    });
+    if (resizeTimeout.current) {
+      clearTimeout(resizeTimeout.current);
+    }
+
+    resizeTimeout.current = setTimeout(() => {
+      setSpecification((prev) => {
+        return {
+          ...prev,
+          width: parseInt(width) - 200,
+          height: parseInt(height) - 200,
+        };
+      });
+    }, 100);
   }, [width, height]);
   const startTimer = () => {
     setStartTime(performance.now());
@@ -76,7 +87,6 @@ function Window(props) {
           x: props.charts[props.index].x,
           y: props.charts[props.index].y,
         }}
-        onStart={onStart.bind(this)}
         onStop={eventLogger}
       >
         <Box
@@ -104,7 +114,7 @@ function Window(props) {
               color="white"
               width="full"
               fontWeight="bold"
-              bg="blue.800"
+              bg={props.specification.pivotThis ? "teal.800" : "blue.800"}
               height="full"
               position="relative"
             >
@@ -117,7 +127,7 @@ function Window(props) {
                 onTouchStart={() => props.handleDelete(props.index)}
                 onClick={() => props.handleDelete(props.index)}
               />
-              {props.modifiedChartOptions.pivotCharts ? (
+              {/* {props.modifiedChartOptions.pivotCharts ? (
                 <Checkbox
                   isChecked={props.specification.pivotThis}
                   onChange={() => {
@@ -129,7 +139,7 @@ function Window(props) {
                 >
                   Pivot
                 </Checkbox>
-              ) : null}
+              ) : null} */}
 
               {specification.title}
             </Box>
