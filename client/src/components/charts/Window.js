@@ -127,19 +127,6 @@ function Window(props) {
                 onTouchStart={() => props.handleDelete(props.index)}
                 onClick={() => props.handleDelete(props.index)}
               />
-              {/* {props.modifiedChartOptions.pivotCharts ? (
-                <Checkbox
-                  isChecked={props.specification.pivotThis}
-                  onChange={() => {
-                    props.handlePivot(props.index);
-                  }}
-                  position="absolute"
-                  right="0"
-                  mt={1}
-                >
-                  Pivot
-                </Checkbox>
-              ) : null} */}
 
               {specification.title}
             </Box>

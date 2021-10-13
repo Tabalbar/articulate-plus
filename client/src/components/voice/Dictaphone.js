@@ -60,7 +60,11 @@ const Dictaphone = ({
           (command.includes("where") ||
             command.includes("see") ||
             command.includes("show") ||
-            command.includes("what")) &&
+            command.includes("what") ||
+            (command.includes("make") &&
+              (command.includes("these") ||
+                command.includes("this") ||
+                command.includes("those")))) &&
           !mute
         )
       ) {
@@ -117,7 +121,11 @@ const Dictaphone = ({
       (command.includes("where") ||
         command.includes("see") ||
         command.includes("show") ||
-        command.includes("what")) &&
+        command.includes("what") ||
+        (command.includes("make") &&
+          (command.includes("these") ||
+            command.includes("this") ||
+            command.includes("those")))) &&
       !mute
     ) {
       createCharts(command);
