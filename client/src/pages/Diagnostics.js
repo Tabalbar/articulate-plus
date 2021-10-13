@@ -299,7 +299,6 @@ function makeCount(charts, chartMsg) {
   };
 
   for (let i = 0; i < charts.length; i++) {
-    console.log(charts[i]);
     if (charts[i].chartSelection.includes("explicit_point")) {
       chosenCharts.explicit++;
     }
