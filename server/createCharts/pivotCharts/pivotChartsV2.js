@@ -26,7 +26,8 @@ module.exports = (charts, chartMsg, options) => {
       markTypeToUse = extractedMarkType;
     }
 
-    //Replace attributes
+    //Replace attributes //Had to comment because filters have same name as attributes
+    //IE: very low diabetes rate has the word diabetes in it.
     // if (extractedHeaders.length == 0) {
     for (let j = 0; j < defaultHeader.length; j++) {
       headersToUse.push(defaultHeader[j]);
@@ -52,6 +53,13 @@ module.exports = (charts, chartMsg, options) => {
     const oldCommand = chartMsg.command;
     chartMsg.command = buildCommand(markTypeToUse, headersToUse, filtersToUse);
     let pivotedCharts = createCharts(markTypeToUse, chartMsg, options);
+    console.log(
+      markTypeToUse,
+      extractedHeaders,
+      extractedFilters,
+      chartMsg.command
+    );
+
     chartMsg.command = oldCommand;
 
     for (let j = 0; j < pivotedCharts.length; j++) {
@@ -143,6 +151,22 @@ function extractInfoFromChart(chart, chartMsg) {
         j++
       ) {
         defaultFilters.push(chart.layer[1].transform[i].filter.oneOf[j]);
+      }
+    }
+  } else if (chart.mark.hasOwnProperty("type")) {
+    defaultMarkType = chart.mark.type;
+    if (findType(chart.encoding.x.field, chartMsg.data) == "nominal") {
+      defaultHeader.push(chart.encoding.x.field);
+    } else if (findType(chart.encoding.y.field, chartMsg.data) == "nominal") {
+      defaultHeader.push(chart.encoding.x.field);
+    } else if (
+      findType(chart.encoding.color.field, chartMsg.data) == "nominal"
+    ) {
+      defaultHeader.push(chart.encoding.x.field);
+    }
+    for (let i = 0; i < chart.transform.length; i++) {
+      for (let j = 0; j < chart.transform[i].filter.oneOf.length; j++) {
+        defaultFilters.push(chart.transform[i].filter.oneOf[j]);
       }
     }
   } else {

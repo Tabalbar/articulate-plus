@@ -97,7 +97,7 @@ function Window(props) {
           boxShadow="2xl"
           ref={ref}
           id={props.id}
-          borderColor="black"
+          borderColor={props.specification.pivotThis ? "teal" : "black"}
           borderRadius="sm"
           borderTopRadius="sm"
           resize="both"
@@ -114,7 +114,7 @@ function Window(props) {
               color="white"
               width="full"
               fontWeight="bold"
-              bg={props.specification.pivotThis ? "teal.800" : "blue.800"}
+              bg={props.specification.pivotThis ? "teal.600" : "blue.800"}
               height="full"
               position="relative"
             >

@@ -299,6 +299,7 @@ function makeCount(charts, chartMsg) {
   };
 
   for (let i = 0; i < charts.length; i++) {
+    console.log(charts[i]);
     if (charts[i].chartSelection.includes("explicit_point")) {
       chosenCharts.explicit++;
     }
@@ -316,6 +317,7 @@ function makeCount(charts, chartMsg) {
     }
   }
   for (let i = 0; i < chartMsg.charts.length; i++) {
+    console.log(chartMsg.charts[i]);
     if (chartMsg.charts[i].chartSelection.includes("explicit_point")) {
       total.explicit++;
     }
@@ -332,12 +334,6 @@ function makeCount(charts, chartMsg) {
       total.random++;
     }
   }
-
-  total.explicit += chosenCharts.explicit;
-  total.mainAI += chosenCharts.mainAI;
-  total.mainAIOverhearing += chosenCharts.mainAIOverhearing;
-  total.pivot += chosenCharts.pivot;
-  total.random += chosenCharts.random;
 
   return { chosenCharts: chosenCharts, total: total };
 }

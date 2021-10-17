@@ -54,9 +54,9 @@ module.exports = (chartMsg) => {
         chartMsg.pivotChart[j] = "";
         break;
       }
-      if (chartMsg.pivotChart[i] !== "") {
-        chartMsg.pivotChart[i].chartSelection = "pivot_point";
-      }
+    }
+    if (chartMsg.pivotChart[i] !== "") {
+      chartMsg.pivotChart[i].chartSelection = "pivot_point";
     }
   }
 
