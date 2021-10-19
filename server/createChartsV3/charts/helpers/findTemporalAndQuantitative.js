@@ -7,13 +7,11 @@ module.exports = (chartMsg, extractedHeaders, options) => {
   for (let i = 0; i < extractedHeaders.length; i++) {
     if (findType(extractedHeaders[i], chartMsg.data) == "temporal") {
       temporalFound = true;
-      switchHeaders(extractedHeaders, 0, i);
     }
   }
   for (let i = 0; i < extractedHeaders.length; i++) {
     if (findType(extractedHeaders[i], chartMsg.data) == "quantitative") {
       quantitativeFound = true;
-      switchHeaders(extractedHeaders, 1, i);
     }
   }
   if (!temporalFound) {
@@ -21,7 +19,6 @@ module.exports = (chartMsg, extractedHeaders, options) => {
       if (findType(chartMsg.attributes[i], chartMsg.data) == "temporal") {
         temporalFound = true;
         extractedHeaders.unshift(chartMsg.attributes[i]);
-        switchHeaders(extractedHeaders, 0, 0);
       }
     }
   }
@@ -30,9 +27,18 @@ module.exports = (chartMsg, extractedHeaders, options) => {
       if (findType(chartMsg.attributes[i], chartMsg.data) == "quantitative") {
         quantitativeFound = true;
         extractedHeaders.unshift(chartMsg.attributes[i]);
-
-        switchHeaders(extractedHeaders, 1, 0);
       }
+    }
+  }
+
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    if (findType(extractedHeaders[i], chartMsg.data) == "quantitative") {
+      switchHeaders(extractedHeaders, 1, i);
+    }
+  }
+  for (let i = 0; i < extractedHeaders.length; i++) {
+    if (findType(extractedHeaders[i], chartMsg.data) == "temporal") {
+      switchHeaders(extractedHeaders, 0, i);
     }
   }
 

@@ -69,8 +69,7 @@ function App() {
     command: "", //Query
     attributes: [],
     data: "",
-    transcript:
-      "diabetes diabetes diabetes diabetes diabetes diabetes diabetes diabetes diabetes diabetes",
+    transcript: "",
     uncontrolledTranscript: "",
     datasetTitle: "",
     loggedTranscript: [], // {sentence: string, date: createDate()}
@@ -192,6 +191,14 @@ function App() {
     });
   };
   const textRef = useRef("");
+
+  const closeChosenCharts = () => {
+    for (let i = 0; i < charts.length; i++) {
+      charts[i].visible = false;
+      charts[i].pivotThis = false;
+    }
+    setForceUpdate((prev) => !prev);
+  };
   return (
     <>
       <ChakraProvider>
@@ -246,6 +253,7 @@ function App() {
           setChartMsg={setChartMsg}
           chartMsg={chartMsg}
           voiceMsg={voiceMsg}
+          closeChosenCharts={closeChosenCharts}
           mute={mute}
           startStudy={startStudy}
           setClippyImage={setClippyImage}

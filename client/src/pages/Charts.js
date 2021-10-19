@@ -32,13 +32,21 @@ function Charts({
     charts[index].visible = false;
     charts[index].timeClosed.push(createDate());
     charts[index].pivotThis = false;
+
     setForceUpdate((prev) => !prev);
   };
 
   const handlePivot = (index) => {
-    charts[index].pivotThis = !charts[index].pivotThis;
+    let tmpCharts = charts;
+    tmpCharts[index].pivotThis = !charts[index].pivotThis;
+
+    console.log(tmpCharts[index].pivotThis);
+    // charts[index].pivotThis = !charts[index].pivotThis;
+    setCharts(tmpCharts);
     setForceUpdate((prev) => !prev);
   };
+  console.log(charts);
+
   return (
     <>
       <ChartSelection

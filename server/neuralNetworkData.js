@@ -4,6 +4,7 @@ if (devPivotData) {
   module.exports = {
     queries: [
       { query: "show me the distribution of nominal", chartType: "bar" },
+      { query: "show me a chart of nominal", chartType: "bar" },
       { query: "show me a graph with nominal and nominal", chartType: "bar" },
       { query: "show me a chart of nominal and nominal", chartType: "heatmap" },
       {

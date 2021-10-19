@@ -113,7 +113,7 @@ module.exports = {
           if (
             filterFrequencyCount[i].filters[j].count >= options.filter.threshold
           ) {
-            extractedFilteredHeaders[headerMatrix[i][0]].push(
+            extractedFilteredHeaders[chartMsg.featureMatrix[i][0]].push(
               filterFrequencyCount[i].filters[j].filter
             );
           }

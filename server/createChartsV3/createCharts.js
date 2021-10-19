@@ -100,8 +100,9 @@ module.exports = (intent, chartMsg, options) => {
         chartMsg,
         extractedHeaders
       );
-      extractedHeaders = findTemporalAndQuantitativeObj.extractedHeaders;
+      console.log(extractedHeaders);
 
+      extractedHeaders = findTemporalAndQuantitativeObj.extractedHeaders;
       if (
         !findTemporalAndQuantitativeObj.temporalFound ||
         !findTemporalAndQuantitativeObj.quantitativeFound

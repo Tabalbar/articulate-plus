@@ -54,7 +54,7 @@ function Window(props) {
       setSpecification((prev) => {
         return {
           ...prev,
-          width: parseInt(width) - 200,
+          width: parseInt(width) - 250,
           height: parseInt(height) - 200,
         };
       });
@@ -116,6 +116,7 @@ function Window(props) {
               fontWeight="bold"
               bg={props.specification.pivotThis ? "teal.600" : "blue.800"}
               height="full"
+              zIndex="13"
               position="relative"
             >
               <IconButton
@@ -124,8 +125,14 @@ function Window(props) {
                 aria-label="Search database"
                 icon={<CloseIcon />}
                 mr={2}
-                onTouchStart={() => props.handleDelete(props.index)}
-                onClick={() => props.handleDelete(props.index)}
+                onTouchStart={(e) => {
+                  e.stopPropagation();
+                  props.handleDelete(props.index);
+                }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  props.handleDelete(props.index);
+                }}
               />
 
               {specification.title}
