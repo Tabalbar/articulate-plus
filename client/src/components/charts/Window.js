@@ -13,6 +13,7 @@ function Window(props) {
   const [chartData, setChartData] = useState(props.data);
   const [startTime, setStartTime] = useState(0);
   const resizeTimeout = useRef(null);
+
   const eventLogger = (e, data) => {
     // let tmpCharts = props.charts;
     // tmpCharts[props.index].x = data.x;
@@ -24,6 +25,7 @@ function Window(props) {
     e.preventDefault();
     let elems = document.getElementsByClassName("react-draggable");
     if (props.modifiedChartOptions.pivotCharts) {
+      console.log(e);
       props.handlePivot(props.index);
     }
     for (let i = 0; i < elems.length; i++) {
@@ -68,6 +70,7 @@ function Window(props) {
     timeDiff /= 1000;
     specification.timeSpentHovered += parseFloat(Number(timeDiff).toFixed(2));
   };
+
   useEffect(() => {
     let elem = document.getElementById(props.id);
     let elems = document.getElementsByClassName("react-draggable");
@@ -105,6 +108,8 @@ function Window(props) {
           height={500}
           onMouseOver={startTimer}
           onMouseLeave={endTimer}
+          onMouse
+          onTouchStart={(e) => onStart(e)}
           onClick={(e) => onStart(e)}
           className="react-draggable"
         >
