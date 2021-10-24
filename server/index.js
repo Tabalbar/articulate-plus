@@ -94,6 +94,7 @@ const chartOptions = require("./createCharts/explicit/chartOptions");
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg;
   let options = req.body.modifiedChartOptions;
+  let chosenCharts = req.body.charts;
   let pivotTheseCharts = req.body.pivotTheseCharts;
   //Remove stop words and change known synonyms
 
@@ -193,7 +194,7 @@ app.post("/createCharts", async (req, res) => {
       chartMsg.modifiedChart = "";
     }
   }
-  CompareCharts(chartMsg);
+  CompareCharts(chartMsg, options, chosenCharts);
 
   chartMsg.mainAICount = countHeaderFrequency(
     chartMsg.transcript,

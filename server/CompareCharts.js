@@ -1,4 +1,4 @@
-module.exports = (chartMsg) => {
+module.exports = (chartMsg, options, chosenCharts) => {
   for (let i = 0; i < chartMsg.explicitChart.length; i++) {
     if (chartMsg.explicitChart[i] !== "") {
       chartMsg.explicitChart[i].chartSelection = "explicit_point";
@@ -23,6 +23,10 @@ module.exports = (chartMsg) => {
             " mainAIOverhearing_point";
         }
       }
+      chartMsg.explicitChart[i] = checkIfChartsAlreadyChosen(
+        chartMsg.explicitChart[i],
+        chosenCharts
+      );
     }
   }
 
@@ -39,6 +43,10 @@ module.exports = (chartMsg) => {
           chartMsg.mainAI[i].chartSelection += " mainAIOverhearing_point";
         }
       }
+      chartMsg.mainAI[i] = checkIfChartsAlreadyChosen(
+        chartMsg.mainAI[i],
+        chosenCharts
+      );
     }
   }
 
@@ -46,6 +54,10 @@ module.exports = (chartMsg) => {
     if (chartMsg.mainAIOverhearing[i] !== "") {
       chartMsg.mainAIOverhearing[i].chartSelection = "mainAIOverhearing_point";
     }
+    chartMsg.mainAIOverhearing[i] = checkIfChartsAlreadyChosen(
+      chartMsg.mainAIOverhearing[i],
+      chosenCharts
+    );
   }
 
   for (let i = 0; i < chartMsg.pivotChart.length; i++) {
@@ -58,17 +70,26 @@ module.exports = (chartMsg) => {
     if (chartMsg.pivotChart[i] !== "") {
       chartMsg.pivotChart[i].chartSelection = "pivot_point";
     }
+    chartMsg.pivotChart[i] = checkIfChartsAlreadyChosen(
+      chartMsg.pivotChart[i],
+      chosenCharts
+    );
   }
 
+  let tmpChartWindow = chartMsg.charts.slice(-options.randomCharts.chartWindow);
   for (let i = 0; i < chartMsg.randomCharts.length; i++) {
-    for (let j = 0; j < chartMsg.charts.length; j++) {
-      if (isChartsEqual(chartMsg.randomCharts[i], chartMsg.charts[j])) {
+    for (let j = 0; j < tmpChartWindow.length; j++) {
+      if (isChartsEqual(chartMsg.randomCharts[i], tmpChartWindow[j])) {
         chartMsg.randomCharts[i] = "";
       }
     }
     if (chartMsg.randomCharts[i] !== "") {
       chartMsg.randomCharts[i].chartSelection = "random_point";
     }
+    chartMsg.randomCharts[i] = checkIfChartsAlreadyChosen(
+      chartMsg.randomCharts[i],
+      chosenCharts
+    );
   }
 };
 
@@ -95,4 +116,13 @@ function isChartsEqual(chartOne, chartTwo) {
   } else {
     return false;
   }
+}
+
+function checkIfChartsAlreadyChosen(chart, chosenCharts) {
+  for (let i = 0; i < chosenCharts.length; i++) {
+    if (isChartsEqual(chart, chosenCharts[i])) {
+      return "";
+    }
+  }
+  return chart;
 }

@@ -284,11 +284,11 @@ export default Diagnostics;
 
 function makeCount(charts, chartMsg) {
   let chosenCharts = {
-    explicit: 0,
-    mainAI: 0,
-    mainAIOverhearing: 0,
-    pivot: 0,
-    random: 0,
+    explicit: { count: 0, id: [] },
+    mainAI: { count: 0, id: [] },
+    mainAIOverhearing: { count: 0, id: [] },
+    pivot: { count: 0, id: [] },
+    random: { count: 0, id: [] },
   };
   let total = {
     explicit: 0,
@@ -299,25 +299,28 @@ function makeCount(charts, chartMsg) {
   };
 
   for (let i = 0; i < charts.length; i++) {
-    console.log(charts[i]);
     if (charts[i].chartSelection.includes("explicit_point")) {
-      chosenCharts.explicit++;
+      chosenCharts.explicit.count++;
+      chosenCharts.explicit.id.push(charts[i].id);
     }
     if (charts[i].chartSelection.includes("mainAI_point")) {
-      chosenCharts.mainAI++;
+      chosenCharts.mainAI.count++;
+      chosenCharts.mainAI.id.push(charts[i].id);
     }
     if (charts[i].chartSelection.includes("mainAIOverhearing_point")) {
-      chosenCharts.mainAIOverhearing++;
+      chosenCharts.mainAIOverhearing.count++;
+      chosenCharts.mainAIOverhearing.id.push(charts[i].id);
     }
     if (charts[i].chartSelection.includes("pivot_point")) {
-      chosenCharts.pivot++;
+      chosenCharts.pivot.count++;
+      chosenCharts.pivot.id.push(charts[i].id);
     }
     if (charts[i].chartSelection.includes("random_point")) {
-      chosenCharts.random++;
+      chosenCharts.random.count++;
+      chosenCharts.random.id.push(charts[i].id);
     }
   }
   for (let i = 0; i < chartMsg.charts.length; i++) {
-    console.log(chartMsg.charts[i]);
     if (chartMsg.charts[i].chartSelection.includes("explicit_point")) {
       total.explicit++;
     }

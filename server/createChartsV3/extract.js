@@ -8,7 +8,10 @@ module.exports = {
     let doc = nlp(chartMsg.command);
     let extractedHeaders = [];
     for (let i = 0; i < chartMsg.attributes.length; i++) {
-      if (doc.has(chartMsg.attributes[i].toLowerCase())) {
+      if (
+        doc.has(chartMsg.attributes[i].toLowerCase()) ||
+        doc.has(chartMsg.attributes[i].toLowerCase() + "s")
+      ) {
         extractedHeaders.push(chartMsg.attributes[i]);
       }
     }

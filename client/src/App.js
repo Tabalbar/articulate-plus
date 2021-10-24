@@ -53,6 +53,7 @@ function App() {
       randomCharts: {
         toggle: true,
         minutes: 10,
+        chartWindow: 10,
       },
       threshold: 3,
       filter: {

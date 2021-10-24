@@ -105,7 +105,24 @@ function AttributeContainer({
         ...prev,
         randomCharts: {
           toggle: true,
+          chartWindow: prev.randomCharts.chartWindow,
           minutes: parseInt(numMinutes),
+        },
+      };
+    });
+  };
+
+  const handleRandomChartWindow = (e) => {
+    e.preventDefault();
+    let numWindow = e.target.value;
+
+    setModifiedChartOptions((prev) => {
+      return {
+        ...prev,
+        randomCharts: {
+          toggle: true,
+          minutes: prev.randomCharts.minutes,
+          chartWindow: parseInt(numWindow),
         },
       };
     });
@@ -297,6 +314,16 @@ function AttributeContainer({
                           type="number"
                           value={modifiedChartOptions.randomCharts.minutes}
                           onChange={handleRandomChartsMinutes}
+                        />
+                      </>
+                    ) : null}
+                    {modifiedChartOptions.randomCharts.toggle ? (
+                      <>
+                        Window:
+                        <Input
+                          type="number"
+                          value={modifiedChartOptions.randomCharts.chartWindow}
+                          onChange={handleRandomChartWindow}
                         />
                       </>
                     ) : null}

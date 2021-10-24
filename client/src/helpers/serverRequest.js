@@ -31,6 +31,7 @@ export async function serverRequest(
       chartMsg,
       modifiedChartOptions,
       pivotTheseCharts,
+      charts,
     }),
     headers: {
       "Content-Type": "application/json",
