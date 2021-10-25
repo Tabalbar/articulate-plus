@@ -14,6 +14,8 @@ function Window(props) {
   const [startTime, setStartTime] = useState(0);
   const resizeTimeout = useRef(null);
 
+  const [dragging, setDragging] = useState(false);
+
   const eventLogger = (e, data) => {
     // let tmpCharts = props.charts;
     // tmpCharts[props.index].x = data.x;
@@ -24,7 +26,7 @@ function Window(props) {
   const onStart = (e) => {
     e.preventDefault();
     let elems = document.getElementsByClassName("react-draggable");
-    if (props.modifiedChartOptions.pivotCharts) {
+    if (props.modifiedChartOptions.pivotCharts && !dragging) {
       console.log(e);
       props.handlePivot(props.index);
     }
@@ -79,6 +81,7 @@ function Window(props) {
     }
     elem.style.zIndex = 13;
   }, []);
+  console.log(dragging);
   return (
     <>
       <Draggable
@@ -91,6 +94,12 @@ function Window(props) {
           y: props.charts[props.index].y,
         }}
         onStop={eventLogger}
+        onDrag={() => setDragging(true)}
+        onStop={() =>
+          setTimeout(() => {
+            setDragging(false);
+          }, 500)
+        }
       >
         <Box
           position="absolute"
@@ -108,7 +117,6 @@ function Window(props) {
           height={500}
           onMouseOver={startTimer}
           onMouseLeave={endTimer}
-          onMouse
           onTouchStart={(e) => onStart(e)}
           onClick={(e) => onStart(e)}
           className="react-draggable"
