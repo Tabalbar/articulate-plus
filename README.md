@@ -6,18 +6,22 @@
 
 # Installation
 
-Install dependencies
+### Install dependencies
 
 `cd Articulate-`
+
 `yarn`
+
 `cd client`
+
 `yarn`
 
-How to start
+## How to start
 
 `cd Articulate-`
+
 `yarn dev`
 
-Covid Data
+## Covid Data
 
 In the project directory, there is a file named "Covid-19.csv"
