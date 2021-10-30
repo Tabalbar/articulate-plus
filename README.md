@@ -9,21 +9,32 @@
 ### Install dependencies
 
 ```console 
-foo@bar:~$cd Articulate-
+foo@bar:~$ cd Articulate-
 ```
 
-`yarn`
+```console 
+foo@bar:~$ yarn
+```
 
-`cd client`
+```console 
+foo@bar:~$ cd client
+```
 
-`yarn`
+```console 
+foo@bar:~$ yarn
+```
 
 ## How to start
 
-`cd Articulate-`
+```console 
+foo@bar:~$ cd Articulate-
+```
 
-`yarn dev`
+```console 
+foo@bar:~$ yarn dev
+```
 
 ## Covid Data
 
-In the project directory, there is a file named "Covid-19.csv"
+In the project directory, there is a file named "Covid-19.csv." 
+This will be the test dataset to load into Articulate.
