@@ -8,7 +8,7 @@
 
 ### Install dependencies
 
-`cd Articulate-`
+` console foo@bar:~$cd Articulate-`
 
 `yarn`
 
