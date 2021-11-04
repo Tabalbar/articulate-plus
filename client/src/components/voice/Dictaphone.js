@@ -16,6 +16,7 @@ import createDate from "../../helpers/createDate";
 
 import attentiveImage from "../../images/attentive.gif";
 import idleImage from "../../images/idle.gif";
+import talkingImage from "../../images/talking.gif";
 
 /**
  * Uses react-speech-recognition API that uses the browser to translate
@@ -34,6 +35,8 @@ const Dictaphone = ({
   setClippyImage,
   startStudy,
   closeChosenCharts,
+  setVoiceMsg,
+  setShowTooltip,
 }) => {
   const [listening, setListening] = useState(false);
   const [command, setCommand] = useState("");
@@ -44,7 +47,7 @@ const Dictaphone = ({
       command: "*", // '*' means listen to everything and let useEffect below handle
       callback: (message) => {
         setListening(true); // Currently not used
-        setCommand(message); // set state for command to query
+        setCommand(message.toLowerCase()); // set state for command to query
         setChartMsg((prev) => {
           return { ...prev, command: message };
         });
@@ -82,6 +85,15 @@ const Dictaphone = ({
     //Check if words were actually spoken
     if (command === "") {
       return;
+    }
+
+    if (command.includes("hi") || command.includes("hello")) {
+      setVoiceMsg("Hi, nice to meet you!");
+      setShowTooltip(true);
+      setTimeout(() => {
+        setClippyImage(idleImage);
+      }, 3000);
+      setClippyImage(talkingImage);
     }
 
     //Set state for message to send to node service

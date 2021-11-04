@@ -204,7 +204,7 @@ function App() {
     <>
       <ChakraProvider>
         <div style={{ display: chartsPage ? null : "None" }}>
-          <Input
+          {/* <Input
             position="absolute"
             ml="40rem"
             bg="white"
@@ -219,7 +219,7 @@ function App() {
             onClick={() => createCharts(textRef.current.value)}
           >
             Test
-          </Button>
+          </Button> */}
           <ArtyContainer
             clippyImage={clippyImage}
             handleMute={handleMute}
@@ -258,6 +258,8 @@ function App() {
           mute={mute}
           startStudy={startStudy}
           setClippyImage={setClippyImage}
+          setShowTooltip={setShowTooltip}
+          setVoiceMsg={setVoiceMsg}
         />
         <Box position="absolute" top="0" right="0">
           <Button onClick={() => setChartsPage((prev) => !prev)}>
