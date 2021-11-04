@@ -62,7 +62,11 @@ const Dictaphone = ({
             command.includes("see") ||
             command.includes("show") ||
             command.includes("what") ||
-            (command.includes("make") &&
+            command.includes("make") ||
+            ((command.includes("make") ||
+              command.includes("modify") ||
+              command.includes("pivot") ||
+              command.includes("change")) &&
               (command.includes("these") ||
                 command.includes("this") ||
                 command.includes("those")))) &&
@@ -126,7 +130,11 @@ const Dictaphone = ({
         command.includes("see") ||
         command.includes("show") ||
         command.includes("what") ||
-        (command.includes("make") &&
+        command.includes("make") ||
+        ((command.includes("make") ||
+          command.includes("modify") ||
+          command.includes("pivot") ||
+          command.includes("change")) &&
           (command.includes("these") ||
             command.includes("this") ||
             command.includes("those")))) &&
