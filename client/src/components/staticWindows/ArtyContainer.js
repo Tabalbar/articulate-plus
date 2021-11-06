@@ -74,6 +74,8 @@ function ArtyContainer({
                   bg="teal.400"
                   color="black"
                   onClick={handleMute}
+                  onTouchStart={handleMute}
+
                 >
                   Wake
                 </Button>

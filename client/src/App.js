@@ -59,7 +59,7 @@ function App() {
       filter: {
         toggle: true,
         pastSentences: 20,
-        threshold: 5,
+        threshold: 3,
       },
       pivotCharts: true,
     }
