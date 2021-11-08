@@ -94,7 +94,7 @@ const chartOptions = require("./createCharts/explicit/chartOptions");
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg;
   let options = req.body.modifiedChartOptions;
-  let chosenCharts = req.body.charts;
+  let chosenCharts = req.body.selectedCharts;
   let pivotTheseCharts = req.body.pivotTheseCharts;
   //Remove stop words and change known synonyms
 
@@ -112,6 +112,7 @@ app.post("/createCharts", async (req, res) => {
    * Getting expicit mark type
    */
   let intent = getExplicitChartType(chartMsg.command);
+  console.log(intent);
   //Check if pivot
   if (chartMsg.command == "random") {
     let intent = chartOptions[Math.floor(Math.random() * 5)];

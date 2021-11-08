@@ -159,10 +159,10 @@ function extractInfoFromChart(chart, chartMsg) {
       defaultHeader.push(chart.encoding.x.field);
     } else if (findType(chart.encoding.y.field, chartMsg.data) == "nominal") {
       defaultHeader.push(chart.encoding.x.field);
-    } else if (
-      findType(chart.encoding.color.field, chartMsg.data) == "nominal"
-    ) {
-      defaultHeader.push(chart.encoding.x.field);
+    } else if (chart.encoding.hasOwnProperty("color")) {
+      if (findType(chart.encoding.color.field, chartMsg.data) == "nominal") {
+        defaultHeader.push(chart.encoding.x.field);
+      }
     }
     for (let i = 0; i < chart.transform.length; i++) {
       for (let j = 0; j < chart.transform[i].filter.oneOf.length; j++) {

@@ -54,8 +54,13 @@ module.exports = (headers, data) => {
       for (let i = 0; i < words.length; i++) {
         let doc = nlp(words[i]);
         if (doc.has("#Noun")) {
-          synonyms.push(words[i]);
-          synonyms.push(thesaurus.find(words[i]));
+          let synonymWords = thesaurus.find(words[i]);
+          for (let j = 0; j < synonymWords.length; j++) {
+            if (synonymWords[j] === "make") {
+              synonymWords.splice(j, 1);
+            }
+          }
+          synonyms.push(synonymWords);
         } else if (i == 0) {
           synonyms.push(words[i]);
           synonyms.push(thesaurus.find(words[i]));

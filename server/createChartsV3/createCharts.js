@@ -158,6 +158,7 @@ module.exports = (intent, chartMsg, options) => {
       }
       break;
     case "heatmap":
+      console.log(extractedHeaders);
       extractedHeaders = removeOtherTypes(
         chartMsg,
         extractedHeaders,
@@ -169,6 +170,10 @@ module.exports = (intent, chartMsg, options) => {
           extractedHeaders,
           "quantitative"
         );
+      }
+      extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "map");
+      if (extractedHeaders.length < 2) {
+        break;
       }
       for (let i = 1; i < extractedHeaders.length; i++) {
         charts.push(

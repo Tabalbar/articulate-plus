@@ -66,6 +66,10 @@ const Dictaphone = ({
             command.includes("show") ||
             command.includes("what") ||
             command.includes("make") ||
+            command.includes("already") ||
+            command.includes("rt") ||
+            command.includes("change") ||
+            command.includes("filter") ||
             ((command.includes("make") ||
               command.includes("modify") ||
               command.includes("pivot") ||
@@ -85,15 +89,6 @@ const Dictaphone = ({
     //Check if words were actually spoken
     if (command === "") {
       return;
-    }
-
-    if (command.includes("hi") || command.includes("hello")) {
-      setVoiceMsg("Hi, nice to meet you!");
-      setShowTooltip(true);
-      setTimeout(() => {
-        setClippyImage(idleImage);
-      }, 3000);
-      setClippyImage(talkingImage);
     }
 
     //Set state for message to send to node service
@@ -143,6 +138,10 @@ const Dictaphone = ({
         command.includes("show") ||
         command.includes("what") ||
         command.includes("make") ||
+        command.includes("already") ||
+        command.includes("rt") ||
+        command.includes("change") ||
+        command.includes("filter") ||
         ((command.includes("make") ||
           command.includes("modify") ||
           command.includes("pivot") ||

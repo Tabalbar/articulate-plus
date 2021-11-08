@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 import "../../style.css";
 import { Box, VStack, Tooltip, Image, Button } from "@chakra-ui/react";
@@ -64,6 +64,7 @@ function ArtyContainer({
                   boxSize="10rem"
                   className="handle"
                   src={clippyImage}
+                  fallback={<Box boxSize="10rem" ml="3rem" />}
                   draggable="false"
                   userSelect="none"
                 />
@@ -75,7 +76,6 @@ function ArtyContainer({
                   color="black"
                   onClick={handleMute}
                   onTouchStart={handleMute}
-
                 >
                   Wake
                 </Button>

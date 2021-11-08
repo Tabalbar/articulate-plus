@@ -23,6 +23,12 @@ export async function serverRequest(
       pivotTheseCharts.push(charts[i]);
     }
   }
+  let selectedCharts = [];
+  for (let i = 0; i < charts.length; i++) {
+    if (charts[i].visible) {
+      selectedCharts.push(charts[i]);
+    }
+  }
 
   //API request
   const response = await fetch("/createCharts", {
@@ -31,7 +37,7 @@ export async function serverRequest(
       chartMsg,
       modifiedChartOptions,
       pivotTheseCharts,
-      charts,
+      selectedCharts,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -68,6 +74,7 @@ export async function serverRequest(
   for (let i = 0; i < tmpCharts.length; i++) {
     tmpCharts[i].pivotThis = false;
   }
+  // tmpCharts[1].highlight = true;
 
   //Put header frequency count into state
   setChartMsg((prev) => {
@@ -77,6 +84,7 @@ export async function serverRequest(
       mainAICount: tmpChartMsg.mainAICount,
       mainAIOverhearingCount: tmpChartMsg.mainAIOverhearingCount,
       total: tmpChartMsg.total,
+      errMsg: tmpChartMsg.errMsg,
     };
   });
 
@@ -85,7 +93,11 @@ export async function serverRequest(
   let assistantResponse;
 
   if (count == 0) {
-    assistantResponse = "I couldn't find any charts for you";
+    if (tmpChartMsg.errMsg.msg == "duplicate") {
+      assistantResponse = "The chart I made is already up here.";
+    } else {
+      assistantResponse = "I couldn't make any charts for you.";
+    }
   } else if (count == 1) {
     assistantResponse = "I have " + count.toString() + " chart for you.";
   } else {

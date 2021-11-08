@@ -81,7 +81,6 @@ function Window(props) {
     }
     elem.style.zIndex = 13;
   }, []);
-  console.log(dragging);
   return (
     <>
       <Draggable
@@ -105,11 +104,12 @@ function Window(props) {
           position="absolute"
           bg="white"
           overflow="auto"
-          border="1px"
           boxShadow="2xl"
           ref={ref}
           id={props.id}
-          borderColor={props.specification.pivotThis ? "teal" : "black"}
+          borderColor={props.specification.pivotThis ? "orange" : "black"}
+          // borderColor={props.specification.highlight ? "green" : "red"}
+          borderWidth="thin"
           borderRadius="sm"
           borderTopRadius="sm"
           resize="both"
@@ -127,7 +127,7 @@ function Window(props) {
               color="white"
               width="full"
               fontWeight="bold"
-              bg={props.specification.pivotThis ? "teal.600" : "blue.800"}
+              bg={props.specification.pivotThis ? "orange.300" : "blue.800"}
               height="full"
               zIndex="13"
               position="relative"

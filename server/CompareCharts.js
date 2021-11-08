@@ -25,7 +25,8 @@ module.exports = (chartMsg, options, chosenCharts) => {
       }
       chartMsg.explicitChart[i] = checkIfChartsAlreadyChosen(
         chartMsg.explicitChart[i],
-        chosenCharts
+        chosenCharts,
+        chartMsg
       );
     }
   }
@@ -45,7 +46,8 @@ module.exports = (chartMsg, options, chosenCharts) => {
       }
       chartMsg.mainAI[i] = checkIfChartsAlreadyChosen(
         chartMsg.mainAI[i],
-        chosenCharts
+        chosenCharts,
+        chartMsg
       );
     }
   }
@@ -56,7 +58,8 @@ module.exports = (chartMsg, options, chosenCharts) => {
     }
     chartMsg.mainAIOverhearing[i] = checkIfChartsAlreadyChosen(
       chartMsg.mainAIOverhearing[i],
-      chosenCharts
+      chosenCharts,
+      chartMsg
     );
   }
 
@@ -72,7 +75,8 @@ module.exports = (chartMsg, options, chosenCharts) => {
     }
     chartMsg.pivotChart[i] = checkIfChartsAlreadyChosen(
       chartMsg.pivotChart[i],
-      chosenCharts
+      chosenCharts,
+      chartMsg
     );
   }
 
@@ -88,7 +92,8 @@ module.exports = (chartMsg, options, chosenCharts) => {
     }
     chartMsg.randomCharts[i] = checkIfChartsAlreadyChosen(
       chartMsg.randomCharts[i],
-      chosenCharts
+      chosenCharts,
+      chartMsg
     );
   }
 };
@@ -118,9 +123,13 @@ function isChartsEqual(chartOne, chartTwo) {
   }
 }
 
-function checkIfChartsAlreadyChosen(chart, chosenCharts) {
+function checkIfChartsAlreadyChosen(chart, chosenCharts, chartMsg) {
   for (let i = 0; i < chosenCharts.length; i++) {
     if (isChartsEqual(chart, chosenCharts[i])) {
+      chartMsg.errMsg = {
+        msg: "duplicate",
+        id: chosenCharts[i].id,
+      };
       return "";
     }
   }

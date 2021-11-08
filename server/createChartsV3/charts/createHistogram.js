@@ -29,7 +29,6 @@ module.exports = (
   };
   chart.encoding.y = {
     aggregate: "count",
-    title: "Number of Counties",
   };
   chart = createTitle(chart, [extractedHeader], "bar", extractedFilteredValues);
   chart = createTransform(chart, chartMsg, extractedFilteredValues);
