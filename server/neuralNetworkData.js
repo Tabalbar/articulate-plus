@@ -21,6 +21,14 @@ if (devPivotData) {
         chartType: "line",
       },
       {
+        query: "where are the quantitative",
+        chartType: "line",
+      },
+      {
+        query: "show me the quantitative",
+        chartType: "line",
+      },
+      {
         query: "Show me the temporal over the year of nominal and quantitative",
         chartType: "line",
       },

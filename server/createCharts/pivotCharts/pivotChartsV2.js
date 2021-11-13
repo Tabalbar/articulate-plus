@@ -37,28 +37,19 @@ module.exports = (charts, chartMsg, options) => {
       headersToUse.push(extractedHeaders[j]);
     }
     // }
+    //add Filters
+    for (let j = 0; j < defaultFilters.length; j++) {
+      filtersToUse.push(defaultFilters[j]);
+    }
 
-    //Replace Filters
-    if (extractedFilters.length == 0) {
-      for (let j = 0; j < defaultFilters.length; j++) {
-        filtersToUse.push(defaultFilters[j]);
-      }
-    } else {
-      for (let j = 0; j < extractedFilters.length; j++) {
-        filtersToUse.push(extractedFilters[j]);
-      }
+    for (let j = 0; j < extractedFilters.length; j++) {
+      filtersToUse.push(extractedFilters[j]);
     }
 
     //Create command to use for createing charts but save old command to replace
     const oldCommand = chartMsg.command;
     chartMsg.command = buildCommand(markTypeToUse, headersToUse, filtersToUse);
     let pivotedCharts = createCharts(markTypeToUse, chartMsg, options);
-    console.log(
-      markTypeToUse,
-      extractedHeaders,
-      extractedFilters,
-      chartMsg.command
-    );
 
     chartMsg.command = oldCommand;
 
@@ -143,7 +134,7 @@ function extractInfoFromChart(chart, chartMsg) {
   if (chart.hasOwnProperty("layer")) {
     defaultMarkType = "map";
     defaultHeader.push(chart.layer[1].encoding.color.field);
-
+    console.log("lalala", defaultHeader);
     for (let i = 1; i < chart.layer[1].transform.length; i++) {
       for (
         let j = 0;
@@ -157,13 +148,16 @@ function extractInfoFromChart(chart, chartMsg) {
     defaultMarkType = chart.mark.type;
     if (findType(chart.encoding.x.field, chartMsg.data) == "nominal") {
       defaultHeader.push(chart.encoding.x.field);
-    } else if (findType(chart.encoding.y.field, chartMsg.data) == "nominal") {
-      defaultHeader.push(chart.encoding.x.field);
-    } else if (chart.encoding.hasOwnProperty("color")) {
+    }
+    if (findType(chart.encoding.y.field, chartMsg.data) == "nominal") {
+      defaultHeader.push(chart.encoding.y.field);
+    }
+    if (chart.encoding.hasOwnProperty("color")) {
       if (findType(chart.encoding.color.field, chartMsg.data) == "nominal") {
-        defaultHeader.push(chart.encoding.x.field);
+        defaultHeader.push(chart.encoding.color.field);
       }
     }
+
     for (let i = 0; i < chart.transform.length; i++) {
       for (let j = 0; j < chart.transform[i].filter.oneOf.length; j++) {
         defaultFilters.push(chart.transform[i].filter.oneOf[j]);
@@ -171,15 +165,25 @@ function extractInfoFromChart(chart, chartMsg) {
     }
   } else {
     defaultMarkType = chart.mark;
+    if (defaultMarkType == "rect") {
+      defaultMarkType = "heatmap";
+    }
     if (findType(chart.encoding.x.field, chartMsg.data) == "nominal") {
       defaultHeader.push(chart.encoding.x.field);
-    } else if (findType(chart.encoding.y.field, chartMsg.data) == "nominal") {
-      defaultHeader.push(chart.encoding.x.field);
-    } else if (
-      findType(chart.encoding.color.field, chartMsg.data) == "nominal"
-    ) {
-      defaultHeader.push(chart.encoding.x.field);
     }
+    if (chart.encoding.y.hasOwnProperty("field")) {
+      if (findType(chart.encoding.y.field, chartMsg.data) == "nominal") {
+        defaultHeader.push(chart.encoding.y.field);
+      }
+    }
+    if (chart.encoding.hasOwnProperty("color")) {
+      if (chart.encoding.color.hasOwnProperty("field")) {
+        if (findType(chart.encoding.color.field, chartMsg.data) == "nominal") {
+          defaultHeader.push(chart.encoding.color.field);
+        }
+      }
+    }
+
     for (let i = 0; i < chart.transform.length; i++) {
       for (let j = 0; j < chart.transform[i].filter.oneOf.length; j++) {
         defaultFilters.push(chart.transform[i].filter.oneOf[j]);

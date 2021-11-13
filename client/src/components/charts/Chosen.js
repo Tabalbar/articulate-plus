@@ -9,6 +9,7 @@ function ChosenCharts({
   handleDelete,
   modifiedChartOptions,
   handlePivot,
+  chartToHighlight,
 }) {
   return (
     <>
@@ -24,8 +25,9 @@ function ChosenCharts({
               setCharts={setCharts}
               charts={charts}
               handlePivot={handlePivot}
-              id={i}
+              id={chart.id}
               modifiedChartOptions={modifiedChartOptions}
+              chartToHighlight={chartToHighlight}
             />
           );
         } else {

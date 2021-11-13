@@ -78,6 +78,13 @@ function FileInput({
           useCovidDataset: true,
         };
       });
+    } else {
+      setModifiedChartOptions((prev) => {
+        return {
+          ...prev,
+          useCovidDataset: false,
+        };
+      });
     }
     if (file) {
       var reader = new FileReader();

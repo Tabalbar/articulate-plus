@@ -15,8 +15,7 @@ import { Box, Center } from "@chakra-ui/react";
 import createDate from "../../helpers/createDate";
 
 import attentiveImage from "../../images/attentive.gif";
-import idleImage from "../../images/idle.gif";
-import talkingImage from "../../images/talking.gif";
+import useInterval from "../../helpers/useInterval";
 
 /**
  * Uses react-speech-recognition API that uses the browser to translate
@@ -30,15 +29,13 @@ import talkingImage from "../../images/talking.gif";
 const Dictaphone = ({
   setChartMsg,
   createCharts,
-  chartMsg,
   mute,
   setClippyImage,
   startStudy,
   closeChosenCharts,
-  setVoiceMsg,
-  setShowTooltip,
+  modifiedChartOptions,
 }) => {
-  const [listening, setListening] = useState(false);
+  const [listening, setListening] = useState(true);
   const [command, setCommand] = useState("");
 
   //commands that the browser will listen to
@@ -46,7 +43,7 @@ const Dictaphone = ({
     {
       command: "*", // '*' means listen to everything and let useEffect below handle
       callback: (message) => {
-        setListening(true); // Currently not used
+        setClippyImage(attentiveImage);
         setCommand(message.toLowerCase()); // set state for command to query
         setChartMsg((prev) => {
           return { ...prev, command: message };
@@ -54,36 +51,6 @@ const Dictaphone = ({
       },
     },
   ];
-
-  useEffect(() => {
-    if (listening) {
-      setClippyImage(attentiveImage);
-    } else {
-      if (
-        !(
-          (command.includes("where") ||
-            command.includes("see") ||
-            command.includes("show") ||
-            command.includes("what") ||
-            command.includes("make") ||
-            command.includes("already") ||
-            command.includes("rt") ||
-            command.includes("change") ||
-            command.includes("filter") ||
-            ((command.includes("make") ||
-              command.includes("modify") ||
-              command.includes("pivot") ||
-              command.includes("change")) &&
-              (command.includes("these") ||
-                command.includes("this") ||
-                command.includes("those")))) &&
-          !mute
-        )
-      ) {
-        setClippyImage(idleImage);
-      }
-    }
-  }, [listening]);
 
   useEffect(() => {
     //Check if words were actually spoken
@@ -138,9 +105,9 @@ const Dictaphone = ({
         command.includes("show") ||
         command.includes("what") ||
         command.includes("make") ||
-        command.includes("already") ||
         command.includes("rt") ||
         command.includes("change") ||
+        command.includes("create") ||
         command.includes("filter") ||
         ((command.includes("make") ||
           command.includes("modify") ||
@@ -149,35 +116,38 @@ const Dictaphone = ({
           (command.includes("these") ||
             command.includes("this") ||
             command.includes("those")))) &&
-      !mute
+      !mute &&
+      listening
     ) {
+      setListening(false);
+
       createCharts(command);
+
+      setTimeout(() => {
+        setListening(true);
+      }, 8000);
     }
-    setListening(false);
   }, [command]);
 
-  //Currently not working
-  //todo find a way to have browser's voice sythensizer not listen to itself
+  //Create charts at a random interval
+  useInterval(() => {
+    if (modifiedChartOptions.randomCharts.toggle && startStudy) {
+      setListening(false);
+      createCharts("random");
+      setTimeout(() => {
+        setListening(true);
+      }, 8000);
+    }
+  }, modifiedChartOptions.randomCharts.minutes * 60 * 1000);
 
-  // useEffect(() => {
-  //   if (!listening) {
-  //     const timer = setTimeout(() => {
-  //       setListening(true);
-  //     }, 5000);
-  //     return () => {
-  //       clearTimeout(timer);
-  //     };
-  //   }
-  // }, [listening]);
-
-  //Supplay commands commands
+  //Supply commands
   const { transcript } = useSpeechRecognition({ commands });
 
   //Check if able to use browser's speech recognition
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null;
   } else {
-    if (startStudy) {
+    if (startStudy && listening) {
       SpeechRecognition.startListening({ continuous: true });
     }
   }

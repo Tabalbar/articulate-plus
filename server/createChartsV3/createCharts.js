@@ -10,6 +10,7 @@ const createMap = require("./charts/createMap");
 const removeOtherTypes = require("./charts/helpers/removeOtherTypes");
 const createHeatmap = require("./charts/createHeatmap");
 const createBar = require("./charts/createBar");
+const findQuantitativeAndSwitch = require("./charts/helpers/findQuantitativeAndSwitch");
 
 module.exports = (intent, chartMsg, options) => {
   //Varaibles that holds the count for overheadering
@@ -29,6 +30,7 @@ module.exports = (intent, chartMsg, options) => {
   );
   //Holds all charts
   let charts = [];
+  console.log(intent), extractedHeaders;
 
   switch (intent) {
     case "histogram":
@@ -46,13 +48,13 @@ module.exports = (intent, chartMsg, options) => {
       break;
     case "bar":
       if (!options.useCovidDataset) {
-        const findQuantitative = findAndRemoveOtherTypes(
+        const findQuantitative = findQuantitativeAndSwitch(
           chartMsg,
           extractedHeaders,
           "quantitative"
         );
+        console.log(findQuantitative);
         extractedHeaders = findQuantitative.extractedHeaders;
-
         if (!findQuantitative.typeFound) {
           for (let i = 0; i < extractedHeaders.length; i++) {
             charts.push(
@@ -96,6 +98,7 @@ module.exports = (intent, chartMsg, options) => {
       }
       break;
     case "line":
+      console.log(extractedHeaders);
       const findTemporalAndQuantitativeObj = findTemporalAndQuantitative(
         chartMsg,
         extractedHeaders

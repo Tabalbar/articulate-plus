@@ -24,6 +24,7 @@ function Charts({
   chooseChart,
   mute,
   modifiedChartOptions,
+  chartToHighlight,
 }) {
   //to Rerender when deleteing charts on chosen charts component
   const [, setForceUpdate] = useState(true);
@@ -59,6 +60,7 @@ function Charts({
         charts={charts}
         setCharts={setCharts}
         modifiedChartOptions={modifiedChartOptions}
+        chartToHighlight={chartToHighlight}
       />
     </>
   );

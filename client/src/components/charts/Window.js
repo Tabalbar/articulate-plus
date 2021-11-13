@@ -6,6 +6,7 @@ import { Box, IconButton, Checkbox } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 import { useResizeDetector } from "react-resize-detector";
 import processData from "../../helpers/processData";
+import { keyframes } from "@chakra-ui/system";
 
 function Window(props) {
   const { width, height, ref } = useResizeDetector();
@@ -13,6 +14,7 @@ function Window(props) {
   const [chartData, setChartData] = useState(props.data);
   const [startTime, setStartTime] = useState(0);
   const resizeTimeout = useRef(null);
+  const [highlight, setHighlight] = useState(false);
 
   const [dragging, setDragging] = useState(false);
 
@@ -35,6 +37,15 @@ function Window(props) {
       e.currentTarget.style.zIndex = 12;
     }
   };
+  useEffect(() => {
+    console.log(props.chartToHighlight, props.id);
+    if (props.chartToHighlight == props.id) {
+      setHighlight(true);
+    } else {
+      setHighlight(false);
+    }
+  }, [props.chartToHighlight]);
+  console.log(props.modifiedChartOptions.useCovidDataset);
   useEffect(() => {
     if (props.modifiedChartOptions.useCovidDataset == true) {
       if (
@@ -81,6 +92,22 @@ function Window(props) {
     }
     elem.style.zIndex = 13;
   }, []);
+
+  let pulse = keyframes`
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  50% {
+      -moz-box-shadow: 0 0 0 10px rgba(245, 229, 27, 1);
+      box-shadow: 0 0 0 30px rgba(245, 229, 27, 1);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(245, 229, 27, 1);
+      box-shadow: 0 0 0 0 rgba(245, 229, 27, 1);
+  }
+`;
+
   return (
     <>
       <Draggable
@@ -108,7 +135,6 @@ function Window(props) {
           ref={ref}
           id={props.id}
           borderColor={props.specification.pivotThis ? "orange" : "black"}
-          // borderColor={props.specification.highlight ? "green" : "red"}
           borderWidth="thin"
           borderRadius="sm"
           borderTopRadius="sm"
@@ -119,6 +145,7 @@ function Window(props) {
           onMouseLeave={endTimer}
           onTouchStart={(e) => onStart(e)}
           onClick={(e) => onStart(e)}
+          animation={highlight ? `${pulse} 2s infinite` : null}
           className="react-draggable"
         >
           <div className="handle" style={{ cursor: "move", width: "auto" }}>

@@ -59,15 +59,17 @@ function ArtyContainer({
                 bg="green.600"
                 hasArrow
               >
-                <Image
-                  ml={"3rem"}
-                  boxSize="10rem"
-                  className="handle"
-                  src={clippyImage}
-                  fallback={<Box boxSize="10rem" ml="3rem" />}
-                  draggable="false"
-                  userSelect="none"
-                />
+                <Box>
+                  <Image
+                    ml={"3rem"}
+                    boxSize="10rem"
+                    className="handle"
+                    src={clippyImage}
+                    fallback={<Box ml={"3rem"} boxSize="10rem" />}
+                    draggable="false"
+                    userSelect="none"
+                  />
+                </Box>
               </Tooltip>
               {mute ? (
                 <Button

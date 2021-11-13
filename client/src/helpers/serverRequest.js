@@ -1,3 +1,13 @@
+import {
+  duplicate,
+  noCharts,
+  oneChart,
+  twoCharts,
+  threeCharts,
+  fewCharts,
+} from "../components/voice/assistantVoiceOptions";
+import speakVoice from "../components/voice/speakVoice";
+
 /**
  * API request to Node Server for chart generation
  *
@@ -14,7 +24,8 @@ export async function serverRequest(
   modifiedChartOptions,
   setVoiceMsg,
   charts,
-  setCharts
+  setCharts,
+  setChartToHighlight
 ) {
   //Check charts to pivot
   let pivotTheseCharts = [];
@@ -84,7 +95,6 @@ export async function serverRequest(
       mainAICount: tmpChartMsg.mainAICount,
       mainAIOverhearingCount: tmpChartMsg.mainAIOverhearingCount,
       total: tmpChartMsg.total,
-      errMsg: tmpChartMsg.errMsg,
     };
   });
 
@@ -94,17 +104,37 @@ export async function serverRequest(
 
   if (count == 0) {
     if (tmpChartMsg.errMsg.msg == "duplicate") {
-      assistantResponse = "The chart I made is already up here.";
+      assistantResponse =
+        duplicate[Math.floor(Math.random() * duplicate.length)];
+      setChartToHighlight(tmpChartMsg.errMsg.id);
+      setTimeout(() => {
+        setChartToHighlight(null);
+      }, 4000);
     } else {
-      assistantResponse = "I couldn't make any charts for you.";
+      if (chartMsg.command !== "random") {
+        assistantResponse =
+          noCharts[Math.floor(Math.random() * noCharts.length)];
+      } else {
+        assistantResponse = false;
+      }
     }
   } else if (count == 1) {
-    assistantResponse = "I have " + count.toString() + " chart for you.";
+    assistantResponse = oneChart[Math.floor(Math.random() * oneChart.length)];
+  } else if (count == 2) {
+    assistantResponse = twoCharts[Math.floor(Math.random() * twoCharts.length)];
+  } else if (count == 3) {
+    assistantResponse =
+      threeCharts[Math.floor(Math.random() * threeCharts.length)];
   } else {
-    assistantResponse = "I have " + count.toString() + " charts for you.";
+    assistantResponse = fewCharts[Math.floor(Math.random() * fewCharts.length)];
   }
   //Voice syntheiszer
-  setVoiceMsg(assistantResponse);
+  if (assistantResponse) {
+    setTimeout(() => {
+      speakVoice(assistantResponse.soundFile);
+      setVoiceMsg(assistantResponse.msg);
+    }, 1000);
+  }
 
   return;
 }
