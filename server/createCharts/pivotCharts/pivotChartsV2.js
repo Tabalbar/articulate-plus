@@ -134,7 +134,6 @@ function extractInfoFromChart(chart, chartMsg) {
   if (chart.hasOwnProperty("layer")) {
     defaultMarkType = "map";
     defaultHeader.push(chart.layer[1].encoding.color.field);
-    console.log("lalala", defaultHeader);
     for (let i = 1; i < chart.layer[1].transform.length; i++) {
       for (
         let j = 0;

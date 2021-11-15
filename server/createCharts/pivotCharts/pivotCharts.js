@@ -332,7 +332,6 @@ function createNewTitle(
       chartTitle += filteredTitles[i] + " and ";
     }
   }
-  console.log(filteredHeaderLength);
   return chartTitle;
 }
 

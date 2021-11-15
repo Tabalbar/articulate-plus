@@ -10,9 +10,7 @@ function ArtyContainer({
   mute,
   showTooltip,
 }) {
-  const eventLogger = (e, data) => {
-    console.log(e);
-  };
+  const eventLogger = (e, data) => {};
 
   const onStart = (e) => {
     let elems = document.getElementsByClassName("react-draggable");

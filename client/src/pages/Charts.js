@@ -39,7 +39,6 @@ function Charts({
     let tmpCharts = charts;
     tmpCharts[index].pivotThis = !charts[index].pivotThis;
 
-    console.log(tmpCharts[index].pivotThis);
     // charts[index].pivotThis = !charts[index].pivotThis;
     setCharts(tmpCharts);
     setForceUpdate((prev) => !prev);

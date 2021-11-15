@@ -29,7 +29,6 @@ function Window(props) {
     e.preventDefault();
     let elems = document.getElementsByClassName("react-draggable");
     if (props.modifiedChartOptions.pivotCharts && !dragging) {
-      console.log(e);
       props.handlePivot(props.index);
     }
     for (let i = 0; i < elems.length; i++) {
@@ -38,14 +37,13 @@ function Window(props) {
     }
   };
   useEffect(() => {
-    console.log(props.chartToHighlight, props.id);
     if (props.chartToHighlight == props.id) {
       setHighlight(true);
     } else {
       setHighlight(false);
     }
   }, [props.chartToHighlight]);
-  console.log(props.modifiedChartOptions.useCovidDataset);
+
   useEffect(() => {
     if (props.modifiedChartOptions.useCovidDataset == true) {
       if (

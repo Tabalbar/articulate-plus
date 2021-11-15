@@ -104,7 +104,6 @@ function App() {
       map: [],
     },
   });
-  console.log(chartMsg.mainAICount);
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 

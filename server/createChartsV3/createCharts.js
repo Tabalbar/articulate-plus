@@ -16,7 +16,6 @@ module.exports = (intent, chartMsg, options) => {
   //Varaibles that holds the count for overheadering
   const headerFrequencyCount = countHeaderFrequency(chartMsg, options);
   const filterFrequencyCount = countFilterFrequency(chartMsg, options);
-  console.log(headerFrequencyCount);
   //Varaibles of extracted data from command && overhearing
   let extractedHeaders = extract.headers(
     chartMsg,
@@ -30,7 +29,6 @@ module.exports = (intent, chartMsg, options) => {
   );
   //Holds all charts
   let charts = [];
-  console.log(intent), extractedHeaders;
 
   switch (intent) {
     case "histogram":
@@ -53,7 +51,6 @@ module.exports = (intent, chartMsg, options) => {
           extractedHeaders,
           "quantitative"
         );
-        console.log(findQuantitative);
         extractedHeaders = findQuantitative.extractedHeaders;
         if (!findQuantitative.typeFound) {
           for (let i = 0; i < extractedHeaders.length; i++) {
@@ -98,12 +95,10 @@ module.exports = (intent, chartMsg, options) => {
       }
       break;
     case "line":
-      console.log(extractedHeaders);
       const findTemporalAndQuantitativeObj = findTemporalAndQuantitative(
         chartMsg,
         extractedHeaders
       );
-      console.log(extractedHeaders);
 
       extractedHeaders = findTemporalAndQuantitativeObj.extractedHeaders;
       if (
@@ -161,7 +156,6 @@ module.exports = (intent, chartMsg, options) => {
       }
       break;
     case "heatmap":
-      console.log(extractedHeaders);
       extractedHeaders = removeOtherTypes(
         chartMsg,
         extractedHeaders,

@@ -112,7 +112,6 @@ app.post("/createCharts", async (req, res) => {
    * Getting expicit mark type
    */
   let intent = getExplicitChartType(chartMsg.command);
-  console.log(intent);
   //Check if pivot
   if (chartMsg.command == "random") {
     let intent = chartOptions[Math.floor(Math.random() * 5)];

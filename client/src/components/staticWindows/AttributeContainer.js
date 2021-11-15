@@ -28,9 +28,7 @@ function AttributeContainer({
   startStudy,
   setStartStudy,
 }) {
-  const eventLogger = (e, data) => {
-    console.log(e);
-  };
+  const eventLogger = (e, data) => {};
   useEffect(() => {
     if (startStudy) {
       localStorage.setItem(

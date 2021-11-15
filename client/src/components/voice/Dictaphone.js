@@ -95,7 +95,6 @@ const Dictaphone = ({
     }
     if (command.includes("delete all chosen charts")) {
       closeChosenCharts();
-      console.log("fired");
     }
     //Only send command if includes the word "show"
     // & if attrbutes were spoke
