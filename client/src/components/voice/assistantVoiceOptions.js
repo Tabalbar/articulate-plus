@@ -42,6 +42,8 @@ import sorrycanthelp from "../../sounds/sorry cant help.wav";
 import specific from "../../sounds/specific.wav";
 import idontknowhow from "../../sounds/i dont know how.wav";
 
+//random charts
+
 export const thinking = [
   { msg: "Let me think about that.", soundFile: letmethink },
   {
