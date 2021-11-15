@@ -191,44 +191,7 @@ function Diagnostics({ chartMsg, charts }) {
                     );
                   })}
                 </Table>
-                <Table>
-                  <Text fontWeight="bold">Main AI</Text>
 
-                  <Tr>
-                    <Th>Attribute</Th>
-                    <Th>Frequency Count</Th>
-                  </Tr>
-                  {chartMsg.mainAICount.map.map((value, index) => {
-                    return (
-                      <>
-                        <Tr>
-                          <Td key={index}> {value.header}</Td>
-                          <Td> {value.count}</Td>
-                        </Tr>
-                      </>
-                    );
-                  })}
-                  {chartMsg.mainAICount.nominal.map((value, index) => {
-                    return (
-                      <>
-                        <Tr key={index}>
-                          <Td> {value.header}</Td>
-                          <Td> {value.count}</Td>
-                        </Tr>
-                      </>
-                    );
-                  })}
-                  {chartMsg.mainAICount.quantitative.map((value, index) => {
-                    return (
-                      <>
-                        <Tr>
-                          <Td key={index}> {value.header}</Td>
-                          <Td> {value.count}</Td>
-                        </Tr>
-                      </>
-                    );
-                  })}
-                </Table>
                 <Table>
                   <Text fontWeight="bold">Main AI With Overhearing</Text>
 

@@ -91,12 +91,6 @@ function App() {
     assistantResponse: "",
     errMsg: "",
     charts: [],
-    mainAICount: {
-      quantitative: [],
-      nominal: [],
-      temporal: [],
-      map: [],
-    },
     mainAIOverhearingCount: {
       quantitative: [],
       nominal: [],
@@ -110,7 +104,7 @@ function App() {
       map: [],
     },
   });
-
+  console.log(chartMsg.mainAICount);
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 
@@ -127,6 +121,7 @@ function App() {
   }, [showTooltip]);
   // Handle Request to server
   const createCharts = (command) => {
+    chartMsg.transcript = "diabetes. diabetes diabetes. diabetes";
     if (command) {
       chartMsg.command = command;
     }

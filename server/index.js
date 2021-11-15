@@ -197,34 +197,6 @@ app.post("/createCharts", async (req, res) => {
   }
   CompareCharts(chartMsg, options, chosenCharts);
 
-  chartMsg.mainAICount = countHeaderFrequency(
-    chartMsg.transcript,
-    chartMsg.featureMatrix,
-    chartMsg.synonymMatrix,
-    chartMsg.data,
-    {
-      useCovidDataset: options.useCovidDataset,
-      sentimentAnalysis: false,
-      window: {
-        toggle: false,
-        pastSentences: 20,
-      },
-      neuralNetwork: true,
-      useSynonyms: true,
-      randomCharts: {
-        toggle: true,
-        minutes: 10,
-      },
-      threshold: 3,
-      filter: {
-        toggle: false,
-        pastSentences: 20,
-        threshold: 5,
-      },
-      pivotCharts: false,
-    }
-  );
-
   chartMsg.mainAIOverhearingCount = countHeaderFrequency(
     chartMsg.transcript,
     chartMsg.featureMatrix,
