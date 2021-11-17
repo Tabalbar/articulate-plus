@@ -120,7 +120,6 @@ function App() {
   }, [showTooltip]);
   // Handle Request to server
   const createCharts = (command) => {
-    chartMsg.transcript = "diabetes. diabetes diabetes. diabetes";
     if (command) {
       chartMsg.command = command;
     }
