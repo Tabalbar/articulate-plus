@@ -48,7 +48,9 @@ module.exports = (charts, chartMsg, options) => {
 
     //Create command to use for createing charts but save old command to replace
     const oldCommand = chartMsg.command;
+
     chartMsg.command = buildCommand(markTypeToUse, headersToUse, filtersToUse);
+
     let pivotedCharts = createCharts(markTypeToUse, chartMsg, options);
 
     chartMsg.command = oldCommand;

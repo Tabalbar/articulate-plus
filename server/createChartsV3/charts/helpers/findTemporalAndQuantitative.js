@@ -4,9 +4,9 @@ const switchHeaders = require("./switchHeaders");
 module.exports = (chartMsg, extractedHeaders, options) => {
   let quantitativeFound = false;
   let temporalFound = false;
-  if (extractedHeaders.length < 2) {
-    return false;
-  }
+  // if (extractedHeaders.length < 2) {
+  //   return false;
+  // }
   for (let i = 0; i < extractedHeaders.length; i++) {
     if (findType(extractedHeaders[i], chartMsg.data) == "map") {
       extractedHeaders.splice(i, 1);
