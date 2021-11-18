@@ -14,7 +14,7 @@ import { Box, Center } from "@chakra-ui/react";
 //helper function
 import createDate from "../../helpers/createDate";
 
-import attentiveImage from "../../images/attentive.gif";
+import attentiveImage from "../../images/attentive-small.gif";
 import useInterval from "../../helpers/useInterval";
 
 /**
@@ -104,7 +104,7 @@ const Dictaphone = ({
         command.includes("show") ||
         command.includes("what") ||
         command.includes("make") ||
-        command.includes("rt") ||
+        command.includes("plot") ||
         command.includes("change") ||
         command.includes("create") ||
         command.includes("filter") ||

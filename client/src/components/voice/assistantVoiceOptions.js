@@ -39,7 +39,7 @@ import lookatthese from "../../sounds/look at these.wav";
 //no charts
 import couldntcreate from "../../sounds/couldnt create.wav";
 import sorrycanthelp from "../../sounds/sorry cant help.wav";
-import specific from "../../sounds/specific.wav";
+import youneedtobe from "../../sounds/youneedtobe.mp3";
 import idontknowhow from "../../sounds/i dont know how.wav";
 
 //random charts
@@ -70,7 +70,7 @@ export const noCharts = [
   { msg: "I don't know how to make a chart for that", soundFile: idontknowhow },
   { msg: "sorry, cant help you there", soundFile: sorrycanthelp },
   { msg: "I couldn't create any charts for that", soundFile: couldntcreate },
-  { msg: "Can you be more specific?", soundFile: specific },
+  { msg: "You need to be more specific", soundFile: youneedtobe },
 ];
 
 export const oneChart = [

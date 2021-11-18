@@ -128,13 +128,6 @@ export async function serverRequest(
   } else {
     assistantResponse = fewCharts[Math.floor(Math.random() * fewCharts.length)];
   }
-  //Voice syntheiszer
-  if (assistantResponse) {
-    setTimeout(() => {
-      speakVoice(assistantResponse.soundFile);
-      setVoiceMsg(assistantResponse.msg);
-    }, 1000);
-  }
 
-  return;
+  return assistantResponse;
 }

@@ -16,13 +16,14 @@ import createDate from "./helpers/createDate";
 import { ChakraProvider, Button, Box, Input } from "@chakra-ui/react";
 
 //For computer talking
-import listeningImage from "./images/idle.gif";
-import talkingImage from "./images/talking.gif";
-import muteImage from "./images/mute.gif";
-import thinkingImage from "./images/thinking.gif";
+import listeningImage from "./images/idle-small.gif";
+import talkingImage from "./images/talking-small.gif";
+import muteImage from "./images/mute-small.gif";
+import thinkingImage from "./images/thinking-small.gif";
 import { thinking } from "./components/voice/assistantVoiceOptions";
 import AttributeContainer from "./components/staticWindows/AttributeContainer";
 import useInterval from "./helpers/useInterval";
+import typingSound from "./sounds/typing.wav";
 
 import { commandChecker } from "./helpers/commandChecker";
 import speakVoice from "./components/voice/speakVoice";
@@ -124,14 +125,15 @@ function App() {
       chartMsg.command = command;
     }
     //Pick a random thinking response
-    let thinkingResponse =
-      thinking[Math.floor(Math.random() * thinking.length)];
+    // let thinkingResponse =
+    //   thinking[Math.floor(Math.random() * thinking.length)];
+    // setClippyImage(thinkingImage);
+    // if (command !== "random") {
+    //   speakVoice(thinkingResponse.soundFile);
+    //   setVoiceMsg(thinkingResponse.msg);
+    // }
     setClippyImage(thinkingImage);
-    if (command !== "random") {
-      speakVoice(thinkingResponse.soundFile);
-      setVoiceMsg(thinkingResponse.msg);
-    }
-    setShowTooltip(true);
+    speakVoice(typingSound);
 
     //Actual request to server
     serverRequest(
@@ -142,11 +144,17 @@ function App() {
       charts,
       setCharts,
       setChartToHighlight
-    ).then(() => {
+    ).then((assistantResponse) => {
       if (mute) {
         setClippyImage(muteImage);
       } else {
-        setClippyImage(talkingImage);
+        //Voice syntheiszer
+        if (assistantResponse) {
+          speakVoice(assistantResponse.soundFile);
+          setVoiceMsg(assistantResponse.msg);
+          setClippyImage(talkingImage);
+          setShowTooltip(true);
+        }
         setTimeout(() => {
           setClippyImage(listeningImage);
         }, 3000);
@@ -155,9 +163,13 @@ function App() {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setClippyImage(listeningImage);
-    }, 4000);
+    if (mute) {
+      setClippyImage(muteImage);
+    } else {
+      setTimeout(() => {
+        setClippyImage(listeningImage);
+      }, 4000);
+    }
   }, [clippyImage]);
   //In chartSelection component, handles choosing the chart to add in
   //Chosen component
