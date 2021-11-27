@@ -31,10 +31,9 @@ function Window(props) {
     if (props.modifiedChartOptions.pivotCharts && !dragging) {
       props.handlePivot(props.index);
     }
-    for (let i = 0; i < elems.length; i++) {
-      elems[i].style.zIndex = 10;
-      e.currentTarget.style.zIndex = 12;
-    }
+
+    e.currentTarget.style.zIndex = props.globalZIndex;
+    props.setGlobalZIndex((prev) => prev + 1);
   };
   useEffect(() => {
     if (props.chartToHighlight == props.id) {
@@ -81,15 +80,6 @@ function Window(props) {
     timeDiff /= 1000;
     specification.timeSpentHovered += parseFloat(Number(timeDiff).toFixed(2));
   };
-
-  useEffect(() => {
-    let elem = document.getElementById(props.id);
-    let elems = document.getElementsByClassName("react-draggable");
-    for (let i = 0; i < elems.length; i++) {
-      elems[i].style.zIndex = 10;
-    }
-    elem.style.zIndex = 13;
-  }, []);
 
   let pulse = keyframes`
   0% {
@@ -154,7 +144,6 @@ function Window(props) {
               fontWeight="bold"
               bg={props.specification.pivotThis ? "orange.300" : "blue.800"}
               height="full"
-              zIndex="13"
               position="relative"
             >
               <IconButton

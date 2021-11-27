@@ -52,20 +52,20 @@ function App() {
       sentimentAnalysis: true,
       window: {
         toggle: true,
-        pastSentences: 20,
+        pastSentences: 10,
       },
       neuralNetwork: true,
       useSynonyms: true,
       randomCharts: {
         toggle: true,
-        minutes: 10,
-        chartWindow: 10,
+        minutes: 5,
+        chartWindow: 0,
       },
-      threshold: 3,
+      threshold: 2,
       filter: {
         toggle: true,
-        pastSentences: 20,
-        threshold: 3,
+        pastSentences: 10,
+        threshold: 2,
       },
       pivotCharts: true,
     }

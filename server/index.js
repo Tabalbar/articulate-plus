@@ -91,12 +91,34 @@ const pivotChartsV2 = require("./createCharts/pivotCharts/pivotChartsV2");
 const createCharts = require("./createChartsV3/createCharts");
 const chartOptions = require("./createCharts/explicit/chartOptions");
 
+let replaceWords = [{ wordFound: "hi", replaceWith: "high" }];
+
+function difficultPhrasedWords(command) {
+  let words = command.split(" ");
+  words = words.map((word) =>
+    replaceWords.map((replaceWord) =>
+      replaceWord.wordFound == word ? replaceWord.replaceWith : word
+    )
+  );
+
+  if (words.length === 0) {
+    return "";
+  } else if (words.length === 1) {
+    return words[0][0];
+  } else {
+    return words.reduce(
+      (previousWord, nextWord) => previousWord + " " + nextWord
+    );
+  }
+}
+
 app.post("/createCharts", async (req, res) => {
   let chartMsg = req.body.chartMsg;
   let options = req.body.modifiedChartOptions;
   let chosenCharts = req.body.selectedCharts;
   let pivotTheseCharts = req.body.pivotTheseCharts;
   //Remove stop words and change known synonyms
+  chartMsg.command = difficultPhrasedWords(chartMsg.command);
 
   //Explicit chart commands
   let { generalizedCommand } = generalizeCommand(

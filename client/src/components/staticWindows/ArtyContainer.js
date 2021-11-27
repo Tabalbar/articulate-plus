@@ -12,14 +12,6 @@ function ArtyContainer({
 }) {
   const eventLogger = (e, data) => {};
 
-  const onStart = (e) => {
-    let elems = document.getElementsByClassName("react-draggable");
-    for (let i = 0; i < elems.length; i++) {
-      elems[i].style.zIndex = 10;
-      e.currentTarget.style.zIndex = 12;
-    }
-  };
-
   return (
     <>
       <Draggable
@@ -31,30 +23,22 @@ function ArtyContainer({
           y: window.innerHeight / 2,
         }}
         bounds={{ bottom: 1000, left: 0, top: 0 }}
-        zIndex={12}
-        onStart={onStart.bind(this)}
         onStop={eventLogger}
       >
-        <Box
-          position="absolute"
-          onClick={(e) => onStart(e)}
-          className="react-draggable"
-        >
+        <Box position="absolute" zIndex={999999} className="react-draggable">
           <div
             className="handle"
             style={{
               cursor: "move",
-              zIndex: 10,
             }}
           >
             <VStack>
               <Tooltip
-                zIndex="10"
                 label={voiceMsg}
                 fontSize="3xl"
+                position="relative"
                 placement="left-start"
                 isOpen={showTooltip}
-                bg="green.600"
                 hasArrow
               >
                 <Box>

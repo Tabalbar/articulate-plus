@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../style.css";
 import Window from "./Window";
 
@@ -11,6 +11,7 @@ function ChosenCharts({
   handlePivot,
   chartToHighlight,
 }) {
+  const [globalZIndex, setGlobalZIndex] = useState(10);
   return (
     <>
       {charts.map((chart, i) => {
@@ -22,6 +23,8 @@ function ChosenCharts({
               handleDelete={handleDelete}
               index={i}
               key={i}
+              globalZIndex={globalZIndex}
+              setGlobalZIndex={setGlobalZIndex}
               setCharts={setCharts}
               charts={charts}
               handlePivot={handlePivot}

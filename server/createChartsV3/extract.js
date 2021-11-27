@@ -81,7 +81,6 @@ module.exports = {
     let extractedFilteredHeaders = [];
     let foundTimeHeader = false;
     let words = chartMsg.command.split(" ");
-
     //Extract explicit filters used
     for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
       extractedFilteredHeaders[chartMsg.featureMatrix[i][0]] = [];

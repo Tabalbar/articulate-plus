@@ -41,13 +41,13 @@ function AttributeContainer({
     }
   }, [startStudy]);
 
-  const onStart = (e) => {
-    let elems = document.getElementsByClassName("react-draggable");
-    for (let i = 0; i < elems.length; i++) {
-      elems[i].style.zIndex = 10;
-      e.currentTarget.style.zIndex = 12;
-    }
-  };
+  // const onStart = (e) => {
+  //   let elems = document.getElementsByClassName("react-draggable");
+  //   for (let i = 0; i < elems.length; i++) {
+  //     elems[i].style.zIndex = 10;
+  //     e.currentTarget.style.zIndex = 12;
+  //   }
+  // };
 
   const handleWindowPastSenteces = (e) => {
     e.preventDefault();
@@ -60,6 +60,18 @@ function AttributeContainer({
           ...prev.window,
           pastSentences: parseInt(pastSentences),
         },
+      };
+    });
+  };
+
+  const handleWindowThreshold = (e) => {
+    e.preventDefault();
+    let threshold = e.target.value;
+
+    setModifiedChartOptions((prev) => {
+      return {
+        ...prev,
+        threshold: parseInt(threshold),
       };
     });
   };
@@ -136,8 +148,6 @@ function AttributeContainer({
           y: window.innerHeight / 6,
         }}
         bounds={{ bottom: 1000, left: 0, top: 0 }}
-        zIndex={10}
-        onStart={onStart.bind(this)}
         onStop={eventLogger}
       >
         <Box
@@ -149,7 +159,7 @@ function AttributeContainer({
           borderColor="black"
           borderRadius="sm"
           borderTopRadius="sm"
-          onClick={(e) => onStart(e)}
+          zIndex={200}
           className="react-draggable"
         >
           <Box
@@ -285,7 +295,7 @@ function AttributeContainer({
                     <Input
                       type="number"
                       value={modifiedChartOptions.threshold}
-                      onChange={handleWindowPastSenteces}
+                      onChange={handleWindowThreshold}
                     />
                     <Radio
                       isChecked={modifiedChartOptions.randomCharts.toggle}
@@ -317,7 +327,7 @@ function AttributeContainer({
                     ) : null}
                     {modifiedChartOptions.randomCharts.toggle ? (
                       <>
-                        Window:
+                        Past Charts to compare with random:
                         <Input
                           type="number"
                           value={modifiedChartOptions.randomCharts.chartWindow}

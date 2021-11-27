@@ -70,7 +70,7 @@ export const noCharts = [
   { msg: "I don't know how to make a chart for that", soundFile: idontknowhow },
   { msg: "sorry, cant help you there", soundFile: sorrycanthelp },
   { msg: "I couldn't create any charts for that", soundFile: couldntcreate },
-  { msg: "You need to be more specific", soundFile: youneedtobe },
+  // { msg: "You need to be more specific", soundFile: youneedtobe },
 ];
 
 export const oneChart = [
