@@ -18,9 +18,17 @@ module.exports = (command, attributes, data, featureMatrix, synonymMatrix) => {
       }
     }
   }
+  for (let i = 0; i < synonymMatrix.length; i++) {
+    for (let n = 0; n < synonymMatrix[i].length; n++) {
+      if (doc.match(synonymMatrix[i][n])) {
+        doc.replace(synonymMatrix[i][n], findType(synonymMatrix[i][0], data));
+      }
+    }
+  }
+
   doc.numbers().replaceWith("quantitative");
   doc.dates().replaceWith("temporal");
-
+  console.log(doc.text());
   generalizedCommand = doc.text();
   return { generalizedCommand };
 };

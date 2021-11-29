@@ -124,6 +124,7 @@ function App() {
     if (command) {
       chartMsg.command = command;
     }
+
     //Pick a random thinking response
     // let thinkingResponse =
     //   thinking[Math.floor(Math.random() * thinking.length)];
@@ -161,6 +162,8 @@ function App() {
       }
     });
   };
+
+  useEffect(async () => {}, []);
 
   useEffect(() => {
     if (mute) {

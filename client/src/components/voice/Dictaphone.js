@@ -17,6 +17,15 @@ import createDate from "../../helpers/createDate";
 import attentiveImage from "../../images/attentive-small.gif";
 import useInterval from "../../helpers/useInterval";
 
+import Node_NLP from "../../NeuralNetwork";
+import * as use from "@tensorflow-models/universal-sentence-encoder";
+import "@tensorflow/tfjs-backend-webgl";
+import * as tf from "@tensorflow/tfjs-core";
+
+// const model = await use.load();
+const nlp_model = new Node_NLP();
+nlp_model.init();
+
 /**
  * Uses react-speech-recognition API that uses the browser to translate
  * spoken language into text
@@ -34,6 +43,7 @@ const Dictaphone = ({
   startStudy,
   closeChosenCharts,
   modifiedChartOptions,
+  chartMsg,
 }) => {
   const [listening, setListening] = useState(true);
   const [command, setCommand] = useState("");
@@ -52,7 +62,7 @@ const Dictaphone = ({
     },
   ];
 
-  useEffect(() => {
+  useEffect(async () => {
     //Check if words were actually spoken
     if (command === "") {
       return;
@@ -98,26 +108,8 @@ const Dictaphone = ({
     }
     //Only send command if includes the word "show"
     // & if attrbutes were spoke
-    if (
-      (command.includes("where") ||
-        command.includes("see") ||
-        command.includes("show") ||
-        command.includes("what") ||
-        command.includes("make") ||
-        command.includes("plot") ||
-        command.includes("change") ||
-        command.includes("create") ||
-        command.includes("filter") ||
-        ((command.includes("make") ||
-          command.includes("modify") ||
-          command.includes("pivot") ||
-          command.includes("change")) &&
-          (command.includes("these") ||
-            command.includes("this") ||
-            command.includes("those")))) &&
-      !mute &&
-      listening
-    ) {
+    console.log(await nlp_model.getScore(command, chartMsg));
+    if ((await nlp_model.getScore(command, chartMsg)) && !mute && listening) {
       setListening(false);
 
       createCharts(command);
@@ -126,6 +118,34 @@ const Dictaphone = ({
         setListening(true);
       }, 8000);
     }
+    // if (
+    //   (command.includes("where") ||
+    //     command.includes("see") ||
+    //     command.includes("show") ||
+    //     command.includes("what") ||
+    //     command.includes("make") ||
+    //     command.includes("plot") ||
+    //     command.includes("change") ||
+    //     command.includes("create") ||
+    //     command.includes("filter") ||
+    //     ((command.includes("make") ||
+    //       command.includes("modify") ||
+    //       command.includes("pivot") ||
+    //       command.includes("change")) &&
+    //       (command.includes("these") ||
+    //         command.includes("this") ||
+    //         command.includes("those")))) &&
+    //   !mute &&
+    //   listening
+    // ) {
+    //   setListening(false);
+
+    //   createCharts(command);
+
+    //   setTimeout(() => {
+    //     setListening(true);
+    //   }, 8000);
+    // }
   }, [command]);
 
   //Create charts at a random interval
