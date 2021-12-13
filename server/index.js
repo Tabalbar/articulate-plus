@@ -134,6 +134,7 @@ app.post("/createCharts", async (req, res) => {
    * Getting expicit mark type
    */
   let intent = getExplicitChartType(chartMsg.command);
+
   //Check if pivot
   if (chartMsg.command == "random") {
     let intent = chartOptions[Math.floor(Math.random() * 5)];
@@ -185,7 +186,9 @@ app.post("/createCharts", async (req, res) => {
     });
     chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
   } else {
-    intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
+    const output = await manager.process("en", chartMsg.generalizedCommand);
+    console.log(output);
+    intent = output.intent;
     if (intent !== "None") {
       chartMsg.mainAI = createCharts(intent, chartMsg, {
         useCovidDataset: options.useCovidDataset,
