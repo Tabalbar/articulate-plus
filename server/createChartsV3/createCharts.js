@@ -28,6 +28,7 @@ module.exports = (intent, chartMsg, options) => {
     options
   );
   //Holds all charts
+  console.log(extractedHeaders);
   let charts = [];
 
   switch (intent) {
@@ -138,8 +139,10 @@ module.exports = (intent, chartMsg, options) => {
     case "map":
       if (options.useCovidDataset) {
         extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
+        findAndRemoveOtherTypes(chartMsg, extractedHeaders, "map");
+      } else {
+        findLocationAttributes(chartMsg, extractedHeaders);
       }
-      findAndRemoveOtherTypes(chartMsg, extractedHeaders, "map");
 
       if (extractedHeaders.length >= 2) {
         for (let i = 1; i < extractedHeaders.length; i++) {
