@@ -14,7 +14,7 @@ module.exports = (chartMsg, options) => {
   }
   let sentences = chartMsg.transcript.split(".");
   sentences = sentences.slice(-options.filter.pastSentences);
-
+  wordCount.sentences = sentences;
   if (options.sentimentAnalysis && options.filter.toggle) {
     for (let i = 0; i < sentences.length; i++) {
       let words = sentences[i].split(" ");
@@ -54,6 +54,6 @@ module.exports = (chartMsg, options) => {
       }
     }
   }
-
+  console.log(wordCount);
   return wordCount;
 };

@@ -8,9 +8,14 @@ module.exports = (
   chartMsg,
   extractedHeaders,
   extractedFilteredValues,
-  headerFrequencyCount
+  headerFrequencyCount,
+  filterFrequencyCount
 ) => {
-  let chart = createChartTemplate(chartMsg, headerFrequencyCount);
+  let chart = createChartTemplate(
+    chartMsg,
+    headerFrequencyCount,
+    filterFrequencyCount
+  );
   chart.transform.push({
     lookup: "map",
     from: {

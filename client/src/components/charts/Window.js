@@ -49,6 +49,7 @@ function Window(props) {
         specification.hasOwnProperty("layer") ||
         specification.mark == "bar"
       ) {
+        specification.fetchedURL = true;
         fetch(
           "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
         )

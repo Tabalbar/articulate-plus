@@ -31,20 +31,6 @@ export default function createDate() {
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
-  date =
-    "Date: " +
-    month +
-    "/" +
-    day +
-    "/" +
-    year +
-    " Time: " +
-    hour +
-    ":" +
-    minutes +
-    ":" +
-    seconds +
-    " " +
-    amOrPm;
+  date = hour + ":" + minutes + ":" + seconds + " " + amOrPm;
   return date;
 }

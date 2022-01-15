@@ -135,11 +135,11 @@ function Diagnostics({ chartMsg, charts }) {
               borderColor="blackAlpha.200"
               rounded="md"
             >
-              <p>
+              <Text>
                 {transcriptData.map((value, index) => {
                   if (value.bold) {
                     return (
-                      <strong>
+                      <strong key={index}>
                         {value.word} ({value.header})
                       </strong>
                     );
@@ -147,7 +147,7 @@ function Diagnostics({ chartMsg, charts }) {
                     return value.word + " ";
                   }
                 })}
-              </p>
+              </Text>
             </Box>
           </Box>
           <Box>

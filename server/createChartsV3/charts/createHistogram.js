@@ -9,9 +9,14 @@ module.exports = (
   chartMsg,
   extractedHeader,
   extractedFilteredValues,
-  headerFrequencyCount
+  headerFrequencyCount,
+  filterFrequencyCount
 ) => {
-  let chart = createChartTemplate(chartMsg, headerFrequencyCount);
+  let chart = createChartTemplate(
+    chartMsg,
+    headerFrequencyCount,
+    filterFrequencyCount
+  );
   chart.mark = "bar";
   chart.encoding.x = {
     field: extractedHeader,

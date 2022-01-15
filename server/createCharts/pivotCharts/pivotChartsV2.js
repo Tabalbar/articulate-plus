@@ -48,7 +48,8 @@ module.exports = (charts, chartMsg, options) => {
 
     //Create command to use for createing charts but save old command to replace
     const oldCommand = chartMsg.command;
-
+    let tmpTranscript = chartMsg.transcript;
+    chartMsg.transcript = "";
     chartMsg.command = buildCommand(markTypeToUse, headersToUse, filtersToUse);
 
     let pivotedCharts = createCharts(markTypeToUse, chartMsg, options);
@@ -59,6 +60,7 @@ module.exports = (charts, chartMsg, options) => {
       pivotedCharts[j] = cleanChart(pivotedCharts[j], chartMsg, id);
     }
     chartsToReturn.push(pivotedCharts);
+    chartMsg.transcript = tmpTranscript;
   }
   chartsToReturn = chartsToReturn.flat();
   return chartsToReturn;

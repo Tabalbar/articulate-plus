@@ -1,4 +1,4 @@
-module.exports = (chartMsg, headerFrequencyCount) => {
+module.exports = (chartMsg, headerFrequencyCount, filterFrequencyCount) => {
   //Create delta time to check when chart was made compared to beginning
   //of th session
   let time = (new Date() - new Date(chartMsg.deltaTime)) / 1000 / 60;
@@ -24,6 +24,8 @@ module.exports = (chartMsg, headerFrequencyCount) => {
     command: chartMsg.command,
     pivotThis: false,
     headerFrequencyCount: headerFrequencyCount,
+    filterFrequencyCount: filterFrequencyCount,
+    fetchedURL: false,
   };
   return chart;
 };
@@ -54,20 +56,6 @@ function createDate() {
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
-  date =
-    "Date: " +
-    month +
-    "/" +
-    day +
-    "/" +
-    year +
-    " Time: " +
-    hour +
-    ":" +
-    minutes +
-    ":" +
-    seconds +
-    " " +
-    amOrPm;
+  date = hour + ":" + minutes + ":" + seconds + " " + amOrPm;
   return date;
 }

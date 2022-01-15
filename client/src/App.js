@@ -70,7 +70,7 @@ function App() {
       pivotCharts: true,
     }
   );
-
+  console.log(charts);
   // Chart message to send to server
   const [chartMsg, setChartMsg] = useState({
     command: "", //Query

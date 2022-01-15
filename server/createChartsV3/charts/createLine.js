@@ -9,9 +9,14 @@ module.exports = (
   chartMsg,
   extractedHeaders,
   extractedFilteredValues,
-  headerFrequencyCount
+  headerFrequencyCount,
+  filterFrequencyCount
 ) => {
-  let chart = createChartTemplate(chartMsg, headerFrequencyCount);
+  let chart = createChartTemplate(
+    chartMsg,
+    headerFrequencyCount,
+    filterFrequencyCount
+  );
   chart.mark = {
     type: "line",
     point: { size: 100 },

@@ -9,6 +9,7 @@ module.exports = (chartMsg, options) => {
     quantitative: [],
     temporal: [],
     map: [],
+    sentences: [],
   };
   for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
     synonymsAndFeatures.push(
@@ -23,7 +24,7 @@ module.exports = (chartMsg, options) => {
 
   let sentences = chartMsg.transcript.split(".");
   sentences = sentences.slice(-options.window.pastSentences);
-
+  headerFrequencyCount.sentences = sentences;
   if (options.sentimentAnalysis && options.window.toggle) {
     for (let i = 0; i < sentences.length; i++) {
       let words = sentences[i].split(" ");

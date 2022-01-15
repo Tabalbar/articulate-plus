@@ -79,24 +79,23 @@ module.exports = (chartMsg, options, chosenCharts) => {
       chartMsg
     );
   }
-  console.log(options.randomCharts.chartWindow);
+  let tmpChartWindow = [];
   if (options.randomCharts.chartWindow !== 0) {
-    let tmpChartWindow = chartMsg.charts.splice(
-      -options.randomCharts.chartWindow
-    );
-    for (let i = 0; i < chartMsg.randomCharts.length; i++) {
-      for (let j = 0; j < tmpChartWindow.length; j++) {
-        if (isChartsEqual(chartMsg.randomCharts[i], tmpChartWindow[j])) {
-          chartMsg.randomCharts[i] = "";
+    tmpChartWindow = chartMsg.charts.splice(-options.randomCharts.chartWindow);
+  }
+  for (let i = 0; i < chartMsg.randomCharts.length; i++) {
+    for (let j = 0; j < tmpChartWindow.length; j++) {
+      if (isChartsEqual(chartMsg.randomCharts[i], tmpChartWindow[j])) {
+        chartMsg.randomCharts[i] = "";
 
-          // console.log(tmpChartWindow[j]);
-        }
-      }
-      if (chartMsg.randomCharts[i] !== "") {
-        chartMsg.randomCharts[i].chartSelection = "random_point";
+        // console.log(tmpChartWindow[j]);
       }
     }
+    if (chartMsg.randomCharts[i] !== "") {
+      chartMsg.randomCharts[i].chartSelection = "random_point";
+    }
   }
+
   for (let i = 0; i < chartMsg.randomCharts.length; i++) {
     chartMsg.randomCharts[i] = checkIfChartsAlreadyChosen(
       chartMsg.randomCharts[i],

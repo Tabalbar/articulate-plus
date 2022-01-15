@@ -39,7 +39,8 @@ module.exports = (intent, chartMsg, options) => {
             chartMsg,
             extractedHeaders[i],
             extractedFilteredValues,
-            headerFrequencyCount
+            headerFrequencyCount,
+            filterFrequencyCount
           )
         );
       }
@@ -59,7 +60,8 @@ module.exports = (intent, chartMsg, options) => {
                 chartMsg,
                 extractedHeaders[i],
                 extractedFilteredValues,
-                headerFrequencyCount
+                headerFrequencyCount,
+                filterFrequencyCount
               )
             );
           }
@@ -74,7 +76,8 @@ module.exports = (intent, chartMsg, options) => {
                 chartMsg,
                 twoExtractedHeaders,
                 extractedFilteredValues,
-                headerFrequencyCount
+                headerFrequencyCount,
+                filterFrequencyCount
               )
             );
           }
@@ -88,7 +91,8 @@ module.exports = (intent, chartMsg, options) => {
               chartMsg,
               extractedHeaders[i],
               extractedFilteredValues,
-              headerFrequencyCount
+              headerFrequencyCount,
+              filterFrequencyCount
             )
           );
         }
@@ -113,7 +117,8 @@ module.exports = (intent, chartMsg, options) => {
             chartMsg,
             extractedHeaders,
             extractedFilteredValues,
-            headerFrequencyCount
+            headerFrequencyCount,
+            filterFrequencyCount
           )
         );
       } else if (extractedHeaders.length > 2) {
@@ -149,7 +154,8 @@ module.exports = (intent, chartMsg, options) => {
               chartMsg,
               twoExtractedHeaders,
               extractedFilteredValues,
-              headerFrequencyCount
+              headerFrequencyCount,
+              filterFrequencyCount
             )
           );
         }
@@ -178,7 +184,8 @@ module.exports = (intent, chartMsg, options) => {
             chartMsg,
             [extractedHeaders[0], extractedHeaders[i]],
             extractedFilteredValues,
-            headerFrequencyCount
+            headerFrequencyCount,
+            filterFrequencyCount
           )
         );
       }
