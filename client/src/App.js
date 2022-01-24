@@ -46,30 +46,28 @@ function App() {
   const [chartToHighlight, setChartToHighlight] = useState(null);
 
   //Toggle options for algorithm
-  const [modifiedChartOptions, setModifiedChartOptions] = useState(
-    JSON.parse(localStorage.getItem("chartOptions")) || {
-      useCovidDataset: false,
-      sentimentAnalysis: true,
-      window: {
-        toggle: true,
-        pastSentences: 10,
-      },
-      neuralNetwork: true,
-      useSynonyms: true,
-      randomCharts: {
-        toggle: true,
-        minutes: 5,
-        chartWindow: 0,
-      },
+  const [modifiedChartOptions, setModifiedChartOptions] = useState({
+    useCovidDataset: false,
+    sentimentAnalysis: true,
+    window: {
+      toggle: true,
+      pastSentences: 5,
+    },
+    neuralNetwork: true,
+    useSynonyms: true,
+    randomCharts: {
+      toggle: true,
+      minutes: 5,
+      chartWindow: 0,
+    },
+    threshold: 2,
+    filter: {
+      toggle: true,
+      pastSentences: 5,
       threshold: 2,
-      filter: {
-        toggle: true,
-        pastSentences: 10,
-        threshold: 2,
-      },
-      pivotCharts: true,
-    }
-  );
+    },
+    pivotCharts: true,
+  });
   // Chart message to send to server
   const [chartMsg, setChartMsg] = useState({
     command: "", //Query
