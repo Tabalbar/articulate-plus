@@ -146,7 +146,7 @@ app.post("/createCharts", async (req, res) => {
       sentimentAnalysis: false,
       window: {
         toggle: false,
-        pastSentences: 20,
+        pastSentences: 0,
       },
       neuralNetwork: false,
       useSynonyms: false,
@@ -157,7 +157,7 @@ app.post("/createCharts", async (req, res) => {
       threshold: 3,
       filter: {
         toggle: false,
-        pastSentences: 20,
+        pastSentences: 0,
         threshold: 5,
       },
       pivotCharts: false,
@@ -167,7 +167,7 @@ app.post("/createCharts", async (req, res) => {
       sentimentAnalysis: false,
       window: {
         toggle: false,
-        pastSentences: 20,
+        pastSentences: 0,
       },
       neuralNetwork: true,
       useSynonyms: true,
@@ -178,7 +178,7 @@ app.post("/createCharts", async (req, res) => {
       threshold: 3,
       filter: {
         toggle: false,
-        pastSentences: 20,
+        pastSentences: 0,
         threshold: 5,
       },
       pivotCharts: false,
@@ -192,7 +192,7 @@ app.post("/createCharts", async (req, res) => {
         sentimentAnalysis: false,
         window: {
           toggle: false,
-          pastSentences: 20,
+          pastSentences: 0,
         },
         neuralNetwork: true,
         useSynonyms: true,
@@ -203,7 +203,7 @@ app.post("/createCharts", async (req, res) => {
         threshold: 3,
         filter: {
           toggle: false,
-          pastSentences: 20,
+          pastSentences: 0,
           threshold: 5,
         },
         pivotCharts: false,

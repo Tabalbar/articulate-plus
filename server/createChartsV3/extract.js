@@ -55,7 +55,7 @@ module.exports = {
         a.count < b.count ? 1 : -1
       );
       //**POSSIBLE BUG INDEX OUT OF RANGE**.
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < sortedHeaders.length; i++) {
         if (sortedHeaders[i].count >= options.threshold) {
           let found = false;
           for (let j = 0; j < extractedHeaders.length; j++) {
@@ -72,7 +72,6 @@ module.exports = {
 
     //Delete any duplicates in headers
     extractedHeaders = checkDuplicates(extractedHeaders);
-
     return extractedHeaders;
   },
 
