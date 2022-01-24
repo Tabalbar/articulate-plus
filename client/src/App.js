@@ -23,7 +23,7 @@ import thinkingImage from "./images/thinking-small.gif";
 import { thinking } from "./components/voice/assistantVoiceOptions";
 import AttributeContainer from "./components/staticWindows/AttributeContainer";
 import useInterval from "./helpers/useInterval";
-import typingSound from "./sounds/typing.wav";
+import chartSound from "./sounds/chartSound.wav";
 
 import { commandChecker } from "./helpers/commandChecker";
 import speakVoice from "./components/voice/speakVoice";
@@ -133,7 +133,7 @@ function App() {
     //   setVoiceMsg(thinkingResponse.msg);
     // }
     setClippyImage(thinkingImage);
-    speakVoice(typingSound);
+    speakVoice(chartSound);
 
     //Actual request to server
     serverRequest(
