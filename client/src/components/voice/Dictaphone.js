@@ -98,30 +98,9 @@ const Dictaphone = ({
     }
     //Only send command if includes the word "show"
     // & if attrbutes were spoke
-    if (
-      (command.includes("where") ||
-        command.includes("see") ||
-        command.includes("show") ||
-        command.includes("what") ||
-        command.includes("make") ||
-        command.includes("plot") ||
-        command.includes("change") ||
-        command.includes("create") ||
-        command.includes("filter") ||
-        ((command.includes("make") ||
-          command.includes("modify") ||
-          command.includes("pivot") ||
-          command.includes("change")) &&
-          (command.includes("these") ||
-            command.includes("this") ||
-            command.includes("those")))) &&
-      !mute &&
-      listening
-    ) {
+    const isCommand = createCharts(command);
+    if (isCommand) {
       setListening(false);
-
-      createCharts(command);
-
       setTimeout(() => {
         setListening(true);
       }, 8000);
