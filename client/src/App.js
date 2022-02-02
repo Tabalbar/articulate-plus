@@ -68,6 +68,7 @@ function App() {
     },
     pivotCharts: true,
   });
+
   // Chart message to send to server
   const [chartMsg, setChartMsg] = useState({
     command: "", //Query
@@ -232,7 +233,8 @@ function App() {
     <>
       <ChakraProvider>
         <div style={{ display: chartsPage ? null : "None" }}>
-          <Button onClick={() => speakVoice("This is a message")}>
+          {/* COMMENT THIS WHEN STARTING USER STUDY */}
+          {/* <Button onClick={() => speakVoice("This is a message")}>
             Test Voice
           </Button>
           <Input
@@ -271,7 +273,9 @@ function App() {
             }
           >
             Command Checker
-          </Button>
+          </Button> */}
+          {/* COMMENT THIS WHEN STARTING USER STUDY */}
+
           <ArtyContainer
             clippyImage={clippyImage}
             handleMute={handleMute}

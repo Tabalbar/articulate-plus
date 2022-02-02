@@ -15,5 +15,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=["POST"])
 def makePrediction():
-
-    return {'Query 1': "hello"}
+    # response = flask.jsonify({"message": "Hello World"})
+    # response.headers.add('Access-Control-Allow-Origin', '*')
+    return json.dumps({'Query 1': "hello"})
