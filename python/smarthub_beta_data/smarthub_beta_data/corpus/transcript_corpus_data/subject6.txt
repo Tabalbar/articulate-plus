@@ -1,0 +1,235 @@
+START
+08:02
+So can I see the visualization for crime in the Chicago neighborhoods like the overall crime? [short]
+*Uh* crime *uh* I mean. [medium]
+*Uh* yes so can you show me the-- any graph or visualization? [long]
+*Um* for-- ok for *uh* *um*-- [short] can you show me *uh* burglary for-- [short] I mean bur-- *oh* ok.
+Here crime frequency. [short]
+Can you widen it? I mean. [short] *Uh* horizontally *uh* I mean the x-axis? [medium] 
+So [short] this is basic-- specifically for four neighborhoods and crime is from 2010 till 14.
+09:24
+And can you show me the distribution of crimes with respect to the crime-types? [medium]
+So in this case River-North has the maximum crime reported.
+After that it’s Near-West and U_I_C and Loop seems to be the safest out of these four.
+So can you show me the crime distribution in River-North? [short] 
+*Oh*, it’s processing. [medium]
+experimentor: Yeah, so--.
+*Uh* it seems that the crime distribution is for all the neighborhoods but *uh* I would like to see the crime [short] distribution specifically for River-North.
+Ok, now working on River-North.
+experimentor: Yeah.
+*Uh*--
+experimentor: When it says processing it means it's working on the next question.
+Ok.
+experimentor: So you’ll see cause it takes a little time to produce the result. [medium]
+experimentor: I mean the data analysis expert is a human, so--.
+*Oh* ok.
+experimentor: The person will take a little time.
+So in the second graph meanwhile the third graph comes its theft seems to be the most common crime followed by battery but there’s a huge [short] difference in the numbers.
+Between theft and then battery and then on. [short]
+So this is specifically for River-North.
+It seems to follow the same pattern [short] like *uh* reported for-- *uh* I mean.
+11:19
+The crime pattern reported for the-- all the neighborhoods.
+The same pattern we can see in River-North but *um*. [short]
+*Uh* do-- can you show only the bar graph or do you have some any other way of visualizing the same? [medium]
+Thank you. [Long]
+12:41
+Ok. [medium]
+So here in this graph *uh* [short] I mean sorry station in River-North [short] theft seems to cover the larger area so it corresponds to the same thing so.
+Ok in U_I_C its also theft, in Loop [short] ok.
+And [short] the next ok. [short]
+What is-- *uh* what is this other graph for?
+*Oh* its the same represent-- *uh* different graph for the same-- *oh* ok another re-- *oh* thank you.
+*Um*. [short]
+And if we see here [short] the [short] ok.
+So *uh* can we remove this graph and just can you refocus on the other one yes?
+Ok, yeah.
+13:56
+This seems to be a better [short] one and here [short].
+If we see in Loop we have theft and then the second highest is deceptive-practice.
+Whereas here it is theft and-- .
+In Near-West its theft and battery.
+In River-North it’s theft and battery [short] and then deceptive-practice.
+And if we see in Near-West *uh* deceptive-practice is not being reported that much.
+But in U_I_C it’s again theft and battery and then comes criminal-damage.
+So if we need to focus like which crime-types to target then in general it seems theft and battery. These two should be considered [short] the priority. [short]
+And [short] what do you think? [medium]
+That’s *um*. [medium]
+Yes *uh*. [medium]
+Ok and. [medium]
+Ok can you show me now for each year the crime distribution *uh* in the four neighborhoods? [long]
+16:20
+Meanwhile one more question like which crime-types to target are we looking neighborhood wise on in general *uh*? [long]
+16:42
+Ok. [long]
+Ok so in 05-2-- *uh* 05-2 image we can see that *uh* we see that *um* the crime-rate with respect to each progressing here.
+And in that we see that [short] in a good way *uh* from 2010 till 2014 you see there is reduction in the crime-rate [short].
+*Uh* in all the four neighborhoods in 2014 *uh* and. [short]
+Ok and [short] *uh* [short] what exactly is 05-1 graph about? [short] 
+Is another view is *uh*. [medium]
+I think the first graph-- I mean 05-2 is a better it’s-- it’s a better *um* way to int-- I mean visualize rather than these four separately [short].
+18:11
+*Uh* yes. [short] 
+Ok and [short] we can also make out from this graph that the highest *uh* crime as we saw in the [short] first graph *uh* ok. [short]
+Now can we see-- is it the 01 the yes? [short]
+So here we see that over the entire time frame it's the same here *um* River-North [short] both have.
+So which area to deploy the officers?
+So here we have River-North [short].
+And then comes Near-West which [short] according to this graph in the yearly *uh* if we see year-wise there is a lot of-- there’s decrease in the crime-rate [short] even though the total number of crimes second highest.
+But if we see U_I_C which is [short] *mm* ok U_I_C and then comes the Loop.
+So if we want to deploy more officers the area of neighborhood of concern would be first one is River-North and then second one is U_I_C. [medium]
+19:44
+But ok *uh*.
+Can you show [short] the month-wise-- I mean for 2014 month-wise crime-- *uh* crime reported in each neighborhood? [long]
+22:43
+Ok. [Long]
+So in [short] if we see what 06-2.P_N_G so in Loop the highest crime is reported in [short] August?
+Yes, August, in Near-West its reported in [short] June and July, [short] yeah, but August, *uh* ok, *uh*.
+And what about here in June and July, yes, [short] so and here June, July, August again it's-- there is a peak, we can observe in River-North and in U_I_C [short].
+23:46
+It's highest in [short] October but also pretty high the crime-rate is high in [short] July and August.
+June.
+The crime *uh* reported *um* in Jan-- in winter in January, February, March, I mean in December.
+So I think in winter durinf-- in *um* Loop the crime reported [short] ok.
+So the crime is reported more during the summer time, summer and fall so almost like June, July, August [short].
+The same is applicable in Near-West we see a peak during the f-- summertime and its comparatively-- the crime is comparatively less during the wintertime that is basically December, January, February. [short]
+But [short] the crime reported in River-North [short] it's-- [short] it's high the entire year [short] and in U_I_C again its comparatively less during the wintertime, *uh* so like November, December, January, February but its high during the main that’s summer *uh* and fall time. [short]
+Ok.
+And in this 06-1 what exactly is this it’s January? [short]
+Ok so this is ok.
+And we can see from all these graphs that River-North it the crime-rate is high in all the months and ok so here in January and February, March. [short]
+Ok which one is *oh* ok. [medium]
+So it's less then-- it's high [short] one, two, three, four. [short]
+This two months *oh* sorry.
+These two months is July and August and here it’s not ok [short].
+26:17
+So the pattern we can make out from these two graphs is basically that what I said earlier is the crime reported during summer and fall time it’s higher compared to the winter time [short].
+Ok and so that’s according to the month and what about the crime-rate reported according to day-of-the-week? [short] Can you show me *oh* visualization for that? [long]
+27:39
+Ok that’s by days of week.
+So in 07-2 *uh* we see that ok in [short] in River-North again *uh* Saturday and Sunday so weekends are crimes-- I mean crime reported in weekends.
+Is [short] *uh* almost like Friday, Saturday, Sunday is higher than than the weekdays-- normal weekdays working days. [short]
+Whereas I mean we can see a distinct-- I mean clear [short] distinct-- I mean crime *uh* pattern in River-North *uh* specifically River-North *uh* neighborhood there is not [short] distinct.
+There is no such distinctive pattern in U_I_C, it's that the crime reported is uniform in through-- all seven days of the week except Friday.
+And [short] in Near-West it’s [short] again crime reported if we see its more from Friday, Saturday, Sunday that’s more like during the weekend time than the weekdays.
+*Uh* ok and in Loop [short] its pretty much, it's totally different because in Loop as people work [short] and there will be more people present during the weekdays rather than the weekend.
+So the crime reported it seems it has it seems to have a different kind of pattern than the rest of the neighborhoods where it says we can see that the crime reported is more is higher during the weekday compared to the weekends.
+Weekends which include like Saturday and Sunday [short].
+*Um* [medium] *uh* ok [medium] I somehow feel the 06-2 and 07-2 they are-- [short] they’re much clearer *uh* to visualize and understand rather than 06-1 and 07-1.
+30:15
+We can shift it.
+So what we can make out from the previous graph-- infer is the months in the summer and fall months, I mean summer and fall season it-- and then particularly with respect to days.
+In West-- Near-West, River-North, and U_I_C [short] it’s the crime is more reported during the weekends rather than the weekdays but in Loop its the other way around [short].
+It's during the *uh* crime reported is more during the weekdays rather than the weekends [short].
+So and what about the time of the day, like crime reported with respect to the time of the day? [long]
+32:00
+Ok so [short] here it is *uh*. [short]
+Ok so first we will focus on River-North. [short]
+So the crime reported is more from-- is the highest in the afternoon time from noon to 6-P_M.
+And then the second one is 6-P_M to midnight.
+And what about U_I_C?
+It also has a similar pattern with respect to noon to midnight.
+*Uh* ok and we see a similar [short] pattern in Near-West that the crime report is higher from noon till midnight.
+And in Loop it’s again noon it’s also having same pattern from noon to midnight.
+The only difference in the pattern we can see ok it’s-- this is higher, this is lower, this is higher, this is lower, this is higher, this is lower it’s only in River-North midnight ok [short].
+Six so here the lowest crime occurs in U_I_C from midnight to six-A_M.
+In Near-West its midnight to six-A_M.
+In Loop its midnight to six-A_M but in River-North the crime-rate is lowest from six-A_M to noon.
+Ok [short] so [short] here we have month, [short] day and time so now if we look for River-North ok.
+33:52
+So [short] ok so this is for [short] year, day-- I mean days of the week, and time.
+So for specifically th-- this is for 2014, can you show me these three corresponding graphs, that is with respect to month, days of the week and year for years 2010, 11, 12, 13, and 14? [long]
+Let’s start the time of the day and day-of-the-week ok. [long]
+Ok meanwhile I’ll just analyze *uh* these ones. [short]
+So from-- in 2010 [short] *uh* River-North we can see again crime reported is higher during the weekends *uh* so-- I mean Friday, Saturday, and Sunday.
+In 2011, the same pattern was there, I mean specifally-- right now I’m talking about River-North.
+In 2012 its again Friday, Saturday and Sunday. [Long] 
+Ok. [short] 
+In 2013 its Friday, Saturday, and Sunday and 2014 its again Friday, Saturday, and Sunday.
+But in all these years the crime reported in River-North in Sunday it's the maximum, whereas Saturday its [short] with-- *uh* with respect to Friday and sorry.
+While crime reported in Saturday, on Saturday it's maximum but the crime reported on Friday and Sunday is waving over the years, [short] ok.
+And that’s for 2014 ok.
+And the next one is River-North and if we consider U_I_C. [short]
+It’s maximum in *um* Friday, [short] I mean ok.
+And here Friday in 2011, in 2012 it’s again Friday, in 2013 it’s Friday and [short] 2014 it’s Friday so the maximum crime reported in U_I_C it’s on Friday and rest of the days they do vary but they don’t vary to a great extent so they seem to be a little bit uniform.
+And if we see in Near-West [short] again crime reported on Friday till Sunday [short] *uh* for all these years *uh* from 2010 till 2014 so we are ok.
+And in Loop it's more during the weekdays from Monday till Friday, Monday till Friday in 2011, 2012. [short]
+42:21
+2013 [short] and 2014 so [short] ok.
+So from days of the week we can identify a pattern from here 2010 to 2014 that in neighborhoods Near-West, River-North and U_I_C the crime reported is maximum from Friday till Sunday whereas in the Loop its the other way round the crime reported is highest during the weekdays.
+So ok [short] ok and now let's focus on the day the timings time of the day.
+We will begin with River-North, it's maximum from noon to midnight.
+It’s the same story in 2011, noon to midnight, noon to midnight, [short] noon to midnight and noon to midnight, ok. [short]
+And [short] in U_I_C and ok so Near-- Near-West ok U_I_C it's again noon to midnight over all the per-- years.
+In Near-West again it’s noon to midnight over the years and.
+But in Loop as we said-- [short] ok noon to midnight, noon to midnight, noon to midnight. 
+But in Loop it's maximum in 2010-- is noon to 6-P_M, noon to 6-P_M, noon to 6-P_M in 2012. [short]
+44:14
+Noon to 6-P_M in 2013 and 2014 its [short] noon to 6-P_M. [short] 
+Ok so again here we can see a distinct pattern sp-- *uh* we also *um* we saw a distinct pattern in-- during the days of the week but also during the time of the day.
+*Uh* Specific-- I mean there is a specific pattern in three suburbs, Near-West, River-North, and U_I_C, and Loop has a different kind of pattern so we see crime reported is highest during noon to midnight.
+*Uh* In Near-West, River-North, and U_I_C and in Loop its during noon to 6-P_M. [short]
+Ok-- [short] ok so in about the month for-- ok so we already have for here-- [short] for the month is River-North it’s we s-- it’s during highest is during July, August in 2010.
+It’s the same July-- same story in 2011 yes but in 2012 even August has *uh* higher crime-rate reported. [short]
+Ok and here it is June there's variation-- ok and. [short] 
+Can we align the 2013 graph so it’s easier? [medium] I mean *uh* this-- can we align graphs *uh* the month *oh* ok [medium].
+46:30
+Yeah, that’s better. [medium]
+Ok [short] so here it’s in July and [short] August in 2010.
+And here it is July and August [short] whereas here also June but July and August are still the highest crime-rate whereas here it's ok sorry.
+*Uh* this is which one-- [short] July and August. [short]
+*Hm* ok [short] but here I mean November, December, Jan.
+November, December [short] Jan, Feb.
+November, December, Jan, Feb. [short]
+So crime is lowest during February but highest between June, July, August and in these three months. [short]
+Ok that’s for River-North and for U_I_C *uh* it’s [short] more I mean there is a xxx. [short] 
+47:56
+Between March *oh* so where did the graph go?
+I’m sorry, can you minimize it? And no, *uh* can you place it the where place where it was?
+*Oh* thank you.
+I’m just trying to figure out-- ok [short] so that’s from March till October [short] and here ok. [medium]
+Ok February. [medium]
+Ok so for crime February seems to be the less favorable month [short] but the most favorable month for crime is basically the summer time, *uh* summer and a little bit fall so like we can say the major is from around.
+*Oh* no it didn’t-- ok March till September so that would be the peak time ok.
+So in case if you want to vary the deployment depending on the time of the day, the days of the week, the month-of-the-year then for-- *uh* for all the *uh* neighborhoods if *uh* with respect to month the deployment should be more *uh* from months March till *uh* September *uh* [short].
+Then with respect to days of the week *uh* in River *uh* sorry in River-North, Near-West, and U_I_C the deployment should be more during the weekend that’s especially from Friday to Sunday whereas in Loop the deployment should be more during the weekdays.
+And with respect to time of the day if we are focusing to vary the deployment the in Near-West, River-North and U_I_C, during the noon till midnight *uh* one needs to place deploy more officers whereas in Loop it should be between noon till 6-P_M.
+50:26
+In that time more officers must be deployed.
+That’s what I can make out from all these graphs for the years of 2010 to 2014 and [short] which areas to deploy the officers so-- with respect to these four neighborhoods the crime-rate seems to be highest in River-North.
+So I already told my answer it should be River-North and also U_I_C because that’s what we can make from the *uh* graph that *uh* the crime-rate is still high in *uh* [short] River-North and U_I_C compared to the other two neighborhoods.
+[short] Ok so now *uh* [short] can you *uh* close all these graphs and show me the crime reported with respect to the location-type specifically in River-North and U_I_C?
+Over the period 2010 till 2014? [long]
+52:33
+If you want you can close these graphs as I won’t be needing it anymore. [long]
+Can you show me year-wise *uh* separate graph like for 2010 and 2011, 12, 13, 14? [long]
+experimentor: See now *uh*, 2:45, or *uh* so five minutes.
+*Oh* Five minutes?
+experimentor: yeah.
+Ok. [long]
+55:23
+Ok *uh* [short] ok meanwhile from these remaining graphs we can observe that street is the favorite location for the criminal people and then [short] yes.
+Residence, sidewalk, residence, sidewalk and ok so the residence ok.
+[short] So over the period of 2010 till 2014 the top three ok.
+The top three crime spots are streets, residence and sidewalks, and. [short]
+I can't see the 2014 *uh* graph its *oh* ok yes thank you.
+*Oh*, but in 2014 it's other but ok what do you mean by other and its apartment and apartment.
+Apartment and apartment, there’s also parking-lot [short] and parking-lot.
+So the-- we can see the top four are streets, sidewalk, residence and apartment.
+They are the *uh* common crime hot-spots.
+In U_I_C and about River-North. [long]
+57:18
+How much time?
+experimentor: *Uh*, about a minute.
+Ok that gives this.
+experimentor: Yeah, maybe just this last one. [medium]
+Ok. [long]
+57:55
+12 it’s restaurant, street, residence, sidewalk xxx. [medium]
+What, what about parking, what is there parking, is there parking-lot? [short]
+Ok so from *uh* in both these neighborhoods the crime, hot-spots, from these graphs seems to be street, residence, sidewalk, apartment and parking-lot.
+So [short] *uh* yes so that’s what my observation is from all these graphs.
+*Oh*, thank you. [medium]
+I can read-- *oh* ok thank you.
+59:03
+END

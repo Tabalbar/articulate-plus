@@ -1,0 +1,4973 @@
+{
+   "annotation": {
+      "head": {
+         "specification": {
+            "_src": "../../articulatespecificationv1.xml"
+         },
+         "video": {
+            "_src": "../../../anvil_corpus_videos/subject6.mov",
+            "_master": "true"
+         },
+         "info": [
+            {
+               "_key": "coder",
+               "_type": "String",
+               "__text": "beanz"
+            },
+            {
+               "_key": "encoding",
+               "_type": "String",
+               "__text": "UTF-16"
+            }
+         ]
+      },
+      "body": {
+         "track": [
+            {
+               "el": [
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "createvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "1"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So can I see the visualization for crime in the Chicago neighborhoods like the overall crime? [short]"
+                        }
+                     ],
+                     "comment": "Crime-type attribute introduced, neighborhood attribute introduced",
+                     "_index": "0",
+                     "_start": "481",
+                     "_end": "490"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Uh* crime *uh* I mean. [medium]."
+                        }
+                     ],
+                     "_index": "1",
+                     "_start": "490.04001",
+                     "_end": "493.20001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "winmgmt"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "3"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Uh* yes so can you show me the-- any graph or visualization? [long]"
+                        }
+                     ],
+                     "_index": "2",
+                     "_start": "503",
+                     "_end": "507.60001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "4"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* for-- ok for *uh* *um*-- [short] can you show me *uh* burglary for-- [short] I mean bur-- *oh* ok."
+                        }
+                     ],
+                     "_index": "3",
+                     "_start": "526",
+                     "_end": "532.32001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "5"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Here crime frequency. [short]."
+                        }
+                     ],
+                     "_index": "4",
+                     "_start": "532.32001",
+                     "_end": "534.40002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "winmgmt"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Can you widen it? I mean. [short] *Uh* horizontally *uh* I mean the x-axis? [medium]"
+                        }
+                     ],
+                     "_index": "5",
+                     "_start": "537",
+                     "_end": "545.64001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "7"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So [short] this is basic-- specifically for four neighborhoods and crime is from 2010 till 14."
+                        }
+                     ],
+                     "_index": "6",
+                     "_start": "554",
+                     "_end": "563"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "8"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "And can you show me the distribution of crimes with respect to the crime-types? [medium]"
+                        }
+                     ],
+                     "_index": "7",
+                     "_start": "563.44",
+                     "_end": "569.20001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "9"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So in this case River-North has the maximum crime reported."
+                        }
+                     ],
+                     "_index": "8",
+                     "_start": "578.76001",
+                     "_end": "582.96002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "10"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "After that it's Near-West and U_I_C and Loop seems to be the safest out of these four."
+                        }
+                     ],
+                     "_index": "9",
+                     "_start": "584",
+                     "_end": "590.55902"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "11"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So can you show me the crime distribution in River-North? [short]"
+                        }
+                     ],
+                     "_index": "10",
+                     "_start": "591.52002",
+                     "_end": "597.40002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "12"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Oh*, it's processing. [medium]"
+                        }
+                     ],
+                     "_index": "11",
+                     "_start": "599.76001",
+                     "_end": "601"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "13"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Uh* it seems that the crime distribution is for all the neighborhoods but *uh* I would like to see the crime [short] distribution specifically for River-North."
+                        }
+                     ],
+                     "_index": "12",
+                     "_start": "611",
+                     "_end": "622.32001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "14"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "The same pattern we can see in River North but *um*."
+                        }
+                     ],
+                     "_index": "13",
+                     "_start": "683.08002",
+                     "_end": "687.20001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "15"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Uh* do-- can you show only the bar graph or do you have some any other way of visualizing the same? [medium]"
+                        }
+                     ],
+                     "_index": "14",
+                     "_start": "688.08002",
+                     "_end": "696"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "16"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Thank you. [Long]"
+                        }
+                     ],
+                     "_index": "15",
+                     "_start": "702",
+                     "_end": "702.76001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "17"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok. [medium]"
+                        }
+                     ],
+                     "_index": "16",
+                     "_start": "761",
+                     "_end": "761.76001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "18"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So here in this graph *uh* [short] I mean sorry station in River-North [short] theft seems to cover the larger area so it corresponds to the same thing so."
+                        }
+                     ],
+                     "_index": "17",
+                     "_start": "766",
+                     "_end": "782.32001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "19"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok in U_I_C its also theft, in Loop [short] ok."
+                        }
+                     ],
+                     "_index": "18",
+                     "_start": "783",
+                     "_end": "791.20001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "20"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "And [short] the next ok. [short]"
+                        }
+                     ],
+                     "_index": "19",
+                     "_start": "791.32001",
+                     "_end": "795.64001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "21"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "And if we see here [short] the [short] ok."
+                        }
+                     ],
+                     "_index": "20",
+                     "_start": "815.44",
+                     "_end": "822.44"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "winmgmt"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So *uh* can we remove this graph and just can you refocus on the other one yes?"
+                        }
+                     ],
+                     "_index": "21",
+                     "_start": "824",
+                     "_end": "833.44"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "23"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok, yeah."
+                        }
+                     ],
+                     "_index": "22",
+                     "_start": "833.96002",
+                     "_end": "835.76001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "24"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "This seems to be a better [short] one and here [short]."
+                        }
+                     ],
+                     "_index": "23",
+                     "_start": "835.84003",
+                     "_end": "841.84003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "25"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "If we see in Loop we have theft and then the second highest is deceptive-practice."
+                        }
+                     ],
+                     "_index": "24",
+                     "_start": "843",
+                     "_end": "849.08002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "26"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So if we need to focus like which crime-types to target then in general it seems theft and battery. These two should be considered [short] the priority. [short]"
+                        }
+                     ],
+                     "_index": "25",
+                     "_start": "881",
+                     "_end": "897.96002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "27"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "And [short] what do you think? [medium]"
+                        }
+                     ],
+                     "_index": "26",
+                     "_start": "900",
+                     "_end": "904.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "28"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "That's *um*. [medium]"
+                        }
+                     ],
+                     "_index": "27",
+                     "_start": "910.52002",
+                     "_end": "912.96002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "29"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Yes *uh*. [medium]"
+                        }
+                     ],
+                     "_index": "28",
+                     "_start": "918.44",
+                     "_end": "920.55902"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "30"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok and. [medium]"
+                        }
+                     ],
+                     "_index": "29",
+                     "_start": "924.96002",
+                     "_end": "927.08002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "createvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "31"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok can you show me now for each year the crime distribution *uh* in the four neighborhoods? [long]"
+                        }
+                     ],
+                     "comment": "Time attribute introduced",
+                     "_index": "30",
+                     "_start": "931.40002",
+                     "_end": "942.32001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "clarification"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "32"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Meanwhile one more question like which crime-types to target are we looking neighborhood wise on in general *uh*? [long]"
+                        }
+                     ],
+                     "_index": "31",
+                     "_start": "979",
+                     "_end": "987.96002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "33"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok. [long]"
+                        }
+                     ],
+                     "_index": "32",
+                     "_start": "1002.08002",
+                     "_end": "1004.64001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "34"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so in 05-2-- *uh* 05-2 image we can see that *uh* we see that *um* the crime-rate with respect to each progressing here."
+                        }
+                     ],
+                     "_index": "33",
+                     "_start": "1016.11902",
+                     "_end": "1034.11902"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "35"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok and [short] *uh* [short] what exactly is 05-1 graph about? [short]"
+                        }
+                     ],
+                     "_index": "34",
+                     "_start": "1056.28003",
+                     "_end": "1067.56006"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "36"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Is another view is *uh*. [medium]"
+                        }
+                     ],
+                     "_index": "35",
+                     "_start": "1068.31897",
+                     "_end": "1070.92004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "preference"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "37"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "I think the first graph-- I mean 05-2 is a better it's-- it's a better *um* way to int-- I mean visualize rather than these four separately [short]."
+                        }
+                     ],
+                     "_index": "36",
+                     "_start": "1075.40002",
+                     "_end": "1090.04004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "38"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Uh* yes. [short]"
+                        }
+                     ],
+                     "_index": "37",
+                     "_start": "1092.28003",
+                     "_end": "1094.88"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "39"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok and [short] we can also make out from this graph that the highest *uh* crime as we saw in the [short] first graph *uh* ok. [short]"
+                        }
+                     ],
+                     "_index": "38",
+                     "_start": "1096.16003",
+                     "_end": "1113.40002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "winmgmt"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "40"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Now can we see-- is it the 01 the yes? [short]"
+                        }
+                     ],
+                     "_index": "39",
+                     "_start": "1115.43896",
+                     "_end": "1119.16003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "41"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So here we see that over the entire time frame it's the same here *um* River-North [short] both have."
+                        }
+                     ],
+                     "_index": "40",
+                     "_start": "1121.28003",
+                     "_end": "1133.40002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "42"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Can you show [short] the month-wise-- I mean for 2014 month-wise crime-- *uh* crime reported in each neighborhood? [long]"
+                        }
+                     ],
+                     "_index": "41",
+                     "_start": "1191.43896",
+                     "_end": "1204.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "43"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok. [Long]"
+                        }
+                     ],
+                     "_index": "42",
+                     "_start": "1362.04004",
+                     "_end": "1364.16003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "44"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So in [short] if we see what 06-2.P_N_G so in Loop the highest crime is reported in [short] August?"
+                        }
+                     ],
+                     "_index": "43",
+                     "_start": "1375.16003",
+                     "_end": "1392.31897"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "45"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So the pattern we can make out from these two graphs is basically that what I said earlier is the crime reported during summer and fall time it's higher compared to the winter time [short]."
+                        }
+                     ],
+                     "_index": "44",
+                     "_start": "1577",
+                     "_end": "1591.92004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "46"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok and so that's according to the month and what about the crime-rate reported according to day-of-the-week? [short] Can you show me *oh* visualization for that? [long]"
+                        }
+                     ],
+                     "_index": "45",
+                     "_start": "1594.68005",
+                     "_end": "1614"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "47"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok that's by days of week."
+                        }
+                     ],
+                     "_index": "46",
+                     "_start": "1659.92004",
+                     "_end": "1662.76001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "48"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "It's during the *uh* crime reported is more during the weekdays rather than the weekends [short]."
+                        }
+                     ],
+                     "_index": "47",
+                     "_start": "1852.80005",
+                     "_end": "1857.92004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "49"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So and what about the time of the day, like crime reported with respect to the time of the day? [long]"
+                        }
+                     ],
+                     "_index": "48",
+                     "_start": "1858.64001",
+                     "_end": "1868.43896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "50"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so [short] here it is *uh*. [short]"
+                        }
+                     ],
+                     "_index": "49",
+                     "_start": "1919.04004",
+                     "_end": "1926.40002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "51"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so first we will focus on River-North. [short]"
+                        }
+                     ],
+                     "_index": "50",
+                     "_start": "1926.92004",
+                     "_end": "1929.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "52"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So [short] ok so this is for [short] year, day-- I mean days of the week, and time."
+                        }
+                     ],
+                     "_index": "51",
+                     "_start": "2030.88",
+                     "_end": "2042.43896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "53"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So for specifically th-- this is for 2014, can you show me these three corresponding graphs, that is with respect to month, days of the week and year for years 2010, 11, 12, 13, and 14? [long]"
+                        }
+                     ],
+                     "_index": "52",
+                     "_start": "2043.04004",
+                     "_end": "2062.15894"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "54"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Let's start the time of the day and day-of-the-week ok. [long]"
+                        }
+                     ],
+                     "_index": "53",
+                     "_start": "2276.52002",
+                     "_end": "2279.6001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "55"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok and here it is June there's variation-- ok and. [short]"
+                        }
+                     ],
+                     "_index": "54",
+                     "_start": "2755.76001",
+                     "_end": "2763.39893"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "winmgmt"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "56"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Can we align the 2013 graph so it's easier? [medium] I mean *uh* this-- can we align graphs *uh* the month *oh* ok [medium]."
+                        }
+                     ],
+                     "_index": "55",
+                     "_start": "2764.39893",
+                     "_end": "2783.15894"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "57"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Yeah, that's better."
+                        }
+                     ],
+                     "_index": "56",
+                     "_start": "2789.04004",
+                     "_end": "2791.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "58"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok [short] so here it's in July and [short] August in 2010."
+                        }
+                     ],
+                     "_index": "57",
+                     "_start": "2799.80005",
+                     "_end": "2809.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "59"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Between March *oh* so where did the graph go?"
+                        }
+                     ],
+                     "_index": "58",
+                     "_start": "2874.91895",
+                     "_end": "2880.84009"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "winmgmt"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "60"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "I'm sorry, can you minimize it? And no, *uh* can you place it the where place where it was?"
+                        }
+                     ],
+                     "_index": "59",
+                     "_start": "2880.87891",
+                     "_end": "2887.84009"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "61"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Oh* thank you."
+                        }
+                     ],
+                     "_index": "60",
+                     "_start": "2887.91895",
+                     "_end": "2889.84009"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "62"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "I'm just trying to figure out-- ok [short] so that's from March till October [short] and here ok. [medium]"
+                        }
+                     ],
+                     "_index": "61",
+                     "_start": "2889.87891",
+                     "_end": "2903.36011"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "63"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So I already told my answer it should be River-North and also U_I_C because that's what we can make from the *uh* graph that *uh* the crime-rate is still high in *uh* [short] River-North and U_I_C compared to the other two neighborhoods."
+                        }
+                     ],
+                     "_index": "62",
+                     "_start": "3053.43896",
+                     "_end": "3075.32007"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "createvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "64"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "[short] Ok so now *uh* [short] can you *uh* close all these graphs and show me the crime reported with respect to the location-type specifically in River-North and U_I_C? Over the period 2010 till 2014? [long]"
+                        }
+                     ],
+                     "comment": "Location-type introduced",
+                     "_index": "63",
+                     "_start": "3078.91895",
+                     "_end": "3106.32007"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "winmgmt"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "65"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "If you want you can close these graphs as I won't be needing it anymore. [long]"
+                        }
+                     ],
+                     "_index": "64",
+                     "_start": "3152",
+                     "_end": "3157.04004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "winmgmt"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "66"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Can you show me year-wise *uh* separate graph like for 2010 and 2011, 12, 13, 14? [long]"
+                        }
+                     ],
+                     "_index": "65",
+                     "_start": "3202.28003",
+                     "_end": "3209.56006"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "67"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok *uh* [short] ok meanwhile from these remaining graphs we can observe that street is the favorite location for the criminal people and then [short] yes."
+                        }
+                     ],
+                     "_index": "66",
+                     "_start": "3322.6001",
+                     "_end": "3345.36011"
+                  }
+               ],
+               "_name": "user.utterance-components.utterance",
+               "_type": "primary"
+            },
+            {
+               "el": [
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "1"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "0",
+                     "_start": "490.60001",
+                     "_end": "491.64001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "2"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "pinch-out"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "resize vis"
+                        }
+                     ],
+                     "_index": "1",
+                     "_start": "537.84003",
+                     "_end": "544.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "3"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "14"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "2",
+                     "_start": "683.08002",
+                     "_end": "684.64001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "4"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "18"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-entity-in-vis"
+                        }
+                     ],
+                     "_index": "3",
+                     "_start": "777.32001",
+                     "_end": "779.20001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "5"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "close-vis"
+                        }
+                     ],
+                     "_index": "4",
+                     "_start": "826.20001",
+                     "_end": "830.32001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-vis"
+                        }
+                     ],
+                     "_index": "5",
+                     "_start": "832.20001",
+                     "_end": "833.44"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "7"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "31"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "6",
+                     "_start": "935.52002",
+                     "_end": "937"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "8"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "34"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-vis"
+                        }
+                     ],
+                     "_index": "7",
+                     "_start": "1021.52002",
+                     "_end": "1022.64001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "9"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "34"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-multiple-entities-in-vis"
+                        }
+                     ],
+                     "_index": "8",
+                     "_start": "1026.68005",
+                     "_end": "1030.68005"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "10"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "37"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-vis"
+                        }
+                     ],
+                     "_index": "9",
+                     "_start": "1076.56006",
+                     "_end": "1082.31897"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "11"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "39"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-vis"
+                        }
+                     ],
+                     "_index": "10",
+                     "_start": "1102.04004",
+                     "_end": "1106"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "12"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "39"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-vis"
+                        }
+                     ],
+                     "_index": "11",
+                     "_start": "1110.40002",
+                     "_end": "1112.04004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "13"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "40"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "follow-vis"
+                        }
+                     ],
+                     "_index": "12",
+                     "_start": "1116.04004",
+                     "_end": "1119.16003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "14"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "41"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "compare-vis"
+                        }
+                     ],
+                     "_index": "13",
+                     "_start": "1126.04004",
+                     "_end": "1133.16003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "15"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "42"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "14",
+                     "_start": "1198.16003",
+                     "_end": "1202.16003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "16"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "44"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-vis"
+                        }
+                     ],
+                     "_index": "15",
+                     "_start": "1381.40002",
+                     "_end": "1382.92004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "17"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "44"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-entity-in-vis"
+                        }
+                     ],
+                     "_index": "16",
+                     "_start": "1387.40002",
+                     "_end": "1391.68005"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "18"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "45"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "17",
+                     "_start": "1584.92004",
+                     "_end": "1587.56006"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "19"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "46"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "18",
+                     "_start": "1604.68005",
+                     "_end": "1612.92004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "20"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "48"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "19",
+                     "_start": "1852.80005",
+                     "_end": "1857.04004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "21"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "51"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-entity-in-vis"
+                        }
+                     ],
+                     "_index": "20",
+                     "_start": "1929",
+                     "_end": "1929.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "52"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-vis"
+                        }
+                     ],
+                     "_index": "21",
+                     "_start": "2036.92004",
+                     "_end": "2037.92004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "23"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "53"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-multiple-vis"
+                        }
+                     ],
+                     "_index": "22",
+                     "_start": "2049.19897",
+                     "_end": "2059"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "24"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "55"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-entity-in-vis"
+                        }
+                     ],
+                     "_index": "23",
+                     "_start": "2758.84009",
+                     "_end": "2763.39893"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "25"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "56"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "move-vis"
+                        }
+                     ],
+                     "_index": "24",
+                     "_start": "2764.43896",
+                     "_end": "2778.36011"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "26"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "58"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-multiple-entities-in-vis"
+                        }
+                     ],
+                     "_index": "25",
+                     "_start": "2802.08008",
+                     "_end": "2805.39893"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "27"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "59"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-entity-in-vis"
+                        }
+                     ],
+                     "_index": "26",
+                     "_start": "2875",
+                     "_end": "2878.39893"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "28"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "60"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "pinch-in"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "resize vis"
+                        }
+                     ],
+                     "_index": "27",
+                     "_start": "2881.28003",
+                     "_end": "2882.6001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "29"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "60"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "move-vis"
+                        }
+                     ],
+                     "_index": "28",
+                     "_start": "2884.19897",
+                     "_end": "2886.91895"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "30"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "62"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-multiple-entities-in-vis"
+                        }
+                     ],
+                     "_index": "29",
+                     "_start": "2890.36011",
+                     "_end": "2894.12012"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "31"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "62"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-entity-in-vis"
+                        }
+                     ],
+                     "_index": "30",
+                     "_start": "2900.15894",
+                     "_end": "2902.91895"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "32"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "64"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "close-vis"
+                        }
+                     ],
+                     "_index": "31",
+                     "_start": "3079.91895",
+                     "_end": "3086.12012"
+                  }
+               ],
+               "_name": "user.utterance-components.gesture",
+               "_type": "primary"
+            },
+            {
+               "el": [
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "3"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[any graph or visualization@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "0",
+                     "_start": "504.51901",
+                     "_end": "506.32001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "2"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "3"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "1",
+                     "_start": "538.67902",
+                     "_end": "539.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "7"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "4"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "2",
+                     "_start": "554.67902",
+                     "_end": "555.11902"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "9"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this case@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "3",
+                     "_start": "579.32",
+                     "_end": "580.08"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "02"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "15"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "9"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[only the bar graph@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "4",
+                     "_start": "691",
+                     "_end": "692.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "04*, 04-1"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "15"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "10"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "heatmap,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the same@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "5",
+                     "_start": "695.20001",
+                     "_end": "696"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "04*"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "18"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "12*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "heatmap"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this graph@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "6",
+                     "_start": "766.32001",
+                     "_end": "766.84003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "04-1"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "21"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "13"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[here@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "7",
+                     "_start": "818.44",
+                     "_end": "819.2"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "04*"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "5"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "14*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "heatmap"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this graph@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "8",
+                     "_start": "828.88",
+                     "_end": "830.20001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "04-1"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "15"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the other one@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "9",
+                     "_start": "832.20001",
+                     "_end": "833.40002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "04-1"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "24"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "16"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "10",
+                     "_start": "835.84003",
+                     "_end": "836.32001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "05-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "8"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "34"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "18"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[in 05-2-- *uh* 05-2@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "11",
+                     "_start": "1021.52002",
+                     "_end": "1022.64001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "05-1"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "35"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "19"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[05-1 graph@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "12",
+                     "_start": "1064.40002",
+                     "_end": "1065.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "05-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "10"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "37"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "20"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the first@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "13",
+                     "_start": "1076.76001",
+                     "_end": "1078"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "05-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "10"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "37"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "21"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[05-2@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "14",
+                     "_start": "1078.56",
+                     "_end": "1079.16"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "05-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "37"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@2]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "15",
+                     "_start": "1083",
+                     "_end": "1083.64001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "05-1*"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "37"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "23*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[these four@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "16",
+                     "_start": "1089.19897",
+                     "_end": "1090.07898"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "05-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "11"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "39"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "24"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this graph@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "17",
+                     "_start": "1102.88",
+                     "_end": "1104.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "12"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "39"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "25"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the first graph@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "previous"
+                        }
+                     ],
+                     "_index": "18",
+                     "_start": "1110.80005",
+                     "_end": "1111.92004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "13"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "40"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "26"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the 01@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "previous"
+                        }
+                     ],
+                     "_index": "19",
+                     "_start": "1117.16003",
+                     "_end": "1118.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "41"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "27"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[here@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "previous"
+                        }
+                     ],
+                     "_index": "20",
+                     "_start": "1123.19897",
+                     "_end": "1124.04004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "01,05-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "14"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "41"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "28"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the same here@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "previous"
+                        }
+                     ],
+                     "_index": "21",
+                     "_start": "1128.319",
+                     "_end": "1128.8"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "06-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "16"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "44"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "30"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[06-2.p_n_g@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "22",
+                     "_start": "1381.16003",
+                     "_end": "1383.16003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "06-1*,06-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "45"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "31"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[these two graphs@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "23",
+                     "_start": "1582.64001",
+                     "_end": "1583.80005"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "08"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "50"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "34"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[here@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "24",
+                     "_start": "1924.04004",
+                     "_end": "1925.04004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "08"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "52"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "35"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "25",
+                     "_start": "2036.92004",
+                     "_end": "2037.40002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "08"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "53"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "36"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "26",
+                     "_start": "2045.56006",
+                     "_end": "2046.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "06-2,07-2,08"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "23"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "53"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "37"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[these three corresponding graphs@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "27",
+                     "_start": "2050.32007",
+                     "_end": "2051.76001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "09-9"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "25"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "56"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "39"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the 2013 graph@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "28",
+                     "_start": "2768.63892",
+                     "_end": "2769.43896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "09-12,09-11,09-10,09-9,06-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "56"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "40"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[graphs *uh* the month@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "29",
+                     "_start": "2781.63892",
+                     "_end": "2782.84009"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "09-12"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "59"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "41"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the graph@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "30",
+                     "_start": "2880.15894",
+                     "_end": "2880.67896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "09-12"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "28"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "60"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "42"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "31",
+                     "_start": "2882.32007",
+                     "_end": "2882.6001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "09-12"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "29"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "60"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "43"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@2]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "32",
+                     "_start": "2885.52002",
+                     "_end": "2885.80005"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "09-12"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "60"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "44"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@3]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "33",
+                     "_start": "2887.32007",
+                     "_end": "2887.6001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "32"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "64"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "45"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[all these graphs@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "34",
+                     "_start": "3085.15894",
+                     "_end": "3086.12012"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "65"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "47"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[these graphs@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "35",
+                     "_start": "3154.08008",
+                     "_end": "3155.04004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "65"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "48"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "36",
+                     "_start": "3156.15894",
+                     "_end": "3156.6001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "67"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "50"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,bar,bar,bar,bar,bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[these remaining graphs@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "37",
+                     "_start": "3329.76001",
+                     "_end": "3330.91895"
+                  }
+               ],
+               "_name": "user.utterance-components.refexp",
+               "_type": "primary"
+            },
+            {
+               "el": [
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "1"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the visualization@@@1;crime@@@1;the Chicago neighborhoods@@@1;the overall crime@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "1"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[crime;neighborhood]"
+                        }
+                     ],
+                     "_index": "0",
+                     "_start": "481.07901",
+                     "_end": "490.07901"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "3"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "None"
+                        }
+                     ],
+                     "_index": "1",
+                     "_start": "503.04001",
+                     "_end": "507.60001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "None"
+                        }
+                     ],
+                     "_index": "2",
+                     "_start": "537",
+                     "_end": "545.64001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "8"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "02"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "01"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the distribution of crimes@@@1;respect@@@1;the crime types@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "5"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[crime]"
+                        }
+                     ],
+                     "_index": "3",
+                     "_start": "563.44",
+                     "_end": "569.20001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "11"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "03"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "02"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the crime distribution@@@1;River North@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "7"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[crime;River North]"
+                        }
+                     ],
+                     "_index": "4",
+                     "_start": "591.52002",
+                     "_end": "597.44"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "13"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "03"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "02"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the crime distribution@@@1;all the neighborhoods@@@1;the crime [short] distribution@@@2;River North@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "8"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[crime;neighborhood;River North]"
+                        }
+                     ],
+                     "_index": "5",
+                     "_start": "610.96002",
+                     "_end": "622.20001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "15"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "04*,04-1"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "03"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "treemap,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[only the bar graph@@@1;some any other way@@@1;the same@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "11"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "None"
+                        }
+                     ],
+                     "_index": "6",
+                     "_start": "688.08002",
+                     "_end": "695.96002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "04*,04-1"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "04*,04-1"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "treemap,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "treemap,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "None"
+                        }
+                     ],
+                     "_index": "7",
+                     "_start": "824",
+                     "_end": "833.44"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "31"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "05-1*,05-2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "line,line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[each year@@@1;the crime distribution@@@1;the four neighborhoods@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "17"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[year;crime;neighborhood]"
+                        }
+                     ],
+                     "_index": "8",
+                     "_start": "931.44",
+                     "_end": "942.32001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "42"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "06-1*,06-2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "05-1*,05-2"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "line,line"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[2014 month wise crime-- *uh* crime@@@1;each neighborhood@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "29"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[2014;crime;neighborhood]"
+                        }
+                     ],
+                     "_index": "9",
+                     "_start": "1191.40002",
+                     "_end": "1204.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "46"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "07-1*,07-2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "06-1*,06-2"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the month@@@1;the crime rate@@@1;day@@@1;the week@@@1;visualization@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "32"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[month;crime;day]"
+                        }
+                     ],
+                     "_index": "10",
+                     "_start": "1594.68005",
+                     "_end": "1614"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "49"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "08"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "07-1*,07-2"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the time of the day@@@1;crime@@@1;respect@@@1;the time of the day@@@2]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "33"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[time;crime]"
+                        }
+                     ],
+                     "_index": "11",
+                     "_start": "1858.68005",
+                     "_end": "1868.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "53"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "06-2,07-2,08"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this@@@1;2014@@@1;these three corresponding graphs@@@1;respect@@@1;month@@@1;days of the week@@@1;year@@@1;years@@@1;2010@@@1;11@@@1;12@@@1;13@@@1;14@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "38"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "crime@@@prev;neighborhood@@@prev;day;2010;2011;2012;2013;2014]"
+                        }
+                     ],
+                     "_index": "12",
+                     "_start": "2043.04004",
+                     "_end": "2062.15894"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "56"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "09-12,09-11,09-10,09-9,06-2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "09-12,09-11,09-10,09-9,06-2"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "None"
+                        }
+                     ],
+                     "_index": "13",
+                     "_start": "2764.39893",
+                     "_end": "2783.19897"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "60"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "09-12"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "09-12"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "None"
+                        }
+                     ],
+                     "_index": "14",
+                     "_start": "2880.87891",
+                     "_end": "2887.84009"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "64"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "10-1,10-2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[all these graphs@@@1;the crime@@@1;respect@@@1;the location type@@@1;River North@@@1;the period 2010 till 2014 ?@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "46"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[crime;location;River North;2010;2014]"
+                        }
+                     ],
+                     "_index": "15",
+                     "_start": "3078.91895",
+                     "_end": "3106.36011"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "65"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "None"
+                        }
+                     ],
+                     "_index": "16",
+                     "_start": "3152",
+                     "_end": "3157"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "66"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar,bar,bar,bar,bar,bar,bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[year wise *uh* separate graph@@@1;2010@@@1;2011@@@1;12@@@1;13@@@1;14@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "49"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[2010;2011;2012;2013;2014]"
+                        }
+                     ],
+                     "_index": "17",
+                     "_start": "3202.28003",
+                     "_end": "3209.56006"
+                  }
+               ],
+               "_name": "system.response-components.vis",
+               "_type": "primary"
+            }
+         ]
+      }
+   }
+}

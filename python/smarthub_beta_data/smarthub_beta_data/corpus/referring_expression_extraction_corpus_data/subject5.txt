@@ -1,0 +1,52 @@
+subject5
+
+Ok first off I
+Can you show me [Est<1><01>: the number Est<1><01>] of [Est<1><01>: crimes Est<1><01>] for [Est<1><01>: the four regions Est<1><01>] separately?
+Because I want to see which region has the highest rate of crime.
+ok so number one 
+ok so loop has the lowest number of the crimes and river north has the highest number of the crimes 
+after that is the near west and the next one is lincoln park 
+So can you show me [Est<2><02>: the distribution Est<2><02>] of [Est<2><02>: different crime types? Est<2><02>] I want to know [Est<2><02>: exactly the number Est<2><02>] of [Est<2><02>: different crime types. Est<2><02>]
+Ok so [Text<3><02>: it Text<3><02>] shows that the theft battery deceptive practice and criminal damage have the highest rate of crime.
+So it means that maybe we should focus on these crimes mostly.
+Ok so can you show me [Est<4><03-1*,03-2>: the number Est<4><03-1*,03-2>] of [Est<4><03-1*,03-2>: crimes Est<4><03-1*,03-2>] for [Est<4><03-1*,03-2>: each hour Est<4><03-1*,03-2>] in [Est<4><03-1*,03-2>: a day? Est<4><03-1*,03-2>] I want to know [Est<4><03-1*,03-2>: the frequency of the crimes Est<4><03-1*,03-2>] during [Est<4><03-1*,03-2>: the day. Est<4><03-1*,03-2>]
+i do not what means ok 
+it is close to the bottom 
+ok so it means that in the summer crimes are done between 8 to 9 
+and exactly at 12 we have the highest rate of crime 
+So between 12 up to 19 we have the highest rate of crime.
+I do [Text<5*><03-1*>: not Text<5*><03-1*>] need [Text<5*><03-1*>: this chart Text<5*><03-1*>] and can you move [Gesture<6*><03-1*>: it? Gesture<6*><03-1*>]
+But I want to keep [Gesture<7><03-2>: this one Gesture<7><03-2>] cause [Gesture<8><03-2>: it Gesture<8><03-2>] is better it is not nessessary to see.
+Ok. So can you plot [Est<10><05,06-1*>: [Gesture<9><03-2>: the same chart Gesture<9><03-2>] Est<10><05,06-1*>] for [Est<10><05,06-1*>: the day Est<10><05,06-1*>] of [Est<10><05,06-1*>: the weeks Est<10><05,06-1*>] I mean [Est<10><05,06-1*>: the number Est<10><05,06-1*>] of [Est<10><05,06-1*>: the crimes Est<10><05,06-1*>] for [Est<10><05,06-1*>: each day? Est<10><05,06-1*>]
+yes that is right 
+So the number of the crimes at Fridays and Saturdays are generaly higher than other days but during the week its some extent have we need more officers on the weekends.
+So I do [Gesture<11*><06-1*>: not Gesture<11*><06-1*>] need [Gesture<11*><06-1*>: this one Gesture<11*><06-1*>] but I want to keep [Gesture<12><05>: this one. Gesture<12><05>]
+ok so can you do it for [Est<14><07>: different months Est<14><07>] of [Est<14><07>: the year Est<14><07>] [Text<13><05>: [Est<14><07>: the same plots Text<13><05>] Est<14><07>] I mean the number of [Est<14><07>: the crimes Est<14><07>] for [Est<14><07>: different months in a year? Est<14><07>]
+so [Text<15><07>: it Text<15><07>] shows that the lowest rate of crime is in Feburary and Janurary and the highest rates are in June July August.
+Ok so can you plot me [Est<17><08-1*,08-2>: [Gesture<16><07>: the same plot Gesture<16><07>] Est<17><08-1*,08-2>] I mean the number of [Est<17><08-1*,08-2>: the crimes Est<17><08-1*,08-2>] during [Est<17><08-1*,08-2>: the day Est<17><08-1*,08-2>] for [Est<17><08-1*,08-2>: different regions? Est<17><08-1*,08-2>]
+So so [Text<18><08-2>: it Text<18><08-2>] shows that between 12 noon and 6 PM Loop has the highest rate of crime but during other hours it has the lowest rate of crime.
+so it means that during 12 noon up to 6 pm we can distribute more of the officers to the loop 
+After that we can send them to other regions and ok River North ok.
+and we can do [Text<19><08-1*,08-2>: the same Text<19><08-1*,08-2>] for other regions?
+Ok can you can you normalize [Gesture<20><08-2>: this plot Gesture<20><08-2>] by the size of each region and the area size can you normalize [Gesture<21><03-2>: it? Gesture<21><03-2>]
+ok so can you normalize this one by the area size do you have the area size of each region that is fine 
+Yes. it is good if you can show me [Est<23><09>: [Text<22><09>: the map Text<22><09>] Est<23><09>] I can estimate [Est<23><09>: the size Est<23><09>] myself.
+So UIC and Near West seems to have the same area size. The smallest one is the Loop. That so [Text<24><09>: it Text<24><09>] shows that the the Loop UIC and the Near West have the the highest area size also the highest rate for the crimes but the densety of the crimes is very high in the.
+Can you show me [Est<25><10*,10-2>: the total number Est<25><10*,10-2>] of [Est<25><10*,10-2>: total crimes Est<25><10*,10-2>] in [Est<25><10*,10-2>: each year? Est<25><10*,10-2>]
+And [Text<26*><08-1*>: this one Text<26*><08-1*>] is not useful in my purpose.
+So [Text<27><10-2>: it Text<27><10-2>] shows that in general number of crimes has decreased over the recent years this one.
+And can you do [Est<29><11-1*,11-2,11-3*>: [Text<28><10-2>: the same Text<28><10-2>] Est<29><11-1*,11-2,11-3*>] for [Est<29><11-1*,11-2,11-3*>: the four frequent crimes Est<29><11-1*,11-2,11-3*>] I mean theft [Est<29><11-1*,11-2,11-3*>: battery Est<29><11-1*,11-2,11-3*>] [Est<29><11-1*,11-2,11-3*>: deceptive practice Est<29><11-1*,11-2,11-3*>] [Est<29><11-1*,11-2,11-3*>: criminal damage? Est<29><11-1*,11-2,11-3*>]
+So [Text<30><11-2>: it Text<30><11-2>] shows that in general the number of the thefts battery and criminal damage have decreased but the number of deceptive practice has gotten little bit increased
+we have now this one is better 
+So it means that deceptive practice has increased and we should be careful about this type of crime.
+Can you do [Est<32><12-1,12-2*,12-3*>: [Text<31><11-2>: the same Text<31><11-2>] Est<32><12-1,12-2*,12-3*>] for [Est<32><12-1,12-2*,12-3*>: the next four type of crimes. Est<32><12-1,12-2*,12-3*>] And for [Est<32><12-1,12-2*,12-3*>: the frequency? Est<32><12-1,12-2*,12-3*>]
+like this so it is it is 
+So most of this crimes have not changed or even some places decreased.
+So it means that so the only the only crime that has increased over the recent years is deceptive practice.
+Ok that is fine.
+Ok can you show me [Est<33><13-1*,13-2>: the number Est<33><13-1*,13-2>] of [Est<33><13-1*,13-2>: crimes Est<33><13-1*,13-2>] based on [Est<33><13-1*,13-2>: the location Est<33><13-1*,13-2>] and [Est<33><13-1*,13-2>: type of location? Est<33><13-1*,13-2>]
+So most of the crimes have occurred on the streets.
+after that sidewalk residents other apartment resturants department store parking lot garage 
+so it means that most of the officers should be deployed at these locations mostly be more careful about these locations platform 
+and they should not waste most of their time on the least frequent location 
+ok that is it ok 

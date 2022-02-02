@@ -29,6 +29,8 @@ export async function serverRequest(
 ) {
   //Check charts to pivot
   let pivotTheseCharts = [];
+  let isCommand = true;
+
   for (let i = 0; i < charts.length; i++) {
     if (charts[i].pivotThis) {
       pivotTheseCharts.push(charts[i]);
@@ -55,6 +57,9 @@ export async function serverRequest(
       Accept: "application/json",
     },
   });
+
+  //API request
+
   // decrypt message from server
   const body = await response.text();
   const responseChartMsg = JSON.parse(body);
@@ -129,5 +134,5 @@ export async function serverRequest(
     assistantResponse = fewCharts[Math.floor(Math.random() * fewCharts.length)];
   }
 
-  return assistantResponse;
+  return { assistantResponse: assistantResponse, isCommand: isCommand };
 }

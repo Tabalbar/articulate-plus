@@ -141,14 +141,14 @@ function App() {
       charts,
       setCharts,
       setChartToHighlight
-    ).then((assistantResponse) => {
+    ).then((response) => {
       if (mute) {
         setClippyImage(muteImage);
       } else {
         //Voice syntheiszer
-        if (assistantResponse) {
-          speakVoice(assistantResponse.soundFile);
-          setVoiceMsg(assistantResponse.msg);
+        if (response.assistantResponse) {
+          speakVoice(response.assistantResponse.soundFile);
+          setVoiceMsg(response.assistantResponse.msg);
           setClippyImage(talkingImage);
           setShowTooltip(true);
         }
@@ -156,6 +156,7 @@ function App() {
           setClippyImage(listeningImage);
         }, 3000);
       }
+      return response.isCommand;
     });
   };
 
@@ -210,6 +211,23 @@ function App() {
     setForceUpdate((prev) => !prev);
   };
 
+  const pythonRequest = async () => {
+    fetch("http://localhost:5000/", {
+      //POST request to python server
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        command: "random",
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <>
       <ChakraProvider>
@@ -234,6 +252,10 @@ function App() {
           >
             Test
           </Button>
+          <Button
+            transform={`translate(20rem,0)`}
+            onClick={pythonRequest}
+          ></Button>
           <Button
             position="absolute"
             ml={"60rem"}

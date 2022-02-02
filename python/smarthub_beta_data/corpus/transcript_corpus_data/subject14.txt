@@ -1,0 +1,429 @@
+START
+11:35
+Ready to go.
+Alright.
+So *um* [short] I’ve got to figure out where to deploy officers.
+*Um* alright so show me the *uh* [short] the months where the most number of crimes occur around school areas. [long]
+12:12
+Yes [short].
+What question would you like to answer? [long]
+Yes here’s ok I’ll think out loud.
+I’m thinking that there-- [short] the-- the schools are in in session from a certain number of months in during the year and then the schools are out of session for some certain number of months during the year.
+And I’m wondering if the crime scene changes *uh* around those schools in session month and the school out of session month and which [short] crimes are more prevalent when school is in session and when school is out of session. [long]
+14:03
+Is it ok if I sit on this table?
+experimentor: *Uh*.
+Or do you want me to stand?
+experimentor: *Uh*, well I-- It’s fine *uh*. [short]
+experimentor: Actually, it might be a little-- it might be better to stand.
+*Oh*, that’s fine.
+experimentor: If you sit that’s fine too. [long]
+15:48
+Ok, no, that’s fine.
+I’ll just walk around and look at it, this is good.
+Ok so [medium] what’s happening at the beginning of this chart where all the-- [short] all the bars are high? [long]
+16:31
+It says crime-type and month-of-year [short] looks like. [medium] 
+Why don’t I try xxx over here.
+Oh, yeah, that’s [short] much more helpful.
+[medium] Ok so this is interesting.
+So there’s no age related data here so. [medium]
+It’s ok, that’s ok.
+*Um* [short] so the biggest crimes the most number of crimes are theft. [short]
+And they seem to go up during July and August. [short]
+17:38
+And a little bit in-- [short] a little bit of a blip in January.
+In the beginning of January it’s probably Christmas.
+*Um*. [long]
+So can we narrow in on [short] June to September theft data and where it’s happening? [long]
+20:36
+*Hm* [short] ok. [short] 
+So most of it’s happening at streets, restaurants.
+What’s the difference between a street and a sidewalk [short] for theft? [long]
+21:05
+*Uh* so street could include people robbing from cars breaking into cars. [long]
+21:32
+So is there a time-of-day when the street-- [short] or time-of-day when the street, theft from [short] June to September is happen-- is happening more frequently?
+What-- What is the time-of-day look like [short] for that street data? [long]
+23:12
+That’s really interesting. [long] 
+So is there a way to show [short] *um* how many officers were on these particular streets here where it looks like most of these sh--.
+*Uh* well first of all tell me if I’m reading these correctly.
+So the numbers of crimes by hour-- hours are kind of the six hour segments *uh* are overlaid with this-- these red dots *uh* and the darker the red the more is where the higher concentration is of crime. [medium]
+*Uh* ok. [short]
+So if the theory is that we need more-- one of the hypotheses is that we need more officers on the street we would need to figure out how many officers were or aren’t typically on the streets between noon and midnight.
+*Um* and let’s just say we pick this area here *uh* just [short] north and West of Grant Park [short] around Randolph. [long] 
+Ok, [medium] no that’s-- that’s fine.
+*Um* to go down that the-- thesis path we’d need to know what we had as a baseline because there may be no officers in which case yeah it makes sense to put them on streets between noon and midnight.
+25:16
+My guess is there probably are some officers walking patrolling those areas.
+So it may not be an officer issue.
+*Um* it may not be a manpower issue.
+Ok, so let’s see.
+*Um* [short] let’s see where else we can go. [medium]
+So by year *oh* this is interesting so we’re only looking at one year here.
+Are there other years that we can look at this exact same picture? [short]
+This is all four years 2010 to 2014 ok.
+*Oh* [short] yeah let’s break it out.
+Let’s break out that picture that 03-P_N_G and see what that looks like [short] by year. [long]
+27:10
+*Hm* [medium] looks like they’re doing a good job.
+Still 6 to midnight is a tough time. [medium]
+Ok let’s do-- can we do that same [short] picture [short] of [short] data relative-- that we just did for crimes could we do it I mean for theft can we do it for battery? [long]
+28:40
+This is-- [short] there’s a lot going on in this picture here.
+Ok so battery really dropped [short] from midnight to 6-A_M between 2010 and 2011. [short]
+What can we infer about what was happening to make that drop happen? [short]
+Do we have data that tells us anything about that? [long]
+31:32
+Ok. [short]
+Can you-- [short] so when I’m looking at this [short] *um* I still-- [short] what am I looking for here?
+I’m seeing a good trend, things are going down. [short] 
+Instances are going down *um*. [long]
+32:05
+Overall there’s a few of them that are trending upward between 2013 and 2014.
+So maybe we *um* [short] pick an area can-- well first can we pick one of an actual location and look at the date-- I mean the time around that particular location? [short]
+Ok great so let’s pick this big red dot over here.
+*Um* [medium] *huh* very good.
+Let’s see it looks like it’s *uh* Madison and State-- State and Madison [short] right there.
+There’s two big red dots there. [short]
+State and Madison and then State and-- [short] I guess it’s Lake. [long]
+33:20
+*Oh* it’s State and Washington.
+State and Washington, State and [short] Madison. [long]
+33:41
+Ok so what are these colors telling me? [short]
+There’s a lot of [short].
+Yes, you’ve got the location, absolutely.
+I’m now-- I’m just trying to figure out what that grid pattern means. [medium]
+But there’s two hot-spots right there.
+Those two dark red spots where it looks like there’s a real concentration. [medium]
+*Um* I guess my question is what is at-- what is at those two bright red spots? [short]
+What’s there? [long]
+Yes, number-- number of crimes.
+*Um* I guess I’m looking for what buildings are there?
+Or if it’s an EL-stop or something? [medium]
+Ok, no problem.
+Let’s do this then with the data that we got there.
+Those two big red spots *um* let’s take [short] a year by year picture of [short] the crime data *um* that’s happening in those two spots. [long]
+36:32
+This is a little bit like talking to Siri only with better results.
+experimentor: *Haha*, well.
+Not as frustrating.
+*Oh* no, don’t worry about it. [short]
+experimentor: *Haha*. [short]
+Generally all she ever can give you is like websites and stuff. [long]
+38:07
+Ok so can we now look at that purple line for theft in that hot-spot *um* on a [short] month to month basis?
+So could we do like an overlay of 2010 January to [short] December [short] with the next few years, so we see if like there’s a change from year to year across the months in theft?
+*Oh* you’re working on more.
+*Oops* sorry, thanks. [long]
+*Hm*. [long]
+39:26
+Is this real data? [short]
+experimentor: Yes this is *um* [short] department of Chicago police department by the City of Chicago.
+experimentor: So it’s official data.
+Wow.
+experimentor: *Haha* yep it’s not made up.
+Yeah.
+It’s pretty amazing.
+experimentor: Yeah. [medium]
+Based on this you realize what a kind of a bum rep Chicago’s been getting on the crime scene. [short]
+The numbers don’t seem that-- I mean it-- it’s not great, but it doesn’t look as bad as they make it seem.
+And it’s also been going down. [medium]
+experimentor: Seems a bit-- there--. [long]
+42:21
+So if we had to just make one inference right now [short] from this data, based on those two spots, it looks like some time around October [short] to *uh* running up to the new year the crimes in those in that really the big hot-spot, it’s making that hot-spot that red because of theft [short] and most of that theft is happening from October to late December.
+Is that a fair inference? [long]
+So I guess if I had data now on how many officers were on the streets during that period from October to December [short] *um* [short] I would probably [short] double check to see where those officers were and whether they were walking or in cars or-- [short] and why the streets felt like they could be why people on the streets felt like they could be robbed or looked like they could be robbed. [short]
+I guess that’s all I can differ-- infer *haha*.
+But I would look at that data cause those are the two biggest hot-spots there.
+I suppose the next thing we could do is look at the-- the other hot-spot that you had for crimes which is up in the North side *um* if that’s the zero the fir-- the 0-- the 12-1.P_N_G.
+That’s the number of crimes that are all the crimes. [short]
+But now let’s see.
+Do we have more time to do one more? [short]
+Hooray.
+Ok great.
+Alright so let’s see what-- what we can find out about Chicago Avenue and [short] *um*-- [short] *uh* it’s just off of Michigan so like right *uh* is-- right it’s like Chicago, Michigan [short] right there. [short]
+Magnificent mile. [long]
+44:43
+I think so simplistic answer is go where the money is *haha*.
+experimentor: *Haha*.
+Follow the money.
+experimentor: Yes.
+Show me the hot-spot, let’s see what crimes are being happen-- or happening there. [long]
+45:04
+We’ve done some of this data with the 3-11 data for *um* [short] tagging of graffiti where you say you could see where the busiest number of--.
+experimentor: Really?
+Taggers are.
+experimentor: Wow
+That’s the 3-11 database.
+experimentor: That’s pretty interesting.
+Yeah, that’s pretty interesting to look at.
+experimentor: Yeah, that actually is really interesting.
+And it’s-- you-- you know, it’s [short] common sense you know, where the-- where there’s an EL-stop, where the taggers hop down off.
+Get back on and get-- get away.
+experimentor: *Haha*.
+That’s pretty much where you see the big red dots.
+experimentor: Right, [short] that makes sense. [long]
+46:01
+It’s interesting they break out robbery versus I guess robbery means they had to break-in or something.
+experimentor: [short] *Um* yeah theft is *uh* taking something from someone without them [short] knowing, and robbery is that they-- you actually are taking that from them there.
+I see.
+It’s not until you get home and you realize *oh*, my wallet’s missing.
+experimentor: Yeah that's like-- and then there’s burglary too.
+And how is that defined?
+experimentor: *Um* in that one, it’s like when you’re actually *uh* unlawfully like accessing someones property-- going inside someone's property *uh* with the intent to commit a crime.
+Breaking down a door.
+experimentor: Yeah.
+Breaking a window.
+experimentor: Yeah, it’s burglary.
+experimentor: You-- you don’t even have to actually steal-- just the fact that you’ve gone in there ill-- illegally.
+Wow.
+experimentor: And you’re going to do something.
+Yeah.
+experimentor: And that is burglary yeah.
+Kind of suggests xxx.
+experimentor: Yeah.
+Yeah.
+Why would you go in there unless you’re just going to sit around and wait for them to come home?
+experimentor: Yeah.
+Still wondering why they’re in there.
+47:08
+experimentor: Yeah. [long]
+47:42
+Ok so it’s still theft.
+Slightly different there, June and July are higher than [short] October and December.
+Wow.
+[short] So it’s seasonal.
+[short] When people are downtown shopping on the Magnificent-Mile they’re more likely to get robbed.
+Wow ok.
+What’s this?
+Theft and [short] *oh* deceptive-practice. [long]
+48:24
+So we’ve-- you-- you in-- in your thing it describes where the crime occurred? 
+Like where it occurs on a parking-lot or the lake front or the convenience store.
+experimentor: Yeah.
+Is there a way to show that data for one of these months? [short] 
+*Oh* cool.
+Alright let’s pick a month.
+*Um* what do we need for month. [long]
+Let’s pick [short] *um* [medium] xxx wow. [long]
+Something happened in 2012 that started driving the crime down. [medium]
+Certainly on that-- that’s hot-spot 2.
+*Um* [medium] crime-type that’s hot-spot 2 ok.
+No, no, don’t worry I’m just talking up here.
+Alright here’s the question *um* [short] in [short].
+I’m going to go back to hot-spot 1 and look at *um* the month of November [short] and [short] then let’s just pick a year *um* 20-- [medium].
+Hot-- hot-spot, November, yep and then let’s find out where, *um*, what the location-type was of the thefts. [medium]
+And you can do it by year or you can lump them all together, either one works for me.
+Alright. [long]
+51:04
+What software are you guys using to draw these maps?
+experimentor: [short] *Um* it’s Tableau.
+Tableau?
+experimentor: Yeah.
+*Ah* that’s nice.
+Go xxx. [long]
+Are there any things about the software that you wish were changed?
+experimentor: [short] *Uh* the maps feature could be better.
+Maps, like the actual cities and streets, that kind of stuff?
+experimentor: Yeah, it’s not very detailed, *um*, xxx is nice, xxx
+xxx
+experimentor: Yeah xxx yup? *haha*
+Still it does the job mostly.
+I suppose if you had to hone in on it you’d have to overlay Google-Earth or something.
+experimentor: Yeah-- *uh*, yeah.
+experimentor: *Um* it doesn’t show like, it doesn’t show the C_T_A or bus thing like-- like so it just makes it a little more challenging to use, so you have to use Google-Maps or something else to help.
+Yeah or you’d have to construct the city-specific map structure.
+experimentor: Yeah.
+Yeah. [medium]
+52:38
+But these are-- [short] I mean this data has all been normalized around the-- this library of names.
+So if somebody comes in calling something other than what [short] you’ve called it, you don’t have any kind of semantic mapping yet.
+experimentor: So--.
+So are you working on that or are like--.
+experimentor: We update *uh* no I mean *um*.
+Synonyms like.
+experimentor: Yeah the synonyms might be yeah. [short]
+experimentor: *Um* that’s-- I think *um* [short] you know the-- I’m sure they have like a crime [short] I mean the-- when you call in for call in a crime I mean I’m assuming that on their end when they actually enter the data that they there’s like an option for the menu or something.
+xxx
+experimentor: Yeah
+xxx when it goes into a crime report
+experimentor: That’s what I was thinking.
+That makes sense.
+experimentor: So.
+Yep.
+[medium]
+Is there anything else that I need-- you need me to be doing that I’m not doing?
+53:41
+experimentor: No, I think you’re doing great *haha* yeah.
+experimentor: I think you’re doing very well *haha*. [short] 
+Well. [long]
+54:05
+So this almost looks like shop lifting. [medium]
+Predominantly happening at a department-store. [long]
+54:35
+*Hm*. [long]
+54:43
+Well that would explain why in crime spot number one which is mostly right there near the *um* [short] the downtown shopping areas and also crime spot number 2.
+That’s up there near *um* [medium] like the Nike store, places like that, right?
+And Nordstroms.
+All those rich old ladies pocketing scarves.
+*Haha*. [medium]
+Anyways *um*, [short] there’s a camera.
+experimentor: You just realized there is a camera?
+Ok *um* ok well that’s pretty interesting, this-- so this relative to a city now becomes one of those really interesting questions.
+Does the city have to police the department-store, does the department-store have to bring in more [short] of its own [short] private *uh* officers to watch the stores? [medium]
+That’s *uh*-- so this is not so much person on person crime as it is person from store crime.
+Is that what the inference that you would draw from that?
+This is not like a-- like you reaching into my wallet taking-- I mean my purse and taking my wallet this is [short] you know you go in to a department-store picking up a pair of sunglasses and walking out.
+That’s theft, right?
+experimentor: Yeah, with--.
+So that’s [medium] very telling.
+experimentor: Yeah so department-- the stores will call in a crime that occurred and so now it’s counted as a crime.
+*Uh*.
+experimentor: Yep.
+So *uh* if I were really cynical [short] I would want to dig deep into which department-stores are reporting the most number of crimes.
+experimentor: *Haha*.
+And what their insurance rates look like. [short] 
+*Um* [short] but that would be *uh* [short] that would be-- but this is a private public [short] interface [short] that’s pretty cool I would think. [short]
+*Um* [short] ok. [short]
+*Uh* so that’s crime. [short]
+Cause then the big-- the-- so if we wrap all-- everything that we’ve seen up here which is this is phenomenal by the way data analysis expert, very good, *um* [short] were-- we see we can highlight where the biggest number of crimes are.
+We can see that the predominant number of crimes relative on a scale is theft. [short]
+Most of that theft is happening in those two areas and most of it’s happening at department-stores on the northern shore on the northern end of Michigan avenue it happens in the summer.
+And the downtown area when everybody is looking down there shopping at Christmas and for the holidays its happening down at the State Street stores. [short] 
+State street tends to get more of a bad rep which is really interesting.
+So that’s [short] that’s an important distinction.
+A very important distinction, for this city and its-- *uh* the way it *uh*[short] counters it-- counterbalances some of the racial stereotypes that we have.
+*Um* [medium] and then if you look at the city from a distance most people would never even think that this was where most number of crime is in the city, they’re focused on murder.
+58:43
+And let me see what that’s called up here. [short]
+Homicide. [short]
+That’s what they're focussed on. [short]
+And that barely even-- that barely even was a blip on our picture.
+Let’s bring back up our all our crimes, [short] the crime-type, [short] and then *uh* yeah that one that-- that one yep that one 06-3.P_N_G that’s a good one. [medium]
+*Uh* homicide a brown line [short] it’s hard to even see. [medium]
+I think it’s down here around at where arson is.
+But maybe we should take homicide to battery.
+Take out theft, [short] and just do homicide to battery put them on *uh* put them in the same picture and see who pops up.
+So then we’ll have a zero to 6k scale and we’ll see a little more of a relative--. [short]
+Ok thanks. [long]
+01:00:17
+Can you do *um* [short] do-- like event mapping too with Tableau, like if you were to take a *um* major news events and over-- overlay them like if like if we really were having to do a report for the city, like I would say probably that you know this battery picture here where you start to see some of the data go back up.
+Ok what was happening in the news during-- then?
+Was somebody was being elected, somebody was being pushed out of office, was it really bad weather?
+experimentor: If you can load it with data, you can do stuff with it yeah.
+experimentor: It just has to be some data format that’s all.
+Yeah.
+So media related data-- some of that stuff.
+experimentor: Yeah, I think you could do that.
+experimentor: Definitely yup.
+Cool. [short]
+Yeah. [short]
+01:01:19
+I know somebody I need to get in here to be one of you subjects.
+experimentor: The-- that would be females.
+How many are you guys looking for?
+experimentor: *Um* I believe *um* one for sure for Friday if possible and then *um* maybe one on the weekend *uh* on Saturday.
+On Saturday?
+experimentor: Yeah, I think they’ll I think that was what we’re thinking on average.
+*Oh*, how big is your data set going to be, for tests?
+experimentor: *Uh*, how many total subjects?
+experimentor: *Uh* yeah in ish-- we were hoping maybe something around or near fifteen total.
+*Oh* ok.
+experimentor: Yeah *uh*.
+You’re getting close.
+experimentor: We're getting closer yes *haha*.
+Ok cool, cool.
+experimentor: Then it’s all yeah so if you are aware of someone definitely let us know. 
+experimentor: Really do appreciate that, thank you *haha*. [short]
+Haha, look at that. [medium]
+01:02:24
+Look at the correlation between homicide and battery.
+That still makes battery-- still-- I mean you know-- don’t want to get hit that’s awful.
+But wow what a-- that’s a huge jump. [medium]
+And the number of homicides in the whole region. [long]
+2014. [long]
+01:03:15
+Well so here’s where the event data thing comes in, [short] cause this was an election year, [short] right?
+experimentor: Yeah, that is an election year. [short]
+So if you were really going to zero in on that homicide picture [short] you’d want to look at *um* where it was happening on either side of this from 2011 to 2013.
+You know like what areas and what *um*-- and what location-type. [short]
+Yeah, *oh* yes I-- I’ll form that as a question.
+*Um*, let’s look at the years 2011 to 2013 for homicide, [short] and look at the location-type where the crimes occurred. [long]
+01:05:32
+Ok so street apartment. [short] 
+Those are where the most of these are happening the homicide in the region for those months.
+So *um* [medium] so you can take or can you take these two [short] pieces of data the street and apartment for 2011 to 2013 and show them on [short] the map? [long]
+01:07:45
+*Huh*. [long]
+01:08:04
+So what kind of data can you show me about this bright red [short] dot right here?
+It’s *uh* looks like it’s *um* just north of Lake. [medium]
+*Uh* what would that street be?
+That’s *um* [long] don’t know what that street is maybe Morgan? [short]
+No it can’t be. [long]
+01:10:08
+What’s causing these little white-out squares?
+experimentor: [medium] *Um* [short] so basically when we take the actual map images, [short] we’re only taking *uh* blocks-- you know, certain pieces of it.
+I see.
+experimentor: not the whole thing, so.
+So did-- *uh* there may be data under there? [short]
+Or it was just blocked out because there was no data under there?
+experimentor: Yeah, I mean basically the data is only you know those four neighborhoods, not the data outside of that.
+Right ok that’s right.
+experimentor: Yup, yup, so that’s the-- yup. [long]
+01:11:35
+We need to get you guys a cameo on a crime scene T_V show *haha*.
+experimentor: *haha*
+It’d be pretty cool.
+experimentor: yeah *haha*.
+Could do a lot of forensics with this.
+experimentor: *haha*. [medium]
+Yeah. [long]
+01:12:37
+*Um* I-- I-- yeah so [short] 2011. [short]
+So what this is telling me is that these-- [short] this-- somewhere in the hot-spot that hot-spot that we had, two happened in December, two happened on a Sunday, two happened between midnight and 6-A_M and two happened in 2011. [short]
+Is that-- [short] is that that red dot right there?
+Yeah, [short] yeah ok. [medium]
+And [short] are they all the same-- same event?
+The same two events?
+So that-- that bright red dot is a-- is two homicides that happened on a [short] Sunday in December between midnight and 6 in 2011?
+*Oh* ok. [short]
+Ok. [medium]
+So that suggests, if that’s the case, if they were overlaid, and that’s probably-- [short] why it's-- all these others look like them because it’s not as bright red, it’s just isolated one homicide.
+We don’t know-- we’d have to do another map to figure out when each of those or what year each of those homicides took place.
+01:14:22
+*Oh* I know what, let’s do. 
+Let's do that same this year 14.P_N_G.
+Let’s just do that just for 2012 when we had this spike. [long]
+01:14:51
+experimentor: Just wanted to let you know there’s about five minutes left.
+Ok perfect. This’ll be all we need.
+experimentor: *Haha* great. [short]
+Can’t really gather a lot of data about the homicides without opening-- I mean you have a lot of data about it but you’d need a little bit more to really understand the context. [short]
+Cause with-- in this picture with that small data set that could be just a-- you know a [medium] a murder suicide. [long]
+01:16:03
+2012 ok that tells you a little bit not a whole lot, pretty scattered. [short] It’s like it’s random. [short]
+Social may be right. [short]
+And then here.
+I wonder if any of this is related to that re-districting of gangs.
+That would be an event data to look at right, cause they redrew the maps and they moved kids around from gangs from school to school and created a-- just a big mess.
+experimentor: Yup. [short]
+Alright what else what else you want me to [short] tell you say out loud what or do you have enough?
+experimentor: It’s up it’s up to you.
+experimentor: *Um* really yeah it’s up to you I mean whenever you know howeve-- whenever you feel satisfied or.
+This feels fun I mean this feels great. [short]
+You’ve been excellent [short] data analysis experts.
+Good listening, [short] good categorization skills, very good. [short]
+Wow.
+Ok, yeah, thank you.
+experimentor: Great.
+This is fun.
+Fascinating what you can do.
+Signing now.
+Bye.
+01:17:08
+END

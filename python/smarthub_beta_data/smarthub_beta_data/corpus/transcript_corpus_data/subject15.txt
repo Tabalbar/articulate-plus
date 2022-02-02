@@ -1,0 +1,284 @@
+START
+9:08
+I could just start out with the question, could I-- [short] I guess just a general one like could I get the information for the U_I_C crime statistics.
+Is that like too general?
+experimenter: No you can ask anything-- I mean you would ask questions that you would actually ask.
+experimentor: I mean there are no restrictions.
+experimentor: There are no bad questions either.
+Yes I would like you to respond to that.
+11:12
+Should I wait for each question? Like could you ask multiple questions? 
+Almost like a cue or is it just good to wait
+experimentor: Yeah you're basically just having a conversation with the data analysis expert.
+experimentor: *Um* so while it's processing you just talk about you know what you're thinking or describing the visualization you're seeing. 
+experimentor: Of course there's nothing initially but yeah you could do those things.
+Sorry if it is too many questions
+12:00 
+Ok. [long]
+Is this-- is this by a specific year? [short]
+Or [short] where does it say that?
+experimentor: In the *uh* chart titles, in the chart titles. [short]
+experimentor: xxx.
+*Oh* ok.
+Ok. [medium]
+So it’s 2010, 2002, 2000-- Ok. [long]
+So each plot is for 2010 to 2014 or each one is a year? [short]
+Ok.
+So thinking through it, I just-- I’m just-- I’m just really bad at graphs so I’m just trying to, [short] to sort out all the information out.
+*Um*. [medium]
+So U_I_C day-of-the-week.
+Pretty much the data’s the same, the months. [medium]
+Number of crime.
+Is there, could you get this information by type of crime? [long]
+Locat-- ok, location and then type.
+So, street theft is very high. [short]
+Doesn’t seem [short] *oh*, thanks.
+Theft, battery, criminal-damage. [short]
+Ok. [long]
+*Oops*. [long]
+Ok.
+*Um* right now I’m just trying to you know figure out *um* which time of the days and which type of crime and what day has-- [short] has the highest account for, for crime.
+*Um* it seems that noon is obviously a pretty common time and then there’s theft and battery for, for type of crime. [short]
+The years seem pretty, pretty close obviously.
+Seems like crime is going down since 2010. [short]
+Ok.
+*Um* I know this is a lot, [short] this is a lot of stuff but is there any way to keep all of this up while we look at another neighborhood?
+Ok, could I *uh*--.
+I’m tryin [short] *uh* is there a list of the neighborhoods-- so River-North.
+Could I look at River-North? [short]
+I guess the same, the same graphs that-- that you gave me. [long]
+Or if you could minimize the U_I_C, I guess that would be fine too if I could still bring them up.
+I don’t know if you could do that. [long]
+Actually if you could, if you could make, I guess, the G_P_S map a little bit bigger?
+That’d be good, thanks.
+*Haha*.
+*Uh*.
+I don’t know where we are. [long]
+Alright. [long]
+17:58
+So I guess I still need to compare the-- the-- the G_P_S maps for the other neighborhoods, but just looking at it-- it-- it looks like there’s a relatively as far as the entire neighborhood, there’s a relatively low amount of crime but there’s a certain, I guess they would call this hot-spots [short] of crime [short] where they’re the red dots so signifies there [short] there a lot more.
+I don’t-- but I’m bad at maps as well so I’m not really sure what street is.
+I guess, I don’t know if that’s Canal or maybe it’s Canal street or something. 
+I’m not sure. [short]
+*Uh*. [medium]
+Is there any way to [short] to be able to, to better read the street names on the G_P_S map? [long]
+Ok. [long]
+Michigan-- it don’t look like Michigan. [short]
+Kind of confusing for me.
+*Um* [long] ok.
+Is there any way that I could take-- take notes [short] on-- on these things? [medium]
+In room aid. [short]
+Thank you.
+experimentor: You’re welcome. [short]
+Ok. [long]
+*Uh* can you bring up the [short] the graph behind the 02-2 River-North one?
+Thanks.
+So that’s. [long]
+Ok, right now I’m just *uh* taking notes for myself on [short] just what I see to be [short] the highest accounts of, of *uh* number of crimes, day-of-the-week, hour-of-the-day, just so I have a list for myself. [short]
+*Um* [long]
+*Uh*, U_I_C.
+Can you bring up *uh* 02-5 and 02-4 and-- no yeah, [short] and 02-2?
+Yes. [long]
+22:50
+Is-- is there a graph for just number of crimes [short] just in total for, for all four neighborhoods? [long]
+Ok. [long]
+Ok *um* is there a way to minimize these, like take them of the screen? [short]
+That’d be good or we could get rid of them and put in the-- put in the next two neighborhoods. [long]
+I guess that is Canal Street. [long]
+*Um*, right now I’m looking at the U_I_C transparent, the more transparent map so I can look the, at the streets.
+The thing I can’t just tell, I’m, I’m pretty sure that’s Canal street or it could be one that’s very close cause I, I still can’t see very well but I’m just trying to figure out [short] where exactly those red darts, those red dots are.
+*Oh* yeah, ok. [short]
+So around Roosevelt.
+Ok.
+Roosevelt and Canal. [medium] 
+And-- [short] and Roosevelt seems to be a hot-spot for sure. [medium]
+27:17
+Greektown.
+University-- [medium] University-Village has a few.
+There is also a few in, [short] seems kind of, kind of scattered like there’s a dot kind of all around [short] the U_I_C neighborhood so there’s a [short] not really any like I guess there’s a slight safe areas but anyways, just talking out loud.
+*Haha*. [long]
+*Uh* could you do the same thing, yeah, to the River-North? [long]
+*Um* ok.
+So Sedgewich. [medium]
+There’s one around [long] Chicago-- I actually don’t know.
+I guess that’s around Chicago [short] and Ontario. [long]
+Some around Division [long] and also-- yeah Chicago area. [short]
+Around Pearson. [long]
+Seems like going towards the lake.
+There’s [short] a lot less.
+Actually going the furthest East and West of the neighborhood, there’s less of a chance of crime it seems.
+It’s more centrally located [short] which kind of makes sense. [long]
+I guess North too. [short]
+Ok. [long]
+So-- so are you the one typing or is it-- is this just like a thing?
+*Haha*.
+experimentor: No.
+So you’re not, you’re not do-- ok, didn’t think so.
+experimentor: *Oh* the chat window, yeah no, no.
+experimentor: The data analysis expert.
+*Haha* ok.
+experimentor: *Haha*.
+This is very interesting, very interesting. [long]
+So do you have a name? [long]
+Ok.
+experimentor: *Haha*.
+*Haha*.
+I thought it was going to be like a real name from, [short] you know the movie Her.
+Call me Samantha.
+experimentor: *Haha*.
+Alright, Data Analysis Expert. [long]
+Ok. [long]
+Is Near-West *uh* like Lincoln-Park or is that? [short]
+Just curious what Near-West means. [long]
+*Uh* right now I’m doing the same thing as before.
+Just [short] looking at the graphs to [short] *uh* try to [short] look at the highest counts. [long]
+32:46
+Ok. [long]
+*Hm*, it’s interesting.
+The Loop is the only one that [short] that [short] doesn’t have street as the highest *uh* number of crimes of location-type [short] I think. [long]
+I think maybe it’s because [short] the Loop has more money?
+I don’t know. [long]
+Is this response ok?
+*Um*.
+Yup.
+For now yes.
+I think this is all.
+And there’s Near-West.
+Is there a map for the Loop? [long]
+River-North. [long]
+Could you bring back the one behind it real quick? [short]
+*Uh* thanks. [long]
+Ok so, Near-West. [long] 
+*Uh* it-- is there graphs for [short] day-of-the-week for [short] Near-West and Loop? [long]
+*Ah* ok. [long]
+Ok. [short]
+Could I *um* have, have all of the maps kind of central together so I can compare? [long]
+Ok so it seems [long] River-North and [short] I guess I’m just wondering right now why *um* because that map for number of crimes for all neighborhoods [short] has [short] the Loop the least amount of crimes [short] but then this map has it on a scale up to 1942 but the others [short] like U_I_C and Near-West are just 654 and 824 though they’re supposed to have more crimes. [medium]
+This just might just be me not knowing this kind of stuff. [long]
+Yeah, if you can give a clarification on that. [long]
+*Oh* ok.
+So-- [short] so the highest point is up to [short] 654 for-- for-- for dot.
+It doesn’t necessarily represent the overall number of crimes for that period. [short]
+Ok. [short]
+Alright, [short] so interesting.
+Alright, so the Loop, the Loop has the least number of crimes for that period [short] but for one I guess kind of hot-spot they have, [short] they have more than the others so. [short]
+*Hm*.
+Could you *uh* could you maximize the, the Loop map? [long]
+So that’s State Street. [long]
+Ok.
+*Um* and then maximize the Near-West. [long]
+*Oh* Damen.
+Ok.
+42:19
+Damen. [long]
+Alright. [long]
+And could you-- [medium] could you put them all side by side again? [long]
+Ok. [long]
+*Um*, could I see [short] all four maps for the crime-type [short] side by side? [long]
+*Haha*. [long]
+Ok, this is good. [long]
+*Uh* so right now before I was looking at just the highest occurrence [short] *uh* for each [short] neighborhood, each crime-type but now since I think that law enforcement would be [short] interested in, I’m not, not saying that theft, [short] that theft and battery are not serious but maybe they’d be interested in [short] burglary, homicide, [short] *uh* sex-offenses. [short]
+I’m trying to see if there is a neighborhood that has a higher occurrence of that or dramatically higher occurrence and then, [short] also want to see if there’s [short] like a change in crime patterns. [short]
+So-- [short] so sex-offense is about-- [short] it’s pretty much about the same with a little bit difference and then homicide, [medium] nothing. [short]
+River-North. [short]
+Little in Near-West. [medium]
+Nothing in the Loop. [short]
+*Oh*.
+Thank you. [short]
+That was very helpful.
+Ok. [long]
+Ok. [long]
+See I-- depth-- theft and battery are obviously, this would’ve been, this would’ve been super helpful instead of me writing all this stuff down.
+*Um*.
+I should've known to ask.
+So obviously, theft and battery are really popular, and then River-North.
+There’s a lot of theft which makes sense because [short] of the places they are stealing are from stores and restaurants and because I guess theoretically, there’s [short] maybe more money there or maybe they, I don’t know.
+So, makes sense to me though, going down [short] xxx *blah* *blah* *blah*.
+So, burglary, that always seems to be [short] pretty serious.
+Near-West has a higher count for that and [short] sex, that’s pretty much all the same. [short]
+And you know right now I’m thinking of the stuff that-- that *uh* the officers might be more interested in.
+I guess I’m just going off what I think they might put in priority but I have no idea.
+Actually, *uh*. [short]
+So, homicide [short] seems like to have little to none in Loop, [short] River-North and then some in Near-West and U_I_C.
+So I guess if we’re talking about like deployment for [short] that specific kind of crime and they maybe want to focus on those two. [short]
+Ok. [medium]
+*Uh*. [short]
+So at, so at this point. [medium]
+So at this point can I start kind of [short] answering what I do for my task? [medium]
+Ok. [medium]
+*Um*.
+Alright, could you move *uh* 08 a little bit? [medium]
+Ok.
+So the task so was given to me is the city is specifically aiming to deploy additional law enforcement resources to combat, deter crime. [short]
+Which areas to deploy the officers. [short]
+48:30
+So that’s interesting I mean that’s really general.
+*Um*.
+Well I know that they mean specifically but [short] it seems that with each *uh* [short] kind of category, you can make an argument for [short] deploying additional law enforcement in every one of these, every one of these [short] *uh* neighborhoods but [short] I guess for, [short] I guess if we’re just talking-- if we’re targeting so if we’re going to the next one, which crime-types to target.
+If we’re targeting the, the most likely crime of-- of-- of theft then we would definitely want to go after River-North more just because it seems that people, people are kind of targeting River-North more.
+This is just my assumption.
+I have said this many times before. 
+I think maybe people just think there’s, [short] there’s more to gain out of it because there’s more money in the neighborhood.
+*Um* and you can see that from the graph where [short] the location is mostly stores and restaurants.
+So, if we’re talking about theft then [short] I would probably, I’d probably say River-North.
+If we’re talking about battery which is the second highest, then [short] I-- I don’t know if I would deploy additional law enforcement or if I would just kind of, [short] if I would , If I would deploy additional law enforcement at all or if I did, then I would kind of make it even across the board for-- for all neighborhoods.
+Even though the Loop is lower, I would probably still keep it even [short] but I don’t know.
+Battery, as far as like occurrence is a lot lower than thefts so maybe it just make more sense to deploy additional law enforcement for theft. [short]
+*Um*.
+And as far as-- as far as the time-of-day. [short]
+It seem at this vary a little bit from neighborhood to neighborhood. [short]
+*Um*. [short]
+River-North.
+So if we’re looking at River-North for-- if we’re, if we’re thinking about deploying additional law enforcement to River-North [short] for theft [short] then we’d probably [short] like to look at midnight or kind of, [short] kind of the evening around from 6 to 7-P_M and on a-- on a Saturday [short] *uh* which is, which is in-- I mean that’s interesting.
+Saturday makes sense. [short]
+Actually it doesn’t make sense to me just because seems like a lot of people would be out but then again maybe if, if the time is midnight or 6 to 7-P_M, maybe less people are out.
+I don’t know.
+I think that’s interesting but it shows midnight kind of evening Saturday [short] and *uh* and then if we’re looking at, [medium] pretty much all across, all across the board. 
+Actually, could I look at the-- could I look at the map for the months? [long]
+*Um* I think I got the Loop-- ok yeah the Loop one. [short]
+So yeah that’s, I mean that’s pretty similar.
+*Um*.
+You know it, it differs a little bit but I mean this is something that a lot of people know that the high crime periods are during the summer. [short]
+You could see for River-North, it’s like July and August and then [short] for the Loop, it’s [short] July, August, October [short] where the, the other month. [long]
+53:01
+Let me see, I did River and--. [long]
+Yeah well what I wrote down I mean anyways for, yeah, for Near-West and U_I_C, it’s the same like the summer has. [medium]
+It’s really high instances so [short] but if I, if I could back to the task list. [short]
+*Uh* to move, to move 08. [short]
+So, [short] yeah it’s kind of interesting in answering these questions both generally and specifically.
+*Um*. [short]
+If I-- I mean if I’m looking at you know whether to deploy additional law-- law enforcement then I’d say during the summer but I feel like that’s kind of an like an obvious answer just because I think we know that crime happens more in the summer. [short]
+*Um*.
+If we’re looking at? [long]
+Let me see a month, *blah* *blah*, day-of-the-week.
+Yeah I feel like across the board, weekends are pretty popular [short] for crime [short] but I would also say you know like if you deploy additional law enforcement like maybe, yeah focus on the weekends but don’t ignore the weeks because it seems for [short] *uh* especially, especially for the Loop it seems like the weekdays are still pretty, are still pretty active. [short]
+*Um*. [short]
+And then I was-- I was-- I was looking at other, [short] at other kinds of crimes aside from [short] you know like theft and [short] and battery.
+I was also looking at sexual-offense, homicide, but [short] it seems like [short] I mean it’s, it’s kind of, it’s kind of strange to see that some of them have really [short] nothing tallied but I don’t know if that tells me you shouldn’t focus on it because I feel, [short] I don’t know, there were a couple *um*. [medium]
+So like for homicide, Loop and River-North don’t have anything there.
+Near-West, U_I_C-- U_I_C do, [short] it looks very low but then again [short] low for homicide is kind of a weird thing to say.
+I mean that’s still something to focus on so I guess if we’re looking at homicide which is something law enforcement should always be focus on then I guess that they should deploy more enforcement in Near-West and U_I_C cause atleast there’s something tallied there versus Loop and River-North then [short] you know, if I, if, this is making like really sweeping generalizations but [short] it seems that River-North and Loop people are more focused on just [short] theft. [short]
+*Um* maybe just merchandise stuff so-- but I’m not sure if that’s the reason or whatever.
+I’m sure there are a lot of factors. [short]
+*Uh*. [long]
+So the crime hot-spots-- that’s-- [short] that’s kind of interesting looking at the maps.
+*Um*.[short]
+For U_I_C, it look like-- [short] like Canal Street and Roosevelt were pretty popular for crime and I’ve actually heard that Roosevelt [short] is, is somewhere that you should *uh* you should look out for. [short]
+So I guess that makes sense.
+*Um*. [short]
+So I would say if you were to deploy additional law enforcement on U_I_C than to kind of focus on Roosevelt and for River-North, Chicago and Ontario, maybe a little bit on Division [short] *uh* Near-West on Damen. [short]
+For the Loop, [short] on State Street [short] and also *uh* I’ve, I was talking through this before about *uh* River-North area the-- for the hot-spots.
+I-- I think, I thought it was interesting looking at it.
+*Uh*.
+This is-- this is kind of similar to some of the other graphs but this one especially so that the more you went towards the lake, the less [short] crime there seem to be. [short]
+*Um*.
+Kind of the same going East so it seems that it was showing that crime is always a little bit more centrally located.
+So that’s something to think about-- I guess when they deploy additional law enforcement. [short]
+*Um*. [short]
+Let me see. [short]
+Thank you! [short]
+Data Analysis Expert.
+Is that, was that right? [long]
+Ok.
+58:03
+END

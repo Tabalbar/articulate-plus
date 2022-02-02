@@ -1,0 +1,32 @@
+1. Clone the smarthub beta repository.
+git clone https://akumar34@bitbucket.org/akumar34/smarthub_beta_main.git
+git clone https://akumar34@bitbucket.org/akumar34/smarthub_beta_data.git
+
+2. Install chicagocrimevis data.
+~/path/to/smarthub_beta_data/chicagocrime_mysql_data scripts/install_instructions.txt
+
+3. Install anaconda.
+curl -O https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
+bash Anaconda3-2019.03-Linux-x86_64.sh
+
+4. Go to cloned smarthub beta repository.
+cd ~/path/to/smarthub_beta_main
+
+5. Install a python 3.7 conda environment (i.e., smarthub_env).
+conda create -n smarthub_env python=3.7
+
+6. Activate newly created smarthub_env environment.
+source activate smarthub_env
+
+7. Install required python libraries.
+pip install -r ~/path/to/smarthub_beta_main/smarthub_pip_packages.txt
+
+8. Install Spacy english library.
+python -m spacy download en
+
+9. On Python shell, 
+import nltk
+nltk download vader_lexicon
+
+10. Run the smarthub software.
+python ~/path/to/smarthub_beta_main/run_smarthub.py

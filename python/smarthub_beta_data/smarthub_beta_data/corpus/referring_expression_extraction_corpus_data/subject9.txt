@@ -1,0 +1,271 @@
+subject9
+
+Ok well which which of these which of the I do not know.
+I would like to know which of [Est<1><01-1>: the four areas Est<1><01-1>] has [Est<1><01-1>: the highest incidence Est<1><01-1>] of [Est<1><01-1>: homicide Est<1><01-1>] [Est<1><01-1>: battery Est<1><01-1>] [Est<1><01-1>: assault Est<1><01-1>] [Est<1><01-1>: sex offense Est<1><01-1>] [Est<1><01-1>: kidnapping Est<1><01-1>] just I guess to know where to feel the most worried?
+When walking down the street basically.
+And I would probably limit that to to the street when you get inside the building there is usually another security situation there.
+Just interested yeah because yeah it would be nice best to see like yeah like kind of sort of [Est<2><01-2>: a heat map Est<2><01-2>] of of [Est<2><01-2>: violent crime. Est<2><01-2>] just to see that in general.
+Cause you always hear that right?
+So you think well there is a lot of money down in the Loop so there is a lot less crime.
+this is supposedly in a bad neighborhood where uic is it is supposed to be a little dodgier but i have never really experienced or felt that way 
+i think that is the right term i do not know 
+i should know more about visualization then i do but its interesting 
+that is right so what do we expect here 
+we expect there to be 
+in this little black screen 
+the whole thing is going to fill up 
+well it is prototyping a sort of big thing 
+thought you would go 
+smaller this scrambling to put things in low or 
+we only to ok we get them all here 
+these are just the sums of crimes 
+so total incidences so now we are sort of like ok 
+these are just raw counts i am not sure we want raw counts 
+we what is this 
+So this is going to be the relative proportion.
+Ok so I guess I am curious what the scale is here. Is [Gesture<3><01-1>: this Gesture<3><01-1>] just by area? Or by number of people who live there? Number of people who work there?
+working on a certain size by these are just raw numbers.
+Yeah but down [Gesture<4><01-2>: here Gesture<4><01-2>] crimes by region.
+ok so this is just of all the numbers of crimes this is just where most of them are 
+ok i am just clear in the amount of this 
+the image down here seems i can not tell if this theft box for river north i can move that look at me 
+if this is theft box for river north i assume that the area for this is bigger 
+and how does area relate to number i can not tell which one i think river north is what to me river north has got more theft 
+i am having a hard time sizes of this so i am back over to here 
+the bars are going to tell me raw counts of theft are highest in river north where i work 
+Battery the worst is in River North but slightly. Assault that is funny. Near West look by raw counts. I do not know I feel like yeah I think you can improve [Text<5><01-1>: that visualization. Text<5><01-1>]
+I need to know do you have any numbers about population?
+population we do not know about population. Do we know about area?
+See it is not going to tell it will actually tell me the opposite.
+Cause I am I am assuming in River North and especially in the Loop there is just gobs of people with wallets.
+So I am not too surprised you are stealing more of them cause that is where I would go if I wanted to steal.
+If I wanted to knock somebody over the head and that is also sort of consistent.
+So what is the police presence in and how do we measure that?
+Do not have what do we have?
+Ok can we limit this to just by [Est<6><02>: crimes Est<6><02>] that happen on [Est<6><02>: the street? Est<6><02>]
+Or do we not have that data or?
+Man I do not know it is just I am having a hard time equation [Text<7><01-2>: it Text<7><01-2>] is like a pie chart only less effective.
+Really what I want to know is where the concentration of people is.
+We need data looks like foot traffic.
+I mean if I am worried about the street which is what I am worried about.
+how many people are there that are potential victims here 
+crimes in regions just on street 
+near west goes off the charts 
+And we do not have any data about where the police currently are?
+sorry do not have that data.
+Yeah I guess I can sort of see how maybe you would not.
+Cause then criminals could look at that and know where to go.
+so we can not really measure how effective well really what you would want is the kind of like the deployment of the police on certain areas and its effect on crimes sort of a gross you know Giuliani is that Giuliani?
+or you know you crack down on the on the panhandlers and that supposedly had an amazing ripple effect on all sorts of violent crime 
+i do not know what to do 
+i am a little surprised 
+so i i feel i am justified in feeling safer walking around the loop i guess all other things being equal right 
+ok so the assumption is the loop has a much higher population density and it has the it has the lowest incidence of crime of all these 
+so it wins based on that i am thinking probably the loop is not where i want my resources deployed 
+and i am kind of out of luck 
+i do not go near west so that is my mercenary interest here 
+ok well i battery and assault 
+well i do not know looks like near west and uic right 
+so i would focus on near west and uic based on where i would deploy additional law enforcement resources 
+which areas to deploy officers which crime types to target 
+let us see well which crime types to target that is i just think harm to people that is a policy decision 
+i just think that people steal take things but do not do not hurt me 
+that all these things are sort of bad i mean if if i got mugged like six times i would probably change my mind about how much i like my wallet 
+whether it varied upon time depending upon time of day 
+Yeah well let us talk about time of day.
+can we get [Est<8><03-1,03-2,03-3>: a range Est<8><03-1,03-2,03-3>] of [Est<8><03-1,03-2,03-3>: time of day? Est<8><03-1,03-2,03-3>]
+Like I do not know some sort like I mean I would focus battery and assault.
+i think these things are these these other bits are i am not concerned about the theft and i am more worried about battery and assault 
+The other ones are too rare to but I will tell you that murder line looks a little thicker for UIC.
+but yeah I why do not we look I do not know I guess I would focus on [Est<9><03-1,03-2*,03-3*>: Near West Est<9><03-1,03-2*,03-3*>] and [Est<9><03-1,03-2*,03-3*>: UIC Est<9><03-1,03-2*,03-3*>] and give me [Est<9><03-1,03-2*,03-3*>: some sort Est<9><03-1,03-2*,03-3*>] of [Est<9><03-1,03-2*,03-3*>: a breakup Est<9><03-1,03-2*,03-3*>] by [Est<9><03-1,03-2*,03-3*>: time. Est<9><03-1,03-2*,03-3*>]
+Make a decision I am focusing just on the two I think need resources I think that makes sense.
+I do not know problem. Yeah I do not see day of week time of day yeah I guess all of that is interesting.
+by time of day near west and uic 
+midnight to 6 am 6 am to 12 midnight three to 6 pm 
+people are asleep from 12 midnight to 6 am 
+uic then looks a lot different than you would expect 
+the near west side goes down 6 am to 12 midnight that is weird 
+midnight to 6 am 
+Wait this is all crime types and location types this is all crime types and location types.
+I do [Est<10><04-1*,04-2,04-3*>: not Est<10><04-1*,04-2,04-3*>] want [Est<10><04-1*,04-2,04-3*>: all crime types Est<10><04-1*,04-2,04-3*>] I just I just wanted [Est<10><04-1*,04-2,04-3*>: battery Est<10><04-1*,04-2,04-3*>] and [Est<10><04-1*,04-2,04-3*>: assault. Est<10><04-1*,04-2,04-3*>]
+And I would actually throw I would I would put River North back up on the list.
+How many violent crime that is another thing it is like you in order these are crimes that are crimes that are reported I assume.
+Do we have any data on crimes that are solved?
+That might also indirectly you know it would also indirectly tell you give you a sense of where to not rob.
+midnight to 6 am there are more crimes from 12 midnight to 6 am than there are from 6 am to 12 midnight in the neat west side 
+on well it is getting their list 
+who you got looking for atleast in this shows the pattern you would seems to imply you you have won 
+wait no wait a minute this is not evidence here 
+this reinforces the pattern that did make sense 
+there is more crime from 12 midnight to 6 am than there is from 6 am to 12 midnight 
+ok well i guess i should expect to drop ok 
+and battery and assault are probably things you are going to tend to not do in broad daylight 
+so yeah ok so this is telling me we need more police between 6 am between 12 midnight and six when people are not awake 
+police need to work at night and they need to work 
+they do not need to work so much in the loop 
+day of the week did we get a day of the week 
+times time of day times in region by time of day 
+these are just the same thing by time of day this is still by time of day 
+Yeah so day of week?
+Ok so can you do something with [Est<11><05-1*,05-2,05-3*>: day of week? Est<11><05-1*,05-2,05-3*>]
+Just same crimes battery and assault same crimes.
+Instance be interesting to see if we could just.
+I really want to know about population density.
+But yeah for now.
+i think it is one of those things where i think your system is going to be a lot better than than it is going to be faster than your first one 
+because you think about some sort of keyword things to show and also you can be sort of processing the person talking while 
+wait leave me alone let me do this 
+it is fun I can see I mean people would people would like doing this.
+grade is returning an s if 1500 change down to 1000 
+it is still pretty significant and more on the weekends 
+particularly sunday for whatever reason 
+so that seem to tell us there should be more police not in not necessarily in the loop 
+Well atleast two neighborhoods and probably that third neighborhood third non Loop neighborhood at night on the weekends.
+Well ok well wait a minute so we do not know that.
+so can I look can I look at by [Est<12><06-1*,06-2*,06-3>: time of day Est<12><06-1*,06-2*,06-3>] and on [Est<12><06-1*,06-2*,06-3>: the weekend? Est<12><06-1*,06-2*,06-3>]
+Well it is good that we are all on one street we can begin with because we are going to make the cops tour all night on the weekends.
+all of them but still the mass of the crime is during these heavy spikes 
+but it seems like you want to yeah you want to distribute your resource kind of in the shape of of this curve 
+yeah well there is the curve 
+yeah that tells you that something happened 
+this is all crimes in the area 
+so it totally matters it totally matters which crimes you want to solve 
+cause if you throw everything in you get this different picture 
+so that means if you if you look at the crimes you do not particularly care the picture will be skewed quite a bit from from what it is versus two favorite crimes 
+just battery and assault 
+so now i have what i was even trying to answer 
+battery and assault and time of day 
+well i guess we are getting there what we can get at here is the what are we getting at here 
+so we still have this we have this behavior on the weekend where police have to 
+and we saw it in the overall data 
+Then we saw spikes on the weekend did we?
+Can we ask questions like that?
+Ok wait a minute what did I just look at?
+Cause I am feeling pretty good about let us get these two neighborhoods maybe that third neighborhood too on the weekend and and at night.
+I think the data that out.
+But now I am thinking they want me to point to some visualization that makes that really obvious.
+And I think we built sort I think we I think we have charts we can pick to do that.
+what we do not have is.
+Ok we sort of identified [Est<13><07-1,07-2*,07-3*>: a change Est<13><07-1,07-2*,07-3*>] in [Est<13><07-1,07-2*,07-3*>: crime pattern Est<13><07-1,07-2*,07-3*>] by [Est<13><07-1,07-2*,07-3*>: time of day. Est<13><07-1,07-2*,07-3*>] We did not get it [Est<13><07-1,07-2*,07-3*>: month of the year. Est<13><07-1,07-2*,07-3*>]
+How could ok where is did [Text<14><06-3>: it Text<14><06-3>] get smaller?
+[Text<15><06-3>: this Text<15><06-3>] guys so what can we do with [Text<16><06-3>: this Text<16><06-3>] guy?
+to get I want [Est<18><07-1,07-2*,07-3*>: another dimension Est<18><07-1,07-2*,07-3*>] [Gesture<17><06-3>: [Est<18><07-1,07-2*,07-3*>: here Gesture<17><06-3>] Est<18><07-1,07-2*,07-3*>] that is that is like [Est<18><07-1,07-2*,07-3*>: month of the year. Est<18><07-1,07-2*,07-3*>]
+So it is almost like I I want 12 of 12 lines or 12 I do not know how you would visualize that.
+should do yes [Est<20><07-1,07-2*,07-3*>: multiple visualizations Est<20><07-1,07-2*,07-3*>] that is what I want I want [Est<20><07-1,07-2*,07-3*>: multiple visualizations Est<20><07-1,07-2*,07-3*>] of [Est<20><07-1,07-2*,07-3*>: [Gesture<19><06-3>: this result. Gesture<19><06-3>] Est<20><07-1,07-2*,07-3*>]
+I am pointing to [Gesture<21><06-3>: it Gesture<21><06-3>] probably can not see [Gesture<22><06-3>: it Gesture<22><06-3>] of this the the crimes in region by day of week just battery and assault.
+Actually yeah all of this with the bars or this thing.
+[Gesture<24><06-3>: This Gesture<24><06-3>] looks like we really want just kind of the curve to where to put where to put the police.
+I am sorry you need me to clarify.
+So so [Est<25><07-1,07-2*,07-3*>: crimes Est<25><07-1,07-2*,07-3*>] in [Est<25><07-1,07-2*,07-3*>: regions Est<25><07-1,07-2*,07-3*>] by [Est<25><07-1,07-2*,07-3*>: day of week Est<25><07-1,07-2*,07-3*>] just [Est<25><07-1,07-2*,07-3*>: battery Est<25><07-1,07-2*,07-3*>] and [Est<25><07-1,07-2*,07-3*>: assault. Est<25><07-1,07-2*,07-3*>]
+But I want to see different I want to see different lines for each month of the year.
+So then maybe if if it gets cold crime goes down atleast the cops can go where it is warm maybe take their vacations in the winter.
+otherwise everyone is going to yeah we can not have all the cops quit because their hours are so terrible 
+well it is getting worse enough you are right 
+we are just going to focus them on finding the people too in case we did not arrest the people who are not going to shoot them 
+cement gives it little crime hot spots almost seems like we could drill down by block 
+i mean how big are each of these 
+they are they are relatively big so you could break this down by block 
+or i mean i do not know how 
+cop on the beach right 
+so cop has i do not know if that is even how things work 
+i do not know how i mean how much of of an area do do they put them in 
+we need to make those things smaller and put more cops in them 
+so probably this could be more targeted than just you know the neighborhood 
+that might be what well ok actually when i first saw crime hot spot i did not realize it it is like ok with crime we are going on we are getting sort of like what was even the timeline 
+this was all time 
+we blew that off we look at the trends in crime in my god ok 
+just battery and assault just uic and near west 
+so this is just the weekend 
+just weekend just ok so this is just weekend but it is giving me monday tuesday wednesday thursday and friday 
+this does not seem like it 
+this is the month ok i do not think this is not just the weekends looks like 
+like it is every day of the week by month 
+and are we i mean this so january february march it is colder it does go up when it gets warmer i can tell when it gets warmer 
+and it seems like we do get these sort of humps but what is this one 
+ok well crimes in region by day of week month of year 
+I do not understand [Text<26*><07-2*>: this chart Text<26*><07-2*>] [Gesture<27*><07-2*,07-3*>: these both Gesture<27*><07-2*,07-3*>] say just ok this ok so this the month is up there ok.
+And [Gesture<28*><07-3*>: this Gesture<28*><07-3*>] is giving me a very gentle pump ok.
+I do not know I guess I do not understand [Text<29*><07-3*>: this Text<29*><07-3*>] the where it is just weekend here on [Text<30*><07-3*>: the chart Text<30*><07-3*>] because I got Sunday through Saturday. So that is not just the weekend. But all the information is [Text<31*><07-3*>: there Text<31*><07-3*>] it just seems like it is for the whole week.
+so what is [Text<32><07-1>: that Text<32><07-1>] see [Gesture<33><07-1>: this Gesture<33><07-1>] is more what I was thinking yeah yeah yeah ok.
+[Est<35><08,09*>: [Text<34><07-1>: This Text<34><07-1>] Est<35><08,09*>] is giving me [Est<35><08,09*>: the Sunday Est<35><08,09*>] through [Est<35><08,09*>: Saturday Est<35><08,09*>] we have [Est<35><08,09*>: the spikes Est<35><08,09*>] up here and then we can see we can see [Est<35><08,09*>: the worst months Est<35><08,09*>] yeah you sort of lose you kind of lose [Est<35><08,09*>: the the dates. Est<35><08,09*>]
+there is no logical you know the color does not really give you any sort of i mean the color does not tell me whether it is getting cold or not 
+sort of could though right 
+seems like you could change the color scale on the 07-11.png chart so that it would you know it would go between if we gave each month a color that is not just random 
+something like january you know so february would be really dark blue and we would range from blue to red or something 
+so the months basically based on the average temperature of that month 
+that would be just a processing issue 
+but even that is sort i mean you are still sort i mean if this gives well even this does not 
+i mean this is giving you the number of crimes i guess the other thing you can do is something well i do not know seems like you are always going to rely on color in some way to sort of stand for something 
+and i think blue to red or i mean there is got to be some i mean that may be i think that maybe that is a cultural thing too different cultures but if you could i do not know man 
+that is like a future or you know even if i can assign colors somehow but i do not want to i am not supposed to touch it that is the whole point yeah 
+so yeah kind of what you would say is like culturally sensitive ways of representing color 
+that is that is got to be a topic on might tell you something 
+but i think i i get out of this i mean sort of confirms to me what it what i was 
+ok well this is using a single color no that does not really do it cause see like 
+i mean december is i mean january is colder than december right 
+it is sort of like a thing that starts in spring and goes around till spring 
+so it starts like darkest will be by august and then it would get lighter so like september october november december january pretty much 
+then if you had that you could sort of see or what i would expect is that the the red er would be at the top of this and the the lighter shade would be at the bottom 
+does that make sense yeah might be kind of hard i can see that being kind of hard but yeah well you know so otherwise you are yeah it it is still better than it was before 
+not sure not sure what that whole 
+still going january to december from like too dark 
+it needs to go from what is the coldest month 
+february i think it is in my mind february will be the darkest or the lightest fine 
+all i know is december and january are next to each other 
+anyway so i do not know seems like when is our meeting 
+i do not know i think we have enough to build on to make some suggestions 
+The idea here I mean I think what we are missing here is crime hot spots.
+I mean do you have like geographic hot spot do you have any data that breaks down the neighborhood by smaller divisions I do not know blocks or?
+what was the worst neighborhood?
+well I want to look into a neighborhood I walk through UIC.
+So let us look at can we look at [Est<36><10>: the UIC neighborhood Est<36><10>] and [Est<36><10>: number Est<36><10>] of [Est<36><10>: battery Est<36><10>] and [Est<36><10>: assault cases Est<36><10>] by [Est<36><10>: block? Est<36><10>]
+And there was the other thing I did not get at is the trend.
+That is really what I want to look at right?
+So you want to look at so you you pick your neighborhood and you pick your trend and and then you put I am assuming resources allocated to the area changed over time and see if there is a correlation.
+i guess that is more of an abstract question 
+that is deploying ok 
+look at those hot spots there right there 
+so put a cop on each one of these red dots and you are done 
+we see where most of the students are most of the time 
+it gets a little dodgier in 
+so i mean i suppose there is a general r i think to push you know some more resources east the south 
+yeah i i like this response 
+the only i wanted to see the time break down 
+so i guess again let us just stick with uic from from four years ten 
+Can you get me every six months?
+crap going to have like variations within the segment.
+Well let us just go by [Est<37><11>: year Est<37><11>] so can you get me [Est<37><11>: the annual number Est<37><11>] of [Est<37><11>: assault Est<37><11>] and [Est<37><11>: battery cases Est<37><11>] in I do not know. I guess [Est<37><11>: just the UIC neighborhood Est<37><11>] for now.
+but still i do not know what that tells me 
+this got worse well i do not know what i do not know what the police i mean what well i do not know we will just know if things are getting worse or getting better 
+somebody knows what the 
+this is 2010 be nice to what it was i would like to see what it was before 2008 
+the run up if you had this for like a 10 year or back to 2004 
+let us see let us see if crime just grew naturally cause i know crime does 
+But maybe not for this type of crime.
+That that is another thing.
+Well ok I guess you can say if conditions have been sort of getting better so maybe it is less.
+So things are getting better well that is nice.
+I am just curious do we show [Est<38><12>: the trend for all crime? Est<38><12>]
+Yes we do or yes you can do that for me?
+Can you show me the.
+Are you saying that yes we do see the same trend or yes you can draw me a picture of.
+I am assuming the latter.
+can we see [Est<40><13-1,13-2,13-3,13-4,13-5>: [Gesture<39><10>: this Gesture<39><10>] Est<40><13-1,13-2,13-3,13-4,13-5>] [Est<40><13-1,13-2,13-3,13-4,13-5>: this sort Est<40><13-1,13-2,13-3,13-4,13-5>] of [Est<40><13-1,13-2,13-3,13-4,13-5>: hot spot map Est<40><13-1,13-2,13-3,13-4,13-5>] by [Est<40><13-1,13-2,13-3,13-4,13-5>: time? Est<40><13-1,13-2,13-3,13-4,13-5>]
+what would that even look like 
+well you could do an animation i guess 
+or you could do if you type really fast 
+it would be curious to see yeah even if if it was just a sort of animation that went month by month or then you almost got to go year year by year controls for all the seasonal variation that you have already established over there 
+so its yeah yeah yeah i do not know how would that that is also kind of what you want cause like you it is like you know i mean if crime goes down in in the winter i think people want to take their vacation 
+perspective it is meaningful 
+it is almost like you want to or you could do one for each month i suppose 
+well but also i would think actually the hot spot would not probably vary by season but the hot spot i am assuming you know if you got crime this is a particularly bad point on the map it does not matter what the weather is relative to what is around if that is could probably retain it is it is hotness 
+so ok so you just showing ok so then we we are going to look at them when they are all cold 
+it sort of confirms what this this is a pattern i see 
+then it goes from 1 to 38 1 to 34 1 to 7 1 to 58 
+i can not see the 2011 but anyway so and i guess what i would say here is like you you are that is not good 
+i guess all i was going to say about that is it is sort of like akin to like the you know people if you got a bar chart people just lop off the bottom of the scale 
+so like you are your are yeah i mean you are so for these if you change you had to keep the color scale the same 
+right cause like a red dot meant 27 crimes in one year and then a dark red dot meant 58 in another year then the scale is different 
+so if this was like an animation you i think you do want to see the overall you know tempering of crime over over time as it moves 
+so that would well that that is what i would want 
+but i do not think i do not need to make that 

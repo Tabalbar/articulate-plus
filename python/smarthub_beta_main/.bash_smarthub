@@ -1,0 +1,14 @@
+# .bash_smarthub
+echo "RUNNING .bash_smarthub..."
+export BASE_DIR='/media/beanz/New\ Volume/'
+export SMARTHUB_CONDA_ENV="smarthub_env"
+alias cdcurr="cd ${BASE_DIR}/smarthub_beta/"
+alias downloadmain="cd ${BASE_DIR}/smarthub_beta;sshpass -p 'art!cul8' scp -v -r -P 22022 akumar34@nlpdeep.cs.uic.edu:smarthub_beta/smarthub_beta_main smarthub_beta_main"
+alias downloaddata="cd ${BASE_DIR}/smarthub_beta;sshpass -p 'art!cul8' scp -v -r -P 22022 akumar34@nlpdeep.cs.uic.edu:smarthub_beta/smarthub_beta_data smarthub_beta_data"
+alias downloadmodels="cd ${BASE_DIR}/smarthub_beta;sshpass -p 'art!cul8' scp -v -r -P 22022 akumar34@nlpdeep.cs.uic.edu:smarthub_beta/saved_models saved_models"
+alias downloadall="cd ${BASE_DIR};sshpass -p 'art!cul8' scp -v -r -P 22022 akumar34@nlpdeep.cs.uic.edu:smarthub_beta smarthub_beta"
+alias repository="sshpass -p art!cul8 ssh -X -Y -p 22022 akumar34@nlpdeep.cs.uic.edu"
+alias rebash="source ${BASE_DIR}/smarthub_beta/smarthub_beta_main/.bash_smarthub"
+alias install="cd ${BASE_DIR}/smarthub_beta/smarthub_beta_main;conda create -n ${SMARTHUB_CONDA_ENV} python=3.7;conda activate ${SMARTHUB_CONDA_ENV};pip install -r smarthub_pip_packages.txt; python -m spacy download en;python -m nltk.downloader vader_lexicon;python run_smarthub.py"
+conda activate ${SMARTHUB_CONDA_ENV}
+cdcurr

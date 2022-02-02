@@ -1,0 +1,2203 @@
+{
+   "annotation": {
+      "head": {
+         "specification": {
+            "_src": "../../articulatespecificationv1.xml"
+         },
+         "video": {
+            "_src": "../../../anvil_corpus_videos/subject17.mov",
+            "_master": "true"
+         },
+         "info": [
+            {
+               "_key": "coder",
+               "_type": "String",
+               "__text": "nigel"
+            },
+            {
+               "_key": "encoding",
+               "_type": "String",
+               "__text": "UTF-16"
+            }
+         ]
+      },
+      "body": {
+         "track": [
+            {
+               "el": [
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "1"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok, so, *um*, I guess [medium] I guess I-- I'm interested in-- in *uh*, mainly like if I was walking [short] from-- [short] if I was walking to the C_T_A-train, [short] if I was walking to the EL, *um*, would there be any areas that are particularly dangerous to walk through maybe, *um* *uh*, theft or battery or *um* [medium] that sort of thing."
+                        }
+                     ],
+                     "comment": "Crimetype attribute introduced, location type attribute introduced",
+                     "_index": "0",
+                     "_start": "367.48001",
+                     "_end": "410.83899"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Yes I did."
+                        }
+                     ],
+                     "_index": "1",
+                     "_start": "477.60001",
+                     "_end": "479.76001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "3"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so I can see [short] all the crimes here, and [short] theft, battery, and assault [short] over there."
+                        }
+                     ],
+                     "_index": "2",
+                     "_start": "560.88",
+                     "_end": "572.76001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "4"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "The battery number seems kind of high up there."
+                        }
+                     ],
+                     "_index": "3",
+                     "_start": "632.88",
+                     "_end": "636.67902"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "5"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So I guess the next thing I'm wondering is [short] *um* [short] so the neighborhoods-- [short] of the neighborhoods [short] which one-- [medium] which one might have like [short] the least amount of [short] like, personal property theft like breaking into an apartment or stealing my stuff or *um* [short] all that sort of stuff?"
+                        }
+                     ],
+                     "_index": "4",
+                     "_start": "647.67902",
+                     "_end": "683.08002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok."
+                        }
+                     ],
+                     "_index": "5",
+                     "_start": "796.71899",
+                     "_end": "798.159"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "7"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So it looks like [medium] they're all [short] pretty even."
+                        }
+                     ],
+                     "_index": "6",
+                     "_start": "800.08002",
+                     "_end": "809.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "8"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Maybe Near-West-Side [short] not so great."
+                        }
+                     ],
+                     "_index": "7",
+                     "_start": "813.96002",
+                     "_end": "818.67902"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "9"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "You would think from its reputation that River-North is less bad but [short] doesn't really look like it."
+                        }
+                     ],
+                     "_index": "8",
+                     "_start": "847.159",
+                     "_end": "853.96002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "10"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so my next question is-- [short] is are-- [medium] are *um* [short] currency-exchanges and liquor-store-- liquor-stores as sketchy as they seem?"
+                        }
+                     ],
+                     "_index": "9",
+                     "_start": "857.479",
+                     "_end": "875.08002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "11"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok."
+                        }
+                     ],
+                     "_index": "10",
+                     "_start": "1066.52002",
+                     "_end": "1067.599"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "12"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* ok, so *uh* I can see the [short] the type of place crimes by location [short] *um* on the streets seems the most-- [short] definitely the most frequent or inside building."
+                        }
+                     ],
+                     "_index": "11",
+                     "_start": "1069.56006",
+                     "_end": "1089.71899"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "13"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* and then [short] *uh* [short] theft is the most common of all [short] and then the other ones [short] *uh* and then the currency-exchanges [short] *uh* definitely being sketchy is still pretty high up there."
+                        }
+                     ],
+                     "_index": "12",
+                     "_start": "1090.28003",
+                     "_end": "1110.43896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "14"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* but doesn't seem to be [short] too physically dangerous, so that's good to know."
+                        }
+                     ],
+                     "_index": "13",
+                     "_start": "1111.07898",
+                     "_end": "1118.31897"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "15"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So my next question is *um* [short] it seemed like when I used to take the bus a lot that in the summer [short] it was worse-- it was worse in the summer *um* [medium] *um* so I'm wondering [short] around the bus lines or on the bus *uh* if there are-- [short] if there's more public intoxication or fighting or [short] *uh* verbal harassment *um* [short] in [short] in summer months?"
+                        }
+                     ],
+                     "comment": "Time attribute introduced",
+                     "_index": "14",
+                     "_start": "1123.599",
+                     "_end": "1164.04004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "16"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so it looks like *um* [short] starting with all crimes that [short] absolutely in the summer there's an increase of crime."
+                        }
+                     ],
+                     "_index": "15",
+                     "_start": "1364.43896",
+                     "_end": "1376.31897"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "17"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "I bet March and November are because of holidays involving alcohol."
+                        }
+                     ],
+                     "_index": "16",
+                     "_start": "1423.40002",
+                     "_end": "1429.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "18"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* [medium] ok the next thing I was wondering about [short] *um* [medium] is *um* [medium] I think I would like to know the most frequent areas of sexual-assault among these neighborhoods. *Um* [medium] and a lot of people [short] I think are worried about public places but [short] *um* [short] the list also include private residences so [short] I think that's something I would like to know?"
+                        }
+                     ],
+                     "_index": "17",
+                     "_start": "1439.76001",
+                     "_end": "1485.479"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "19"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so *um* it's very clear that *uh* private indoor buildings are [medium] the most dangerous places for sexual-assault or most frequent."
+                        }
+                     ],
+                     "_index": "18",
+                     "_start": "1585.23901",
+                     "_end": "1600.56006"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "20"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Looks like the Near-West-Side is a little more [short] heavily-- *eh* it's a little even I guess."
+                        }
+                     ],
+                     "_index": "19",
+                     "_start": "1986.31897",
+                     "_end": "1993.88"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "21"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok [short] *um* [short] so over-- over the [short] course *uh* the time period that the data set exists *um* has there [short] have there been changes *um* [short] changes in crime *uh* [short] I guess my neighborhood has-- have neighborhoods *um* experienced *uh* trends in crime over the course of the data set *um* I mean not [short] not all of the crimes but *um* [short] we're mainly focused on [short] robbery [short] and *um* [short] murder probably [short] would be one-- homicide, *um*."
+                        }
+                     ],
+                     "_index": "20",
+                     "_start": "1995.04004",
+                     "_end": "2062.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "22"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Uh* yeah, homicide, theft slash robbery."
+                        }
+                     ],
+                     "_index": "21",
+                     "_start": "2206.91895",
+                     "_end": "2212.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "23"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* [short] *um* in all of the neighborhoods [short] *um* [medium] for all of the crimes though, looks like [short] well for homicide there are [short] so few in these neighborhoods that [short] I can see how the data could be up and down, a little bit."
+                        }
+                     ],
+                     "_index": "22",
+                     "_start": "2300.36011",
+                     "_end": "2331.15894"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "24"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "But overall looks like everything has gone down, which is great."
+                        }
+                     ],
+                     "_index": "23",
+                     "_start": "2331.479",
+                     "_end": "2337.84009"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "25"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* [short] so my next question is [short] *um* when you take the C_T_A, they say there is no gambling on the C_T_A. My question is, is there gambling on the C_T_A?"
+                        }
+                     ],
+                     "_index": "24",
+                     "_start": "2340.91895",
+                     "_end": "2360.12012"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "26"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Ah* there were only 2 [short] well [short] I guess that's some gambling on the C_T_A [long] but the other types of [short] crime on the C_T_A are sort of what I would expect, but there aren't an awful lot of them."
+                        }
+                     ],
+                     "_index": "25",
+                     "_start": "2561.19897",
+                     "_end": "2586.43896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "27"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um*, ok near U_I_C [short] *um* or maybe we had already answered this question, *um* but near U_I_C what's the-- [short] *uh* [short] I guess the-- [short] the most [short] common-- [short] literally like what's the most dangerous-- [short] dangerous thing and place at U_I_C, in the U_I_C area?"
+                        }
+                     ],
+                     "_index": "26",
+                     "_start": "2619.56006",
+                     "_end": "2650.19897"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "28"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok *um* [short] so looks like walking around outside is the most dangerous around U_I_C."
+                        }
+                     ],
+                     "_index": "27",
+                     "_start": "2770.71899",
+                     "_end": "2779.87891"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "29"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* [medium] sort of south of Roosevelt and [short] near Western *uh* and on the downtown side of U_I_C."
+                        }
+                     ],
+                     "_index": "28",
+                     "_start": "2804.28003",
+                     "_end": "2822.36011"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "30"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "What types of crimes are happening [short] *um* so I'm looking at this number of crimes [short] display and *um* I'm wondering on the street and sidewalk what kind of crimes are happening at U_I_C?"
+                        }
+                     ],
+                     "_index": "29",
+                     "_start": "2893.95898",
+                     "_end": "2912.15894"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "31"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so, starting on the left I can see [short] *um* [short] the types of crime [short] *um* on the street and sidewalk, though I'm sure there's a law enforcement definition of those things that *um* [short] as a lay person I don't necessarily offer distinction, *um*."
+                        }
+                     ],
+                     "_index": "30",
+                     "_start": "3063.28003",
+                     "_end": "3089.36011"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "32"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "There's a lot of different things that happen on the street."
+                        }
+                     ],
+                     "_index": "31",
+                     "_start": "3111.04004",
+                     "_end": "3114.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "winmgmt"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "33"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* [short] and then I can see [medium] *um* [short] this figure [medium] not-- [long] not super clear on figure 10-2, though I can see it's divided in-- [short] into street and sidewalk and types of crime."
+                        }
+                     ],
+                     "_index": "32",
+                     "_start": "3117.04004",
+                     "_end": "3156.479"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "34"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Is it a map?"
+                        }
+                     ],
+                     "_index": "33",
+                     "_start": "3157.52002",
+                     "_end": "3159.12012"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "35"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok, ok."
+                        }
+                     ],
+                     "_index": "34",
+                     "_start": "3175.479",
+                     "_end": "3178.56006"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "36"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "So again, much more [short] much more *uh* yeah. Lots of theft, lots of theft."
+                        }
+                     ],
+                     "_index": "35",
+                     "_start": "3179.52002",
+                     "_end": "3189.43896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "37"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok. *Um* [short] continuing on the theme *um* [short] *um* I guess let's choose-- [short] let's choose the most [short] frequent *um* [short] the top one seems like [short] *um* [short] well, let's see."
+                        }
+                     ],
+                     "_index": "36",
+                     "_start": "3194.91895",
+                     "_end": "3222.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "38"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* I'm wondering basically are there-- is there days of the week [short] *um* or days of the week you know weekends versus weekdays *um* where [short] *um* these sort of common crimes that are around U_I_C are more or less?"
+                        }
+                     ],
+                     "_index": "37",
+                     "_start": "3223.12012",
+                     "_end": "3242.12012"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "39"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so *um* [short] it looks like it depends on the crime [short] sort of [short] base range for the [short] least frequent crimes *um*, *um* and [short] a slight increase in [short] some of the more *um* [short] the middle ones better in criminal-damage it looks like, weekends a little more [short] and that *uh* people like to steal things on Fridays."
+                        }
+                     ],
+                     "_index": "38",
+                     "_start": "3357.08008",
+                     "_end": "3408.84009"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "40"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* [short] so [short] yeah [short] starting Friday night a little more crime in U_I_C."
+                        }
+                     ],
+                     "_index": "39",
+                     "_start": "3409.87891",
+                     "_end": "3421.08008"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "factbased"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "41"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* what types of-- [short] what types of violations are-- [short] or crimes are being committed around *uh* places of business, like small businesses or grocery-stores or gas-stations, *um* [short] that sort of thing."
+                        }
+                     ],
+                     "_index": "40",
+                     "_start": "3465.84009",
+                     "_end": "3490.91895"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "42"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok I can see by far again [short] *um* theft is the most frequent [short] type of crime."
+                        }
+                     ],
+                     "_index": "41",
+                     "_start": "3727.43896",
+                     "_end": "3738.12012"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "43"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "previous"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* [short] but I can clearly see the-- [short] the different places of business and the number of crimes and what type of crime, that's very interesting."
+                        }
+                     ],
+                     "_index": "42",
+                     "_start": "3763.87891",
+                     "_end": "3781.87891"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "modifyvis"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "44"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "*Um* if I wanted to go back to-- *um* [short] we looked at number of crimes-- [short] different number of crimes by day-of-the-week, I'm wondering how this varies by neighborhood."
+                        }
+                     ],
+                     "_index": "43",
+                     "_start": "3782.12012",
+                     "_end": "3801.84009"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utterancetype",
+                           "__text": "speakaloud"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "45"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "utterance",
+                           "__text": "Ok so *um* [short] all crimes [short] in the different neighborhoods [short] *uh* vary by day-of-the-week, so it looks like [short] River-North really goes nuts starting on [short] Friday [long] and [short] and there is some difference among those neighborhoods."
+                        }
+                     ],
+                     "_index": "44",
+                     "_start": "3880.67896",
+                     "_end": "3911.87891"
+                  }
+               ],
+               "_name": "user.utterance-components.utterance",
+               "_type": "primary"
+            },
+            {
+               "el": [
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "1"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "1"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "0",
+                     "_start": "381.32001",
+                     "_end": "396.39899"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "2"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "3"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-multiple-entities-in-vis"
+                        }
+                     ],
+                     "_index": "1",
+                     "_start": "563.67902",
+                     "_end": "572.76001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "3"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "12"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-entity-in-vis"
+                        }
+                     ],
+                     "_index": "2",
+                     "_start": "1076.92004",
+                     "_end": "1080.07898"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "4"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "21"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "3",
+                     "_start": "2005.40002",
+                     "_end": "2060.56006"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "5"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "27"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "4",
+                     "_start": "2637.56006",
+                     "_end": "2647.43896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "30"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-multiple-entities-in-vis"
+                        }
+                     ],
+                     "_index": "5",
+                     "_start": "2899.08008",
+                     "_end": "2903.12012"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "non-diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "7"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "38"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "other"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "peripheral"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "other"
+                        }
+                     ],
+                     "_index": "6",
+                     "_start": "3224.91895",
+                     "_end": "3234.23901"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "mode",
+                           "__text": "diectic"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "8"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "44"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "type",
+                           "__text": "point-and-move"
+                        },
+                        {
+                           "_name": "space",
+                           "__text": "screen"
+                        },
+                        {
+                           "_name": "target",
+                           "__text": "indicate-multiple-entities-in-vis"
+                        }
+                     ],
+                     "_index": "7",
+                     "_start": "3787.23901",
+                     "_end": "3790.04004"
+                  }
+               ],
+               "_name": "user.utterance-components.gesture",
+               "_type": "primary"
+            },
+            {
+               "el": [
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "04-1*,04-2,04-3*"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "16"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "5"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "0",
+                     "_start": "1364.92",
+                     "_end": "1365.4"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "10-2*"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "33"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "11*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "treemap"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[this figure@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "1",
+                     "_start": "3120",
+                     "_end": "3120.639"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "10-2*"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "33"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "12*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "treemap"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[figure 10-2@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "2",
+                     "_start": "3123.43896",
+                     "_end": "3124.43896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "10-2*"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "33"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "13*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "treemap"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "3",
+                     "_start": "3151.67896",
+                     "_end": "3152.39893"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "10-2*"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "34"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "14*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "treemap"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "4",
+                     "_start": "3157.76001",
+                     "_end": "3158.32007"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "11-1*,11-2"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "39"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "16"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "bar,line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "5",
+                     "_start": "3357.679",
+                     "_end": "3358.12"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "targetvis_ids",
+                           "__text": "13"
+                        },
+                        {
+                           "_name": "gestureid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "utteranceid",
+                           "__text": "45"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "19"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "next"
+                        },
+                        {
+                           "_name": "targetvis_plottypes",
+                           "__text": "line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[it@@@1]"
+                        },
+                        {
+                           "_name": "targetvis_temporals",
+                           "__text": "current"
+                        }
+                     ],
+                     "_index": "6",
+                     "_start": "3888.6",
+                     "_end": "3889.28"
+                  }
+               ],
+               "_name": "user.utterance-components.refexp",
+               "_type": "primary"
+            },
+            {
+               "el": [
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "1"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "01-1*,01-2,01-3,01-4*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "heatmap,heatmap,heatmap,heatmap"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the C_T_A train@@@1;the EL@@@1;any areas@@@1;maybe theft@@@1;battery@@@1;that sort@@@1;thing@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "1"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[CTA train;theft;battery]"
+                        }
+                     ],
+                     "_index": "0",
+                     "_start": "367.48001",
+                     "_end": "410.92001"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "5"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "02-1*,02-2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "01-1*,01-2,01-3,01-4*"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "heatmap,heatmap,heatmap,heatmap"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the next thing@@@1;the neighborhoods@@@1;the least amount@@@1;personal property theft@@@1;an apartment@@@1;all that sort@@@1;stuff@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "2"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[neighborhood;theft;apartment]"
+                        }
+                     ],
+                     "_index": "1",
+                     "_start": "647.64001",
+                     "_end": "683"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "10"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "03-1,03-2*, 03-3*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "02-1*,02-2"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[currency exchanges@@@1;liquor stores@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "3"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[currency exchange;convenience store]"
+                        }
+                     ],
+                     "_index": "2",
+                     "_start": "857.44",
+                     "_end": "875.11902"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "15"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "04-1*,04-2,04-3*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the bus@@@1;the summer@@@1;the summer@@@2;the bus lines@@@1;the bus@@@3;more public intoxication@@@1;fighting@@@1;verbal harassment@@@1;summer months@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "4"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[CTA bus;summer;liquor law violation;stalking]"
+                        }
+                     ],
+                     "comment": "Time attribute introduced",
+                     "_index": "3",
+                     "_start": "1123.56006",
+                     "_end": "1164.04004"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "18"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "05"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "04-1*,04-2,04-3*"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the next thing@@@1;the most frequent areas@@@1;sexual assault@@@1;these neighborhoods@@@1;a lot@@@1;people@@@1;public places@@@1;the list@@@1;private residences@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "6"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[neighborhood;sexual assault;park property;residence]"
+                        }
+                     ],
+                     "_index": "4",
+                     "_start": "1439.80005",
+                     "_end": "1485.52002"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "21"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "07-1*,07-2*,07-3,07-4"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "06-1*,06-2*,06-3*,06-4*"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar,bar,heatmap"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "line,line,line,line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the course@@@1;the data set@@@1;changes *um* [short] changes@@@1;crime@@@1;neighborhood has-- have neighborhoods@@@1;trends@@@1;crime@@@2;the course@@@2;the crimes@@@1;robbery@@@1;murder@@@1;homicide@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "7"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[crime;neighborhood;robbery;homicide]"
+                        }
+                     ],
+                     "_index": "5",
+                     "_start": "1995.04004",
+                     "_end": "2062.28003"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "25"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "08-1,08-2*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "07-1*,07-2*,07-3,07-4"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "line,line,line,line"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[the C_T_A@@@1;no gambling@@@1;the C_T_A@@@2;gambling@@@2;the C_T_A@@@3]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "8"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[CTA bus;CTA train;CTA station;CTA garage;CTA platform;gambling]"
+                        }
+                     ],
+                     "_index": "6",
+                     "_start": "2340.87891",
+                     "_end": "2360.12012"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "27"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "09-1,09-2,09-3*"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "08-1,08-2*"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,bar,heatmap"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[U_I_C@@@1;this question@@@1;U_I_C@@@2;the most dangerous thing@@@1;place@@@1;U_I_C@@@3;the U_I_C area@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "9"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[UIC]"
+                        }
+                     ],
+                     "_index": "7",
+                     "_start": "2619.52002",
+                     "_end": "2650.19897"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "30"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "10-1*,10-2*,10-3*,10-4"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "09-1,09-2,09-3*"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,bar,heatmap"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "treemap,treemap,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[types of crime@@@1;this number@@@1;crimes [short] display@@@1;the street@@@1;sidewalk@@@1;crimes@@@3;U_I_C@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "10"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[crime;street;sidewalk;UIC]"
+                        }
+                     ],
+                     "_index": "8",
+                     "_start": "2893.91895",
+                     "_end": "2912.15894"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "33"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "10-1*,10-2*,10-3*,10-4"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "10-1*,10-2*,10-3*,10-4"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "treemap,treemap,bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "treemap,treemap,bar,bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "None"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "None"
+                        }
+                     ],
+                     "_index": "9",
+                     "_start": "3117.12012",
+                     "_end": "3156.43896"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "38"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "11-1*,11-2"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "10-1*,10-2*,10-3*,10-4"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "treemap,treemap,bar,bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar,line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[days of the week@@@1;weekends@@@1;weekdays@@@1;these sort of common crimes@@@1;around u_i_c@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "15"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[day;crime;UIC]"
+                        }
+                     ],
+                     "_index": "10",
+                     "_start": "3223.12012",
+                     "_end": "3242.12012"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "41"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "12"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "11-1*,11-2"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar,line"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[types of violations@@@1;crimes@@@1;around *uh* places of business@@@1;small businesses@@@1;grocery stores@@@1;gas stations@@@1;thing@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "17"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[crime;commercial;grocery food store;gas station]"
+                        }
+                     ],
+                     "_index": "11",
+                     "_start": "3465.84009",
+                     "_end": "3490.91895"
+                  },
+                  {
+                     "attribute": [
+                        {
+                           "_name": "utteranceid",
+                           "__text": "44"
+                        },
+                        {
+                           "_name": "targetids",
+                           "__text": "13"
+                        },
+                        {
+                           "_name": "timestep",
+                           "__text": "current"
+                        },
+                        {
+                           "_name": "sourceids",
+                           "__text": "11-1*,11-2,12"
+                        },
+                        {
+                           "_name": "source_plottypes",
+                           "__text": "bar"
+                        },
+                        {
+                           "_name": "target_plottypes",
+                           "__text": "line"
+                        },
+                        {
+                           "_name": "refexp",
+                           "__text": "[number@@@1;different number@@@1;crimes@@@1;day of the week@@@1;neighborhood@@@1]"
+                        },
+                        {
+                           "_name": "refexpid",
+                           "__text": "18"
+                        },
+                        {
+                           "_name": "properties",
+                           "__text": "[crime;day;neighborhood]"
+                        }
+                     ],
+                     "_index": "12",
+                     "_start": "3782.08008",
+                     "_end": "3801.84009"
+                  }
+               ],
+               "_name": "system.response-components.vis",
+               "_type": "primary"
+            }
+         ]
+      }
+   }
+}

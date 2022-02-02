@@ -1,0 +1,147 @@
+START
+00:4:22
+Wait can I have the four areas again?
+experimentor: Yeah what do you want to know?
+The four areas.
+experimenter: *Oh* yeah it's U_I_C--
+*Oh* I can ask her.
+experimentor: Yeah you can ask her.
+What are the four areas?
+Ok thanks.
+*Um* [medium] can you-- *um* are you able to show-- [medium] like the-- [medium] like the entire percentage of crime-- *um* in each neighborhood? 
+*Oops*.
+Sorry I meant like how many crimes occur [short] that's what I meant.
+00:7:25
+*Oh* oops. 
+*Um* is this the amount of crime per year?
+For all four years ok.
+*Um can you show me the population of each neighborhood? [short]
+Sorry [short] *um* [medium] can we look at-- ok at *um* the Near-West side first and are you *um* able to differentiate what types of crimes they were *um* of the 46,000?
+8:49
+So for Near-West-Side it was mostly theft, then batt-- battery xxx.
+*Um* [medium] of the theft [short] in the Near-West-Side, are you able to kind of *um* show it by-- by month?
+00:10:17
+*Oops*. [short]
+*Oh* it's not that [short] different. 
+Let's see.
+*Um* can you do the same thing for battery [short] in the Near-West-Side?
+That's right here.
+So it's decreasing?
+experimentor: Remember to see-- explain what you see when we get new visualizations.
+Ok, well it seems a little bit low in February but it doesn't seem drastically different from the summer months to some of the winter months and it is decreasing from 2010 to 2015. [long]
+00:11:16
+So it's a little bit higher in the warmer weather but *um* [short] not that much [short] and it's *um* kind of a downward trend over the years.
+*Um* can you do the same thing for-- can you do *um* [short] the number of crimes *um* [short] the same thing you did for the Near-West-Side for the other three neighborhoods [short] U_I_C, River-North, and *um* [short] the-- the Loop?
+*Oh* and when-- I'll come back to it but I was wondering where the *um* location of the thefts in Near-West-Side? [medium]
+Sorry.
+xxx theft, battery xxx.
+Number of crimes [short] per month in West only-- [short] *oh* no, in each neighborhood.
+Theft, battery, criminal-damage. 
+*Um* [short] robbery, motor-vehicle, theft. 
+Homocide is really [short] almost non-existant.
+*Um* [medium] *oh* can you show me the location of theft and *um* [short] battery in the four neighborhoods?
+00:15:25
+So street is the highest [short] of all four neighborhoods, [short] then side walk, *um* department-store, restaurant, other, residence, [medium] parking-lot, retail-- small-retail-store.
+*Um* [long] can you show the time-of-day [short] *um* [short] of theft and battery in all four neighborhoods when-- when it mostly occurs?
+00:17:05
+*Um* are you able to show [short] where the crimes occur *um* between noon and 6 and 6-P_M and midnight?
+experimentor: What's wrong it's not working? 
+experimentor: No audio? 
+experimentor: *Uh* that's interesting, it just turned off that's all.
+*Oh* sorry.
+experimentor: Ok now it's working.
+*Um* can you show the-- *uh* [short] the location-type for *um* [short] the crimes that occur between noon and 6 and 6-P_M and midnight?
+00:21:17
+*Um* [short] we're not able to get data based on xxx.
+experimentor: Hey, can you check if it's on again?
+experimentor: Is it green light?
+Am I pressing-- I'm holding it, It's on now.
+experimentor: It is?
+Yeah but the green light-- I didn't press it and it just turned off, it must have muted.
+Alright-- *oh* [short] is it low on battery?
+experimentor: Yeah I'll get a new battery.
+It's turning red. 
+Can you hear me still? 
+*Oh* *um* are you still-- wait for the battery ok.
+Ok *um* [medium] ok. 
+*Um* you guys don't have data on the criminal do you?
+The person who is committing the crime?
+Ok, are you able to split these up between noon and 6 and then one for 6-- 6 to midnight?
+00:25:05
+*Uh* is blue the new-- *oh*. [medium] 
+Ok [short] and that's the comparison up there?
+Ok.
+So 6-P_M to midnight [medium] for all locations. 
+*Oh* this is 6-P_M to midnight that's midnight to 6. 
+Street, department-store, restaurant, retail [short] sidewalk, 6-P_M to midnight.
+Department-stores are a lot higher at-- *oh* from noon to 6 obviously because they're open.
+Street, sidewalk, restaurant, department-store, [short] and other. 
+*Um* for-- *um* like individually for street, sidewalk, department-stores, and restaurants are you able to show-- *um* that's ok-- *um* are you able to show where on a map they occurred? Like where-- what streets, what sidewalks, what department-stores, and what restaurants?
+*Oh* sorry.
+*Um* [short] theft and battery all crimes, streets, department-stores, restaurants, sidewalks. 
+*Um* *hm*.
+For *um* [short] for noon to 6 for all crimes, *um* [short] can you show *um* for noon to 6 for all crimes for streets, department-stores, restaurants and-- like the one, two, three, for, top five locations are you able to do that by month?
+Ok. Noon to 6, yup.
+*Um* it kind of looks similar to the other month graphs. 
+I think I see it. 
+*Oh* no that's just Near-West-Side. 
+Is that for all months or just Near-West-Side?
+Nevermind-- do we have for all neighborhoods [short] the month?
+*Oh* it looks somewhat similar. 
+*Um* so for this *um* graph you made on-- on my left the top five locations can you just make it for *um* street and sidewalk the outdoor locations [short] by month?
+*Oh* February is cold.
+*Oh* it looks similar but it's *um* higher in the summer, lower in January, February, and Decemeber when it's colder, and it's a little bit higher in the fall and spring and highest in summer.
+Can you do the same thing for *um* 6-P_M to midnight please?
+6-P_M noon to 6. 
+So it sort of follows the same trend, maybe except for October is a little higher, 6-P_M to midnight, but it's highest in the summer months and lowest in the winter months.
+*Um* [short] let me think.
+*Oh* the *um* can you go back *um* so I think you have a-- *uh* there's a graph that says number of crimes per month from *um* noon to 6 and 6 to midnight per month.
+*Um* can you *um* delineate by neighborhood maybe? [medium] 
+Or do we already have that graph?
+00:35:44
+*Oh* sorry I didn't realize the scales of the graph are different so there's *um* from 6-P_M to midnight there's definitely more crimes because it goes up to two thousand per month. And that one is 1500 from noon to 6.
+So more outdoor crimes in the summer months from 6 to midnight, ok.
+Noon to 6, 6-P_M to midnight. 
+The highest in River-North.
+So for River-North can you separate it from noon to 6 and 6 to midnight?
+*Oh* it's similar. 
+On the same graph could you *um* put in the two other time slots? *Oh* sorry xxx. So 6-A_M to noon is the least, in the middle of the night is in the middle, and then afternoon evening night are the highest.
+*Um* am I supposed to make a conclusion?
+Ok *um* do you happen-- *oh*.
+Do you-- do you happen to know if law enforcement is trying to decrease a certain type of crime or *um* they are just looking at overall number of crimes?
+Ok-- [short] ok well I was looking at theft and battery because it was the highest.
+But *um* and-- do you happen to know if theft is mostly just like wallets being stolen or you guys-- or you don't have that data?
+00:39:29
+Ok *um* because I-- River-North has the highest number of crimes. *Oh* can you show me the number of crimes in *uh* River-North by year?
+So in from [short] like 11,700 or so in 2010 down to *um* about 9-- is that-- about 9,000 in 2014. That's a big decrease.
+*Um* you guys don't have any-- xxx? [medium]
+*Um* so just looking at River-North, are you able to *um* show me the types of crimes there were in 2010 like the number of crimes in 2010 and the types compared to 2014?
+00:43:38
+This is just for River-- this is for all neighborhoods, ok.
+2010. 6. 17,000. And then theft in 2014 was 12.
+So theft has gone down. Battery has gone down just a little bit. *Um* deceptive-practice and criminal-damage kind of flip-flopped, and the other ones have gone down a little bit.
+*Um* can you make this-- *um* this graph where you show the crime-types from 2010 to 2014 for *um* each of the four neighborhoods?
+River-North, U_I_C, Near-West, and the Loop.
+And the Loop hasn't really changed that much.
+But the other four neighborhoods have decreased. 
+*Um* kind of-- well they are in different-- 4,500.
+The Near-West has decreased a considerate-- *uh* a big amount. 
+So has U_I_C-- U_I_C has decreased a little bit. 
+Near-West has decreased. 
+But the Loop has stayed the same *um* in theft and gone up in deceptive-practice.
+*Um* so since the Loop number of crimes has not gone down too much, can you show me for theft-- *um* [short] what *hm* let me think. *Oh* *um* for 2014 can you show me what day-of-the-week most theft occur?
+So Friday and Saturday are the highest-- it's kind of like the weekend and the other five days are *um* about the same.
+*Um* for Friday and Saturday can you show what times of the day the crimes occur? [medium] in 2014 sorry.
+Is there a time limit?
+*Oh* nevermind.
+So most crimes on *um*-- this is for-- is this for *um* [short] just Friday and Saturdays or *um* every day-of-the-week?
+Ok-- ok thanks. 
+*Um* so it seems like most crimes on the first two days of the weekend are from noon to 6 and then second is 6 to midnight which is kind of *um* corresponds with some of the other data for times of the day.
+And then I have one last question about the Loop *um* because it seems like there-- the one area where *um* certain crime hasn't decreased in like even deceptive-practices increased just a tiny bit.
+*Um* can you show *um for the Loop for theft and deceptive-practice can you show *um* [short] what days of the week those crime occur for theft and deceptive-practice?
+00:52:01
+U_I_C. 
+So it's highest on Friday, lowest on Sunday, and then kind of the same Monday through Thursday and Saturday.
+*Um* for the Loop, *um* just for theft, can you show what-- show the crimes by month?
+*Hm* higher in summer months, a little bit lower in winter months-- *oops*, kind of like some of the other monthly data.
+END

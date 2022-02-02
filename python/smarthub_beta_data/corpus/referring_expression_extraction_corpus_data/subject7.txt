@@ -1,0 +1,54 @@
+subject7
+
+So which [Est<1><01-1,01-2*>: location Est<1><01-1,01-2*>] has [Est<1><01-1,01-2*>: the highest crime rate Est<1><01-1,01-2*>] recorded?
+So I can see there River North has the highest crime rate.
+and if we see through the neighborhood street sidewalk and the residence residence area has the highest crime rate 
+So what type of crimes
+Editing title? What is editing title?
+So can I see [Est<2><02>: the intersection Est<2><02>] between [Est<2><02>: the River North Est<2><02>] and [Est<2><02>: the street sidewalk Est<2><02>] and [Est<2><02>: residence views? Est<2><02>]
+So is the status not changing?
+here how can we identify the neighborhoods here? Which is a street and which is a sidewalk?
+Yeah so I want to know [Est<3><03*,04,04-2*>: the intersection Est<3><03*,04,04-2*>] between [Est<3><03*,04,04-2*>: the River North area Est<3><03*,04,04-2*>] I want to know what is the what are [Est<3><03*,04,04-2*>: the neighborhoods Est<3><03*,04,04-2*>] that a have [Est<3><03*,04,04-2*>: the highest crime rate Est<3><03*,04,04-2*>] in [Est<3><03*,04,04-2*>: River North? Est<3><03*,04,04-2*>]
+Is it is it street are the are the streets is it the sidewalk area? So I need to know that.
+street sidewalk department store restaurant residents 
+so i want to see the types of crime that is occurring in each specific neighborhood in river north 
+Which specific to River North.
+So can can you explain a bit about what is this criminal damage and this this deceptive practice? So what kind of deceptive practice?
+So there is a criminal damage and so what kind of deceptive practice is it? I mean deceptive practice in the sense somebody is mocking somebody and?
+So like which [Est<4><05-1>: which part Est<4><05-1>] of [Est<4><05-1>: the days Est<4><05-1>] is [Est<4><05-1>: the crime Est<4><05-1>] higher?
+With [Gesture<5><04>: this graph Gesture<5><04>] with [Gesture<6><04>: the last graph Gesture<6><04>] I want to know which part of the day is the crime very high?
+Or give me [Text<7><04>: the graph Text<7><04>] of the crime crime rate in this River North with respect to the which part of the day.
+so can i explain it with number in the graph is it ok so this 122 i can see the graph of the crime rates with the location type so i can see that this the street walk and what is it 
+has the highest crime and this and this 04 
+in this graph i could see that the theft has the theft has the highest crime that is occurring in river north and this 3.png describes about 
+this is shocking 12 noon to 6 pm has the highest crime rate 
+usually crime happens in the night right 
+so 12 noon to 6 pm has the highest and 12 midnight to 6 am has somewhat lesser crime rate 
+So can you give [Est<8><06-1,06-2*>: the analysis Est<8><06-1,06-2*>] through or what are [Est<8><06-1,06-2*>: the days Est<8><06-1,06-2*>] has [Est<8><06-1,06-2*>: the crime rate? Est<8><06-1,06-2*>] [Est<8><06-1,06-2*>: Day Est<8><06-1,06-2*>] by [Est<8><06-1,06-2*>: day Est<8><06-1,06-2*>] [Est<8><06-1,06-2*>: analysis Est<8><06-1,06-2*>] can I get [Est<8><06-1,06-2*>: a [Est<8><06-1,06-2*>: day Est<8><06-1,06-2*>] Est<8><06-1,06-2*>] by [Est<8><06-1,06-2*>: day Est<8><06-1,06-2*>] [Est<8><06-1,06-2*>: analysis? Est<8><06-1,06-2*>] Day and [Est<8><06-1,06-2*>: time Est<8><06-1,06-2*>] maybe.
+Yeah so this is expected. On weekends the crime crime rate is high. And on but on Sundays its relatively lesser on Fridays and Saturdays is it it is very high.
+So on [Est<9><07>: Saturday Est<9><07>] at [Est<9><07>: which location Est<9><07>] can you can you say can you give me [Est<9><07>: a graph Est<9><07>] with [Est<9><07>: respect Est<9><07>] to [Est<9><07>: Saturday Est<9><07>] and [Est<9><07>: the location type Est<9><07>] alone on [Est<9><07>: River North. Est<9><07>]
+So in [Text<10><06-2>: this graph Text<10><06-2>] I can see that on Saturday 6 PM to 12 midnight and 12 noon to 6 PM is higher and this pattern is repeated everywhere. Except on Sunday 12 midnight to 6 PM is very high.
+So maybe people start doing their criminal activities from 6 PM to 12 midnight and continue to the Sunday morning maybe.
+So how do you differentiate from street and sidewalk [Text<11><07>: here? Text<11><07>] Street has a sidewalk right? So
+Well especially on the sidewalk.
+yeah so in the street does it include sidewalk too 
+yeah so the crime rate is literally high on bar so that is expected but these 2 trends are are prevalent in the overall graph everywhere 
+So street and sidewalk dominate everywhere.
+so I want [Est<13><08-1,08-2-2>: day Est<13><08-1,08-2-2>] by [Est<13><08-1,08-2-2>: month Est<13><08-1,08-2-2>] and [Est<13><08-1,08-2-2>: day Est<13><08-1,08-2-2>] by [Est<13><08-1,08-2-2>: year Est<13><08-1,08-2-2>] [Est<13><08-1,08-2-2>: analysis Est<13><08-1,08-2-2>] of [Est<13><08-1,08-2-2>: [Gesture<12><07>: this graph. Gesture<12><07>] Est<13><08-1,08-2-2>] Of [Est<13><08-1,08-2-2>: the River North crimes. Est<13><08-1,08-2-2>]
+so on february it it is very less so do you but because maybe i think the reason is because on february there is 28 days there are only 28 days 
+So on February it is it is very less so do you but because maybe I think the reason is because on February there is 28 days there are only 28 days. So do you normalize that [Gesture<14><08-2-2>: here? Gesture<14><08-2-2>]
+not normalized ok. Because of that this is more or less similar all the months more or less have a similar crime rate.
+yeah maybe you should normalize so 
+people will not be believing only february has a lowered criminal rate 
+yeah yeah ok cool in future maybe yeah 
+So I want [Est<16><09-1,09-2*>: a year Est<16><09-1,09-2*>] by [Est<16><09-1,09-2*>: analysis Est<16><09-1,09-2*>] of of [Est<16><09-1,09-2*>: [Text<15><08-2-2>: this. Text<15><08-2-2>] Est<16><09-1,09-2*>]
+So [Gesture<17><09-1>: here Gesture<17><09-1>] I could distribution is more or less uniform [Text<18><09-1>: here. Text<18><09-1>]
+So can you give me that give me [Est<20><10>: [Gesture<19><09-1>: a graph Gesture<19><09-1>] Est<20><10>] of [Est<20><10>: the highest type of crime Est<20><10>] that has occurred [Est<20><10>: each year? Est<20><10>]
+Like 2010 theft is the highest crime like that I want a graph like that.
+What does this line represent? Is it theft of?
+Because more or less the colors are same for blue.
+or if if he can change this color it will be good 
+So [Text<21><10>: here Text<21><10>] also it represents a total pattern so theft is higher theft was higher in the River North so.
+but it is it is getting from 2012 maybe 
+and everything is everything is here nothing dominates others 
+yeah so that is it 

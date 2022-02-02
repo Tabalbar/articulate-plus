@@ -1,0 +1,214 @@
+START
+4:49
+*Huh* alright, let me think here. [short]
+I think I want to *um* I think I want to start off simple and try to get more detailed from there.
+So starting off, I’d just like to see the *uh* total amount of *uh* crimes that happened divided by the three main areas, the *uh* U_I_C, River-North and *uh* Near-West-Side. [short]
+Just cause I’m thinking, you know, to get it started. [long]
+5:49
+It’s kind of a complicated problem actually. [long]
+6:56
+What is XXX? 
+Do we know what that definition is, or?
+*Oh* ok here we go. [medium] 
+Ok [short] *huh* River-North, Ok. 
+*Um* is there any way to see [short] kind of a similar division between the four neighborhoods, but also track it *uh* over the-- [short] I think it’s 2010, like every-- [short] by year from the dataset 2010 to 2014, or whatever it is? [medium]
+7:36
+See if anything has changed. Or if there’s any trend overall. [long]
+8:04
+Ok. 
+*Ah* that’s an overall-- I guess somewhat positive sign. [medium]
+*Um* ok so [medium] is there any way starting off-- [short] *huh* let me think.
+So is there anyway starting off to see what the-- *uh* I wanna-- *uh* the division of the crime-types is in the most recent dataset in 2014.
+Starting with that. [medium]
+And then, *hm*. 
+Then we’ll see what that shows and maybe moving on from there it might be good to see trends on that too. [long]
+9:37
+*Huh* ok. [short] 
+Ok so it looks like [short] I guess kind of what you’d expect actually.
+Mostly thefts.
+*Um* ok is there any way to-- [short] ok I’m thinking [short] thinking out loud there’s kind of two to look at this.
+You can look at it as theft. [short]
+*Um* or first of all, I was really trying thinking of looking at it as a trend over time for both of them, but the effect seems pretty overwhelming right now, so I’m kind of looking [short] thinking of doing [short] looking more into that.
+Is there any way to kind of show theft by location type? [medium]
+Cause then it might be kind of great in terms of figuring out where to put people in terms of police officers. [long]
+10:58
+Alright.
+I guess that makes sense actually. 
+Ok so streets and apartment stores, so [short] *huh* ok. [medium]
+So we know [medium] *huh* ok.
+First starting off, what-- around what time of day do the thefts usually occur, in *uh* in general? [long]
+12:07
+Ok.
+Ok so already-- [short] ok so already we’re thinking that [short] it’s kind i-- it’s kind of somewhat obvious but at the same time like *uh* that [short] the most common crime is theft [short] on the street particularly in noon to 6-P_M time.
+Now [short] the-- the data doing that with the dataset its G_P_S coordinates is where the *um* crimes are listed, G_P_S instead of addresses?
+Ok. [short] *um* [short] *huh* okay.
+13:02
+Would be [short] it’d be good to know there if there’s some way to visualize to know like kind of based on where we know where the crimes were-- what the kind of-- if there’s a general area where it lights up more but, like in terms of like G_P_S based on G_P_S *uh* coordinate if there’s certain [short] certain area of physical like areas where it’s more likely to happen *um*. 
+Not sure how easy that would be to visualize.
+Ok, alright thank you.
+That’s [short] impressive.
+13:41
+I think that’d be a thing because in terms of you know officers on the ground obviously knowing the actual general kind of hot-spots and locations based on the G_P_S *um*.
+Especially for something like theft which is arguably something that could be affected by having more patrols [short] and more police officers.
+*Oh* there we go. [medium]
+Ok, alright.
+14:18
+So it looks like-- [short] can you make it a little bit bigger? [medium]
+Thanks I can see it. It looks like State street.
+Ok so I guess that kind of makes sense. [short]
+Ok so now we know that for in terms of theft and in terms of the general dataset overall *um* State-street and a few other areas are kind of like hot-spots.
+Looks like a little bit around *uh* Magnificent-Mile or Chicago-Avenue. [short]
+*uh* Grand, ok.
+14:57
+Now *um* *hm* [medium] is there-- [long] I guess overall has there been any *um* [short] *huh* *uh* is there what I'm thinking about what I want to think about is if there's been any change in terms of has one area historically not been a problem and then has recently had any kind of drastic difference either good or bad *um* [short]
+In terms of [short] I guess since we’re talking about theft we’ll stay focused on that but that’s [short] it’d be good to know if certain areas are starting to become more problematic [short] *uh* overall.
+*Uh* [medium] ok yeah [short] no that’s perfect.
+That’s actually ok yeah.
+16:03
+*Um* if we had a dataset that had-- if the dataset had a lot of kind of like more from what we know about what the most popular crimes were if the most popular crimes somehow were things like deceptive practice then maybe we’d want to take out some of those because that wouldn’t be good for patrols like since basically the vast majority of what the data shows is kind of *uh* standard kind of *uh* crime that would be affected by police officers.
+I think having the general crime-map is actually pretty good *um*. [medium]
+Yeah if you could about any changes overall. [short]
+Yeah that’d be great. [short]
+16:46
+Because I know that *um* I mean, I’m not sure exactly how much things change over time, but over four years there’s quite possibly different business, demographics, *uh* changes, things like that, so. [long]
+18:29
+Ok *huh*. [short]
+Ok so that’s good for the general kind of *uh* what the hot-spots are *uh*. [short]
+Ok *um* ok so that’s kind of good for just general.
+*Um* if we wanted to-- [short] *huh* let me think about this. [medium]
+*Um* [medium] ok so, so now we know that general hot-spots for crime, the general trends, the kind of most popular crimes. 
+*Um*[short] ok let’s talk about-- [short] so if we’re thinking, since theft is the biggest crime, let’s kind of *uh* a-- and that’s you know what we’ve kind of that we talked about first.
+Let’s kind of look at *um* [short] let’s look at something slightly different.
+Let’s look at *um* just overall, not by year but just overall, the *uh* number of recorded narcotics-violations by *uh* [short] geography. [long]
+20:35
+Ok [short] alright so that’s definitely a-- looks slightly different *uh* distribution. [medium]
+Ok [medium] alright so that would be useful to know too. [short] 
+*Um* [short] ok so that’s kind of a-- [short] that’s kind of a good way to look at it. [short]
+I trying think if there’s any kind of more or clever ways that we can look at the data that maybe are not as standard.
+*Um* [medium] let’s *um* [medium] ok so let’s say, [short] ok bear with me on this one, I just want to try something here.
+*Um* let’s say, I know that some of these areas have some, have a lot of *uh* [short] not, I mean, I guess they’re usually more West than this, but some of these areas do have a lot of *um* empty-lots *uh* which I thought I saw on here, but I don’t know, a vacant-lot.
+Is there any way to see what kind of crimes tend to be committed in vacant-lots? [long]
+22:58
+Ok [medium] *haha* that’s interesting, ok.
+*Um* [medium] ok alright that’s, that is really interesting.
+How about on the C_T_A, the C_T_A-bus, garage, or let’s do C_T_A and-- C_T_A, C_T_A-bus and C_T_A-train?
+*Oh* you found some, ok. [long]
+Ok [medium] *huh* [medium] ok. [long]
+23:46
+Ok. [long]
+*Huh*. [long]
+Ok [medium] and *um* [medium] *huh* [short] ok.
+I was kind of just curious about that.
+I’m not sure if I have too much to go down on that path. 
+*Um* can we do the same thing for C_T_A bus and C_T_A train? [long]
+25:39
+*Huh* ok. [long] 
+Ok [medium] *huh* ok. [long]
+*Um*. [medium] 
+What *um* [long] ok *um* [medium] ok.
+I’m trying to think if I want to go anywhere with that, but I’m kind of drawing a blank. [short]
+*um* we can tar- [short] no.
+Let’s *um* [short] let’s kind of go a diff- go a different way now, and let’s talk about homicides.
+Ok now, pull up the *uh* homicide map.
+27:41
+Ok [medium] is there [short] can I also see a *uh* [short] see homicides by *um* month, if that’s possible? [long]
+29:16
+Ok [short] XXX, at least in this part of the city, a little bit different from what I might think, or kind of a little bit different from what people tend to think, because usually they tend to think of a much bigger spike around July August, and there’s definitely some activity then, but it seems like May is [short] up there.
+I mean there’s not too many homicides since they’re relative to others. [short]
+*Um* can you *um* [short] *uh* make the narcotics map and put it up next to this? [long]
+30:19
+Ok [short] *um* and while we’re at it, just for the sake of completeness, can you put the theft map up? [long]
+Ok [short] so I guess what we’re seeing here is not entirely unexpected.
+We see a *uh* [short] lot of thefts particularly in *um* downtown and River-North area, are a lot of stores and tourists and, just lots of people in general, whereas when you the see the list of murder and narcotics map is somewhat more in other areas like *um* near Little Village and over by Western, *uh* kind of west of *uh* the medical district and the Tri Taylor area.
+Ok so that’s good information in terms of knowing exactly [short] you know, kind of knowing where to put certain kinds of, you know like street patrols and things like that, probably downtown where there’s a lot of people but also if you’re looking into the end of high crime and drugs, then you’d be looking into the South and like Near South, Near West.
+*Um* [medium] ok *um*. [medium]
+Is there any way to-- [medium] between the three, the narcotics, homicides and thefts *um* is there any way to do it by *um* time-of-day and by large area, like one of the four areas. [long]
+34:59
+*Uh* yes, by time-of-day. [long]
+Ok [medium] ok.
+36:21
+Alright so overall [short] evening and *uh* afternoon spike in both theft and narcotics, slightly different pattern between the two.
+*Um* [long] it looks like [medium] there’s a lot of theft going on in River-North [short] ok.
+Alright so putting it all together we would kind of have an idea of where to send police officers in that regard *um* and kind of look in terms of *um* [short] narcotics and theft *uh*.
+There’s not too, homicides is overall not a huge number but it is definitely sort of a cluster [short] in some areas.
+Ok. *hm* alright. [long]
+*Um* [medium] ok. [medium]
+So I’m trying to think, that kind of gives us a lot of useful information, and I’m just trying to think if there would be-- [short] I’m looking at the location-types, trying to think if there’s any particular one that I’d want to look at, besides we already looked at C_T_A *um* we looked at vacant-lots, but I don’t know if *um* [short] I don’t know how useful it’d be to do some of these. [short]
+38:34
+*Uh* [medium] yeah I think XXX have pretty useful information overall. [short]
+I guess one thing [medium] is there any-- I guess just as a, kind of a-- to make sure there’s not some kind of trend that we’re missing. 
+Is there any way to, I know, I think we’ve done some similar things as this already, with *uh* the-- I think we already did the number of crimes over the years for the three or four things that we were, *oh* we did it by area, that’s right.
+*Um* is there any way to kind of just do a trend of the *uh* type of crime over the last four years? [long]
+40:51
+Ok [long] that doesn’t look like there’s any huge spikes in anything. [short] 
+*Huh*. [medium]
+Ok. [long]
+Alright so, this is good. [medium]
+Alright so-- in terms of-- yeah I think that answers a lot of questions all at once. 
+*Um* theft and battery would mostly be things that if they’d happen on the street when your patrols, it’d still be kind of doing the same patrols probably in similar areas *um* and a lot of the ones that wouldn’t be things that a patrol would catch would be things that would have to be called in anyway. *um*. [medium]
+And then a lot of the other-- there’s a lot of-- *uh* a lot of these crimes don’t have very huge numbers behind them. [short]
+*Um* just because it tends to be a *uh* [short] another thing that can like cluster somewhere, I guess it would probably be useful to see a prostitution map. [long]
+43:32
+Ok [medium] that’s kind of interesting.
+Ok and then *um* [medium] I guess *um* there’s not too much more to say about the prostitution map.
+I mean it’s just good information.
+One thing actually, let me look at the crime-types here. [long]
+It would be good to know, so kind of like the same thing with theft in terms of where does it happen, both like where in on the map, but also like what kind of location.
+*Uh* especially since we’re dealing with *um* [short] *uh* fairly large geographical area and a college area, it might be good to-- *uh* besides the usual point of the map, which is apparently my favorite thing.
+*Um* it might be good to pull up a map and see where the most common *uh* reports are for sexual-assault, or I guess it’s sex-offense is what it’s listed under.
+45:11
+And if we’re thinking in terms of how, I-- I’m not privy to how the Chicago-Police-Department works, but most police-departments have divisions on homicide, and they obviously have beat cops, they have homicide divisions, they have sexual-assault divisions, they sometimes have prostitution, they always have drug divisions too, so that’s kind of why I’m going through these main categories *um* [short] in my head.
+46:40
+Ok [medium] so that’s definitely where some of the crimes are, I mean, are a little bit more localized, and it’s a little bit more diffuse. 
+*Um* [medium] we do still see like *um* [medium] some variance in where it happens in terms of location-type. [short]
+*Hm* taxi-cab. [short]
+*Um* [short] *huh*. [medium]
+It’s kind of difficult to say, because, since *uh* sexual-offense probably can mean a lot of things.
+It’s unclear on [short] if [short] *um* you know what kind of offenses we’re dealing with.
+*Um* [short] is there [medium] is there any way to show [short] or either we can do it by map or by area but maybe by map would be easier.
+Is there any way to show *um*-- of the *uh* sex-- criminal-sexual-assault-- *uh* is there any way to narrow it to-- narrow it down by ones that happen in *uh* street or alley or sidewalk? [long]
+49:05
+Ok [medium] ok. [long]
+That’s interesting. [short]
+*Huh* ok. [long]
+Alright so [short] we kind of covered that *hm*.
+Can’t think of other ways to look at this. [long]
+Did *um* [medium] actually I thought I-- in my mind I think I thought I asked this, but actually I don’t think I did.
+*Uh* if I did *uh* forgive me, but did we-- can I see a-- *uh* number of crimes, all crimes via location-type?
+Ok that’s what I thought-- alright. [medium]
+Ok thank you. [short]
+And now I’m asking this mostly because *uh* of just-- since we’ve kind of covered just the general areas, that’s probably the most important thing.
+And kind of divided by crime, it just is-- *uh* would be interesting to see if certain *uh* just general locations.
+I mean obviously street and sidewalk came up, but there’s other things that would be more surprising *um* so the department-stores have a pretty high number, but we’re also dealing with the *uh* downtown area, so that’s probably not uncommon. 
+*Um*. [short]
+Ok I don’t think there is any forest preserve in this area *um* which makes sense. 
+*Um* [short] alright [short] now let me see here.
+So I’m just looking to see [short] *uh* what location-types have crime here. 
+*Um* I’m trying to remind myself if some of these things exist in this area. [medium]
+Ok [medium] ok *um* *hm*.
+And then *um* [medium] so now I guess since we’ve covered the kind of the general stuff, let’s just quickly *uh* act-- think about U_I_C in general *uh* since they do have their own kind of *uh*. [short]
+*Uh*-- [short] *uh* police and security kind of thing going on.
+*Uh* is there anyway to pull up the number of *uh* type of crime committed at U_I_C *uh* just overall I guess? [long]
+54:00
+Ok so kind of an ongoing [short] common trend here.
+*Uh* theft, battery. [medium]
+Ok [short] so overall I think that answered most of my questions *uh* so those kinds of things we would be interested in would be *um* [medium] you know kind of predicting what the answer would be but *uh* what kind of *uh* crime is most likely to happen if I own a restaurant [short] in this area? [long]
+55:44
+*Hm* deceptive-practice. [long]
+*Huh* ok. [long]
+Yeah, that’s interesting. [long]
+Alright I think that I’ve covered most of what I’d want to ask *um*. [long]
+And the only other thing that I probably didn’t quite cover is *um* if there’s any-- [short] the-- I guess the rate of crime in general by day-of-the-week. [long]
+57:49
+Ok so that’s pretty constant.
+Is there *um* [short] a way to divide it up kind of like we did with the *uh* number of crimes?
+Well I guess in any way divide it up in terms of *uh* you know number of crimes day-of-the-week but divide it up by crime-type? [long]
+59:27
+*Oh* that’s really nice, ok. [long]
+Alright so there’s not too many [medium] I guess real significant things except for probably an increase in battery and criminal-damage on *uh* the weekends, Saturday and Sunday. [medium]
+Ok *huh* that’s really interesting. [medium]
+*Oh* and theft goes up on Friday too. [short]
+*Huh*.
+That’s a little bit unusual, ok.
+I think that’s a lot of good information.
+END

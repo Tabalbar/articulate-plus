@@ -1,0 +1,432 @@
+START
+06:10
+So do I like ask for a map or how does this work?
+experimentor: Anything you want.
+*Oh* well I guess [short] can we see the *uh* can we see the map? [short] 
+Please? [long]
+Let’s see.
+Actually [short] as soon as you get the map up [short] when-- [short] when everything is all up and loaded can we-- can you load all of the data? [short]
+Just so we have like [short] a big aggregate to see [short] kind of what we’re working with? [long]
+And then [short] let’s see I don’t know what the *uh* [short] the [short] computing specs are [short] but [short] once we have the data-- [short] this is mostly me thinking out loud but maybe [short] if we can see kind of a temporal [short] *um* either a bar-chart or something? [short]
+*Oh* there we go [short] not a bar-chart like a line-graph just to get kind of a sense of [short] what’s happening.
+*Ah* wow that’s a lot of crimes. [short] 
+07:30
+Take your time you’re fine.
+Sum of number of crimes. [long]
+*Um* don’t go much further beyond here?
+experimentor: *um* you can xxx free to move.
+Ok. So then I can walk in front of these? Ok. I don’t want to be in the way.
+*Um* and then crime-types *ah* wow. [short] 
+*Uh* can we-- [short] let’s see-- [short] can we just look at *um* [short] what is it River-North and xxx area atleast?
+Just to narrow that down it seems like the most high density crimes.
+*Ah* awesome, you are awesome. [long]
+Ok so we have a map [short] of just all the crimes that are [short] little red dots in varying intensity like a gradient from like pink to like dark red with dark red being the most [short] crimes [short] and then we’ve got another map like a dot plot, a map of all the areas in U_I_C-- or so we got Near-West-Side, we’ve got River-North in green, and U_I_C in red, and The Loop in blue.
+There’s a blue dot in River-North.
+That’s cool [short] and then we’ve got number of crimes, like a time line-graph just a line-graph [short] from 2010 to 2015 showing the number of crimes per month. [short] 
+And then [short] number of crimes over the years. [short]
+Interesting [short] well that’s good there’s a downward trend that’s always happy.[short]
+*Um* [medium] *huh* [short] it’s cyclical isn’t it?
+That’s kind of weird. [short] 
+Data Analysis expert is there anyway to get an idea of where these peaks and this *uh* number of crimes per month were there-- like what month they’re falling on? If there’s any kind of trend in that? [long] 
+10:00
+It’s like periodic that’s weird. [long]
+And then. [long]
+Let’s see. [long]
+So that’s the 290 [short] right? I think. [long]
+One more request for you when you get the chance. [short] 
+*Um* [short] awesome. [medium]
+*Oh* perfect! [short]
+Actually could you bring that-- the one you just moved?
+Yeah right there is perfect. [short] 
+August [short] *oh* summer time. [short] 
+Why is it summer time that there’s always like lots of violence?
+I don’t get it. [short]
+You’d think everybody’s like really hot they wouldn’t want to move around and kill each other but [short] go figure.
+*Um* so can we filter [short] the map just on the months of like [short] I don’t know June, July, and August? [long]
+Or not the maps but filter the data. 
+So just describe this chart so we got a bar-chart with the number of crimes aggregated by months.
+Just showing the total number if crimes over each month over the last 4 years.
+And we got another chart that’s the same as this line-graph over here but it’s got the date at each point [short] over the 4 years which is [short] really, really useful and it’s pretty clear that summer time is [short] summer time fun time. [long]
+What else? [medium]
+Yeah July and August. [long]
+At least we know nobody’s killing each other [short] as much in February. [short]
+It’s the love month right? [long]
+12:30
+*Um* [long] what is this map for?
+Or what’s the difference between 4 and 3-2.P_N_G? [medium]
+*Ah*.
+Right on, [short] thank you.
+I don’t know what I was expecting I thought it would be different *haha*. 
+Ok *um* can we start with *uh* [short] do we have a-- can we look at like time-of-day [short] for these-- *uh* [short] for this time period for June July and August?
+That’s kind of a general [short] request but--. [long]
+So Ok so xxx here is [short] just a map.
+It’s just showing the overall crimes for just the months of June, July, and August it’s looks almost identical to the [short] total aggregate data which is kind of telling. [long]
+It had me completely confused at first. [long]
+*Oh* this is great. [long]
+June, July, and August. [short]
+15:00
+Great so we’ve got-- [long] we’ve got a bar-chart [short] showing [short] all 24 hours in a day and the period of-- [short] the number of crimes per hour. [medium]
+Interesting. [short] 
+So [short] afternoon to midnight is [short] really popular. 
+*Um* can we see crime at hour 12-- wait 12 noon? 
+At least to start? [short]
+Yeah can we just look at all the crimes that occur at 12 o clock noon? [long]
+Thank you. [long]
+*Hm* *oh* this is an interesting one too.
+So we have another graph that [short] is [short] showing just the crimes by hour from like midnight to 6-A_M, 6-A_M to noon, noon to 6-P_M so like in [short] 2 hour-- 6 hour chunks. [medium]
+Theft. [long]
+*Um* I have a request.
+So how about another [short] bar-chart of-- just showing the number of crimes by crime-type on the x-axis [short] for June, July, August just at noon.
+With overwhelmingly so is theft is just the biggest one?
+*Um* can we--. [long]
+Weird.
+Am I too out of the way?
+experimentor: No. It’s xxx *um* No is your audio--.
+Is it not working?
+experimentor: Just saying it's going in and out.
+Oh.
+17:30
+experimentor: Is it on? Let’s just see. Is it on it’s on. Great and it’s connected there.
+It’s on.
+Can you hear me? 
+Ok.
+experimentor: *Oh* [short] great.
+Cool I’ll keep it up front just in case.
+experimentor: Thanks.
+Sure. I mumble I’m sorry.
+*Um* [short] ok [short] how about-- so let’s look at some [short] noon to 6-P_M [short] block in terms of crime. [long]
+Over-whelmingly xxx. [short] 
+Ok *um* [short] well [short] clearly they need to stop people from stealing stuff.
+*Um* can we just *uh* focus on [short] what is it-- [short] the Loop and River-North [short] for this data? [long]
+20:00
+Ok *um* [long] number of crimes xxx Loop and River-North. [short] 
+June, July, August. 
+*Ah* look at you. [short] 
+You’re great [short] thank you. 
+*Um* so I’ve got a bar-chart which shows number of crimes by crime-type from 2010 to 2014, [short] for June July and August, [short] from noon to 6-P_M in just the Loop and River-North. [short] And then we have another chart [short] that shows number of crimes by crime-type by--[short] for between two thousand to-- 2010 and 2014 for June, July, and August in just noon-- [short] at just noon for Loop and River-North [short] again they’re both bar-charts *um* ok.
+So [short] if I had to be an expert I would say that should-- they should focus on theft [short] between the hours of noon and 6-P_M since [short] an enormous amount of crimes in that point-- point in time.
+*Um* [short] I don’t know how officers target theft but make people stop stealing. [short] 
+And [short] atleast in those areas. [short] 
+Can we-- is there anyway you can filter hotspots within the map?
+So within River-North and *um* and-- and the Loop there’s like-- I don't know one, two, three-- [short] there’s like six like really dark red points-- like I’m curious what-- what’s going on there. [long]
+Audio check on the camera, which camera? [long]
+*Oh* snap. [long]
+Are they really? [short] 
+Just is everything plugged in? [long]
+*Hm*. [short]
+Right on. [long]
+22:30
+We’re all computer scientists right? 
+Technology, [short] you need an audio engineer for that. [long]
+I really like that.
+Is that SVG dots?
+experimentor: *Oh* *um* [short] no that’s using *uh* Tableau.
+*Oh* tableau? 
+Interesting-- interesting is that like better than like leaflets and D3?
+experimentor: *uh* no because [short] D3 and leaflets would allow you interactive-- interactiveness.
+I see.
+experimentor: Images but I mean the problem-- the-- the thing with Tableau is that they’re not good at [short] maps.
+*Oh*.
+experimentor: So *uh* the maps aren’t very detailed. 
+I see.
+experimentor: So you can use them and you can make it interactive [short] but the maps aren’t that good.
+Yeah.
+experimentor: So instead we are using a slightly alternate way to load google maps into tableau and then use tableau to use them.
+I see.
+experimentor: xxx So that way you atleast you get good details.
+Sure, sure [short] ok. [short]
+*Ah* awesome. 
+*Um* and then can we get just the the crime-types for these areas? [short]
+So we’ve got this map but just filter o-- you’re awesome, so good at this.
+Ok so this map--.
+By crime-type from 2010 to 2014 for June, July, August for noon just hot-spots.
+*Um* [long] *huh* *oh*. [long]
+*Oh* sorry.
+00:00
+So it’s just like-- [short] I don't know [short] selling-- say-- say-- saying you’re going to sell something when really when really it’s something different? 
+Or [short] whatever?
+experimentor: *Um* basically means that-- [short] I mean officially basically means that-- [short] for example if you were to force someone to sign a document or if you were to [short] write a [short] fraudulent check or [short] steal a credit card or-- I mean doing anything where you know use the-- or you are claiming to be a legitimate thing or you claim to be a legitimate business.
+*Oh* I see right on. [short] Ok makes sense.
+*Um* [short] I think I already have my answer but just to be thorough can we have the noon to 6-P_M? 
+For *um* this spot? 
+For the-- this area? [long]
+Yeah [short] that’s what I figured. [long]
+*Oh* so this is just *ah* [short] another bar-chart showing number of crimes by crime-type by-- for-- for the month of dates 2010 to 2014 for June, July, August from noon to 6-P_M just to the hot-spots that I requested.
+*um* [short] yeah over-whelmingly so [short] it-- it’s thefts, deceptive-practice.
+I’m not exactly sure how you xxx that but that’s a very far second so [short] I would say in my expert opinion that police should deploy in these hot-spots between xxx 6-- noon to 6-P_M or if nothing else atleast at noon to try and combat theft-- theft in that spot particularly in the months of June July and August. [short] 
+*Um* [short] great we saved-- we saved the day.
+02:30
+*Um* time-of-day, day-of-the-week. [short] 
+Did I ever-- I don’t think I asked days of the week did I? 
+*Um* could we see [short] between noon and 6-P_M [short] within this zone like days of the week? [long]
+Maybe try and rephrase that in a-- [short] no you got it [short] *haha*. [long]
+That’d be kind of a fun visualization to just watch like [short] how like the crimes occur over like the hours of the day or something I don't know. [long]
+*Huh* [medium] ok [medium] so we’ve got a bar-chart showing number of crimes, crime-type the usual just of the days of the week just the hot-spots. [short]
+Apparently crime [short] doesn’t like to work on Sundays [short] as much [short] but is otherwise [short] 24-7. [short]
+That’s not true not 24-7 but work 7 days a week.
+Crime doesn’t take a vacation what the hell [short] *um* yeah. [short]
+Ok I have a new request. [short] 
+*Um* can we look at the whole city map? [short] 
+*Um* like a hot-spot map like this but just of thefts? [long]
+04:45
+And then-- [long] yeah. [long] 
+And then when you have time can we get like a line-graph? A temporal line-graph [short] showing just the-- the rate of [short] the-- aggregated rate of *um* [short] thefts [short] over-- [short] you know covers like the months through 2010 to 2014? [long]
+So responsive I love it. [short] 
+Got it, [short] sure [short] done *um*. [long]
+Are you guys using D3 for the charts?
+experimentor: Nope.
+No? 
+They do. 
+Are you guys using like R or Python or something?
+experimentor: No it’s just using *uh* Tableau.
+*Oh* it’s all Tableau, interesting.
+Is it just like a gnarly data analysis tool?
+experimentor: *Um* it’s so-- if you want to generate images on the fly it’s useful.
+Good to know.
+experimentor: It’s not good for like inter--.
+Interactive stuff.
+experimentor: Interactive I mean it’s fine it’s just not-- I mean it can it’s just not as-- *um* D3 you can do a lot of customization and Tableau is very *um* boxed.
+I see. Well that makes it on the fly I get it.
+experimentor: Yeah. [long]
+*Um* [short] ok can I get with the the month-- *oh* you’re great awesome look at you. [short] 
+Ok.
+experimentor: Do you mind *uh* just switching the mic.
+It's just I-- just want to make sure it’s not the issue, mine’s working sorry.
+Sure.
+Can you hear me now? [long]
+Awesome. [short]
+*Um* ok so we’ve got 2 line charts they’re both on a like a temporal temporal visualization. 
+Both are showing the number of crimes per month from 2010 to 2014. [short] 
+One’s labeled the other one isn’t. 
+*Um* but that’s nice I like it both ways [short] *um* yeah [short] it’s more or less saying the same thing that the other line chart says is that [short] crimes are really big in the summer time that makes sense cause there’s lots of people that show up in the summer time [short] *um*. [medium]
+07:30
+Yeah [short] there’s like a big jump. [short]
+That’s kind of cool. [short] 
+That’s so good though like crime has like totally dropped off. [short]
+Could we get-- [short] could-- could we see like [short] weather patterns?
+Like what the temperature, [short] over the last like 10 years is?
+No? 
+Ok. 
+I didn’t-- [short] cause it almost looks like-- [short] do you see like this trend based on the last couple years with the really cold weather is like just dropping steadily I don't know. 
+It’s true.
+Yeah maybe people are just tired of that I don't know. [short]
+*Um* ok. [short]
+So [short] we’ve narrowed down thefts right? [short] 
+More or less. [short] 
+Pretty much just this area. 
+There’s no-- there’s only 400? 
+*Oh* June, July, August right right, ok. [short]
+Let’s do-- *um* can we go back to that map that just shows like all the crimes for the-- [short] the whole time period? 
+I think it’s like that one right there or maybe it’s that one I don’t remember yeah that one perfect, *um*.
+Did you show me the number of crimes [short] *um* like just aggregate number of crime like one of these bar-charts? [short]
+Great thank you. [long]
+To be honest I was a little disappointed by the types of crimes, I was really hoping there would be like lots of murder and [short] drugs and stuff but that's just good. 
+Theft, we can deal with that. 
+Chicago is a nice place to be *haha*. [long]
+Battery, [short] assault and battery, ok. 
+*Um* [short] let’s look at battery.
+Wow can we do [short] *um* a temporal scale just-- just like we did with the crimes.
+So 03-1 *um* of of just battery?
+So the number of crimes per month from 2010 to 2014? [long]
+10:05
+Can I manipulate the-- can I touch the wall?
+Is that Ok?
+experimentor: *Um*.
+No.
+experimentor: Actually *uh* that’s turned off.
+*Oh* it’s turned off.
+Ok that’s fine. [long]
+experimentor: I mean if you want to do the changes you can always ask it.
+Yeah of course. [medium]
+I feel like I’m in a command center now you know like Minor-- Minority Report? [long]
+And then while you’re *uh*-- you’re generating that graph can we get a-- a map of just the-- the battery?
+*Um* the aggregated total batteries? [long]
+Cool. [medium]
+Interesting. [long]
+*Oh* that’s theft. [short] 
+That’s battery. [short] 
+What is the deal? [long] 
+*Oh*. [long]
+*Oh* that’s cool. [medium]
+*Huh*. [long]
+Awesome, [short] do your thing. [long] 
+So that’s theft, crime, battery. [medium] 
+And [short] and when you get a chance I realize you’re working, can you get the *uh*-- can I get a labeled map of the *um* battery? [long]
+12:35
+Deceptive-practice *haha* [medium] that’s funny. [medium]
+Battery only-- [short] *oh* this is so sad. [short] 
+It’s all over the place. [short] 
+*Um* [short] damn. [medium]
+This one’s going to be harder. [long]
+Ok just to describe the maps, we have a *uh* a corrected theft temporal scale map showing the number of crimes per month from 2000 to 2014 just of theft.
+*Uh* it more or less looks the same it’s still got the cyclical patterns falling within *um* [short] the summer months.
+*Um* I think that’s so interesting that you get this trend that’s like looks it’s on a downward trend.
+*Um* the battery [short] graph, [short] it’s got kind of the periodic [short] look to it. [short] 
+It’s also just [short] a line chart-- temporal line chart showing number of crimes per month 2010 to 2014 just of battery.
+Not nearly as many crime-- *um* crimes as thefts but we can be happy for that I think. [short]
+Ok awesome. [long]
+*Um* you can-- you can-- actually you can close out all of the *um* theft charts if you want just to-- save space or what not. [short]
+I don’t care about theft anymore.
+*Uh* ok? [long]
+Battery only. [long]
+Can we look at the [short] the days of the week-- just like a-- an aggregated *uh* days of the week [short] bar-chart.
+And *um*-- [short] and another bar-chart [short] of like hours of the day? [short]
+And [short] one of [short] the like top months? [short]
+If that makes sense?
+It’s a lot of requests I-- [short] I realize. [long]
+15:15
+*Oh* actually-- *uh* yeah [short] *um* when-- when you’re done moving stuff around can you bring back the battery chart [short] or battery map? [short]
+Thanks. [long]
+January. [long]
+Awesome. [long]
+Is this-- this is *uh* number of crimes for days of the week for battery only? Or is it for all crimes?
+Oh, oh, good to know. [medium]
+*Um* could I get *uh* these same charts but just for battery? [long]
+June, July, and August.
+October, what’s with October? [medium]
+I-- that’s so funny that February is like the lightest month. [long]
+17:30
+Battery on the weekends I guess. [short] 
+You don’t have any information about like [short] alcohol use do you? [short] 
+Ok [short] how about *um* [short] alcohol use and narcotics can I get like-- [short] yeah so can I get a map of just the drug use?
+So aggregated drug use for [short] all the months?
+And aggregated drug use for [short] all the days? [medium] 
+And [short] while you’re doing that let me describe the map.
+So I’ve got a bar-chart [short] for the number of crimes [short] for days of the week [short] from 2010 to 20-- 2014 it’s just all the crimes [short] *um* [short] kind of as of-- as we’ve been-- the trend we’ve been noticing June, July, August seem to be like a peak in August *um* and July, right around the summer months. [short] 
+There’s a little bit of a spike in October. 
+February just [short] not as much. [short] 
+That’s cool. [short] 
+And then [short] another chart showing the number of crimes by days of the week for [short] all four years. [short]
+Friday is the most popular day, [short] Saturday’s pretty cool too, [short] I guess. [short]
+*Um* [short] and then [short] we’ve got another bar-chart [short] showing [short] number of crimes per days of the week-- *oh* where’d you go?
+For 2010 [short] to 2014 just of battery. [short]
+*Oh* awesome the narcotics chart just came up. [short] 
+July’s the most popular, whoa. [long]
+February *huh*? [short]
+March. [long]
+Narcotics, [short] ok. [medium]
+Same thing, we have another bar-chart just showing the narcotics for the days of the week aggregated for days of the week for all the years. [short] 
+Sunday and Saturday [short] aren’t what I thought they would be. [short]
+20:05
+Do we know what types of drugs? [short] Do we have *um* [short] information on like the specific [short] type of narcotic?
+Like-- [short] No? 
+Ok. [medium]
+Cause there’s like you know like ecstasy for instance the saw-- they call it the suicide drug cause you take it on like Friday and you commit suicide on Tuesday because you like all the chemical [short] freak outs that go through your body but-- [short] was wondering you see could see something like you do lots of alcohol on Friday they start beating beating people a lot on Saturday and Sunday because of the hangover. [medium]
+Ok, *huh*. [medium] 
+March [medium] interesting. [medium]
+Battery per the months, [short] Days-of-the-week. 
+*Um* ok.
+For going back to the battery can we just look at *um* can we look at like a temporal scale of Sun-- Sunday and Saturday across all the years for each of the months? [long]
+22:30
+*Hm*. [long]
+Can I get this *uh* this temporal graph can I get it labeled for the *uh* months please? [medium]
+And then *uh* just describe it, it’s just a line chart from 2010 to 2015 for the number of crimes per month *um* just the battery on Saturday-- Saturday and Sunday only. [long]
+Thank you. [medium]
+Weird [short] what was going on in 2010 and 11?
+That was out of control.
+June [short] June, June, [short] August, [long] July, August, October.
+July and October those are really popular apparently. [short] 
+August, [short] 2014, [short] ok. [short]
+*Um* [short] can-- [short] can you split this [short] Saturday and Sunday chart so just have like have two lines-- [short] like a dual line line-graph line chart one showing just Saturday-- Saturdays only and the other one showing Sundays only? [long]
+Awesome. [long]
+25:00
+*Hm* [medium] can we just look at this period of June, July, and August [short] in 2014, *um* of batteries on [short] Sundays? 
+In particular? [long]
+Actually add Saturday. 
+You can make a separate chart with Saturdays as well but--. [long]
+We have no information about like socioeconomic status do we? [medium]
+How about *uh* race information? [short]
+Nope? [short] 
+Ok. [long]
+*Oh* right. [short] 
+So-- [short] so this is a beautiful chart showing [short] two lines one for Sunday one for Saturday, showing the [short] number of crimes per month from 2010 to 2014 just of battery. It’s a labeled chart [short] very nice. [short]
+Sunday-- [short] Sunday seems to be the most popular day to beat people up, [medium] with Saturday sprinkled in there. [short] 
+Interesting. [long]
+27:30
+It just gets worse. [short] 
+Why? [long] 
+*Hm*. [medium]
+*Um* [short] finally, can we do a *uh* [short] like a just show-- showing an area map, [short] of [short] like Saturday and Sundays [short] for batteries? [long]
+*Um* [short] and then this is just *uh* [short] a graph of, [short] well it’s a line-graph for the months of June, July, and August showing from 2010 to 2014. No no no, [short] just of 2014 [short] *um* [short] for Saturdays and Sundays only, [short] in this case it’s just for Sunday and there’s another chart for just Saturday. [short] 
+And it’s just showing [short] the number of crimes per that-- for that month, for that day.
+Sundays there’s like a trend it’s just June, July, and August just [short] starts at seven-- around 75 for June then it jumps to like 82 for July and then it’s like I think breaks 100 in August. [short]
+Just gets worse. [short] 
+132. [medium]
+*Um* ok and this is just a-- [short] I guess a heat-map of sorts for just showing of [short] of just the neighborhoods for battery only on Saturday and Sundays it looks a lot like the *uh* aggregate map for battery.
+So [short] can we focus on just the hot-spots [medium] *um* for each of the neighborhoods? 
+So [short] kind of what you did before you got kind of like a cluster of them. 
+*Um* so for I guess what is it River-North, The Loop, *uh* just all the neighborhoods we are analyzing *um* is that specific enough? [short]
+30:15
+Ok thanks. [long]
+Check what time it is. [long]
+*Um* [medium] this is good can we actually add a couple more points? [short] 
+I don't know if you can see where I’m pointing at on the the map. 
+It’s like [medium] there’s a-- there's a hot-spot, so you got one north of Division. 
+There’s one east of Division. 
+There’s two points that would be interesting to see [short] *um* [short] and then [short] there’s one, [short] trying to think what I think it’s just off of Lake Street? 
+There’s a big hot-spot [short] and actually and there’s one on-- [short] I think it’s Division and [short] Sedgewick? [medium] 
+Sure. [long]
+*Oh* I-- I should ask is *um* are these maps is this like for all 4 years? [medium]
+Ok cool. [long]
+32:30
+Awesome, [medium] that’s-- this is perfect. [medium]
+Ok so this again like a heat-map [short] showing [short] the hot-spots for all four years for Saturday and Sunday only [short] of just batteries. [short] 
+*Um* from this data can we do [short] like a temporal chart? [long] 
+But [short] I guess [short] to get to the point is [short] obviously-- I would target these areas [short] particularly on Saturdays and Sundays. 
+*Oh*, you know what I’d-- what I want is *um* hours of the day?
+Like what what time-of-day particularly on Saturdays and Sunday are these [short] going down. [short]
+Isn’t that in like Lincoln-Park area? [short] 
+*Huh*. [long] 
+Ok so we got a line chart, time-- temporal line chart [short] thing for Saturdays and Sundays of battery across the months [short] just in those hot-spots. [short]
+35:10
+I mean like crime’s going down everywhere, that’s cool, I like that. 
+Yeah Chicago.
+August is a popular month to beat people up.
+December was kind of popular on Sundays. [long]
+Just 26 *huh*? [short] 
+*Uh* yeah can I see just like the hours of the day? [short] For those Sunday, you know Saturday and Sunday?
+Do your thing. [long]
+*Hm*. [long]
+What are people doing at 2 in the morning? 
+I don’t get it. [short] 
+Ok so [short] there’s a-- a bar-chart showing hours of the day from midnight to [short] midnight *um* for all four years, [short] on [short] just showing batteries on Saturdays and Sundays [short] 2-A_M, 2 to 3-A_M is really popular for [short] battery. 
+1-A_M starts like you see just like a clear rise and then it just mellows out for most of the rest of the day. [medium]
+*Um* [short] yeah I guess I would [short] deploy police in those hot-spots that we identified particularly around-- on the weekends right around midnight till about *um* 6-A_M, [medium] till about 5-A_M actually. [long]
+37:35
+Ok. [short] 
+*Uh* let’s see I know we had a chart of all the crimes across all 4 years?
+I know it’s in here somewhere, I think this-- maybe this is it? 
+Yeah there it is, Deceptive-practice. [short]
+*Whoa* [medium] maybe just bring it up a little bit higher. [short] 
+Thank you. [long]
+*Hm*. [medium]
+*Um* can we look at [short] just deceptive-practice and criminal-damage?
+Now it would be like a heat-map like we did before? [long]
+Yeah how-- how long do you want me to-- do you want me to solve all the crimes?
+experimentor: Yeah maybe it-- yeah whenever you feel.
+Ok I have class at one that would be the only thing.
+experimentor: Yeah you can just start wrapping it up.
+Ok. [long]
+Yeah and then [medium] as soon as we have that [short] map [short] let’s do [short] the same kind of thing just for those two types of crimes. [short]
+*Oh* that’s easy. [short] 
+Let’s just focus, it’s-- [short] ignore my last query just focus in on on this one hot-spot here [short] and this hot-spot right off just right on Randolph for like that kind of range of hot-spots? [long]
+40:10
+Cool, [medium] is it? 
+Yeah. 
+This is just a heat-map [short] of [short] the neighborhoods in question [short] focusing on the [short] sum number of [short] deceptive-practice and criminal-damage [short] *um* just in the hot-spots.
+Can we do a *uh* temporal graph for [short] these two hot-spots?
+*Um* and can you split the graph based on [short] criminal-damage and then dec-- deceptive-practice? [long]
+42:30
+*Ah* sweet. [short] 
+What is the deal in March. [medium] 
+*Huh*. [long]
+Ok so this is *uh* a line [short] chart, [short] temporal line chart showing number of crimes per month from 2010 to 2014 of criminal-damage and deceptive-practice just in the hot-spots that I requested. 
+*Um* it’s showing two lines one for criminal-damage and the other one for deceptive-practice. [short] 
+Very cool. [short]
+March 2014 was a [short] big month [short] for deceptive-practices. [medium] 
+Wow. [short]
+experimentor: And see whenever you want, in the next few minutes or so whenever you feel but just letting you know.
+I guess *uh* I would just say focus on that two-- those two hot-spots [short] and yeah that-- that’s it. [medium]
+Yeah, ok thank you. 
+This was fun.
+END

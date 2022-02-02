@@ -89,7 +89,6 @@ module.exports = (chartMsg, options) => {
         wordCount[i]
       );
     }
-    console.log(wordCount, sentences);
     return headerFrequencyCount;
   } else {
     for (let i = 0; i < wordCount.length; i++) {

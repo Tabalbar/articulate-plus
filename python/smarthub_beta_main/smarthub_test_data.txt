@@ -1,0 +1,23 @@
+hmm lets keep exploring I think;nonmerged;clarification;-1;utterance_without_data_attribute
+I need to think now;nonmerged;preference;-1;utterance_without_data_attribute
+ok lets see;nonmerged;winmgmt;-1;utterance_without_data_attribute
+Can I see burglaries happening near restaurants in the summer;merged;createvis;-1;request_utterance
+hmm ok lets see;nonmerged;clarification;-1;utterance_without_data_attribute
+the seasons seem interesting;nonmerged;winmgmt;-1;utterance_with_data_attribute
+if thats ok to do;nonmerged;winmgmt;-1;utterance_without_data_attribute
+well ok so winter is interesting;nonmerged;preference;-1;utterance_with_data_attribute
+so maybe I can ask on that;nonmerged;factbased;-1;utterance_without_data_attribute
+Can you uhh;nonmerged;winmgmt;-1;utterance_without_data_attribute
+Can you do this same graph again but as a bar chart;merged;modifyvis;-1;request_utterance
+Can you close the graph we had for restaurants and burglaries;merged;winmgmt;-1;request_utterance
+Can you close the last map graph;merged;winmgmt;-1;request_utterance
+Now what should I inquire what;nonmerged;winmgmt;-1;utterance_without_data_attribute
+oh wait I know one;nonmerged;winmgmt;-1;utterance_without_data_attribute
+Can you now make the UIC graph a bit bigger;merged;winmgmt;-1;request_utterance
+oops it does not exist right;nonmerged;winmgmt;-1;utterance_without_data_attribute
+things like assault other crimes hmm;nonmerged;winmgmt;-1;utterance_with_data_attribute
+Maybe summer could be interesting and we have not looked at it so far;nonmerged;winmgmt;-1;utterance_with_data_attribute
+I want to explore this yeah;nonmerged;winmgmt;-1;utterance_without_data_attribute
+Ok next what is the breakdown of crimes for UIC for that;merged;modifyvis;-1;request_utterance
+awesome now finally can you make the UIC graph a bit bigger;merged;winmgmt;-1;request_utterance
+q;setup;winmgmt;-1;request_utterance

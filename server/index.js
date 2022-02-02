@@ -185,7 +185,9 @@ app.post("/createCharts", async (req, res) => {
     });
     chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
   } else {
-    intent = (await manager.process("en", chartMsg.generalizedCommand)).intent;
+    let response = await manager.process("en", chartMsg.generalizedCommand);
+    intent = response.intent;
+    console.log(response);
     if (intent !== "None") {
       chartMsg.mainAI = createCharts(intent, chartMsg, {
         useCovidDataset: options.useCovidDataset,

@@ -1,0 +1,21 @@
+1. Install mysql 5.7 with mysql-connector (or if later version, install mysql-connector-python).
+
+2. If using mysql version later than 5.7:
+pip install mysql-connector-python
+
+3. Unzip ~/path/to/smarthub_beta_data/chicagocrime_mysql_data scripts/chicagocrime.sql.zip
+
+4. Login to mysql:
+>mysql -u root -p
+
+5. Enter password when prompted.
+
+6. Create the Articulate database:
+>create database ARTICULATE
+
+7. Load the Articulate database:
+>\. /path/to/chicagocrime.sql
+
+8. In order to handle group by appropriately for Smarthub, also execute the following:
+>set global sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+>set session sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';

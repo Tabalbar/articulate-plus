@@ -1,0 +1,114 @@
+START
+09:00
+So if I want to [short] do the task of [short] working out what areas to deploy officers then do I get to see a [short] crimes for that city? [long]
+10:00
+Yeah that’s fine.[short] *Um*. [short]
+experimentor: And the chart title k-- kind of helps [short] give some type of hint as to what’s going on too.
+Yeah so I can see the-- [short] what’s going on up here. [short] 
+What would this means [short] so-- got a lot of activity here.
+Did we just want to *uh* look at areas to deploy [short] within-- *uh* [short] within the middle of the city [short] which means we are cutting out all the south side? [long]
+*Oh* Ok. [long]
+Yeah so you see there’s a lot of [short] activity around [short] here. 
+Can we zoom in on-- [short] on *uh* Loop? [medium]
+Ok. [medium]
+Have you got any *uh* type of data [short] on what kind of activity there is [short] in *uh* [short] Loop? [long]
+12:30
+Ok that’s great thank you. [long]
+Ok. So these might look a little bit [short] easier to read if they were [short] rotated? [long]
+*Oh* it seems like just-- [short] there is just lots of [short] theft and battery. [short]
+*Oh* no that’s all neighborhoods [short] for just the Loop. [long]
+Yeah that’s fairly-- *uh*. [long]
+Ok. Alright so-- [short] We know that [short] theft is the biggest problem around here. [long]
+Can we see the-- [short] the crime-types for the other [short] three regions as well? [medium]
+It’s quite interesting that [short] what happens in Loop is a different type [short] of crime than what happens [short] overall. [long]
+So you may want to deploy different officers [short] to different [short] regions. [long]
+Ok. *Um*. [long]
+15:00
+*Ah*. [long]
+So-- So this is obvious that theft is [medium] the-- the big one. [long]
+But then again it isn’t as important as [short] other [long] *uh* forms of crimes.
+Ok *um* [long] where would-- [short] where would you want to deploy the officers? [long]
+That’s quite hard to say because there’s quite a spread amongst all regions but--. [long]
+Ok let’s have a look at this. [long]
+17:30
+Ok. [long]
+Ok. So we know that [short] theft’s the-- the main issue but [short] depends what part of the city [short] it is. [medium]
+*Oh* let-- let’s have a look at the-- [long] yeah let-- let’s look at [short] the-- the time-of-day. [medium] Is there any kind of [short] graph showing theft throughout the day? [long]
+20:00 
+Actually is there a way [short] that we can actually see [long] throughout [short] one day [short] the top ten [medium] crimes how often they happen? [long]
+Ok thank you. [long]
+*Hm*. [long]
+So that’s just theft. [long]
+*Ah* ok that’s great [short] alright. [long]
+22:30
+Ok I can’t see the time-of-day [short] on [short] this graph here. [long]
+Ok so I want to see-- [short] so the title’s right, [short] the crimes in region by time-of-day [short] but [short] there is no-- [short]
+Nothing on there which shows the time-of-day or days-- ok. [long]
+Give me the same [short] of this with [short] battery, deceptive-practices, [short] and criminal-damage, and assault please. [long]
+25:00
+*Ah*. [short] 
+*Oh* That’s very different. [long]
+That makes-- [short] makes sense. [short] 
+So it seems like [short] most activity seems to go up [short] between [short] noon and 6 [short] except for battery. [long]
+So maybe that’s not a type of crime you can [short] try to prevent in this way. [short]
+Ok let’s have a look at [long] theft or wait [short] let’see-- let’s keep with the theft. [short] 
+Can we see the breakdown for theft throughout the week? [long]
+27:30
+Yeah that’s great. [short] Could we-- [short] this is quite interesting.
+Can we see [short] the breakdown [short] of the whole week [short] for all crimes? [long]
+30:00
+Wow that’s a lot of stuff there. [short] Alright Ok thank you. [long]
+*Oh* I like this one. [short] This one’s nice. [long]
+*haha*
+Thank you. [long]
+So definitely these ones down here-- [long] are really quite insignificant and if it were xxx just theft huge here. *um*. [long] 
+I can see why these two would be high on Friday, Saturday [short] people out and about. *um*. [short] 
+Criminal-damage. [short]
+*Uh* that-- that’s quite interesting what over here we have-- [short] yeah I can pretty much see everything from over here see so don’t need-- [short] Yeah don’t need this one here. [medium]
+Ok let’s have a look at [short] can you have this graph for months of year? [long]
+32:30
+*Ah* great. [long]
+*Uh* ok I guess that-- that makes sense [short] people go away during winter. [long] 
+But it seems that it’s a-- [short] general all year [short] round thing except for the [short] theft and a little bit of [short] battery surprisingly. [short]
+But you probably want to go for more the May to October time? [long]
+So this would [short] show a lot of the [short] crime patterns. [long]
+How about the breakdown of [short] crime [short] for each year? [long]
+35:00
+Well it’s good to see that [short] crime’s actually fallen [short] but for this one here [short] that would be [short] purple-- that kind of purple-- [short] so crime all seems to have gone down. [long]
+Ok let’s have a look at--.
+Well how are we going to have a look at hot-spots? [long]
+Are there any other kind of heat-maps we can see [short] other than this one up here? [long] Are there any other kind of maps we can see? [short]  Or is this the only [short] one we have? [long]
+That-- yeah let’s take the most significant ones to look up. [short]
+Can we have the heat-map of thefts? [long]
+37:30
+Ok can we see the same [short] with [short] deceptive-practices? [long]
+40:00
+Well there’s definitely a problem area right there. [medium]
+Ok I’m not going there anymore [short] *um*. [long]
+There’s something over there. [long]
+*Hm*. [long]
+Ok let’s *uh* see. 
+If we [medium] can knock some of these *uh* off so [short] which areas to deploy the officers? [short]
+I think it’s River-North [short] that’s got the [short] highest crime well especially with--. [medium]
+Can we see the-- [medium] actually can we see [medium] all crimes [medium] categorized by-- [short] well the number of crimes in each area? [long]
+So it looks like River-North is [short] xxx really high for-- for [short] for theft. [long]
+Probably want to tackle theft-- [short] bring those numbers down more. [short] 
+Go after that [short] *um*. [short]
+The time-of-day of that [short] was-- we did have a nice graph around here somewhere for that. [short]
+This one down here. 
+Good that’s it. [short]
+42:40`
+So that was [short] Friday, Saturday. [short] Lot happens there [short] then-- [short] *ah* good thank you. [short] 
+Yeah, [short] yeah River-North that’s the one. [long] 
+That’s the one we want to look at [short] *um*. [short] 
+Most of the year we saw that it was during the summer months that things really [short] were high for theft but everything else was really quite stable. [short]
+Hot-spots we do see [short] one [short] nasty hot-spot there [short] for deceptive activity [short] and [short] around the State St. area [short] appears to be quite bad. [short] Over to a lot of theft there surprised that we didn’t have more-- *um* [medium] Yeah that theft didn’t quite make sense there but State seems to be quite a hot-spot. 
+Significant change is that it seems to have gone down [short] over the years [short] which is great. [short]
+Ok I think that-- [short] is there anything else you want to be doing?
+experimentor: Well *um* if you explored the data [short] as much as you are-- [short] are you satisfied with what you are seeing or--?
+Yeah cause some of it is tacky and I’m not--.
+There is somethings we could look [short] maybe into [short] a lot more [short] that depends on how much time we want to go through this. [short] 
+You have been a great assistance thank you very much. [short]
+experimentor: Alright it sounds good.
+45:00
+END

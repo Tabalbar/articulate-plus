@@ -1,1 +1,10 @@
 **/node_modules
+**/__pycache__
+**/bert_models
+**/cjp_article_tagging
+**/entity_extraction
+**/para-nmt-50m
+**/paraphraser
+**/saved_models
+/python/smarthub_beta_data/data_extraction/**
+/python/smarthub_beta_data/smarthub_beta_data/data_extraction/**

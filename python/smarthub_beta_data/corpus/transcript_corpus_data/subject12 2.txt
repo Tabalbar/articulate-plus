@@ -1,0 +1,208 @@
+START
+00:04:58
+Ok [long] so can I see the total number of crimes by type? *Uh* like type of crime [short] along the x-axis and total number on the y?
+Or, some other representation xxx.
+So there's clearly a lot of theft [short] and battery.
+Sorry, could you make it a little smaller?
+Yeah, deceptive-practice, I don't know what that is [medium] xxx.
+Ok, so I guess I am kind of seeing maybe [short] five [short] categories, theft, battery [short] whatever [short] I don't know what the second thing is yeah.
+Ok, now can I see the number of crimes by location-type?
+Ok [medium], and do we have a map of where the crimes occurred [short] in those neighborhoods?
+Ok number of crimes, ok.
+So [medium] can I see-- [short] can I filter crimes on the map to just show theft?
+Doesn't do too much for me, I guess theft is just everywhere.
+How about *uh*-- how about another map with just [short] battery?
+Ok [medium] definitely [short] more battery in Lincoln-Park.
+*um* ok, how about [short] I guess I'm thinking they want to know xxx where battery is pretty serious so I want to focus on battery for a sec.
+So can I see battery crimes by [medium] by the *uh*-- by *hm* how about by day?
+Does that mean-- [short] does by day mean by day-of-week?
+By day-of-week?
+*Um* yeah I guess I would like to see battery by-- well I would like to see battery by day-of-week, battery by month, and battery by year.
+Three different terms.
+So during the summer weekends. 
+Yes that response is ok.
+Ok, *um* so if we have [short] data for these different neighborhoods, could I see neighborhood totals? So could I see total number of batteries by neighborhood?
+Ok let's compare that to total number of thefts by neighborhood and [short] total number of crimes by neighborhood.
+*Hm* ok [medium] so [long] that's interesting, so the Loop has-- *oh* *hm* is it possible to make the y-axis of those same graphs the same [short] scale?
+So I guess-- yeah.
+I know battery is gonna be like xxx.
+No problem.
+Deceptive-practice.
+*Oh* cool [medium] thanks.
+Ok-- [short] *whoa* ok so we have a lot of [short] theft in River-North and the Loop.
+Ok so I guess now I am wondering-- Ok.
+Ok, so now can I see crime [short] by location in River-North?
+So I want to know where all this theft is happening.
+And by location, department-store that's interesting.
+*Uh* ok how about [medium] just *uh*-- just because im curious how-- about theft in department-stores by neighborhood.
+*Ah* ok [short] I guess that makes sense.
+Ok xxx.
+So [short] I kind of-- definitely getting like the big picture. 
+I am wondering if all crime-- I mean I am sure all crime goes down in the winter and over the week [short] but it would be interesting to see if like-- could I see [short] *ah* type-- let's see, number of crimes [short] by type in December, January, and February, [short] and then number of crimes by type for June, July, and August?
+Is that possible?
+*Um* [short] so one chart showing December, January, and February with crimes by *uh* [short] type of crime by count yeah.
+*Um* and the other showing-- what did I say, June, July, and August.
+Ok so that didn't really do anything *huh*.
+I guess that's surprising because-- sorry I'm walking over here. 
+*Uh* [medium] can you-- *oh* correcting error, ok. 
+*Oh* I guess I was just looking at xxx.
+So I guess I was assuming earlier [short] that all crime goes up in the summer-- just to confirm that assumption could I see total crime by month, thank you?
+Yeah it looks like the type of crime doesn't-- xxx.
+*Oh* sorry.
+Yeah ok *uh* [short] so [short] yeah make that bigger. 
+So I guess I am looking at differences between these two and there aren't many but [short] it looks like criminal-tres-- well [medium] can I see [short] criminal-trespassing by month? 
+It's weird that it would be [short] higher in the winter.
+Well I guess maybe it's because they are arresting homeless people.
+*Huh* that's interesting. Wonder why-- that's weird. Ok. 
+How about-- well xxx.
+Let's see there's other things I was thinking about. [long] 
+How about *uh* criminal-trespassing by neighborhood-- or [short] yeah neighborhood.
+00:31:31
+Ok, what about this *uh* *haha*. [short]
+Earlier, [short] did we-- did one of these charts-- it had-- it was like, split up by type of crime, maybe like make this smaller. [medium]
+Yeah, this one. [medium]
+Yeah, so, [short] could we-- could I see-- [medium] ok so this is crimes-types by neighborhood, for one year. 
+Could I see crime-type by neighborhood *um* for three month periods? So crime-types by neighborhood January, February, March. And then crime-types by neighborhood April, May, June. And then crime-types by neighborhood, [short] July, August, September.
+Is that, possible?
+*Haha* [short] and then October, November, December, yeah.
+So four charts of three month periods. [short]
+Or one big chart, whatever, works, *haha*. [medium]
+This is probably-- probably should have been like the first thing to ask for. [long]
+00:33:21
+*uh* yeah so January, Feburary, March, April, May, June, [short] July, August, September, [short] October, November, December. So three month chunks, yeah. [long]
+00:36:22
+That makes, [medium] Ok. [long]
+00:36:44
+One, two, [short] which. [short]
+Ok, so, [medium] xxx [short] xxx. [long]
+00:37:23
+*Uh* could you-- could you stack them? So January is at the top, and you can make them smaller, too, if you need to. [short] 
+Yeah. [long]
+00:37:50
+And *um* how-- what-- how many years is this over? [medium] Like all the data, [long] it's like four years? [medium]
+*Oh*, 2010, to 2014. [short] Ok, so this is four years worth of data [short] and [medium].
+*Uh* *oh* that-- this one should be-- that one *haha* October, November, December yeah, [short] ok. [short]
+So there's a lot more crime, [short] in the summer, [medium] obviously. [long]
+00:39:06
+Criminal-damage, [medium] there it goes up. [long] 
+I guess, [short] I thought I was gonna see something different, but, no. [short]
+Ok, well now I'm-- I'm still interested in this criminal-trespassing.
+Could I see criminal-trespassing, by-- *uh* by month by neighborhood? [long]
+00:41:27
+*Hm* [medium] xxx [short] trespassing, in River-North, that's weird.
+*Oh* how about, [short] where, yeah, how about location-- how about ok.
+Criminal-trespassing, in [short] River-North, well. [short] 
+Just the *uh* criminal-trespassing by neighborhood by location. [long]
+00:42:15
+It seems like, [long] in River-North, in The Loop there's like [short] theft, and trespassing, and in the West side it's, battery *haha*. [long]
+00:43:22
+Criminal-trespassing [short] xxx type xxx, *uh* that's ok yeah. [medium] 
+*Huh* [short] weird, a lot of trespassing, *uh* it's over here, *um* [short] in, [medium] where did that go? 
+*haha* [short] *Oh*, here. [long]
+00:44:10
+*Oh* xxx here. [long]
+00:44:32
+xxx [long]
+00:44:52
+*Oh* yeah, so, [short] this is, location-type and names right?
+Location-type and names, *oh* ok, [medium] ok. [short]
+*Oh* no problem, *haha*. [short]
+So this is kind of interesting. [short] 
+This, [medium] yeah. [medium] 
+00:44:25
+So in The Loop, [short] they're kicking people out of resturants. [short] 
+In River-North they're kicking people out of parking-lots? 
+That's funny. [short] 
+What is that? 
+Parking-lot, slash garage. 
+Ok, [short] *um*, *huh* [short] no one really trust passes in the West-side, or Near-West side. [short]
+Weird, parking-lots, in River-North, I wonder, what that's about. [short]
+Ok, how about, [short] *um* trespassing, criminal-trespassing, in parking-lots, in River-North, *haha* by month-- month? [medium]
+*Haha* cause that's a really big xxx [medium] parking-lot. [long]
+00:46:49
+*Oh* and I guess, also, [short] a map of just, yeah a map of criminal-trespassing [short] events. [long]
+00:47:26
+That seems weird. [long]
+00:49:07 
+Ok, *haha* parking-lots. [short] xxx ok, I guess that xxx. [short]
+*Uh* the map of just, total, [short] well, criminal-trespassing in parking-lots, [short] anywhere, [short] total. [long]
+00:49:44
+Maybe I should come here, *hm*. [long]
+00:50:01
+Measure xxx. [medium] 
+I had *uh*, [short] locat-- location. [short] 
+What was it-- *oh* yeah, this, can you make this bigger? 
+The, [short] location-type and name yeah. [short]
+That's what started this whole thing, the parking-lots *haha* [medium] and resturants. [short]
+00:51:50
+That's crazy, [medium] *huh* ok.
+Well there's something for my boss, *haha*.
+I would-- I guess that is, [short] Depaul, [short] or something. [short] 
+Can I like save that? 
+*Haha*. [medium]
+00:51:16
+*Um* [long] ok, that's ok. [short] 
+I think I found something. *haha* *uh*. [short]
+What else-- what was I gon-- *oh* yeah, *uh* so this is criminal-trespassing by location-type and neighborhood.
+Can I see, *um* what xxx [medium] theft wait-- I need to decide. [short] 
+Theft. [short] 
+Yeah, I guess, [short] the same thing, but, theft by location-type and neighborhood. [long]
+00:52:16
+Theft by like yeah this one, [medium] *huh*. [long]
+00:53:20
+So people are, trespassing in parking-lots, in River-North, and stealing, things, [short] off the street, in, Near-West-Side, [medium] and robbing department-stores yeah *huh* ok. [short] 
+*Um* xxx [short] let's view, what about *uh* ok I like these two, could I also see robbery by location-type and neighborhood? [short] 
+I, guess I'm just thinking that *um* [short] robbery, [short] is scarier than theft. 
+*Huh* right. [long]
+00:54:59
+Robbery by location-type and neighborhood, yeah. [long]
+00:55:26
+*Huh*, [short] *um* [short] ok, [short] how about, [short] one-- [short] let me think.
+Ok one [medium] locat-- [short] crime by location-type, in River-North, and one crime by location-type in [short] the Near-West-Side. [long]
+*Uh* the Near-West-Side, [short] crime by location-type. [long]
+00:57:35
+*Huh*. [long]
+*Woah*, [long] that's a big chart. 
+*Uh* [short] yeah, I guess that's what I asked for, *haha*, [short] *um*. [short]
+Can I see-- can I filter, [short] to the top? [medium] 
+How about *hm* let me think. [medium]
+00:58:41
+*Oh* no problem. [short] 
+Criminal-damage. [long]
+00:58:59
+Reminds me of criminal-trespassing. [medium] 
+*Huh* [short] *haha*, maybe just, [mediium] you can close these, *uh* [short] yeah I don't know if I'm I should be asking to close stuff, or not, *haha*. [medium]
+*Um* [short] ok, how about just-- [medium] never mind-- location, just, total *uh*, type of crime, [short] in, River-North and the Near-West-Side. [long]
+01:01:08
+*Hm* [medium] xxx [medium] *huh* [medium] ok.
+Now let's look at-- [short] *oh* [short] so this looks like xxx here. [long]
+01:02:26
+So I guess the theft [long] ok can I see how-- thanks *um* [long] yeah *uh* [short] that was actually what I was going to ask for. 
+*Um* where xxx. [long]
+01:03:21
+Could I see-- [medium] what do I want to see how about-- [medium] again in Near-West, [short] and River-North-- [short] theft by location-type. [medium]
+And I guess I'm at-- I'm wondering because [short] there's two xxx colors there, to tell what's long on. [short] 
+So who cares about this one. 
+Ok I guess that's obviously xxx. 
+It would be nice if there were labels, just for that, and location-type. [short]
+*Oh* sorry, ok. 
+Yes, *uh* can I see [short] *um* *haha* the, a-- well [short] I guess that's a good question. 
+*Haha* [short] *um*, yeah River-North and Near-West, theft, by location-type, *uh*, I mean pro-- proportionaly. [short] 
+Yeah. [long]
+01:05:04
+And I guess-- *uh* it would be nice if it were like ranked, so the biggest were at the top, or, something. [long]
+01:05:21
+What? [long]
+01:06:05
+*Oh* yeah xxx. [long]
+01:06:14
+So that's a big-- [short] could you move it over just a little bit, [short] to the right?
+Yeah thanks. [medium] 
+*Huh* yeah ok. [long]
+01:06:40
+Can I like save that?
+Or put it over there?
+*Haha* [short] ok, *uh* let's see. [short]
+How much time do I have left? 
+*Haha*, *uh*, let's see [medium] How about--.
+END

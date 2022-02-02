@@ -14,7 +14,6 @@ export const commandChecker = async (
   let updatedState = [];
 
   for (let i = 0; i < checkerArray.length; i++) {
-    console.log("Testing: " + checkerArray[i]);
     chartMsg.command = checkerArray[i];
     promise = serverRequestPromise(
       chartMsg,
@@ -62,7 +61,6 @@ export const commandChecker = async (
           charts: [...updatedState, ...newCharts],
         };
       });
-      console.log("Succeeded: " + checkerArray[i]);
     });
 
     // setTimeout(() => {

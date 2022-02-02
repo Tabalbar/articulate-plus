@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<annotation-spec>
+  <head>
+    <valuetype-def>
+      <valueset name="utterancetype">
+        <value-el>winmgmt</value-el>
+        <value-el>speakaloud</value-el>
+        <value-el>clarification</value-el>
+        <value-el>preference</value-el>
+        <value-el>appearance</value-el>
+        <value-el>factbased</value-el>
+        <value-el>Big High Level Question</value-el>
+        <value-el>createvis</value-el>
+        <value-el>modifyvis</value-el>
+      </valueset>
+      <valueset name="timestep">
+        <value-el>previous</value-el>
+        <value-el>current</value-el>
+        <value-el>next</value-el>
+      </valueset>
+      <valueset name="refexpsource">
+        <value-el>text</value-el>
+        <value-el>gesture</value-el>
+      </valueset>
+      <valueset name="gesturetype">
+        <value-el>point</value-el>
+        <value-el>point-and-move</value-el>
+        <value-el>pinch-out</value-el>
+        <value-el>pinch-in</value-el>
+        <value-el>circle</value-el>
+        <value-el>other</value-el>
+      </valueset>
+      <valueset name="refexpplottype">
+        <value-el>heatmap</value-el>
+        <value-el>bar</value-el>
+        <value-el>line</value-el>
+        <value-el>treemap</value-el>
+      </valueset>
+      <valueset name="gestureintentions">
+        <value-el>move-vis</value-el>
+        <value-el>close-vis</value-el>
+        <value-el>indicate-entity-in-vis</value-el>
+        <value-el>indicate-vis</value-el>
+        <value-el>zoom-in</value-el>
+        <value-el>zoom-out</value-el>
+        <value-el>resize vis</value-el>
+        <value-el>other</value-el>
+        <value-el>compare-vis</value-el>
+        <value-el>follow-vis</value-el>
+        <value-el>indicate-multiple-entities-in-vis</value-el>
+        <value-el>compare-entity-in-vis</value-el>
+        <value-el>indicate-multiple-vis</value-el>
+      </valueset>
+      <valueset name="gesturemode">
+        <value-el>diectic</value-el>
+        <value-el>non-diectic</value-el>
+      </valueset>
+      <valueset name="gesturespace">
+        <value-el>screen</value-el>
+        <value-el>peripheral</value-el>
+      </valueset>
+    </valuetype-def>
+  </head>
+  <body>
+    <font color="#000000" face="SansSerif.plain" size="12" style="plain"/>
+    <group name="user">
+      <group name="utterance-components">
+        <attribute display="true" name="utteranceid" valuetype="String"/>
+        <attribute display="true" name="timestep" valuetype="timestep"/>
+        <track-spec name="utterance" type="primary">
+          <attribute display="true" name="utterancetype" valuetype="utterancetype"/>
+          <attribute name="utterance" valuetype="String"/>
+        </track-spec>
+        <track-spec name="gesture" type="primary">
+          <attribute name="mode" valuetype="gesturemode"/>
+          <attribute name="gestureid" valuetype="String"/>
+          <attribute name="type" valuetype="gesturetype"/>
+          <attribute name="space" valuetype="gesturespace"/>
+          <attribute name="target" valuetype="gestureintentions"/>
+        </track-spec>
+        <track-spec name="refexp" type="primary">
+          <attribute name="gestureid" valuetype="String"/>
+          <attribute name="targetvis_ids" valuetype="String"/>
+          <attribute display="true" name="refexpid" valuetype="String"/>
+          <attribute name="targetvis_plottypes" valuetype="String"/>
+          <attribute name="refexp" valuetype="String"/>
+          <attribute name="targetvis_temporals" valuetype="String"/>
+        </track-spec>
+      </group>
+    </group>
+    <group name="system">
+      <group name="response-components">
+        <track-spec color-attr="utteranceid" name="vis" type="primary">
+          <font color="#000000" face="Dialog.plain" size="10" style="plain"/>
+          <attribute display="true" name="utteranceid" valuetype="String"/>
+          <attribute name="targetids" valuetype="String"/>
+          <attribute display="true" name="refexpid" valuetype="String"/>
+          <attribute display="true" name="timestep" valuetype="timestep"/>
+          <attribute name="sourceids" valuetype="String"/>
+          <attribute name="source_plottypes" valuetype="String"/>
+          <attribute name="target_plottypes" valuetype="String"/>
+          <attribute defaultvalue="None" name="refexp" valuetype="String"/>
+          <attribute defaultvalue="None" name="properties" valuetype="String"/>
+        </track-spec>
+      </group>
+    </group>
+  </body>
+</annotation-spec>

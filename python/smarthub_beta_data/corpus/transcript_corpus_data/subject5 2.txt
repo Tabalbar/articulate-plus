@@ -1,0 +1,78 @@
+START
+2:53
+Ok, first off I'll [short] *um*--.
+experimentor: I'll be right back. [medium]
+Can you show me the number of xxx crimes for the four regions separately? [long]
+Because I want to see, which region has the highest rate of crime. [long]
+Ok, *oh* so number one xxx. [long]
+Ok, so Loop has the lowest number of the crimes, and [short] River-North has the highest number of the crimes.
+After that is the Near-West and the next one is Lincoln-Park. [medium]
+So [medium] can you show me the distribution of *uh* different crime-types? *Uh* [short] I want to know exactly the number of different crime-types. [long]
+5:22
+xxx [short] and [short] that means xxx. [medium]
+experimentor: Just see what you interpret, yeah you can breifly explain it. That's all.
+*Uh*--.
+experimentor: Any time you see anything.
+Ok so it shows that the theft, battery, deceptive-practice and criminal-damage [short] have the highest rate of *uh* crime.
+So it means that [short] maybe we should focus on these crimes [short] mostly.
+Ok so [long] can you show me *uh* [short] the number of crimes, for each hour in a day? [short] I want to know the frequency of the crimes during the day. [long]
+7:37
+Ok, [medium] yup.
+experimentor: Good, just make sure you describe what you see, that's all. [short]
+*Uh*.
+experimentor: *haha*. [long]
+I don't exactly-- what [short] means, [short] ok. [medium]
+experimentor: You-- you can view the *uh* titles of the charts to give a clue of what, what it's trying to show. [long]
+*Oh*, it's close to the bottom. [long]
+9:38
+Ok, [long] so it means that in the summer, crimes [short] *uh* are done between 8 [short] to 9 xxx. [short] 
+So. [short] 
+And [short] exactly at 12, we have the highest rate of crime. [long] 
+So between 12 up to [short] 19 we have the highest rate of crime. [medium]
+I don't need this chart, and can you move it?
+But I want to keep this one cause it's better, it's not nessessary to see xxx. [medium]
+experimentor: That makes sense.
+Ok. [short] So, [medium] can you plot the same chart *um* for the day-of-the-weeks, I mean the number of the crimes for each day? [long]
+12:25
+Yes, that's right. [medium]
+So, [medium] the number of the crimes, at Fridays and Saturdays are generaly higher than other days, but during the week, [short] its *uh* [short] some extent [medium] have we need more officers on the weekends. 
+So, I don't need this one, but I want to keep this one [medium].
+*Uh* ok, so, can you do it *uh* [short] for different months [short] of the year, the same plots, I mean the number of the crimes for different months in a year? [long]
+*Uh* so it shows that, *uh* [short] the lowest rate of crime is in Feburary [short] and Janurary and the highest rates are in [short] June, July, August. [short]
+Ok, [short] so, [long] can you plot me the same *uh* plot, I mean the number of the crimes during the day for different regions? [long]
+15:49
+So, [medium] xxx [medium] so it shows that *uh* [long] between noon and 6-P_M *uh* Loop has the highest rate of crime, but during other hours [short] it has the lowest rate of crime.
+So it means that [short] during noon up to *uh* 6-P_M, we can distribute more of the officers, *uh* to the Loop.
+After that we can send them to other regions, [short] and [short] ok, River-North xxx [medium] ok. [short]
+*Ah* and we can do the same for other regions?
+Ok, can you *um* [short] can you normalize this *uh* plot *uh* by the size of each region and the area size, can you normalize it? [long]
+Ok, [short] *uh* [medium] so, can you normalize this one *uh* by the area size? do you have the area size, of each region? Ok. That's fine. [short]
+Yes. it's good if you can show me the map, [short] I can estimate the size xxx. [long]
+18:51
+So, U_I_C and Near-West, [short] seems to have the same area size. [short] The smallest one is the Loop. That's-- [long] so it shows that, [short] the Loop-- [short] the Loop, U_I_C and *uh* the Near-West have the the highest area size [short] also-- also the highest rate for the crimes, but the densety of the crimes is very high in the xxx. [short]
+*Uh*. [medium] It. [long]
+Can you show me *uh* the total number of *uh* total crimes in each year? [long]
+And this one is not useful in my purpose. [long]
+So it shows that *uh* [short] in general, number of *uh* crimes has decreased over the recent years [long] xxx this one *haha*.
+And *uh* [medium] can you do the same for the four frequent crimes, I mean theft, battery, deceptive-practice, criminal-damage? [long]
+24:53
+So it shows that in general the number of the thefts [short] *uh* battery and [short] criminal-damage [short] have decreased, but the number of deceptive-practice has gotten little bit increased so--.
+We have now, this one is better. [short] 
+So it means that deceptive-practice has increased and [short] we should be careful about *uh* this type of crime. 
+*Uh*. [long]
+Can you do the same *uh* [short] for the next four *uh* type of *uh* crimes. And for the xxx frequency? [long]
+27:59
+xxx like this xxx so it's [short] it's *uh*. [short] 
+So, [short] most of this crimes have not changed or even, some places, decreased. [medium] 
+So it means that, [medium] this-- so the only crime-- the only crime that has increased over the recent years is deceptive-practice. [short] 
+Ok that's fine.
+Ok, can you show me *um* [short] the number of crimes based on the location and type of location? [long]
+So, most of the crimes have occurred on the streets. 
+After that sidewalk, residents, other apartment, resturants, department-store, parking-lot, garage.
+So it means that, [short] most of the officers should be deployed at these locations mostly, be more careful about these locations, xxx platform. [long]
+And, [short] they should not waste most of their time on the least frequent location. [medium]
+Ok thank you.
+And. [long]
+31:52
+Ok, that's it, Ok.
+END

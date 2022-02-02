@@ -1,0 +1,103 @@
+subject20
+
+So that is alright.
+I want to see [Est<1><01>: the general spread Est<1><01>] of [Est<1><01>: the crime type intimidation Est<1><01>] around [Est<1><01>: UIC area Est<1><01>] spread by [Est<1><01>: day of the week? Est<1><01>]
+Ok I was hoping to see a big increase on Fridays but let us see if we can find something related to that.
+for [Est<3><02>: [Text<2><01>: the same spread Text<2><01>] Est<3><02>] that is of [Est<3><02>: the day of the week Est<3><02>] can I have [Est<3><02>: another visualization Est<3><02>] by by [Est<3><02>: the side Est<3><02>] of [Est<3><02>: this one Est<3><02>] which tells me all about [Est<3><02>: public peace violation? Est<3><02>]
+Ok not too many.
+Ok thank you for [Text<4><02>: the second visualization Text<4><02>] I think I am done with [Text<5><02>: that. Text<5><02>]
+I do not see much information out of [Text<6><02>: that. Text<6><02>]
+Can I get [Est<7><03-1-2>: a visualization Est<7><03-1-2>] of [Est<7><03-1-2>: all the major crime types? Est<7><03-1-2>] For again [Est<7><03-1-2>: UIC area? Est<7><03-1-2>]
+I see that theft and battery are way theft is obviously the highest and.
+Now I would like to see [Est<8><04>: all crimes Est<8><04>] involving [Est<8><04>: the crime type theft Est<8><04>] around [Est<8><04>: UIC Est<8><04>] for [Est<8><04>: all the different location types? Est<8><04>]
+Quite a few more vehicle theft as well.
+streets grocery food store 
+ok street grocery food store 
+theft on streets that 
+but even though the graphs looks the y-axis ok 
+theft battery criminal damage 
+Ok. I I am seeing that there is a lot of theft and there is most of them are happening on streets.
+now I would like to [Est<9><05-1,05-2*>: extend this Est<9><05-1,05-2*>] to see if this is [Est<9><05-1,05-2*>: a thing Est<9><05-1,05-2*>] across [Est<9><05-1,05-2*>: all the four neighborhoods Est<9><05-1,05-2*>] or if it is very particular to [Est<9><05-1,05-2*>: this neighborhood. Est<9><05-1,05-2*>]
+So I would like to see [Text<10><05-1,05-2*>: that. Text<10><05-1,05-2*>]
+Ok as I suspected streets are the number one.
+could you have given me [Gesture<11><05-1,05-2*>: two other visualizations. Gesture<11><05-1,05-2*>]
+Can you make [Est<13><06-1,06-2,06-3,06-4,06-5>: [Text<12><05-1,05-2*>: them Text<12><05-1,05-2*>] Est<13><06-1,06-2,06-3,06-4,06-5>] [Est<13><06-1,06-2,06-3,06-4,06-5>: more legible? Est<13><06-1,06-2,06-3,06-4,06-5>] Like bigger?
+[Text<14><06-1,06-2,06-3,06-4,06-5>: that Text<14><06-1,06-2,06-3,06-4,06-5>] is much better.
+from [Gesture<15><06-1>: this diagram Gesture<15><06-1>] what I can conclude is even though theft is the number one it is particularly more in Near West.
+I will to I mean I I will inquire about that in a bit.
+and one more line of inquiry that I was thinking of could can you bring up [Gesture<16><05-1>: this the pic Gesture<16><05-1>] that has been hidden?
+Now I would like to see [Est<17><07-1*,07-2>: the spread of two crime types Est<17><07-1*,07-2>] that is [Est<17><07-1*,07-2>: theft Est<17><07-1*,07-2>] and [Est<17><07-1*,07-2>: battery Est<17><07-1*,07-2>] for [Est<17><07-1*,07-2>: all the neighborhoods Est<17><07-1*,07-2>] during [Est<17><07-1*,07-2>: different days of the week? Est<17><07-1*,07-2>]
+Ok alright. Theft and battery.
+Ok [Gesture<18*><07-1*>: this Gesture<18*><07-1*>] is not [Text<19*><07-1*>: this view Text<19*><07-1*>] is not very helpful in I mean not the view but I do not see any any significant variations between the days.
+So maybe I I would like to look at [Est<20><08-1*,08-2>: the spread Est<20><08-1*,08-2>] across [Est<20><08-1*,08-2>: different months? Est<20><08-1*,08-2>]
+Months of the year only months ok.
+river north is way higher than any other 
+Ok although I have seen the general trend of crimes having a rise around May June July it is still not too steep a curve to be of any particular interest.
+yes [Text<21*><08-1*,08-2>: the response Text<21*><08-1*,08-2>] is fine.
+Could you pull up [Gesture<22><06-1>: 6-1 Gesture<22><06-1>] and [Text<23*><07-1*>: 7-1 Text<23*><07-1*>] into focus?
+The image is [Text<24><06-1>: 6-1 Text<24><06-1>] and [Text<25*><07-1*>: 7-1 Text<25*><07-1*>] please.
+Maybe I am not reading the data right but somehow Near West street I mean street theft seems to be much much more in [Gesture<26><06-1>: 6-1 Gesture<26><06-1>] and when I it [Gesture<27*><07-1*>: here Gesture<27*><07-1*>] that is the spread of days the color proportions do not do not match?
+Because I see a lot of green in [Gesture<28*><07-1*>: 7-1 Gesture<28*><07-1*>] [Gesture<29><06-1>: whereas I see Gesture<29><06-1>] a lot of orange.
+ok I think I see what the problem is.
+[Gesture<30><06-1>: That Gesture<30><06-1>] is only specific to theft whereas [Gesture<31*><07-1*>: this Gesture<31*><07-1*>] is for theft and battery.
+yeah i did not take that into account 
+all neighborhoods theft and battery street theft street ok 
+that response it makes sense 
+alright so near west 
+in order to the crime rate my intention intentions behind asking these visualizations is an obvious thought that if you if you help the crime that is most prevalent then you bring down the crime rate 
+So I think toward is that I can conclude that theft is the number one crime and it is more in and with that I think I would like to focus more on Near West.
+So I would like to see [Est<32><10>: another visualization Est<32><10>] that would tell me the second and third or rather [Est<32><10>: all the different crime types Est<32><10>] that are there in [Est<32><10>: Near West? Est<32><10>]
+Ok so [Gesture<33><10>: the graph Gesture<33><10>] is almost identical to that of UIC area in terms of what crime is more and what crime how much that is yeah.
+ok i am trying to analyze if theft happens in isolation or does it happen with any other crime let me see if i can somehow make the connection 
+Can I get [Est<34><11>: a visualization of all the crimes Est<34><11>] that happen in [Est<34><11>: the Near West area Est<34><11>] for [Est<34><11>: one particular type location type Est<34><11>] that is [Est<34><11>: street? Est<34><11>]
+Theft criminal damage motor vehicle theft battery.
+Ok I expected theft and motor vehicle theft to be somewhat closely closely related but seeing criminal damage up there was a bit surprising.
+Yes [Gesture<35><11>: this Gesture<35><11>] yeah [Text<36><11>: this Text<36><11>] is what I expected.
+Day by year day by year.
+can I get [Est<38><12>: a spread Est<38><12>] of [Est<38><12>: [Text<37><11>: this data Text<37><11>] Est<38><12>] across [Est<38><12>: the year? Est<38><12>]
+Could you single out [Est<39><13>: theft Est<39><13>] alone and give [Est<39><13>: that data Est<39><13>] for [Est<39><13>: a year Est<39><13>] when I say [Est<39><13>: a year Est<39><13>] can I a by [Est<39><13>: day Est<39><13>] spread over [Est<39><13>: the year? Est<39><13>]
+There are yes [Text<40><13>: this response Text<40><13>] it helps.
+there there are [Est<41><15>: a few peaks Est<41><15>] and I am wondering if [Est<41><15>: these peaks Est<41><15>] have [Est<41><15>: a particular pattern Est<41><15>] to them or do they happen over [Est<41><15>: some events? Est<41><15>]
+maybe this peak was around the fourth of july 
+[Gesture<42><13>: This one Gesture<42><13>] is [Text<43><13>: it Text<43><13>] clarifies things much more.
+Ok June 22 nd.
+Ok but if I take into account the number of crimes that is the y-axis even though June 22 nd is a peak it it would be wrong for me to conclude that it is some kind of a a pattern.
+For [Est<45><16>: [Gesture<44><13>: the same graph Gesture<44><13>] Est<45><16>] can I see [Est<45><16>: theft Est<45><16>] and [Est<45><16>: criminal damage Est<45><16>] as [Est<45><16>: two lines Est<45><16>] overlapping like [Est<45><16>: multiline graph? Est<45><16>]
+Yes [Gesture<46><16>: this Gesture<46><16>] is what I was looking for.
+With a few exceptions I think the ups and downs of both the curves roughly match up when there is a dip in one there is a dip in the other when there is a rise in one there is a rise in the other with a few offsets and stuff.
+Could you give me [Est<48><18-1>: [Gesture<47><16>: the same visualization Gesture<47><16>] Est<48><18-1>] for [Est<48><18-1>: UIC area? Est<48><18-1>]
+Ok and that is sort of the peak.
+Again one roughly follows the other.
+I was hoping to see an overall rise and dip pattern in the UIC area that was that is similar to what I see in the Near West but that is I which tells me that day of the year was not a factor?
+these two graphs tell me that criminal damage more or less follows the pattern of theft which makes me wonder if it was one crime being that was booked as two different two different incidents 
+ok but what i am wondering is even though it was a i mean the in this case in this a case criminal damage could have been the secondary crime type for whatever crime happened there but for some reason it was made as a separate primary type itself 
+with a bit of offset the dips and ups they seem to match with one another is what i can clearly see from these two graphs 
+could you add battery to this visualization 
+ok even though some of the patterns on this graph for battery do line up with criminal damage i think it is too small a data set to attach any significance to to the similarity in the pattern 
+but yeah criminal damage and theft I see a correlation of sorts.
+Do you have time of the day available for this data set?
+Ok may I see [Est<49><18-2>: just theft Est<49><18-2>] and [Est<49><18-2>: criminal damage Est<49><18-2>] for [Est<49><18-2>: Near West Est<49><18-2>] during [Est<49><18-2>: different times of the day? Est<49><18-2>]
+Time of the day.
+there is a small similarity in the pattern yes yes just the street please 
+ok in that case that is ok 
+I see a small similarity in the way these I mean these two different crime types progress over or spread across different hours of the day but since there is aggregation it is not it it is not that evident or it is not that conclusive to say that to clarify my my suspicion about the data.
+for [Est<51><20-1*,20-2,20-3*,20-4*>: [Gesture<50><18-2>: the graph on 18-2 Gesture<50><18-2>] Est<51><20-1*,20-2,20-3*,20-4*>] is it possible to further divide [Est<51><20-1*,20-2,20-3*,20-4*>: the data Est<51><20-1*,20-2,20-3*,20-4*>] into or order them somehow depending on [Est<51><20-1*,20-2,20-3*,20-4*>: the time of day Est<51><20-1*,20-2,20-3*,20-4*>] that they occurred on [Est<51><20-1*,20-2,20-3*,20-4*>: these days? Est<51><20-1*,20-2,20-3*,20-4*>]
+Just a minor correction to the request that I made.
+I just want to see [Est<52><20-1*,20-2,20-3*,20-4*>: two types Est<52><20-1*,20-2,20-3*,20-4*>] that is [Est<52><20-1*,20-2,20-3*,20-4*>: theft Est<52><20-1*,20-2,20-3*,20-4*>] and [Est<52><20-1*,20-2,20-3*,20-4*>: criminal damage Est<52><20-1*,20-2,20-3*,20-4*>] I do [Est<52><20-1*,20-2,20-3*,20-4*>: not Est<52><20-1*,20-2,20-3*,20-4*>] want to see the [Est<52><20-1*,20-2,20-3*,20-4*>: third crime type. Est<52><20-1*,20-2,20-3*,20-4*>]
+sure that is ok 
+they have theft and criminal damage?
+Ok well what I what I actually wanted to see was [Est<53><21-1,21-2*>: all the all the theft crimes Est<53><21-1,21-2*>] in [Est<53><21-1,21-2*>: a single line Est<53><21-1,21-2*>] that how do I say this ok on [Est<53><21-1,21-2*>: the x-axis Est<53><21-1,21-2*>] of each day also fine grained into [Est<53><21-1,21-2*>: hour of the day. Est<53><21-1,21-2*>]
+I do not know if that is too much data into a graph but is that does that make sense?
+Ok well in these I would say [Gesture<54*><20-3*,20-4*>: the bottom two charts Gesture<54*><20-3*,20-4*>] are less helpful in that case and [Gesture<55><20-1*,20-2>: the upper two Gesture<55><20-1*,20-2>] are better.
+because [Text<56><20-1*,20-2,20-3*,20-4*>: these Text<56><20-1*,20-2,20-3*,20-4*>] provide me with line graphs of specific events and specific hours even though at this I mean in [Gesture<57><20-2>: this particular chart Gesture<57><20-2>] since the lines talk about specific trends for each hour of the day it is harder to see even if there is any correlation because yeah it it is just too spread out.
+but in this case even though it is spread out i think the data somehow is still somehow similar because 
+ok can you do each on the x-axis each day maybe not spread into each instance or the each of the crime occurrence but maybe each day broken down into these four events like day one four events all one after another 
+Then day two and so on on the x-axis and number of crimes on the y-axis is that possible?
+That would give a linear ordering of crimes in time and that is what I basically want to see.
+Yes [Text<58><21-1,21-2*>: this Text<58><21-1,21-2*>] is what I was looking for.
+Can you stretch [Est<60><22>: [Gesture<59><21-1,21-2*>: these two visualizations Gesture<59><21-1,21-2*>] Est<60><22>] on [Est<60><22>: the x-axis Est<60><22>] like just pull
+Yes [Text<61><22>: this Text<61><22>] is this is fine.
+I just have a remark with [Text<62><22>: this visualization Text<62><22>] I mean although I have a strong feeling that they are both correlated in the sense that somehow either the data is being duplicated in terms of two different crime types or something else is going on there.
+And [Text<63><22>: this view Text<63><22>] helps.
+But I will have to look at a larger range in order to make any conclusions on that.
+yes it was great. Thanks.

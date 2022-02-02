@@ -1,0 +1,619 @@
+Subject 5
+1.
+utteranceid: "15"
+timestep: current
+utterancetype: modifyvis
+utterance: "*Uh* so it shows that, *uh* [short] the lowest rate of crime is in Feburary [short] and Janurary and the highest rates are in [short] June, July, August. [short]"
+
+utteranceid: "15"
+timestep: next
+utterancetype: speakaloud
+utterance: "*Uh* so it shows that, *uh* [short] the lowest rate of crime is in Feburary [short] and Janurary and the highest rates are in [short] June, July, August. [short]"
+
+2a.
+utteranceid: "16"
+timestep: next
+utterancetype: speakaloud
+utterance: "Ok, [short] so, [long] can you plot me the same *uh* plot, I mean the number of the crimes during the day for different regions? [long]"
+
+utteranceid: "16"
+timestep: current
+utterancetype: modifyvis
+utterance: "Ok, [short] so, [long] can you plot me the same *uh* plot, I mean the number of the crimes during the day for different regions? [long]"
+
+2b.
+utteranceid: "16"
+timestep: next
+mode: diectic
+gestureid: "8"
+type: point
+space: screen
+target: indicate-vis
+
+utteranceid: "16"
+timestep: current
+mode: diectic
+gestureid: "8"
+type: point
+space: screen
+target: indicate-vis
+
+3. Split into two separate utterance requests
+utteranceid: "20"
+timestep: current
+targetvis_ids: "08-2"
+targetvis_plottypes: "bar"
+
+utteranceid: "21"
+timestep: current
+targetvis_ids: "08-2"
+targetvis_plottypes: "bar"
+
+4. Added gesture
+utteranceid: "28"
+timestep: current
+mode: diectic
+gestureid: "12"
+type: point
+space: screen
+target: indicate-vis
+
+5. Update utterance
+utteranceid: "31"
+timestep: current
+utterancetype: modifyvis
+utterance: "Can you do the same *uh* [short] for the next four *uh* type of *uh* crimes. I mean ordered by frequency? [long]"
+ 
+Subject 7
+1. Should be marked as clarification request
+utteranceid: "8"
+timestep: next
+utterancetype: speakaloud
+utterance: "*Uh* here, how can we identify the neighborhoods here? Which is a street and which is a sidewalk?"
+
+utteranceid: "8"
+timestep: next
+utterancetype: speakaloud
+utterance: "*Uh* here, how can we identify the neighborhoods here? Which is a street and which is a sidewalk?"
+
+2. Should be marked as clarification request
+utteranceid: "10"
+timestep: next
+utterancetype: speakaloud
+utterance: "Is it streets-- is it street are the are xxx the streets, is it *uh* the sidewalk area? So I need to know that [long]."
+
+3. updated prev to next
+utteranceid: "11"
+timestep: previous
+utterancetype: speakaloud
+utterance: "Which, specific to River-North. [long]"
+
+utteranceid: "11"
+timestep: next
+utterancetype: speakaloud
+utterance: "Which, specific to River-North. [long]"
+
+Subject 7
+1. Update from speakaloud to request
+utteranceid: "19"
+timestep: next
+utterancetype: speakaloud
+utterance: "So *um* on Saturday *uh uh* a-- which location *um um* can you expla-- *uh* can you say the *um* can you give me a graph with respect to Saturday and the location type alone, on River North [long]."
+
+utteranceid: "19"
+timestep: current
+utterancetype: modifyvis
+utterance: "So *um* on Saturday *uh uh* a-- which location *um um* can you expla-- *uh* can you say the *um* can you give me a graph with respect to Saturday and the location type alone, on River North [long]."
+
+2. Update from request to speakaloud
+utteranceid: "20"
+timestep: current
+utterancetype: modifyvis
+utterance: "So in this graph I can see that on Saturday 6-P_M to midnight and noon to 6-P_M is higher, and this pattern is repeated everywhere. Except on Sunday midnight to 6-P_M is very high."
+
+utteranceid: "20"
+timestep: next
+utterancetype: speakaloud
+utterance: "So in this graph I can see that on Saturday 6-P_M to midnight and noon to 6-P_M is higher, and this pattern is repeated everywhere. Except on Sunday midnight to 6-P_M is very high."
+
+3. Update speakaloud to request
+utteranceid: "28"
+timestep: previous
+utterancetype: speakaloud
+utterance: "So I want a year by analysis of, of this. [long]"
+
+utteranceid: "28"
+timestep: current
+utterancetype: modifyvis
+utterance: "So I want a year by analysis of, of this. [long]"
+
+4. Add pointing gesture for utterance 28+utteranceid: "28"
+timestep: previous
+utterancetype: speakaloud
+utterance: "So I want a year by analysis of, of this. [long]"
+
+5. Update speakaloud to request
+utteranceid: "28"
+timestep: previous
+utterancetype: speakaloud
+utterance: "So I want a year by analysis of, of this. [long]"
+
+utteranceid: "28"
+timestep: current
+utterancetype: modifyvis
+utterance: "So I want a year by analysis of, of this. [long]"
+
+Subject 8
+1. Update speakaloud to preference request
+utteranceid: "35"
+timestep: next
+utterancetype: speakaloud
+utterance: "*Oh* I like this one. [short] This one’s nice. [long]"
+
+utteranceid: "35"
+timestep: current
+utterancetype: preference
+utterance: "*Oh* I like this one. [short] This one’s nice. [long]"
+
+2. Update speakaloud to modifyvis request
+utteranceid: "49"
+timestep: previous
+utterancetype: speakaloud
+utterance: "Well how are we going to have a look at hot-spots? [long]"
+
+utteranceid: "49"
+timestep: current
+utterancetype: modifyvis
+utterance: "Well how are we going to have a look at hot-spots? [long]"
+
+3. Update speakaloud to modify request
+utteranceid: "53"
+timestep: next
+utterancetype: speakaloud
+utterance: "Ok can we see the same [short] with [short] deceptive-practices? [long]"
+
+utteranceid: "53"
+timestep: current
+utterancetype: speakaloud
+utterance: "Ok can we see the same [short] with [short] deceptive-practices? [long]"
+
+Subject 9
+1. Update utterance boundary (48 + 49)
+utteranceid: "48"
+timestep: current
+utterancetype: modifyvis
+utterance: "Ok so can you do something with day-of-week [short]?"
+
+utteranceid: "49"
+timestep: next
+utterancetype: speakaloud
+utterance: "Just same crimes, battery and assault, same crimes *um*. [short]"
+
+Subject 10
+1. Add missing pointing gesture
+utteranceid: "10"
+timestep: next
+utterancetype: speakaloud
+utterance: "I mean, I'm not familiar with the map that much so."
+
+2. Update speakaloud to preference request
+utteranceid: "57"
+timestep: previous
+utterancetype: speakaloud
+utterance: "Yes, the response was good. [long]"
+
+utteranceid: "57"
+timestep: current
+utterancetype: preference
+utterance: "Yes, the response was good. [long]"
+
+3. Update speakaloud to clarification request
+utteranceid: "88"
+timestep: next
+utterancetype: speakaloud
+utterance: "Ok, so [short] the maximum number of crimes are occurring somewhere around the [short] Canal Street?"
+
+utteranceid: "88"
+timestep: current
+utterancetype: clarification
+utterance: "Ok, so [short] the maximum number of crimes are occurring somewhere around the [short] Canal Street?"
+
+4. Update modifyvis request to clarification request
+utteranceid: "97"
+timestep: current
+utterancetype: modifyvis
+utterance: "Ok so is this map providing me all statistics from all 4 years? [medium]"
+
+utteranceid: "97"
+timestep: current
+utterancetype: clarification
+utterance: "Ok so is this map providing me all statistics from all 4 years? [medium]"
+
+5. Update speakaloud to clarification request
+utteranceid: "114"
+timestep: next
+utterancetype: speakaloud
+utterance: "Ok, I did not get any response. [long]"
+
+utteranceid: "114"
+timestep: current
+utterancetype: clarification
+utterance: "Ok, I did not get any response. [long]"
+
+Subject 11
+1. Missing annotation of requests
+And then I wanna try the Loop.
+
+Buh bye! 
+Definitely gonna need you for later, that's for sure, *mm*. 
+
+2. Update speakaloud to preference request
+utteranceid: "88"
+timestep: next
+utterancetype: speakaloud
+utterance: "*Oh* there we go. That helps a lot better."
+
+utteranceid: "88"
+timestep: current
+utterancetype: preference
+utterance: "*Oh* there we go. That helps a lot better."
+
+3. Update speakaloud to preference request
+utteranceid: "94"
+timestep: previous
+utterancetype: speakaloud
+utterance: "That's great."
+
+utteranceid: "94"
+timestep: current
+utterancetype: preference
+utterance: "That's great."
+
+4. Update speakaloud with windows management request
+utteranceid: "97"
+timestep: next
+utterancetype: speakaloud
+utterance: "Ok [short] so I don't really need the year anymore, because [short] from the looks of it, we're doing something right, and it's [short] heading down."
+
+utteranceid: "97"
+timestep: current
+utterancetype: winmgt
+utterance: "Ok [short] so I don't really need the year anymore, because [short] from the looks of it, we're doing something right, and it's [short] heading down."
+
+Subject 12
+1. Update speakaloud to windows management request
+utteranceid: "47"
+timestep: previous
+utterancetype: speakaloud
+utterance: "Yeah ok *uh* [short] so [short] yeah make that bigger."
+
+utteranceid: "47"
+timestep: current
+utterancetype: winmgt
+utterance: "Yeah ok *uh* [short] so [short] yeah make that bigger."
+
+2. Extend length of utterance
+
+utteranceid: "59"
+timestep: current
+utterancetype: modifyvis
+utterance: "Could I see crime-type by neighborhood *um* for three month periods? So crime-types by neighborhood January, February, March. And then crime-types by neighborhood April, May, June. And then crime-types by neighborhood, [short] July, August, September."
+
+utteranceid: "60"
+timestep: next
+utterancetype: speakaloud
+utterance: "Is that, possible?"
+
+utteranceid: "61"
+timestep: next
+utterancetype: speakaloud
+utterance: "*Haha* [short] and then October, November, December, yeah."
+
+3. Update request to speakaloud
+utteranceid: "88"
+timestep: current
+utterancetype: clarification
+utterance: "That's what started this whole thing, the parking-lots *haha* [medium] and resturants. [short]"
+
+utteranceid: "88"
+timestep: next
+utterancetype: speakaloud
+utterance: "That's what started this whole thing, the parking-lots *haha* [medium] and resturants. [short]"
+
+Subject 13
+1. Update speakaloud to request
+utteranceid: "5"
+timestep: next
+utterancetype: speakaloud
+utterance: "Yes, *um*, is it possible to see only the-- the spots with more than 50 crimes?"
+
+utteranceid: "5"
+timestep: current
+utterancetype: modifyvis
+utterance: "Yes, *um*, is it possible to see only the-- the spots with more than 50 crimes?"
+
+2. Update gesture to pointing to entity within vis
+utteranceid: "50"
+timestep: current
+mode: diectic
+gestureid: "19"
+type: point
+space: screen
+target: indicate-vis
+
+utteranceid: "50"
+timestep: current
+mode: diectic
+gestureid: "19"
+type: point
+space: screen
+target: indicate-entity-in-vis
+
+3. Update gesture to be pointing to vis not entity in vis
+utteranceid: "98"
+timestep: next
+mode: diectic
+gestureid: "34"
+type: point-and-move
+space: screen
+target: indicate-multiple-entities-in-vis
+
+utteranceid: "98"
+timestep: next
+mode: diectic
+gestureid: "34"
+type: point-and-move
+space: screen
+target: indicate-entity-in-vis
+
+4. Update speakaloud to request
+utteranceid: "98"
+timestep: next
+utterancetype: speakaloud
+utterance: "*Um* ok can we take out deceptive-practices from this?"
+
+utteranceid: "98"
+timestep: current
+utterancetype: modifyvis
+utterance: "*Um* ok can we take out deceptive-practices from this?"
+
+Subject 14
+1. Should have introduced location type here too but didn't.
+utteranceid: "1"
+timestep: current
+utterancetype: createvis
+utterance: "*Um* alright so show me the *uh* [short] the months where the most number of crimes occur around school areas. [long]"
+
+2. Also discussed location in speakaloud.
+utteranceid: "5"
+timestep: next
+utterancetype: speakaloud
+utterance: "I’m thinking that there-- [short] the-- the schools are in in session from a certain number of months in during the year and then the schools are out of session for some certain number of months during the year."
+
+3. Speakaloud should not exist since previous "next" mentioned a data attribute.
+utteranceid: "6"
+timestep: next
+utterancetype: speakaloud
+utterance: "And I’m wondering if the crime scene changes *uh* around those schools in session month and the school out of session month and which [short] crimes are more prevalent when school is in session and when school is out of session. [long]"
+
+4. Not a request in CSV file.
+utteranceid: "8"
+timestep: current
+utterancetype: preference
+utterance: "Oh, yeah, that’s [short] much more helpful."
+
+utteranceid: "17"
+timestep: current
+utterancetype: modifyvis
+utterance: "So can we narrow in on [short] June to September theft data and where it’s happening? [long]"
+
+utteranceid: "20"
+timestep: current
+utterancetype: clarification
+utterance: "What’s the difference between a street and a sidewalk [short] for theft? [long]"
+
+utteranceid: "25"
+timestep: current
+utterancetype: clarification
+utterance: "So is there a way to show [short] *um* how many officers were on these particular streets here where it looks like most of these sh--."
+
+utteranceid: "36"
+timestep: current
+utterancetype: modifyvis
+utterance: "Ok let’s do-- can we do that same [short] picture [short] of [short] data relative-- that we just did for crimes could we do it I mean for theft can we do it for battery? [long]"
+
+utteranceid: "56"
+timestep: current
+utterancetype: clarification
+utterance: "What's there? [long]"
+
+5. Location type already introduced so update to modifyvis
+utteranceid: "22"
+timestep: current
+utterancetype: createvis
+utterance: "So is there a time-of-day when the street-- [short] or time-of-day when the street, theft from [short] June to September is happen-- is happening more frequently?"
+
+utteranceid: "22"
+timestep: current
+utterancetype: modifyvis
+utterance: "So is there a time-of-day when the street-- [short] or time-of-day when the street, theft from [short] June to September is happen-- is happening more frequently?"
+
+6. Remove previous tags because data attribute mentioned
+utteranceid: "11"
+timestep: previous
+utterancetype: speakaloud
+utterance: "It’s ok, that’s ok."
+
+utteranceid: "12"
+timestep: previous
+utterancetype: speakaloud
+utterance: "*Um* [short] so the biggest crimes the most number of crimes are theft. [short]"
+
+utteranceid: "13"
+timestep: previous
+utterancetype: speakaloud
+utterance: "And they seem to go up during July and August. [short]"
+
+utteranceid: "14"
+timestep: previous
+utterancetype: speakaloud
+utterance: "And a little bit in-- [short] a little bit of a blip in January."
+
+7. Add pointing gesture
+utteranceid: "43"
+timestep: previous
+utterancetype: speakaloud
+utterance: "Ok great so let’s pick this big red dot over here."
+
+8. Update speakaloud to request
+utteranceid: "67"
+timestep: previous
+utterancetype: speakaloud
+utterance: "I suppose the next thing we could do is look at the-- the other hot-spot that you had for crimes which is up in the North side *um* if that’s the zero the fir-- the 0-- the 12-1.P_N_G."
+
+utteranceid: "67"
+timestep: current
+utterancetype: modifyvis
+utterance: "I suppose the next thing we could do is look at the-- the other hot-spot that you had for crimes which is up in the North side *um* if that’s the zero the fir-- the 0-- the 12-1.P_N_G."
+
+9. Update the words in transcript
+utteranceid: "67"
+timestep: current
+utterancetype: modifyvis
+utterance: "I suppose the next thing we could do is look at the-- the other hot-spot that you had for crimes which is up in the North side *um* if that’s the zero the fir-- the 0-- the 12-1.P_N_G."
+
+utteranceid: "67"
+timestep: current
+utterancetype: modifyvis
+utterance: "I suppose the next thing we could do is look at the-- the other hot-spot that you had for crimes which is up in the North side *um* if that’s the zero the fir-- the 0-- the 01-1.P_N_G."
+
+10. Update from request to speakaloud
+utteranceid: "89"
+timestep: current
+utterancetype: clarification
+utterance: "This is not like a-- like you reaching into my wallet taking-- I mean my purse and taking my wallet this is [short] you know you go in to a department-store picking up a pair of sunglasses and walking out."
+
+utteranceid: "89"
+timestep: current
+utterancetype: speakaloud
+utterance: "This is not like a-- like you reaching into my wallet taking-- I mean my purse and taking my wallet this is [short] you know you go in to a department-store picking up a pair of sunglasses and walking out."
+
+11. Update gesture target to be indicating multiple entities in vis
+utteranceid: "107"
+timestep: current
+mode: diectic
+gestureid: "15"
+type: point-and-move
+space: screen
+target: indicate-multiple-vis
+
+utteranceid: "107"
+timestep: current
+mode: diectic
+gestureid: "15"
+type: point-and-move
+space: screen
+target: indicate-multiple-entities-in-vis
+
+12. Update gesture target to be indicating entity in vis
+utteranceid: "119"
+timestep: next
+mode: diectic
+gestureid: "20"
+type: point
+space: screen
+target: indicate-vis
+
+utteranceid: "119"
+timestep: next
+mode: diectic
+gestureid: "20"
+type: point
+space: screen
+target: indicate-entity-in-vis
+
+13. Update gesture target to be indicating entity in vis
+utteranceid: "119"
+timestep: next
+mode: diectic
+gestureid: "20"
+type: point
+space: screen
+target: indicate-vis
+
+utteranceid: "119"
+timestep: next
+mode: diectic
+gestureid: "20"
+type: point
+space: screen
+target: indicate-entity-in-vis
+
+Subject 15
+1. These utterances should be combined according to csv file.
+utteranceid: "25"
+timestep: current
+utterancetype: modifyvis
+utterance: "Could I look at River-North? [short]"
+
+utteranceid: "26"
+timestep: next
+utterancetype: speakaloud
+utterance: "I guess the same, the same graphs that-- that you gave me. [long]"
+
+2. Update request to speakaloud since it is not in csv file.
+utteranceid: "44"
+timestep: current
+utterancetype: winmgmt
+utterance: "Could you bring up *uh* 02-5 and 02-4 and-- no yeah, [short] and 02-2?"
+
+utteranceid: "44"
+timestep: next
+utterancetype: speakaloud
+utterance: "Could you bring up *uh* 02-5 and 02-4 and-- no yeah, [short] and 02-2?"
+
+3. Update gesture to be indicating multiple vis.
+utteranceid: "44"
+timestep: current
+mode: diectic
+gestureid: "16"
+type: point
+space: screen
+target: indicate-vis
+
+utteranceid: "44"
+timestep: current
+mode: diectic
+gestureid: "16"
+type: point
+space: screen
+target: indicate-multiple-vis
+
+4. Update speakaloud to request
+utteranceid: "77"
+timestep: next
+utterancetype: speakaloud
+utterance: "*Um* and then maximize the Near-West. [long]"
+
+utteranceid: "77"
+timestep: current
+utterancetype: winmgt
+utterance: "*Um* and then maximize the Near-West. [long]"
+
+Subject 18
+1. Update speakaloud to request
+utteranceid: "77"
+timestep: next
+utterancetype: speakaloud
+utterance: "*Uh* yes, by time-of-day. [long]"
+
+utteranceid: "77"
+timestep: current
+utterancetype: modifyvis
+utterance: "*Uh* yes, by time-of-day. [long]"
+
+2. Add to transcription and request from 05 to 06:
+
+Would be [short] itd be good to know there if theres some way to visualize to know like kind of based on where we know where the crimes were what the kind of, if theres a general area where it lights up more but, like in terms of like G_P_S based on G_P_S *uh* coordinate if theres certain [short] certain area of physical like areas where its more likely to happen *um*.
+
+

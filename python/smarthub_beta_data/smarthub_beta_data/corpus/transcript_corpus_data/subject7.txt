@@ -1,0 +1,96 @@
+START
+8:10 
+So which location has the highest crime-rate recorded [long]?
+experimentor: So when it says processing it means it’s computing it. So, soon you’ll have an answer [long].
+experimentor: You can look at the titles to get hints of what it’s showing too. But just remember to explain what you are seeing.
+Yeah [short].
+So I can see there *um* River-North *uh* has the *uh* highest crime-rate. 
+And *uh* if we see through the neighborhood *uh* street, sidewalk, and the residence, residence area has the *um* highest crime-rate *uh* [short] *um*.
+So what type of crimes has--.
+Editing title [short]? What is editing title?
+experimentor: *Uh* data expert just made a mistake in the way it was titled. 
+experimentor: So, *uh* they fixed the visualization, it was a wrong visualization that the person displayed.
+experimentor: And now they’ve corrected it, so this is the updated version. So now it’s corrected.
+So can I see the intersection between the *uh* River-North *uh* and the street, sidewalk, and residence views?
+Like, yeah [long].
+So is the status not changing?
+experimentor: *um*, it is. [long]
+*Uh* here, how can we identify the neighborhoods here? Which is a street and which is a sidewalk?
+experimentor: Yeah you can ask.
+Ok. [long]
+Yeah, so I want to know *um* *uh* the intersection between the River-North area, I want to know what is the, what are the neighborhoods that a, have the highest crime-rate in River-North?
+Is it streets-- is it street are the are xxx the streets, is it *uh* the sidewalk area? So I need to know that [long].
+Ok. Street, sidewalk, department-store, restaurant, residents. [long]
+So I want to see the *uh* *uh* types of crime that is *uh* occurring in *uh* each specific *uh* neighborhood in River-North.
+Which, specific to River-North. [long]
+15:00
+So can you-- can you explain a bit about what is this criminal-damage and this *uh* this deceptive-practice? So what kind of deceptive-practice? [long]
+experimentor: I was trying to see what, what the *uh* which one is it? 
+So there is a criminal-damage and deceptive-- so what kind of deceptive-practice is it? I mean deceptive-practice in the sense, somebody’s mocking somebody and xxx?
+experimentor: No no, I think deceptive-practice, I think that means *um* you know, a practice that claims to be one thing, but it actually did not doing what it’s claiming to do. 
+experimentor: So it’s fraudulent, it’s like fraudulent, you know. 
+experimentor: Criminal-damage means like, if you damage property, right? 
+experimentor: For example that’s a crime, you can’t you can’t damage property. 
+experimentor: So, *um* that’s criminal-damage, so their different, you know, different things.
+So like which, which part of the days is the *uh* crime higher?
+With this graph, with the last graph I want to know *uh* which part of the day is the crime very high?
+Or give me the graph of the crime, *um* crime-rate in this River-North *uh* with respect to the, which part of the day.
+experimentor: Great. In the, in the meantime, if you want to describe what you are seeing, with each visualization, while it is processing, that would be great.
+So can I explain it with number in the graph, is it ok? So this 122 *uh* I can see the graph of the crime-rates with the location-type *uh* so I can see that *uh* this *uh* the street walk and what is it? 
+Has the highest *uh* crime and *uh* this [short], and this 04. 
+*Uh* in this graph I could see that the theft has the highest-- *uh* theft has the highest crime that is occurring in River-North *uh* and this 3.P_N_G describes about [medium] xxx. [long]
+This is shocking, noon to 6-P_M has the highest, crime-rate *haha*. 
+Usually crime happens in the night, right? 
+So, noon to 6-P_M has the highest, and midnight to 6-A_M [short] has somewhat lesser crime-rate.
+experimentor: It’s interesting right?
+Interesting. [long]
+So can you give the analysis *uh* *uh* through, or what are the days *uh*, has the crime-rate? Day by day analysis, can I get a day by day analysis? Day and time, maybe [long].
+20:09
+Yeah, so, this is expected. On weekends, the crime, crime-rate is high. And on, but on Sundays its relatively lesser, on Fridays and Saturdays is it, it’s very high.
+So *um* on Saturday *uh* *uh* at which location *um* *um* can you explain-- *uh* can you say the-- *um* can you give me a graph with respect to Saturday and the location-type alone, on River-North? [long]
+So in this graph I can see that on Saturday 6-P_M to midnight and noon to 6-P_M is higher, and this pattern is repeated everywhere. Except on Sunday midnight to 6-P_M is very high.
+So maybe people start doing their criminal activities [short] from 6-P_M to midnight and continue to the Sunday morning maybe.
+experimentor: Yeah, absolutely. [long]
+So how do you differentiate from street and sidewalk here? Street has a sidewalk, right?
+So.
+experimentor: No if you, if the crime occurs on the sidewalk.
+Well, especially on the sidewalk.
+experimentor: Especially on the sidewalk, but if it occurs on the street itself, then it’s a street.
+Yeah so, in the street, does it include sidewalk too?
+experimentor: No, no, they’re separate.
+Yeah so the-- the crime-rate is literally high on bar so that’s expected, but these 2 trends are are prevalent in the overall graph everywhere. 
+So street and sidewalk dominate everywhere.
+experimentor: Dominates everywhere, yep.
+*Uh* so I want *uh* *uh* day by month and day-by-year analysis of this graph. Of the River-North crimes. [long]
+24:59
+So on February it’s-- it’s, very less, so do you norm--, *um* but because maybe I think the reason is because on February there is 28 days, there are only 28 days. 
+So do you normalize that here?
+experimentor: I don’t think it’s, you can.
+*Oh* not normalized, ok. Because of that I-- this is more or less similar all the months more or less have a similar crime-rate.
+experimentor: *Hm* that’s true.
+Yeah maybe you should normalize xxx, so that--.
+experimentor: It’s a good point.
+People will not be believing only February has a lowered criminal rate.
+experimentor: *Ah* ok that’s a good point.
+Yeah, yeah. Ok-- ok cool, in future maybe, yeah [long].
+So I want a year by analysis of, of this. [long]
+28:48
+So here I could *uh* [short] distribution is more or less uniform here. [long]
+So can you give me that *uh* give me a graph of *uh* the highest *uh* type of crime that has occurred each year?
+Like 2010 theft is the highest crime like that, I want a graph like that [long].
+What does this line represent? Is it theft of?
+experimentor: *Uh* you can ask the data analyst, they should be able to respond.
+Because more or less the colors are same for blue.
+experimentor: Yes, let’s see. [long]
+Or if he-- if he can change this color xxx it’ll be good.
+experimentor: Yeah, looks like it’s processing so.
+Sorry?
+experimentor: It’s processing so it should be able to answer your question soon. [long]
+*Oh* ok. So xxx. 
+So here also it represents a total pattern, so theft is higher, theft was higher in the River-North so xxx.
+But it’s comparatively-- it’s getting reduced *um* from 2012 maybe?
+experimentor: Yeah, it is reducing, yeah.
+And everything is, every--, everything is here. Nothing dominates others, or--.
+experimentor: *Hm.*
+Yeah, so, that’s it.
+END

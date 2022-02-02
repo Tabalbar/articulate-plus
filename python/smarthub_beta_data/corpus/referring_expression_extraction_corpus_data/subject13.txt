@@ -1,0 +1,146 @@
+subject13
+
+[Est<1><01-1*,01-2*,01-3>: What restaurant Est<1><01-1*,01-2*,01-3>] should I be avoiding past [Est<1><01-1*,01-2*,01-3>: 10 PM Est<1><01-1*,01-2*,01-3>] on [Est<1><01-1*,01-2*,01-3>: an average Friday night? Est<1><01-1*,01-2*,01-3>]
+now when you say visualizations will they also pull up maps 
+it seems like River North is the place where I would not want to go eat at 9 PM just because of the the number of crimes overall.
+uic appears to be the safest which is kind of surprising 
+i should really not carry anything expensive on me if i want to go to a restaurant at that time of night because theft is a possibility 
+the rest is kind of ok still deceptive practice 
+what is the now can i also ask something about the realization 
+Ok some number of crimes.
+Now you see [Est<3><02>: [Text<2><01-3>: the map Text<2><01-3>] Est<3><02>] is a little too clustered is it possible to just see [Est<3><02>: the number Est<3><02>] of [Est<3><02>: all the data points Est<3><02>] with [Est<3><02>: more than fifty crimes Est<3><02>] in [Est<3><02>: the area? Est<3><02>]
+Yes is it possible to see only the spots with more than 50 crimes?
+Some number of crimes?
+ok that is not too bad 51 too right 
+Seems yeah it seems like the street running parallel to Michigan which I have no idea I can not see.
+Can you move [Gesture<4><02>: it Gesture<4><02>] to the left a little bit the divider is cutting [Gesture<5><02>: it Gesture<5><02>] off?
+State street seems to be the one I want to avoid at night for a restaurant period ok.
+Can [Est<6><03>: I Est<6><03>] also get [Est<6><03>: a breakdown Est<6><03>] of [Est<6><03>: the number Est<6><03>] of [Est<6><03>: crimes Est<6><03>] in [Est<6><03>: River North Est<6><03>] for [Est<6><03>: only the last four weeks? Est<6><03>]
+Cool so [Text<7><03>: this Text<7><03>] is for a month November 20th to December 20th ok so theft is the most prevalent crime from what I can see you might still get away with your life.
+interesting can I see labels on [Text<8><04>: the data Text<8><04>] please?
+Interesting three prostitution cases three liquor law violations one homicide.
+Can I also see [Est<9><05>: where exactly these prostitution crimes Est<9><05>] occurred?
+Cool so it is within a block and a half.
+Grand and Michigan seems to be the the central point or actually Michigan and Ontario interesting.
+Can I see [Est<10><06-1>: the number Est<10><06-1>] of [Est<10><06-1>: prostitution cases Est<10><06-1>] within [Est<10><06-1>: a three block radius Est<10><06-1>] around [Est<10><06-1>: Ontario Est<10><06-1>] and [Est<10><06-1>: Michigan Est<10><06-1>] for [Est<10><06-1>: prostitution cases? Est<10><06-1>]
+Interesting so yeah it does seem to be pretty concentrated around that area but we do not have the rest from reference.
+Can I also see [Est<11><06-1>: the rest Est<11><06-1>] of [Est<11><06-1>: the cases Est<11><06-1>] in [Est<11><06-1>: River North Est<11><06-1>] for [Est<11><06-1>: prostitution? Est<11><06-1>]
+Ok cool can I see [Est<12><07>: all the cases Est<12><07>] in [Est<12><07>: all four locations? Est<12><07>]
+wow so it is mostly in that area interesting that is a pretty interesting hub for prostitution.
+and now on Madison Street Madison Monroe that is interesting that is where I live.
+ok now if I were to go to [Est<13><08>: a restaurant Est<13><08>] on [Est<13><08>: Valentines day Est<13><08>] and if I were to drive there [Est<13><08>: what Est<13><08>] [Est<13><08>: parking lot Est<13><08>] should I avoid based on [Est<13><08>: the number Est<13><08>] of [Est<13><08>: crimes Est<13><08>] on [Est<13><08>: the day? Est<13><08>]
+Absolutely if I were to drive to a restaurant in Chicago in one of these four areas which restaurants should I which parking lots should I be avoiding based on the number of crimes in the lot?
+February 1st February 15th interesting so that one right there not going there Fullerton and Fulton and what is that Western?
+so much crimes parking lots 
+Now is [Est<14><09-1,09-2*>: this Est<14><09-1,09-2*>] any [Est<14><09-1,09-2*>: different Est<14><09-1,09-2*>] from [Est<14><09-1,09-2*>: the rest Est<14><09-1,09-2*>] [Est<14><09-1,09-2*>: the rest Est<14><09-1,09-2*>] [Est<14><09-1,09-2*>: the days Est<14><09-1,09-2*>] on [Est<14><09-1,09-2*>: average? Est<14><09-1,09-2*>]
+Can we normalize the data?
+Now for the for the crimes in parking lots can I also see the major restaurants around them?
+yeah this can not tell much from this at all just because it is just different scale overall it is four years 
+That is fine Friday.
+Yeah very difficult to extract anything from [Gesture<15><09-2>: this Gesture<15><09-2>] ok.
+Which areas have the highest number of deceptive practices when it to retail stores?
+Ok that is fine thank you.
+Can I see [Est<16><10-1,10-2,10-3>: robberies Est<16><10-1,10-2,10-3>] [Est<16><10-1,10-2,10-3>: batteries Est<16><10-1,10-2,10-3>] and [Est<16><10-1,10-2,10-3>: thefts Est<16><10-1,10-2,10-3>] in in [Est<16><10-1,10-2,10-3>: the UIC area Est<16><10-1,10-2,10-3>] for [Est<16><10-1,10-2,10-3>: the last year Est<16><10-1,10-2,10-3>] separately please?
+There and what is [Est<17><11>: the sum number Est<17><11>] of [Est<17><11>: robberies Est<17><11>] in [Est<17><11>: the UIC area? Est<17><11>]
+Wow Roosevelt and Canal?
+Really want to avoid that part.
+Madison and Western interesting I would not expect that.
+Yeah Roosevelt street notorious. Jackson boulevard for batteries.
+batteries are pretty general 
+more thefts than robberies 
+wow [Gesture<18><11>: this Gesture<18><11>] is just for 2014? Damn criminal damage wow.
+Now how many of [Est<19><12>: these thefts Est<19><12>] were on [Est<19><12>: a sidewalk Est<19><12>] as opposed to an alleyway?
+A lot of battery cases criminal damage deceptive practice.
+Alright so most of them are just plain old street grocery food store.
+Now is this inside a grocery food store or outside?
+Ok wow interesting parking lots.
+Where did [Est<21><13>: these parking lot offenses Est<21><13>] occur?
+CTA Train CTA Bus yikes.
+theft that is quite a huge number for cta thefts in the uic area 
+Parking lot and grounds.
+The one on Roosevelt and what is this Canal is the one to avoid.
+Could you move [Gesture<22><13>: this Gesture<22><13>] a little up please?
+And around Greek Town eureka.
+Greek Town is can we also so it is about eleven crimes.
+I see few far out.
+For [Est<23><14-1*,14-2>: the CTA bus Est<23><14-1*,14-2>] and [Est<23><14-1*,14-2>: CTA train offenses Est<23><14-1*,14-2>] can [Est<23><14-1*,14-2>: we Est<23><14-1*,14-2>] get [Est<23><14-1*,14-2>: a breakdown Est<23><14-1*,14-2>] according to [Est<23><14-1*,14-2>: the time of day? Est<23><14-1*,14-2>]
+Data type oops sorry.
+Wow this is kind of insane.
+Are you ready for the next one?
+[Text<24><14-2>: this Text<24><14-2>] is all CTA train instances in 2014.
+alright so the highest number seems to be 23 24 ok so this is hour of day 9 am wow that is am correct 
+so 9 am 10 am wow you should really avoid cta platforms around 10 am i would expect it to be a lot later in night but 
+Number of crimes wow.
+So can we also get [Est<25><15,16*>: a breakdown Est<25><15,16*>] of [Est<25><15,16*>: the type of crimes Est<25><15,16*>] for [Est<25><15,16*>: 10 AM? Est<25><15,16*>] Yes.
+So [Text<26*><14-1*>: this Text<26*><14-1*>] is hours of the day all crimes interesting.
+yeah i like the little break down cta station 7 am to 
+most of it seems skewed to the left i would not expect that 
+8 am is the highest for buses 
+yeah buses seem two of the most dangerous ones on an average 
+and cta trains well so if you are actually riding it it is worse then just standing around and waiting 
+i would expect the otherwise 
+number of crimes deceptive practice 
+now what does that mean deceptive practice 
+what does that mean 
+deceptive practice what does that mean 
+and you can not get more information on what kind of deceptive practice 
+ok ok that is fine 
+just more can we remove all the deceptive practices from this graph the number of crimes are in a day 
+everything besides deceptive practice 
+it seems to be padding the results too much not as important as the others 
+but we see more of a shift to the right now and that is later at night 
+Yeah so the can we also get the so 19 23 so yeah [Text<27*><16*>: this Text<27*><16*>] is the pushing up the results just because of deceptive practices around that time interesting.
+Can we get data labels on each of the breakdowns?
+That is all and [Text<28*><17-1*>: this Text<28*><17-1*>] is all but deceptive.
+Pink CTA platform that means ok so this is probably people up to you and saying that I need some money for the bus.
+that will help to get some place 
+that is usually happening in the day interesting 
+i wonder where the excuse is 4 5 
+so now we see the data more on later in the day which makes more right away 
+where are lets see 
+Public indecency what is that?
+Is that would it also mean being drunk in public public indecency?
+Can we see just the public I am sorry yeah the public indecencies?
+Ok that is interesting.
+while drunk yeah yeah makes sense 
+i would expect to see people drunk on cta acting all weird you would think people report them 
+I this makes more sense though besides the deceptive practices. What else is there deceptive practice.
+So past 12 [Est<29><18>: noon Est<29><18>] can we map [Est<29><18>: the rest Est<29><18>] of [Est<29><18>: the data Est<29><18>] somehow?
+Can I see the absolutely.
+i have to try to stay in this area right 
+1-16. Past 12 noon ok.
+Can we get [Est<30><19>: them Est<30><19>] past [Est<30><19>: 6 PM? Est<30><19>]
+By Roosevelt and no what is Ashland.
+I am sorry yeah is not that the worst?
+Yeah that does not seem to be a good intersection overall either.
+Let me see Harrison.
+Greektown area is yeah Roosevelt and Canal Greektown damn.
+Yeah Greektown is not safe not one spot.
+a lot of it is around Roosevelt is not it.
+ok yeah so most of it is still in roosevelt and canal 
+lincoln park specifically does yeah so most ok 
+just seems and thats what sum of crime is alright and they seem fairly similar 
+theres a lot of points in the middle so it is roosevelt is just unsafe 
+a little bit of lincoln park greektown and what is that harrison and western of course that is still up 
+and this is just cta interesting 
+Can we because that is just CTA locations.
+Can we see [Est<32><20>: all the the crimes Est<32><20>] for [Est<32><20>: [Text<31><19>: the same Text<31><19>] Est<32><20>] past [Est<32><20>: 6 PM? Est<32><20>]
+ok can we take out [Est<34><21>: deceptive practices Est<34><21>] from [Est<34><21>: [Text<33><20>: this? Text<33><20>] Est<34><21>]
+i do not know for some reason i think i do not care much for deceptive practices 
+it is one of those it a whiny claim right 
+it is mostly one of it is people just up to you my dad died or you know my dad is dying give me 30 dollars for the pharmacy 
+Yeah that happens all the time around the area so I know.
+It is Roosevelt right it is always Roosevelt and Canal all of them.
+But then again this is ok.
+Can we see [Est<36><22>: just homicides Est<36><22>] for [Est<36><22>: [Gesture<35><21>: this one? Gesture<35><21>] Est<36><22>]
+I would like to see that.
+I think that is a proper that is that is a brutal end.
+It is pretty awesome though it really is.
+Well that is not bad at all just two in 2014.
+but they are the same west end of course closer to roosevelt yeah seeing that this block running between jackson and roosevelt western to halsted is the worst and it is funny because that is uic 
+can you also set parameters like where what if i am recalling data for just uic is 
+ok i see a yes 
+because a lot of data you never know if the parameter has been reached you know you think you see something but then there 
+you know the southwest side still seems to be the worst but it is though yeah that and greektown i did not expect greektown to be that bad i do not care much for it 
+thank you yeah i walked through there at 3 am in the morning thinking that nothing is going to happen 
+any final questions i think i am good thank you very much absolutely great signing off 

@@ -1,0 +1,265 @@
+subject16
+
+So do I like ask for a map or how does this work?
+well I guess can we see the can we see [Est<1><01-1,01-2*>: the map? Est<1><01-1,01-2*>]
+Actually as soon as you get the map up when everything is all up and loaded can can you load all of the data?
+Just so we have like a big aggregate to see kind of what we are working with?
+And then let us see I do not know what [Est<2><02-1,02-2*>: the the specs Est<2><02-1,02-2*>] are but once we have the this is mostly me thinking out loud but maybe if we can see kind of [Est<2><02-1,02-2*>: a temporal Est<2><02-1,02-2*>] [Est<2><02-1,02-2*>: either a bar chart Est<2><02-1,02-2*>] or something?
+there we go not a bar chart like a line graph just to get kind of a sense of what is happening.
+wow that is a lot of crimes.
+take your time you are fine 
+sum of number of crimes 
+do not go much further beyond here 
+so then i can walk in front of these i do not want to be in the way 
+and then crime types wow.
+can let us can we just look at what is it River North and area atleast?
+Just to narrow that down it seems like the most high density crimes.
+awesome you are awesome 
+ok so we have a map of just all the crimes that are little red dots in varying intensity like a gradient from like pink to like dark red with dark red being the most crimes and then we have got another map like a dot plot a map of all the areas in or so we got near west side we have got river north in green and uic in red and the loop in blue 
+there is a blue dot in river north 
+that is cool and then we have got number of crimes like a time line graph just a line graph from 2010 to 2015 showing the number of crimes per month 
+and then number of crimes over the years 
+interesting well that is good there is a downward trend that is always happy 
+it is cyclical is not it 
+that is kind of weird 
+[Est<3><03-1*,03-2>: Data Analysis expert Est<3><03-1*,03-2>] is there anyway to get [Est<3><03-1*,03-2>: an idea Est<3><03-1*,03-2>] of where [Est<3><03-1*,03-2>: these peaks Est<3><03-1*,03-2>] and [Est<3><03-1*,03-2>: this number Est<3><03-1*,03-2>] of [Est<3><03-1*,03-2>: crimes Est<3><03-1*,03-2>] per [Est<3><03-1*,03-2>: month Est<3><03-1*,03-2>] were like what month they are falling on? If there is [Est<3><03-1*,03-2>: any kind Est<3><03-1*,03-2>] of [Est<3><03-1*,03-2>: trend Est<3><03-1*,03-2>] in that?
+It is like periodic that is weird.
+So that is the 290 right? I think.
+One more request for you when you get the chance.
+Actually could you bring [Gesture<4*><03-1*>: the one Gesture<4*><03-1*>] you just moved?
+Yeah right there is perfect.
+Why is it summer time that there is always like lots of violence?
+I do not get it.
+You would think everybody is like really hot they would not want to move around and kill each other but go figure.
+so can we filter [Est<5><04>: the map Est<5><04>] just on [Est<5><04>: the months Est<5><04>] of like I do not know [Est<5><04>: June Est<5><04>] [Est<5><04>: July Est<5><04>] and [Est<5><04>: August? Est<5><04>]
+Or not the maps but filter the data.
+So just describe [Gesture<6><03-2>: this chart Gesture<6><03-2>] so we got a bar chart with the number of crimes aggregated by months.
+just showing the total number if crimes over each month over the last 4 years 
+and we got another chart that is the same as this line graph over here but it is got the date at each point over the 4 years which is really really useful and it is pretty clear that summer time is summer time fun time 
+yeah july and august 
+at least we know nobody is killing each other as much in february 
+It is the love month right?
+what is [Gesture<7><04>: this map Gesture<7><04>] for?
+Or what is the difference between [Gesture<8><04>: 4 Gesture<8><04>] and [Gesture<9><03-2>: 3-2.PNG? Gesture<9><03-2>]
+Right on thank you.
+I do not know what I was expecting I thought it would be different.
+Ok can we start with do we have can we look at like [Est<10><05-1,05-2*>: time of day Est<10><05-1,05-2*>] for for [Est<10><05-1,05-2*>: this time period Est<10><05-1,05-2*>] for [Est<10><05-1,05-2*>: June Est<10><05-1,05-2*>] [Est<10><05-1,05-2*>: July Est<10><05-1,05-2*>] and [Est<10><05-1,05-2*>: August?. Est<10><05-1,05-2*>]
+That is kind of a general request
+So Ok so [Text<11><04>: here Text<11><04>] is just a map.
+[Gesture<12><04>: It Gesture<12><04>] is just showing the overall crimes for just the months of June July and August [Gesture<13><04>: it Gesture<13><04>] is looks almost identical to [Gesture<14><03-2>: the total aggregate data Gesture<14><03-2>] which is kind of telling.
+it had me confused at first 
+[Gesture<12><04>: It Gesture<12><04>] is just showing the overall crimes for just the months of June July and August [Gesture<13><04>: it Gesture<13><04>] is looks almost identical to [Gesture<14><03-2>: the total aggregate data Gesture<14><03-2>] which is kind of telling.
+great so we have we have got a bar chart showing all 24 hours in a day and the period the number of crimes per hour 
+So afternoon to 12 midnight is really popular.
+can we see [Est<15><06>: crime Est<15><06>] at [Est<15><06>: hour Est<15><06>] wait [Est<15><06>: 12 noon? Est<15><06>]
+At least to start?
+Yeah can we just look at [Est<16><06>: all the crimes Est<16><06>] that occur at [Est<16><06>: 12 o clock noon? Est<16><06>]
+this is an interesting one too 
+so we have another graph that is showing just the crimes by hour from like 12 midnight to 6 am 6 am to 12 noon 12 noon to 6 pm so like in 2 6 hour chunks 
+I have a request.
+So how about [Est<18><07>: [Gesture<17*><05-2*>: another bar chart Gesture<17*><05-2*>] Est<18><07>] just showing [Est<18><07>: the number Est<18><07>] of [Est<18><07>: crimes Est<18><07>] by [Est<18><07>: crime type Est<18><07>] on [Est<18><07>: the x-axis Est<18><07>] for [Est<18><07>: June Est<18><07>] July August just at 12 [Est<18><07>: noon. Est<18><07>]
+With overwhelmingly so is theft is just the biggest one?
+am i too out of the way 
+is it not working 
+can you hear me 
+cool i will keep it up front just in case 
+sure i mumble i am sorry 
+ok how so let us look at [Est<19><07>: some 12 noon to 6 PM block Est<19><07>] in [Est<19><07>: terms of crime. Est<19><07>]
+Ok well clearly they need to stop people from stealing stuff.
+can we just focus on what is [Est<22><08-1,08-2*>: the Loop Est<22><08-1,08-2*>] and [Est<22><08-1,08-2*>: River North Est<22><08-1,08-2*>] for [Est<22><08-1,08-2*>: [Text<20><07>: [Est<22><08-1,08-2*>: [Text<21><04>: this Text<21><04>] Est<22><08-1,08-2*>] data? Text<20><07>] Est<22><08-1,08-2*>] like [Est<22><08-1,08-2*>: a hot spot map Est<22><08-1,08-2*>] like this but just of [Est<22><08-1,08-2*>: thefts? Est<22><08-1,08-2*>]
+Ok number of crimes Loop and River North.
+you are great thank you 
+so i have got a bar chart which shows number of crimes by crime type from 2010 to 2014 for june july and august from 12 noon to 6 pm in just the loop and river north and then we have another chart that shows number of crimes by crime type for between two thousand 2010 and 2014 for june july and august in just at just 12 noon for loop and river north again they are both bar charts ok 
+so if i had to be an expert i would say that they should focus on theft between the hours of 12 noon and 6 pm since an enormous amount of crimes in that point in time 
+I do not know how officers target theft but make people stop stealing.
+And atleast in those areas.
+Can is there anyway you can filter [Est<24><09-1,09-2*>: hotspots Est<24><09-1,09-2*>] within [Est<24><09-1,09-2*>: [Text<23><04>: the map? Text<23><04>] Est<24><09-1,09-2*>]
+So within River North and and the Loop there is I do not know one two there is like six like really dark red like I am curious what is going on there.
+audio check on the camera which camera 
+just is everything plugged in 
+we are all scientists right 
+technology you need an audio engineer for that 
+i really like that 
+is that svg dots 
+interesting is that like better than like leaflets and d3 
+and then can we get [Est<25><10>: just the the crime types Est<25><10>] for [Est<25><10>: these areas? Est<25><10>]
+So we have got [Gesture<26><09-1>: this map Gesture<26><09-1>] but just filter you are awesome so good at this.
+By crime type from 2010 to 2014 for June July August for 12 noon just hot spots.
+So it is just I do not know saying you are going to sell something when really when really it is something different?
+i see right on ok makes sense 
+I think I already have my answer but just to be thorough can we have [Est<27><10>: the 12 noon Est<27><10>] to [Est<27><10>: 6 PM? Est<27><10>]
+Yeah that is what I figured.
+so [Gesture<28><10>: this Gesture<28><10>] is just another bar chart showing number of crimes by crime type for the month of dates 2010 to 2014 for June July August from 12 noon to 6 PM just to the hot spots that I requested.
+yeah over whelmingly so it is thefts deceptive practice 
+i am not exactly sure how you that but that is a very far second so i would say in my expert opinion that police should deploy in these hot spots between 12 noon to 6 pm or if nothing else atleast at 12 noon to try and theft in that spot particularly in the months of june july and august 
+great we we saved the day 
+time of day day of the week 
+Did I I do not think I asked days of the week did I?
+could we see between 12 noon and 6 PM within [Est<29><11>: this zone Est<29><11>] like [Est<29><11>: days Est<29><11>] of [Est<29><11>: the week? Est<29><11>]
+Maybe try and rephrase that in no you got it.
+That would be kind of a fun visualization to just watch like how like the crimes occur over like the hours of the day or something I do not know.
+ok so we have got a bar chart showing number of crimes crime type the usual just of the days of the week just the hot spots 
+apparently crime does not like to work on sundays as much but is otherwise 24-7 
+that is not true not 24-7 but work 7 days a week 
+Crime does not take a vacation what the hell yeah.
+Ok I have a new request.
+can we look at [Est<31><12>: the whole city map? Est<31><12>] like [Est<31><12>: a hot spot map Est<31><12>] like [Est<31><12>: [Gesture<30><04>: this Gesture<30><04>] Est<31><12>] but just of [Est<31><12>: thefts? Est<31><12>]
+like a hot spot map like this but just of thefts 
+And then when you have [Est<32><13*,13-1-2>: time Est<32><13*,13-1-2>] can we get like a line graph? [Est<32><13*,13-1-2>: A temporal line graph Est<32><13*,13-1-2>] showing [Est<32><13*,13-1-2>: just the rate Est<32><13*,13-1-2>] of [Est<32><13*,13-1-2>: aggregated rate Est<32><13*,13-1-2>] of [Est<32><13*,13-1-2>: thefts Est<32><13*,13-1-2>] you know covers like [Est<32><13*,13-1-2>: the months Est<32><13*,13-1-2>] through [Est<32><13*,13-1-2>: 2010 Est<32><13*,13-1-2>] to [Est<32><13*,13-1-2>: 2014? Est<32><13*,13-1-2>]
+So responsive I love it.
+Got it sure done.
+are you guys using d3 for the charts 
+are you guys using like r or python or something 
+it is all tableau interesting 
+is it just like a gnarly data analysis tool 
+i see well that makes it on the fly i get it 
+ok can i get with the the you are great awesome look at you 
+it is just just want to make sure it is not the issue mine is working sorry 
+can you hear me now 
+ok so we have got [Text<33*><13*,13-1-2>: 2 line charts Text<33*><13*,13-1-2>] [Gesture<34*><13*,13-1-2>: they Gesture<34*><13*,13-1-2>] are both on a like a temporal temporal visualization.
+[Gesture<35*><13*,13-1-2>: Both Gesture<35*><13*,13-1-2>] are showing the number of crimes per month from 2010 to 2014.
+one is labeled the other one is not 
+but that is nice i like it both ways yeah it is more or less saying the same thing that the other line chart says is that crimes are really big in the summer time that makes sense cause there is lots of people that show up in the summer time 
+yeah there is like a big jump 
+that is kind of cool 
+That is so good though like crime has like totally dropped off.
+Could we could we see like weather patterns?
+Like what the temperature over the last like 10 years is?
+i did cause it almost looks do you see like this trend based on the last couple years with the really cold weather is like just dropping steadily i do not know 
+yeah maybe people are just tired of that i do not know 
+so we have narrowed down thefts right 
+pretty much just this area 
+there is there is only 400 
+June July August right right ok.
+let us can we go back to that map that just shows like all the crimes for the whole time period 
+I think it is like [Gesture<37><01-1>: that one Gesture<37><01-1>] right there or maybe it is [Gesture<38><04>: that one Gesture<38><04>] I do not remember yeah that one perfect.
+Did you show me the number of crimes like just aggregate number of crime like one of [Text<39><06,07,08-1*,08-2,09-2*,10,11>: these bar charts? Text<39><06,07,08-1*,08-2,09-2*,10,11>]
+To be honest I was a little disappointed by the types of crimes I was really hoping there would be like lots of murder and drugs and stuff but that is just good.
+theft we can deal with that 
+chicago is a nice place to be 
+battery assault and battery ok 
+let us look at battery 
+wow can we do a temporal scale just like we did with the crimes 
+so 03-1 of of just battery 
+So the number of crimes per month from 2010 to 2014?
+Can I manipulate can I touch the wall?
+it is turned off 
+ok that is fine 
+I feel like I am in a center now you know like Minority Report?
+And then while you you are generating [Text<40><14>: that graph Text<40><14>] can we get a map of just the battery?
+the aggregated total batteries?
+what is the deal 
+awesome do your thing 
+So that is theft crime battery.
+And and when you get [Est<41><15>: a chance Est<41><15>] I realize you are working can you get can I get [Est<41><15>: a labeled map Est<41><15>] of [Est<41><15>: the battery? Est<41><15>]
+Deceptive practice that is funny.
+battery this is so sad 
+it is all over the place 
+this one is going to be harder 
+ok just to describe the maps we have a a corrected theft temporal scale map showing the number of crimes per month from 2000 to 2014 just of theft 
+it more or less looks the same it is still got the cyclical patterns falling within the summer months 
+i think that is so interesting that you get this trend that is like looks it is on a downward trend 
+the battery graph it is got kind of the periodic look to it 
+it is also just a line temporal line chart showing number of crimes per month 2010 to 2014 just of battery 
+Not nearly as many crimes as thefts but we can be happy for that I think.
+you you actually you can close out all of [Gesture<42><11>: the theft charts Gesture<42><11>] if you want just save space or what not.
+I do not care about theft anymore.
+Can we look at [Est<43><18-1>: the the days Est<43><18-1>] of the just like [Est<43><18-1>: an aggregated days of the week Est<43><18-1>] [Est<43><18-1>: bar chart. Est<43><18-1>]
+and another bar chart of like hours of the day?
+And one of [Est<44><18-2>: the like top months? Est<44><18-2>]
+If that makes sense?
+It is a lot of requests I realize.
+yeah when you are done moving stuff around can you bring back the battery chart or battery map?
+Is [Gesture<45><18-1>: this Gesture<45><18-1>] is number of crimes for days of the week for battery only? Or is [Gesture<46><18-1>: it Gesture<46><18-1>] for all crimes?
+Oh oh good to know.
+could I get [Est<48><19-1,19-2>: [Gesture<47><18-1,18-2>: these same charts Gesture<47><18-1,18-2>] Est<48><19-1,19-2>] but just for [Est<48><19-1,19-2>: battery? Est<48><19-1,19-2>]
+june july and august 
+october what is with october 
+that is so funny that february is like the lightest month 
+battery on the weekends i guess 
+You do not have any information about like alcohol use do you?
+Ok how about [Est<49><20-1>: alcohol use Est<49><20-1>] and [Est<49><20-1>: narcotics Est<49><20-1>] can I get yeah so can I get [Est<49><20-1>: a map Est<49><20-1>] of [Est<49><20-1>: just the drug use? Est<49><20-1>] So aggregated [Est<49><20-1>: drug use Est<49><20-1>] for [Est<49><20-1>: all the months? Est<49><20-1>]
+Ok how about [Est<49><20-1>: alcohol use Est<49><20-1>] and [Est<49><20-1>: narcotics Est<49><20-1>] can I get yeah so can I get [Est<49><20-1>: a map Est<49><20-1>] of [Est<49><20-1>: just the drug use? Est<49><20-1>] So aggregated [Est<49><20-1>: drug use Est<49><20-1>] for [Est<49><20-1>: all the months? Est<49><20-1>]
+[Est<50><20-2>: And aggregated drug use Est<50><20-2>] for [Est<50><20-2>: all the days? Est<50><20-2>]
+and while you are doing that let me describe the map 
+so i have got a bar chart for the number of crimes for days of the week from 2010 to 2014 it is just all the crimes kind of as as we have the trend we have been noticing june july august seem to be like a peak in august and july right around the summer months 
+there is a little bit of a spike in october 
+february just not as much 
+and then another chart showing the number of crimes by days of the week for all four years 
+friday is the most popular day saturday is pretty cool too i guess 
+and then we have got another bar chart showing number of crimes per days of the where would you go 
+for 2010 to 2014 just of battery 
+awesome the narcotics chart just came up 
+july is the most popular whoa 
+same thing we have another bar chart just showing the narcotics for the days of the week aggregated for days of the week for all the years 
+Sunday and Saturday are not what I thought they would be.
+Do we know what types of drugs? Do we have information on like the specific type of narcotic?
+Cause there is like you know like ecstasy for instance the they call it the suicide drug cause you take it on like Friday and you suicide on Tuesday because you like all the chemical freak outs that go through your body was wondering you see could see something like you do lots of alcohol on Friday they start beating beating people a lot on Saturday and Sunday because of the ha
+Battery per the months Days of the week.
+For going back to [Est<52><21>: the battery Est<52><21>] can we just look at can we look at like [Est<52><21>: [Gesture<51><20-1>: a temporal scale Gesture<51><20-1>] Est<52><21>] of [Est<52><21>: Sunday Est<52><21>] and [Est<52><21>: Saturday Est<52><21>] across [Est<52><21>: all the years Est<52><21>] for each of [Est<52><21>: the months? Est<52><21>]
+Can I get this [Est<55><22>: [Gesture<53><21>: this temporal graph Gesture<53><21>] Est<55><22>] can I get [Est<55><22>: [Gesture<54><21>: it Gesture<54><21>] Est<55><22>] labeled for [Est<55><22>: the months Est<55><22>] please?
+And then just describe [Gesture<56><21>: it Gesture<56><21>] it is just a line chart from 2010 to 2015 for the number of crimes per month just the battery on Saturday and Sunday only.
+weird what was going on in 2010 and 11 
+that was out of control 
+june june june august july august october 
+july and october those are really popular apparently 
+can you split [Est<58><23>: [Gesture<57><22>: this Saturday and Sunday chart Gesture<57><22>] Est<58><23>] so just have like have two like [Est<58><23>: a dual line line graph line chart Est<58><23>] one showing [Est<58><23>: just Saturdays Est<58><23>] only and the other one showing [Est<58><23>: Sundays Est<58><23>] only?
+can we just look at [Est<59><24-2>: this period Est<59><24-2>] of [Est<59><24-2>: June Est<59><24-2>] [Est<59><24-2>: July Est<59><24-2>] and [Est<59><24-2>: August Est<59><24-2>] in [Est<59><24-2>: 2014 Est<59><24-2>] of [Est<59><24-2>: batteries Est<59><24-2>] on [Est<59><24-2>: Sundays? Est<59><24-2>]
+You can make a separate chart with Saturdays as well
+We have no information about like socioeconomic status do we?
+How about race information?
+so [Text<61><23>: this Text<61><23>] is a beautiful chart showing two lines one for Sunday one for Saturday showing the number of crimes per month from 2010 to 2014 just of battery. [Text<62><23>: It Text<62><23>] is a labeled chart very nice.
+Sunday seems to be the most popular day to beat people up with Saturday sprinkled in there.
+It just gets worse.
+finally can we do a like a just showing [Est<63><25>: an area map Est<63><25>] of like [Est<63><25>: Saturday Est<63><25>] and [Est<63><25>: Sundays Est<63><25>] for [Est<63><25>: batteries? Est<63><25>]
+and then [Gesture<64><24-1>: this Gesture<64><24-1>] is just a graph of well [Text<65><24-1>: it Text<65><24-1>] is a line graph for the months of June July and August showing from 2010 to 2014. No no no just of 2014 for Saturdays and Sundays only in this case it is just for Sunday and there is [Gesture<66><24-2>: another chart Gesture<66><24-2>] for just Saturday.
+and it is just showing the number of crimes per for that month for that day 
+sundays there is like a trend it is just june july and august just starts at around 75 for june then it jumps to like 82 for july and then it is like i think breaks 100 in august 
+ok and [Gesture<67><25>: this Gesture<67><25>] is just I guess a heat map of sorts for just showing of of just the neighborhoods for battery only on Saturday and Sundays [Gesture<68><25>: it Gesture<68><25>] looks a lot like [Text<69><16>: the aggregate map Text<69><16>] for battery.
+So can we focus on [Est<70><26>: just the hot spots Est<70><26>] for each of [Est<70><26>: the neighborhoods? Est<70><26>]
+So kind of what you did before you got kind of like a cluster of them.
+so for I guess what is it River North The Loop just all the neighborhoods we are analyzing is that specific enough?
+check what time it is 
+this is good can we actually add a couple more points 
+i do not know if you can see where i am pointing at on the the map 
+it is like there is there is a hot spot so you got one north of division 
+there is one east of division 
+There is two points that would be interesting to see and then there is one trying to think what I think it is just off of Lake Street?
+There is a big hot spot and actually and there is one I think it is Division and Sedgewick?
+I should ask is are [Text<71><25,26>: these maps Text<71><25,26>] is [Gesture<72><26>: this Gesture<72><26>] like for all 4 years?
+Awesome that [Text<73><26>: this Text<73><26>] is perfect.
+Ok so [Gesture<74><26>: this Gesture<74><26>] again like a heat map showing the hot spots for all four years for Saturday and Sunday only of just batteries.
+from [Est<76><28>: [Text<75><26>: this data Text<75><26>] Est<76><28>] can we do like [Est<76><28>: a temporal chart? Est<76><28>]
+But I guess to get to the point is I would target these areas particularly on Saturdays and Sundays.
+you know what I what I want is [Est<77><29>: hours of the day? Est<77><29>] Like what what [Est<77><29>: time of day Est<77><29>] particularly on [Est<77><29>: Saturdays Est<77><29>] and [Est<77><29>: Sunday Est<77><29>] are these going down.
+you know what I what I want is [Est<77><29>: hours of the day? Est<77><29>] Like what what [Est<77><29>: time of day Est<77><29>] particularly on [Est<77><29>: Saturdays Est<77><29>] and [Est<77><29>: Sunday Est<77><29>] are these going down.
+Is not that in like Lincoln Park area?
+Ok so we got [Gesture<78><28>: a line chart [Text<79><28>: temporal line chart Text<79><28>] thing Gesture<78><28>] for Saturdays and Sundays of battery across the months just in those hot spots.
+i mean like crime is going down everywhere that is cool i like that 
+august is a popular month to beat people up 
+December was kind of popular on Sundays.
+yeah can I see just like [Est<80><29>: the hours of the day? Est<80><29>] For those [Est<80><29>: Sunday Est<80><29>] you know [Est<80><29>: Saturday Est<80><29>] and [Est<80><29>: Sunday? Est<80><29>]
+What are people doing at 2 in the morning?
+I do not get it.
+Ok so there is [Text<81><29>: a bar chart Text<81><29>] showing hours of the day from 12 midnight to 12 midnight for all four years on just showing batteries on Saturdays and Sundays 2 AM 2 to 3 AM is really popular for battery.
+1 am starts like you see just like a clear rise and then it just mellows out for most of the rest of the day 
+yeah I guess I would deploy police in those hot spots that we identified particularly on the weekends right around 12 midnight till about 6 AM till about 5 AM actually.
+let us see I know we had [Text<82><08-2>: a chart of all the crimes Text<82><08-2>] across all 4 years?
+I know it is in here somewhere I think maybe [Gesture<83*><08-2*>: this Gesture<83*><08-2*>] is it?
+Yeah there [Text<84*><08-2*>: it Text<84*><08-2*>] is Deceptive practice.
+maybe just bring [Gesture<85*><08-2*>: it Gesture<85*><08-2*>] up a little bit higher.
+can we look at [Est<86><30>: just deceptive practice Est<86><30>] and [Est<86><30>: criminal damage? Est<86><30>]
+Now it would be like a heat map like we did before?
+Yeah how long do you want me do you want me to solve all the crimes?
+ok i have class at one that would be the only thing 
+Yeah and then as soon as we have that map let us do the same kind of thing just for those two types of crimes.
+let us just focus it ignore my last query just focus in on on this one hot spot here and this hot spot right off just right on randolph for like that kind of range of hot spots 
+[Est<89><32>: [Text<88><31>: This Text<88><31>] Est<89><32>] is just [Est<89><32>: a heat map of the neighborhoods Est<89><32>] in [Est<89><32>: question Est<89><32>] focusing on [Est<89><32>: the sum number Est<89><32>] of [Est<89><32>: deceptive practice Est<89><32>] and criminal damage just in [Est<89><32>: the hot spots. Est<89><32>] Can we do [Est<89><32>: a temporal graph Est<89><32>] for [Est<89><32>: these two hot spots? Est<89><32>]
+[Est<89><32>: [Text<88><31>: This Text<88><31>] Est<89><32>] is just [Est<89><32>: a heat map of the neighborhoods Est<89><32>] in [Est<89><32>: question Est<89><32>] focusing on [Est<89><32>: the sum number Est<89><32>] of [Est<89><32>: deceptive practice Est<89><32>] and criminal damage just in [Est<89><32>: the hot spots. Est<89><32>] Can we do [Est<89><32>: a temporal graph Est<89><32>] for [Est<89><32>: these two hot spots? Est<89><32>]
+and can you split [Est<91><32>: [Text<90><31>: the graph Text<90><31>] Est<91><32>] based on [Est<91><32>: criminal damage Est<91><32>] and [Est<91><32>: then deceptive practice? Est<91><32>]
+what is the deal in march 
+ok so this is a line chart temporal line chart showing number of crimes per month from 2010 to 2014 of criminal damage and deceptive practice just in the hot spots that i requested 
+it is showing two lines one for criminal damage and the other one for deceptive practice 
+march 2014 was a big month for deceptive practices 
+i guess i would just say focus on that those two hot spots and yeah that is it 
+yeah ok thank you 

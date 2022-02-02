@@ -1,0 +1,172 @@
+subject6
+
+So can I see [Est<1><01>: the visualization Est<1><01>] for [Est<1><01>: crime Est<1><01>] in [Est<1><01>: the Chicago neighborhoods Est<1><01>] like [Est<1><01>: the overall crime? Est<1><01>]
+yes so can you show me [Text<2><01>: any graph or visualization? Text<2><01>]
+ok can you show me burglary I mean ok.
+Can you widen [Gesture<3><01>: it? Gesture<3><01>] I mean. horizontally I mean the x-axis?
+So [Text<4><01>: this Text<4><01>] is specifically for four neighborhoods and crime is from 2010 till 14.
+And can you show me [Est<5><02>: the distribution of crimes Est<5><02>] with [Est<5><02>: respect Est<5><02>] to [Est<5><02>: the crime types? Est<5><02>]
+So in [Text<6><01>: this case Text<6><01>] River North has the maximum crime reported.
+After that it is Near West and UIC and Loop seems to be the safest out of these four.
+So can you show me [Est<7><03>: the crime distribution Est<7><03>] in [Est<7><03>: River North? Est<7><03>]
+it seems that [Est<8><03>: the crime distribution Est<8><03>] is for [Est<8><03>: all the neighborhoods Est<8><03>] but I would like to see [Est<8><03>: the crime distribution Est<8><03>] specifically for [Est<8><03>: River North. Est<8><03>]
+ok now working on river north 
+so in the second graph meanwhile the third graph its theft seems to be the most crime followed by battery but there is a huge difference in the numbers 
+between theft and then battery and then on 
+so this is specifically for river north 
+it seems to follow the same pattern like reported i mean 
+the crime pattern reported for all the neighborhoods 
+The same pattern we can see in River North but.
+can you show [Est<11><04*,04-1>: [Text<9><02>: only the bar graph Text<9><02>] Est<11><04*,04-1>] or do you have [Est<11><04*,04-1>: some any other way Est<11><04*,04-1>] of visualizing [Est<11><04*,04-1>: [Text<10><04*,04-1>: the same? Text<10><04*,04-1>] Est<11><04*,04-1>]
+So here in [Text<12*><04*>: this graph Text<12*><04*>] I mean sorry station in River North theft seems to cover the larger area so it corresponds to the same thing so.
+Ok in UIC its also theft in Loop ok.
+And the next ok.
+what what is this other graph for 
+its the same different graph for the ok another thank you 
+And if we see [Text<13><04-1>: here Text<13><04-1>] the ok.
+So can we remove [Gesture<14*><04*>: this graph Gesture<14*><04*>] and just can you refocus on [Gesture<15><04-1>: the other one Gesture<15><04-1>] yes?
+[Text<16><04-1>: This Text<16><04-1>] seems to be a better one and here.
+If we see in Loop we have theft and then the second highest is deceptive practice.
+whereas here it is theft 
+in near west its theft and battery 
+in river north it is theft and battery and then deceptive practice 
+and if we see in near west deceptive practice is not being reported that much 
+but in uic it is again theft and battery and then criminal damage 
+So if we need to focus like which crime types to target then in general it seems theft and battery. These two should be considered the priority.
+And what do you think?
+Ok can you show me now for [Est<17><05-1*,05-2>: each year Est<17><05-1*,05-2>] [Est<17><05-1*,05-2>: the crime distribution Est<17><05-1*,05-2>] in [Est<17><05-1*,05-2>: the four neighborhoods? Est<17><05-1*,05-2>]
+Meanwhile one more question like which crime types to target are we looking neighborhood wise on in general?
+Ok so [Gesture<18><05-2>: in 05-2 Gesture<18><05-2>] image we can see that we see that the crime rate with respect to each progressing here.
+and in that we see that in a good way from 2010 till 2014 you see there is in the crime rate 
+in all the four neighborhoods in 2014 and 
+Ok and what exactly is [Text<19><05-1>: 05-1 graph Text<19><05-1>] about?
+Is another view is.
+I think [Gesture<20><05-2>: the first Gesture<20><05-2>] I mean [Gesture<21><05-2>: 05-2 Gesture<21><05-2>] is a better it [Text<22><05-2>: it Text<22><05-2>] is a better way to I mean visualize rather than [Text<23*><05-1*>: these four Text<23*><05-1*>] separately.
+Ok and we can also make out from [Gesture<24><05-2>: this graph Gesture<24><05-2>] that the highest crime as we saw in [Gesture<25><01>: the first graph Gesture<25><01>] ok.
+Now can we is it [Gesture<26><01>: the 01 Gesture<26><01>] the yes?
+So [Text<27><01>: here Text<27><01>] we see that over the entire time frame it is [Gesture<28><01,05-2>: the same here Gesture<28><01,05-2>] River North both have.
+so which area to deploy the officers 
+so here we have river north 
+and then near west which according to this graph in the yearly if we see year wise there is a lot there is decrease in the crime rate even though the total number of crimes second highest 
+but if we see uic which is ok uic and then the loop 
+so if we want to deploy more officers the area of neighborhood of concern would be first one is river north and then second one is uic 
+Can you show the I mean for [Est<29><06-1*,06-2>: 2014 month wise crime Est<29><06-1*,06-2>] reported in [Est<29><06-1*,06-2>: each neighborhood? Est<29><06-1*,06-2>]
+So in if we see what [Gesture<30><06-2>: 06-2.PNG Gesture<30><06-2>] so in Loop the highest crime is reported in August?
+yes august in near west its reported in june and july yeah but august ok 
+and what about here in june and july yes so and here june july august again it there is a peak we can observe in river north and in uic 
+it is highest in october but also pretty high the crime rate is high in july and august 
+the crime reported in in winter in january february march i mean in december 
+so i think in winter in loop the crime reported ok 
+so the crime is reported more during the summer time summer and fall so almost like june july august 
+the same is applicable in near west we see a peak during the summertime and its the crime is less during the wintertime that is basically december january february 
+but the crime reported in river north it it is high the entire year and in uic again its less during the wintertime so like november december january february but its high during the main that is summer and fall time 
+and in this 06-1 what exactly is this it is january 
+ok so this is ok 
+and we can see from all these graphs that river north it the crime rate is high in all the months and ok so here in january and february march 
+ok which one is ok 
+so it is less it is high one two three four 
+this two months sorry 
+these two months is july and august and here it is not ok 
+So the pattern we can make out from [Text<31><06-1*,06-2>: these two graphs Text<31><06-1*,06-2>] is basically that what I said earlier is the crime reported during summer and fall time it is higher to the winter time.
+Ok and so that is according to [Est<32><07-1*,07-2>: the month Est<32><07-1*,07-2>] and what about [Est<32><07-1*,07-2>: the crime rate Est<32><07-1*,07-2>] reported according to [Est<32><07-1*,07-2>: day Est<32><07-1*,07-2>] of [Est<32><07-1*,07-2>: the week? Est<32><07-1*,07-2>] Can you show me [Est<32><07-1*,07-2>: visualization Est<32><07-1*,07-2>] for that?
+Ok that is by days of week.
+so in 07-2 we see that ok in in river north again saturday and sunday so weekends are i mean crime reported in weekends 
+is almost like friday saturday sunday is higher than than the normal weekdays working days 
+whereas i mean we can see a i mean clear i mean crime pattern in river north specifically river north neighborhood there is not distinct 
+there is no such distinctive pattern in uic it is that the crime reported is uniform in all seven days of the week except friday 
+and in near west it is again crime reported if we see its more from friday saturday sunday that is more like during the weekend time than the weekdays 
+ok and in loop its pretty much it is totally different because in loop as people work and there will be more people present during the weekdays rather than the weekend 
+so the crime reported it seems it has it seems to have a different kind of pattern than the rest of the neighborhoods where it says we can see that the crime reported is more is higher during the weekday to the weekends 
+weekends which include like saturday and sunday 
+ok i somehow feel the 06-2 and 07-2 they they are much clearer to visualize and understand rather than 06-1 and 07-1 
+we can shift it 
+so what we can make out from the previous infer is the months in the summer and fall months i mean summer and fall season and then particularly with respect to days 
+in near west river north and uic it is the crime is more reported during the weekends rather than the weekdays but in loop its the other way around 
+It is during the crime reported is more during the weekdays rather than the weekends.
+So and what about [Est<33><08>: the time of the day Est<33><08>] like [Est<33><08>: crime Est<33><08>] reported with [Est<33><08>: respect Est<33><08>] to [Est<33><08>: the time of the day? Est<33><08>]
+Ok so [Text<34><08>: here Text<34><08>] it is.
+Ok so first we will focus on River North.
+so the crime reported is more is the highest in the afternoon time from 12 noon to 6 pm 
+and then the second one is 6 pm to 12 midnight 
+and what about uic 
+it also has a similar pattern with respect to 12 noon to 12 midnight 
+ok and we see a similar pattern in near west that the crime report is higher from 12 noon till 12 midnight 
+and in loop it is again 12 noon it is also having same pattern from 12 noon to 12 midnight 
+the only difference in the pattern we can see ok it this is higher this is lower this is higher this is lower this is higher this is lower it is only in river north 12 midnight ok 
+six so here the lowest crime occurs in uic from 12 midnight to six am 
+in near west its 12 midnight to six am 
+in loop its 12 midnight to six am but in river north the crime rate is lowest from six am to 12 noon 
+ok so here we have month day and time so now if we look for river north ok 
+So ok so [Gesture<35><08>: this Gesture<35><08>] is for year I mean days of the week and time.
+So for specifically [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: [Text<36><08>: this Text<36><08>] Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] is for [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: 2014 Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] can you show me [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: [Gesture<37><06-2,07-2,08>: these three corresponding graphs Gesture<37><06-2,07-2,08>] Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] that is with [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: respect Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] to [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: month Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: days of the week Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] and [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: year Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] for [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: years Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: 2010 Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: 11 Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: 12 Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: 13 Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>] and [Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>: 14? Est<38><09-4,09-3,09-2,09-1,09-8,09-7,09-6,09-5,09-12,09-11,09-10,09-9>]
+let us start the time of the day and day of the week ok 
+ok meanwhile i will just analyze these ones 
+so in 2010 river north we can see again crime reported is higher during the weekends i mean friday saturday and sunday 
+in 2011 the same pattern was there i mean right now i am talking about river north 
+in 2012 its again friday saturday and sunday 
+in 2013 its friday saturday and sunday and 2014 its again friday saturday and sunday 
+but in all these years the crime reported in river north in sunday it is the maximum whereas saturday its with respect to friday and sorry 
+while crime reported in saturday on saturday it is maximum but the crime reported on friday and sunday is waving over the years ok 
+and that is for 2014 ok 
+and the next one is river north and if we consider uic 
+it is maximum in friday i mean ok 
+and here friday in 2011 in 2012 it is again friday in 2013 it is friday and 2014 it is friday so the maximum crime reported in uic it is on friday and rest of the days they do vary but they do not vary to a great extent so they seem to be a little bit uniform 
+and if we see in near west again crime reported on friday till sunday for all these years from 2010 till 2014 so we are ok 
+and in loop it is more during the weekdays from monday till friday monday till friday in 2011 2012 
+2013 and 2014 so ok 
+so from days of the week we can identify a pattern from here 2010 to 2014 that in neighborhoods near west river north and uic the crime reported is maximum from friday till sunday whereas in the loop its the other way round the crime reported is highest during the weekdays 
+so ok ok and now let us focus on the day the timings time of the day 
+we will begin with river north it is maximum from 12 noon to 12 midnight 
+it is the same story in 2011 12 noon to 12 midnight 12 noon to 12 midnight 12 noon to 12 midnight and 12 noon to 12 midnight ok 
+and in uic and ok so near west ok uic it is again 12 noon to 12 midnight over all the years 
+in near west again it is 12 noon to 12 midnight over the years and 
+but in loop as we ok 12 noon to 12 midnight 12 noon to 12 midnight 12 noon to 12 midnight 
+but in loop it is maximum in is noon to 6 pm noon to 6 pm noon to 6 pm in 2012 
+noon to 6 pm in 2013 and 2014 its 12 noon to 6 pm 
+ok so again here we can see a distinct pattern we also we saw a distinct pattern during the days of the week but also during the time of the day 
+i mean there is a specific pattern in three suburbs near west river north and uic and loop has a different kind of pattern so we see crime reported is highest during 12 noon to 12 midnight 
+in near west river north and uic and in loop its during 12 noon to 6 pm 
+ok so in about the month ok so we already have for for the month is river north it is we it is during highest is during july august in 2010 
+it is the same same story in 2011 yes but in 2012 even august has higher crime rate reported 
+Ok and here it is June there is ok and.
+Can we align [Gesture<39><09-9>: the 2013 graph Gesture<39><09-9>] so it is easier? I mean can we align [Text<40><09-12,09-11,09-10,09-9,06-2>: graphs the month Text<40><09-12,09-11,09-10,09-9,06-2>] ok.
+Yeah that is better.
+Ok so here it is in July and August in 2010.
+and here it is july and august whereas here also june but july and august are still the highest crime rate whereas here it is ok sorry 
+this is which july and august 
+ok but here i mean november december jan 
+november december jan feb 
+november december jan feb 
+so crime is lowest during february but highest between june july august and in these three months 
+ok that is for river north and for uic it is more i mean there is a 
+Between March so where did [Text<41><09-12>: the graph Text<41><09-12>] go?
+I am sorry can you minimize [Gesture<42><09-12>: it? Gesture<42><09-12>] And no can you place [Gesture<43><09-12>: it Gesture<43><09-12>] the where place where [Text<44><09-12>: it Text<44><09-12>] was?
+I am just trying to figure ok so that is from March till October and here ok.
+ok so for crime february seems to be the less favorable month but the most favorable month for crime is basically the summer time summer and a little bit fall so like we can say the major is from around 
+no it did ok march till september so that would be the peak time ok 
+so in case if you want to vary the deployment depending on the time of the day the days of the week the month of the year then for all the neighborhoods if with respect to month the deployment should be more from months march till september 
+then with respect to days of the week in river sorry in river north near west and uic the deployment should be more during the weekend that is especially from friday to sunday whereas in loop the deployment should be more during the weekdays 
+and with respect to time of the day if we are focusing to vary the deployment the in near west river north and uic during the 12 noon till 12 midnight one needs to place deploy more officers whereas in loop it should be between 12 noon till 6 pm 
+in that time more officers must be deployed 
+that is what i can make out from all these graphs for the years of 2010 to 2014 and which areas to deploy the officers with respect to these four neighborhoods the crime rate seems to be highest in river north 
+So I already told my answer it should be River North and also UIC because that is what we can make from the graph that the crime rate is still high in River North and UIC to the other two neighborhoods.
+Ok so now can you close [Est<46><10-1,10-2>: [Gesture<45><09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2>: all these graphs Gesture<45><09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2>] Est<46><10-1,10-2>] and show me [Est<46><10-1,10-2>: the crime Est<46><10-1,10-2>] reported with [Est<46><10-1,10-2>: respect Est<46><10-1,10-2>] to [Est<46><10-1,10-2>: the location type Est<46><10-1,10-2>] specifically in [Est<46><10-1,10-2>: River North Est<46><10-1,10-2>] and UIC? Over [Est<46><10-1,10-2>: the period 2010 till 2014? Est<46><10-1,10-2>]
+Ok so now can you close [Est<46><10-1,10-2>: [Gesture<45><09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2>: all these graphs Gesture<45><09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2>] Est<46><10-1,10-2>] and show me [Est<46><10-1,10-2>: the crime Est<46><10-1,10-2>] reported with [Est<46><10-1,10-2>: respect Est<46><10-1,10-2>] to [Est<46><10-1,10-2>: the location type Est<46><10-1,10-2>] specifically in [Est<46><10-1,10-2>: River North Est<46><10-1,10-2>] and UIC? Over [Est<46><10-1,10-2>: the period 2010 till 2014? Est<46><10-1,10-2>]
+If you want you can close [Text<47><09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2>: these graphs Text<47><09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2>] as I will not be needing [Text<48><09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2>: it Text<48><09-4,09-3,09-2,09-1,08,09-8,09-7,09-6,09-5,07-2,09-12,09-11,09-10,09-9,06-2>] anymore.
+Can you show me [Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>: year wise separate graph Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>] like for [Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>: 2010 Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>] and [Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>: 2011 Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>] [Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>: 12 Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>] [Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>: 13 Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>] [Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>: 14? Est<49><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>]
+Ok ok meanwhile from [Text<50><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>: these remaining graphs Text<50><11-1,11-2,11-3,11-4,11-5,11-6,11-7,11-8,11-9,11-10>] we can observe that street is the favorite location for the criminal people and then yes.
+residence sidewalk residence sidewalk and ok so the residence ok 
+so over the period of 2010 till 2014 the top three ok 
+the top three crime spots are streets residence and sidewalks and 
+i can not see the 2014 graph its ok yes thank you 
+but in 2014 it is other but ok what do you mean by other and its apartment and apartment 
+apartment and apartment there is also parking lot and parking lot 
+so we can see the top four are streets sidewalk residence and apartment 
+they are the crime hot spots 
+in uic and about river north 
+ok that gives this 
+12 it is restaurant street residence sidewalk 
+what what about parking what is there parking is there parking lot 
+ok so from in both these neighborhoods the crime hot spots from these graphs seems to be street residence sidewalk apartment and parking lot 
+so yes so that is what my observation is from all these graphs 
+i can ok thank you 

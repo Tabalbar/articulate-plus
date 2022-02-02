@@ -1,0 +1,216 @@
+START
+00:07:19
+What restaurant should I be avoiding past, *um*, 10-P_M on an average Friday night? [long]
+experimentor: So while it's processing, one of the thing is *um* so when a new data visualization comes up, I mean I mentioned it in there just to make sure you remember *uh* when a new data visualization generates on there, *uh* you just want to describe briefly what you see, like what you are understanding, so that's the other-- before you start going on with more stuff so, yup.
+Ok, brilliant.
+experimentor: *Haha*.
+Now when you say visualizations, will they also pull up maps?
+experimentor: Anything, *uh* anything is possible-- anything is possible yeah.
+Cool.
+experimentor: Yeah so like-- so when you get a new visualization just *um* you know briefly explaining what you see and stuff xxx.
+Ok.
+*Um*, it seems like River-North is the place where I would not want to go eat at 9-P_M *um* just because of the the number of crimes *um* overall.
+U_I_C appears to be the safest which is kind of surprising. [short] 
+I should really not carry anything expensive on me, if I want to go to a restaurant at that time of night because, theft is, a possibility. 
+*Um*, [short] the rest is kind of, ok still, deceptive-practice.
+*Um*, *hm*, what's the *um*, now can I also ask, something about the realization? 
+experimentor: You can do anything-- anything is possible yeah.
+Ok, [long] some number of crimes. [short] 
+Now you see the map is a little too clustered, is it possible to just see the number of, *uh*, all the data-points with, *uh*, more than fifty crimes in the area? [long]
+00:13:20
+Yes, *um*, is it possible to see only the-- the spots with more than 50 crimes? 
+Some number of crimes? 
+On the map? 
+[long] Ok that's not too bad, *haha*, 51 too, right.
+Seems like-- [short] yeah it seems like the street running parallel to Michigan which is-- I have no idea I can't see.
+Can you move it to the left a little bit the divider is cutting it off?
+Thank you. [short] 
+State street ok.
+State street *haha* seems to be the one I want to avoid at night for a restaurant period, *um*, ok.
+Can I also get a breakdown of the number of crimes in River-North *uh*, for only the last four weeks? [long]
+00:17:25
+Cool, so this is for a month, *um*, November 20th to December 20th, *um*, ok, so theft is the most prevalent crime from what I can see, you might still get away with your life.
+*Um*, interesting, can I see labels on the data please? [long]
+00:18:34
+Interesting, three prostitution cases, three liquor-law-violations, one homicide *huh*. 
+Can I also see where exactly these prostitution, *um*, crimes occurred? [long] 
+Cool, so it's within, a block and a half. 
+*Um*, Grand and, Michigan seems to be, the *uh* the central point or actually, Michigan and Ontario, interesting. 
+Can I see the number of prostitution cases *um* within a three block radius around Ontario and Michigan, for prostitution cases?
+00:22:27
+Interesting, *huh*, so yeah *um*, it does seem to be pretty concentrated, around that area, but we don't have the rest from reference.
+Can I also see the rest of the cases in River-North for prostitution? [long]
+Ok, cool, can I see all the cases in all four locations? [long] 
+*Oh* wow, so it is mostly in that area interesting, that's a pretty interesting hub, for prostitution.
+*Um* *hm*, and now on Madison Street, Madison, Monroe that's interesting that's where I live, *haha*.
+*Um* ok [short] now if I were to go to a restaurant *uh*, on Valentines-day, and if I were to drive there, *um*, what parking-lot should I avoid, based on the number of crimes, *um*, on the day? [long]
+00:25:25
+Absolutely, *um*, if I were to drive, to a restaurant, *um*, in Chicago, in one of these four areas, which restaurants should I, *uh*, which parking-lots should I be avoiding, *um*, based on the number of crimes in the lot? [long]
+Very cool, XXX XXX, [long] 
+00:27:59
+February 1st, February 15th, interesting, so that one right there , not going there, Fullerton and Fulton and what is that, Western? 
+Close to Western.
+*Hm*, so much crimes, parking-lots XXX XXX. [short]
+Now is this any different from the rest, *um*, the rest the days on average? [short]
+Sorry. [long]
+00:32:20
+Can we normalize the data? [long] 
+Ok, *hm*, ok, *shh* xxx. [long] 
+Now, for the, *um*, [short] for the *um* crimes committed in parking-lots, can I also see the major restaurants around them? [short]
+That's fine. [long] 
+Yeah this is-- can't tell much from this at all, *um* just because it's just different scale overall, it's four years.
+That's fine *haha* [short] Friday. [short]
+Yeah, very difficult to extract anything from this *hm* ok. [long]
+00:34:30
+Which areas have the highest number of *um* deceptive-practices when it comes to retail stores? [long]
+00:35:51
+Ok, [short] that's fine, thank you. [long] 
+Can I see *um* robbery-- robberies, batteries, and thefts, in *um*, in the U_I_C area for the last year, separately please? [long]
+00:38:43
+Robberies U_I_C 2014. [short] 
+Ok *hm*.
+There were-- [short] and what's the sum number of robberies in the U_I_C area? [long]
+Wow Roosevelt and Canal? 
+Really want to avoid that part.
+Madison and Western interesting, I would not expect that. [short]
+Yeah Roosevelt street notorious. Jackson boulevard for batteries.
+*Hm* [short] batteries are pretty general.
+Thefts and robberies. 
+More thefts than robberies. 
+*Oh* wow this is just for 2014? Damn criminal-damage wow.
+Now how many of these thefts were committed on a sidewalk as opposed to *um* an alleyway? [long]
+00:40:40
+A lot of battery cases, criminal-damage, deceptive-practice. [short] 
+*Hm* deceptive-practices.
+Alright so most of them are just plain old street grocery-food-store.
+Now is this inside a grocery-food-store or outside? [short]
+Ok, wow, interesting, parking-lots. [short] 
+Where did these *uh* parking-lot offenses occur? [long]
+C_T_A-Train, C_T_A-Bus, *um*, yikes.
+Theft [short] that's quite a huge number, *haha*, for C_T_A thefts in the U_I_C area *hm*. [long]
+00:42:59
+Drug store. [medium] 
+Parking-lot and grounds. [long] 
+The one on Roosevelt and what is this Canal is the one to avoid.
+Could you move this a little up please?
+Thank you.
+And around Greek Town, eureka.
+*Uh* Greek Town is not-- can we also get-- so it's about eleven crimes. 
+I see [short] few far out.
+For the C_T_A-bus and C_T_A-train offenses *um* can we get a breakdown according to the time-of-day? [long]
+Data type oops sorry *haha*. [long] 
+Sidewalks, theft interesting. 
+Wow this is kind of insane. 
+Are you ready for the next one? 
+*Haha*.
+*Oh* wow ok. 
+C_T_A-train-- this is all C_T_A-train instances in 2014.
+Alright so the highest number seems to be 23, 24 ok so this is hour-of-day. 9-A_M wow, that's A_M correct?
+Yes ok.
+So 9-A_M, 10-A_M wow, you should really avoid C_T_A platforms around 10-A_M, I would expect it to be a lot later in night but. [short] 
+Number of crimes wow.
+So can we also get a breakdown of the type of crimes for *uh* 10-A_M? Yes. [short]
+So this is hours of the day all crimes, interesting. [long] 
+Yeah I like the little break down, C_T_A station, 7-A_M to 20-- *hm*.
+Most of it seems skewed to the left, I wouldn't expect that. 
+8-A_M is the highest for buses. 
+Yeah buses seem two of the most dangerous ones, on an average. 
+And C_T_A trains, well, so if you're actually riding it, it's worse, then just standing around and waiting. 
+I would expect the otherwise.
+Number of crimes, deceptive-practice. 
+Now what does that mean deceptive-practice? 
+What does that mean?
+experimentor: *Um* which one do you want to know?
+Deceptive-practice, what does that mean?
+experimentor: *Um* essentially means a, well a official definition it says basically a person who commits deceptive-practice when-- with an intent to defraud if the person does any of the following such as-- you know-- threatens by force, the signature of some documents, you know for example or you know things like that just basically *um* stating one thing and doing another.
+Ok now *hm* interesting. 
+And you can't get more information on what kind of deceptive-practice or--? [short]
+experimentor: *Uh*, well no, *uh*, the crime-types, I don't think there's a deeper--.
+Ok, ok, that's fine. [short] 
+Just more decep-- Can we remove all the deceptive-practices from *um* this graph, the number of crimes are in a day? [long]
+That seems to. [medium] 
+Everything besides deceptive-practice. 
+It seems to be padding the results too much, not as important as the others. [long] 
+Fairly similar, still. [long] 
+But we see more of a shift to the right now, *hm* and that's later at night.
+Yeah so the deceptive-- can we also get the *uh* so 19, 23, 22-- so yeah this is the pushing up the results just because of deceptive-practices around that time interesting. [long]
+00:52:20
+Can we get data labels on each of the breakdowns? [long]
+Thank you`. [medium] 
+That's all and this is all but deceptive.
+Pink C_T_A platform that means ok so this is probably people coming up to you and saying that I need some money for the bus. 
+That'll help to get some place. 
+That's usually happening in the day, interesting. 
+I wonder where the excuse is *huh* 4 5. [long]
+C_T_A trains. [long] 
+C_T_A-bus.
+Ok, cool.
+So now we see the data more on the-- later in the day which makes more sense-- right away.
+Where are the-- lets see.
+Public indecency what is that?
+Is that, would it also mean being drunk in public, public indecency?
+experimentor: Yeah.
+Yeah [short] *hm*. 
+Can we see just the public decencies-- I'm sorry yeah the public indecencies?
+00:56:00
+Ok that's interesting. [short] 
+experimentor: xxx If you-- if you're drunk that's different, but if you do indecency things while drunk, that's different.
+While drunk, yeah yeah makes sense. 
+I would expect to see people drunk on C_T_A acting all weird, you'd think people report them.
+*Uh* interesting. 
+I like-- *uh* this makes more sense though besides the deceptive-practices. What else is there, deceptive-practice.[long] 
+Ok [long] C_T_A-garage.
+So past noon, can we map, the rest of the data somehow? [long]
+Can I see the same-- absolutely. [long]
+00:59:26
+*Um* I have to try to stay in this area right?
+experimentor: Yeah. I mean you can move around a little bit.
+Yes.
+experimentor: You can move around.
+Really. Ok then *um*. [short] 
+1-16. Past noon, ok. [short] 
+Can we get them past 6-P_M?
+By Roosevelt and Halsted-- no what is that-- Ashland. 
+I'm sorry, yeah isn't that the worst? 
+Roosevelt and Canal. 
+Yeah that doesn't seem to be a good intersection overall either. [long]
+Let me see Harrison. 
+Greektown area is overall-- yeah Roosevelt and Canal, Greektown, damn. 
+Yeah Greektown is not safe, not one spot. 
+Anything-- a lot of it's around Roosevelt, isn't it.
+Past 6-P_M. 
+Ok yeah so most of it is still in Roosevelt and Canal.
+Lincoln park specifically doesn't-- *um* yeah so most the-- ok.
+Just seems like-- and thats what sum of crime is 12-- 16. Alright and they seem fairly similar.
+Theres a lot of points in the middle area-- so it's Roosevelt , is just unsafe. 
+A little bit of Lincoln-Park, Greektown, and this-- what is that Harrison and Western of course, that's still coming up. 
+And this is just C_T_A interesting. [long]
+01:02:38
+Can we see-- *um* *oh* because that's just C_T_A locations *um*. [short] 
+Can we see all the the crimes for the same past 6-P_M *um*? [long]
+*Um* ok can we take out deceptive-practices from this?
+I don't know for some reason I think I don't care much for deceptive-practices. 
+It's one of those it's-- a whiny claim right? 
+It is mostly one of those-- it's people just coming up to you *oh* my dad died or you know my dad is dying give me 30 dollars for the pharmacy.
+Yeah that happens all the time around the area so I know. [long]
+*Hm* fairly stimulus though.
+experimentor: Alright we can *um*-- I mean I think after you're done analyzing we can wrap-- we can start wrapping it up.
+It's Roosevelt right, it's always Roosevelt and Canal, all of them. 
+But then again this is *uh*, ok. [long] 
+Can we see just homicides for this one?
+I'd like to see that.
+I think that's a proper, that's a-- that's a brutal end.
+It's pretty awesome though, it really is. [long]
+Well that's not bad at all, just two in 2014.
+But they are the same West end of course closer to Roosevelt between-- yeah seeing that this block, running between Jackson and Roosevelt, Western to Halsted is the worst. And it's funny because that is U_I_C.
+Can you also set parameters like where is-- what's-- if I'm recalling data for just U_I_C, is.
+experimentor: Yeah, you can ask and see what happens-- sure.
+1:06:47
+Ok, I see a yes. 
+Because a lot of data you never know if the parameter has been reached, you know you think you see something but then there is--.
+experimentor: Yeah absolutely. [long]
+Ok, see now [short] *hm*.
+You know the southwest side still seems to be the worst but it is though, yeah that is-- and Greektown, I didn't expect Greektown to be that bad, I don't care much for it.
+Thank you. Yeah I walked through there at 3-A_M in the morning thinking that nothing is going to happen.
+*Um* any final questions, I think I'm good thank you very much. Absolutely. Great Signing off. 
+END

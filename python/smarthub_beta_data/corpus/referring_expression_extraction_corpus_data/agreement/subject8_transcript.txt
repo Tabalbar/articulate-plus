@@ -1,0 +1,79 @@
+subject8
+
+So if I want to do [Est<1>: the task Est<1>] of working out [Est<1>: what areas Est<1>] to deploy [Est<1>: officers Est<1>] then do I get to see [Est<1>: a crimes Est<1>] for [Est<1>: that city? Est<1>]
+Yeah that is fine.
+Yeah so I can see what is going on up here.
+What would this means got a lot of activity here.
+Did we just want to look at areas to deploy within the middle of the city which means we are cutting out all the south side?
+Yeah so you see there is a lot of activity around here.
+Can we zoom in on Loop?
+Have you got [Est<2>: any type Est<2>] of [Est<2>: data Est<2>] on what kind of [Est<2>: activity Est<2>] there is in [Est<2>: Loop? Est<2>]
+Ok that is great thank you.
+Ok. So [Gesture<3>: these Gesture<3>] might look a little bit easier to read if [Gesture<4>: they Gesture<4>] were rotated?
+it seems like there is just lots of theft and battery.
+no that is all neighborhoods for just the loop 
+Ok. Alright We know that theft is the biggest problem around here.
+Can we see [Est<5>: the crime types Est<5>] for [Est<5>: the other three regions Est<5>] as well?
+It is quite interesting that what happens in Loop is a different type of crime than what happens overall.
+so you may want to deploy different officers to different regions 
+so this is obvious that theft is the big one 
+but then again it is not as important as other forms of crimes 
+ok where where would you want to deploy the officers 
+that is quite hard to say because there is quite a spread amongst all regions 
+ok let us have a look at this 
+Ok. So we know that theft is the main issue but depends what part of the city it is.
+let us have [Est<6>: a look Est<6>] at yeah let us look at [Est<6>: the time of day. Est<6>] Is there [Est<6>: any kind Est<6>] of [Est<6>: graph Est<6>] showing [Est<6>: theft Est<6>] throughout [Est<6>: the day? Est<6>]
+Actually is there [Est<7>: a way Est<7>] that we can actually see throughout [Est<7>: one day Est<7>] [Est<7>: the top ten crimes Est<7>] how often they happen?
+So that is just theft.
+ok that is great alright 
+ok i can not see the time of day on this graph here 
+Ok so I want to so the title is right the crimes in region by time of day but there is
+Nothing on [Est<9>: [Text<8>: there Text<8>] Est<9>] which shows [Est<9>: the time of day Est<9>] or ok.
+Give me [Est<11>: [Gesture<10>: the same of this Gesture<10>] Est<11>] with [Est<11>: battery Est<11>] [Est<11>: deceptive practices Est<11>] and [Est<11>: criminal damage Est<11>] and [Est<11>: assault Est<11>] please.
+That is very different.
+So it seems like most activity seems to go up between 12 noon and 6 except for battery.
+So maybe that is not a type of crime you can try to prevent in this way.
+ok let us have a look at theft or wait let us keep with the theft 
+Ok let us have [Est<12>: a look Est<12>] at [Est<12>: theft Est<12>] or wait let us let us keep with [Est<12>: the theft. Est<12>] Can we see [Est<12>: the breakdown Est<12>] for [Est<12>: theft Est<12>] throughout [Est<12>: the week? Est<12>]
+Yeah that is great. Could [Gesture<13>: this Gesture<13>] is quite interesting.
+Can we see [Est<14>: the breakdown Est<14>] of [Est<14>: the whole week Est<14>] for [Est<14>: all crimes? Est<14>]
+Wow [Text<15>: that Text<15>] is a lot of stuff there. Alright Ok thank you.
+I like [Gesture<16>: this one. Gesture<16>] [Gesture<16>: This one Gesture<16>] is nice.
+So definitely these ones down are really quite insignificant and if it were just theft huge here.
+I can see why these two would be high on Friday Saturday people out and about.
+that is quite interesting what over here we yeah I can pretty much see everything from over here see so do not Yeah do not need [Gesture<17>: this one Gesture<17>] here.
+Ok let us have [Est<19>: a look Est<19>] at can you have [Est<19>: [Gesture<18>: this graph Gesture<18>] Est<19>] for [Est<19>: months of year? Est<19>]
+ok I guess that makes sense people go away during winter.
+But it seems that it is general all year round thing except for the theft and a little bit of battery surprisingly.
+but you probably want to go for more the may to october time 
+So [Gesture<20>: this Gesture<20>] would show a lot of the crime patterns.
+How about [Est<22>: the breakdown Est<22>] of [Est<22>: crime Est<22>] for [Est<22>: each year? Est<22>]
+Well it is good to see that crime is actually fallen but for this one here that would be that kind of so crime all seems to have gone down.
+ok let us have a look 
+Well how are we going to have a look at hot spots?
+Are there [Est<25>: any other kind Est<25>] of [Est<25>: heat maps Est<25>] we can see other than [Est<25>: [Text<23>: this one Text<23>] Est<25>] up here? Are there [Est<25>: any other kind Est<25>] of [Est<25>: maps Est<25>] we can see? Or is [Est<25>: [Gesture<24>: this Gesture<24>] Est<25>] the only one we have?
+yeah let us take the most significant ones to look up.
+Can we have the heat map of thefts?
+Ok can we see [Est<27>: [Gesture<26>: the same Gesture<26>] Est<27>] with [Est<27>: deceptive practices? Est<27>]
+well there is definitely a problem area right there 
+ok i am not going there anymore 
+there is something over there 
+ok let us see 
+if we can knock some of these off so which areas to deploy the officers 
+I think it is River North that is got the highest crime well especially
+Can we see actually can we see [Est<28>: all crimes Est<28>] categorized well [Est<28>: the number Est<28>] of [Est<28>: crimes Est<28>] in [Est<28>: each area? Est<28>]
+So it looks like River North is really high for for theft.
+Probably want to tackle bring those numbers down more.
+The time of day of that we did have a nice graph around here somewhere for that.
+[Text<29>: This one Text<29>] down here.
+Good [Text<30>: that Text<30>] is it.
+So that was Friday Saturday. Lot happens there good thank you.
+yeah yeah river north that is the one 
+that is the one we want to look at 
+most of the year we saw that it was during the summer months that things really were high for theft but everything else was really quite stable 
+hot spots we do see one nasty hot spot there for deceptive activity and around the state area appears to be quite bad over to a lot of theft there surprised that we did not have yeah that theft did not quite make sense there but state seems to be quite a hot spot 
+significant change is that it seems to have gone down over the years which is great 
+ok i think is there anything else you want to be doing 
+yeah cause some of it is tacky and i am 
+there is somethings we could look maybe into a lot more that depends on how much time we want to go through this 
+you have been a great assistance thank you very much 
