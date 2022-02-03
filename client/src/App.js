@@ -85,6 +85,7 @@ function App() {
     randomCharts: [],
     mainAI: [],
     mainAIOverhearing: [],
+    abariCharts: [],
     pivotChart: [],
     deltaTime: 0,
     assistantResponse: "",
@@ -212,23 +213,6 @@ function App() {
     setForceUpdate((prev) => !prev);
   };
 
-  const pythonRequest = async () => {
-    fetch("http://localhost:5000/", {
-      //POST request to python server
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        command: "random",
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
-  };
-
   return (
     <>
       <ChakraProvider>
@@ -236,7 +220,7 @@ function App() {
           {/* COMMENT THIS WHEN STARTING USER STUDY */}
           {/* <Button onClick={() => speakVoice("This is a message")}>
             Test Voice
-          </Button>
+          </Button> */}
           <Input
             position="absolute"
             ml="40rem"
@@ -254,11 +238,8 @@ function App() {
           >
             Test
           </Button>
-          <Button
-            transform={`translate(20rem,0)`}
-            onClick={pythonRequest}
-          ></Button>
-          <Button
+
+          {/* <Button
             position="absolute"
             ml={"60rem"}
             zIndex={20}

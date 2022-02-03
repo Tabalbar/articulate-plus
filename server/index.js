@@ -3,6 +3,8 @@ const PORT = process.env.PORT || 6000;
 const app = express();
 const path = require("path");
 const ExtendNLP = require("./Pre-processing/ExtendNLP");
+var request = require("request-promise");
+
 app.use(express.json({ limit: "500mb" }));
 app.use(express.urlencoded({ extended: true, limit: "500mb" }));
 
@@ -51,21 +53,7 @@ app.post("/initialize", (req, res) => {
     req.body.attributes,
     req.body.data
   );
-  // if (modifiedChartOptions.pivotCharts) {
-  //   for (let i = 0; i < neuralNetworkData.pivotChartQueries.length; i++) {
-  //     manager.addDocument(
-  //       "en",
-  //       neuralNetworkData.pivotChartQueries[i].query,
-  //       neuralNetworkData.pivotChartQueries[i].chartType
-  //     );
-  //   }
-  //   manager.addAnswer("en", "pivot", "pivot");
-  //   (async () => {
-  //     await manager.train();
-  //     manager.save();
-  //   })();
-  //   console.log("Added Pivot to Neural Network");
-  // }
+
   if (featureMatrix === null || synonymMatrix === null) {
     console.log("Error in pre-processing");
     res.status(405).send("Error in pre-processing");
@@ -77,19 +65,15 @@ app.post("/initialize", (req, res) => {
  * Generalize the command and send through chartMaker pipeline
  */
 const generalizeCommand = require("./generalizeCommand");
-const getExplicitChartType = require("./createCharts/explicit/ExplicitChart");
+const getExplicitChartType = require("./createChartsV3/charts/helpers/getExplicitChartType");
 const CompareCharts = require("./CompareCharts");
-const countHeaderFrequency = require("./createCharts/countHeaderFrequency");
+const countHeaderFrequency = require("./createChartsV3/overhearing/countHeaderFrequency");
+const constructPythonCommand = require("./python/constructPythonCommand");
 
-// const createCharts = require("./createCharts/createCharts");
-
-// const explicitChart = require("./oldChartMaker/explicit/explicitChart");
-// const inferredChart = require("./oldChartMaker/inferred/inferredChart");
-// const modifiedChart = require("./oldChartMaker/modified/modifiedChart");
-const pivotChartsV2 = require("./createCharts/pivotCharts/pivotChartsV2");
+const pivotChartsV2 = require("./createChartsV3/pivotCharts/pivotChartsV2");
 
 const createCharts = require("./createChartsV3/createCharts");
-const chartOptions = require("./createCharts/explicit/chartOptions");
+const chartOptions = require("./createChartsV3/charts/helpers/chartOptions");
 
 let replaceWords = [{ wordFound: "hi", replaceWith: "high" }];
 
@@ -220,18 +204,10 @@ app.post("/createCharts", async (req, res) => {
   }
   CompareCharts(chartMsg, options, chosenCharts);
 
-  chartMsg.mainAIOverhearingCount = countHeaderFrequency(
-    chartMsg.transcript,
-    chartMsg.featureMatrix,
-    chartMsg.synonymMatrix,
-    chartMsg.data,
-    options
-  );
+  chartMsg.mainAIOverhearingCount = countHeaderFrequency(chartMsg, options);
   chartMsg.total = countHeaderFrequency(
-    chartMsg.transcript,
-    chartMsg.featureMatrix,
-    chartMsg.synonymMatrix,
-    chartMsg.data,
+    chartMsg,
+
     {
       sentimentAnalysis: false,
       window: {
@@ -247,6 +223,36 @@ app.post("/createCharts", async (req, res) => {
     }
   );
   res.send({ chartMsg });
+});
+
+app.post("/flask", async function (req, res) {
+  var chartMsg = req.body.chartMsg;
+  let command = chartMsg.command;
+  if (command == "random") {
+    res.send({ charts: [] });
+  }
+  console.log(command);
+
+  var options = {
+    method: "POST",
+    uri: "http://localhost:5000/",
+    body: command,
+    json: true, // Automatically stringifies the body to JSON
+  };
+
+  var returndata;
+  let constructedPythonCommand;
+  var sendrequest = await request(options)
+    .then(function (parsedBody) {
+      // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
+      returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
+      constructedPythonCommand = constructPythonCommand(parsedBody);
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+
+  res.send(returndata);
 });
 
 // All other GET requests not handled before will return our React app

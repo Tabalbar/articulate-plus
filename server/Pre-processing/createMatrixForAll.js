@@ -3,7 +3,7 @@ const createVector = require("./createVector");
 nlp.extend(require("compromise-numbers"));
 nlp.extend(require("compromise-dates"));
 var thesaurus = require("thesaurus");
-const findType = require("../createCharts/helperFunctions/findType");
+const findType = require("../createChartsV3/charts/helpers/findType");
 
 module.exports = (headers, data) => {
   let featureMatrix = [];

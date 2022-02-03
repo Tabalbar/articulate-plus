@@ -1,5 +1,5 @@
 const nlp = require("compromise");
-const findType = require("../createCharts/helperFunctions/findType");
+const findType = require("../createChartsV3/charts/helpers/findType");
 
 module.exports = (headers, data) => {
   let featureMatrix = [];

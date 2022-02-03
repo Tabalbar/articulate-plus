@@ -1,9 +1,9 @@
 const levenshtein = require("fast-levenshtein");
-const createDate = require("../helperFunctions/createDate");
-const findType = require("../helperFunctions/findType");
-const CovidColors = require("../static/CovidColors");
-const CovidSort = require("../static/CovidSort");
-const getExplicitChartType = require("../explicit/ExplicitChart");
+const createDate = require("../charts/helperFunctions/createDate");
+const findType = require("../charts/helperFunctions/findType");
+const CovidColors = require("../../../createCharts/static/CovidColors");
+const CovidSort = require("../../../createCharts/static/CovidSort");
+const getExplicitChartType = require("../../../createCharts/explicit/ExplicitChart");
 const createCharts = require("../../createChartsV3/createCharts");
 
 //****Pivotting mark types only works with covid dataset

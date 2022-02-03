@@ -1,5 +1,5 @@
 const nlp = require("compromise");
-const findType = require("../createCharts/helperFunctions/findType");
+const findType = require("../server/createChartsV3/charts/helperFunctions/findType");
 const Sentiment = require("sentiment");
 
 module.exports = (
