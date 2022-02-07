@@ -284,6 +284,8 @@ class SmarthubSession:
 
             self.context_window = ContextWindow()
             self.context_window.add(tokenized_utterance, gesture_target_id, dialogue_act, referring_expressions)
+        return ""
+
 
     '''
     - The run() method is the starting point of a new Smarthub session. The general algorithm maintains the current 

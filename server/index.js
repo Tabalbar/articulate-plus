@@ -226,23 +226,23 @@ app.post("/createCharts", async (req, res) => {
 });
 
 app.post("/flask", async function (req, res) {
-  var chartMsg = req.body.chartMsg;
+  let chartMsg = req.body.chartMsg;
   let command = chartMsg.command;
   if (command == "random") {
     res.send({ charts: [] });
   }
   console.log(command);
 
-  var options = {
+  let options = {
     method: "POST",
     uri: "http://localhost:5000/",
     body: command,
     json: true, // Automatically stringifies the body to JSON
   };
 
-  var returndata;
+  let returndata;
   let constructedPythonCommand;
-  var sendrequest = await request(options)
+  let sendrequest = await request(options)
     .then(function (parsedBody) {
       // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
       returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
@@ -251,8 +251,14 @@ app.post("/flask", async function (req, res) {
     .catch(function (err) {
       console.log(err);
     });
-
-  res.send(returndata);
+  console.log("returned from python");
+  console.log(returndata);
+  if (returndata == "" || returndata == null) {
+    console.log("fired");
+    res.send({ message: "" });
+  } else {
+    res.send(returndata);
+  }
 });
 
 // All other GET requests not handled before will return our React app
