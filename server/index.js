@@ -18,28 +18,39 @@ const manager = new NlpManager({
 });
 
 const neuralNetworkData = require("./neuralNetworkData");
-
-for (let i = 0; i < neuralNetworkData.queries.length; i++) {
-  manager.addDocument(
-    "en",
-    neuralNetworkData.queries[i].query,
-    neuralNetworkData.queries[i].chartType
-  );
-}
-
-for (let i = 0; i < neuralNetworkData.answers.length; i++) {
-  manager.addAnswer(
-    "en",
-    neuralNetworkData.answers[i],
-    neuralNetworkData.answers[i]
-  );
-}
-
-// Train and save the model.
-(async () => {
+neuralNetworkData().then(async (data) => {
+  let answers = ["bar", "line", "map", "pivot", "heatmap"];
+  for (let i = 0; i < data.length; i++) {
+    manager.addDocument("en", data[i].queries, data[i].chartType);
+  }
+  for (let i = 0; i < answers.length; i++) {
+    manager.addAnswer("en", answers[i], answers[i]);
+  }
   await manager.train();
   manager.save();
-})();
+});
+// for (let i = 0; i < neuralNetworkData.queries.length; i++) {
+//   console.log(neuralNetworkData.queries[i].query);
+//   manager.addDocument(
+//     "en",
+//     neuralNetworkData.queries[i].query,
+//     neuralNetworkData.queries[i].chartType
+//   );
+// }
+
+// for (let i = 0; i < neuralNetworkData.answers.length; i++) {
+//   manager.addAnswer(
+//     "en",
+//     neuralNetworkData.answers[i],
+//     neuralNetworkData.answers[i]
+//   );
+// }
+
+// Train and save the model.
+// (async () => {
+//   await manager.train();
+//   manager.save();
+// })();
 //***************** */
 
 /**
@@ -114,65 +125,16 @@ app.post("/createCharts", async (req, res) => {
   );
   chartMsg.generalizedCommand = generalizedCommand;
 
-  /**
-   * Getting expicit mark type
-   */
-  let intent = getExplicitChartType(chartMsg.command);
-  //Check if pivot
-  if (chartMsg.command == "random") {
-    let intent = chartOptions[Math.floor(Math.random() * 5)];
-    chartMsg.randomCharts = createCharts(intent.mark, chartMsg, options);
-  } else if (pivotTheseCharts.length > 0) {
-    chartMsg.pivotChart = pivotChartsV2(pivotTheseCharts, chartMsg, options);
-  } else if (intent) {
-    chartMsg.explicitChart = createCharts(intent, chartMsg, {
-      useCovidDataset: options.useCovidDataset,
-      sentimentAnalysis: false,
-      window: {
-        toggle: false,
-        pastSentences: 0,
-      },
-      neuralNetwork: false,
-      useSynonyms: false,
-      randomCharts: {
-        toggle: false,
-        minutes: 10,
-      },
-      threshold: 3,
-      filter: {
-        toggle: false,
-        pastSentences: 0,
-        threshold: 5,
-      },
-      pivotCharts: false,
-    });
-    chartMsg.mainAI = createCharts(intent, chartMsg, {
-      useCovidDataset: options.useCovidDataset,
-      sentimentAnalysis: false,
-      window: {
-        toggle: false,
-        pastSentences: 0,
-      },
-      neuralNetwork: true,
-      useSynonyms: true,
-      randomCharts: {
-        toggle: true,
-        minutes: 10,
-      },
-      threshold: 3,
-      filter: {
-        toggle: false,
-        pastSentences: 0,
-        threshold: 5,
-      },
-      pivotCharts: false,
-    });
-    chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
+  let response = await manager.process("en", chartMsg.generalizedCommand);
+  let isCommand = response.intent;
+  console.log(isCommand);
+  if (isCommand === "None" || isCommand === "none") {
+    chartMsg.errMsg = "none";
+    res.send({ chartMsg });
   } else {
-    let response = await manager.process("en", chartMsg.generalizedCommand);
-    intent = response.intent;
-    console.log(response);
-    if (intent !== "None") {
+    let intent = getExplicitChartType(chartMsg.command);
+    if (intent === false) {
+      intent = response.intent;
       chartMsg.mainAI = createCharts(intent, chartMsg, {
         useCovidDataset: options.useCovidDataset,
         sentimentAnalysis: false,
@@ -182,6 +144,28 @@ app.post("/createCharts", async (req, res) => {
         },
         neuralNetwork: true,
         useSynonyms: true,
+        randomCharts: {
+          toggle: true,
+          minutes: 10,
+        },
+        threshold: 3,
+        filter: {
+          toggle: false,
+          pastSentences: 0,
+          threshold: 5,
+        },
+        pivotCharts: false,
+      });
+    } else {
+      chartMsg.explicitChart = createCharts(intent, chartMsg, {
+        useCovidDataset: options.useCovidDataset,
+        sentimentAnalysis: false,
+        window: {
+          toggle: false,
+          pastSentences: 0,
+        },
+        neuralNetwork: false,
+        useSynonyms: false,
         randomCharts: {
           toggle: false,
           minutes: 10,
@@ -194,72 +178,110 @@ app.post("/createCharts", async (req, res) => {
         },
         pivotCharts: false,
       });
-      chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
-    } else {
-      //If Neural Network has no match for intent, no charts are made
-      chartMsg.explicitChart = "";
-      chartMsg.inferredChart = "";
-      chartMsg.modifiedChart = "";
     }
+
+    chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
+    CompareCharts(chartMsg, options, chosenCharts);
+
+    chartMsg.mainAIOverhearingCount = countHeaderFrequency(chartMsg, options);
+    chartMsg.total = countHeaderFrequency(
+      chartMsg,
+
+      {
+        sentimentAnalysis: false,
+        window: {
+          toggle: true,
+          pastSentences: 99999,
+        },
+        neuralNetwork: true,
+        filter: {
+          toggle: false,
+          pastSentences: options.filter.pastSentences,
+          threshold: options.filter.threshold,
+        },
+      }
+    );
+    chartMsg.errMsg = "";
+    res.send({ chartMsg });
   }
-  CompareCharts(chartMsg, options, chosenCharts);
 
-  chartMsg.mainAIOverhearingCount = countHeaderFrequency(chartMsg, options);
-  chartMsg.total = countHeaderFrequency(
-    chartMsg,
-
-    {
-      sentimentAnalysis: false,
-      window: {
-        toggle: true,
-        pastSentences: 99999,
-      },
-      neuralNetwork: true,
-      filter: {
-        toggle: false,
-        pastSentences: options.filter.pastSentences,
-        threshold: options.filter.threshold,
-      },
-    }
-  );
-  res.send({ chartMsg });
+  // /**
+  //  * Getting expicit mark type
+  //  */
+  // //Check if pivot
+  // if (chartMsg.command == "random") {
+  //   let intent = chartOptions[Math.floor(Math.random() * 5)];
+  //   chartMsg.randomCharts = createCharts(intent.mark, chartMsg, options);
+  // } else if (pivotTheseCharts.length > 0) {
+  //   chartMsg.pivotChart = pivotChartsV2(pivotTheseCharts, chartMsg, options);
+  // } else if (intent) {
+  // } else {
+  //   if (intent !== "None") {
+  //     chartMsg.mainAI = createCharts(intent, chartMsg, {
+  //       useCovidDataset: options.useCovidDataset,
+  //       sentimentAnalysis: false,
+  //       window: {
+  //         toggle: false,
+  //         pastSentences: 0,
+  //       },
+  //       neuralNetwork: true,
+  //       useSynonyms: true,
+  //       randomCharts: {
+  //         toggle: false,
+  //         minutes: 10,
+  //       },
+  //       threshold: 3,
+  //       filter: {
+  //         toggle: false,
+  //         pastSentences: 0,
+  //         threshold: 5,
+  //       },
+  //       pivotCharts: false,
+  //     });
+  //     chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
+  //   } else {
+  //     //If Neural Network has no match for intent, no charts are made
+  //     chartMsg.explicitChart = "";
+  //     chartMsg.inferredChart = "";
+  //     chartMsg.modifiedChart = "";
+  //   }
+  // }
 });
 
-app.post("/flask", async function (req, res) {
-  let chartMsg = req.body.chartMsg;
-  let command = chartMsg.command;
-  if (command == "random") {
-    res.send({ charts: [] });
-  }
-  console.log(command);
+// app.post("/flask", async function (req, res) {
+//   let chartMsg = req.body.chartMsg;
+//   let command = chartMsg.command;
+//   if (command == "random") {
+//     res.send({ charts: [] });
+//   }
+//   console.log(command);
 
-  let options = {
-    method: "POST",
-    uri: "http://localhost:5000/",
-    body: command,
-    json: true, // Automatically stringifies the body to JSON
-  };
+//   let options = {
+//     method: "POST",
+//     uri: "http://localhost:5000/",
+//     body: command,
+//     json: true, // Automatically stringifies the body to JSON
+//   };
 
-  let returndata;
-  let constructedPythonCommand;
-  let sendrequest = await request(options)
-    .then(function (parsedBody) {
-      // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
-      returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
-      constructedPythonCommand = constructPythonCommand(parsedBody);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-  console.log("returned from python");
-  console.log(returndata);
-  if (returndata == "" || returndata == null) {
-    console.log("fired");
-    res.send({ message: "" });
-  } else {
-    res.send(returndata);
-  }
-});
+//   let returndata;
+//   let constructedPythonCommand;
+//   let sendrequest = await request(options)
+//     .then(function (parsedBody) {
+//       // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
+//       returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
+//       constructedPythonCommand = constructPythonCommand(parsedBody);
+//     })
+//     .catch(function (err) {
+//       console.log(err);
+//     });
+
+//     if (returndata == "" || returndata == null) {
+//     console.log("fired");
+//     res.send({ message: "" });
+//   } else {
+//     res.send(returndata);
+//   }
+// });
 
 // All other GET requests not handled before will return our React app
 app.get("*", (req, res) => {

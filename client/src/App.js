@@ -132,33 +132,36 @@ function App() {
     //   setVoiceMsg(thinkingResponse.msg);
     // }
     setClippyImage(thinkingImage);
-    speakVoice(chartSound);
+    return new Promise((res, rej) => {
+      //Actual request to server
+      serverRequest(
+        chartMsg,
+        setChartMsg,
+        modifiedChartOptions,
+        setVoiceMsg,
+        charts,
+        setCharts,
+        setChartToHighlight
+      ).then((response) => {
+        console.log(response);
 
-    //Actual request to server
-    serverRequest(
-      chartMsg,
-      setChartMsg,
-      modifiedChartOptions,
-      setVoiceMsg,
-      charts,
-      setCharts,
-      setChartToHighlight
-    ).then((response) => {
-      if (mute) {
-        setClippyImage(muteImage);
-      } else {
-        //Voice syntheiszer
-        if (response.assistantResponse) {
-          speakVoice(response.assistantResponse.soundFile);
-          setVoiceMsg(response.assistantResponse.msg);
-          setClippyImage(talkingImage);
-          setShowTooltip(true);
+        if (mute) {
+          setClippyImage(muteImage);
+        } else {
+          //Voice syntheiszer
+          if (response.assistantResponse) {
+            speakVoice(response.assistantResponse.soundFile);
+            setVoiceMsg(response.assistantResponse.msg);
+            setClippyImage(talkingImage);
+            setShowTooltip(true);
+            speakVoice(chartSound);
+          }
+          setTimeout(() => {
+            setClippyImage(listeningImage);
+          }, 3000);
         }
-        setTimeout(() => {
-          setClippyImage(listeningImage);
-        }, 3000);
-      }
-      return response.isCommand;
+        res(response.isCommand);
+      });
     });
   };
 

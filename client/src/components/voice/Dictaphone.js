@@ -52,7 +52,7 @@ const Dictaphone = ({
     },
   ];
 
-  useEffect(() => {
+  useEffect(async () => {
     //Check if words were actually spoken
     if (command === "") {
       return;
@@ -96,39 +96,10 @@ const Dictaphone = ({
     if (command.includes("delete all chosen charts")) {
       closeChosenCharts();
     }
-    //Only send command if includes the word "show"
-    // & if attrbutes were spoke
-    const isCommand = createCharts(command);
+
+    const isCommand = await createCharts(command);
     if (isCommand) {
       setListening(false);
-      setTimeout(() => {
-        setListening(true);
-      }, 8000);
-    }
-    if (
-      (command.includes("where") ||
-        command.includes("see") ||
-        command.includes("show") ||
-        command.includes("what") ||
-        command.includes("make") ||
-        command.includes("plot") ||
-        command.includes("change") ||
-        command.includes("create") ||
-        command.includes("filter") ||
-        ((command.includes("make") ||
-          command.includes("modify") ||
-          command.includes("pivot") ||
-          command.includes("change")) &&
-          (command.includes("these") ||
-            command.includes("this") ||
-            command.includes("those")))) &&
-      !mute &&
-      listening
-    ) {
-      setListening(false);
-
-      createCharts(command);
-
       setTimeout(() => {
         setListening(true);
       }, 8000);

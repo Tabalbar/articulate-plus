@@ -61,22 +61,24 @@ export async function serverRequest(
   // decrypt message from server
   const body = await response.text();
   const responseChartMsg = JSON.parse(body);
+  console.log(responseChartMsg.chartMsg.errMsg);
+  if (responseChartMsg.chartMsg.errMsg == "none") {
+    return { assistantResponse: false, isCommand: false };
+  }
 
-  //API request
-  const pythonResponse = await fetch("/flask", {
-    method: "POST",
-    body: JSON.stringify({ chartMsg: chartMsg }),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  });
-  const pythonBody = await pythonResponse.text();
-  const pythonChartMsg = JSON.parse(pythonBody);
+  // //API request
+  // const pythonResponse = await fetch("/flask", {
+  //   method: "POST",
+  //   body: JSON.stringify({ chartMsg: chartMsg }),
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Accept: "application/json",
+  //   },
+  // });
+  // const pythonBody = await pythonResponse.text();
+  // const pythonChartMsg = JSON.parse(pythonBody);
 
-  console.log(pythonChartMsg);
-
-  //API request
+  // console.log(pythonChartMsg);
 
   //tmp var to hold charts
   let tmpChartMsg = responseChartMsg.chartMsg;
