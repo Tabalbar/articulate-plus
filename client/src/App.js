@@ -143,8 +143,6 @@ function App() {
         setCharts,
         setChartToHighlight
       ).then((response) => {
-        console.log(response);
-
         if (mute) {
           setClippyImage(muteImage);
         } else {

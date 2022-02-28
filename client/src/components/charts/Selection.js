@@ -62,6 +62,7 @@ function ChartSelection({ chartMsg, chooseChart, modifiedChartOptions }) {
                       key={index}
                     >
                       <ChartPlaceholder
+                        key={index}
                         specification={chart}
                         data={chartMsg.data}
                         chooseChart={chooseChart}

@@ -61,7 +61,6 @@ export async function serverRequest(
   // decrypt message from server
   const body = await response.text();
   const responseChartMsg = JSON.parse(body);
-  console.log(responseChartMsg.chartMsg.errMsg);
   if (responseChartMsg.chartMsg.errMsg == "none") {
     return { assistantResponse: false, isCommand: false };
   }
