@@ -74,20 +74,21 @@ export async function serverRequest(
   const pythonBody = await pythonResponse.text();
   const pythonChartMsg = JSON.parse(pythonBody);
 
-  console.log(pythonChartMsg);
-
   //API request
 
   //tmp var to hold charts
   let tmpChartMsg = responseChartMsg.chartMsg;
   //Must add explicit first
+  console.log(pythonChartMsg.pythonCharts);
   let newCharts = [
-    ...tmpChartMsg.randomCharts,
-    ...tmpChartMsg.explicitChart,
-    ...tmpChartMsg.mainAI,
-    ...tmpChartMsg.mainAIOverhearing,
-    ...tmpChartMsg.pivotChart,
+    // ...tmpChartMsg.randomCharts,
+    // ...tmpChartMsg.explicitChart,
+    // ...tmpChartMsg.mainAI,
+    // ...tmpChartMsg.mainAIOverhearing,
+    // ...tmpChartMsg.pivotChart,
+    ...pythonChartMsg.pythonCharts,
   ];
+
   //Clean up for charts that weren't generated
   newCharts = newCharts.filter((x) => {
     return x !== "";

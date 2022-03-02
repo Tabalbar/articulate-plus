@@ -303,7 +303,7 @@ class SmarthubSession:
 
 
 
-    def run(self, utterance, gesture_target_id = None ):
+    def run(self, utterance, gesture_target_id = -1 ):
         # while True:  # loop runs forever in current session
         # utterance, gesture_target_id = FakeMultimodalService.listen()
         # if (utterance == 'stop'or utterance == 'end conversation'):

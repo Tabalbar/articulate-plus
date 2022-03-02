@@ -6,12 +6,16 @@ const covidSort = require("../createChartsV3/charts/covidHelpers/covidSort");
 module.exports = (pythonResponse, chartMsg) => {
   if (pythonResponse == null) {
     console.log("pythonResponse is null");
-    return;
+    chartMsg.pythonCharts = [];
+
+    return chartMsg;
   }
   const pythonChartMsg = JSON.parse(pythonResponse);
   if (!pythonChartMsg.hasOwnProperty("visualization_task")) {
     console.log("no vis task");
-    return;
+    chartMsg.pythonCharts = [];
+
+    return chartMsg;
   }
 
   let chart = createChartTemplate(chartMsg, {}, {});
@@ -27,78 +31,112 @@ module.exports = (pythonResponse, chartMsg) => {
       break;
     }
   }
+  console.log(createVis);
   if (!createVis) {
-    return [];
+    chartMsg.pythonCharts = [];
+    return chartMsg;
   }
 
-  let tmpData = [];
-  for (let i = 0; i < pythonChartMsg.data_query_results.length; i++) {
-    let tmp = pythonChartMsg.data_query_results[i];
-    tmp = tmp.replace("(", "");
-    tmp = tmp.replace(")", "");
-    tmp = tmp.replace(/'/g, "");
-    tmp = tmp.replace('"', "");
-    // tmp = tmp.replace(/-/g, " ");,/
-    tmp = tmp.split(",");
-    let tmpObj = {};
-    console.log(tmp);
-    for (let j = 0; j < tmp.length; j++) {
-      tmp[j] = tmp[j].trim();
-      let attribute = checkDataType(tmp[j], chartMsg);
-      if (attribute === "map") {
-      }
-      tmpObj[attribute] = tmp[j];
-    }
-    tmpData.push(tmpObj);
-  }
-  chartMsg.pythonCharts.data = tmpData;
-
-  chart = createTransform(
-    chart,
-    chartMsg,
-    pythonChartMsg.visualization_task.filters
-  );
-
-  // let extractedHeaders = [];
-  // for (
-  //   let i = 0;
-  //   i < pythonChartMsg.visualization_task.horizontal_axis.length;
-  //   i++
-  // ) {
-  //   extractedHeaders.push(pythonChartMsg.visualization_task.horizontal_axis[i]);
+  // let tmpData = [];
+  // for (let i = 0; i < pythonChartMsg.data_query_results.length; i++) {
+  //   let tmp = pythonChartMsg.data_query_results[i];
+  //   tmp = tmp.replace("(", "");
+  //   tmp = tmp.replace(")", "");
+  //   tmp = tmp.replace(/'/g, "");
+  //   tmp = tmp.replace('"', "");
+  //   // tmp = tmp.replace(/-/g, " ");,/
+  //   tmp = tmp.split(",");
+  //   let tmpObj = {};
+  //   console.log(tmp);
+  //   for (let j = 0; j < tmp.length; j++) {
+  //     tmp[j] = tmp[j].trim();
+  //     let attribute = checkDataType(tmp[j], chartMsg);
+  //     if (attribute === "map") {
+  //     }
+  //     tmpObj[attribute] = tmp[j];
+  //   }
+  //   tmpData.push(tmpObj);
   // }
-  console.log(pythonChartMsg.visualization_task.horizontal_axis, "******");
-  const horizontal_axis = Object.keys(chartMsg.pythonCharts.data[0]);
-  console.log(horizontal_axis);
 
-  if (horizontal_axis.length === 0) {
-    console.log("no horizontal axis given");
-    return [];
+  // chart = createTransform(
+  //   chart,
+  //   chartMsg,
+  //   pythonChartMsg.visualization_task.filters
+  // );
+
+  // // let extractedHeaders = [];
+  // // for (
+  // //   let i = 0;
+  // //   i < pythonChartMsg.visualization_task.horizontal_axis.length;
+  // //   i++
+  // // ) {
+  // //   extractedHeaders.push(pythonChartMsg.visualization_task.horizontal_axis[i]);
+  // // }
+  // console.log(pythonChartMsg.visualization_task.horizontal_axis, "******");
+  // const horizontal_axis = Object.keys(tmpData[0]);
+  // console.log(horizontal_axis);
+
+  // if (horizontal_axis.length === 0) {
+  //   console.log("no horizontal axis given");
+  //   return [];
+  // }
+
+  let plotType = pythonChartMsg.visualization_task.plot_type;
+  let extractedHeaders = "";
+  let filteredHeaders = "";
+  let keys = Object.keys(pythonChartMsg.visualization_task.filters);
+
+  for (let i = 0; i < keys.length; i++) {
+    for (
+      let j = 0;
+      j < pythonChartMsg.visualization_task.filters[keys[i]].length;
+      j++
+    ) {
+      filteredHeaders +=
+        pythonChartMsg.visualization_task.filters[keys[i]][j] + " ";
+    }
   }
+  console.log(filteredHeaders);
 
-  const plot_type = pythonChartMsg.visualization_task.plot_type;
-  switch (plot_type) {
+  for (
+    let i = 0;
+    i < pythonChartMsg.visualization_task.horizontal_axis.length;
+    i++
+  ) {
+    extractedHeaders +=
+      pythonChartMsg.visualization_task.horizontal_axis[i] + " ";
+  }
+  switch (plotType) {
     case "bar chart":
-      chart = createBarChart(
-        chart,
-        chartMsg.pythonCharts.data,
-        horizontal_axis,
-        chartMsg
-      );
-    // case "line chart":
-    //   chart = createLineChart(chart, data, filters, horizontal_axis, chartMsg);
-    // case "tree map":
-    //   chart = createMap(chart, data, filters, horizontal_axis, chartMsg);
+      // chart = createBarChart(
+      //   chart,
+      //   chartMsg.pythonCharts.data,
+      //   horizontal_axis,
+      //   chartMsg
+      // );
+      plotType = "histogram";
+      break;
+    case "line graph":
+      // chart = createLineChart(chart, data, filters, horizontal_axis, chartMsg);
+      plotType = "line";
+      break;
+    case "tree map":
+      // chart = createMap(chart, data, filters, horizontal_axis, chartMsg);
+      plotType = "map";
+      break;
     default:
-      chart = createBarChart(
-        chart,
-        chartMsg.pythonCharts.data,
-        horizontal_axis,
-        chartMsg
-      );
+      plotType = "histogram";
   }
-  chartMsg.pythonCharts = chart;
-  return chartMsg;
+  console.log(plotType, "*&&&&&&&&");
+
+  let command =
+    "Show me a " + plotType + " of " + extractedHeaders + filteredHeaders;
+
+  command = command.replace("_", " ");
+  // chartMsg.pythonCharts = [chart];
+  // chartMsg.pythonCharts.data = tmpData;
+  console.log(command);
+  return { plotType: plotType, command: command };
 };
 
 // chart.encoding.x = {
@@ -129,12 +167,16 @@ const createBarChart = (chart, data, horizontalAxis, chartMsg) => {
     axis: { grid: false, labelAngle: -50 },
   };
   chart.encoding.color = {
-    field: horizontalAxis[0],
+    field: horizontalAxis[1],
     type: findType(horizontalAxis[0], chartMsg.data),
     scale: {
-      range: covidColors(horizontalAxis),
+      range: covidColors(horizontalAxis[0]),
     },
     sort: covidSort(horizontalAxis[0], chartMsg.data),
+  };
+  chart.encoding.y = {
+    field: horizontalAxis[1],
+    type: "quantitative",
   };
   return chart;
 };
