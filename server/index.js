@@ -171,7 +171,6 @@ app.post("/createCharts", async (req, res) => {
   } else {
     let response = await manager.process("en", chartMsg.generalizedCommand);
     intent = response.intent;
-    console.log(response);
     if (intent !== "None") {
       chartMsg.mainAI = createCharts(intent, chartMsg, {
         useCovidDataset: options.useCovidDataset,
@@ -230,34 +229,30 @@ app.post("/flask", async function (req, res) {
   let command = chartMsg.command;
   if (command == "random") {
     res.send({ charts: [] });
-  }
-  console.log(command);
-
-  let options = {
-    method: "POST",
-    uri: "http://localhost:5000/",
-    body: command,
-    json: true, // Automatically stringifies the body to JSON
-  };
-
-  let returndata;
-  let constructedPythonCommand;
-  let sendrequest = await request(options)
-    .then(function (parsedBody) {
-      // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
-      returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
-      constructedPythonCommand = constructPythonCommand(parsedBody);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-  console.log("returned from python");
-  console.log(returndata);
-  if (returndata == "" || returndata == null) {
-    console.log("fired");
-    res.send({ message: "" });
   } else {
-    res.send(returndata);
+    let options = {
+      method: "POST",
+      uri: "http://localhost:5000/",
+      body: command,
+      json: true, // Automatically stringifies the body to JSON
+    };
+
+    let returndata = null;
+    let constructedPythonCommand;
+    let sendrequest = await request(options)
+      .then(function (parsedBody) {
+        // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
+        returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
+        chartMsg = constructPythonCommand(parsedBody, chartMsg);
+        console.log("returned from python");
+      })
+      .catch(function (err) {
+        console.log("error, Python server doesn't understand");
+        console.log(err);
+        // res.send({ message: "error" });
+      });
+
+    res.send(chartMsg);
   }
 });
 

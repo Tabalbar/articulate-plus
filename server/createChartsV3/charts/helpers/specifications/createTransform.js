@@ -23,6 +23,7 @@ module.exports = (chart, chartMsg, extractedFilteredValues) => {
       }
     }
   }
+  console.log(chart.transform);
 
   return chart;
 };

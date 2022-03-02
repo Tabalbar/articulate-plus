@@ -20,7 +20,7 @@ const covidColors = [
     ],
   },
   {
-    header: "area type",
+    header: "county type",
     colors: ["#d5ff00", "#00ff08", "#0037ff", "#ff69c6", "#ff0000"],
   },
   {
@@ -52,11 +52,11 @@ const covidColors = [
     colors: ["#017ab3", "#6499c6", "#9bbad9", "#cddcec", "#121212"],
   },
   {
-    header: "Hispanic",
+    header: "hispanic",
     colors: ["#01b33b", "#5bc363", "#89d38a", "#b2e2b0", "#d9f1d7", "#121212"],
   },
   {
-    header: "covid risk",
+    header: "covid vulnerability",
     colors: ["#0800af", "#5e3bc0", "#8c6ad1", "#b59ae1", "#daccf0", "#121212"],
   },
   {

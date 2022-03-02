@@ -85,7 +85,7 @@ function App() {
     randomCharts: [],
     mainAI: [],
     mainAIOverhearing: [],
-    abariCharts: [],
+    pythonCharts: [],
     pivotChart: [],
     deltaTime: 0,
     assistantResponse: "",
@@ -223,7 +223,7 @@ function App() {
           </Button> */}
           <Input
             position="absolute"
-            ml="40rem"
+            ml="20rem"
             bg="white"
             zIndex={20}
             width={"10rem"}
@@ -232,7 +232,7 @@ function App() {
 
           <Button
             position="absolute"
-            ml={"50rem"}
+            ml={"30rem"}
             zIndex={20}
             onClick={() => createCharts(textRef.current.value)}
           >
