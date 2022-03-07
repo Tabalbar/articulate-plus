@@ -22,18 +22,18 @@ module.exports = (pythonResponse, chartMsg) => {
 
   let createVis = false;
   for (let i = 0; i < pythonChartMsg.dialogue_act.length; i++) {
-    console.log(pythonChartMsg.dialogue_act[i]);
     if (
-      pythonChartMsg.dialogue_act[i] === "createVis" ||
+      pythonChartMsg.dialogue_act[i] === "createvis" ||
       pythonChartMsg.dialogue_act[i] === "modifyvis"
     ) {
       createVis = true;
       break;
     }
   }
-  console.log(createVis);
   if (!createVis) {
     chartMsg.pythonCharts = [];
+    console.log(pythonChartMsg.dialogue_act);
+    console.log("Not classified as createvis or modifyvis");
     return chartMsg;
   }
 
@@ -96,7 +96,6 @@ module.exports = (pythonResponse, chartMsg) => {
         pythonChartMsg.visualization_task.filters[keys[i]][j] + " ";
     }
   }
-  console.log(filteredHeaders);
 
   for (
     let i = 0;
@@ -116,7 +115,7 @@ module.exports = (pythonResponse, chartMsg) => {
       // );
       plotType = "histogram";
       break;
-    case "line graph":
+    case "line chart":
       // chart = createLineChart(chart, data, filters, horizontal_axis, chartMsg);
       plotType = "line";
       break;
@@ -127,7 +126,6 @@ module.exports = (pythonResponse, chartMsg) => {
     default:
       plotType = "histogram";
   }
-  console.log(plotType, "*&&&&&&&&");
 
   let command =
     "Show me a " + plotType + " of " + extractedHeaders + filteredHeaders;
@@ -135,7 +133,6 @@ module.exports = (pythonResponse, chartMsg) => {
   command = command.replace("_", " ");
   // chartMsg.pythonCharts = [chart];
   // chartMsg.pythonCharts.data = tmpData;
-  console.log(command);
   return { plotType: plotType, command: command };
 };
 

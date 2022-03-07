@@ -56,7 +56,7 @@ const covidColors = [
     colors: ["#01b33b", "#5bc363", "#89d38a", "#b2e2b0", "#d9f1d7", "#121212"],
   },
   {
-    header: "covid vulnerability",
+    header: "covid risk",
     colors: ["#0800af", "#5e3bc0", "#8c6ad1", "#b59ae1", "#daccf0", "#121212"],
   },
   {

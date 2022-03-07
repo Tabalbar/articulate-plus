@@ -49,12 +49,12 @@ function Window(props) {
         specification.hasOwnProperty("layer") ||
         specification.mark == "bar"
       ) {
-        specification.fetchedURL = true;
-        fetch(
-          "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-        )
-          .then((response) => response.text())
-          .then(async (csvData) => setChartData(await processData(csvData)));
+        // specification.fetchedURL = true;
+        // fetch(
+        //   "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+        // )
+        //   .then((response) => response.text())
+        //   .then(async (csvData) => setChartData(await processData(csvData)));
       }
     }
   }, []);
@@ -108,7 +108,7 @@ function Window(props) {
           x: props.charts[props.index].x,
           y: props.charts[props.index].y,
         }}
-        onStop={eventLogger}
+        // onStop={eventLogger}
         onDrag={() => setDragging(true)}
         onStop={() =>
           setTimeout(() => {

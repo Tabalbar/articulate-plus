@@ -37,5 +37,10 @@ module.exports = (
   };
   chart = createTitle(chart, [extractedHeader], "bar", extractedFilteredValues);
   chart = createTransform(chart, chartMsg, extractedFilteredValues);
+  // chart.transform.push({
+  //   type: "aggregate",
+  //   fields: [extractedHeader],
+  //   ops: ["distinct"],
+  // });
   return chart;
 };

@@ -269,7 +269,8 @@ app.post("/flask", async function (req, res) {
               threshold: 5,
             },
             pivotCharts: false,
-          }
+          },
+          true
         );
         console.log("returned from python");
       })
