@@ -63,30 +63,30 @@ export async function serverRequest(
   const responseChartMsg = JSON.parse(body);
 
   //API request
-  const pythonResponse = await fetch("/flask", {
-    method: "POST",
-    body: JSON.stringify({ chartMsg: chartMsg }),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  });
-  const pythonBody = await pythonResponse.text();
-  const pythonChartMsg = JSON.parse(pythonBody);
+  // const pythonResponse = await fetch("/flask", {
+  //   method: "POST",
+  //   body: JSON.stringify({ chartMsg: chartMsg }),
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Accept: "application/json",
+  //   },
+  // });
+  // const pythonBody = await pythonResponse.text();
+  // const pythonChartMsg = JSON.parse(pythonBody);
 
   //API request
 
   //tmp var to hold charts
   let tmpChartMsg = responseChartMsg.chartMsg;
   //Must add explicit first
-  console.log(pythonChartMsg.pythonCharts);
+  // console.log(pythonChartMsg.pythonCharts);
   let newCharts = [
-    // ...tmpChartMsg.randomCharts,
-    // ...tmpChartMsg.explicitChart,
-    // ...tmpChartMsg.mainAI,
-    // ...tmpChartMsg.mainAIOverhearing,
-    // ...tmpChartMsg.pivotChart,
-    ...pythonChartMsg.pythonCharts,
+    ...tmpChartMsg.randomCharts,
+    ...tmpChartMsg.explicitChart,
+    ...tmpChartMsg.mainAI,
+    ...tmpChartMsg.mainAIOverhearing,
+    ...tmpChartMsg.pivotChart,
+    // ...pythonChartMsg.pythonCharts,
   ];
 
   //Clean up for charts that weren't generated

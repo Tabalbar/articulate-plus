@@ -12,9 +12,12 @@ module.exports = (chartMsg, extractedHeaders) => {
   }
 
   if (!typeFound) {
+    console.log("not found");
+
     for (let i = 0; i < chartMsg.attributes.length; i++) {
       if (findType(chartMsg.attributes[i], chartMsg.data) == "quantitative") {
         extractedHeaders.unshift(chartMsg.attributes[i]);
+        typeFound = true;
         break;
       }
     }

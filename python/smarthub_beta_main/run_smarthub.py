@@ -385,9 +385,9 @@ class SmarthubSession:
 
 
 # start a new Smarthub session:
-# smarthub = SmarthubSession()
-# smarthub.run("Okay.. lets see")
-# smarthub.run("Can I see covid risk for the southwest?")
+smarthub = SmarthubSession()
+smarthub.run("Okay.. lets see")
+smarthub.run("Can I see covid risk for the southwest?")
 # smarthub.run("Can I see diabetes rate")
 # smarthub.run("Can you filter this by the southeast?")
 # smarthub.run("Okay.. let me see..")

@@ -53,7 +53,6 @@ module.exports = (intent, chartMsg, options, isPython) => {
           extractedHeaders,
           "quantitative"
         );
-        console.log(extractedHeaders);
         extractedHeaders = findQuantitative.extractedHeaders;
         if (!findQuantitative.typeFound) {
           for (let i = 0; i < extractedHeaders.length; i++) {
