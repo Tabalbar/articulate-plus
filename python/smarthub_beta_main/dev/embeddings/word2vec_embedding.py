@@ -120,6 +120,8 @@ class Word2VecEmbedding(Embedding):
         load_from = None
         if file_name:
             load_from = file_name
+            # print("*******************" +load_from)
+            # print("*******************" +self._embedding_model_path)
         elif self._model_name:
             load_from = self._embedding_model_path + self._model_name + '.pkl'
 
@@ -128,6 +130,7 @@ class Word2VecEmbedding(Embedding):
                 print("Verbose: Started loading embeddings from", load_from)
             try:
                 self.embedding_model = gensim.models.Word2Vec.load(load_from)
+                # self.embedding_model = gensim.models.KeyedVectors.load(load_from)
             except FileNotFoundError:
                 print("Verbose: Could not find file", load_from)
 

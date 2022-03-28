@@ -4,6 +4,9 @@ const findType = require("./charts/helpers/findType");
 
 module.exports = {
   headers: (chartMsg, headerFrequencyCount, options) => {
+    // const result1 = str.replace(/foo/g, "moo");
+
+    chartMsg.command = chartMsg.command.replace(/_/g, " ");
     //Extract explicit headers from the command
     let doc = nlp(chartMsg.command);
     let extractedHeaders = [];

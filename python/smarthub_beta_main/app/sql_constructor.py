@@ -152,7 +152,7 @@ class SQLConstructor:
     def construct(self):
         selects = ','.join(['counties_cdc_cases.' + attribute for attribute in self._SELECT.values()])
         select_counts = ','.join([v for v in self._SELECT_COUNT.values() if v != None])
-        # select_sums = ','.join([v for v in self._SELECT_SUM.values() if v != None])
+        select_sums = ','.join([v for v in self._SELECT_SUM.values() if v != None])
         froms = ','.join(self._FROM.values())
         order_bys = ','.join(self._ORDER_BY.values())
         group_bys = ','.join(['counties_cdc_cases.' + attribute for attribute in self._GROUP_BY.values()])
@@ -163,10 +163,10 @@ class SQLConstructor:
         if selects:
             sql += selects + ','
         if select_counts:
-            if 'ATTRIBUTE' in select_counts:
-                sql += 'count(DISTINCT counties_cdc_cases.fips) as ' + select_counts
-            # elif 'TOTAL_CASES' in select_counts:
-            #     sql += 'sum(new_cases) as' + select_counts
+        # if 'ATTRIBUTE' in select_counts:
+            sql += 'count(DISTINCT counties_cdc_cases.fips) as ' + select_counts
+        elif select_sums:
+            sql += 'sum(new_cases) as' + select_sums
 
         else:
             sql = sql[:-1]
