@@ -53,7 +53,9 @@ module.exports = (intent, chartMsg, options, isPython) => {
           extractedHeaders,
           "quantitative"
         );
+
         extractedHeaders = findQuantitative.extractedHeaders;
+        extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "map");
         if (!findQuantitative.typeFound) {
           for (let i = 0; i < extractedHeaders.length; i++) {
             charts.push(

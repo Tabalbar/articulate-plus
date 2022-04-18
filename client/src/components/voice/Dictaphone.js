@@ -103,8 +103,11 @@ const Dictaphone = ({
 
       const isCommand = await createCharts(command);
       if (isCommand) {
+        console.log("not listening");
         setListening(false);
         setTimeout(() => {
+          console.log("not listening");
+
           setListening(true);
         }, 8000);
       }

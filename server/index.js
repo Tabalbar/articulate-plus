@@ -126,15 +126,59 @@ app.post("/createCharts", async (req, res) => {
   chartMsg.generalizedCommand = generalizedCommand;
 
   let response = await manager.process("en", chartMsg.generalizedCommand);
-  let isCommand = response.intent;
+  let isCommand = "None";
+  classifications = response.classifications;
+  console.log(classifications);
+
+  for (let i = 0; i < classifications.length; i++) {
+    if (
+      classifications[i].score > 0.9 &&
+      classifications[i].intent !== "none"
+    ) {
+      isCommand = classifications[i].intent;
+      break;
+    }
+  }
+  if (chartMsg.command === "random") {
+    isCommand = "random";
+  }
   console.log(isCommand);
+
   if (isCommand === "None" || isCommand === "none") {
-    chartMsg.errMsg = "none";
-    res.send({ chartMsg });
+    let intent = getExplicitChartType(chartMsg.command);
+    console.log(intent);
+    if (intent !== false) {
+      chartMsg.explicitChart = createCharts(intent, chartMsg, {
+        useCovidDataset: options.useCovidDataset,
+        sentimentAnalysis: false,
+        window: {
+          toggle: false,
+          pastSentences: 0,
+        },
+        neuralNetwork: false,
+        useSynonyms: false,
+        randomCharts: {
+          toggle: false,
+          minutes: 10,
+        },
+        threshold: 3,
+        filter: {
+          toggle: false,
+          pastSentences: 0,
+          threshold: 5,
+        },
+        pivotCharts: false,
+      });
+      chartMsg.errMsg = "";
+      res.send({ chartMsg });
+    } else {
+      chartMsg.errMsg = "none";
+      res.send({ chartMsg });
+    }
   } else {
     let intent = getExplicitChartType(chartMsg.command);
     if (intent === false) {
-      intent = response.intent;
+      console.log(intent);
       chartMsg.mainAI = createCharts(intent, chartMsg, {
         useCovidDataset: options.useCovidDataset,
         sentimentAnalysis: false,
@@ -178,6 +222,11 @@ app.post("/createCharts", async (req, res) => {
         },
         pivotCharts: false,
       });
+    }
+    if (isCommand === "random") {
+      intent = chartOptions[Math.floor(Math.random() * 5)].mark;
+    } else {
+      intent = response.intent;
     }
 
     chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
