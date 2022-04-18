@@ -89,6 +89,8 @@ export async function serverRequest(
     // ...pythonChartMsg.pythonCharts,
   ];
 
+  console.log(newCharts);
+
   //Clean up for charts that weren't generated
   newCharts = newCharts.filter((x) => {
     return x !== "";

@@ -58,7 +58,7 @@ function App() {
     randomCharts: {
       toggle: true,
       minutes: 5,
-      chartWindow: 0,
+      chartWindow: 3,
     },
     threshold: 2,
     filter: {
@@ -105,17 +105,16 @@ function App() {
     },
   });
 
-  const [studyName, setStudyName] = useState('');
+  const [studyName, setStudyName] = useState("");
 
   // SAVE FILE ON EVERY STATE CHANGE
   useEffect(() => {
     //TODO WRITE SAVE FILE
-    if (studyName !== '') {
+    if (studyName !== "") {
       // ANY CHANGE TO CHART MESSAGE
       // POST TO NODE SERVER (JSON.stringy(chartMsg), studyName)
     }
-  }, [chartMsg, studyName])
-
+  }, [chartMsg, studyName]);
 
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
@@ -144,8 +143,6 @@ function App() {
     //   speakVoice(thinkingResponse.soundFile);
     //   setVoiceMsg(thinkingResponse.msg);
     // }
-    setClippyImage(thinkingImage);
-    speakVoice(chartSound);
 
     //Actual request to server
     serverRequest(
@@ -162,11 +159,13 @@ function App() {
       } else {
         //Voice syntheiszer
         if (response.assistantResponse) {
+          speakVoice(chartSound);
           speakVoice(response.assistantResponse.soundFile);
           setVoiceMsg(response.assistantResponse.msg);
           setClippyImage(talkingImage);
           setShowTooltip(true);
         }
+        setClippyImage(thinkingImage);
         setTimeout(() => {
           setClippyImage(listeningImage);
         }, 3000);

@@ -101,38 +101,41 @@ const Dictaphone = ({
     const isCommand = createCharts(command);
     if (isCommand) {
       setListening(false);
-      setTimeout(() => {
-        setListening(true);
-      }, 8000);
-    }
-    if (
-      (command.includes("where") ||
-        command.includes("see") ||
-        command.includes("show") ||
-        command.includes("what") ||
-        command.includes("make") ||
-        command.includes("plot") ||
-        command.includes("change") ||
-        command.includes("create") ||
-        command.includes("filter") ||
-        ((command.includes("make") ||
-          command.includes("modify") ||
-          command.includes("pivot") ||
-          command.includes("change")) &&
-          (command.includes("these") ||
-            command.includes("this") ||
-            command.includes("those")))) &&
-      !mute &&
-      listening
-    ) {
-      setListening(false);
-
-      createCharts(command);
+      console.log("not listening");
 
       setTimeout(() => {
+        console.log("listening");
         setListening(true);
-      }, 8000);
+      }, 10000);
     }
+    // if (
+    //   (command.includes("where") ||
+    //     command.includes("see") ||
+    //     command.includes("show") ||
+    //     command.includes("what") ||
+    //     command.includes("make") ||
+    //     command.includes("plot") ||
+    //     command.includes("change") ||
+    //     command.includes("create") ||
+    //     command.includes("filter") ||
+    //     ((command.includes("make") ||
+    //       command.includes("modify") ||
+    //       command.includes("pivot") ||
+    //       command.includes("change")) &&
+    //       (command.includes("these") ||
+    //         command.includes("this") ||
+    //         command.includes("those")))) &&
+    //   !mute &&
+    //   listening
+    // ) {
+    //   setListening(false);
+
+    //   createCharts(command);
+
+    //   setTimeout(() => {
+    //     setListening(true);
+    //   }, 8000);
+    // }
   }, [command]);
 
   //Create charts at a random interval

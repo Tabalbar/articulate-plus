@@ -245,7 +245,7 @@ function AttributeContainer({
                     </Text>
                     <Text>
                       Sentence Window Size (Filters):{" "}
-                      {modifiedChartOptions.filter.chartWindow}
+                      {modifiedChartOptions.filter.pastSentences}
                     </Text>
                     <Text>
                       Sentence Window Threshold (Filters):{" "}
