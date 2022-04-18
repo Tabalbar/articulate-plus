@@ -19,10 +19,9 @@ module.exports = (chartMsg, options, chosenCharts) => {
           chartMsg.explicitChart[i] !== ""
         ) {
           chartMsg.mainAIOverhearing[n] = "";
-          chartMsg.explicitChart[i].chartSelection +=
-            " mainAIOverhearing_point";
         }
       }
+
       chartMsg.explicitChart[i] = checkIfChartsAlreadyChosen(
         chartMsg.explicitChart[i],
         chosenCharts,
@@ -41,7 +40,6 @@ module.exports = (chartMsg, options, chosenCharts) => {
           chartMsg.explicitChart[i] !== ""
         ) {
           chartMsg.mainAIOverhearing[j] = "";
-          chartMsg.mainAI[i].chartSelection += " mainAIOverhearing_point";
         }
       }
       chartMsg.mainAI[i] = checkIfChartsAlreadyChosen(
@@ -87,8 +85,6 @@ module.exports = (chartMsg, options, chosenCharts) => {
     for (let j = 0; j < tmpChartWindow.length; j++) {
       if (isChartsEqual(chartMsg.randomCharts[i], tmpChartWindow[j])) {
         chartMsg.randomCharts[i] = "";
-
-        // console.log(tmpChartWindow[j]);
       }
     }
     if (chartMsg.randomCharts[i] !== "") {
@@ -141,4 +137,28 @@ function checkIfChartsAlreadyChosen(chart, chosenCharts, chartMsg) {
     }
   }
   return chart;
+}
+
+function checkIfOverhearingChart(chart) {
+  for (let n = 0; n < chart.headerFrequencyCount.nominal.length; n++) {
+    if (chart.headerFrequencyCount.nominal[k].count > 0) {
+      return true;
+    }
+  }
+  for (let n = 0; n < chart.headerFrequencyCount.quantitative.length; n++) {
+    if (chart.headerFrequencyCount.quantitative[k].count > 0) {
+      return true;
+    }
+  }
+  for (let n = 0; n < chart.headerFrequencyCount.temporal.length; n++) {
+    if (chart.headerFrequencyCount.temporal[k].count > 0) {
+      return true;
+    }
+  }
+  for (let n = 0; n < chart.headerFrequencyCount.map.length; n++) {
+    if (chart.headerFrequencyCount.map[k].count > 0) {
+      return true;
+    }
+  }
+  return false;
 }

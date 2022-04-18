@@ -28,9 +28,9 @@ import LineTheme from "../components/diagnostics/LineTheme";
  */
 function Diagnostics({ chartMsg, charts }) {
   const [transcriptData, setTranscriptData] = useState([]);
-  useEffect(() => {
-    localStorage.getItem(chartMsg);
-  }, [chartMsg]);
+  // useEffect(() => {
+  //   localStorage.getItem(chartMsg);
+  // }, [chartMsg]);
 
   //Download user's data, charts made, looged transcripts,an
   const downloadFile = async () => {

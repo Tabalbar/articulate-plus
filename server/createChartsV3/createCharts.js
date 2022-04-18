@@ -12,7 +12,7 @@ const createHeatmap = require("./charts/createHeatmap");
 const createBar = require("./charts/createBar");
 const findQuantitativeAndSwitch = require("./charts/helpers/findQuantitativeAndSwitch");
 
-module.exports = (intent, chartMsg, options) => {
+module.exports = (intent, chartMsg, options, isPython) => {
   //Varaibles that holds the count for overheadering
   const headerFrequencyCount = countHeaderFrequency(chartMsg, options);
   const filterFrequencyCount = countFilterFrequency(chartMsg, options);
@@ -29,6 +29,7 @@ module.exports = (intent, chartMsg, options) => {
   );
   //Holds all charts
   let charts = [];
+  // console.log(chartMsg.command, extractedHeaders, isPython);
 
   switch (intent) {
     case "histogram":
@@ -46,7 +47,7 @@ module.exports = (intent, chartMsg, options) => {
       }
       break;
     case "bar":
-      if (!options.useCovidDataset) {
+      if (options.useCovidDataset) {
         const findQuantitative = findQuantitativeAndSwitch(
           chartMsg,
           extractedHeaders,

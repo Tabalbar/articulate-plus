@@ -28,10 +28,12 @@ function Window(props) {
   const onStart = (e) => {
     e.preventDefault();
     let elems = document.getElementsByClassName("react-draggable");
-    if (props.modifiedChartOptions.pivotCharts && !dragging) {
-      props.handlePivot(props.index);
-    }
-
+    //FLAG DISABLED FOR NOW
+    // if (props.modifiedChartOptions.pivotCharts && !dragging) {
+    //   props.handlePivot(props.index);
+    // }
+    props.specification.numClicks++;
+    console.log("numClicks: ", props.specification.numClicks);
     e.currentTarget.style.zIndex = props.globalZIndex;
     props.setGlobalZIndex((prev) => prev + 1);
   };
@@ -49,12 +51,12 @@ function Window(props) {
         specification.hasOwnProperty("layer") ||
         specification.mark == "bar"
       ) {
-        specification.fetchedURL = true;
-        fetch(
-          "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-        )
-          .then((response) => response.text())
-          .then(async (csvData) => setChartData(await processData(csvData)));
+        // specification.fetchedURL = true;
+        // fetch(
+        //   "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+        // )
+        //   .then((response) => response.text())
+        //   .then(async (csvData) => setChartData(await processData(csvData)));
       }
     }
   }, []);
@@ -108,7 +110,7 @@ function Window(props) {
           x: props.charts[props.index].x,
           y: props.charts[props.index].y,
         }}
-        onStop={eventLogger}
+        // onStop={eventLogger}
         onDrag={() => setDragging(true)}
         onStop={() =>
           setTimeout(() => {

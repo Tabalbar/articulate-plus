@@ -58,7 +58,7 @@ function App() {
     randomCharts: {
       toggle: true,
       minutes: 5,
-      chartWindow: 0,
+      chartWindow: 3,
     },
     threshold: 2,
     filter: {
@@ -85,7 +85,7 @@ function App() {
     randomCharts: [],
     mainAI: [],
     mainAIOverhearing: [],
-    abariCharts: [],
+    pythonCharts: [],
     pivotChart: [],
     deltaTime: 0,
     assistantResponse: "",
@@ -104,6 +104,18 @@ function App() {
       map: [],
     },
   });
+
+  const [studyName, setStudyName] = useState("");
+
+  // SAVE FILE ON EVERY STATE CHANGE
+  useEffect(() => {
+    //TODO WRITE SAVE FILE
+    if (studyName !== "") {
+      // ANY CHANGE TO CHART MESSAGE
+      // POST TO NODE SERVER (JSON.stringy(chartMsg), studyName)
+    }
+  }, [chartMsg, studyName]);
+
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 
@@ -236,7 +248,7 @@ function App() {
           </Button> */}
           <Input
             position="absolute"
-            ml="40rem"
+            ml="20rem"
             bg="white"
             zIndex={20}
             width={"10rem"}
@@ -245,7 +257,7 @@ function App() {
 
           <Button
             position="absolute"
-            ml={"50rem"}
+            ml={"30rem"}
             zIndex={20}
             onClick={() => createCharts(textRef.current.value)}
           >

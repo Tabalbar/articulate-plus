@@ -4,6 +4,9 @@ const findType = require("./charts/helpers/findType");
 
 module.exports = {
   headers: (chartMsg, headerFrequencyCount, options) => {
+    // const result1 = str.replace(/foo/g, "moo");
+
+    chartMsg.command = chartMsg.command.replace(/_/g, " ");
     //Extract explicit headers from the command
     let doc = nlp(chartMsg.command);
     let extractedHeaders = [];
@@ -76,15 +79,39 @@ module.exports = {
   },
 
   filterValues: (chartMsg, filterFrequencyCount, options) => {
-    let doc = nlp(chartMsg.command);
+    chartMsg.command = chartMsg.command.replace(/ /g, "-");
+    // let doc = nlp(chartMsg.command);
     let extractedFilteredHeaders = [];
-    let foundTimeHeader = false;
-    let words = chartMsg.command.split(" ");
+    // let foundTimeHeader = false;
+    let words = chartMsg.command.split("-");
     //Extract explicit filters used
+    // for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
+    //   extractedFilteredHeaders[chartMsg.featureMatrix[i][0]] = [];
+    //   for (let n = 1; n < chartMsg.featureMatrix[i].length; n++) {
+    //     if (doc.has(chartMsg.featureMatrix[i][n])) {
+    //       extractedFilteredHeaders[chartMsg.featureMatrix[i][0]].push(
+    //         chartMsg.featureMatrix[i][n]
+    //       );
+    //     } else {
+    //       for (let j = 0; j < words.length; j++) {
+    //         if (
+    //           levenshtein.get(
+    //             words[j].toLowerCase(),
+    //             chartMsg.featureMatrix[i][n].toLowerCase()
+    //           ) == 1
+    //         ) {
+    //           extractedFilteredHeaders[chartMsg.featureMatrix[i][0]].push(
+    //             chartMsg.featureMatrix[i][n]
+    //           );
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
     for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
       extractedFilteredHeaders[chartMsg.featureMatrix[i][0]] = [];
       for (let n = 1; n < chartMsg.featureMatrix[i].length; n++) {
-        if (doc.has(chartMsg.featureMatrix[i][n])) {
+        if (chartMsg.command.includes(chartMsg.featureMatrix[i][n])) {
           extractedFilteredHeaders[chartMsg.featureMatrix[i][0]].push(
             chartMsg.featureMatrix[i][n]
           );
@@ -121,6 +148,8 @@ module.exports = {
         }
       }
     }
+    //turn command back
+    chartMsg.command = chartMsg.command.replace(/-/g, " ");
 
     //delete any duplciates
     checkExtratedFiltersDuplicates(extractedFilteredHeaders);

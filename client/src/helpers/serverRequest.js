@@ -82,13 +82,18 @@ export async function serverRequest(
   //tmp var to hold charts
   let tmpChartMsg = responseChartMsg.chartMsg;
   //Must add explicit first
+  // console.log(pythonChartMsg.pythonCharts);
   let newCharts = [
     ...tmpChartMsg.randomCharts,
     ...tmpChartMsg.explicitChart,
     ...tmpChartMsg.mainAI,
     ...tmpChartMsg.mainAIOverhearing,
     ...tmpChartMsg.pivotChart,
+    // ...pythonChartMsg.pythonCharts,
   ];
+
+  console.log(newCharts);
+
   //Clean up for charts that weren't generated
   newCharts = newCharts.filter((x) => {
     return x !== "";
@@ -132,8 +137,10 @@ export async function serverRequest(
       }, 4000);
     } else {
       if (chartMsg.command !== "random") {
-        assistantResponse =
-          noCharts[Math.floor(Math.random() * noCharts.length)];
+        //FLAG DISABLED FOR NOW
+        // assistantResponse =
+        //   noCharts[Math.floor(Math.random() * noCharts.length)];
+        assistantResponse = false;
       } else {
         assistantResponse = false;
       }

@@ -93,16 +93,27 @@ function ChartPlaceholder({
   const [chartData, setChartData] = useState(data);
   useEffect(() => {
     if (modifiedChartOptions.useCovidDataset == true) {
+      console.log("true");
+
       if (
         specification.hasOwnProperty("layer") ||
         specification.mark == "bar"
       ) {
-        specification.fetchedURL = true;
-        fetch(
-          "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-        )
-          .then((response) => response.text())
-          .then(async (csvData) => setChartData(await processData(csvData)));
+        // specification.transform.push({
+        //   type: "aggregate",
+        //   fields: ["access to doctors"],
+        //   ops: ["distinct"],
+        // });
+        specification.transform = [];
+        console.log(specification.transform);
+
+        // console.log("fetching");
+        // specification.fetchedURL = true;
+        // fetch(
+        //   "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+        // )
+        //   .then((response) => response.text())
+        //   .then(async (csvData) => setChartData(await processData(csvData)));
       }
     }
   }, []);
@@ -119,6 +130,7 @@ function ChartPlaceholder({
   const testClick = (e) => {
     specification.x = e.clientX - 250;
     specification.y = e.clientY - 800;
+    console.log(specification);
   };
 
   return (

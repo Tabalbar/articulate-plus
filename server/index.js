@@ -184,68 +184,123 @@ app.post("/createCharts", async (req, res) => {
     CompareCharts(chartMsg, options, chosenCharts);
 
     chartMsg.mainAIOverhearingCount = countHeaderFrequency(chartMsg, options);
-    chartMsg.total = countHeaderFrequency(
-      chartMsg,
-
-      {
-        sentimentAnalysis: false,
-        window: {
-          toggle: true,
-          pastSentences: 99999,
-        },
-        neuralNetwork: true,
-        filter: {
-          toggle: false,
-          pastSentences: options.filter.pastSentences,
-          threshold: options.filter.threshold,
-        },
-      }
-    );
+    chartMsg.total = countHeaderFrequency(chartMsg, {
+      sentimentAnalysis: false,
+      window: {
+        toggle: true,
+        pastSentences: 99999,
+      },
+      neuralNetwork: true,
+      filter: {
+        toggle: false,
+        pastSentences: options.filter.pastSentences,
+        threshold: options.filter.threshold,
+      },
+    });
     chartMsg.errMsg = "";
     res.send({ chartMsg });
   }
+});
 
-  // /**
-  //  * Getting expicit mark type
-  //  */
-  // //Check if pivot
-  // if (chartMsg.command == "random") {
-  //   let intent = chartOptions[Math.floor(Math.random() * 5)];
-  //   chartMsg.randomCharts = createCharts(intent.mark, chartMsg, options);
-  // } else if (pivotTheseCharts.length > 0) {
-  //   chartMsg.pivotChart = pivotChartsV2(pivotTheseCharts, chartMsg, options);
-  // } else if (intent) {
-  // } else {
-  //   if (intent !== "None") {
-  //     chartMsg.mainAI = createCharts(intent, chartMsg, {
-  //       useCovidDataset: options.useCovidDataset,
-  //       sentimentAnalysis: false,
-  //       window: {
-  //         toggle: false,
-  //         pastSentences: 0,
-  //       },
-  //       neuralNetwork: true,
-  //       useSynonyms: true,
-  //       randomCharts: {
-  //         toggle: false,
-  //         minutes: 10,
-  //       },
-  //       threshold: 3,
-  //       filter: {
-  //         toggle: false,
-  //         pastSentences: 0,
-  //         threshold: 5,
-  //       },
-  //       pivotCharts: false,
-  //     });
-  //     chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
-  //   } else {
-  //     //If Neural Network has no match for intent, no charts are made
-  //     chartMsg.explicitChart = "";
-  //     chartMsg.inferredChart = "";
-  //     chartMsg.modifiedChart = "";
-  //   }
-  // }
+// /**
+//  * Getting expicit mark type
+//  */
+// //Check if pivot
+// if (chartMsg.command == "random") {
+//   let intent = chartOptions[Math.floor(Math.random() * 5)];
+//   chartMsg.randomCharts = createCharts(intent.mark, chartMsg, options);
+// } else if (pivotTheseCharts.length > 0) {
+//   chartMsg.pivotChart = pivotChartsV2(pivotTheseCharts, chartMsg, options);
+// } else if (intent) {
+// } else {
+//   if (intent !== "None") {
+//     chartMsg.mainAI = createCharts(intent, chartMsg, {
+//       useCovidDataset: options.useCovidDataset,
+//       sentimentAnalysis: false,
+//       window: {
+//         toggle: false,
+//         pastSentences: 0,
+//       },
+//       neuralNetwork: true,
+//       useSynonyms: true,
+//       randomCharts: {
+//         toggle: false,
+//         minutes: 10,
+//       },
+//       threshold: 3,
+//       filter: {
+//         toggle: false,
+//         pastSentences: 0,
+//         threshold: 5,
+//       },
+//       pivotCharts: false,
+//     });
+//     chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
+//   } else {
+//     //If Neural Network has no match for intent, no charts are made
+//     chartMsg.explicitChart = "";
+//     chartMsg.inferredChart = "";
+//     chartMsg.modifiedChart = "";
+//   }
+// }
+app.post("/flask", async function (req, res) {
+  let chartMsg = req.body.chartMsg;
+  let command = chartMsg.command;
+  if (command == "random") {
+    chartMsg.pythonCharts = [];
+    res.send(chartMsg);
+  } else {
+    let options = {
+      method: "POST",
+      uri: "http://localhost:5000/",
+      body: command,
+      json: true, // Automatically stringifies the body to JSON
+    };
+
+    let returndata = null;
+    let constructedPythonCommand;
+    let sendrequest = await request(options)
+      .then(function (parsedBody) {
+        // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
+        returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
+        let constructedCommand = constructPythonCommand(parsedBody, chartMsg);
+        chartMsg.command = constructedCommand.command;
+        chartMsg.pythonCharts = createCharts(
+          constructedCommand.plotType,
+          chartMsg,
+          {
+            useCovidDataset: options.useCovidDataset,
+            sentimentAnalysis: false,
+            window: {
+              toggle: false,
+              pastSentences: 0,
+            },
+            neuralNetwork: false,
+            useSynonyms: false,
+            randomCharts: {
+              toggle: false,
+              minutes: 10,
+            },
+            threshold: 3,
+            filter: {
+              toggle: false,
+              pastSentences: 0,
+              threshold: 5,
+            },
+            pivotCharts: false,
+          },
+          true
+        );
+        console.log("returned from python");
+      })
+      .catch(function (err) {
+        console.log("error, Python server doesn't understand");
+        console.log(err);
+        // res.send({ message: "error" });
+      });
+
+    res.send(chartMsg);
+  }
 });
 
 // app.post("/flask", async function (req, res) {

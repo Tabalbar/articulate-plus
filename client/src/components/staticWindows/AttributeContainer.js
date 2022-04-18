@@ -231,7 +231,31 @@ function AttributeContainer({
                     Modified Chart Options
                   </Text>
                   <Stack>
-                    <Radio
+                    <Text>
+                      Sentence Window Size (Attributes):{" "}
+                      {modifiedChartOptions.window.pastSentences}
+                    </Text>
+                    <Text>
+                      Sentence Window Threshold (Attributes):{" "}
+                      {modifiedChartOptions.threshold}
+                    </Text>
+                    <Text>
+                      Past Charts to compare with random:{" "}
+                      {modifiedChartOptions.randomCharts.chartWindow}
+                    </Text>
+                    <Text>
+                      Sentence Window Size (Filters):{" "}
+                      {modifiedChartOptions.filter.pastSentences}
+                    </Text>
+                    <Text>
+                      Sentence Window Threshold (Filters):{" "}
+                      {modifiedChartOptions.filter.threshold}
+                    </Text>
+                    <Text>
+                      Using Pivot: {modifiedChartOptions.pivot ? "Yes" : "No"}
+                    </Text>
+                    {/* FLAG DISABLED FOR NOW */}
+                    {/* <Radio
                       isChecked={modifiedChartOptions.window.toggle}
                       onClick={() =>
                         setModifiedChartOptions((prev) => {
@@ -248,8 +272,8 @@ function AttributeContainer({
                       colorScheme="teal"
                     >
                       Sentence Window
-                    </Radio>
-                    {modifiedChartOptions.window.toggle ? (
+                    </Radio> */}
+                    {/* {modifiedChartOptions.window.toggle ? (
                       <>
                         Size of Sentence Window
                         <Input
@@ -258,8 +282,8 @@ function AttributeContainer({
                           onChange={handleWindowPastSenteces}
                         />
                       </>
-                    ) : null}
-                    {modifiedChartOptions.window.toggle ? (
+                    ) : null} */}
+                    {/* {modifiedChartOptions.window.toggle ? (
                       <Radio
                         isChecked={modifiedChartOptions.sentimentAnalysis}
                         onClick={() =>
@@ -275,8 +299,8 @@ function AttributeContainer({
                       >
                         Sentiment Analysis
                       </Radio>
-                    ) : null}
-                    <Radio
+                    ) : null} */}
+                    {/* <Radio
                       isChecked={modifiedChartOptions.neuralNetwork}
                       onClick={() =>
                         setModifiedChartOptions((prev) => {
@@ -290,9 +314,8 @@ function AttributeContainer({
                       colorScheme="teal"
                     >
                       Neural Network (NodeNLP)
-                    </Radio>
-                    <p>Attribute Threshold Count:</p>
-                    <Input
+                    </Radio> */}
+                    {/* <Input
                       type="number"
                       value={modifiedChartOptions.threshold}
                       onChange={handleWindowThreshold}
@@ -314,8 +337,8 @@ function AttributeContainer({
                       colorScheme="teal"
                     >
                       Show Random Charts
-                    </Radio>
-                    {modifiedChartOptions.randomCharts.toggle ? (
+                    </Radio> */}
+                    {/* {modifiedChartOptions.randomCharts.toggle ? (
                       <>
                         Minutes:
                         <Input
@@ -324,8 +347,8 @@ function AttributeContainer({
                           onChange={handleRandomChartsMinutes}
                         />
                       </>
-                    ) : null}
-                    {modifiedChartOptions.randomCharts.toggle ? (
+                    ) : null} */}
+                    {/* {modifiedChartOptions.randomCharts.toggle ? (
                       <>
                         Past Charts to compare with random:
                         <Input
@@ -334,8 +357,8 @@ function AttributeContainer({
                           onChange={handleRandomChartWindow}
                         />
                       </>
-                    ) : null}
-                    <Radio
+                    ) : null} */}
+                    {/* <Radio
                       isChecked={modifiedChartOptions.filter.toggle}
                       onClick={() =>
                         setModifiedChartOptions((prev) => {
@@ -383,8 +406,8 @@ function AttributeContainer({
                       size="lg"
                       colorScheme="teal"
                     >
-                      Pivot
-                    </Radio>
+                      Use Pivot
+                    </Radio> */}
                   </Stack>
 
                   <Button
