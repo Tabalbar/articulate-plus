@@ -23,6 +23,7 @@ module.exports = (chartMsg, headerFrequencyCount, filterFrequencyCount) => {
     data: { name: "table" },
     command: chartMsg.command,
     pivotThis: false,
+    numClicks: 0,
     headerFrequencyCount: headerFrequencyCount,
     filterFrequencyCount: filterFrequencyCount,
     fetchedURL: false,

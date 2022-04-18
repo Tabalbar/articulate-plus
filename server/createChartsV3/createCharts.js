@@ -29,7 +29,7 @@ module.exports = (intent, chartMsg, options, isPython) => {
   );
   //Holds all charts
   let charts = [];
-  console.log(chartMsg.command, extractedHeaders, isPython);
+  // console.log(chartMsg.command, extractedHeaders, isPython);
 
   switch (intent) {
     case "histogram":

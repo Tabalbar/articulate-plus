@@ -104,6 +104,19 @@ function App() {
       map: [],
     },
   });
+
+  const [studyName, setStudyName] = useState('');
+
+  // SAVE FILE ON EVERY STATE CHANGE
+  useEffect(() => {
+    //TODO WRITE SAVE FILE
+    if (studyName !== '') {
+      // ANY CHANGE TO CHART MESSAGE
+      // POST TO NODE SERVER (JSON.stringy(chartMsg), studyName)
+    }
+  }, [chartMsg, studyName])
+
+
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 

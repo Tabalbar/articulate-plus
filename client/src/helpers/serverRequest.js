@@ -132,8 +132,10 @@ export async function serverRequest(
       }, 4000);
     } else {
       if (chartMsg.command !== "random") {
-        assistantResponse =
-          noCharts[Math.floor(Math.random() * noCharts.length)];
+        //FLAG DISABLED FOR NOW
+        // assistantResponse =
+        //   noCharts[Math.floor(Math.random() * noCharts.length)];
+        assistantResponse = false;
       } else {
         assistantResponse = false;
       }

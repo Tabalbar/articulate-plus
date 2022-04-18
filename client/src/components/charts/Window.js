@@ -28,10 +28,12 @@ function Window(props) {
   const onStart = (e) => {
     e.preventDefault();
     let elems = document.getElementsByClassName("react-draggable");
-    if (props.modifiedChartOptions.pivotCharts && !dragging) {
-      props.handlePivot(props.index);
-    }
-
+    //FLAG DISABLED FOR NOW
+    // if (props.modifiedChartOptions.pivotCharts && !dragging) {
+    //   props.handlePivot(props.index);
+    // }
+    props.specification.numClicks++;
+    console.log("numClicks: ", props.specification.numClicks);
     e.currentTarget.style.zIndex = props.globalZIndex;
     props.setGlobalZIndex((prev) => prev + 1);
   };
