@@ -52,58 +52,64 @@ const Dictaphone = ({
     },
   ];
 
-  useEffect(async () => {
-    //Check if words were actually spoken
+  useEffect(() => {
     if (command === "") {
       return;
     }
+    async function getCharts() {
+      //Check if words were actually spoken
 
-    //Set state for message to send to node service
-    if (!mute) {
-      setChartMsg((prev) => {
-        if (prev.transcript !== "") {
+      console.log(command);
+
+      //Set state for message to send to node service
+      if (!mute) {
+        setChartMsg((prev) => {
+          if (prev.transcript !== "") {
+            return {
+              ...prev,
+              transcript: prev.transcript + ". " + command,
+              loggedTranscript: [
+                ...prev.loggedTranscript,
+                { sentence: command, date: createDate() },
+              ],
+            };
+          } else {
+            return {
+              ...prev,
+              transcript: prev.transcript + "" + command,
+              loggedTranscript: [
+                ...prev.loggedTranscript,
+                { sentence: command, date: createDate() },
+              ],
+            };
+          }
+        });
+      } else {
+        setChartMsg((prev) => {
           return {
             ...prev,
-            transcript: prev.transcript + ". " + command,
-            loggedTranscript: [
-              ...prev.loggedTranscript,
+            uncontrolledTranscript:
+              prev.uncontrolledTranscript + ". " + command,
+            loggedUncontrolledTranscript: [
+              ...prev.loggedUncontrolledTranscript,
               { sentence: command, date: createDate() },
             ],
           };
-        } else {
-          return {
-            ...prev,
-            transcript: prev.transcript + "" + command,
-            loggedTranscript: [
-              ...prev.loggedTranscript,
-              { sentence: command, date: createDate() },
-            ],
-          };
-        }
-      });
-    } else {
-      setChartMsg((prev) => {
-        return {
-          ...prev,
-          uncontrolledTranscript: prev.uncontrolledTranscript + ". " + command,
-          loggedUncontrolledTranscript: [
-            ...prev.loggedUncontrolledTranscript,
-            { sentence: command, date: createDate() },
-          ],
-        };
-      });
-    }
-    if (command.includes("delete all chosen charts")) {
-      closeChosenCharts();
-    }
+        });
+      }
+      if (command.includes("delete all chosen charts")) {
+        closeChosenCharts();
+      }
 
-    const isCommand = await createCharts(command);
-    if (isCommand) {
-      setListening(false);
-      setTimeout(() => {
-        setListening(true);
-      }, 8000);
+      const isCommand = await createCharts(command);
+      if (isCommand) {
+        setListening(false);
+        setTimeout(() => {
+          setListening(true);
+        }, 8000);
+      }
     }
+    getCharts();
   }, [command]);
 
   //Create charts at a random interval
