@@ -224,7 +224,7 @@ function AttributeContainer({
             <>
               <Center>
                 <VStack>
-                  <Text>User Study Name:</Text>
+                  <Text>User Study File Name:</Text>
                   <Input
                     onChange={(e) => setUserStudyName(e.target.value)}
                     value={userStudyName}
