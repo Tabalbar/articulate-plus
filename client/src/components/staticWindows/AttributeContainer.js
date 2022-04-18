@@ -27,6 +27,8 @@ function AttributeContainer({
   chartMsg,
   startStudy,
   setStartStudy,
+  setUserStudyName,
+  userStudyName,
 }) {
   const eventLogger = (e, data) => {};
   useEffect(() => {
@@ -222,6 +224,11 @@ function AttributeContainer({
             <>
               <Center>
                 <VStack>
+                  <Text>User Study Name:</Text>
+                  <Input
+                    onChange={(e) => setUserStudyName(e.target.value)}
+                    value={userStudyName}
+                  />
                   <FileInput
                     setChartMsg={setChartMsg}
                     setModifiedChartOptions={setModifiedChartOptions}

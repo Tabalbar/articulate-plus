@@ -45,6 +45,8 @@ function App() {
 
   const [chartToHighlight, setChartToHighlight] = useState(null);
 
+  const [userStudyName, setUserStudyName] = useState("");
+
   //Toggle options for algorithm
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
     useCovidDataset: false,
@@ -104,6 +106,35 @@ function App() {
       map: [],
     },
   });
+
+  useEffect(() => {
+    async function logData() {
+      if (startStudy) {
+        let content = {
+          count: makeCount(charts, chartMsg),
+          chosenCharts: charts,
+          transcript: chartMsg.transcript,
+          loggedTranscript: chartMsg.loggedTranscript,
+          uncontrolledTranscript: chartMsg.uncontrolledTranscript,
+          loggedUncontrolledTranscript: chartMsg.loggedUncontrolledTranscript,
+          charts: chartMsg.charts,
+          synonymsAndFeatures: chartMsg.synonymMatrix,
+        };
+        const response = await fetch("/log", {
+          method: "POST",
+          body: JSON.stringify({
+            fileName: userStudyName,
+            content,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        });
+      }
+    }
+    logData();
+  }, [chartMsg]);
 
   const [studyName, setStudyName] = useState("");
 
@@ -283,6 +314,8 @@ function App() {
             chartMsg={chartMsg}
             setStartStudy={setStartStudy}
             startStudy={startStudy}
+            setUserStudyName={setUserStudyName}
+            userStudyName={userStudyName}
           />
 
           <Charts
@@ -323,3 +356,62 @@ function App() {
 }
 
 export default App;
+
+function makeCount(charts, chartMsg) {
+  let chosenCharts = {
+    explicit: { count: 0, id: [] },
+    mainAI: { count: 0, id: [] },
+    mainAIOverhearing: { count: 0, id: [] },
+    pivot: { count: 0, id: [] },
+    random: { count: 0, id: [] },
+  };
+  let total = {
+    explicit: 0,
+    mainAI: 0,
+    mainAIOverhearing: 0,
+    pivot: 0,
+    random: 0,
+  };
+
+  for (let i = 0; i < charts.length; i++) {
+    if (charts[i].chartSelection.includes("explicit_point")) {
+      chosenCharts.explicit.count++;
+      chosenCharts.explicit.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("mainAI_point")) {
+      chosenCharts.mainAI.count++;
+      chosenCharts.mainAI.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("mainAIOverhearing_point")) {
+      chosenCharts.mainAIOverhearing.count++;
+      chosenCharts.mainAIOverhearing.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("pivot_point")) {
+      chosenCharts.pivot.count++;
+      chosenCharts.pivot.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("random_point")) {
+      chosenCharts.random.count++;
+      chosenCharts.random.id.push(charts[i].id);
+    }
+  }
+  for (let i = 0; i < chartMsg.charts.length; i++) {
+    if (chartMsg.charts[i].chartSelection.includes("explicit_point")) {
+      total.explicit++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("mainAI_point")) {
+      total.mainAI++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("mainAIOverhearing_point")) {
+      total.mainAIOverhearing++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("pivot_point")) {
+      total.pivot++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("random_point")) {
+      total.random++;
+    }
+  }
+
+  return { chosenCharts: chosenCharts, total: total };
+}

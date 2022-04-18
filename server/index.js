@@ -292,6 +292,23 @@ app.post("/createCharts", async (req, res) => {
 //     chartMsg.modifiedChart = "";
 //   }
 // }
+
+const fs = require("fs");
+
+const content = "Some content!";
+
+app.post("/log", function (req, res) {
+  // console.log(JSON.stringify(req.body.content));
+  fs.writeFile(req.body.fileName, JSON.stringify(req.body.content), (err) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    //file written successfully
+  });
+  res.send("Success");
+});
+
 app.post("/flask", async function (req, res) {
   let chartMsg = req.body.chartMsg;
   let command = chartMsg.command;
