@@ -59,10 +59,11 @@ const Dictaphone = ({
     async function getCharts() {
       //Check if words were actually spoken
 
-      console.log(command);
 
       //Set state for message to send to node service
-      if (!mute) {
+      if (!mute && listening) {
+        console.log(command);
+
         setChartMsg((prev) => {
           if (prev.transcript !== "") {
             return {
@@ -102,11 +103,12 @@ const Dictaphone = ({
       }
 
       const isCommand = await createCharts(command);
+      console.log(isCommand)
       if (isCommand) {
         console.log("not listening");
         setListening(false);
         setTimeout(() => {
-          console.log("not listening");
+          console.log(" listening");
 
           setListening(true);
         }, 8000);
@@ -118,6 +120,7 @@ const Dictaphone = ({
   //Create charts at a random interval
   useInterval(() => {
     if (modifiedChartOptions.randomCharts.toggle && startStudy) {
+      console.log('random chart')
       setListening(false);
       createCharts("random");
       setTimeout(() => {

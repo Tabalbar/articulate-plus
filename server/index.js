@@ -132,7 +132,7 @@ app.post("/createCharts", async (req, res) => {
 
   for (let i = 0; i < classifications.length; i++) {
     if (
-      classifications[i].score > 0.9 &&
+      classifications[i].score > 0.8 &&
       classifications[i].intent !== "none"
     ) {
       isCommand = classifications[i].intent;

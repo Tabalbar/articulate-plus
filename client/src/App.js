@@ -60,7 +60,7 @@ function App() {
     randomCharts: {
       toggle: true,
       minutes: 5,
-      chartWindow: 0,
+      chartWindow: 3,
     },
     threshold: 2,
     filter: {
@@ -174,9 +174,10 @@ function App() {
     //   speakVoice(thinkingResponse.soundFile);
     //   setVoiceMsg(thinkingResponse.msg);
     // }
-    setClippyImage(thinkingImage);
 
-    //Actual request to server
+
+    return new Promise((res, rej) => {
+      //Actual request to server
     serverRequest(
       chartMsg,
       setChartMsg,
@@ -196,13 +197,21 @@ function App() {
           setClippyImage(talkingImage);
           speakVoice(chartSound);
           setShowTooltip(true);
+          res(response.isCommand)
+          setClippyImage(thinkingImage);
+
+        } else {
+          res(response.isCommand)
         }
         setTimeout(() => {
           setClippyImage(listeningImage);
         }, 3000);
       }
-      return response.isCommand;
+
+      
     });
+    })
+    
   };
 
   useEffect(() => {
