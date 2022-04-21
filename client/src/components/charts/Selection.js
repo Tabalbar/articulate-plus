@@ -31,7 +31,7 @@ function ChartSelection({ chartMsg, chooseChart, modifiedChartOptions }) {
         bottom="0"
         bg="gray.700"
         width="100vw"
-        height="31rem"
+        height="50rem"
         zIndex="1"
         right="0"
         borderTop="2px"
@@ -39,12 +39,15 @@ function ChartSelection({ chartMsg, chooseChart, modifiedChartOptions }) {
       >
         <Box
           zIndex={3}
+          className="scrollBarX"
           bottom="0"
           width="100vw"
-          overflowX="auto"
+          // bg="red"
+          height="50rem"
+          // overflowX="auto"
           display="flex"
           id="scrollable"
-          flex={1}
+          // flex={1}
         >
           <HStack spacing={100}>
             {chartMsg.charts.map((chart, index) => {

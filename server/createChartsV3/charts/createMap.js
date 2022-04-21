@@ -37,6 +37,7 @@ module.exports = (
       color: {
         field: extractedHeaders[1],
         type: "nominal",
+        legend: { titleFontSize: 20, labelFontSize: 20 },
         scale: { range: covidColors(extractedHeaders[1]) },
         sort: covidSort(extractedHeaders[1], chartMsg.data),
       },
@@ -48,6 +49,7 @@ module.exports = (
   delete chart.encoding;
   delete chart.concat;
   chart.projection = { type: "albersUsa" };
+
   chart.layer = [
     {
       data: {

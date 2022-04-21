@@ -186,7 +186,9 @@ function AttributeContainer({
             }}
             className="handle"
           >
-            {startStudy ? `${chartMsg.datasetTitle} Attributes` : "Admin"}
+            <Text fontSize={"3xl"}>
+              {startStudy ? `${chartMsg.datasetTitle} Attributes` : "Admin"}
+            </Text>
           </Box>
           {startStudy ? (
             <>
@@ -198,7 +200,7 @@ function AttributeContainer({
                         <h2>
                           <AccordionButton>
                             <Box flex="1" textAlign="left">
-                              {value}
+                              <Text fontSize={"4xl"}>{value}</Text>
                             </Box>
                             <AccordionIcon />
                           </AccordionButton>
@@ -208,7 +210,9 @@ function AttributeContainer({
                             {chartMsg.featureMatrix[index].map(
                               (value, index) => {
                                 return index > 0 ? (
-                                  <ListItem key={index}>{value}</ListItem>
+                                  <ListItem fontSize={"3xl"} key={index}>
+                                    {value}
+                                  </ListItem>
                                 ) : null;
                               }
                             )}

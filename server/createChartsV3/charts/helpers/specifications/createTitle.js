@@ -97,6 +97,6 @@ module.exports = (chart, extractedHeaders, intent, filteredHeaders) => {
       chartTitle += filteredHeaderTitles[i] + " and ";
     }
   }
-  chart.title = chartTitle;
+  chart.title = { text: chartTitle, fontSize: 20 };
   return chart;
 };

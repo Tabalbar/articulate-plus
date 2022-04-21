@@ -108,8 +108,37 @@
   scrollbar-width: thin;
 }
 
+.scrollBarX {
+  overflow-x: scroll;
+  border-color: black;
+  /* border: 2px; */
+  z-index: 4;
+  /* width: 20rem; */
+  overflow-y: auto;
+  /* background-color: white; */
+  /* resize: both; */
+  bottom: 0;
+  position: absolute;
+  /* height: 20rem; */
+  /* color: black; */
+  /* scrollbar-width: thin; */
+}
+
+.resize {
+  resize: both;
+}
+
+.resize::-webkit-scrollbar {
+  width: 80px;
+}
+
 .scrollBar::-webkit-scrollbar {
-  width: 60px;
+  width: 80px;
+}
+
+.scrollBarX::-webkit-scrollbar {
+  background: white;
+  height: 80px;
 }
 
 .highlight {

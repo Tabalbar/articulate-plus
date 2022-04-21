@@ -26,10 +26,16 @@ module.exports = (
       chart.encoding.x = {
         field: extractedHeaders[0],
         type: findType(extractedHeaders[0], chartMsg.data),
-        axis: { grid: false, labelAngle: -50 },
+        axis: {
+          grid: false,
+          labelAngle: -50,
+          labelFontSize: 20,
+          titleFontSize: 20,
+        },
       };
       chart.encoding.y = {
         field: extractedHeaders[1],
+        axis: { labelFontSize: 20, titleFontSize: 20 },
         type: findType(extractedHeaders[1], chartMsg.data),
         aggregate: "sum",
       };
@@ -38,17 +44,24 @@ module.exports = (
       chart.encoding.x = {
         field: extractedHeaders[0],
         type: findType(extractedHeaders[0], chartMsg.data),
-        axis: { labelAngle: -50, title: "" },
+        axis: {
+          labelAngle: -50,
+          title: "",
+          labelFontSize: 20,
+          titleFontSize: 20,
+        },
         sort: covidSort(extractedHeaders[0], chartMsg.data),
         axis: { grid: false },
       };
       chart.encoding.y = {
         aggregate: "sum",
+        axis: { labelFontSize: 20, titleFontSize: 20 },
         field: extractedHeaders[1],
       };
       chart.encoding.color = {
         field: extractedHeaders[2],
         type: findType(extractedHeaders[2], chartMsg.data),
+        legend: { labelFontSize: 20, titleFontSize: 20 },
         scale: {
           range: covidColors(extractedHeaders[2]),
         },

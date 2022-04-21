@@ -20,18 +20,20 @@ module.exports = (
   chart.encoding.x = {
     field: extractedHeaders[0],
     type: findType(extractedHeaders[0], chartMsg.data),
-    axis: { labelAngle: -50, grid: false },
+    axis: { labelAngle: -50, labelFontSize: 20, titleFontSize: 20 },
     sort: covidSort(extractedHeaders[0], chartMsg.data),
   };
   chart.encoding.y = {
     field: extractedHeaders[1],
     type: findType(extractedHeaders[1], chartMsg.data),
     sort: covidSort(extractedHeaders[1], chartMsg.data),
+    axis: { labelFontSize: 20, titleFontSize: 20 },
   };
   chart.encoding.color = {
     type: "quantitative",
     aggregate: "count",
     scale: { scheme: "reds" },
+    legend: { labelFontSize: 20, titleFontSize: 20 },
   };
   chart.config = {
     axis: { ticks: false, labelPadding: 10, domain: false },
