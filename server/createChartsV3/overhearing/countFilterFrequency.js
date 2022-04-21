@@ -64,8 +64,8 @@ module.exports = (chartMsg, options) => {
       if (needToRecheck) {
         i -= 1;
       }
-      console.log(sentences);
     }
   }
+  console.log(wordCount)
   return wordCount;
 };

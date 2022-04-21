@@ -367,6 +367,7 @@ function App() {
 export default App;
 
 function makeCount(charts, chartMsg) {
+
   let chosenCharts = {
     explicit: { count: 0, id: [] },
     mainAI: { count: 0, id: [] },
@@ -383,6 +384,9 @@ function makeCount(charts, chartMsg) {
   };
 
   for (let i = 0; i < charts.length; i++) {
+    if(charts[i].hasOwnProperty("chartSelection")){
+      break;
+    }
     if (charts[i].chartSelection.includes("explicit_point")) {
       chosenCharts.explicit.count++;
       chosenCharts.explicit.id.push(charts[i].id);
@@ -405,6 +409,9 @@ function makeCount(charts, chartMsg) {
     }
   }
   for (let i = 0; i < chartMsg.charts.length; i++) {
+    if(chartMsg.charts[i].hasOwnProperty("chartSelection")){
+      break;
+    }
     if (chartMsg.charts[i].chartSelection.includes("explicit_point")) {
       total.explicit++;
     }

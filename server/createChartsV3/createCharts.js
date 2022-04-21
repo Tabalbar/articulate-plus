@@ -29,8 +29,9 @@ module.exports = (intent, chartMsg, options, isPython) => {
   );
   //Holds all charts
   let charts = [];
-  // console.log(chartMsg.command, extractedHeaders, isPython);
+  console.log(intent,"******************")
 
+  // console.log(chartMsg.command, extractedHeaders, isPython);
   switch (intent) {
     case "histogram":
       extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
@@ -47,7 +48,7 @@ module.exports = (intent, chartMsg, options, isPython) => {
       }
       break;
     case "bar":
-      if (options.useCovidDataset) {
+      // if (options.useCovidDataset) {
         const findQuantitative = findQuantitativeAndSwitch(
           chartMsg,
           extractedHeaders,
@@ -56,6 +57,7 @@ module.exports = (intent, chartMsg, options, isPython) => {
 
         extractedHeaders = findQuantitative.extractedHeaders;
         extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "map");
+
         if (!findQuantitative.typeFound) {
           for (let i = 0; i < extractedHeaders.length; i++) {
             charts.push(
@@ -85,21 +87,22 @@ module.exports = (intent, chartMsg, options, isPython) => {
             );
           }
         }
-      } else {
-        extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
+      // } else {
+      //   extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
 
-        for (let i = 0; i < extractedHeaders.length; i++) {
-          charts.push(
-            createHistogram(
-              chartMsg,
-              extractedHeaders[i],
-              extractedFilteredValues,
-              headerFrequencyCount,
-              filterFrequencyCount
-            )
-          );
-        }
-      }
+
+      //   for (let i = 0; i < extractedHeaders.length; i++) {
+      //     charts.push(
+      //       createHistogram(
+      //         chartMsg,
+      //         extractedHeaders[i],
+      //         extractedFilteredValues,
+      //         headerFrequencyCount,
+      //         filterFrequencyCount
+      //       )
+      //     );
+      //   }
+      // }
       break;
     case "line":
       const findTemporalAndQuantitativeObj = findTemporalAndQuantitative(

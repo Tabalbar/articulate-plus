@@ -25,6 +25,7 @@ module.exports = (chartMsg, headerFrequencyCount, filterFrequencyCount) => {
     pivotThis: false,
     numClicks: 0,
     headerFrequencyCount: headerFrequencyCount,
+    chartSelection: "",
     filterFrequencyCount: filterFrequencyCount,
     fetchedURL: false,
   };
