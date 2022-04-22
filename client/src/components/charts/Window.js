@@ -129,7 +129,7 @@ function Window(props) {
           borderWidth="thin"
           borderRadius="sm"
           borderTopRadius="sm"
-          className="resize"
+          resize="both"
           width={900}
           height={500}
           onMouseOver={startTimer}
@@ -137,7 +137,7 @@ function Window(props) {
           onTouchStart={(e) => onStart(e)}
           onClick={(e) => onStart(e)}
           animation={highlight ? `${pulse} 2s infinite` : null}
-          // className="react-draggable"
+          className="react-draggable"
         >
           <div className="handle" style={{ cursor: "move", width: "auto" }}>
             <Box
