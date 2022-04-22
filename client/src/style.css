@@ -100,10 +100,10 @@
   border-color: black;
   border: 2px;
   z-index: 4;
-  width: 20rem;
+  width: 40rem;
   background-color: white;
   resize: both;
-  height: 20rem;
+  height: 40rem;
   color: black;
   scrollbar-width: thin;
 }
@@ -124,7 +124,24 @@
   /* scrollbar-width: thin; */
 }
 
+.scrollBarY {
+  overflow-x: auto;
+  border-color: black;
+  /* border: 2px; */
+  z-index: 4;
+  /* width: 20rem; */
+  overflow-y: scroll;
+  /* background-color: white; */
+  /* resize: both; */
+  /* bottom: 0; */
+  position: absolute;
+  /* height: 20rem; */
+  /* color: black; */
+  /* scrollbar-width: thin; */
+}
+
 .resize {
+  overflow: scroll;
   resize: both;
 }
 
@@ -139,6 +156,11 @@
 .scrollBarX::-webkit-scrollbar {
   background: white;
   height: 80px;
+}
+
+.scrollBarY::-webkit-scrollbar {
+  background: white;
+  width: 80px;
 }
 
 .highlight {

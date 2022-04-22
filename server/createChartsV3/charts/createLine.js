@@ -51,7 +51,7 @@ module.exports = (
           titleFontSize: 20,
         },
         sort: covidSort(extractedHeaders[0], chartMsg.data),
-        axis: { grid: false },
+        // axis: { grid: false },
       };
       chart.encoding.y = {
         aggregate: "sum",

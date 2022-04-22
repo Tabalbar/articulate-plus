@@ -11,7 +11,7 @@ function ChosenCharts({
   handlePivot,
   chartToHighlight,
 }) {
-  const [globalZIndex, setGlobalZIndex] = useState(10);
+  const [globalZIndex, setGlobalZIndex] = useState(1);
   return (
     <>
       {charts.map((chart, i) => {

@@ -69,7 +69,7 @@ function Window(props) {
       setSpecification((prev) => {
         return {
           ...prev,
-          width: parseInt(width) - 250,
+          width: parseInt(width) - 400,
           height: parseInt(height) - 200,
         };
       });
@@ -129,15 +129,15 @@ function Window(props) {
           borderWidth="thin"
           borderRadius="sm"
           borderTopRadius="sm"
-          resize="both"
-          width={900}
+          // resize="both"
+          width={1100}
           height={500}
           onMouseOver={startTimer}
           onMouseLeave={endTimer}
           onTouchStart={(e) => onStart(e)}
           onClick={(e) => onStart(e)}
           animation={highlight ? `${pulse} 2s infinite` : null}
-          className="react-draggable"
+          className="react-draggable resize"
         >
           <div className="handle" style={{ cursor: "move", width: "auto" }}>
             <Box
