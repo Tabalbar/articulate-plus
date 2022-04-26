@@ -9,7 +9,8 @@ module.exports = (
   extractedHeaders,
   extractedFilteredValues,
   headerFrequencyCount,
-  filterFrequencyCount
+  filterFrequencyCount,
+  options
 ) => {
   let chart = createChartTemplate(
     chartMsg,
@@ -21,7 +22,9 @@ module.exports = (
     field: extractedHeaders[1],
     type: findType(extractedHeaders[1], chartMsg.data),
     axis: { labelAngle: -50, labelFontSize: 20, titleFontSize: 20 },
-    sort: covidSort(extractedHeaders[1], chartMsg.data),
+    sort: options.useCovidDataset
+      ? covidSort(extractedHeaders[1], chartMsg.data)
+      : [],
   };
   chart.encoding.y = {
     aggregate: "sum",
@@ -33,11 +36,15 @@ module.exports = (
   chart.encoding.color = {
     field: extractedHeaders[1],
     type: findType(extractedHeaders[1], chartMsg.data),
-    scale: {
-      range: covidColors(extractedHeaders[1]),
-    },
-    legend: { labelFontSize: 20 },
-    sort: covidSort(extractedHeaders[1], chartMsg.data),
+    scale: options.useCovidDataset
+      ? {
+          range: covidColors(extractedHeaders[1]),
+        }
+      : {},
+    legend: { labelFontSize: 20, titleFontSize: 20 },
+    sort: options.useCovidDataset
+      ? covidSort(extractedHeaders[1], chartMsg.data)
+      : [],
   };
 
   chart = createTitle(chart, extractedHeaders, "bar", extractedFilteredValues);

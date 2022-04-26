@@ -34,7 +34,9 @@ module.exports = (intent, chartMsg, options, isPython) => {
   // console.log(chartMsg.command, extractedHeaders, isPython);
   switch (intent) {
     case "histogram":
-      extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
+      if (options.useCovidDataset) {
+        extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
+      }
       for (let i = 0; i < extractedHeaders.length; i++) {
         charts.push(
           createHistogram(
@@ -42,13 +44,13 @@ module.exports = (intent, chartMsg, options, isPython) => {
             extractedHeaders[i],
             extractedFilteredValues,
             headerFrequencyCount,
-            filterFrequencyCount
+            filterFrequencyCount,
+            options
           )
         );
       }
       break;
     case "bar":
-      // if (options.useCovidDataset) {
       const findQuantitative = findQuantitativeAndSwitch(
         chartMsg,
         extractedHeaders,
@@ -66,7 +68,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
               extractedHeaders[i],
               extractedFilteredValues,
               headerFrequencyCount,
-              filterFrequencyCount
+              filterFrequencyCount,
+              options
             )
           );
         }
@@ -79,7 +82,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
               twoExtractedHeaders,
               extractedFilteredValues,
               headerFrequencyCount,
-              filterFrequencyCount
+              filterFrequencyCount,
+              options
             )
           );
         }
@@ -116,6 +120,7 @@ module.exports = (intent, chartMsg, options, isPython) => {
       ) {
         return charts;
       }
+      console.log(options);
       if (extractedHeaders.length == 2) {
         charts.push(
           createLine(
@@ -123,7 +128,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
             extractedHeaders,
             extractedFilteredValues,
             headerFrequencyCount,
-            filterFrequencyCount
+            filterFrequencyCount,
+            options
           )
         );
       } else if (extractedHeaders.length > 2) {
@@ -139,7 +145,9 @@ module.exports = (intent, chartMsg, options, isPython) => {
               chartMsg,
               threeExtractedHeaders,
               extractedFilteredValues,
-              headerFrequencyCount
+              headerFrequencyCount,
+              filterFrequencyCount,
+              options
             )
           );
         }
@@ -160,7 +168,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
               twoExtractedHeaders,
               extractedFilteredValues,
               headerFrequencyCount,
-              filterFrequencyCount
+              filterFrequencyCount,
+              options
             )
           );
         }
@@ -190,7 +199,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
             [extractedHeaders[0], extractedHeaders[i]],
             extractedFilteredValues,
             headerFrequencyCount,
-            filterFrequencyCount
+            filterFrequencyCount,
+            options
           )
         );
       }

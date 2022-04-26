@@ -275,8 +275,6 @@ function ChartPlaceholder({
   const [chartData, setChartData] = useState(data);
   useEffect(() => {
     if (modifiedChartOptions.useCovidDataset == true) {
-      console.log("true");
-
       if (
         specification.hasOwnProperty("layer") ||
         specification.mark == "bar"
@@ -287,7 +285,6 @@ function ChartPlaceholder({
         //   ops: ["distinct"],
         // });
         specification.transform = [];
-        console.log(specification.transform);
 
         // console.log("fetching");
         // specification.fetchedURL = true;
@@ -312,7 +309,6 @@ function ChartPlaceholder({
   const testClick = (e) => {
     specification.x = e.clientX - 250;
     specification.y = e.clientY - 800;
-    console.log(specification);
   };
 
   return (

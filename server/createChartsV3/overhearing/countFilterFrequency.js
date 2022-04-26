@@ -66,6 +66,5 @@ module.exports = (chartMsg, options) => {
       }
     }
   }
-  console.log(wordCount)
   return wordCount;
 };

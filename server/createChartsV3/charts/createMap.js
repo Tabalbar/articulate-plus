@@ -9,7 +9,8 @@ module.exports = (
   extractedHeaders,
   extractedFilteredValues,
   headerFrequencyCount,
-  filterFrequencyCount
+  filterFrequencyCount,
+  options
 ) => {
   let chart = createChartTemplate(
     chartMsg,
@@ -38,8 +39,14 @@ module.exports = (
         field: extractedHeaders[1],
         type: "nominal",
         legend: { titleFontSize: 20, labelFontSize: 20 },
-        scale: { range: covidColors(extractedHeaders[1]) },
-        sort: covidSort(extractedHeaders[1], chartMsg.data),
+        scale: {
+          range: options.useCovidDataset
+            ? covidColors(extractedHeaders[1])
+            : [],
+        },
+        sort: options.useCovidDataset
+          ? covidSort(extractedHeaders[1], chartMsg.data)
+          : [],
       },
       shape: { field: "geo", type: "geojson" },
     },

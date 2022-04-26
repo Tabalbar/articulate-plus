@@ -10,7 +10,8 @@ module.exports = (
   extractedHeaders,
   extractedFilteredValues,
   headerFrequencyCount,
-  filterFrequencyCount
+  filterFrequencyCount,
+  options
 ) => {
   let chart = createChartTemplate(
     chartMsg,
@@ -50,7 +51,9 @@ module.exports = (
           labelFontSize: 20,
           titleFontSize: 20,
         },
-        sort: covidSort(extractedHeaders[0], chartMsg.data),
+        sort: options.useCovidDataset
+          ? covidSort(extractedHeaders[0], chartMsg.data)
+          : [],
         // axis: { grid: false },
       };
       chart.encoding.y = {
@@ -62,10 +65,16 @@ module.exports = (
         field: extractedHeaders[2],
         type: findType(extractedHeaders[2], chartMsg.data),
         legend: { labelFontSize: 20, titleFontSize: 20 },
-        scale: {
-          range: covidColors(extractedHeaders[2]),
-        },
-        sort: covidSort(extractedHeaders[2], chartMsg.data),
+        scale: options.useCovidDataset
+          ? {
+              range: options.useCovidDataset
+                ? covidColors(extractedHeaders[2])
+                : [],
+            }
+          : {},
+        sort: options.useCovidDataset
+          ? covidSort(extractedHeaders[2], chartMsg.data)
+          : [],
       };
       break;
   }

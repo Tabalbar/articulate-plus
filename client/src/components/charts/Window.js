@@ -33,10 +33,18 @@ function Window(props) {
     //   props.handlePivot(props.index);
     // }
     props.specification.numClicks++;
-    console.log("numClicks: ", props.specification.numClicks);
-    e.currentTarget.style.zIndex = props.globalZIndex;
+    e.currentTarget.style.zIndex = props.globalZIndex + 1;
     props.setGlobalZIndex((prev) => prev + 1);
   };
+  useEffect(() => {
+    let elems = document.getElementsByClassName("react-draggable");
+    for (let i = 0; i < elems.length; i++) {
+      if (elems[i].id == specification.id) {
+        elems[i].style.zIndex = props.globalZIndex + 1;
+      }
+    }
+  }, []);
+
   useEffect(() => {
     if (props.chartToHighlight == props.id) {
       setHighlight(true);

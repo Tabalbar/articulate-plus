@@ -64,7 +64,6 @@ app.post("/initialize", (req, res) => {
     req.body.attributes,
     req.body.data
   );
-
   if (featureMatrix === null || synonymMatrix === null) {
     console.log("Error in pre-processing");
     res.status(405).send("Error in pre-processing");
@@ -114,6 +113,7 @@ app.post("/createCharts", async (req, res) => {
   let pivotTheseCharts = req.body.pivotTheseCharts;
   //Remove stop words and change known synonyms
   chartMsg.command = difficultPhrasedWords(chartMsg.command);
+  let availableCharts = chartOptions(chartMsg.data);
 
   //Explicit chart commands
   let { generalizedCommand } = generalizeCommand(
@@ -128,25 +128,28 @@ app.post("/createCharts", async (req, res) => {
   let response = await manager.process("en", chartMsg.generalizedCommand);
   let isCommand = "None";
   classifications = response.classifications;
-  console.log(classifications);
 
   for (let i = 0; i < classifications.length; i++) {
     if (
       classifications[i].score > 0.8 &&
       classifications[i].intent !== "none"
     ) {
-      isCommand = classifications[i].intent;
-      break;
+      for (let j = 0; j < availableCharts.length; j++) {
+        if (availableCharts[j].chartType === classifications[i].intent) {
+          isCommand = classifications[i].intent;
+          break;
+        }
+      }
     }
   }
   if (chartMsg.command === "random") {
     isCommand = "random";
   }
-  console.log(isCommand);
 
   if (isCommand === "None" || isCommand === "none") {
-    let intent = getExplicitChartType(chartMsg.command);
+    let intent = getExplicitChartType(chartMsg.command, availableCharts);
     console.log(intent);
+
     if (intent !== false) {
       chartMsg.explicitChart = createCharts(intent, chartMsg, {
         useCovidDataset: options.useCovidDataset,
@@ -176,9 +179,8 @@ app.post("/createCharts", async (req, res) => {
       res.send({ chartMsg });
     }
   } else {
-    let intent = getExplicitChartType(chartMsg.command);
+    let intent = getExplicitChartType(chartMsg.command, availableCharts);
     if (intent === false) {
-      console.log(intent);
       chartMsg.mainAI = createCharts(intent, chartMsg, {
         useCovidDataset: options.useCovidDataset,
         sentimentAnalysis: false,
@@ -224,7 +226,14 @@ app.post("/createCharts", async (req, res) => {
       });
     }
     if (isCommand === "random") {
-      intent = chartOptions[Math.floor(Math.random() * 5)].mark;
+      let randomizedAvailableChartTypes = availableCharts.filter(
+        (chart) => chart.available === true
+      );
+      console.log(randomizedAvailableChartTypes);
+      intent =
+        randomizedAvailableChartTypes[
+          Math.floor(Math.random() * randomizedAvailableChartTypes.length)
+        ].mark;
     } else {
       intent = response.intent;
     }

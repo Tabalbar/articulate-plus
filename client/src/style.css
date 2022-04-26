@@ -155,7 +155,7 @@
 
 .scrollBarX::-webkit-scrollbar {
   background: white;
-  height: 80px;
+  height: 50px;
 }
 
 .scrollBarY::-webkit-scrollbar {

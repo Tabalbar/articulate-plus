@@ -1,7 +1,6 @@
 const nlp = require("compromise");
 
 module.exports = (header, data) => {
-  let order = [];
   const unique = [...new Set(data.map((item) => item[header]))];
   if (unique.length == 5) {
     for (let i = 0; i < unique.length; i++) {
