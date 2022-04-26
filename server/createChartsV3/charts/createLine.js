@@ -18,6 +18,7 @@ module.exports = (
     headerFrequencyCount,
     filterFrequencyCount
   );
+  console.log(chart.filterFrequencyCount);
   chart.mark = {
     type: "line",
     point: { size: 100 },

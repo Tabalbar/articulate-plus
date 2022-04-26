@@ -142,103 +142,54 @@ app.post("/createCharts", async (req, res) => {
       }
     }
   }
+  let intent = getExplicitChartType(chartMsg.command, availableCharts);
+  if (intent !== false) {
+    isCommand = intent;
+  }
+  console.log(intent);
+
   if (chartMsg.command === "random") {
     isCommand = "random";
   }
 
   if (isCommand === "None" || isCommand === "none") {
-    let intent = getExplicitChartType(chartMsg.command, availableCharts);
-    console.log(intent);
-
-    if (intent !== false) {
-      chartMsg.explicitChart = createCharts(intent, chartMsg, {
-        useCovidDataset: options.useCovidDataset,
-        sentimentAnalysis: false,
-        window: {
-          toggle: false,
-          pastSentences: 0,
-        },
-        neuralNetwork: false,
-        useSynonyms: false,
-        randomCharts: {
-          toggle: false,
-          minutes: 10,
-        },
-        threshold: 3,
-        filter: {
-          toggle: false,
-          pastSentences: 0,
-          threshold: 5,
-        },
-        pivotCharts: false,
-      });
-      chartMsg.errMsg = "";
-      res.send({ chartMsg });
-    } else {
-      chartMsg.errMsg = "none";
-      res.send({ chartMsg });
-    }
+    console.log("No command found");
+    chartMsg.errMsg = "none";
+    res.send({ chartMsg: chartMsg });
   } else {
-    let intent = getExplicitChartType(chartMsg.command, availableCharts);
-    if (intent === false) {
-      chartMsg.mainAI = createCharts(intent, chartMsg, {
-        useCovidDataset: options.useCovidDataset,
-        sentimentAnalysis: false,
-        window: {
-          toggle: false,
-          pastSentences: 0,
-        },
-        neuralNetwork: true,
-        useSynonyms: true,
-        randomCharts: {
-          toggle: true,
-          minutes: 10,
-        },
-        threshold: 3,
-        filter: {
-          toggle: false,
-          pastSentences: 0,
-          threshold: 5,
-        },
-        pivotCharts: false,
-      });
-    } else {
-      chartMsg.explicitChart = createCharts(intent, chartMsg, {
-        useCovidDataset: options.useCovidDataset,
-        sentimentAnalysis: false,
-        window: {
-          toggle: false,
-          pastSentences: 0,
-        },
-        neuralNetwork: false,
-        useSynonyms: false,
-        randomCharts: {
-          toggle: false,
-          minutes: 10,
-        },
-        threshold: 3,
-        filter: {
-          toggle: false,
-          pastSentences: 0,
-          threshold: 5,
-        },
-        pivotCharts: false,
-      });
-    }
     if (isCommand === "random") {
       let randomizedAvailableChartTypes = availableCharts.filter(
         (chart) => chart.available === true
       );
-      console.log(randomizedAvailableChartTypes);
-      intent =
+      isCommand =
         randomizedAvailableChartTypes[
           Math.floor(Math.random() * randomizedAvailableChartTypes.length)
         ].mark;
     } else {
-      intent = response.intent;
+      chartMsg.explicitChart = createCharts(isCommand, chartMsg, {
+        useCovidDataset: options.useCovidDataset,
+        sentimentAnalysis: false,
+        window: {
+          toggle: false,
+          pastSentences: 0,
+        },
+        neuralNetwork: false,
+        useSynonyms: false,
+        randomCharts: {
+          toggle: false,
+          minutes: 10,
+        },
+        threshold: 3,
+        filter: {
+          toggle: false,
+          pastSentences: 0,
+          threshold: 5,
+        },
+        pivotCharts: false,
+      });
     }
 
-    chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
+    chartMsg.mainAIOverhearing = createCharts(isCommand, chartMsg, options);
     CompareCharts(chartMsg, options, chosenCharts);
 
     chartMsg.mainAIOverhearingCount = countHeaderFrequency(chartMsg, options);
@@ -255,7 +206,7 @@ app.post("/createCharts", async (req, res) => {
         threshold: options.filter.threshold,
       },
     });
-    chartMsg.errMsg = "";
+    // chartMsg.errMsg = "";
     res.send({ chartMsg });
   }
 });

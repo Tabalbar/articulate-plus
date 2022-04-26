@@ -120,7 +120,6 @@ module.exports = (intent, chartMsg, options, isPython) => {
       ) {
         return charts;
       }
-      console.log(options);
       if (extractedHeaders.length == 2) {
         charts.push(
           createLine(
