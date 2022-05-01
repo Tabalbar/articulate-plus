@@ -25,6 +25,8 @@ function Charts({
   mute,
   modifiedChartOptions,
   chartToHighlight,
+  globalZIndex,
+  setGlobalZIndex,
 }) {
   //to Rerender when deleteing charts on chosen charts component
   const [, setForceUpdate] = useState(true);
@@ -53,6 +55,8 @@ function Charts({
         modifiedChartOptions={modifiedChartOptions}
       />
       <ChosenCharts
+        globalZIndex={globalZIndex}
+        setGlobalZIndex={setGlobalZIndex}
         handleDelete={handleDelete}
         handlePivot={handlePivot}
         chartMsg={chartMsg}

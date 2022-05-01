@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button, Text } from "@chakra-ui/react";
-
-const TimerComponent = () => {
+const TimerComponent = ({ chartMsg, mute, charts }) => {
   // We need ref in this, because we are dealing
   // with JS setInterval to keep track of it and
   // stop it when needed
@@ -10,6 +9,29 @@ const TimerComponent = () => {
   // The state for our timer
   const [timer, setTimer] = useState("00:25:00");
   const [startThisTimer, setStartThisTimer] = useState(false);
+  //Download user's data, charts made, looged transcripts,an
+  const downloadFile = async () => {
+    let myData = {
+      count: makeCount(charts, chartMsg),
+      chosenCharts: charts,
+      transcript: chartMsg.transcript,
+      loggedTranscript: chartMsg.loggedTranscript,
+      uncontrolledTranscript: chartMsg.uncontrolledTranscript,
+      loggedUncontrolledTranscript: chartMsg.loggedUncontrolledTranscript,
+      charts: chartMsg.charts,
+      synonymsAndFeatures: chartMsg.synonymMatrix,
+    };
+    const fileName = "file";
+    const json = JSON.stringify(myData);
+    const blob = new Blob([json], { type: "application/json" });
+    const href = await URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = fileName + ".json";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const getTimeRemaining = (e) => {
     const total = Date.parse(e) - Date.parse(new Date());
@@ -86,6 +108,9 @@ const TimerComponent = () => {
   const onClickReset = () => {
     clearTimer(getDeadTime());
     setStartThisTimer(false);
+    if (startThisTimer) {
+      downloadFile();
+    }
   };
 
   return (
@@ -115,3 +140,62 @@ const TimerComponent = () => {
 };
 
 export default TimerComponent;
+
+function makeCount(charts, chartMsg) {
+  let chosenCharts = {
+    explicit: { count: 0, id: [] },
+    mainAI: { count: 0, id: [] },
+    mainAIOverhearing: { count: 0, id: [] },
+    pivot: { count: 0, id: [] },
+    random: { count: 0, id: [] },
+  };
+  let total = {
+    explicit: 0,
+    mainAI: 0,
+    mainAIOverhearing: 0,
+    pivot: 0,
+    random: 0,
+  };
+
+  for (let i = 0; i < charts.length; i++) {
+    if (charts[i].chartSelection.includes("explicit_point")) {
+      chosenCharts.explicit.count++;
+      chosenCharts.explicit.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("mainAI_point")) {
+      chosenCharts.mainAI.count++;
+      chosenCharts.mainAI.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("mainAIOverhearing_point")) {
+      chosenCharts.mainAIOverhearing.count++;
+      chosenCharts.mainAIOverhearing.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("pivot_point")) {
+      chosenCharts.pivot.count++;
+      chosenCharts.pivot.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("random")) {
+      chosenCharts.random.count++;
+      chosenCharts.random.id.push(charts[i].id);
+    }
+  }
+  for (let i = 0; i < chartMsg.charts.length; i++) {
+    if (chartMsg.charts[i].chartSelection.includes("explicit_point")) {
+      total.explicit++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("mainAI_point")) {
+      total.mainAI++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("mainAIOverhearing_point")) {
+      total.mainAIOverhearing++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("pivot_point")) {
+      total.pivot++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("random")) {
+      total.random++;
+    }
+  }
+
+  return { chosenCharts: chosenCharts, total: total };
+}

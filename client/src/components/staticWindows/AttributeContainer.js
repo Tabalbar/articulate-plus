@@ -29,6 +29,8 @@ function AttributeContainer({
   setStartStudy,
   setUserStudyName,
   userStudyName,
+  globalZIndex,
+  setGlobalZIndex,
 }) {
   const eventLogger = (e, data) => {};
   useEffect(() => {
@@ -42,6 +44,25 @@ function AttributeContainer({
       });
     }
   }, [startStudy]);
+  const onStart = (e) => {
+    let elems = document.getElementsByClassName("react-draggable");
+    //FLAG DISABLED FOR NOW
+    // if (props.modifiedChartOptions.pivotCharts && !dragging) {
+    //   props.handlePivot(props.index);
+    // }
+    //print out the z-index of the chart
+    let zIndex = 0;
+    for (let i = 0; i < elems.length; i++) {
+      if (
+        zIndex < elems[i].style.zIndex &&
+        elems[i].style.zIndex != e.currentTarget.style.zIndex
+      ) {
+        zIndex = parseInt(elems[i].style.zIndex);
+      }
+    }
+    console.log(zIndex + 2);
+    e.currentTarget.style.zIndex = zIndex + 1;
+  };
 
   // const onStart = (e) => {
   //   let elems = document.getElementsByClassName("react-draggable");
@@ -161,8 +182,9 @@ function AttributeContainer({
           borderColor="black"
           borderRadius="sm"
           borderTopRadius="sm"
-          zIndex={200}
           className="react-draggable"
+          onTouchStart={(e) => onStart(e)}
+          onClick={(e) => onStart(e)}
         >
           <Box
             borderTopRadius="sm"

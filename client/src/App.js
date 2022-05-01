@@ -139,15 +139,6 @@ function App() {
 
   const [studyName, setStudyName] = useState("");
 
-  // SAVE FILE ON EVERY STATE CHANGE
-  useEffect(() => {
-    //TODO WRITE SAVE FILE
-    if (studyName !== "") {
-      // ANY CHANGE TO CHART MESSAGE
-      // POST TO NODE SERVER (JSON.stringy(chartMsg), studyName)
-    }
-  }, [chartMsg, studyName]);
-
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
 
@@ -260,6 +251,7 @@ function App() {
     }
     setForceUpdate((prev) => !prev);
   };
+  const [globalZIndex, setGlobalZIndex] = useState(1);
 
   return (
     <>
@@ -305,7 +297,7 @@ function App() {
           </Button> */}
           {/* COMMENT THIS WHEN STARTING USER STUDY */}
           <Box position="absolute" right="50%">
-            <TimerComponent />
+            <TimerComponent chartMsg={chartMsg} mute={mute} charts={charts} />
           </Box>
           <ArtyContainer
             clippyImage={clippyImage}
@@ -321,6 +313,8 @@ function App() {
             chartMsg={chartMsg}
             setStartStudy={setStartStudy}
             startStudy={startStudy}
+            globalZIndex={globalZIndex}
+            setGlobalZIndex={setGlobalZIndex}
             setUserStudyName={setUserStudyName}
             userStudyName={userStudyName}
           />
@@ -332,6 +326,8 @@ function App() {
             charts={charts}
             setCharts={setCharts}
             mute={mute}
+            globalZIndex={globalZIndex}
+            setGlobalZIndex={setGlobalZIndex}
             chartToHighlight={chartToHighlight}
             modifiedChartOptions={modifiedChartOptions}
           />

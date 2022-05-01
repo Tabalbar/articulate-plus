@@ -134,9 +134,9 @@ app.post("/createCharts", async (req, res) => {
       classifications[i].score > 0.8 &&
       classifications[i].intent !== "none"
     ) {
-      for (let j = 0; j < availableCharts.length; j++) {
-        console.log(availableCharts[j]);
+      console.log(classifications[i]);
 
+      for (let j = 0; j < availableCharts.length; j++) {
         if (availableCharts[j].mark === classifications[i].intent) {
           isCommand = classifications[i].intent;
           break;
