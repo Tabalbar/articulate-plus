@@ -98,6 +98,5 @@ module.exports = (data) => {
   if (typesInDataset.nominal) {
     switchAvailableCharts("histogram");
   }
-  console.log(availableCharts, "********");
   return availableCharts;
 };

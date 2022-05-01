@@ -60,7 +60,6 @@ function AttributeContainer({
         zIndex = parseInt(elems[i].style.zIndex);
       }
     }
-    console.log(zIndex + 2);
     e.currentTarget.style.zIndex = zIndex + 1;
   };
 

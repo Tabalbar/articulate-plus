@@ -34,7 +34,6 @@ function Window(props) {
     // }
     props.specification.numClicks++;
     e.currentTarget.style.zIndex = props.globalZIndex + 1;
-    console.log(props.globalZIndex);
     props.setGlobalZIndex((prev) => prev + 1);
   };
   useEffect(() => {

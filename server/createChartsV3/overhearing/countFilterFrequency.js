@@ -41,7 +41,6 @@ module.exports = (chartMsg, options) => {
   //     }
   //   }
   // } else
-  console.log(sentences);
 
   if (options.filter.toggle) {
     // sentences.slice(-options.filter.pastSentences);
@@ -59,7 +58,6 @@ module.exports = (chartMsg, options) => {
             );
             needToRecheck = true;
             wordCount[j].filters[k - 1].count += 1;
-            console.log("here");
             break;
           }
         }

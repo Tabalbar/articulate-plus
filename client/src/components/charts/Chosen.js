@@ -10,8 +10,9 @@ function ChosenCharts({
   modifiedChartOptions,
   handlePivot,
   chartToHighlight,
+  globalZIndex,
+  setGlobalZIndex,
 }) {
-  const [globalZIndex, setGlobalZIndex] = useState(1);
   return (
     <>
       {charts.map((chart, i) => {

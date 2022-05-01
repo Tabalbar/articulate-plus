@@ -134,8 +134,6 @@ app.post("/createCharts", async (req, res) => {
       classifications[i].score > 0.8 &&
       classifications[i].intent !== "none"
     ) {
-      console.log(classifications[i]);
-
       for (let j = 0; j < availableCharts.length; j++) {
         if (availableCharts[j].mark === classifications[i].intent) {
           isCommand = classifications[i].intent;
@@ -144,7 +142,6 @@ app.post("/createCharts", async (req, res) => {
       }
     }
   }
-  console.log(isCommand);
 
   let intent = getExplicitChartType(chartMsg.command, availableCharts);
   if (intent !== false) {
@@ -156,7 +153,6 @@ app.post("/createCharts", async (req, res) => {
   }
 
   if (isCommand === "None" || isCommand === "none") {
-    console.log("No command found");
     chartMsg.errMsg = "none";
     res.send({ chartMsg: chartMsg });
   } else {
