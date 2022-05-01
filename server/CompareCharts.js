@@ -53,6 +53,9 @@ module.exports = (chartMsg, options, chosenCharts) => {
   for (let i = 0; i < chartMsg.mainAIOverhearing.length; i++) {
     if (chartMsg.mainAIOverhearing[i] !== "") {
       chartMsg.mainAIOverhearing[i].chartSelection = "mainAIOverhearing_point";
+      if (chartMsg.mainAIOverhearing[i].command === "random") {
+        chartMsg.mainAIOverhearing[i].chartSelection = "random";
+      }
     }
     chartMsg.mainAIOverhearing[i] = checkIfChartsAlreadyChosen(
       chartMsg.mainAIOverhearing[i],

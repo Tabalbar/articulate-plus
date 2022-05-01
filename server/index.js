@@ -135,18 +135,21 @@ app.post("/createCharts", async (req, res) => {
       classifications[i].intent !== "none"
     ) {
       for (let j = 0; j < availableCharts.length; j++) {
-        if (availableCharts[j].chartType === classifications[i].intent) {
+        console.log(availableCharts[j]);
+
+        if (availableCharts[j].mark === classifications[i].intent) {
           isCommand = classifications[i].intent;
           break;
         }
       }
     }
   }
+  console.log(isCommand);
+
   let intent = getExplicitChartType(chartMsg.command, availableCharts);
   if (intent !== false) {
     isCommand = intent;
   }
-  console.log(intent);
 
   if (chartMsg.command === "random") {
     isCommand = "random";

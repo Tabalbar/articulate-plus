@@ -8,6 +8,7 @@ import Charts from "./pages/Charts";
 //Components
 import Dictaphone from "./components/voice/Dictaphone";
 import ArtyContainer from "./components/staticWindows/ArtyContainer";
+import TimerComponent from "./components/TimerComponent";
 
 //Helper functions
 import { serverRequest } from "./helpers/serverRequest";
@@ -175,43 +176,38 @@ function App() {
     //   setVoiceMsg(thinkingResponse.msg);
     // }
 
-
     return new Promise((res, rej) => {
       //Actual request to server
-    serverRequest(
-      chartMsg,
-      setChartMsg,
-      modifiedChartOptions,
-      setVoiceMsg,
-      charts,
-      setCharts,
-      setChartToHighlight
-    ).then((response) => {
-      if (mute) {
-        setClippyImage(muteImage);
-      } else {
-        //Voice syntheiszer
-        if (response.assistantResponse) {
-          speakVoice(response.assistantResponse.soundFile);
-          setVoiceMsg(response.assistantResponse.msg);
-          setClippyImage(talkingImage);
-          speakVoice(chartSound);
-          setShowTooltip(true);
-          res(response.isCommand)
-          setClippyImage(thinkingImage);
-
+      serverRequest(
+        chartMsg,
+        setChartMsg,
+        modifiedChartOptions,
+        setVoiceMsg,
+        charts,
+        setCharts,
+        setChartToHighlight
+      ).then((response) => {
+        if (mute) {
+          setClippyImage(muteImage);
         } else {
-          res(response.isCommand)
+          //Voice syntheiszer
+          if (response.assistantResponse) {
+            speakVoice(response.assistantResponse.soundFile);
+            setVoiceMsg(response.assistantResponse.msg);
+            setClippyImage(talkingImage);
+            speakVoice(chartSound);
+            setShowTooltip(true);
+            res(response.isCommand);
+            setClippyImage(thinkingImage);
+          } else {
+            res(response.isCommand);
+          }
+          setTimeout(() => {
+            setClippyImage(listeningImage);
+          }, 3000);
         }
-        setTimeout(() => {
-          setClippyImage(listeningImage);
-        }, 3000);
-      }
-
-      
+      });
     });
-    })
-    
   };
 
   useEffect(() => {
@@ -273,7 +269,7 @@ function App() {
           {/* <Button onClick={() => speakVoice("This is a message")}>
             Test Voice
           </Button> */}
-          <Input
+          {/* <Input
             position="absolute"
             ml="20rem"
             bg="white"
@@ -289,7 +285,7 @@ function App() {
             onClick={() => createCharts(textRef.current.value)}
           >
             Test
-          </Button>
+          </Button> */}
 
           {/* <Button
             position="absolute"
@@ -308,7 +304,9 @@ function App() {
             Command Checker
           </Button> */}
           {/* COMMENT THIS WHEN STARTING USER STUDY */}
-
+          <Box position="absolute" right="50%">
+            <TimerComponent />
+          </Box>
           <ArtyContainer
             clippyImage={clippyImage}
             handleMute={handleMute}
@@ -367,7 +365,6 @@ function App() {
 export default App;
 
 function makeCount(charts, chartMsg) {
-
   let chosenCharts = {
     explicit: { count: 0, id: [] },
     mainAI: { count: 0, id: [] },
@@ -384,7 +381,7 @@ function makeCount(charts, chartMsg) {
   };
 
   for (let i = 0; i < charts.length; i++) {
-    if(charts[i].hasOwnProperty("chartSelection")){
+    if (charts[i].hasOwnProperty("chartSelection")) {
       break;
     }
     if (charts[i].chartSelection.includes("explicit_point")) {
@@ -403,13 +400,13 @@ function makeCount(charts, chartMsg) {
       chosenCharts.pivot.count++;
       chosenCharts.pivot.id.push(charts[i].id);
     }
-    if (charts[i].chartSelection.includes("random_point")) {
+    if (charts[i].chartSelection.includes("random")) {
       chosenCharts.random.count++;
       chosenCharts.random.id.push(charts[i].id);
     }
   }
   for (let i = 0; i < chartMsg.charts.length; i++) {
-    if(chartMsg.charts[i].hasOwnProperty("chartSelection")){
+    if (chartMsg.charts[i].hasOwnProperty("chartSelection")) {
       break;
     }
     if (chartMsg.charts[i].chartSelection.includes("explicit_point")) {
@@ -424,7 +421,7 @@ function makeCount(charts, chartMsg) {
     if (chartMsg.charts[i].chartSelection.includes("pivot_point")) {
       total.pivot++;
     }
-    if (chartMsg.charts[i].chartSelection.includes("random_point")) {
+    if (chartMsg.charts[i].chartSelection.includes("random")) {
       total.random++;
     }
   }
