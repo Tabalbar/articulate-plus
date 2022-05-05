@@ -55,16 +55,14 @@ function Window(props) {
 
   useEffect(() => {
     if (props.modifiedChartOptions.useCovidDataset == true) {
-      if (
-        specification.hasOwnProperty("layer") ||
-        specification.mark == "bar"
-      ) {
-        // specification.fetchedURL = true;
-        // fetch(
-        //   "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-        // )
-        //   .then((response) => response.text())
-        //   .then(async (csvData) => setChartData(await processData(csvData)));
+      console.log(specification);
+      if (specification.hasOwnProperty("layer")) {
+        specification.fetchedURL = true;
+        fetch(
+          "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+        )
+          .then((response) => response.text())
+          .then(async (csvData) => setChartData(await processData(csvData)));
       }
     }
   }, []);

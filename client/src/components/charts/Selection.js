@@ -275,10 +275,7 @@ function ChartPlaceholder({
   const [chartData, setChartData] = useState(data);
   useEffect(() => {
     if (modifiedChartOptions.useCovidDataset == true) {
-      if (
-        specification.hasOwnProperty("layer") ||
-        specification.mark == "bar"
-      ) {
+      if (specification.hasOwnProperty("layer")) {
         // specification.transform.push({
         //   type: "aggregate",
         //   fields: ["access to doctors"],
@@ -287,12 +284,12 @@ function ChartPlaceholder({
         specification.transform = [];
 
         // console.log("fetching");
-        // specification.fetchedURL = true;
-        // fetch(
-        //   "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-        // )
-        //   .then((response) => response.text())
-        //   .then(async (csvData) => setChartData(await processData(csvData)));
+        specification.fetchedURL = true;
+        fetch(
+          "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+        )
+          .then((response) => response.text())
+          .then(async (csvData) => setChartData(await processData(csvData)));
       }
     }
   }, []);

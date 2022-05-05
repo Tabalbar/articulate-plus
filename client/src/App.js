@@ -261,7 +261,7 @@ function App() {
           {/* <Button onClick={() => speakVoice("This is a message")}>
             Test Voice
           </Button> */}
-          {/* <Input
+          <Input
             position="absolute"
             ml="20rem"
             bg="white"
@@ -277,7 +277,7 @@ function App() {
             onClick={() => createCharts(textRef.current.value)}
           >
             Test
-          </Button> */}
+          </Button>
 
           {/* <Button
             position="absolute"
