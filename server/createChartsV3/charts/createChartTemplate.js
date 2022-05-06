@@ -6,8 +6,8 @@ module.exports = (chartMsg, headerFrequencyCount, filterFrequencyCount) => {
   let chart = {
     id: 0,
     title: "",
-    width: 500,
-    height: 300,
+    width: 450,
+    height: 200,
     mark: "",
     transform: [],
     encoding: {

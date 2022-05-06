@@ -17,6 +17,7 @@ module.exports = (
     headerFrequencyCount,
     filterFrequencyCount
   );
+  chart.height = 300;
   chart.transform.push({
     lookup: "map",
     from: {
@@ -38,7 +39,7 @@ module.exports = (
       color: {
         field: extractedHeaders[1],
         type: "nominal",
-        legend: { titleFontSize: 20, labelFontSize: 20 },
+        legend: { titleFontSize: 10, labelFontSize: 10 },
         scale: {
           range: options.useCovidDataset
             ? covidColors(extractedHeaders[1])

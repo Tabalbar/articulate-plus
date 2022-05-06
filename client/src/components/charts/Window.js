@@ -55,7 +55,6 @@ function Window(props) {
 
   useEffect(() => {
     if (props.modifiedChartOptions.useCovidDataset == true) {
-      console.log(specification);
       if (specification.hasOwnProperty("layer")) {
         specification.fetchedURL = true;
         fetch(

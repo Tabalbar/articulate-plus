@@ -186,77 +186,147 @@ import { VegaLite } from "react-vega";
 import { Box, HStack } from "@chakra-ui/react";
 import processData from "../../helpers/processData";
 
-function ChartSelection({ chartMsg, chooseChart, modifiedChartOptions }) {
+function ChartSelection({
+  chartMsg,
+  chooseChart,
+  modifiedChartOptions,
+  setCenterChart,
+}) {
   const slideTimer = useRef(null);
+  const scrollMaxRef = useRef(null);
+  // useEffect(() => {
+  //   // if (slideTimer) {
+  //   //   clearInterval(slideTimer.current);
+  //   // }
+  //   let scrollableElement = document.getElementById("scrollable");
+  //   scrollableElement.scrollLeft = scrollableElement.scrollWidth;
+  //   slideTimer.current = setInterval(() => {
+  //     scrollableElement.scrollLeft += 5;
+  //     if (
+  //       scrollableElement.scrollLeft + scrollableElement.clientWidth >=
+  //       scrollableElement.scrollWidth - 10
+  //     ) {
+  //       clearInterval(slideTimer.current);
+  //     }
+  //   }, 35);
+  // }, [chartMsg.charts]);
+
+  // useEffect(() => {
+  //   let scrollableElement = document.getElementById("scrollable");
+  //   scrollableElement.scrollLeft =
+  //     scrollableElement.scrollWidth - scrollableElement.clientWidth;
+  // }, [chartMsg.charts]);
+
+  // const scrollToRight = () => {
+  //   scrollMaxRef.current?.scrollIntoView({ behavior: "smooth" });
+  // };
+
+  // useEffect(() => {
+  //   scrollToRight();
+  // }, [chartMsg.charts]);
+
   useEffect(() => {
-    if (slideTimer) {
-      clearInterval(slideTimer.current);
-    }
     let scrollableElement = document.getElementById("scrollable");
     scrollableElement.scrollLeft =
       scrollableElement.scrollWidth - scrollableElement.clientWidth;
     slideTimer.current = setInterval(() => {
-      scrollableElement.scrollLeft += 5;
+      console.log("scrollingLeft useEffect");
+
+      scrollableElement.scrollLeft += 100;
       if (
         scrollableElement.scrollLeft + scrollableElement.clientWidth >=
-        scrollableElement.scrollWidth - 10
+        scrollableElement.scrollWidth - 20
       ) {
         clearInterval(slideTimer.current);
       }
-    }, 35);
+    }, 25);
+    return () => {
+      clearInterval(slideTimer.current);
+    };
   }, [chartMsg.charts]);
+
+  const startScroll = () => {
+    let scrollableElement = document.getElementById("scrollable");
+    // scrollableElement.scrollLeft =
+    //   scrollableElement.scrollWidth - scrollableElement.clientWidth;
+    let interval = setInterval(() => {
+      console.log("scrollingLeft");
+      scrollableElement.scrollLeft += 100;
+      if (
+        scrollableElement.scrollLeft + scrollableElement.clientWidth >=
+        scrollableElement.scrollWidth - 20
+      ) {
+        clearInterval(interval);
+      }
+    }, 25);
+  };
+
+  const stopScroll = () => {
+    clearInterval(slideTimer.current);
+  };
 
   return (
     <>
       <Box
         position="absolute"
         bottom="0"
-        bg="gray.700"
+        onMouseLeave={startScroll}
+        onMouseEnter={stopScroll}
+        bg="blue.900"
         width="100vw"
-        height="50rem"
+        height="30rem"
         zIndex="1"
         right="0"
         borderTop="2px"
         borderColor="black"
+        className="scrollBarX"
+        id="scrollable"
       >
-        <Box
-          zIndex={3}
-          className="scrollBarX"
-          bottom="0"
-          width="100vw"
-          height="50rem"
-          display="flex"
-          id="scrollable"
-        >
-          <HStack spacing={100}>
-            {chartMsg.charts.map((chart, index) => {
-              return (
-                <>
-                  {chart ? (
-                    <Box
-                      onMouseEnter={() => {
-                        clearInterval(slideTimer.current);
-                        let scrollableElement =
-                          document.getElementById("scrollable");
-                      }}
-                      zIndex={20}
-                      p={2}
+        {/* <Box
+        zIndex={3}
+        className="scrollBarX"
+        bottom="0"
+        width="100vw"
+        height="auto"
+        bg="red"
+        display="flex"
+        id="scrollable"
+      > */}
+        <HStack spacing={100}>
+          {chartMsg.charts.map((chart, index) => {
+            // let scrollableElement = document.getElementById("scrollable");
+            // scrollableElement.scrollLeft =
+            //   scrollableElement.scrollWidth - scrollableElement.clientWidth;
+            return (
+              <>
+                {chart ? (
+                  <Box
+                    // onMouseEnter={() => {
+                    //   stopScroll();
+                    // }}
+                    // onMouseLeave={() => {
+                    //   stopScroll();
+                    // }}
+                    ref={scrollMaxRef}
+                    zIndex={20}
+                    p={2}
+                    key={index}
+                  >
+                    <ChartPlaceholder
                       key={index}
-                    >
-                      <ChartPlaceholder
-                        key={index}
-                        specification={chart}
-                        data={chartMsg.data}
-                        chooseChart={chooseChart}
-                        modifiedChartOptions={modifiedChartOptions}
-                      />
-                    </Box>
-                  ) : null}
-                </>
-              );
-            })}
-          </HStack>
-        </Box>
+                      setCenterChart={setCenterChart}
+                      specification={chart}
+                      data={chartMsg.data}
+                      chooseChart={chooseChart}
+                      modifiedChartOptions={modifiedChartOptions}
+                    />
+                  </Box>
+                ) : null}
+              </>
+            );
+          })}
+        </HStack>
+        {/* </Box> */}
       </Box>
     </>
   );
@@ -267,6 +337,7 @@ function ChartPlaceholder({
   data,
   chooseChart,
   modifiedChartOptions,
+  setCenterChart,
 }) {
   const [startTime, setStartTime] = useState("");
   const [spec, setSpec] = useState(specification);
@@ -293,15 +364,23 @@ function ChartPlaceholder({
       }
     }
   }, []);
-  const startTimer = () => {
+
+  const startTimer = (e) => {
     setStartTime(performance.now());
     setHovered(true);
+    setCenterChart({ specification: specification, data: chartData });
+    //setzindex of element
+    e.target.style.zIndex = "40";
   };
   const endTimer = () => {
     var timeDiff = performance.now() - startTime;
     timeDiff /= 1000;
     specification.timeSpentHovered += parseFloat(Number(timeDiff).toFixed(2));
     setHovered(false);
+    setCenterChart({
+      specification: undefined,
+      data: undefined,
+    });
   };
   const testClick = (e) => {
     specification.x = e.clientX - 250;
@@ -312,7 +391,7 @@ function ChartPlaceholder({
     <>
       <Box
         bg="transparent"
-        zIndex={hovered ? 10 : 3}
+        // zIndex={hovered ? 10 : 3}
         onClick={
           specification.visible
             ? null
@@ -323,12 +402,13 @@ function ChartPlaceholder({
                 setClicked(true);
               }
         }
-        onMouseOver={startTimer}
+        className="content"
+        onMouseOver={(e) => startTimer(e)}
         onMouseLeave={endTimer}
         opacity={specification.visible ? 0.5 : null}
       >
         <Box bg="white" borderColor="black" borderWidth="3px" rounded="lg">
-          <VegaLite spec={spec} data={{ table: chartData }} />
+          <VegaLite spec={specification} data={{ table: chartData }} />
         </Box>
       </Box>
     </>

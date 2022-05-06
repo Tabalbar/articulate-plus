@@ -127,6 +127,14 @@ module.exports = {
                 chartMsg.featureMatrix[i][n]
               );
             }
+            if (
+              words[j] === "contiguous" &&
+              chartMsg.featureMatrix[i][n].toLowerCase() === "noncontiguous"
+            ) {
+              extractedFilteredHeaders[chartMsg.featureMatrix[i][0]].push(
+                chartMsg.featureMatrix[i][n]
+              );
+            }
           }
         }
       }

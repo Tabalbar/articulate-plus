@@ -3,6 +3,8 @@ import React, { useState } from "react";
 //Components
 import ChartSelection from "../components/charts/Selection";
 import ChosenCharts from "../components/charts/Chosen";
+import { Box } from "@chakra-ui/react";
+import { VegaLite } from "react-vega";
 
 //Helpers
 import createDate from "../helpers/createDate";
@@ -30,6 +32,11 @@ function Charts({
 }) {
   //to Rerender when deleteing charts on chosen charts component
   const [, setForceUpdate] = useState(true);
+  const [centerChart, setCenterChart] = useState({
+    specification: undefined,
+    data: undefined,
+  });
+
   //Deleting charts from chosen charts
   const handleDelete = (index) => {
     charts[index].visible = false;
@@ -45,13 +52,14 @@ function Charts({
     setCharts(tmpCharts);
     setForceUpdate((prev) => !prev);
   };
-
+  console.log(centerChart.specification == undefined, centerChart);
   return (
     <>
       <ChartSelection
         chartMsg={chartMsg}
         chooseChart={chooseChart}
         mute={mute}
+        setCenterChart={setCenterChart}
         modifiedChartOptions={modifiedChartOptions}
       />
       <ChosenCharts
@@ -65,6 +73,35 @@ function Charts({
         modifiedChartOptions={modifiedChartOptions}
         chartToHighlight={chartToHighlight}
       />
+
+      {centerChart.specification === undefined ? null : (
+        <>
+          <Box
+            zIndex={globalZIndex}
+            pointerEvents="none"
+            w="full"
+            h="full"
+            bg="black"
+            opacity={0.2}
+            position={"absolute"}
+          ></Box>
+          <Box
+            position={"absolute"}
+            transform="scale(2.0)"
+            top="30%"
+            border={"2px solid black"}
+            rounded="lg"
+            right="35%"
+            bg="white"
+            zIndex={globalZIndex + 1}
+          >
+            <VegaLite
+              spec={centerChart.specification}
+              data={{ table: centerChart.data }}
+            />
+          </Box>
+        </>
+      )}
     </>
   );
 }

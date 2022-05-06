@@ -31,13 +31,13 @@ module.exports = (
         axis: {
           grid: false,
           labelAngle: -50,
-          labelFontSize: 20,
-          titleFontSize: 20,
+          labelFontSize: 10,
+          titleFontSize: 10,
         },
       };
       chart.encoding.y = {
         field: extractedHeaders[1],
-        axis: { labelFontSize: 20, titleFontSize: 20 },
+        axis: { labelFontSize: 10, titleFontSize: 10 },
         type: findType(extractedHeaders[1], chartMsg.data),
         aggregate: "sum",
       };
@@ -49,8 +49,9 @@ module.exports = (
         axis: {
           labelAngle: -50,
           title: "",
-          labelFontSize: 20,
-          titleFontSize: 20,
+          labelFontSize: 15,
+          titleFontSize: 15,
+          format: "%x",
         },
         sort: options.useCovidDataset
           ? covidSort(extractedHeaders[0], chartMsg.data)
@@ -59,13 +60,13 @@ module.exports = (
       };
       chart.encoding.y = {
         aggregate: "sum",
-        axis: { labelFontSize: 20, titleFontSize: 20 },
+        axis: { labelFontSize: 10, titleFontSize: 10 },
         field: extractedHeaders[1],
       };
       chart.encoding.color = {
         field: extractedHeaders[2],
         type: findType(extractedHeaders[2], chartMsg.data),
-        legend: { labelFontSize: 20, titleFontSize: 20 },
+        legend: { labelFontSize: 10, titleFontSize: 10 },
         scale: options.useCovidDataset
           ? {
               range: options.useCovidDataset
