@@ -79,11 +79,11 @@ module.exports = {
   },
 
   filterValues: (chartMsg, filterFrequencyCount, options) => {
-    chartMsg.command = chartMsg.command.replace(/ /g, "-");
+    // chartMsg.command = chartMsg.command.replace(/ /g, "-");
     // let doc = nlp(chartMsg.command);
     let extractedFilteredHeaders = [];
     // let foundTimeHeader = false;
-    let words = chartMsg.command.split("-");
+    let words = chartMsg.command.split(" ");
     //Extract explicit filters used
     // for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
     //   extractedFilteredHeaders[chartMsg.featureMatrix[i][0]] = [];
@@ -108,6 +108,9 @@ module.exports = {
     //     }
     //   }
     // }
+
+    for (let i = 0; i < chartMsg.featureMatrix.length; i++) {}
+
     for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
       extractedFilteredHeaders[chartMsg.featureMatrix[i][0]] = [];
       for (let n = 1; n < chartMsg.featureMatrix[i].length; n++) {
