@@ -116,6 +116,13 @@ function isChartsEqual(chartOne, chartTwo) {
   }
   // chartOne = chartOne.charts.spec;
   // chartTwo = chartTwo.charts.spec;
+  if (chartOne.hasOwnProperty("layer")) {
+    if (JSON.stringify(chartOne.layer) == JSON.stringify(chartTwo.layer)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   if (
     JSON.stringify(chartOne.encoding) == JSON.stringify(chartTwo.encoding) &&
