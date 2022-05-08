@@ -46,7 +46,7 @@ module.exports = (chartMsg, options) => {
     // sentences.slice(-options.filter.pastSentences);
     for (let i = 0; i < sentences.length; i++) {
       let needToRecheck = false;
-      sentences[i] = sentences[i].replace(/ /g, "-");
+      // sentences[i] = sentences[i].replace(/ /g, "-");
       for (let j = 0; j < chartMsg.featureMatrix.length; j++) {
         for (let k = 1; k < chartMsg.featureMatrix[j].length; k++) {
           if (

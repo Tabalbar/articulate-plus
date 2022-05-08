@@ -160,7 +160,7 @@ module.exports = {
       }
     }
     //turn command back
-    chartMsg.command = chartMsg.command.replace(/-/g, " ");
+    // chartMsg.command = chartMsg.command.replace(/-/g, " ");
 
     //delete any duplciates
     checkExtratedFiltersDuplicates(extractedFilteredHeaders);
