@@ -30,7 +30,15 @@ module.exports = (chart, extractedHeaders, intent, filteredHeaders) => {
       for (let n = 0; n < headers.length; n++) {
         title += headers[n].charAt(0).toUpperCase() + headers[n].slice(1) + " ";
       }
-      filteredHeaderTitles.push(title);
+      let titleFound = false;
+      for (let k = 0; k < filteredHeaderTitles.length; k++) {
+        if (title == filteredHeaderTitles[k]) {
+          titleFound = true;
+        }
+      }
+      if (!titleFound) {
+        filteredHeaderTitles.push(title);
+      }
     }
   }
   for (let i = 0; i < filteredHeaders.length; i++) {
