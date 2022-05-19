@@ -22,7 +22,12 @@ module.exports = (
   chart.encoding.x = {
     field: extractedHeader,
     type: findType(extractedHeader, chartMsg.data),
-    axis: { labelAngle: -50, labelFontSize: 10, titleFontSize: 10 },
+    axis: {
+      labelFontSize: 15,
+      titleFontSize: 15,
+      labelLimit: 2000,
+      labelAngle: -50,
+    },
     sort: options.useCovidDataset
       ? covidSort(extractedHeader, chartMsg.data)
       : [],
@@ -33,14 +38,14 @@ module.exports = (
     scale: {
       range: covidColors(extractedHeader),
     },
-    axis: { labelFontSize: 10, titleFontSize: 10 },
+    axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
     sort: options.useCovidDataset
       ? covidSort(extractedHeader, chartMsg.data)
       : [],
   };
   chart.encoding.y = {
     aggregate: "count",
-    legend: { labelFontSize: 10, titleFontSize: 10 },
+    legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
   };
   chart = createTitle(chart, [extractedHeader], "bar", extractedFilteredValues);
   chart = createTransform(chart, chartMsg, extractedFilteredValues);

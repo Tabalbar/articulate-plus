@@ -66,7 +66,7 @@ module.exports = (
       chart.encoding.color = {
         field: extractedHeaders[2],
         type: findType(extractedHeaders[2], chartMsg.data),
-        legend: { labelFontSize: 10, titleFontSize: 10 },
+        legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
         scale: options.useCovidDataset
           ? {
               range: options.useCovidDataset

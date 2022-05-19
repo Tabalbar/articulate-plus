@@ -35,7 +35,9 @@ module.exports = (header, data) => {
       }
     }
 
-    for (let i = 4; i < unique.length; i++) {
+    for (let i = 0; i < unique.length; i++) {
+      console.log(unique[i]);
+
       let doc = nlp(unique[i]);
       if (doc.has("very low")) {
         switchHeaders(unique, 4, i);

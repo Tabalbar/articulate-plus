@@ -274,7 +274,7 @@ function ChartSelection({
         onMouseEnter={stopScroll}
         bg="blue.900"
         width="100vw"
-        height="30rem"
+        height="37rem"
         zIndex="1"
         right="0"
         borderTop="2px"

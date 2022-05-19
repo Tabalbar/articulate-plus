@@ -21,7 +21,12 @@ module.exports = (
   chart.encoding.x = {
     field: extractedHeaders[0],
     type: findType(extractedHeaders[0], chartMsg.data),
-    axis: { labelAngle: -50, labelFontSize: 10, titleFontSize: 10 },
+    axis: {
+      labelFontSize: 15,
+      titleFontSize: 15,
+      labelLimit: 2000,
+      labelAngle: -50,
+    },
     sort: options.useCovidDataset
       ? covidSort(extractedHeaders[0], chartMsg.data)
       : [],
@@ -32,13 +37,13 @@ module.exports = (
     sort: options.useCovidDataset
       ? covidSort(extractedHeaders[1], chartMsg.data)
       : [],
-    axis: { labelFontSize: 10, titleFontSize: 10 },
+    axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
   };
   chart.encoding.color = {
     type: "quantitative",
     aggregate: "count",
     scale: { scheme: "reds" },
-    legend: { labelFontSize: 10, titleFontSize: 10 },
+    legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
   };
   chart.config = {
     axis: { ticks: false, labelPadding: 10, domain: false },
