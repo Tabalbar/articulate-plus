@@ -81,11 +81,11 @@ export async function serverRequest(
   //Must add explicit first
   console.log(pythonChartMsg.pythonCharts);
   let newCharts = [
-    ...tmpChartMsg.randomCharts,
-    ...tmpChartMsg.explicitChart,
-    ...tmpChartMsg.mainAI,
-    ...tmpChartMsg.mainAIOverhearing,
-    ...tmpChartMsg.pivotChart,
+    // ...tmpChartMsg.randomCharts,
+    // ...tmpChartMsg.explicitChart,
+    // ...tmpChartMsg.mainAI,
+    // ...tmpChartMsg.mainAIOverhearing,
+    // ...tmpChartMsg.pivotChart,
     ...pythonChartMsg.pythonCharts,
   ];
 
