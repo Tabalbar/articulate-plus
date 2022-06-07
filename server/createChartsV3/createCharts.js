@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const countFilterFrequency = require("./overhearing/countFilterFrequency");
 const countHeaderFrequency = require("./overhearing/countHeaderFrequency.js");
 const createHistogram = require("./charts/createHistogram");

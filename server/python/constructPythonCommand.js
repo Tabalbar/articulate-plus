@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const createChartTemplate = require("../createChartsV3/charts/createChartTemplate");
 const findType = require("../createChartsV3/charts/helpers/findType");
 const covidColors = require("../createChartsV3/charts/covidHelpers/covidColors");

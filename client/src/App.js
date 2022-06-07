@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useState, useEffect, useRef } from "react";
 import "semantic-ui-css/semantic.min.css";
 

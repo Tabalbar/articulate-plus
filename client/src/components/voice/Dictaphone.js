@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useState, useEffect } from "react";
 
 //browser speech recognition

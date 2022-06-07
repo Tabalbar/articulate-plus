@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 module.exports = (header) => {
   for (let i = 0; i < covidColors.length; i++) {
     if (covidColors[i].header == header) {

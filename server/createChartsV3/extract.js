@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const nlp = require("compromise");
 const levenshtein = require("fast-levenshtein");
 const findType = require("./charts/helpers/findType");

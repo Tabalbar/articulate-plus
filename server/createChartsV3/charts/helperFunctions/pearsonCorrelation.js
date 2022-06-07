@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 module.exports = (x, y) => {
   const promedio = (l) => l.reduce((s, a) => s + a, 0) / l.length;
   const calc = (v, prom) =>

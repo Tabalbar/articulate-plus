@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useState, useRef, useEffect } from "react";
 import { Button, Text } from "@chakra-ui/react";
 const TimerComponent = ({ chartMsg, mute, charts }) => {

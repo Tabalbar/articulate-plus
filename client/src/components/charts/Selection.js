@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 // import React, { useEffect, useRef, useState } from "react";
 // import "../../style.css";
 // import { VegaLite } from "react-vega";

@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 module.exports = (chartMsg, headerFrequencyCount, filterFrequencyCount) => {
   //Create delta time to check when chart was made compared to beginning
   //of th session

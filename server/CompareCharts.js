@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 module.exports = (chartMsg, options, chosenCharts) => {
   for (let i = 0; i < chartMsg.explicitChart.length; i++) {
     if (chartMsg.explicitChart[i] !== "") {

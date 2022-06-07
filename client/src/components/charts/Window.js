@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useEffect, useState, useRef } from "react";
 import Draggable from "react-draggable";
 import { VegaLite } from "react-vega";

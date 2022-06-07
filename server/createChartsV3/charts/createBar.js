@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const createChartTemplate = require("./createChartTemplate");
 const findType = require("./helpers/findType");
 const createTitle = require("./helpers/specifications/createTitle");

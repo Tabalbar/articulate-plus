@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const covidColors = require("./covidHelpers/covidColors");
 const covidSort = require("./covidHelpers/covidSort");
 const createTitle = require("./helpers/specifications/createTitle");
