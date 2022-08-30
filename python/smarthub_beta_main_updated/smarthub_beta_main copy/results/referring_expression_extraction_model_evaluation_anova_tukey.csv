@@ -1,0 +1,23 @@
+significant one_way_anova_p_value: 1.4412123500371033e-13,                             Multiple Comparison of Means - Tukey HSD, FWER=0.05                              
+               group1              ,               group2              ,meandiff,p-adj , lower , upper ,reject
+multi_task_learning_BERTCRFModel   ,multi_task_learning_BILSTMCRFModel ,0.0     ,0.9   ,-0.0658,0.0659 ,False 
+multi_task_learning_BERTCRFModel   ,single_task_learning_BERTCRFModel  ,-0.1084 ,0.001 ,-0.1742,-0.0425,True  
+multi_task_learning_BERTCRFModel   ,single_task_learning_BILSTMCRFModel,-0.1168 ,0.001 ,-0.1826,-0.0509,True  
+multi_task_learning_BERTCRFModel   ,single_task_learning_CRFModel      ,0.181   ,0.001 ,0.1152 ,0.2469 ,True  
+multi_task_learning_BERTCRFModel   ,transfer_learning_BERTCRFModel     ,-0.0901 ,0.0028,-0.156 ,-0.0243,True  
+multi_task_learning_BERTCRFModel   ,transfer_learning_BILSTMCRFModel   ,-0.0311 ,0.7177,-0.097 ,0.0347 ,False 
+multi_task_learning_BILSTMCRFModel ,single_task_learning_BERTCRFModel  ,-0.1084 ,0.001 ,-0.1742,-0.0425,True  
+multi_task_learning_BILSTMCRFModel ,single_task_learning_BILSTMCRFModel,-0.1168 ,0.001 ,-0.1826,-0.0509,True  
+multi_task_learning_BILSTMCRFModel ,single_task_learning_CRFModel      ,0.181   ,0.001 ,0.1152 ,0.2469 ,True  
+multi_task_learning_BILSTMCRFModel ,transfer_learning_BERTCRFModel     ,-0.0901 ,0.0028,-0.156 ,-0.0243,True  
+multi_task_learning_BILSTMCRFModel ,transfer_learning_BILSTMCRFModel   ,-0.0311 ,0.7172,-0.097 ,0.0347 ,False 
+single_task_learning_BERTCRFModel  ,single_task_learning_BILSTMCRFModel,-0.0084 ,0.9   ,-0.0743,0.0575 ,False 
+single_task_learning_BERTCRFModel  ,single_task_learning_CRFModel      ,0.2894  ,0.001 ,0.2235 ,0.3552 ,True  
+single_task_learning_BERTCRFModel  ,transfer_learning_BERTCRFModel     ,0.0182  ,0.9   ,-0.0476,0.0841 ,False 
+single_task_learning_BERTCRFModel  ,transfer_learning_BILSTMCRFModel   ,0.0772  ,0.0137,0.0114 ,0.1431 ,True  
+single_task_learning_BILSTMCRFModel,single_task_learning_CRFModel      ,0.2978  ,0.001 ,0.2319 ,0.3636 ,True  
+single_task_learning_BILSTMCRFModel,transfer_learning_BERTCRFModel     ,0.0266  ,0.8371,-0.0392,0.0925 ,False 
+single_task_learning_BILSTMCRFModel,transfer_learning_BILSTMCRFModel   ,0.0856  ,0.005 ,0.0198 ,0.1515 ,True  
+single_task_learning_CRFModel      ,transfer_learning_BERTCRFModel     ,-0.2712 ,0.001 ,-0.337 ,-0.2053,True  
+single_task_learning_CRFModel      ,transfer_learning_BILSTMCRFModel   ,-0.2122 ,0.001 ,-0.278 ,-0.1463,True  
+transfer_learning_BERTCRFModel     ,transfer_learning_BILSTMCRFModel   ,0.059   ,0.1018,-0.0068,0.1249 ,False 

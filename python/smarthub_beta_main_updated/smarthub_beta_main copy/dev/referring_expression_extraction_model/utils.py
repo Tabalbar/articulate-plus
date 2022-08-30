@@ -1,0 +1,10 @@
+class UseEmbeddingConfig:
+    USE_NO_EMBEDDING = 0
+    USE_PRETRAINED_EMBEDDING = 1
+    USE_CRIME_EMBEDDING = 2
+
+
+class LearningTypeConfig:
+    SINGLE_TASK_LEARNING = 0
+    TRANSFER_TASK_LEARNING = 1
+    MULTI_TASK_LEARNING = 2

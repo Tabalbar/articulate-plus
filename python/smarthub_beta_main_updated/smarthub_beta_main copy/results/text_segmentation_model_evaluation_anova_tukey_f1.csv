@@ -1,0 +1,23 @@
+significant one_way_anova_p_value: 1.172168423246857e-05,    Multiple Comparison of Means - Tukey HSD, FWER=0.05    
+  group1  ,  group2  ,meandiff,p-adj, lower , upper ,reject
+BAGC      ,BILSTMCRF ,-0.1613 ,0.001,-0.2452,-0.0773,True  
+BAGC      ,BLDNN     ,-0.0087 ,0.9  ,-0.0927,0.0752 ,False 
+BAGC      ,CLDNN     ,-0.006  ,0.9  ,-0.0899,0.078  ,False 
+BAGC      ,CONVFILTER,-0.011  ,0.9  ,-0.095 ,0.0729 ,False 
+BAGC      ,CRF       ,-0.028  ,0.9  ,-0.112 ,0.056  ,False 
+BAGC      ,LDNN      ,-0.0159 ,0.9  ,-0.0998,0.0681 ,False 
+BILSTMCRF ,BLDNN     ,0.1525  ,0.001,0.0685 ,0.2365 ,True  
+BILSTMCRF ,CLDNN     ,0.1553  ,0.001,0.0713 ,0.2393 ,True  
+BILSTMCRF ,CONVFILTER,0.1502  ,0.001,0.0662 ,0.2342 ,True  
+BILSTMCRF ,CRF       ,0.1333  ,0.001,0.0493 ,0.2172 ,True  
+BILSTMCRF ,LDNN      ,0.1454  ,0.001,0.0614 ,0.2294 ,True  
+BLDNN     ,CLDNN     ,0.0028  ,0.9  ,-0.0812,0.0867 ,False 
+BLDNN     ,CONVFILTER,-0.0023 ,0.9  ,-0.0863,0.0817 ,False 
+BLDNN     ,CRF       ,-0.0193 ,0.9  ,-0.1032,0.0647 ,False 
+BLDNN     ,LDNN      ,-0.0071 ,0.9  ,-0.0911,0.0768 ,False 
+CLDNN     ,CONVFILTER,-0.0051 ,0.9  ,-0.089 ,0.0789 ,False 
+CLDNN     ,CRF       ,-0.022  ,0.9  ,-0.106 ,0.0619 ,False 
+CLDNN     ,LDNN      ,-0.0099 ,0.9  ,-0.0939,0.0741 ,False 
+CONVFILTER,CRF       ,-0.017  ,0.9  ,-0.1009,0.067  ,False 
+CONVFILTER,LDNN      ,-0.0048 ,0.9  ,-0.0888,0.0791 ,False 
+CRF       ,LDNN      ,0.0121  ,0.9  ,-0.0719,0.0961 ,False 

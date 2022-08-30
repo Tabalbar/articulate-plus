@@ -1,0 +1,27 @@
+Prereqs:
+-Tensorflow 1.14
+-python 3.7
+-GPU
+-Review documentation for pre-trained paraphraser model: https://github.com/vsuthichai/paraphraser
+
+Install paraphraser
+1. Run command git clone https://github.com/jwieting/para-nmt-50m.git to clone repository to your local computer. Confirm that you have the para-nmt-50m folder.
+2. Run command git clone https://github.com/vsuthichai/paraphraser.git to clone repository to your local computer. Confirm that you have the "paraphraser" folder.
+3. Download the train-20180325-001253.tar.gz of model checkpoint from https://drive.google.com/open?id=18uOQsosF4uVGvUgp6pB4BKrQZ1FktlmM
+3. Unzip the train-20180325-001253.tar.gz model checkpoint to the paraphraser/paraphraser folder.
+4. Copy "inference_modified.py" from smarthub_beta_main/paraphrases workspace to paraphraser/paraphraser location.
+5. Run "extract_utterances.py" in the smarthub_beta_main workspace. This creates "smarthub_beta_main/paraphrases/utterances.txt".
+6. Copy "smarthub_beta_main/paraphrases/utterances.txt" from Smarthub workspace to paraphraser/paraphraser location.
+
+***Alternative paraphraser install***:
+1. Download paraphrases directory from the link https://uofi.box.com/s/5cvyvl8t42v3dam7fekkzh25cbktb5m8
+2. Copy "inference_modified.py" from smarthub_beta_main/paraphrases workspace to paraphraser/paraphraser location.
+3. Run "extract_utterances.py" in the smarthub_beta_main workspace. This creates "smarthub_beta_main/paraphrases/utterances.txt".
+4. Copy "smarthub_beta_main/paraphrases/utterances.txt" from smarthub_beta_main/paraphrases workspace to paraphraser/paraphraser location.
+
+Generate paraphrases
+- Run command python inference_modified.py --checkpoint ./train-20180325-001253/model-171856 in the paraphrases/paraphrases directory to generate the paraphrases.json file.
+- Copy to smarthub_beta_main/paraphrases/paraphrases.json
+
+
+

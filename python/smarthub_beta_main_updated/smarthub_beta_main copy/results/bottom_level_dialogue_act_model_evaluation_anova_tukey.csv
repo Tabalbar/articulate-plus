@@ -1,0 +1,23 @@
+significant one_way_anova_p_value: 0.026505122646049505,                      Multiple Comparison of Means - Tukey HSD, FWER=0.05                      
+           group1           ,           group2           ,meandiff,p-adj , lower ,upper ,reject
+bottom_level_BAGCModel      ,bottom_level_BILSTMCRFModel ,-0.0759 ,0.9   ,-0.3182,0.1665,False 
+bottom_level_BAGCModel      ,bottom_level_BLDNNModel     ,-0.2225 ,0.0878,-0.4648,0.0198,False 
+bottom_level_BAGCModel      ,bottom_level_CLDNNModel     ,-0.0797 ,0.9   ,-0.322 ,0.1627,False 
+bottom_level_BAGCModel      ,bottom_level_CONVFILTERModel,-0.1916 ,0.1946,-0.4339,0.0507,False 
+bottom_level_BAGCModel      ,bottom_level_CRFModel       ,0.0216  ,0.9   ,-0.2207,0.2639,False 
+bottom_level_BAGCModel      ,bottom_level_LDNNModel      ,-0.1319 ,0.5924,-0.3742,0.1105,False 
+bottom_level_BILSTMCRFModel ,bottom_level_BLDNNModel     ,-0.1466 ,0.4854,-0.389 ,0.0957,False 
+bottom_level_BILSTMCRFModel ,bottom_level_CLDNNModel     ,-0.0038 ,0.9   ,-0.2461,0.2385,False 
+bottom_level_BILSTMCRFModel ,bottom_level_CONVFILTERModel,-0.1158 ,0.7087,-0.3581,0.1266,False 
+bottom_level_BILSTMCRFModel ,bottom_level_CRFModel       ,0.0975  ,0.8407,-0.1449,0.3398,False 
+bottom_level_BILSTMCRFModel ,bottom_level_LDNNModel      ,-0.056  ,0.9   ,-0.2984,0.1863,False 
+bottom_level_BLDNNModel     ,bottom_level_CLDNNModel     ,0.1428  ,0.5133,-0.0995,0.3852,False 
+bottom_level_BLDNNModel     ,bottom_level_CONVFILTERModel,0.0309  ,0.9   ,-0.2114,0.2732,False 
+bottom_level_BLDNNModel     ,bottom_level_CRFModel       ,0.2441  ,0.0475,0.0018 ,0.4864,True  
+bottom_level_BLDNNModel     ,bottom_level_LDNNModel      ,0.0906  ,0.89  ,-0.1517,0.333 ,False 
+bottom_level_CLDNNModel     ,bottom_level_CONVFILTERModel,-0.112  ,0.7361,-0.3543,0.1304,False 
+bottom_level_CLDNNModel     ,bottom_level_CRFModel       ,0.1012  ,0.8133,-0.1411,0.3436,False 
+bottom_level_CLDNNModel     ,bottom_level_LDNNModel      ,-0.0522 ,0.9   ,-0.2946,0.1901,False 
+bottom_level_CONVFILTERModel,bottom_level_CRFModel       ,0.2132  ,0.1132,-0.0291,0.4555,False 
+bottom_level_CONVFILTERModel,bottom_level_LDNNModel      ,0.0597  ,0.9   ,-0.1826,0.3021,False 
+bottom_level_CRFModel       ,bottom_level_LDNNModel      ,-0.1535 ,0.4337,-0.3958,0.0889,False 

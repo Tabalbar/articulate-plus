@@ -1,0 +1,23 @@
+insignificant one_way_anova_p_value: 0.4110335428193222,                   Multiple Comparison of Means - Tukey HSD, FWER=0.05                   
+          group1         ,          group2         ,meandiff,p-adj , lower ,upper ,reject
+two_level_BAGCModel      ,two_level_BILSTMCRFModel ,0.0074  ,0.9   ,-0.1251,0.14  ,False 
+two_level_BAGCModel      ,two_level_BLDNNModel     ,-0.0604 ,0.7475,-0.1929,0.0722,False 
+two_level_BAGCModel      ,two_level_CLDNNModel     ,-0.0184 ,0.9   ,-0.1509,0.1142,False 
+two_level_BAGCModel      ,two_level_CONVFILTERModel,-0.0482 ,0.9   ,-0.1808,0.0844,False 
+two_level_BAGCModel      ,two_level_CRFModel       ,0.0252  ,0.9   ,-0.1073,0.1578,False 
+two_level_BAGCModel      ,two_level_LDNNModel      ,-0.0207 ,0.9   ,-0.1533,0.1119,False 
+two_level_BILSTMCRFModel ,two_level_BLDNNModel     ,-0.0678 ,0.6493,-0.2004,0.0647,False 
+two_level_BILSTMCRFModel ,two_level_CLDNNModel     ,-0.0258 ,0.9   ,-0.1584,0.1067,False 
+two_level_BILSTMCRFModel ,two_level_CONVFILTERModel,-0.0557 ,0.8098,-0.1882,0.0769,False 
+two_level_BILSTMCRFModel ,two_level_CRFModel       ,0.0178  ,0.9   ,-0.1148,0.1503,False 
+two_level_BILSTMCRFModel ,two_level_LDNNModel      ,-0.0281 ,0.9   ,-0.1607,0.1044,False 
+two_level_BLDNNModel     ,two_level_CLDNNModel     ,0.042   ,0.9   ,-0.0906,0.1746,False 
+two_level_BLDNNModel     ,two_level_CONVFILTERModel,0.0122  ,0.9   ,-0.1204,0.1447,False 
+two_level_BLDNNModel     ,two_level_CRFModel       ,0.0856  ,0.4108,-0.047 ,0.2182,False 
+two_level_BLDNNModel     ,two_level_LDNNModel      ,0.0397  ,0.9   ,-0.0929,0.1722,False 
+two_level_CLDNNModel     ,two_level_CONVFILTERModel,-0.0298 ,0.9   ,-0.1624,0.1027,False 
+two_level_CLDNNModel     ,two_level_CRFModel       ,0.0436  ,0.9   ,-0.089 ,0.1762,False 
+two_level_CLDNNModel     ,two_level_LDNNModel      ,-0.0023 ,0.9   ,-0.1349,0.1303,False 
+two_level_CONVFILTERModel,two_level_CRFModel       ,0.0734  ,0.5753,-0.0591,0.206 ,False 
+two_level_CONVFILTERModel,two_level_LDNNModel      ,0.0275  ,0.9   ,-0.105 ,0.1601,False 
+two_level_CRFModel       ,two_level_LDNNModel      ,-0.0459 ,0.9   ,-0.1785,0.0866,False 
