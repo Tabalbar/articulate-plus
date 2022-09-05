@@ -1,7 +1,7 @@
 show me cases over time for the midwest
 
 1. selected latitude and longitude
-2. classified as a heat map (should be line
+2. classified as a heat map (should be line)
 3. no date header selected
 
 show me cases and date

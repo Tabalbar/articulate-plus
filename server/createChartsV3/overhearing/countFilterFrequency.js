@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const Sentiment = require("sentiment");
 
 module.exports = (chartMsg, options) => {
@@ -41,33 +47,30 @@ module.exports = (chartMsg, options) => {
   //     }
   //   }
   // } else
+
   if (options.filter.toggle) {
     // sentences.slice(-options.filter.pastSentences);
     for (let i = 0; i < sentences.length; i++) {
+      let needToRecheck = false;
+      // sentences[i] = sentences[i].replace(/ /g, "-");
       for (let j = 0; j < chartMsg.featureMatrix.length; j++) {
         for (let k = 1; k < chartMsg.featureMatrix[j].length; k++) {
           if (
             sentences[i].toLowerCase().includes(chartMsg.featureMatrix[j][k])
           ) {
+            sentences[i] = sentences[i].replace(
+              chartMsg.featureMatrix[j][k],
+              ""
+            );
+            needToRecheck = true;
             wordCount[j].filters[k - 1].count += 1;
             break;
           }
         }
       }
-      // let words = sentences[i].split(" ");
-      // for (let j = 0; j < words.length; j++) {
-      //   for (let w = 0; w < chartMsg.featureMatrix.length; w++) {
-      //     let found = false;
-      //     for (let n = 1; n < chartMsg.featureMatrix[w].length; n++) {
-      //       if (words[j].toLowerCase().includes(chartMsg.featureMatrix[w][n])) {
-      //         wordCount[w].filters[n - 1].count += 1;
-      //         found = true;
-      //         break;
-      //       }
-      //     }
-      //     if (found) break;
-      //   }
-      // }
+      if (needToRecheck) {
+        i -= 1;
+      }
     }
   }
   return wordCount;

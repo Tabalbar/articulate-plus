@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const findType = require("../charts/helpers/findType");
 const Sentiment = require("sentiment");
 
@@ -59,6 +65,7 @@ module.exports = (chartMsg, options) => {
   if (options.window.toggle) {
     // sentences.slice(-options.window.pastSentences);
     for (let i = 0; i < sentences.length; i++) {
+      // const result = message.replace(/JS/g, "JavaScript");
       for (let j = 0; j < synonymsAndFeatures.length; j++) {
         for (let k = 0; k < synonymsAndFeatures[j].length; k++) {
           if (sentences[i].toLowerCase().includes(synonymsAndFeatures[j][k])) {

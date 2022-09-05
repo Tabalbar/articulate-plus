@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 //duplicate charts
 import actuallychartalreadyuphere from "../../sounds/actually chart already.wav";
 import alreadyuphere from "../../sounds/already up here.wav";

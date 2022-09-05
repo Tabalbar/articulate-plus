@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
+/**
  * Create current dates for logging:
  * transcript
  * When Charts were chosen

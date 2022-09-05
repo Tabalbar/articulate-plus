@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useEffect, useState } from "react";
 
 //Chakra
@@ -278,7 +284,7 @@ function makeCount(charts, chartMsg) {
       chosenCharts.pivot.count++;
       chosenCharts.pivot.id.push(charts[i].id);
     }
-    if (charts[i].chartSelection.includes("random_point")) {
+    if (charts[i].chartSelection.includes("random")) {
       chosenCharts.random.count++;
       chosenCharts.random.id.push(charts[i].id);
     }
@@ -296,7 +302,7 @@ function makeCount(charts, chartMsg) {
     if (chartMsg.charts[i].chartSelection.includes("pivot_point")) {
       total.pivot++;
     }
-    if (chartMsg.charts[i].chartSelection.includes("random_point")) {
+    if (chartMsg.charts[i].chartSelection.includes("random")) {
       total.random++;
     }
   }

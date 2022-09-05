@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useState } from "react";
 import "../../style.css";
 import Window from "./Window";
@@ -10,8 +16,9 @@ function ChosenCharts({
   modifiedChartOptions,
   handlePivot,
   chartToHighlight,
+  globalZIndex,
+  setGlobalZIndex,
 }) {
-  const [globalZIndex, setGlobalZIndex] = useState(10);
   return (
     <>
       {charts.map((chart, i) => {

@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 var speech_voices;
 if ("speechSynthesis" in window) {
   speech_voices = window.speechSynthesis.getVoices();

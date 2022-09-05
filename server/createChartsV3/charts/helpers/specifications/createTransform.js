@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const findType = require("../findType");
 
 module.exports = (chart, chartMsg, extractedFilteredValues) => {
@@ -23,7 +29,6 @@ module.exports = (chart, chartMsg, extractedFilteredValues) => {
       }
     }
   }
-  console.log(chart.transform);
 
   return chart;
 };

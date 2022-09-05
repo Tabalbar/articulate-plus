@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 module.exports = (chartMsg, headerFrequencyCount, filterFrequencyCount) => {
   //Create delta time to check when chart was made compared to beginning
   //of th session
@@ -6,8 +12,8 @@ module.exports = (chartMsg, headerFrequencyCount, filterFrequencyCount) => {
   let chart = {
     id: 0,
     title: "",
-    width: 400,
-    height: 220,
+    width: 450,
+    height: 200,
     mark: "",
     transform: [],
     encoding: {
@@ -25,6 +31,7 @@ module.exports = (chartMsg, headerFrequencyCount, filterFrequencyCount) => {
     pivotThis: false,
     numClicks: 0,
     headerFrequencyCount: headerFrequencyCount,
+    chartSelection: "",
     filterFrequencyCount: filterFrequencyCount,
     fetchedURL: false,
   };

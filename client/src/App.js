@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useState, useEffect, useRef } from "react";
 import "semantic-ui-css/semantic.min.css";
 
@@ -8,6 +14,7 @@ import Charts from "./pages/Charts";
 //Components
 import Dictaphone from "./components/voice/Dictaphone";
 import ArtyContainer from "./components/staticWindows/ArtyContainer";
+import TimerComponent from "./components/TimerComponent";
 
 //Helper functions
 import { serverRequest } from "./helpers/serverRequest";
@@ -45,6 +52,8 @@ function App() {
 
   const [chartToHighlight, setChartToHighlight] = useState(null);
 
+  const [userStudyName, setUserStudyName] = useState("");
+
   //Toggle options for algorithm
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
     useCovidDataset: false,
@@ -58,7 +67,7 @@ function App() {
     randomCharts: {
       toggle: true,
       minutes: 5,
-      chartWindow: 0,
+      chartWindow: 3,
     },
     threshold: 2,
     filter: {
@@ -105,17 +114,36 @@ function App() {
     },
   });
 
-  const [studyName, setStudyName] = useState('');
-
-  // SAVE FILE ON EVERY STATE CHANGE
   useEffect(() => {
-    //TODO WRITE SAVE FILE
-    if (studyName !== '') {
-      // ANY CHANGE TO CHART MESSAGE
-      // POST TO NODE SERVER (JSON.stringy(chartMsg), studyName)
+    async function logData() {
+      if (startStudy) {
+        let content = {
+          count: makeCount(charts, chartMsg),
+          chosenCharts: charts,
+          transcript: chartMsg.transcript,
+          loggedTranscript: chartMsg.loggedTranscript,
+          uncontrolledTranscript: chartMsg.uncontrolledTranscript,
+          loggedUncontrolledTranscript: chartMsg.loggedUncontrolledTranscript,
+          charts: chartMsg.charts,
+          synonymsAndFeatures: chartMsg.synonymMatrix,
+        };
+        const response = await fetch("/log", {
+          method: "POST",
+          body: JSON.stringify({
+            fileName: userStudyName,
+            content,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        });
+      }
     }
-  }, [chartMsg, studyName])
+    logData();
+  }, [chartMsg]);
 
+  const [studyName, setStudyName] = useState("");
 
   //Visual feedback for computer unuted, mute, and thinking
   const [clippyImage, setClippyImage] = useState(listeningImage);
@@ -144,34 +172,38 @@ function App() {
     //   speakVoice(thinkingResponse.soundFile);
     //   setVoiceMsg(thinkingResponse.msg);
     // }
-    setClippyImage(thinkingImage);
-    speakVoice(chartSound);
 
-    //Actual request to server
-    serverRequest(
-      chartMsg,
-      setChartMsg,
-      modifiedChartOptions,
-      setVoiceMsg,
-      charts,
-      setCharts,
-      setChartToHighlight
-    ).then((response) => {
-      if (mute) {
-        setClippyImage(muteImage);
-      } else {
-        //Voice syntheiszer
-        if (response.assistantResponse) {
-          speakVoice(response.assistantResponse.soundFile);
-          setVoiceMsg(response.assistantResponse.msg);
-          setClippyImage(talkingImage);
-          setShowTooltip(true);
+    return new Promise((res, rej) => {
+      //Actual request to server
+      serverRequest(
+        chartMsg,
+        setChartMsg,
+        modifiedChartOptions,
+        setVoiceMsg,
+        charts,
+        setCharts,
+        setChartToHighlight
+      ).then((response) => {
+        if (mute) {
+          setClippyImage(muteImage);
+        } else {
+          //Voice syntheiszer
+          if (response.assistantResponse) {
+            speakVoice(response.assistantResponse.soundFile);
+            setVoiceMsg(response.assistantResponse.msg);
+            setClippyImage(talkingImage);
+            speakVoice(chartSound);
+            setShowTooltip(true);
+            res(response.isCommand);
+            setClippyImage(thinkingImage);
+          } else {
+            res(response.isCommand);
+          }
+          setTimeout(() => {
+            setClippyImage(listeningImage);
+          }, 3000);
         }
-        setTimeout(() => {
-          setClippyImage(listeningImage);
-        }, 3000);
-      }
-      return response.isCommand;
+      });
     });
   };
 
@@ -225,6 +257,7 @@ function App() {
     }
     setForceUpdate((prev) => !prev);
   };
+  const [globalZIndex, setGlobalZIndex] = useState(1);
 
   return (
     <>
@@ -269,7 +302,9 @@ function App() {
             Command Checker
           </Button> */}
           {/* COMMENT THIS WHEN STARTING USER STUDY */}
-
+          <Box position="absolute" right="50%">
+            <TimerComponent chartMsg={chartMsg} mute={mute} charts={charts} />
+          </Box>
           <ArtyContainer
             clippyImage={clippyImage}
             handleMute={handleMute}
@@ -284,6 +319,10 @@ function App() {
             chartMsg={chartMsg}
             setStartStudy={setStartStudy}
             startStudy={startStudy}
+            globalZIndex={globalZIndex}
+            setGlobalZIndex={setGlobalZIndex}
+            setUserStudyName={setUserStudyName}
+            userStudyName={userStudyName}
           />
 
           <Charts
@@ -293,6 +332,8 @@ function App() {
             charts={charts}
             setCharts={setCharts}
             mute={mute}
+            globalZIndex={globalZIndex}
+            setGlobalZIndex={setGlobalZIndex}
             chartToHighlight={chartToHighlight}
             modifiedChartOptions={modifiedChartOptions}
           />
@@ -324,3 +365,68 @@ function App() {
 }
 
 export default App;
+
+function makeCount(charts, chartMsg) {
+  let chosenCharts = {
+    explicit: { count: 0, id: [] },
+    mainAI: { count: 0, id: [] },
+    mainAIOverhearing: { count: 0, id: [] },
+    pivot: { count: 0, id: [] },
+    random: { count: 0, id: [] },
+  };
+  let total = {
+    explicit: 0,
+    mainAI: 0,
+    mainAIOverhearing: 0,
+    pivot: 0,
+    random: 0,
+  };
+
+  for (let i = 0; i < charts.length; i++) {
+    if (charts[i].hasOwnProperty("chartSelection")) {
+      break;
+    }
+    if (charts[i].chartSelection.includes("explicit_point")) {
+      chosenCharts.explicit.count++;
+      chosenCharts.explicit.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("mainAI_point")) {
+      chosenCharts.mainAI.count++;
+      chosenCharts.mainAI.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("mainAIOverhearing_point")) {
+      chosenCharts.mainAIOverhearing.count++;
+      chosenCharts.mainAIOverhearing.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("pivot_point")) {
+      chosenCharts.pivot.count++;
+      chosenCharts.pivot.id.push(charts[i].id);
+    }
+    if (charts[i].chartSelection.includes("random")) {
+      chosenCharts.random.count++;
+      chosenCharts.random.id.push(charts[i].id);
+    }
+  }
+  for (let i = 0; i < chartMsg.charts.length; i++) {
+    if (chartMsg.charts[i].hasOwnProperty("chartSelection")) {
+      break;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("explicit_point")) {
+      total.explicit++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("mainAI_point")) {
+      total.mainAI++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("mainAIOverhearing_point")) {
+      total.mainAIOverhearing++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("pivot_point")) {
+      total.pivot++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("random")) {
+      total.random++;
+    }
+  }
+
+  return { chosenCharts: chosenCharts, total: total };
+}

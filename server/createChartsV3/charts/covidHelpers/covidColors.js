@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 module.exports = (header) => {
   for (let i = 0; i < covidColors.length; i++) {
     if (covidColors[i].header == header) {
@@ -20,7 +26,7 @@ const covidColors = [
     ],
   },
   {
-    header: "county type",
+    header: "area type",
     colors: ["#d5ff00", "#00ff08", "#0037ff", "#ff69c6", "#ff0000"],
   },
   {
@@ -52,7 +58,7 @@ const covidColors = [
     colors: ["#017ab3", "#6499c6", "#9bbad9", "#cddcec", "#121212"],
   },
   {
-    header: "hispanic",
+    header: "Hispanic",
     colors: ["#01b33b", "#5bc363", "#89d38a", "#b2e2b0", "#d9f1d7", "#121212"],
   },
   {

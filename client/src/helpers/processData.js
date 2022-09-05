@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
+/**
  * Processes the CSV text file
  * @param {JSON Object} data
  * @returns JSON obj with the data points

@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const covidColors = require("./covidHelpers/covidColors");
 const covidSort = require("./covidHelpers/covidSort");
 const createTitle = require("./helpers/specifications/createTitle");
@@ -9,13 +15,15 @@ module.exports = (
   extractedHeaders,
   extractedFilteredValues,
   headerFrequencyCount,
-  filterFrequencyCount
+  filterFrequencyCount,
+  options
 ) => {
   let chart = createChartTemplate(
     chartMsg,
     headerFrequencyCount,
     filterFrequencyCount
   );
+  chart.height = 300;
   chart.transform.push({
     lookup: "map",
     from: {
@@ -37,8 +45,15 @@ module.exports = (
       color: {
         field: extractedHeaders[1],
         type: "nominal",
-        scale: { range: covidColors(extractedHeaders[1]) },
-        sort: covidSort(extractedHeaders[1], chartMsg.data),
+        legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
+        scale: {
+          range: options.useCovidDataset
+            ? covidColors(extractedHeaders[1])
+            : [],
+        },
+        sort: options.useCovidDataset
+          ? covidSort(extractedHeaders[1], chartMsg.data)
+          : [],
       },
       shape: { field: "geo", type: "geojson" },
     },
@@ -48,6 +63,7 @@ module.exports = (
   delete chart.encoding;
   delete chart.concat;
   chart.projection = { type: "albersUsa" };
+
   chart.layer = [
     {
       data: {

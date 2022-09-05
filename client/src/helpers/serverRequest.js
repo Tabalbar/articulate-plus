@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import {
   duplicate,
   noCharts,
@@ -61,6 +67,9 @@ export async function serverRequest(
   // decrypt message from server
   const body = await response.text();
   const responseChartMsg = JSON.parse(body);
+  if (responseChartMsg.chartMsg.errMsg == "none") {
+    return { assistantResponse: false, isCommand: false };
+  }
 
   //API request
   const pythonResponse = await fetch("/flask", {
@@ -74,7 +83,7 @@ export async function serverRequest(
   const pythonBody = await pythonResponse.text();
   const pythonChartMsg = JSON.parse(pythonBody);
 
-  //API request
+  // console.log(pythonChartMsg);
 
   //tmp var to hold charts
   let tmpChartMsg = responseChartMsg.chartMsg;

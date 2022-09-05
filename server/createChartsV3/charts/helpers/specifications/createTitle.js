@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 module.exports = (chart, extractedHeaders, intent, filteredHeaders) => {
   let chartTitle = "";
   let headerLength = extractedHeaders.length;
@@ -30,7 +36,15 @@ module.exports = (chart, extractedHeaders, intent, filteredHeaders) => {
       for (let n = 0; n < headers.length; n++) {
         title += headers[n].charAt(0).toUpperCase() + headers[n].slice(1) + " ";
       }
-      filteredHeaderTitles.push(title);
+      let titleFound = false;
+      for (let k = 0; k < filteredHeaderTitles.length; k++) {
+        if (title == filteredHeaderTitles[k]) {
+          titleFound = true;
+        }
+      }
+      if (!titleFound) {
+        filteredHeaderTitles.push(title);
+      }
     }
   }
   for (let i = 0; i < filteredHeaders.length; i++) {
@@ -97,6 +111,6 @@ module.exports = (chart, extractedHeaders, intent, filteredHeaders) => {
       chartTitle += filteredHeaderTitles[i] + " and ";
     }
   }
-  chart.title = chartTitle;
+  chart.title = { text: chartTitle, fontSize: 20 };
   return chart;
 };
