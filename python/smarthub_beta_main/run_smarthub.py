@@ -41,62 +41,62 @@ class ContextWindow(Sequence):
         return len(self.multimodal_data)
 
 
-class FakeKinectService:
-    @staticmethod
-    def observe_screen_pointing_gesture():
-        # use kinect to detect hand pointing gesture
-        return int(-1) #input('gesture: ')
+# class FakeKinectService:
+#     @staticmethod
+#     def observe_screen_pointing_gesture():
+#         # use kinect to detect hand pointing gesture
+#         return int(-1) #input('gesture: ')
 
-# received audio data, now we'll recognize it using Google Speech Recognition
-# for testing purposes, we're just using the default API key
-        # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
-        # instead of `r.recognize_google(audio)`
-class FakeSpeechToTextService:
-    @staticmethod
-    def callback(recognizer, audio):
-        try:
-            print("Google Speech Recognition thinks you said " + recognizer.recognize_google(audio))
-        except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
-        except sr.RequestError as e:
-            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+# # received audio data, now we'll recognize it using Google Speech Recognition
+# # for testing purposes, we're just using the default API key
+#         # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
+#         # instead of `r.recognize_google(audio)`
+# class FakeSpeechToTextService:
+#     @staticmethod
+#     def callback(recognizer, audio):
+#         try:
+#             print("Google Speech Recognition thinks you said " + recognizer.recognize_google(audio))
+#         except sr.UnknownValueError:
+#             print("Google Speech Recognition could not understand audio")
+#         except sr.RequestError as e:
+#             print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-    # @staticmethod
-    # def speech_to_text():
-    #     # use speech to text service to obtain next spoken utterance.
-    #     r = sr.Recognizer()
-    #     with sr.Microphone() as source:
-    #         r.adjust_for_ambient_noise(source)
-    #         print("Speak..")
-    #         audio = r.listen(source)
-    #         print("Speech to text.. ")
-
-
-    #     # recognize speech using google
-
-    #     try:
-
-    #         speech_input = r.recognize_google(audio)
-    #         print("Speech Input \n" + speech_input)
+#     @staticmethod
+#     def speech_to_text():
+#         # use speech to text service to obtain next spoken utterance.
+#         r = sr.Recognizer()
+#         with sr.Microphone() as source:
+#             r.adjust_for_ambient_noise(source)
+#             print("Speak..")
+#             audio = r.listen(source)
+#             print("Speech to text.. ")
 
 
+#         # recognize speech using google
 
-    #     except Exception as e:
-    #         print("Error :  " + str(e))
-    #     # input('utterance : ')
-    #     return speech_input
+#         try:
+
+#             speech_input = r.recognize_google(audio)
+#             print("Speech Input \n" + speech_input)
+#             # print("Audio Recorded Successfully \n ")
 
 
-class FakeMultimodalService:
-    @staticmethod
-    def listen():
-        # keep waiting until spoken utterance is heard.
-        utterance = FakeSpeechToTextService.speech_to_text()
+#         except Exception as e:
+#             print("Error :  " + str(e))
+#         # input('utterance : ')
+#         return speech_input
 
-        # once utterance is heard, also observe pointing gestures made towards the screen display.
-        gesture_target_id = FakeKinectService.observe_screen_pointing_gesture()
 
-        return utterance, gesture_target_id
+# class FakeMultimodalService:
+#     @staticmethod
+#     def listen():
+#         # keep waiting until spoken utterance is heard.
+#         utterance = FakeSpeechToTextService.speech_to_text()
+
+#         # once utterance is heard, also observe pointing gestures made towards the screen display.
+#         gesture_target_id = FakeKinectService.observe_screen_pointing_gesture()
+
+#         return utterance, gesture_target_id
 
 
 class SmarthubSession:
@@ -209,7 +209,7 @@ class SmarthubSession:
 
         if best_action:
             print(best_action.get_json_str())
-
+        return best_action.get_json_str()
         print("***HISTORY***\n")
         print(state_tracker)
 
@@ -231,7 +231,7 @@ class SmarthubSession:
     def process_multimodal_input(self, utterance, gesture_target_id):
         # Step 1: tokenized the utterance which facilitates extraction of data attributes.
         tokenized_utterance = self.entity_tokenizer(utterance)
-        # print("Tokenized utterance: "+str(tokenized_utterance))
+
         # Step 2: predict referring expressions
         referring_expressions = LanguageUnderstandingModels.predict_referring_expressions(tokenized_utterance)
         print("predicted referring expressions: {}".format([r.words for r in referring_expressions]))
@@ -248,7 +248,6 @@ class SmarthubSession:
 
         # Step 4: data attribute is mentioned while in conclusion state, clear the context and start fresh.
         if self.conclusion_mode and top_dialogue_act_label != 'merged':
-            # print("In step 4")
             if tokenized_utterance._.entities:
                 self.conclusion_mode = False
 
@@ -268,14 +267,15 @@ class SmarthubSession:
 
             self.conclusion_mode = True
             self.found_data = False
-            p = Process(target=
-            SmarthubSession.determine_best_action(
+            response = SmarthubSession.determine_best_action(
                 context_window=context_window_cpy,
-                state_tracker=self.state_tracker))
+                state_tracker=self.state_tracker)
+            # p = Process(target=)
 
-            p.start()
-            p.join()
-            return
+            # p.start()
+            # p.join()
+            return response
+            # return
 
         # Step 7: data attribute is mentioned for first time since the last completed context window.
         # hence this is start of new context window.
@@ -299,36 +299,82 @@ class SmarthubSession:
         - Once utterance and hand pointing gesture is detected, process the multimodal input.
     '''
 
-    # def run(self):
-    #     while True:  # loop runs forever in current session
-    #         utterance, gesture_target_id = FakeMultimodalService.listen()
-    #         if (utterance == 'stop'or utterance == 'end conversation'):
-    #             print("End of conversation")
-    #             break
-    #         else:
-    #             print("Received multimodal input- utterance: {}, gesture target id: {}".
-    #               format(utterance, gesture_target_id)) # utterance = FakeMultimodalService.listen()
-    #             self.process_multimodal_input(utterance=utterance, gesture_target_id=gesture_target_id)
-    #         # print("Received multimodal input- utterance: {}, gesture target id: {}".
-    #         #       format(utterance))
 
-    def run(self ):
-        while True:  # loop runs forever in current session
-            utterance, gesture_target_id = FakeMultimodalService.listen()
-            # utterance, gesture_target_id = "show me a bar chart of County type", -1
-            if (utterance == 'stop'or utterance == 'end conversation'):
-                print("End of conversation")
-                break
-            else:
-                print("Received multimodal input- utterance: {}, gesture target id: {}".
-                  format(utterance, gesture_target_id)) # utterance = FakeMultimodalService.listen()
-            # self.process_multimodal_input(utterance="can I see covid risk in the midwest", gesture_target_id=-1)
-                self.process_multimodal_input(utterance=utterance, gesture_target_id=gesture_target_id)
-            # self.process_multimodal_input(utterance="let's see", gesture_target_id=-1)
-            # self.process_multimodal_input(utterance="what about for the southeast?", gesture_target_id=-1)
 
-                # print("Received multimodal input- utterance: {}, gesture target id: {}".
-                #   format(utterance))
+    def run(self, utterance, gesture_target_id = -1 ):
+        # while True:  # loop runs forever in current session
+        # utterance, gesture_target_id = FakeMultimodalService.listen()
+        # if (utterance == 'stop'or utterance == 'end conversation'):
+        #     print("End of conversation")
+        #     # break
+        # else:
+        # print("Received multimodal input- utterance: {}, gesture target id: {}".
+        #         format(utterance, gesture_target_id)) # utterance = FakeMultimodalService.listen()
+        return self.process_multimodal_input(utterance, gesture_target_id)
+            # self.process_multimodal_input(utterance=utterance, gesture_target_id=gesture_target_id)
+        # self.process_multimodal_input(utterance, gesture_target_id)
+
+            # print("Received multimodal input- utterance: {}, gesture target id: {}".
+            #       format(utterance))
+
+
+
+
+# class RunSmartHub:
+#     def __init__(self, use_full_context_window_for_da_prediction=False):
+#         self.corpus_entity_extractor = CorpusFeatureExtractorUtils.get_context_based_corpus_entity_extractor()
+#         self.entity_tokenizer = self.corpus_entity_extractor.get_tokenizer()
+#         self.state_tracker = StateTracker()
+#         self.found_data = False
+#         self.conclusion_mode = False
+#         self.context_window = ContextWindow()
+#         self.context_window.use_full_context_window_for_da_prediction = use_full_context_window_for_da_prediction
+#         self.utterance = None
+#         self.gesture_target_id = None
+
+#     def GetPrediction(self, utterance, gesture_target_id):
+#         self.utterance = utterance
+#         self.gesture_target_id = gesture_target_id
+#         tokenized_utterance = self.entity_tokenizer(utterance)
+#         referring_expressions = LanguageUnderstandingModels.predict_referring_expressions(tokenized_utterance)
+        
+        
+#         context_utterances = []
+#         if self.context_window.use_full_context_window_for_da_prediction:
+#             context_utterances = self.context_window.utterances
+#         context_utterances.append(tokenized_utterance)
+
+
+#         dialogue_act = LanguageUnderstandingModels.predict_dialogue_act(
+#             context_utterances=context_utterances,
+#             gesture_target_id=gesture_target_id,
+#             referring_expressions=referring_expressions)
+#         top_dialogue_act_label, bottom_dialogue_act_label = dialogue_act
+
+#         if self.conclusion_mode and top_dialogue_act_label != 'merged':
+#             if tokenized_utterance._.entities:
+#                 conclusion_mode = False
+#                 del self.context_window
+#                 context_window = ContextWindow()
+
+#         self.context_window.add(tokenized_utterance, gesture_target_id, dialogue_act, referring_expressions)
+#         if top_dialogue_act_label == 'merged':
+#             context_window_cpy = copy.deepcopy(self.context_window)
+#             # del context_window
+#             context_window = ContextWindow()
+#             # conclusion_mode = True
+#             # found_data = False
+#             p = Process(target=determine_best_action(
+#                 context_window=context_window_cpy, 
+#                 state_tracker=self.state_tracker))
+#             print(p)
+#             p.start()
+#             p.join()
+#         if not self.found_data and tokenized_utterance._.entities:
+#             self.found_data = True
+#             del context_window
+#             context_window = ContextWindow()
+#             context_window.add(tokenized_utterance, gesture_target_id, dialogue_act, referring_expressions)        
 
 
 
@@ -337,5 +383,12 @@ class SmarthubSession:
 
 
 # start a new Smarthub session:
-smarthub = SmarthubSession()
-smarthub.run()
+# smarthub = SmarthubSession()
+# smarthub.run("Okay.. lets see")
+# smarthub.run("Can I see covid risk for the southwest?")
+# smarthub.run("Can I see diabetes rate")
+# smarthub.run("Can you filter this by the southeast?")
+# smarthub.run("Okay.. let me see..")
+# smarthub.run("This looks interesting.")
+# smarthub.run("I thik we should expore this area")
+# smarthub.run("Can you show me a the cases in rural areas?")
