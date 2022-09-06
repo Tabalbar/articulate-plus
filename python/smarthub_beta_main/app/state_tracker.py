@@ -327,6 +327,7 @@ class StateTracker:
         # the most recent vis spec from history.
         if not visualization_specification.visualization_task.filters and not \
                 visualization_specification.visualization_task.aggregators:
+            print(".........................HERE..............................")
             distance_to_found_visualization_specification = 0
             return distance_to_found_visualization_specification, \
                    self.get_plot_headline_history(cosine_similarity, search_history_id_before), \

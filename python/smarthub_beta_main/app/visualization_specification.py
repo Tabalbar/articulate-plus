@@ -13,10 +13,12 @@ class VisualizationSpecification:
         self.vertical_axis = None
         self.data_query = None
         self.data_query_results = []
+        self.data_vega_lite_spec = []
         self.dialogue_act = None
         self.response_text = None
         self.visualization_task = None
         self.plot_headline_history = []
+
 
     def get_json_obj(self):
         s = json.dumps(self, default=self._to_json, sort_keys=True, indent=4)

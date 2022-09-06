@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../smarthub_beta_data/.idea/smarthub_beta_data.iml" filepath="$PROJECT_DIR$/../smarthub_beta_data/.idea/smarthub_beta_data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/smarthub_beta_main.iml" filepath="$PROJECT_DIR$/.idea/smarthub_beta_main.iml" />
+    </modules>
+  </component>
+</project>

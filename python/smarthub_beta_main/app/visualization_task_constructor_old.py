@@ -39,42 +39,21 @@ class VisualizationTaskConstructor:
         # sql query with removing latitude and longitude or adding latitude and longitude.
         if 'map' not in previous_task.plot_type and 'map' in current_task.plot_type:
             # print(" In if 'map' not in previous_task.plot_type and 'map' in current_task.plot_type:")
-            if "NUM_COUNTIES" in merged_task.vertical_axis:
+            if "ATTRIBUTE" in merged_task.vertical_axis:
                 # print("............in inner if.............")
                 # "TOTAL CRIME" is not in the vertical axis always (i.e., only when dialogue act is create\modify vis).
-                merged_task.remove_vertical_axis("NUM_COUNTIES")
-            elif "NUM_CASES" in merged_task.vertical_axis:
-                 merged_task.remove_vertical_axis("NUM_CASES")
+                merged_task.remove_vertical_axis("ATTRIBUTE")
                 # merged_task.remove_aggregator(current_task.aggregators)
             # print("*****************"+ str(current_aggregators[0]))
             # merged_task.sql.add_select(current_aggregators[0])
-            merged_task.sql.add_select('fips')
-            # merged_task.sql.add_select('longitude')
+            merged_task.sql.add_select('latitude')
+            merged_task.sql.add_select('longitude')
             merged_task.update_specification()
-        elif 'map' in previous_task.plot_type:
-            if 'map' not in current_task.plot_type and merged_task.is_plot_type_specified:
-                if 'bar' in current_task.plot_type:
-                    if 'new_cases' in merged_task.aggregators:
-                        merged_task.add_vertical_axis("NUM_CASES")
-                        merged_task.sql.remove_group_by('fips')
-                        merged_task.sql.remove_select('fips')
-                        merged_task.update_specification()
-                    else:
-                        merged_task.add_vertical_axis("NUM_COUNTIES")
-                        temp = next(iter(merged_task.aggregators))
-                        merged_task.sql.add_select(temp[0])
-                        merged_task.add_aggregator_map(temp[0])
-                        merged_task.sql.remove_group_by('fips')
-                        merged_task.sql.remove_select('fips')
-                        # merged_task.sql.add_select
-                        merged_task.update_specification()
-            elif 'map' not in current_task.plot_type and not merged_task.is_plot_type_specified:
-                merged_task.sql.add_select("fips")
-                temp = next(iter(merged_task.aggregators))
-                merged_task.sql.add_select(temp[0])
-                merged_task.add_aggregator_map(temp[0])
-                merged_task.plot_type = "heat map"
-                merged_task.map_type = "geographical"
+        elif 'map' in previous_task.plot_type and 'map' not in current_task.plot_type:
+            merged_task.add_vertical_axis("ATTRIBUTE")
+            merged_task.sql.remove_select('latitude')
+            merged_task.sql.remove_select('longitude')
+            merged_task.update_specification()
 
         if current_filters:
             # get curr task filter attributes.
@@ -162,20 +141,16 @@ class VisualizationTaskConstructor:
         if top_dialogue_act_label != 'merged':
             return None
 
-        # plot type override through referring expression :Can I see the last graph as a map
         is_plot_type_override = False
-        # if the utterance has explicit mention of plot type
-
 
         # create new task.
         visualization_task = VisualizationTask()
 
         # default plot type is bar chart.
         visualization_task.plot_type = 'bar chart'
-        visualization_task.is_plot_type_specified = False
 
         # the y-axis is the total crime counts in all kinds of plots except maps.
-        visualization_task.add_vertical_axis("NUM_COUNTIES")
+        visualization_task.add_vertical_axis("ATTRIBUTE")
 
         # sql queries will select from chicagocrime database.
         visualization_task.sql.add_from('counties_cdc_cases')
@@ -248,19 +223,15 @@ class VisualizationTaskConstructor:
                         # graph is vis attribute> as a map <plot type falls outside of "this graph" ref exp>.
                         if not token._.is_entity_name:
                             visualization_task.plot_type = token._.entity_value[0]
-                            is_plot_tye_override = True
+                            is_plot_type_override = True
                 else:
                     # if no ref exps exists, then just directly update plot type.
                     # e.g., plot type="map" in "Show me thefts for each neighborhood as a map <vis attribute>"
                     if not token._.is_entity_name:
                         # print("TOKEN entity visualization :"+str(token))
                         visualization_task.plot_type = token._.entity_value[0]
-                        visualization_task.is_plot_type_specified = True
 
                 continue
-            if referring_expression:
-                print("*******referring expression**********")
-
 
             # if the word is not a data attribute then cannot be a filter or aggregator.
             if not token._.entity_data_attribute:
@@ -292,100 +263,38 @@ class VisualizationTaskConstructor:
 
         visualization_task.redistribute_horizontal_axis_variables()
         if bottom_dialogue_act_label in ['createvis', 'modifyvis']:
-            #number of cases
-            if 'new_cases' in visualization_task.filters or 'line' in visualization_task.plot_type :
-                print("Number of cases")
+            if 'map' in visualization_task.plot_type:
+                # if plot type is map, then remove total crime as y-axis and add latitude and longitude to sql.
+                visualization_task.remove_vertical_axis("ATTRIBUTE")
+                visualization_task.sql.add_select('latitude')
+                visualization_task.sql.add_select('longitude')
                 if visualization_task.aggregators:
-                    print("Number of cases with aggregator")
-                    visualization_task.remove_vertical_axis("NUM_COUNTIES")
-                    visualization_task.add_vertical_axis_sum("NUM_CASES")
-                    visualization_task.sql.add_select("date")
-                    visualization_task.sql.add_group_by("date")
-                    visualization_task.sql.add_select(list(visualization_task.aggregators)[0][0])
-                    visualization_task.sql.add_group_by(list(visualization_task.aggregators)[0][0])
-                    visualization_task.remove_filter('new_cases')
-                    visualization_task.remove_filter('date')
-                    visualization_task.plot_type = "line"
-                else:
-                    visualization_task.remove_vertical_axis("NUM_COUNTIES")
-                    visualization_task.add_vertical_axis_sum("NUM_CASES")
-                    visualization_task.sql.add_select("date")
-                    visualization_task.sql.add_group_by("date")
-                    visualization_task.add_horizontal_axis("date")
-                    # visualization_task.add_aggregator("date")
-                    visualization_task.remove_filter('new_cases')
-                    visualization_task.remove_filter('date')
-                    visualization_task.plot_type = "line"
-            #Case 1a: ONLY one aggregators are there in the utterance and the plot will be map type
-            #I want to see the rate of diabetes <aggregator> in the US. (general query, one aggregator)
-            else:
-                if 'map' not in visualization_task.plot_type and visualization_task.aggregators:
-                    if not visualization_task.is_plot_type_specified and not is_plot_type_override:
-                        if len(visualization_task.aggregators) == 1:
-                            if visualization_task.any_aggregator_geographically_relevant():
-                                print("one geographically relevant aggregator --> bar chart")
-                                visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[0][0])
-                                visualization_task.sql.add_group_by(list(visualization_task.aggregators)[0][0])
-                            else:
-                                visualization_task.remove_vertical_axis("NUM_COUNTIES")
-                                visualization_task.sql.add_select("fips")
-                                temp = next(iter(visualization_task.aggregators))
-                                visualization_task.sql.add_select(temp[0])
-                                visualization_task.add_aggregator_map(temp[0])
-                                visualization_task.plot_type = "heat map"
-                                visualization_task.map_type = "geographical"
-                        elif len(visualization_task.aggregators) == 2:
-                            #Case 2:if there are two aggregators it will not be a map
-                            if visualization_task.any_aggregator_geographically_relevant():
-                                print("*****geographically relevant aggregator******")
-                                visualization_task.sql.add_select(list(visualization_task.aggregators)[0][0])
-                                visualization_task.sql.add_select(list(visualization_task.aggregators)[1][0])
-                                visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[1][0])
-                                visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[0][0])
-                            else:
-                                visualization_task.plot_type = "heat map"
-                                visualization_task.map_type = "non_geographical" #non-geographical heat map
-                                visualization_task.sql.add_select(list(visualization_task.aggregators)[0][0])
-                                visualization_task.sql.add_select(list(visualization_task.aggregators)[1][0])
-                                visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[1][0])
-                                visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[0][0])
-                            # visualization_task.add_first_aggregator(list(visualization_task.aggregators)[0][0])
-                            # visualization_task.add_aggregator(list(visualization_task.aggregators)[1][0])
-
-                    #Case 1b: user asks for a bar chart
-                    elif visualization_task.is_plot_type_specified and visualization_task.plot_type == "bar chart":
-                        temp = next(iter(visualization_task.aggregators))
-                        visualization_task.sql.add_select(temp[0])
-                        # visualization_task.add_aggregator(temp[0])
-                #Case 1c: ONLY one aggregators are there in the utterance and map plot type specified by user
-                elif 'map' in visualization_task.plot_type and visualization_task.aggregators and not visualization_task.filters\
-                        and not is_plot_type_override and visualization_task.is_plot_type_specified:
-                    visualization_task.remove_vertical_axis("NUM_COUNTIES")
-                    visualization_task.sql.add_select("fips")
                     temp = next(iter(visualization_task.aggregators))
                     visualization_task.sql.add_select(temp[0])
                     visualization_task.add_aggregator_map(temp[0])
-                #Utterances can have filters
-                # elif 'map' not in visualization_task.plot_type and visualization_task.aggregators:
-                #     if not is_plot_type_specified and not is_plot_type_override:
-                #         #only one aggregator and any number of filters
-                #         if visualization_task.filters and len(visualization_task.aggregators) == 1:
-                #             # Case 2a: Check if the aggregator is geographically relevant
-                #             if visualization_task.any_aggregator_geographically_relevant():
-                #                 visualization_task.remove_vertical_axis("NUM_COUNTIES")
-                #                 visualization_task.sql.add_select("fips")
-                #                 visualization_task.sql.add_select(list(visualization_task.aggregators)[0][0])
-                #
 
-                elif 'bar' in visualization_task.plot_type:
-                    # order by in sql can be removed for bar plots.
-                    print("*****bar in vis plot type*****")
-                    if visualization_task.aggregators:
-                        temp = next(iter(visualization_task.aggregators))
-                        visualization_task.sql.add_select(temp[0])
-                        visualization_task.add_horizontal_axis(temp[0])
-                    visualization_task.add_vertical_axis("NUM_COUNTIES")
-                    visualization_task.sql.remove_all_order_bys()
+            elif 'map' not in visualization_task.plot_type and visualization_task.any_filter_geographically_relevant() \
+                    and not is_plot_type_override:
+                # if the utterance contains geographical attributes (i.e., location, neighborhood), then
+                # force update the plot type to heat map, remove total crime from y-axis and add
+                # latitude and longitude to sql.
+                # print("***************************************************************************")
+
+                print("In  elif 'map' not in visualization_task.plot_type and visualization_task.any_filter_geographically_relevant() \
+                    and not is_plot_type_override")
+                visualization_task.remove_vertical_axis("ATTRIBUTE")
+                visualization_task.sql.add_select("latitude")
+                visualization_task.sql.add_select("longitude")
+                if visualization_task.aggregators:
+                    temp = next(iter(visualization_task.aggregators))
+                    visualization_task.sql.add_select(temp[0])
+                    visualization_task.add_aggregator_map(temp[0])
+                visualization_task.plot_type = "heat map"
+
+
+            elif 'bar' in visualization_task.plot_type:
+                # order by in sql can be removed for bar plots.
+                visualization_task.sql.remove_all_order_bys()
 
             visualization_task.update_specification()
 
@@ -401,8 +310,8 @@ class VisualizationTaskConstructor:
             visualization_task.remove_all_filters()
             visualization_task.remove_all_aggregators()
             visualization_task.remove_sql()
-            visualization_task.sql.add_from('counties_cdc_cases')
+            visualization_task.sql.add_from('chicagocrime')
             visualization_task.summary = bottom_dialogue_act_label + ' operation on visualization'
-            visualization_task.remove_vertical_axis("NUM_COUNTIES")
+            visualization_task.remove_vertical_axis("ATTRIBUTE")
 
         return visualization_task

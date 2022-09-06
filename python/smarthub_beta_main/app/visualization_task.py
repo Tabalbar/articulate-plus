@@ -20,12 +20,14 @@ class VisualizationTask:
         self.aggregators = set()
         self.context_filters = defaultdict(set)
         self.context_aggregators = set()
-
         self.plot_type = None
+        self.is_plot_type_specified = None
+        self.map_type = None
         self.summary = None
         self.sql = SQLConstructor()
 
     def add_horizontal_axis(self, horizontal_axis):
+        # print("HORIZONTAL AXIS NOT NEW_CASES:" +horizontal_axis)
         self.horizontal_axis.add(horizontal_axis)
         self.sql.add_select(horizontal_axis)
         self.update_specification()
@@ -45,18 +47,15 @@ class VisualizationTask:
         self.sql.remove_select_count(vertical_axis)
         self.update_specification()
 
-    # def add_vertical_axis_sum(self, vertical_axis):
-    #     self.vertical_axis.add(vertical_axis)
-    #     self.sql.add_select_sum(vertical_axis)
-    #     self.update_specification()
-    #
-    # def remove_vertical_axis_sum(self, vertical_axis):
-    #     self.vertical_axis.remove(vertical_axis)
-    #     self.sql.remove_select_sum(vertical_axis)
-    #     self.update_specification()
+    def add_vertical_axis_sum(self, vertical_axis):
+        self.vertical_axis.add(vertical_axis)
+        self.sql.add_select_sum(vertical_axis)
+        self.update_specification()
 
-
-
+    def remove_vertical_axis_sum(self, vertical_axis):
+        self.vertical_axis.remove(vertical_axis)
+        self.sql.remove_select_sum(vertical_axis)
+        self.update_specification()
 
     def add_filter(self, attribute, value):
         self.filters[attribute].add(value)
@@ -128,14 +127,30 @@ class VisualizationTask:
         if not self.filters:
             return False
 
-        if self.aggregators:
-            return False
+        # if self.aggregators:
+        #     return False
 
         for filter_attribute in self.filters.keys():
-            if filter_attribute in ['county_type', 'region']:
+            if filter_attribute in ['county_type', 'region', 'state']:
+                print("GEOGRAPHICAL aggregator")
                 return True
 
         return False
+
+    def any_aggregator_geographically_relevant(self):
+        # if not self.filters:
+        #     return False
+
+        if not self.aggregators:
+            return False
+        else:
+            for i in range(len((list(self.aggregators)))):
+                if (list(self.aggregators)[i][0]) in ['county_type', 'region', 'state']:
+                    print("GEOGRAPHICAL aggregator")
+                    return True
+        # return False
+
+
 
     def any_context_filter_geographically_relevant(self):
         if not self.context_filters:
@@ -145,7 +160,8 @@ class VisualizationTask:
             return False
 
         for filter_attribute in self.context_filters.keys():
-            if filter_attribute in ['county_type', 'region']:
+            if filter_attribute in ['county_type', 'region', 'state']:
+                print("GEOGRAPHICAL ATTRIBUTE")
                 return True
 
         return False
@@ -178,10 +194,27 @@ class VisualizationTask:
     def add_aggregator(self, attribute, entity_children):
         self.sql.add_group_by(attribute)
         self.sql.add_order_by(attribute, entity_children)
-
         self.add_horizontal_axis(attribute)
         self.aggregators.add((attribute, entity_children))
         self.update_specification()
+
+    # def add_first_aggregator(self, attribute, entity_children):
+    #     self.sql.add_group_by(attribute)
+    #     self.sql.add_order_by(attribute, entity_children)
+    #
+    #     # self.add_horizontal_axis(attribute)
+    #     self.aggregators.add((attribute, entity_children))
+    #     self.update_specification()
+
+    def add_aggregator_map(self, attribute):
+        self.sql.add_group_by(attribute)
+        self.sql.add_group_by("fips")
+        # self.sql.add_group_by("longitude")
+        # self.sql.add_order_by(attribute, entity_children)
+
+        # self.add_horizontal_axis(attribute)
+        # self.aggregators.add((attribute, entity_children))
+        # self.update_specification()
 
     def add_context_aggregator(self, attribute, entity_children):
         self.context_aggregators.add((attribute, entity_children))
@@ -197,6 +230,7 @@ class VisualizationTask:
             self.add_context_aggregator(attribute, entity_children)
 
     def remove_aggregator(self, attribute):
+        print("............In remove aggregator...........")
         cpy_aggregators = copy(self.aggregators)
         for candidate, entity_children in cpy_aggregators:
             if candidate == attribute:
@@ -269,3 +303,6 @@ class VisualizationTask:
             return o.__dict__
         elif isinstance(o, set):
             return list(o)
+    def remove_sql(self):
+        self.sql.remove()
+        self.update_specification()

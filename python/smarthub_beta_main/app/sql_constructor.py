@@ -5,7 +5,7 @@ Input: "Show me thefts by months of the year"
 Output: "SELECT COUNT(*) FROM CHICAGOCRIME WHERE crime='thefts' GROUP BY months
 
  SELECT counties_cdc_cases.date, SUM(new_cases) As Total_Cases FROM counties_cdc_cases 
- WHERE( region = 'southeast' AND county_type = 'rural') GROUP BY counties_cdc_cases.date;
+ WHERE( region = 'southeast' ANDcounty_type = 'rural') GROUP BY counties_cdc_cases.date;
 '''
 
 
@@ -43,11 +43,6 @@ class SQLConstructor:
     def remove_select_count(self, select_count_attribute):
         self._SELECT_COUNT.pop(select_count_attribute, None)
    #SELECT_SUM crud
-    def get_select_sum(self):
-        return self._SELECT_SUM
-
-    def set_select_sum(self, SELECT_SUM):
-        self._SELECT_SUM = SELECT_SUM
 
     def add_select_sum(self, select_sum_attribute):
         self._SELECT_SUM[select_sum_attribute] = select_sum_attribute
@@ -149,6 +144,15 @@ class SQLConstructor:
             formatted += ') AND '
         return formatted[:-1 * len(' AND ')]
 
+    def remove(self):
+        self._SELECT.clear()
+        self._SELECT_COUNT.clear()
+        self._SELECT_SUM.clear()
+        self._FROM.clear()
+        self._WHERE.clear()
+        self._GROUP_BY.clear()
+        self._ORDER_BY.clear()
+
     def construct(self):
         selects = ','.join(['counties_cdc_cases.' + attribute for attribute in self._SELECT.values()])
         select_counts = ','.join([v for v in self._SELECT_COUNT.values() if v != None])
@@ -160,14 +164,19 @@ class SQLConstructor:
         wheres = wheres.replace('\\', '')
 
         sql = 'SELECT '
+        # if (group_bys):
+        #     sql += ''
+        # else:
+        #     # print("In ELSE")
+        #     sql += 'DISTINCT 'x
+
+
         if selects:
             sql += selects + ','
         if select_counts:
-        # if 'ATTRIBUTE' in select_counts:
             sql += 'count(DISTINCT counties_cdc_cases.fips) as ' + select_counts
         elif select_sums:
-            sql += 'sum(new_cases) as' + select_sums
-
+            sql += 'sum(new_cases) as ' + select_sums
         else:
             sql = sql[:-1]
         sql += ' FROM ' + froms
@@ -179,9 +188,11 @@ class SQLConstructor:
             sql += ' GROUP BY ' + group_bys
         if order_bys:
             sql += ' ORDER BY ' + order_bys
-            if 'ATTRIBUTE' in select_counts:
-                sql += ', attribute'
-        elif select_counts:
-            sql += ' ORDER BY attribute'
+            if 'NUM_COUNTIES' in select_counts:
+                sql += ', NUM_COUNTIES'
+        # elif select_counts:
+        #     sql += ' ORDER BY xribute'
+
+        # print("SQL = " +str(sql))
 
         return sql
