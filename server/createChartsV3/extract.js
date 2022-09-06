@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const nlp = require("compromise");
 const levenshtein = require("fast-levenshtein");
 const findType = require("./charts/helpers/findType");
@@ -79,11 +85,11 @@ module.exports = {
   },
 
   filterValues: (chartMsg, filterFrequencyCount, options) => {
-    chartMsg.command = chartMsg.command.replace(/ /g, "-");
+    // chartMsg.command = chartMsg.command.replace(/ /g, "-");
     // let doc = nlp(chartMsg.command);
     let extractedFilteredHeaders = [];
     // let foundTimeHeader = false;
-    let words = chartMsg.command.split("-");
+    let words = chartMsg.command.split(" ");
     //Extract explicit filters used
     // for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
     //   extractedFilteredHeaders[chartMsg.featureMatrix[i][0]] = [];
@@ -108,6 +114,9 @@ module.exports = {
     //     }
     //   }
     // }
+
+    for (let i = 0; i < chartMsg.featureMatrix.length; i++) {}
+
     for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
       extractedFilteredHeaders[chartMsg.featureMatrix[i][0]] = [];
       for (let n = 1; n < chartMsg.featureMatrix[i].length; n++) {
@@ -122,6 +131,14 @@ module.exports = {
                 words[j].toLowerCase(),
                 chartMsg.featureMatrix[i][n].toLowerCase()
               ) == 1
+            ) {
+              extractedFilteredHeaders[chartMsg.featureMatrix[i][0]].push(
+                chartMsg.featureMatrix[i][n]
+              );
+            }
+            if (
+              words[j] === "contiguous" &&
+              chartMsg.featureMatrix[i][n].toLowerCase() === "noncontiguous"
             ) {
               extractedFilteredHeaders[chartMsg.featureMatrix[i][0]].push(
                 chartMsg.featureMatrix[i][n]
@@ -149,7 +166,7 @@ module.exports = {
       }
     }
     //turn command back
-    chartMsg.command = chartMsg.command.replace(/-/g, " ");
+    // chartMsg.command = chartMsg.command.replace(/-/g, " ");
 
     //delete any duplciates
     checkExtratedFiltersDuplicates(extractedFilteredHeaders);

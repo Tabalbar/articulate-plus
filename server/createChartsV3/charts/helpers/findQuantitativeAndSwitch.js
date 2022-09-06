@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const findType = require("./findType");
 const switchHeaders = require("./switchHeaders");
 
@@ -12,8 +18,6 @@ module.exports = (chartMsg, extractedHeaders) => {
   }
 
   if (!typeFound) {
-    console.log("not found");
-
     for (let i = 0; i < chartMsg.attributes.length; i++) {
       if (findType(chartMsg.attributes[i], chartMsg.data) == "quantitative") {
         extractedHeaders.unshift(chartMsg.attributes[i]);

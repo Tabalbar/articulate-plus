@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import "../../style.css";
@@ -27,6 +33,10 @@ function AttributeContainer({
   chartMsg,
   startStudy,
   setStartStudy,
+  setUserStudyName,
+  userStudyName,
+  globalZIndex,
+  setGlobalZIndex,
 }) {
   const eventLogger = (e, data) => {};
   useEffect(() => {
@@ -40,6 +50,24 @@ function AttributeContainer({
       });
     }
   }, [startStudy]);
+  const onStart = (e) => {
+    let elems = document.getElementsByClassName("react-draggable");
+    //FLAG DISABLED FOR NOW
+    // if (props.modifiedChartOptions.pivotCharts && !dragging) {
+    //   props.handlePivot(props.index);
+    // }
+    //print out the z-index of the chart
+    let zIndex = 0;
+    for (let i = 0; i < elems.length; i++) {
+      if (
+        zIndex < elems[i].style.zIndex &&
+        elems[i].style.zIndex != e.currentTarget.style.zIndex
+      ) {
+        zIndex = parseInt(elems[i].style.zIndex);
+      }
+    }
+    e.currentTarget.style.zIndex = zIndex + 1;
+  };
 
   // const onStart = (e) => {
   //   let elems = document.getElementsByClassName("react-draggable");
@@ -159,8 +187,9 @@ function AttributeContainer({
           borderColor="black"
           borderRadius="sm"
           borderTopRadius="sm"
-          zIndex={200}
           className="react-draggable"
+          onTouchStart={(e) => onStart(e)}
+          onClick={(e) => onStart(e)}
         >
           <Box
             borderTopRadius="sm"
@@ -184,7 +213,9 @@ function AttributeContainer({
             }}
             className="handle"
           >
-            {startStudy ? `${chartMsg.datasetTitle} Attributes` : "Admin"}
+            <Text fontSize={"3xl"}>
+              {startStudy ? `${chartMsg.datasetTitle} Attributes` : "Admin"}
+            </Text>
           </Box>
           {startStudy ? (
             <>
@@ -196,7 +227,7 @@ function AttributeContainer({
                         <h2>
                           <AccordionButton>
                             <Box flex="1" textAlign="left">
-                              {value}
+                              <Text fontSize={"4xl"}>{value}</Text>
                             </Box>
                             <AccordionIcon />
                           </AccordionButton>
@@ -206,7 +237,9 @@ function AttributeContainer({
                             {chartMsg.featureMatrix[index].map(
                               (value, index) => {
                                 return index > 0 ? (
-                                  <ListItem key={index}>{value}</ListItem>
+                                  <ListItem fontSize={"3xl"} key={index}>
+                                    {value}
+                                  </ListItem>
                                 ) : null;
                               }
                             )}
@@ -222,6 +255,11 @@ function AttributeContainer({
             <>
               <Center>
                 <VStack>
+                  <Text>User Study File Name:</Text>
+                  <Input
+                    onChange={(e) => setUserStudyName(e.target.value)}
+                    value={userStudyName}
+                  />
                   <FileInput
                     setChartMsg={setChartMsg}
                     setModifiedChartOptions={setModifiedChartOptions}
@@ -245,7 +283,7 @@ function AttributeContainer({
                     </Text>
                     <Text>
                       Sentence Window Size (Filters):{" "}
-                      {modifiedChartOptions.filter.chartWindow}
+                      {modifiedChartOptions.filter.pastSentences}
                     </Text>
                     <Text>
                       Sentence Window Threshold (Filters):{" "}

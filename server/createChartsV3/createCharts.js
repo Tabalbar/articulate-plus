@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const countFilterFrequency = require("./overhearing/countFilterFrequency");
 const countHeaderFrequency = require("./overhearing/countHeaderFrequency.js");
 const createHistogram = require("./charts/createHistogram");
@@ -29,11 +35,14 @@ module.exports = (intent, chartMsg, options, isPython) => {
   );
   //Holds all charts
   let charts = [];
-  // console.log(chartMsg.command, extractedHeaders, isPython);
+  console.log(intent, "******************");
 
+  // console.log(chartMsg.command, extractedHeaders, isPython);
   switch (intent) {
     case "histogram":
-      extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
+      if (options.useCovidDataset) {
+        extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
+      }
       for (let i = 0; i < extractedHeaders.length; i++) {
         charts.push(
           createHistogram(
@@ -41,51 +50,23 @@ module.exports = (intent, chartMsg, options, isPython) => {
             extractedHeaders[i],
             extractedFilteredValues,
             headerFrequencyCount,
-            filterFrequencyCount
+            filterFrequencyCount,
+            options
           )
         );
       }
       break;
     case "bar":
-      if (options.useCovidDataset) {
-        const findQuantitative = findQuantitativeAndSwitch(
-          chartMsg,
-          extractedHeaders,
-          "quantitative"
-        );
-        extractedHeaders = findQuantitative.extractedHeaders;
-        if (!findQuantitative.typeFound) {
-          for (let i = 0; i < extractedHeaders.length; i++) {
-            charts.push(
-              createHistogram(
-                chartMsg,
-                extractedHeaders[i],
-                extractedFilteredValues,
-                headerFrequencyCount,
-                filterFrequencyCount
-              )
-            );
-          }
-        } else {
-          for (let i = 1; i < extractedHeaders.length; i++) {
-            let twoExtractedHeaders = [
-              extractedHeaders[0],
-              extractedHeaders[i],
-            ];
-            charts.push(
-              createBar(
-                chartMsg,
-                twoExtractedHeaders,
-                extractedFilteredValues,
-                headerFrequencyCount,
-                filterFrequencyCount
-              )
-            );
-          }
-        }
-      } else {
-        extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
+      const findQuantitative = findQuantitativeAndSwitch(
+        chartMsg,
+        extractedHeaders,
+        "quantitative"
+      );
 
+      extractedHeaders = findQuantitative.extractedHeaders;
+      extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "map");
+
+      if (!findQuantitative.typeFound) {
         for (let i = 0; i < extractedHeaders.length; i++) {
           charts.push(
             createHistogram(
@@ -93,13 +74,46 @@ module.exports = (intent, chartMsg, options, isPython) => {
               extractedHeaders[i],
               extractedFilteredValues,
               headerFrequencyCount,
-              filterFrequencyCount
+              filterFrequencyCount,
+              options
+            )
+          );
+        }
+      } else {
+        for (let i = 1; i < extractedHeaders.length; i++) {
+          let twoExtractedHeaders = [extractedHeaders[0], extractedHeaders[i]];
+          charts.push(
+            createBar(
+              chartMsg,
+              twoExtractedHeaders,
+              extractedFilteredValues,
+              headerFrequencyCount,
+              filterFrequencyCount,
+              options
             )
           );
         }
       }
+      // } else {
+      //   extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
+
+      //   for (let i = 0; i < extractedHeaders.length; i++) {
+      //     charts.push(
+      //       createHistogram(
+      //         chartMsg,
+      //         extractedHeaders[i],
+      //         extractedFilteredValues,
+      //         headerFrequencyCount,
+      //         filterFrequencyCount
+      //       )
+      //     );
+      //   }
+      // }
       break;
     case "line":
+      if (extractedHeaders == 0) {
+        break;
+      }
       const findTemporalAndQuantitativeObj = findTemporalAndQuantitative(
         chartMsg,
         extractedHeaders
@@ -119,7 +133,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
             extractedHeaders,
             extractedFilteredValues,
             headerFrequencyCount,
-            filterFrequencyCount
+            filterFrequencyCount,
+            options
           )
         );
       } else if (extractedHeaders.length > 2) {
@@ -135,7 +150,9 @@ module.exports = (intent, chartMsg, options, isPython) => {
               chartMsg,
               threeExtractedHeaders,
               extractedFilteredValues,
-              headerFrequencyCount
+              headerFrequencyCount,
+              filterFrequencyCount,
+              options
             )
           );
         }
@@ -156,7 +173,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
               twoExtractedHeaders,
               extractedFilteredValues,
               headerFrequencyCount,
-              filterFrequencyCount
+              filterFrequencyCount,
+              options
             )
           );
         }
@@ -186,7 +204,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
             [extractedHeaders[0], extractedHeaders[i]],
             extractedFilteredValues,
             headerFrequencyCount,
-            filterFrequencyCount
+            filterFrequencyCount,
+            options
           )
         );
       }

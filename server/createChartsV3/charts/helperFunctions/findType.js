@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 let specialTypes = [{ header: "map", type: "map" }];
 
 module.exports = (header, data) => {

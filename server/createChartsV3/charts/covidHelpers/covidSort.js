@@ -1,7 +1,12 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const nlp = require("compromise");
 
 module.exports = (header, data) => {
-  let order = [];
   const unique = [...new Set(data.map((item) => item[header]))];
   if (unique.length == 5) {
     for (let i = 0; i < unique.length; i++) {
@@ -36,7 +41,9 @@ module.exports = (header, data) => {
       }
     }
 
-    for (let i = 4; i < unique.length; i++) {
+    for (let i = 0; i < unique.length; i++) {
+      console.log(unique[i]);
+
       let doc = nlp(unique[i]);
       if (doc.has("very low")) {
         switchHeaders(unique, 4, i);

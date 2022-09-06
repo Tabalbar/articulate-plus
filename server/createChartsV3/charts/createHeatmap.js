@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const covidSort = require("./covidHelpers/covidSort");
 const createTitle = require("./helpers/specifications/createTitle");
 const createTransform = require("./helpers/specifications/createTransform");
@@ -9,7 +15,8 @@ module.exports = (
   extractedHeaders,
   extractedFilteredValues,
   headerFrequencyCount,
-  filterFrequencyCount
+  filterFrequencyCount,
+  options
 ) => {
   let chart = createChartTemplate(
     chartMsg,
@@ -20,18 +27,29 @@ module.exports = (
   chart.encoding.x = {
     field: extractedHeaders[0],
     type: findType(extractedHeaders[0], chartMsg.data),
-    axis: { labelAngle: -50, grid: false },
-    sort: covidSort(extractedHeaders[0], chartMsg.data),
+    axis: {
+      labelFontSize: 15,
+      titleFontSize: 15,
+      labelLimit: 2000,
+      labelAngle: -50,
+    },
+    sort: options.useCovidDataset
+      ? covidSort(extractedHeaders[0], chartMsg.data)
+      : [],
   };
   chart.encoding.y = {
     field: extractedHeaders[1],
     type: findType(extractedHeaders[1], chartMsg.data),
-    sort: covidSort(extractedHeaders[1], chartMsg.data),
+    sort: options.useCovidDataset
+      ? covidSort(extractedHeaders[1], chartMsg.data)
+      : [],
+    axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
   };
   chart.encoding.color = {
     type: "quantitative",
     aggregate: "count",
     scale: { scheme: "reds" },
+    legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
   };
   chart.config = {
     axis: { ticks: false, labelPadding: 10, domain: false },

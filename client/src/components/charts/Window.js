@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useEffect, useState, useRef } from "react";
 import Draggable from "react-draggable";
 import { VegaLite } from "react-vega";
@@ -33,10 +39,18 @@ function Window(props) {
     //   props.handlePivot(props.index);
     // }
     props.specification.numClicks++;
-    console.log("numClicks: ", props.specification.numClicks);
-    e.currentTarget.style.zIndex = props.globalZIndex;
+    e.currentTarget.style.zIndex = props.globalZIndex + 1;
     props.setGlobalZIndex((prev) => prev + 1);
   };
+  useEffect(() => {
+    let elems = document.getElementsByClassName("react-draggable");
+    for (let i = 0; i < elems.length; i++) {
+      if (elems[i].id == specification.id) {
+        elems[i].style.zIndex = props.globalZIndex + 1;
+      }
+    }
+  }, []);
+
   useEffect(() => {
     if (props.chartToHighlight == props.id) {
       setHighlight(true);
@@ -47,16 +61,13 @@ function Window(props) {
 
   useEffect(() => {
     if (props.modifiedChartOptions.useCovidDataset == true) {
-      if (
-        specification.hasOwnProperty("layer") ||
-        specification.mark == "bar"
-      ) {
-        // specification.fetchedURL = true;
-        // fetch(
-        //   "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-        // )
-        //   .then((response) => response.text())
-        //   .then(async (csvData) => setChartData(await processData(csvData)));
+      if (specification.hasOwnProperty("layer")) {
+        specification.fetchedURL = true;
+        fetch(
+          "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+        )
+          .then((response) => response.text())
+          .then(async (csvData) => setChartData(await processData(csvData)));
       }
     }
   }, []);
@@ -69,7 +80,7 @@ function Window(props) {
       setSpecification((prev) => {
         return {
           ...prev,
-          width: parseInt(width) - 250,
+          width: parseInt(width) - 400,
           height: parseInt(height) - 200,
         };
       });
@@ -129,15 +140,15 @@ function Window(props) {
           borderWidth="thin"
           borderRadius="sm"
           borderTopRadius="sm"
-          resize="both"
-          width={900}
+          // resize="both"
+          width={1100}
           height={500}
           onMouseOver={startTimer}
           onMouseLeave={endTimer}
           onTouchStart={(e) => onStart(e)}
           onClick={(e) => onStart(e)}
           animation={highlight ? `${pulse} 2s infinite` : null}
-          className="react-draggable"
+          className="react-draggable resize"
         >
           <div className="handle" style={{ cursor: "move", width: "auto" }}>
             <Box
@@ -165,7 +176,7 @@ function Window(props) {
                 }}
               />
 
-              {specification.title}
+              {/* {specification.title.text} */}
             </Box>
             <VegaLite spec={specification} data={{ table: chartData }} />
           </div>

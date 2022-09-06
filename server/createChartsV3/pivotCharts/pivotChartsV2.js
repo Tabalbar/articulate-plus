@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 const levenshtein = require("fast-levenshtein");
 const createDate = require("../charts/helperFunctions/createDate");
 const findType = require("../charts/helperFunctions/findType");

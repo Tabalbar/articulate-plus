@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 module.exports = (chartMsg, options, chosenCharts) => {
   for (let i = 0; i < chartMsg.explicitChart.length; i++) {
     if (chartMsg.explicitChart[i] !== "") {
@@ -53,6 +59,9 @@ module.exports = (chartMsg, options, chosenCharts) => {
   for (let i = 0; i < chartMsg.mainAIOverhearing.length; i++) {
     if (chartMsg.mainAIOverhearing[i] !== "") {
       chartMsg.mainAIOverhearing[i].chartSelection = "mainAIOverhearing_point";
+      if (chartMsg.mainAIOverhearing[i].command === "random") {
+        chartMsg.mainAIOverhearing[i].chartSelection = "random";
+      }
     }
     chartMsg.mainAIOverhearing[i] = checkIfChartsAlreadyChosen(
       chartMsg.mainAIOverhearing[i],
@@ -113,6 +122,13 @@ function isChartsEqual(chartOne, chartTwo) {
   }
   // chartOne = chartOne.charts.spec;
   // chartTwo = chartTwo.charts.spec;
+  if (chartOne.hasOwnProperty("layer")) {
+    if (JSON.stringify(chartOne.layer) == JSON.stringify(chartTwo.layer)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   if (
     JSON.stringify(chartOne.encoding) == JSON.stringify(chartTwo.encoding) &&

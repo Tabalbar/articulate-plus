@@ -1,4 +1,10 @@
 /**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
+/**
  * API request to Node Server for chart generation
  *
  * @param {object} chartMsg message for server

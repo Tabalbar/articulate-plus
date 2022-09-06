@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) University of Hawaii at Manoa
+ * Laboratory for Advanced Visualizations and Applications (LAVA)
+ *
+ *
+ */
 import React, { useState, useEffect } from "react";
 
 //browser speech recognition
@@ -53,91 +59,66 @@ const Dictaphone = ({
   ];
 
   useEffect(() => {
-    //Check if words were actually spoken
     if (command === "") {
       return;
     }
+    async function getCharts() {
+      //Check if words were actually spoken
 
-    //Set state for message to send to node service
-    if (!mute) {
-      setChartMsg((prev) => {
-        if (prev.transcript !== "") {
+      //Set state for message to send to node service
+      if (!mute && listening) {
+        setChartMsg((prev) => {
+          if (prev.transcript !== "") {
+            return {
+              ...prev,
+              transcript: prev.transcript + ". " + command,
+              loggedTranscript: [
+                ...prev.loggedTranscript,
+                { sentence: command, date: createDate() },
+              ],
+            };
+          } else {
+            return {
+              ...prev,
+              transcript: prev.transcript + "" + command,
+              loggedTranscript: [
+                ...prev.loggedTranscript,
+                { sentence: command, date: createDate() },
+              ],
+            };
+          }
+        });
+      } else {
+        setChartMsg((prev) => {
           return {
             ...prev,
-            transcript: prev.transcript + ". " + command,
-            loggedTranscript: [
-              ...prev.loggedTranscript,
+            uncontrolledTranscript:
+              prev.uncontrolledTranscript + ". " + command,
+            loggedUncontrolledTranscript: [
+              ...prev.loggedUncontrolledTranscript,
               { sentence: command, date: createDate() },
             ],
           };
-        } else {
-          return {
-            ...prev,
-            transcript: prev.transcript + "" + command,
-            loggedTranscript: [
-              ...prev.loggedTranscript,
-              { sentence: command, date: createDate() },
-            ],
-          };
-        }
-      });
-    } else {
-      setChartMsg((prev) => {
-        return {
-          ...prev,
-          uncontrolledTranscript: prev.uncontrolledTranscript + ". " + command,
-          loggedUncontrolledTranscript: [
-            ...prev.loggedUncontrolledTranscript,
-            { sentence: command, date: createDate() },
-          ],
-        };
-      });
-    }
-    if (command.includes("delete all chosen charts")) {
-      closeChosenCharts();
-    }
-    //Only send command if includes the word "show"
-    // & if attrbutes were spoke
-    const isCommand = createCharts(command);
-    if (isCommand) {
-      setListening(false);
-      setTimeout(() => {
-        setListening(true);
-      }, 8000);
-    }
-    if (
-      (command.includes("where") ||
-        command.includes("see") ||
-        command.includes("show") ||
-        command.includes("what") ||
-        command.includes("make") ||
-        command.includes("plot") ||
-        command.includes("change") ||
-        command.includes("create") ||
-        command.includes("filter") ||
-        ((command.includes("make") ||
-          command.includes("modify") ||
-          command.includes("pivot") ||
-          command.includes("change")) &&
-          (command.includes("these") ||
-            command.includes("this") ||
-            command.includes("those")))) &&
-      !mute &&
-      listening
-    ) {
-      setListening(false);
+        });
+      }
+      if (command.includes("delete all chosen charts")) {
+        closeChosenCharts();
+      }
 
-      createCharts(command);
-
-      setTimeout(() => {
-        setListening(true);
-      }, 8000);
+      const isCommand = await createCharts(command);
+      if (isCommand) {
+        setListening(false);
+        setTimeout(() => {
+          setListening(true);
+        }, 8000);
+      }
     }
+    getCharts();
   }, [command]);
 
   //Create charts at a random interval
   useInterval(() => {
-    if (modifiedChartOptions.randomCharts.toggle && startStudy) {
+    if (modifiedChartOptions.randomCharts.toggle && startStudy && !mute) {
       setListening(false);
       createCharts("random");
       setTimeout(() => {
