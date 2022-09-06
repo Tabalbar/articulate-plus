@@ -1,5 +1,5 @@
 import copy
-import speech_recognition as sr
+# import speech_recognition as sr
 from collections import Sequence
 from multiprocessing import Process
 
@@ -61,30 +61,30 @@ class FakeSpeechToTextService:
         except sr.RequestError as e:
             print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-    @staticmethod
-    def speech_to_text():
-        # use speech to text service to obtain next spoken utterance.
-        r = sr.Recognizer()
-        with sr.Microphone() as source:
-            r.adjust_for_ambient_noise(source)
-            print("Speak..")
-            audio = r.listen(source)
-            print("Speech to text.. ")
+    # @staticmethod
+    # def speech_to_text():
+    #     # use speech to text service to obtain next spoken utterance.
+    #     r = sr.Recognizer()
+    #     with sr.Microphone() as source:
+    #         r.adjust_for_ambient_noise(source)
+    #         print("Speak..")
+    #         audio = r.listen(source)
+    #         print("Speech to text.. ")
 
 
-        # recognize speech using google
+    #     # recognize speech using google
 
-        try:
+    #     try:
 
-            speech_input = r.recognize_google(audio)
-            print("Speech Input \n" + speech_input)
+    #         speech_input = r.recognize_google(audio)
+    #         print("Speech Input \n" + speech_input)
 
 
 
-        except Exception as e:
-            print("Error :  " + str(e))
-        # input('utterance : ')
-        return speech_input
+    #     except Exception as e:
+    #         print("Error :  " + str(e))
+    #     # input('utterance : ')
+    #     return speech_input
 
 
 class FakeMultimodalService:
