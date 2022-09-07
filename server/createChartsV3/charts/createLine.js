@@ -17,7 +17,8 @@ module.exports = (
   extractedFilteredValues,
   headerFrequencyCount,
   filterFrequencyCount,
-  options
+  options,
+  isPython
 ) => {
   let chart = createChartTemplate(
     chartMsg,
@@ -44,7 +45,7 @@ module.exports = (
       chart.encoding.y = {
         field: extractedHeaders[1],
         axis: { labelFontSize: 10, titleFontSize: 10 },
-        type: findType(extractedHeaders[1], chartMsg.data),
+        type: "quantitative",
         aggregate: "sum",
       };
       break;
@@ -64,11 +65,20 @@ module.exports = (
           : [],
         // axis: { grid: false },
       };
-      chart.encoding.y = {
-        aggregate: "sum",
-        axis: { labelFontSize: 10, titleFontSize: 10 },
-        field: extractedHeaders[1],
-      };
+      if (isPython) {
+        chart.encoding.y = {
+          axis: { labelFontSize: 10, titleFontSize: 10 },
+          field: extractedHeaders[1],
+          type: "quantitative",
+        };
+      } else {
+        chart.encoding.y = {
+          aggregate: "sum",
+          axis: { labelFontSize: 10, titleFontSize: 10 },
+          field: extractedHeaders[1],
+        };
+      }
+
       chart.encoding.color = {
         field: extractedHeaders[2],
         type: findType(extractedHeaders[2], chartMsg.data),

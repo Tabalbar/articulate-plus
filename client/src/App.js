@@ -164,6 +164,7 @@ function App() {
     if (command) {
       chartMsg.command = command;
     }
+    console.log("Called");
     //Pick a random thinking response
     // let thinkingResponse =
     //   thinking[Math.floor(Math.random() * thinking.length)];

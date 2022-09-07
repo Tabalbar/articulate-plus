@@ -22,6 +22,7 @@ module.exports = (intent, chartMsg, options, isPython) => {
   //Varaibles that holds the count for overheadering
   const headerFrequencyCount = countHeaderFrequency(chartMsg, options);
   const filterFrequencyCount = countFilterFrequency(chartMsg, options);
+
   //Varaibles of extracted data from command && overhearing
   let extractedHeaders = extract.headers(
     chartMsg,
@@ -33,6 +34,7 @@ module.exports = (intent, chartMsg, options, isPython) => {
     filterFrequencyCount,
     options
   );
+
   //Holds all charts
   let charts = [];
   console.log(intent, "******************");

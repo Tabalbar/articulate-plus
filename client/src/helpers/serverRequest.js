@@ -67,9 +67,10 @@ export async function serverRequest(
   // decrypt message from server
   const body = await response.text();
   const responseChartMsg = JSON.parse(body);
-  if (responseChartMsg.chartMsg.errMsg == "none") {
-    return { assistantResponse: false, isCommand: false };
-  }
+  // if (responseChartMsg.chartMsg.errMsg == "none") {
+  //   return { assistantResponse: false, isCommand: false };
+  // }
+  console.log("Python");
 
   //API request
   const pythonResponse = await fetch("/flask", {

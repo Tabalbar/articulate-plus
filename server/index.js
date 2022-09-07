@@ -153,7 +153,6 @@ app.post("/createCharts", async (req, res) => {
   if (intent !== false) {
     isCommand = intent;
   }
-
   if (chartMsg.command === "random") {
     isCommand = "random";
   }
@@ -211,6 +210,7 @@ app.post("/createCharts", async (req, res) => {
         threshold: options.filter.threshold,
       },
     });
+
     // chartMsg.errMsg = "";
     res.send({ chartMsg });
   }
@@ -294,34 +294,36 @@ app.post("/flask", async function (req, res) {
       .then(function (parsedBody) {
         // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
         returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
-        let constructedCommand = constructPythonCommand(parsedBody, chartMsg);
-        chartMsg.command = constructedCommand.command;
-        chartMsg.pythonCharts = createCharts(
-          constructedCommand.plotType,
-          chartMsg,
-          {
-            useCovidDataset: options.useCovidDataset,
-            sentimentAnalysis: false,
-            window: {
-              toggle: false,
-              pastSentences: 0,
-            },
-            neuralNetwork: false,
-            useSynonyms: false,
-            randomCharts: {
-              toggle: false,
-              minutes: 10,
-            },
-            threshold: 3,
-            filter: {
-              toggle: false,
-              pastSentences: 0,
-              threshold: 5,
-            },
-            pivotCharts: false,
-          },
-          true
-        );
+        let chart = constructPythonCommand(parsedBody, chartMsg);
+        chart.isPython = true;
+        chartMsg.pythonCharts.push(chart);
+        // chartMsg.command = constructedCommand.command;
+        // chartMsg.pythonCharts = createCharts(
+        //   constructedCommand.plotType,
+        //   chartMsg,
+        //   {
+        //     useCovidDataset: options.useCovidDataset,
+        //     sentimentAnalysis: false,
+        //     window: {
+        //       toggle: false,
+        //       pastSentences: 0,
+        //     },
+        //     neuralNetwork: false,
+        //     useSynonyms: false,
+        //     randomCharts: {
+        //       toggle: false,
+        //       minutes: 10,
+        //     },
+        //     threshold: 3,
+        //     filter: {
+        //       toggle: false,
+        //       pastSentences: 0,
+        //       threshold: 5,
+        //     },
+        //     pivotCharts: false,
+        //   },
+        //   true
+        // );
         console.log("returned from python");
       })
       .catch(function (err) {

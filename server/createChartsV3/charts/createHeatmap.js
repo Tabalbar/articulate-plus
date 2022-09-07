@@ -16,41 +16,76 @@ module.exports = (
   extractedFilteredValues,
   headerFrequencyCount,
   filterFrequencyCount,
-  options
+  options,
+  isPython
 ) => {
   let chart = createChartTemplate(
     chartMsg,
     headerFrequencyCount,
     filterFrequencyCount
   );
+
   chart.mark = "rect";
-  chart.encoding.x = {
-    field: extractedHeaders[0],
-    type: findType(extractedHeaders[0], chartMsg.data),
-    axis: {
-      labelFontSize: 15,
-      titleFontSize: 15,
-      labelLimit: 2000,
-      labelAngle: -50,
-    },
-    sort: options.useCovidDataset
-      ? covidSort(extractedHeaders[0], chartMsg.data)
-      : [],
-  };
-  chart.encoding.y = {
-    field: extractedHeaders[1],
-    type: findType(extractedHeaders[1], chartMsg.data),
-    sort: options.useCovidDataset
-      ? covidSort(extractedHeaders[1], chartMsg.data)
-      : [],
-    axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
-  };
-  chart.encoding.color = {
-    type: "quantitative",
-    aggregate: "count",
-    scale: { scheme: "reds" },
-    legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
-  };
+  if (isPython) {
+    // delete chart.data.name;
+    // chart.data.values = chartMsg.pythonData;
+    chart.encoding.x = {
+      field: extractedHeaders[0],
+      type: findType(extractedHeaders[0], chartMsg.data),
+      axis: {
+        labelFontSize: 15,
+        titleFontSize: 15,
+        labelLimit: 2000,
+        labelAngle: -50,
+      },
+      sort: options.useCovidDataset
+        ? covidSort(extractedHeaders[0], chartMsg.data)
+        : [],
+    };
+    chart.encoding.y = {
+      field: extractedHeaders[1],
+      type: findType(extractedHeaders[1], chartMsg.data),
+      sort: options.useCovidDataset
+        ? covidSort(extractedHeaders[1], chartMsg.data)
+        : [],
+      axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
+    };
+    chart.encoding.color = {
+      field: extractedHeaders[2],
+      type: "quantitative",
+      scale: { scheme: "reds" },
+      legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
+    };
+  } else {
+    chart.encoding.x = {
+      field: extractedHeaders[0],
+      type: findType(extractedHeaders[0], chartMsg.data),
+      axis: {
+        labelFontSize: 15,
+        titleFontSize: 15,
+        labelLimit: 2000,
+        labelAngle: -50,
+      },
+      sort: options.useCovidDataset
+        ? covidSort(extractedHeaders[0], chartMsg.data)
+        : [],
+    };
+    chart.encoding.y = {
+      field: extractedHeaders[1],
+      type: findType(extractedHeaders[1], chartMsg.data),
+      sort: options.useCovidDataset
+        ? covidSort(extractedHeaders[1], chartMsg.data)
+        : [],
+      axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
+    };
+    chart.encoding.color = {
+      type: "quantitative",
+      aggregate: "count",
+      scale: { scheme: "reds" },
+      legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
+    };
+  }
+
   chart.config = {
     axis: { ticks: false, labelPadding: 10, domain: false },
     view: { strokeWidth: 0 },

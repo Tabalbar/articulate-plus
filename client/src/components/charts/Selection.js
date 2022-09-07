@@ -232,6 +232,7 @@ function ChartSelection({
   // }, [chartMsg.charts]);
 
   useEffect(() => {
+    console.log(chartMsg.charts);
     let scrollableElement = document.getElementById("scrollable");
     scrollableElement.scrollLeft =
       scrollableElement.scrollWidth - scrollableElement.clientWidth;
@@ -351,6 +352,7 @@ function ChartPlaceholder({
   const [clicked, setClicked] = useState(false);
   const [chartData, setChartData] = useState(data);
   useEffect(() => {
+    console.log(specification);
     if (modifiedChartOptions.useCovidDataset == true) {
       if (specification.hasOwnProperty("layer")) {
         // specification.transform.push({
@@ -414,7 +416,14 @@ function ChartPlaceholder({
         opacity={specification.visible ? 0.5 : null}
       >
         <Box bg="white" borderColor="black" borderWidth="3px" rounded="lg">
-          <VegaLite spec={specification} data={{ table: chartData }} />
+          <VegaLite
+            spec={specification}
+            data={{
+              table: specification.isPython
+                ? specification.pythonData
+                : chartData,
+            }}
+          />
         </Box>
       </Box>
     </>
