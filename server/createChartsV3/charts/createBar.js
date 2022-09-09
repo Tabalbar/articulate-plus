@@ -97,6 +97,7 @@ module.exports = (
         break;
     }
   } else {
+    console.log(options.useCovidDataset);
     chart.encoding.x = {
       field: extractedHeaders[1],
       type: findType(extractedHeaders[1], chartMsg.data),
@@ -130,15 +131,10 @@ module.exports = (
         ? covidSort(extractedHeaders[1], chartMsg.data)
         : [],
     };
+    chart = createTransform(chart, chartMsg, extractedFilteredValues);
   }
 
   chart = createTitle(chart, extractedHeaders, "bar", extractedFilteredValues);
-  chart = createTransform(chart, chartMsg, extractedFilteredValues);
-  // chart.transform.push({
-  //   type: "aggregate",
-  //   groupby: ["x"],
-  //   fields: [extractedHeaders[1]],
-  //   ops: ["distinct"],
-  // });
+
   return chart;
 };

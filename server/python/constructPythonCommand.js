@@ -13,6 +13,7 @@ const removeOtherTypes = require("../createChartsV3/charts/helpers/removeOtherTy
 const switchHeaders = require("../createChartsV3/charts/helpers/switchHeaders");
 const createLine = require("../createChartsV3/charts/createLine");
 const createBar = require("../createChartsV3/charts/createBar");
+const createMap = require("../createChartsV3/charts/createMap");
 
 module.exports = (pythonResponse, chartMsg) => {
   let options = {
@@ -40,7 +41,7 @@ module.exports = (pythonResponse, chartMsg) => {
     console.log("pythonResponse is null");
     chartMsg.pythonCharts = [];
 
-    return chartMsg;
+    return "none";
   }
   const pythonChartMsg = JSON.parse(pythonResponse);
   // if (!pythonChartMsg.hasOwnProperty("visualization_task")) {
@@ -66,31 +67,52 @@ module.exports = (pythonResponse, chartMsg) => {
     chartMsg.pythonCharts = [];
     console.log(pythonChartMsg.dialogue_act);
     console.log("Not classified as createvis or modifyvis");
-    return chartMsg;
+    return "none";
   }
 
   let plotType = pythonChartMsg.visualization_task.plot_type;
-  console.log(plotType);
+  let filters = pythonChartMsg.visualization_task.filters;
+  console.log("Filters", filters);
   chartMsg.pythonData = pythonChartMsg.data_vega_lite_spec;
+  console.log(chartMsg.pythonData);
   let extractedHeaders = Object.keys(chartMsg.pythonData[0]);
-  console.log(extractedHeaders);
   switch (plotType) {
     case "heat map":
-      for (let i = 0; i < extractedHeaders.length; i++) {
-        if (extractedHeaders[i] == "NUM_COUNTIES") {
-          switchHeaders(extractedHeaders, 2, i);
+      if (extractedHeaders[1] == "fips" || extractedHeaders[0] == "fips") {
+        for (let i = 0; i < extractedHeaders.length; i++) {
+          if (extractedHeaders[i] == "fips") {
+            switchHeaders(extractedHeaders, 0, i);
+          }
         }
+        chart = createMap(
+          chartMsg,
+          extractedHeaders,
+          filters,
+          {},
+          {},
+          options,
+          true,
+          chartMsg.pythonData
+        );
+        console.log(chart, "*****");
+      } else {
+        for (let i = 0; i < extractedHeaders.length; i++) {
+          if (extractedHeaders[i] == "NUM_COUNTIES") {
+            switchHeaders(extractedHeaders, 2, i);
+          }
+        }
+        console.log(extractedHeaders);
+        chart = createHeatmap(
+          chartMsg,
+          extractedHeaders,
+          filters,
+          {},
+          {},
+          options,
+          true
+        );
       }
-      console.log(extractedHeaders);
-      chart = createHeatmap(
-        chartMsg,
-        extractedHeaders,
-        [],
-        {},
-        {},
-        options,
-        true
-      );
+
       break;
     case "line":
       for (let i = 0; i < extractedHeaders.length; i++) {
@@ -103,7 +125,15 @@ module.exports = (pythonResponse, chartMsg) => {
           switchHeaders(extractedHeaders, 1, i);
         }
       }
-      chart = createLine(chartMsg, extractedHeaders, [], {}, {}, options, true);
+      chart = createLine(
+        chartMsg,
+        extractedHeaders,
+        filters,
+        {},
+        {},
+        options,
+        true
+      );
       break;
     case "bar chart":
       for (let i = 0; i < extractedHeaders.length; i++) {
@@ -112,13 +142,22 @@ module.exports = (pythonResponse, chartMsg) => {
         }
       }
 
-      chart = createBar(chartMsg, extractedHeaders, [], {}, {}, options, true);
+      chart = createBar(
+        chartMsg,
+        extractedHeaders,
+        filters,
+        {},
+        {},
+        options,
+        true
+      );
       // chart = createMap(chart, data, filters, horizontal_axis, chartMsg);
       break;
     default:
       plotType = "histogram";
   }
   chart.pythonData = chartMsg.pythonData;
+  chart.filters = createTransform(chartMsg, filters);
   return chart;
 };
 
@@ -164,14 +203,6 @@ const createBarChart = (chart, data, horizontalAxis, chartMsg) => {
   return chart;
 };
 
-const createLineChart = (chart, data, filters, horizontalAxis, chartMsg) => {
-  chart.mark = "line";
-};
-
-const createMap = (chart, data, filters, horizontalAxis, chartMsg) => {
-  chart.mark = "map";
-};
-
 // createTransform = (filters) => {};
 
 const checkDataType = (dataPoint, chartMsg) => {
@@ -193,35 +224,19 @@ const checkDataType = (dataPoint, chartMsg) => {
   return attribute;
 };
 
-const createTransform = (chart, chartMsg, extractedFilteredValues) => {
+const createTransform = (chartMsg, extractedFilteredValues) => {
   let accessors = [];
+  let filters = [];
   // console.log(extractedFilteredValues);
   let keys = Object.keys(extractedFilteredValues);
   for (let i = 0; i < keys.length; i++) {
     if (extractedFilteredValues[keys[i]].length > 0) {
       if (findType(keys[i], chartMsg.data) === "nominal") {
-        // console.log({
-        //   field: keys[i],
-        //   oneOf: extractedFilteredValues[keys[i]],
-        // });
-        chart.transform.push({
+        filters.push({
           filter: { field: keys[i], oneOf: extractedFilteredValues[keys[i]] },
         });
       }
-      // else if (findType(keys[i], chartMsg.data) === "temporal") {
-      //   chart.transform.push({
-      //     filter: {
-      //       timeUnit: "year",
-      //       field: keys[i],
-      //       range: [
-      //         extractedFilteredValues[keys[i]][0],
-      //         extractedFilteredValues[keys[i]][1],
-      //       ],
-      //     },
-      //   });
-      // }
     }
   }
-
-  return chart;
+  return filters;
 };

@@ -4,7 +4,12 @@
  *
  *
  */
-let specialTypes = [{ header: "map", type: "map" }];
+let specialTypes = [
+  { header: "map", type: "map" },
+  { header: "fips", type: "map" },
+  { header: "latitude", type: "map" },
+  { header: "longitude", type: "map" },
+];
 
 module.exports = (header, data) => {
   let lowerCaseHeader = header.toLowerCase();

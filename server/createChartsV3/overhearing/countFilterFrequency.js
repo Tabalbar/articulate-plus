@@ -18,12 +18,17 @@ module.exports = (chartMsg, options) => {
       });
     }
   }
+
   let sentences = chartMsg.transcript.split(".");
+  sentences = sentences.filter((element) => {
+    return element !== "";
+  });
   if (options.window.pastSentences === 0) {
     sentences = [];
   } else {
     sentences = sentences.slice(-options.filter.pastSentences);
   }
+  console.log(sentences);
   wordCount.sentences = sentences;
 
   // if (options.sentimentAnalysis && options.filter.toggle) {
@@ -54,9 +59,20 @@ module.exports = (chartMsg, options) => {
       let needToRecheck = false;
       // sentences[i] = sentences[i].replace(/ /g, "-");
       for (let j = 0; j < chartMsg.featureMatrix.length; j++) {
+        if (
+          chartMsg.featureMatrix[j][0] == "state" ||
+          chartMsg.featureMatrix[j][0] == "county"
+        ) {
+          break;
+        }
         for (let k = 1; k < chartMsg.featureMatrix[j].length; k++) {
           if (
-            sentences[i].toLowerCase().includes(chartMsg.featureMatrix[j][k])
+            sentences[i]
+              .toLowerCase()
+              .includes(chartMsg.featureMatrix[j][k].toLowerCase()) ||
+            sentences[i]
+              .toLowerCase()
+              .includes(chartMsg.featureMatrix[j][k].toLowerCase() + "s")
           ) {
             sentences[i] = sentences[i].replace(
               chartMsg.featureMatrix[j][k],

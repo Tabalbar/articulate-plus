@@ -88,7 +88,7 @@ function FileInput({
       setModifiedChartOptions((prev) => {
         return {
           ...prev,
-          useCovidDataset: false,
+          useCovidDataset: true,
         };
       });
     }

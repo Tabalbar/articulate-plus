@@ -57,10 +57,10 @@ module.exports = (chart, extractedHeaders, intent, filteredHeaders) => {
       case 1:
         switch (intent) {
           case "histogram":
-            chartTitle += "Histogram of " + headerTitles[0];
+            chartTitle += "Bar chart of " + headerTitles[0];
             break;
           case "bar":
-            chartTitle += "Histogram of " + headerTitles[0];
+            chartTitle += "Bar chart of " + headerTitles[0];
             break;
           case "line":
             chartTitle += "Line chart of " + headerTitles[0];

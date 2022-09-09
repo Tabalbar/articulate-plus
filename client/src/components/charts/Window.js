@@ -75,7 +75,7 @@ function Window(props) {
     if (resizeTimeout.current) {
       clearTimeout(resizeTimeout.current);
     }
-
+    console.log("resized");
     resizeTimeout.current = setTimeout(() => {
       setSpecification((prev) => {
         return {
@@ -178,7 +178,14 @@ function Window(props) {
 
               {/* {specification.title.text} */}
             </Box>
-            <VegaLite spec={specification} data={{ table: chartData }} />
+            <VegaLite
+              spec={specification}
+              data={{
+                table: specification.isPython
+                  ? specification.pythonData
+                  : chartData,
+              }}
+            />
           </div>
         </Box>
       </Draggable>

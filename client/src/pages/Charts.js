@@ -58,7 +58,6 @@ function Charts({
     setCharts(tmpCharts);
     setForceUpdate((prev) => !prev);
   };
-  console.log(centerChart.specification == undefined, centerChart);
   return (
     <>
       <ChartSelection

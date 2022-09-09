@@ -150,6 +150,7 @@ app.post("/createCharts", async (req, res) => {
   }
 
   let intent = getExplicitChartType(chartMsg.command, availableCharts);
+  console.log(intent);
   if (intent !== false) {
     isCommand = intent;
   }
@@ -170,6 +171,7 @@ app.post("/createCharts", async (req, res) => {
           Math.floor(Math.random() * randomizedAvailableChartTypes.length)
         ].mark;
     } else {
+      console.log("called");
       chartMsg.explicitChart = createCharts(isCommand, chartMsg, {
         useCovidDataset: options.useCovidDataset,
         sentimentAnalysis: false,
@@ -216,48 +218,6 @@ app.post("/createCharts", async (req, res) => {
   }
 });
 
-// /**
-//  * Getting expicit mark type
-//  */
-// //Check if pivot
-// if (chartMsg.command == "random") {
-//   let intent = chartOptions[Math.floor(Math.random() * 5)];
-//   chartMsg.randomCharts = createCharts(intent.mark, chartMsg, options);
-// } else if (pivotTheseCharts.length > 0) {
-//   chartMsg.pivotChart = pivotChartsV2(pivotTheseCharts, chartMsg, options);
-// } else if (intent) {
-// } else {
-//   if (intent !== "None") {
-//     chartMsg.mainAI = createCharts(intent, chartMsg, {
-//       useCovidDataset: options.useCovidDataset,
-//       sentimentAnalysis: false,
-//       window: {
-//         toggle: false,
-//         pastSentences: 0,
-//       },
-//       neuralNetwork: true,
-//       useSynonyms: true,
-//       randomCharts: {
-//         toggle: false,
-//         minutes: 10,
-//       },
-//       threshold: 3,
-//       filter: {
-//         toggle: false,
-//         pastSentences: 0,
-//         threshold: 5,
-//       },
-//       pivotCharts: false,
-//     });
-//     chartMsg.mainAIOverhearing = createCharts(intent, chartMsg, options);
-//   } else {
-//     //If Neural Network has no match for intent, no charts are made
-//     chartMsg.explicitChart = "";
-//     chartMsg.inferredChart = "";
-//     chartMsg.modifiedChart = "";
-//   }
-// }
-
 const fs = require("fs");
 
 const content = "Some content!";
@@ -295,81 +255,24 @@ app.post("/flask", async function (req, res) {
         // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
         returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
         let chart = constructPythonCommand(parsedBody, chartMsg);
-        chart.isPython = true;
-        chartMsg.pythonCharts.push(chart);
-        // chartMsg.command = constructedCommand.command;
-        // chartMsg.pythonCharts = createCharts(
-        //   constructedCommand.plotType,
-        //   chartMsg,
-        //   {
-        //     useCovidDataset: options.useCovidDataset,
-        //     sentimentAnalysis: false,
-        //     window: {
-        //       toggle: false,
-        //       pastSentences: 0,
-        //     },
-        //     neuralNetwork: false,
-        //     useSynonyms: false,
-        //     randomCharts: {
-        //       toggle: false,
-        //       minutes: 10,
-        //     },
-        //     threshold: 3,
-        //     filter: {
-        //       toggle: false,
-        //       pastSentences: 0,
-        //       threshold: 5,
-        //     },
-        //     pivotCharts: false,
-        //   },
-        //   true
-        // );
+        if (chart !== "none") {
+          chart.isPython = true;
+          chart.chartSelection = "python_point";
+
+          chartMsg.pythonCharts.push(chart);
+        }
+
         console.log("returned from python");
       })
       .catch(function (err) {
         console.log("error, Python server doesn't understand");
-        console.log(err);
+        // console.log(err);
         // res.send({ message: "error" });
       });
 
     res.send(chartMsg);
   }
 });
-
-// app.post("/flask", async function (req, res) {
-//   let chartMsg = req.body.chartMsg;
-//   let command = chartMsg.command;
-//   if (command == "random") {
-//     res.send({ charts: [] });
-//   }
-//   console.log(command);
-
-//   let options = {
-//     method: "POST",
-//     uri: "http://localhost:5000/",
-//     body: command,
-//     json: true, // Automatically stringifies the body to JSON
-//   };
-
-//   let returndata;
-//   let constructedPythonCommand;
-//   let sendrequest = await request(options)
-//     .then(function (parsedBody) {
-//       // console.log(parsedBody); // parsedBody contains the data sent back from the Flask server
-//       returndata = parsedBody; // do something with this data, here I'm assigning it to a variable.
-//       constructedPythonCommand = constructPythonCommand(parsedBody);
-//     })
-//     .catch(function (err) {
-//       console.log(err);
-//     });
-
-//     if (returndata == "" || returndata == null) {
-//     console.log("fired");
-//     res.send({ message: "" });
-//   } else {
-//     res.send(returndata);
-//   }
-// });
 
 // All other GET requests not handled before will return our React app
 app.get("*", (req, res) => {

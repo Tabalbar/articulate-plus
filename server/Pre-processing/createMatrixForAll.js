@@ -16,6 +16,7 @@ module.exports = (headers, data) => {
   let synonymMatrix = [];
   for (let i = 0; i < headers.length; i++) {
     synonyms = [headers[i]];
+    console.log(findType(headers[i], data));
     if (findType(headers[i], data) === "nominal") {
       var flags = [],
         output = [headers[i]],
@@ -57,6 +58,24 @@ module.exports = (headers, data) => {
 
     if (headers[i].match(/\W/g)) {
       let words = headers[i].split(/\W/g);
+      for (let i = 0; i < words.length; i++) {
+        let doc = nlp(words[i]);
+        if (doc.has("#Noun")) {
+          let synonymWords = thesaurus.find(words[i]);
+          for (let j = 0; j < synonymWords.length; j++) {
+            if (synonymWords[j] === "make") {
+              synonymWords.splice(j, 1);
+            }
+          }
+          synonyms.push(synonymWords);
+        } else if (i == 0) {
+          synonyms.push(words[i]);
+          synonyms.push(thesaurus.find(words[i]));
+        }
+      }
+    }
+    if (headers[i].match(/_/g)) {
+      let words = headers[i].split(/_/g);
       for (let i = 0; i < words.length; i++) {
         let doc = nlp(words[i]);
         if (doc.has("#Noun")) {

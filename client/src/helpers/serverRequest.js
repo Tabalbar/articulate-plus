@@ -70,7 +70,6 @@ export async function serverRequest(
   // if (responseChartMsg.chartMsg.errMsg == "none") {
   //   return { assistantResponse: false, isCommand: false };
   // }
-  console.log("Python");
 
   //API request
   const pythonResponse = await fetch("/flask", {
@@ -84,25 +83,31 @@ export async function serverRequest(
   const pythonBody = await pythonResponse.text();
   const pythonChartMsg = JSON.parse(pythonBody);
 
-  // console.log(pythonChartMsg);
-
   //tmp var to hold charts
   let tmpChartMsg = responseChartMsg.chartMsg;
-  //Must add explicit first
-  console.log(pythonChartMsg.pythonCharts);
-  let newCharts = [
-    // ...tmpChartMsg.randomCharts,
-    // ...tmpChartMsg.explicitChart,
-    // ...tmpChartMsg.mainAI,
-    // ...tmpChartMsg.mainAIOverhearing,
-    // ...tmpChartMsg.pivotChart,
-    ...pythonChartMsg.pythonCharts,
-  ];
-
-  //Clean up for charts that weren't generated
-  newCharts = newCharts.filter((x) => {
+  tmpChartMsg.randomCharts = tmpChartMsg.randomCharts.filter((x) => {
     return x !== "";
   });
+  tmpChartMsg.explicitChart = tmpChartMsg.explicitChart.filter((x) => {
+    return x !== "";
+  });
+  tmpChartMsg.mainAI = tmpChartMsg.mainAI.filter((x) => {
+    return x !== "";
+  });
+  tmpChartMsg.mainAIOverhearing = tmpChartMsg.mainAIOverhearing.filter((x) => {
+    return x !== "";
+  });
+  console.log(tmpChartMsg, "**", pythonChartMsg.pythonCharts);
+
+  let newCharts = compareCharts(
+    tmpChartMsg.randomCharts,
+    tmpChartMsg.explicitChart,
+    tmpChartMsg.mainAI,
+    tmpChartMsg.mainAIOverhearing,
+    pythonChartMsg.pythonCharts
+  );
+
+  //Clean up for charts that weren't generated
 
   //id on charts
   let startingId = chartMsg.charts.length;
@@ -163,3 +168,117 @@ export async function serverRequest(
 
   return { assistantResponse: assistantResponse, isCommand: isCommand };
 }
+
+const compareCharts = (
+  randomCharts,
+  explicitCharts,
+  mainAI,
+  mainAIOverhearing,
+  pythonChartMsg
+) => {
+  for (let i = 0; i < pythonChartMsg.length; i++) {
+    for (let j = 0; j < randomCharts.length; j++) {
+      if (compare(pythonChartMsg[i], randomCharts[j])) {
+        pythonChartMsg.splice(i, 1);
+        randomCharts[j].chartSelection += " python_point";
+      }
+    }
+    for (let j = 0; j < explicitCharts.length; j++) {
+      if (compare(pythonChartMsg[i], explicitCharts[j])) {
+        pythonChartMsg.splice(i, 1);
+        explicitCharts[j].chartSelection += " python_point";
+      }
+    }
+    for (let j = 0; j < mainAI.length; j++) {
+      if (compare(pythonChartMsg[i], mainAI[j])) {
+        pythonChartMsg.splice(i, 1);
+        mainAI[j].chartSelection += " python_point";
+      }
+    }
+    for (let j = 0; j < mainAIOverhearing.length; j++) {
+      if (compare(pythonChartMsg[i], mainAIOverhearing[j])) {
+        pythonChartMsg.splice(i, 1);
+        mainAIOverhearing[j].chartSelection += " python_point";
+      }
+    }
+  }
+
+  return [
+    ...randomCharts,
+    ...explicitCharts,
+    ...mainAI,
+    ...mainAIOverhearing,
+    ...pythonChartMsg,
+  ];
+};
+
+const compare = (pythonChart, otherChart) => {
+  let mark = pythonChart.mark;
+  let otherMark = otherChart.mark;
+  if (mark !== otherMark) {
+    return false;
+  }
+  console.log(otherChart.transform, pythonChart.filters);
+
+  if (mark !== "geoshape") {
+    if (
+      JSON.stringify(otherChart.transform) ==
+      JSON.stringify(pythonChart.filters)
+    ) {
+      console.log("is the same");
+    } else {
+      console.log("is NOT the same");
+
+      return false;
+    }
+  } else {
+    // if (otherChart.transform.length > 1) {
+    //   return false;
+    // }
+  }
+  switch (mark) {
+    case "bar":
+      if (
+        pythonChart.encoding.x.field == otherChart.encoding.x.field &&
+        pythonChart.encoding.color.field == otherChart.encoding.color.field
+      ) {
+        return true;
+      }
+      break;
+    case "rect":
+      if (
+        (pythonChart.encoding.x.field == otherChart.encoding.x.field &&
+          pythonChart.encoding.y.field == otherChart.encoding.y.field) ||
+        (pythonChart.encoding.x.field == otherChart.encoding.y.field &&
+          pythonChart.encoding.y.field == otherChart.encoding.x.field)
+      ) {
+        return true;
+      }
+      break;
+    case "line":
+      if (
+        pythonChart.encoding.color !== undefined &&
+        otherChart.encoding.color !== undefined
+      ) {
+        if (
+          pythonChart.encoding.x.field == otherChart.encoding.x.field &&
+          pythonChart.encoding.color.field == otherChart.encoding.color.field
+        ) {
+          return true;
+        }
+      } else {
+        if (pythonChart.encoding.x.field == otherChart.encoding.x.field) {
+          return true;
+        }
+      }
+
+    case "geoshape":
+      if (pythonChart.encoding.color.field == otherChart.encoding.color.field) {
+        return true;
+      }
+    default:
+      return false;
+      break;
+  }
+  return false;
+};

@@ -8,8 +8,6 @@ const nlp = require("compromise");
 
 module.exports = (header, data) => {
   const unique = [...new Set(data.map((item) => item[header]))];
-  console.log("here*************");
-
   if (unique.length == 5 || unique.length == 6) {
     for (let i = 0; i < unique.length; i++) {
       let doc = nlp(unique[i]);
@@ -44,8 +42,6 @@ module.exports = (header, data) => {
     }
 
     for (let i = 0; i < unique.length; i++) {
-      console.log(unique[i]);
-
       let doc = nlp(unique[i]);
       if (doc.has("very low")) {
         switchHeaders(unique, 4, i);

@@ -25,11 +25,7 @@ module.exports = (
     headerFrequencyCount,
     filterFrequencyCount
   );
-  console.log(chart.filterFrequencyCount);
-  chart.mark = {
-    type: "line",
-    point: { size: 100 },
-  };
+  chart.mark = "line";
   switch (extractedHeaders.length) {
     case 2:
       chart.encoding.x = {
@@ -77,6 +73,7 @@ module.exports = (
           axis: { labelFontSize: 10, titleFontSize: 10 },
           field: extractedHeaders[1],
         };
+        chart = createTransform(chart, chartMsg, extractedFilteredValues);
       }
 
       chart.encoding.color = {
@@ -97,6 +94,5 @@ module.exports = (
       break;
   }
   chart = createTitle(chart, extractedHeaders, "line", extractedFilteredValues);
-  chart = createTransform(chart, chartMsg, extractedFilteredValues);
   return chart;
 };

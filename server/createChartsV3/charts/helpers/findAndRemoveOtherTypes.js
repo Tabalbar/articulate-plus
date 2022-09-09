@@ -27,6 +27,7 @@ module.exports = (chartMsg, extractedHeaders, type) => {
       }
     }
   }
+  console.log(extractedHeaders, "iufghsuifhushd");
   return {
     extractedHeaders: extractedHeaders,
     typeFound: typeFound,

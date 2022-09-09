@@ -298,7 +298,7 @@ module.exports = class ChartInfo {
     for (let i = 0; i < extractedHeaders.length; i++) {
       for (let j = i + 1; j < extractedHeaders.length; j++) {
         if (extractedHeaders[i] == extractedHeaders[j]) {
-          extractedHeaders.splice(j);
+          extractedHeaders.splice(j, 1);
           break;
         }
       }

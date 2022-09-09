@@ -232,7 +232,6 @@ function ChartSelection({
   // }, [chartMsg.charts]);
 
   useEffect(() => {
-    console.log(chartMsg.charts);
     let scrollableElement = document.getElementById("scrollable");
     scrollableElement.scrollLeft =
       scrollableElement.scrollWidth - scrollableElement.clientWidth;
@@ -354,22 +353,21 @@ function ChartPlaceholder({
   useEffect(() => {
     console.log(specification);
     if (modifiedChartOptions.useCovidDataset == true) {
-      if (specification.hasOwnProperty("layer")) {
-        // specification.transform.push({
-        //   type: "aggregate",
-        //   fields: ["access to doctors"],
-        //   ops: ["distinct"],
-        // });
-        specification.transform = [];
-
-        // console.log("fetching");
-        specification.fetchedURL = true;
-        fetch(
-          "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
-        )
-          .then((response) => response.text())
-          .then(async (csvData) => setChartData(await processData(csvData)));
-      }
+      // if (specification.hasOwnProperty("layer")) {
+      //   // specification.transform.push({
+      //   //   type: "aggregate",
+      //   //   fields: ["access to doctors"],
+      //   //   ops: ["distinct"],
+      //   // });
+      //   specification.transform = [];
+      //   // console.log("fetching");
+      //   specification.fetchedURL = true;
+      //   fetch(
+      //     "https://raw.githubusercontent.com/Tabalbar/Articulate/main/NEW_Covid_Data.csv"
+      //   )
+      //     .then((response) => response.text())
+      //     .then(async (csvData) => setChartData(await processData(csvData)));
+      // }
     }
   }, []);
 

@@ -84,6 +84,7 @@ module.exports = (
       scale: { scheme: "reds" },
       legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
     };
+    chart = createTransform(chart, chartMsg, extractedFilteredValues);
   }
 
   chart.config = {
@@ -96,6 +97,5 @@ module.exports = (
     "heatmap",
     extractedFilteredValues
   );
-  chart = createTransform(chart, chartMsg, extractedFilteredValues);
   return chart;
 };

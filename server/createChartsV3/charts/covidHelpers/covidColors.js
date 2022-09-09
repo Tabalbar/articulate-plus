@@ -5,13 +5,14 @@
  *
  */
 module.exports = (header) => {
+  console.log(header, "****32r92383924823");
+
   for (let i = 0; i < covidColors.length; i++) {
     if (covidColors[i].header == header) {
       return covidColors[i].colors;
     }
   }
 };
-
 const covidColors = [
   {
     header: "region",
@@ -95,35 +96,47 @@ const covidColors = [
     colors: ["#010ab3", "#5d3fc3", "#8c6dd3", "#b59ce3", "#dacdf1", "#121212"],
   },
   {
-    header: "uninsured",
+    header: "access_to_doctors",
+    colors: ["#010ab3", "#5d3fc3", "#8c6dd3", "#b59ce3", "#dacdf1", "#121212"],
+  },
+  {
+    header: "uninsured_rate",
     colors: ["#01b369", "#59c386", "#88d3a3", "#b1e2c1", "#d8f1e0", "#121212"],
   },
   {
-    header: "diabetes",
+    header: "diabetes_rate",
     colors: ["#6fb301", "#90c24a", "#aed279", "#cae1a5", "#e5f0d2", "#121212"],
   },
   {
-    header: "cardiovascular_disease",
-    colors: ["#b38401", "#c79b44", "#d8b372", "#e7cca0", "#f4e5cf", "#121212"],
+    header: "cardiovascular_disease_rate",
+    colors: [
+      "#b38401",
+      "#c79b44",
+      "#d8b372",
+      "#e7cca0",
+      "#f4e5cf",
+      "#121212",
+      "#000000",
+    ],
   },
   {
-    header: "poverty",
+    header: "poverty_rate",
     colors: ["#b30101", "#cb4c33", "#e07b62", "#efa794", "#fad3c8", "#121212"],
   },
   {
-    header: "african_american",
+    header: "african_american_population",
     colors: ["#017ab3", "#6499c6", "#9bbad9", "#cddcec", "#121212"],
   },
   {
-    header: "Hispanic",
+    header: "hispanic_population",
     colors: ["#01b33b", "#5bc363", "#89d38a", "#b2e2b0", "#d9f1d7", "#121212"],
   },
   {
-    header: "covid_risk",
+    header: "covid_vulnerability_rank",
     colors: ["#0800af", "#5e3bc0", "#8c6ad1", "#b59ae1", "#daccf0", "#121212"],
   },
   {
-    header: "social_vulnerability",
+    header: "social_vulnerability_rank",
     colors: ["#b301b2", "#c652c2", "#d781d1", "#e6abe1", "#f3d5f0", "#121212"],
   },
 ];

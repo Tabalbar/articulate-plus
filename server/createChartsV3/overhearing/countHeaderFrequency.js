@@ -29,6 +29,9 @@ module.exports = (chartMsg, options) => {
   }
 
   let sentences = chartMsg.transcript.split(".");
+  sentences = sentences.filter((element) => {
+    return element !== "";
+  });
   if (options.window.pastSentences === 0) {
     sentences = [];
   } else {
@@ -67,8 +70,21 @@ module.exports = (chartMsg, options) => {
     for (let i = 0; i < sentences.length; i++) {
       // const result = message.replace(/JS/g, "JavaScript");
       for (let j = 0; j < synonymsAndFeatures.length; j++) {
+        if (
+          synonymsAndFeatures[j][0] == "state" ||
+          synonymsAndFeatures[j][0] == "county"
+        ) {
+          break;
+        }
         for (let k = 0; k < synonymsAndFeatures[j].length; k++) {
-          if (sentences[i].toLowerCase().includes(synonymsAndFeatures[j][k])) {
+          if (
+            sentences[i]
+              .toLowerCase()
+              .includes(synonymsAndFeatures[j][k].toLowerCase()) ||
+            sentences[i]
+              .toLowerCase()
+              .includes(synonymsAndFeatures[j][k].toLowerCase() + "s")
+          ) {
             wordCount[j].count += 1;
             break;
           }

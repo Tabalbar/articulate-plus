@@ -258,6 +258,7 @@ function makeCount(charts, chartMsg) {
     mainAIOverhearing: { count: 0, id: [] },
     pivot: { count: 0, id: [] },
     random: { count: 0, id: [] },
+    python: { count: 0, id: [] },
   };
   let total = {
     explicit: 0,
@@ -265,6 +266,7 @@ function makeCount(charts, chartMsg) {
     mainAIOverhearing: 0,
     pivot: 0,
     random: 0,
+    python: 0,
   };
 
   for (let i = 0; i < charts.length; i++) {
@@ -284,6 +286,10 @@ function makeCount(charts, chartMsg) {
       chosenCharts.pivot.count++;
       chosenCharts.pivot.id.push(charts[i].id);
     }
+    if (charts[i].chartSelection.includes("python_point")) {
+      chosenCharts.python.count++;
+      chosenCharts.python.id.push(charts[i].id);
+    }
     if (charts[i].chartSelection.includes("random")) {
       chosenCharts.random.count++;
       chosenCharts.random.id.push(charts[i].id);
@@ -301,6 +307,9 @@ function makeCount(charts, chartMsg) {
     }
     if (chartMsg.charts[i].chartSelection.includes("pivot_point")) {
       total.pivot++;
+    }
+    if (chartMsg.charts[i].chartSelection.includes("python_point")) {
+      total.python++;
     }
     if (chartMsg.charts[i].chartSelection.includes("random")) {
       total.random++;

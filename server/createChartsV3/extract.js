@@ -11,15 +11,17 @@ const findType = require("./charts/helpers/findType");
 module.exports = {
   headers: (chartMsg, headerFrequencyCount, options) => {
     // const result1 = str.replace(/foo/g, "moo");
-
-    chartMsg.command = chartMsg.command.replace(/_/g, " ");
+    chartMsg.command = chartMsg.command.replace(/\s+/g, "_");
+    console.log(chartMsg.command);
     //Extract explicit headers from the command
     let doc = nlp(chartMsg.command);
     let extractedHeaders = [];
     for (let i = 0; i < chartMsg.attributes.length; i++) {
       if (
         doc.has(chartMsg.attributes[i].toLowerCase()) ||
-        doc.has(chartMsg.attributes[i].toLowerCase() + "s")
+        doc.has(chartMsg.attributes[i].toLowerCase() + "s") ||
+        chartMsg.command.includes(chartMsg.attributes[i]) ||
+        chartMsg.command.includes(chartMsg.attributes[i] + "s")
       ) {
         extractedHeaders.push(chartMsg.attributes[i]);
       }
@@ -28,7 +30,15 @@ module.exports = {
     if (options.useSynonyms) {
       for (let i = 0; i < chartMsg.synonymMatrix.length; i++) {
         for (let j = 1; j < chartMsg.synonymMatrix[i].length; j++) {
-          if (doc.has(chartMsg.synonymMatrix[i][j].toLowerCase())) {
+          if (
+            doc.has(chartMsg.synonymMatrix[i][j].toLowerCase()) ||
+            chartMsg.command.includes(
+              chartMsg.synonymMatrix[i][j].toLowerCase()
+            ) ||
+            chartMsg.command.includes(
+              chartMsg.synonymMatrix[i][j].toLowerCase() + "s"
+            )
+          ) {
             extractedHeaders.push(chartMsg.synonymMatrix[i][0]);
           }
         }
@@ -81,6 +91,8 @@ module.exports = {
 
     //Delete any duplicates in headers
     extractedHeaders = checkDuplicates(extractedHeaders);
+    chartMsg.command = chartMsg.command.replace(/_/g, " ");
+
     return extractedHeaders;
   },
 
@@ -115,9 +127,15 @@ module.exports = {
     //   }
     // }
 
-    for (let i = 0; i < chartMsg.featureMatrix.length; i++) {}
-
+    chartMsg.command = chartMsg.command.replace(/\s+/g, "-");
+    console.log(chartMsg.command, "************");
     for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
+      if (
+        chartMsg.featureMatrix[i][0] == "state" ||
+        chartMsg.featureMatrix[i][0] == "county"
+      ) {
+        break;
+      }
       extractedFilteredHeaders[chartMsg.featureMatrix[i][0]] = [];
       for (let n = 1; n < chartMsg.featureMatrix[i].length; n++) {
         if (chartMsg.command.includes(chartMsg.featureMatrix[i][n])) {

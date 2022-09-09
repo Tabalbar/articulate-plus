@@ -17,8 +17,9 @@ const removeOtherTypes = require("./charts/helpers/removeOtherTypes");
 const createHeatmap = require("./charts/createHeatmap");
 const createBar = require("./charts/createBar");
 const findQuantitativeAndSwitch = require("./charts/helpers/findQuantitativeAndSwitch");
+const findType = require("./charts/helperFunctions/findType");
 
-module.exports = (intent, chartMsg, options, isPython) => {
+module.exports = (intent, chartMsg, options) => {
   //Varaibles that holds the count for overheadering
   const headerFrequencyCount = countHeaderFrequency(chartMsg, options);
   const filterFrequencyCount = countFilterFrequency(chartMsg, options);
@@ -34,11 +35,9 @@ module.exports = (intent, chartMsg, options, isPython) => {
     filterFrequencyCount,
     options
   );
-
+  console.log(extractedHeaders);
   //Holds all charts
   let charts = [];
-  console.log(intent, "******************");
-
   // console.log(chartMsg.command, extractedHeaders, isPython);
   switch (intent) {
     case "histogram":
@@ -67,7 +66,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
 
       extractedHeaders = findQuantitative.extractedHeaders;
       extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "map");
-
+      extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "fips");
+      console.log(extractedHeaders, "*************");
       if (!findQuantitative.typeFound) {
         for (let i = 0; i < extractedHeaders.length; i++) {
           charts.push(
@@ -91,26 +91,13 @@ module.exports = (intent, chartMsg, options, isPython) => {
               extractedFilteredValues,
               headerFrequencyCount,
               filterFrequencyCount,
-              options
+              options,
+              false
             )
           );
         }
       }
-      // } else {
-      //   extractedHeaders = keepThis(chartMsg, extractedHeaders, "nominal");
 
-      //   for (let i = 0; i < extractedHeaders.length; i++) {
-      //     charts.push(
-      //       createHistogram(
-      //         chartMsg,
-      //         extractedHeaders[i],
-      //         extractedFilteredValues,
-      //         headerFrequencyCount,
-      //         filterFrequencyCount
-      //       )
-      //     );
-      //   }
-      // }
       break;
     case "line":
       if (extractedHeaders == 0) {
@@ -122,6 +109,24 @@ module.exports = (intent, chartMsg, options, isPython) => {
       );
 
       extractedHeaders = findTemporalAndQuantitativeObj.extractedHeaders;
+      console.log(extractedHeaders, "********");
+
+      for (let i = 2; i < extractedHeaders.length; i++) {
+        console.log(
+          extractedHeaders[i],
+          findType(extractedHeaders[i], chartMsg.data)
+        );
+        if (
+          findType(extractedHeaders[i], chartMsg.data) == "quantitative" ||
+          findType(extractedHeaders[i], chartMsg.data) == "temporal" ||
+          findType(extractedHeaders[i], chartMsg.data) == "map"
+        ) {
+          console.log("Spliced", extractedHeaders[i]);
+          extractedHeaders.splice(i, 1);
+          i--;
+        }
+      }
+
       if (
         !findTemporalAndQuantitativeObj.temporalFound ||
         !findTemporalAndQuantitativeObj.quantitativeFound
@@ -136,7 +141,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
             extractedFilteredValues,
             headerFrequencyCount,
             filterFrequencyCount,
-            options
+            options,
+            false
           )
         );
       } else if (extractedHeaders.length > 2) {
@@ -154,7 +160,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
               extractedFilteredValues,
               headerFrequencyCount,
               filterFrequencyCount,
-              options
+              options,
+              false
             )
           );
         }
@@ -176,7 +183,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
               extractedFilteredValues,
               headerFrequencyCount,
               filterFrequencyCount,
-              options
+              options,
+              false
             )
           );
         }
@@ -196,6 +204,7 @@ module.exports = (intent, chartMsg, options, isPython) => {
         );
       }
       extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "map");
+      console.log(extractedHeaders, "98*(h8hfehfe");
       if (extractedHeaders.length < 2) {
         break;
       }
@@ -207,7 +216,8 @@ module.exports = (intent, chartMsg, options, isPython) => {
             extractedFilteredValues,
             headerFrequencyCount,
             filterFrequencyCount,
-            options
+            options,
+            false
           )
         );
       }

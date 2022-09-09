@@ -56,7 +56,7 @@ function App() {
 
   //Toggle options for algorithm
   const [modifiedChartOptions, setModifiedChartOptions] = useState({
-    useCovidDataset: false,
+    useCovidDataset: true,
     sentimentAnalysis: true,
     window: {
       toggle: true,
@@ -164,7 +164,6 @@ function App() {
     if (command) {
       chartMsg.command = command;
     }
-    console.log("Called");
     //Pick a random thinking response
     // let thinkingResponse =
     //   thinking[Math.floor(Math.random() * thinking.length)];
