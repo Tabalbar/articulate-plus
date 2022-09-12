@@ -78,7 +78,7 @@ module.exports = (
           axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
           type: "quantitative",
         };
-        chart.encoding.xOffset = { field: extractedHeaders[2] };
+        chart.encoding.column = { field: extractedHeaders[2] };
         // delete chart.encoding.column;
         chart.encoding.color = {
           field: extractedHeaders[2],
@@ -138,3 +138,33 @@ module.exports = (
 
   return chart;
 };
+// {
+//   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+//   "data": {"values":
+//       [
+//         {
+//           "Year": 2002,
+//           "Rentals": 184,
+//           "VHS": 84
+//         },
+//         {
+//           "Year": 2003,
+//           "Rentals": 180,
+//           "VHS": 67
+//         }
+//       ]
+//   },
+//  "transform": [{
+//    "fold": ["Rentals", "VHS"],
+//    "as": ["type", "sales"]
+//   }],
+//   "mark": "bar",
+//   "encoding": {
+//     "x": {"field": "type", "type": "ordinal"},
+//     "y": {"field": "sales", "type": "quantitative"},
+//     "color": {"field": "type", "type": "nominal"},
+//     "column": {
+//       "field": "Year", "type": "ordinal"
+//     }
+//   }
+// }
