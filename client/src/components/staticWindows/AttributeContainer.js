@@ -260,16 +260,16 @@ function AttributeContainer({
                     onChange={(e) => setUserStudyName(e.target.value)}
                     value={userStudyName}
                   />
-                  <FileInput
+                  {/* <FileInput
                     setChartMsg={setChartMsg}
                     setModifiedChartOptions={setModifiedChartOptions}
                     modifiedChartOptions={modifiedChartOptions}
-                  />
-                  <Text fontWeight="bold" ml={1}>
+                  /> */}
+                  {/* <Text fontWeight="bold" ml={1}>
                     Modified Chart Options
-                  </Text>
+                  </Text> */}
                   <Stack>
-                    <Text>
+                    {/* <Text>
                       Sentence Window Size (Attributes):{" "}
                       {modifiedChartOptions.window.pastSentences}
                     </Text>
@@ -291,7 +291,7 @@ function AttributeContainer({
                     </Text>
                     <Text>
                       Using Pivot: {modifiedChartOptions.pivot ? "Yes" : "No"}
-                    </Text>
+                    </Text> */}
                     {/* FLAG DISABLED FOR NOW */}
                     {/* <Radio
                       isChecked={modifiedChartOptions.window.toggle}
@@ -449,7 +449,7 @@ function AttributeContainer({
                   </Stack>
 
                   <Button
-                    disabled={!chartMsg.attributes.length}
+                    // disabled={!chartMsg.attributes.length}
                     colorScheme="teal"
                     onClick={() => setStartStudy(true)}
                   >

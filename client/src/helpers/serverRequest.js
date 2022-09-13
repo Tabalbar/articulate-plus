@@ -50,26 +50,23 @@ export async function serverRequest(
   }
 
   //API request
-  const response = await fetch("/createCharts", {
-    method: "POST",
-    body: JSON.stringify({
-      chartMsg,
-      modifiedChartOptions,
-      pivotTheseCharts,
-      selectedCharts,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  });
+  // const response = await fetch("/createCharts", {
+  //   method: "POST",
+  //   body: JSON.stringify({
+  //     chartMsg,
+  //     modifiedChartOptions,
+  //     pivotTheseCharts,
+  //     selectedCharts,
+  //   }),
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Accept: "application/json",
+  //   },
+  // });
 
-  // decrypt message from server
-  const body = await response.text();
-  const responseChartMsg = JSON.parse(body);
-  // if (responseChartMsg.chartMsg.errMsg == "none") {
-  //   return { assistantResponse: false, isCommand: false };
-  // }
+  // // decrypt message from server
+  // const body = await response.text();
+  // const responseChartMsg = JSON.parse(body);
 
   //API request
   const pythonResponse = await fetch("/flask", {
@@ -84,28 +81,30 @@ export async function serverRequest(
   const pythonChartMsg = JSON.parse(pythonBody);
 
   //tmp var to hold charts
-  let tmpChartMsg = responseChartMsg.chartMsg;
-  tmpChartMsg.randomCharts = tmpChartMsg.randomCharts.filter((x) => {
-    return x !== "";
-  });
-  tmpChartMsg.explicitChart = tmpChartMsg.explicitChart.filter((x) => {
-    return x !== "";
-  });
-  tmpChartMsg.mainAI = tmpChartMsg.mainAI.filter((x) => {
-    return x !== "";
-  });
-  tmpChartMsg.mainAIOverhearing = tmpChartMsg.mainAIOverhearing.filter((x) => {
-    return x !== "";
-  });
-  console.log(tmpChartMsg, "**", pythonChartMsg.pythonCharts);
+  // let tmpChartMsg = responseChartMsg.chartMsg;
+  // tmpChartMsg.randomCharts = tmpChartMsg.randomCharts.filter((x) => {
+  //   return x !== "";
+  // });
+  // tmpChartMsg.explicitChart = tmpChartMsg.explicitChart.filter((x) => {
+  //   return x !== "";
+  // });
+  // tmpChartMsg.mainAI = tmpChartMsg.mainAI.filter((x) => {
+  //   return x !== "";
+  // });
+  // tmpChartMsg.mainAIOverhearing = tmpChartMsg.mainAIOverhearing.filter((x) => {
+  //   return x !== "";
+  // });
+  // console.log(tmpChartMsg, "**", pythonChartMsg.pythonCharts);
 
-  let newCharts = compareCharts(
-    tmpChartMsg.randomCharts,
-    tmpChartMsg.explicitChart,
-    tmpChartMsg.mainAI,
-    tmpChartMsg.mainAIOverhearing,
-    pythonChartMsg.pythonCharts
-  );
+  // let newCharts = compareCharts(
+  //   tmpChartMsg.randomCharts,
+  //   tmpChartMsg.explicitChart,
+  //   tmpChartMsg.mainAI,
+  //   tmpChartMsg.mainAIOverhearing,
+  //   pythonChartMsg.pythonCharts
+  // );
+
+  let newCharts = pythonChartMsg.pythonCharts;
 
   //Clean up for charts that weren't generated
 
@@ -127,9 +126,9 @@ export async function serverRequest(
     return {
       ...prev,
       charts: [...tmpCharts, ...newCharts],
-      mainAICount: tmpChartMsg.mainAICount,
-      mainAIOverhearingCount: tmpChartMsg.mainAIOverhearingCount,
-      total: tmpChartMsg.total,
+      // mainAICount: tmpChartMsg.mainAICount,
+      // mainAIOverhearingCount: tmpChartMsg.mainAIOverhearingCount,
+      // total: tmpChartMsg.total,
     };
   });
 
@@ -138,23 +137,23 @@ export async function serverRequest(
   let assistantResponse;
 
   if (count == 0) {
-    if (tmpChartMsg.errMsg.msg == "duplicate") {
-      assistantResponse =
-        duplicate[Math.floor(Math.random() * duplicate.length)];
-      setChartToHighlight(tmpChartMsg.errMsg.id);
-      setTimeout(() => {
-        setChartToHighlight(null);
-      }, 4000);
-    } else {
-      if (chartMsg.command !== "random") {
-        //FLAG DISABLED FOR NOW
-        // assistantResponse =
-        //   noCharts[Math.floor(Math.random() * noCharts.length)];
-        assistantResponse = false;
-      } else {
-        assistantResponse = false;
-      }
-    }
+    // if (tmpChartMsg.errMsg.msg == "duplicate") {
+    //   assistantResponse =
+    //     duplicate[Math.floor(Math.random() * duplicate.length)];
+    //   setChartToHighlight(tmpChartMsg.errMsg.id);
+    //   setTimeout(() => {
+    //     setChartToHighlight(null);
+    //   }, 4000);
+    // } else {
+    //   if (chartMsg.command !== "random") {
+    //     //FLAG DISABLED FOR NOW
+    //     // assistantResponse =
+    //     //   noCharts[Math.floor(Math.random() * noCharts.length)];
+    //     assistantResponse = false;
+    //   } else {
+    //     assistantResponse = false;
+    //   }
+    // }
   } else if (count == 1) {
     assistantResponse = oneChart[Math.floor(Math.random() * oneChart.length)];
   } else if (count == 2) {
