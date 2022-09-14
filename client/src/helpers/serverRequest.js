@@ -175,29 +175,31 @@ const compareCharts = (
   mainAIOverhearing,
   pythonChartMsg
 ) => {
+  console.log("Python", pythonChartMsg.length, pythonChartMsg);
   for (let i = 0; i < pythonChartMsg.length; i++) {
     for (let j = 0; j < randomCharts.length; j++) {
       if (compare(pythonChartMsg[i], randomCharts[j])) {
-        pythonChartMsg.splice(i, 1);
-        randomCharts[j].chartSelection += " python_point";
+        randomCharts.splice(j, 1);
+        pythonChartMsg[i].chartSelection += " random_point";
+        break;
       }
     }
     for (let j = 0; j < explicitCharts.length; j++) {
       if (compare(pythonChartMsg[i], explicitCharts[j])) {
-        pythonChartMsg.splice(i, 1);
-        explicitCharts[j].chartSelection += " python_point";
+        explicitCharts.splice(j, 1);
+        pythonChartMsg[i].chartSelection += " explicit_point";
       }
     }
     for (let j = 0; j < mainAI.length; j++) {
       if (compare(pythonChartMsg[i], mainAI[j])) {
-        pythonChartMsg.splice(i, 1);
-        mainAI[j].chartSelection += " python_point";
+        mainAI.splice(j, 1);
+        pythonChartMsg[i].chartSelection += " mainAI_point";
       }
     }
     for (let j = 0; j < mainAIOverhearing.length; j++) {
       if (compare(pythonChartMsg[i], mainAIOverhearing[j])) {
-        pythonChartMsg.splice(i, 1);
-        mainAIOverhearing[j].chartSelection += " python_point";
+        mainAIOverhearing.splice(j, 1);
+        pythonChartMsg[i].chartSelection += " mainAIOverhearing_point";
       }
     }
   }
@@ -212,6 +214,7 @@ const compareCharts = (
 };
 
 const compare = (pythonChart, otherChart) => {
+  console.log(pythonChart.mark, "**********");
   let mark = pythonChart.mark;
   let otherMark = otherChart.mark;
   if (mark !== otherMark) {

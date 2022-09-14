@@ -7,7 +7,12 @@
 const nlp = require("compromise");
 
 module.exports = (header, data) => {
+  if ((header = "access_to_doctor")) {
+    header = "access_to_doctors";
+  }
   const unique = [...new Set(data.map((item) => item[header]))];
+
+  console.log(unique);
   if (unique.length == 5 || unique.length == 6) {
     for (let i = 0; i < unique.length; i++) {
       let doc = nlp(unique[i]);
