@@ -28,7 +28,6 @@ module.exports = (chartMsg, options) => {
   } else {
     sentences = sentences.slice(-options.filter.pastSentences);
   }
-  console.log(sentences);
   wordCount.sentences = sentences;
 
   // if (options.sentimentAnalysis && options.filter.toggle) {

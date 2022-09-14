@@ -214,23 +214,18 @@ const compareCharts = (
 };
 
 const compare = (pythonChart, otherChart) => {
-  console.log(pythonChart.mark, "**********");
   let mark = pythonChart.mark;
   let otherMark = otherChart.mark;
   if (mark !== otherMark) {
     return false;
   }
-  console.log(otherChart.transform, pythonChart.filters);
 
   if (mark !== "geoshape") {
     if (
       JSON.stringify(otherChart.transform) ==
       JSON.stringify(pythonChart.filters)
     ) {
-      console.log("is the same");
     } else {
-      console.log("is NOT the same");
-
       return false;
     }
   } else {

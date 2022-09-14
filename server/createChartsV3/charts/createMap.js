@@ -20,7 +20,6 @@ module.exports = (
   isPython,
   pythonData
 ) => {
-  console.log(extractedFilteredValues);
   let chart = createChartTemplate(
     chartMsg,
     headerFrequencyCount,

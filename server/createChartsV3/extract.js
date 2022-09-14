@@ -12,7 +12,6 @@ module.exports = {
   headers: (chartMsg, headerFrequencyCount, options) => {
     // const result1 = str.replace(/foo/g, "moo");
     chartMsg.command = chartMsg.command.replace(/\s+/g, "_");
-    console.log(chartMsg.command);
     //Extract explicit headers from the command
     let doc = nlp(chartMsg.command);
     let extractedHeaders = [];
@@ -128,7 +127,6 @@ module.exports = {
     // }
 
     chartMsg.command = chartMsg.command.replace(/\s+/g, "-");
-    console.log(chartMsg.command, "************");
     for (let i = 0; i < chartMsg.featureMatrix.length; i++) {
       if (
         chartMsg.featureMatrix[i][0] == "state" ||

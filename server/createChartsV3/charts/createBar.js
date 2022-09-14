@@ -66,7 +66,6 @@ module.exports = (
       case 3:
         chart.width = 120;
         chart.height = 100;
-        console.log(extractedHeaders[1], "**********************");
         chart.encoding.x = {
           field: extractedHeaders[1],
           title: "",
@@ -110,7 +109,6 @@ module.exports = (
         break;
     }
   } else {
-    console.log(options.useCovidDataset);
     chart.encoding.x = {
       field: extractedHeaders[1],
       type: findType(extractedHeaders[1], chartMsg.data),

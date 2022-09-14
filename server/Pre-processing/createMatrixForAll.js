@@ -16,7 +16,6 @@ module.exports = (headers, data) => {
   let synonymMatrix = [];
   for (let i = 0; i < headers.length; i++) {
     synonyms = [headers[i]];
-    console.log(findType(headers[i], data));
     if (findType(headers[i], data) === "nominal") {
       var flags = [],
         output = [headers[i]],

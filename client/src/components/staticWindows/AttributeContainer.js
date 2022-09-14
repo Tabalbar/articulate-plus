@@ -260,11 +260,11 @@ function AttributeContainer({
                     onChange={(e) => setUserStudyName(e.target.value)}
                     value={userStudyName}
                   />
-                  {/* <FileInput
+                  <FileInput
                     setChartMsg={setChartMsg}
                     setModifiedChartOptions={setModifiedChartOptions}
                     modifiedChartOptions={modifiedChartOptions}
-                  /> */}
+                  />
                   {/* <Text fontWeight="bold" ml={1}>
                     Modified Chart Options
                   </Text> */}
@@ -449,7 +449,7 @@ function AttributeContainer({
                   </Stack>
 
                   <Button
-                    // disabled={!chartMsg.attributes.length}
+                    disabled={!chartMsg.attributes.length}
                     colorScheme="teal"
                     onClick={() => setStartStudy(true)}
                   >

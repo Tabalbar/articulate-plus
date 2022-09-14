@@ -7,16 +7,20 @@
 const nlp = require("compromise");
 
 module.exports = (header, data) => {
-  if ((header = "access_to_doctor")) {
-    header = "access_to_doctors";
-  }
-  const unique = [...new Set(data.map((item) => item[header]))];
+  let unique = [...new Set(data.map((item) => item[header]))];
 
-  console.log(unique);
+  if (header == "access_to_doctor") {
+    unique = [...new Set(data.map((item) => item["access_to_doctors"]))];
+  }
+
   if (unique.length == 5 || unique.length == 6) {
     for (let i = 0; i < unique.length; i++) {
       let doc = nlp(unique[i]);
-      if (doc.has("very high") || doc.has("very-high")) {
+      if (
+        doc.has("very high") ||
+        doc.has("very-high") ||
+        unique[i].includes("very-high")
+      ) {
         switchHeaders(unique, 0, i);
         break;
       }
@@ -24,7 +28,7 @@ module.exports = (header, data) => {
 
     for (let i = 1; i < unique.length; i++) {
       let doc = nlp(unique[i]);
-      if (doc.has("high")) {
+      if (doc.has("high") || unique[i].includes("high")) {
         switchHeaders(unique, 1, i);
         break;
       }
@@ -32,7 +36,12 @@ module.exports = (header, data) => {
 
     for (let i = 2; i < unique.length; i++) {
       let doc = nlp(unique[i]);
-      if (doc.has("moderate") || doc.has("medium")) {
+      if (
+        doc.has("moderate") ||
+        doc.has("medium") ||
+        unique[i].includes("medium") ||
+        unique[i].includes("moderate")
+      ) {
         switchHeaders(unique, 2, i);
         break;
       }
@@ -40,7 +49,7 @@ module.exports = (header, data) => {
 
     for (let i = 3; i < unique.length; i++) {
       let doc = nlp(unique[i]);
-      if (doc.has("low")) {
+      if (doc.has("low") || unique[i].includes("low")) {
         switchHeaders(unique, 3, i);
         break;
       }
@@ -48,7 +57,11 @@ module.exports = (header, data) => {
 
     for (let i = 0; i < unique.length; i++) {
       let doc = nlp(unique[i]);
-      if (doc.has("very low")) {
+      if (
+        doc.has("very low") ||
+        doc.has("very-low") ||
+        unique[i].includes("very-low")
+      ) {
         switchHeaders(unique, 4, i);
         break;
       }
@@ -87,7 +100,6 @@ module.exports = (header, data) => {
       }
     }
   }
-
   return unique;
 };
 

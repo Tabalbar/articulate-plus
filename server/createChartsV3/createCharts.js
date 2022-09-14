@@ -35,10 +35,8 @@ module.exports = (intent, chartMsg, options) => {
     filterFrequencyCount,
     options
   );
-  console.log(extractedHeaders);
   //Holds all charts
   let charts = [];
-  // console.log(chartMsg.command, extractedHeaders, isPython);
   switch (intent) {
     case "histogram":
       if (options.useCovidDataset) {
@@ -67,7 +65,6 @@ module.exports = (intent, chartMsg, options) => {
       extractedHeaders = findQuantitative.extractedHeaders;
       extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "map");
       extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "fips");
-      console.log(extractedHeaders, "*************");
       if (!findQuantitative.typeFound) {
         for (let i = 0; i < extractedHeaders.length; i++) {
           charts.push(
@@ -109,19 +106,13 @@ module.exports = (intent, chartMsg, options) => {
       );
 
       extractedHeaders = findTemporalAndQuantitativeObj.extractedHeaders;
-      console.log(extractedHeaders, "********");
 
       for (let i = 2; i < extractedHeaders.length; i++) {
-        console.log(
-          extractedHeaders[i],
-          findType(extractedHeaders[i], chartMsg.data)
-        );
         if (
           findType(extractedHeaders[i], chartMsg.data) == "quantitative" ||
           findType(extractedHeaders[i], chartMsg.data) == "temporal" ||
           findType(extractedHeaders[i], chartMsg.data) == "map"
         ) {
-          console.log("Spliced", extractedHeaders[i]);
           extractedHeaders.splice(i, 1);
           i--;
         }
@@ -204,7 +195,6 @@ module.exports = (intent, chartMsg, options) => {
         );
       }
       extractedHeaders = removeOtherTypes(chartMsg, extractedHeaders, "map");
-      console.log(extractedHeaders, "98*(h8hfehfe");
       if (extractedHeaders.length < 2) {
         break;
       }

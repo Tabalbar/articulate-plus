@@ -5,8 +5,6 @@
  *
  */
 module.exports = (header) => {
-  console.log(header, "****32r92383924823");
-
   for (let i = 0; i < covidColors.length; i++) {
     if (covidColors[i].header == header) {
       return covidColors[i].colors;
