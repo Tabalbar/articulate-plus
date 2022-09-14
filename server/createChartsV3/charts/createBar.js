@@ -64,21 +64,34 @@ module.exports = (
         };
         break;
       case 3:
+        chart.width = 120;
+        chart.height = 100;
+        console.log(extractedHeaders[1], "**********************");
         chart.encoding.x = {
           field: extractedHeaders[1],
+          title: "",
           axis: {
             labelFontSize: 15,
             titleFontSize: 15,
             labelLimit: 2000,
             labelAngle: -50,
           },
+          sort: options.useCovidDataset
+            ? covidSort(extractedHeaders[1], chartMsg.data)
+            : [],
         };
         chart.encoding.y = {
           field: extractedHeaders[0],
           axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
           type: "quantitative",
         };
-        chart.encoding.column = { field: extractedHeaders[2] };
+        chart.encoding.column = {
+          field: extractedHeaders[2],
+          header: {
+            titleFontSize: 20,
+            labelFontSize: 15,
+          },
+        };
         // delete chart.encoding.column;
         chart.encoding.color = {
           field: extractedHeaders[2],
