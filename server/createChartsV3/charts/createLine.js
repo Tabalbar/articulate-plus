@@ -25,7 +25,7 @@ module.exports = (
     headerFrequencyCount,
     filterFrequencyCount
   );
-  chart.mark = "line";
+  chart.mark = { type: "line", point: true };
   switch (extractedHeaders.length) {
     case 2:
       chart.encoding.x = {
@@ -63,14 +63,13 @@ module.exports = (
       };
       if (isPython) {
         chart.encoding.y = {
-          axis: { labelFontSize: 10, titleFontSize: 10 },
+          axis: { labelFontSize: 15, titleFontSize: 15 },
           field: extractedHeaders[1],
           type: "quantitative",
         };
       } else {
         chart.encoding.y = {
-          aggregate: "sum",
-          axis: { labelFontSize: 10, titleFontSize: 10 },
+          axis: { labelFontSize: 15, titleFontSize: 15 },
           field: extractedHeaders[1],
         };
         chart = createTransform(chart, chartMsg, extractedFilteredValues);

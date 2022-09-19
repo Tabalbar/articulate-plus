@@ -102,7 +102,11 @@ function Charts({
           >
             <VegaLite
               spec={centerChart.specification}
-              data={{ table: centerChart.data }}
+              data={{
+                table: centerChart.specification.isPython
+                  ? centerChart.specification.pythonData
+                  : centerChart.data,
+              }}
             />
           </Box>
         </>

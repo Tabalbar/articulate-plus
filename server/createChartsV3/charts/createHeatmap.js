@@ -48,7 +48,7 @@ module.exports = (
       sort: options.useCovidDataset
         ? covidSort(extractedHeaders[1], chartMsg.data)
         : [],
-      axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
+      axis: { labelFontSize: 15, titleFontSize: 15, labelLimit: 200 },
     };
     chart.encoding.color = {
       field: extractedHeaders[2],
