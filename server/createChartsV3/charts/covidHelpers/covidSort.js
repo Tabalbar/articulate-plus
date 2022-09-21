@@ -12,6 +12,9 @@ module.exports = (header, data) => {
   if (header == "access_to_doctor") {
     unique = [...new Set(data.map((item) => item["access_to_doctors"]))];
   }
+  if (header == "date") {
+    return false;
+  }
 
   if (unique.length == 5 || unique.length == 6) {
     for (let i = 0; i < unique.length; i++) {
