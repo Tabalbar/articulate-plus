@@ -137,7 +137,7 @@ export async function serverRequest(
   let assistantResponse;
 
   if (count == 0) {
-    console.log(count);
+    // console.log(count);
     assistantResponse = noCharts[Math.floor(Math.random() * noCharts.length)];
     // if (tmpChartMsg.errMsg.msg == "duplicate") {
     //   assistantResponse =
