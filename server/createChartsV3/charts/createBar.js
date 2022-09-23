@@ -64,7 +64,7 @@ module.exports = (
         };
         break;
       case 3:
-        chart.width = 120;
+        chart.width = 200;
         chart.height = 100;
         chart.encoding.x = {
           field: extractedHeaders[1],
@@ -85,6 +85,7 @@ module.exports = (
           type: "quantitative",
         };
         chart.encoding.column = {
+          title: "",
           field: extractedHeaders[2],
           header: {
             titleFontSize: 20,
