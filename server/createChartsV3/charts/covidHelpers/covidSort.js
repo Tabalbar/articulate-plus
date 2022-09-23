@@ -15,7 +15,7 @@ module.exports = (header, data) => {
   if (header == "date") {
     return false;
   }
-
+  console.log(unique);
   if (unique.length == 5 || unique.length == 6) {
     for (let i = 0; i < unique.length; i++) {
       let doc = nlp(unique[i]);
