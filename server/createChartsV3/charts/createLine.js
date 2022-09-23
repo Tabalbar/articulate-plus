@@ -49,12 +49,13 @@ module.exports = (
       chart.encoding.x = {
         field: extractedHeaders[0],
         type: findType(extractedHeaders[0], chartMsg.data),
+        timeUnit: "yearmonth",
         axis: {
           labelAngle: -50,
           title: "",
           labelFontSize: 15,
           titleFontSize: 15,
-          format: "%x",
+          format: "%b %y",
         },
         sort: options.useCovidDataset
           ? covidSort(extractedHeaders[0], chartMsg.data)
