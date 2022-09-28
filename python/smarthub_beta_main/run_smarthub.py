@@ -208,11 +208,14 @@ class SmarthubSession:
         best_action = rule_context.curr_spec.spec
 
         if best_action:
-            print(best_action.get_json_str())
-        return best_action.get_json_str()
+            print("best action")
+            # print(best_action.get_json_str())
+       
         print("***HISTORY***\n")
         print(state_tracker)
 
+        return best_action.get_json_str()
+        
     '''
     Algorithm flow:
         - The system has to make one of the following decisions once multimodal input is received:

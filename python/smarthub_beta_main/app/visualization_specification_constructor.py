@@ -107,15 +107,20 @@ class VisualizationSpecificationConstructor:
             if visualization_specification.plot_headline.map_type == "geographical":
                 aggregator = list(visualization_specification.horizontal_axis)[0]
                 for i in range(len(rows)):
-                    spec = dict({"fips": rows[i][1], aggregator: rows[i][0]})
-                    visualization_specification.data_vega_lite_spec.append(spec)
+                    if str(type(rows[i][1])) == "<class 'int'>" :
+                        spec = dict({"fips": rows[i][1], aggregator: rows[i][0]})
+                        visualization_specification.data_vega_lite_spec.append(spec)
+                    else:
+                        spec = dict({"fips": rows[i][0], aggregator: rows[i][1]})
+                        visualization_specification.data_vega_lite_spec.append(spec)
+
             else:
                 print("non-geographical heat map")
                 aggregator_1 = list(visualization_specification.horizontal_axis)[0]
                 aggregator_2 = list(visualization_specification.horizontal_axis)[1]
                 vertical_axis = list(visualization_specification.vertical_axis)[0]
                 for i in range(len(rows)):
-                    spec = dict({aggregator_1: rows[i][0], aggregator_2: rows[i][1], vertical_axis: rows[i][2]})
+                    spec = dict({aggregator_1: rows[i][1], aggregator_2: rows[i][0], vertical_axis: rows[i][2]})
                     visualization_specification.data_vega_lite_spec.append(spec)
 
         else:
