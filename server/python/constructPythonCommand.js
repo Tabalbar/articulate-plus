@@ -72,10 +72,10 @@ module.exports = (pythonResponse, chartMsg) => {
 
   let plotType = pythonChartMsg.visualization_task.plot_type;
   let filters = pythonChartMsg.visualization_task.filters;
-  console.log("Filters", filters);
   chartMsg.pythonData = pythonChartMsg.data_vega_lite_spec;
-  console.log(chartMsg.pythonData);
   let extractedHeaders = Object.keys(chartMsg.pythonData[0]);
+  console.log(extractedHeaders);
+
   switch (plotType) {
     case "heat map":
       if (extractedHeaders[1] == "fips" || extractedHeaders[0] == "fips") {

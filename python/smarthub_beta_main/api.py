@@ -26,5 +26,8 @@ smarthub = SmarthubSession()
 def makePrediction():
     command = request.get_json()
     data1 = smarthub.run(command)
+<<<<<<< HEAD
     # print(data1)
+=======
+>>>>>>> a9c3c7f906515161b20aac7a5e7c9cf9ba50642f
     return json.dumps(data1)
