@@ -24,6 +24,7 @@ const manager = new NlpManager({
 });
 
 const neuralNetworkData = require("./neuralNetworkData");
+const trainNeuralNetwork = require("./testingData");
 neuralNetworkData().then(async (data) => {
   let answers = ["bar", "line", "map", "pivot", "heatmap"];
   for (let i = 0; i < data.length; i++) {
@@ -33,8 +34,44 @@ neuralNetworkData().then(async (data) => {
     manager.addAnswer("en", answers[i], answers[i]);
   }
   await manager.train();
+
   manager.save();
 });
+
+trainNeuralNetwork().then(async (data) => {
+  let intentScore = 0;
+  let classificationScore = 0;
+  console.log("running");
+  for (let i = 0; i < data.length; i++) {
+    let response = await manager.process("en", data[i].queries);
+    if (response.intent == data[i].chartType) {
+      intentScore++;
+    }
+
+    let classifications = response.classifications;
+
+    for (let j = 0; j < classifications.length; j++) {
+      if (classifications[j].score > 0.8) {
+        if (classifications[j].intent == data[i].chartType) {
+          classificationScore++;
+        }
+
+        break;
+      }
+    }
+  }
+  let intentAccuracy = intentScore / data.length;
+  let classificationAccuracy = classificationScore / data.length;
+  console.log("done running");
+
+  console.log(
+    "Intent Accuracy:",
+    intentAccuracy,
+    "Classification Accuracy:",
+    classificationAccuracy
+  );
+});
+
 // for (let i = 0; i < neuralNetworkData.queries.length; i++) {
 //   console.log(neuralNetworkData.queries[i].query);
 //   manager.addDocument(

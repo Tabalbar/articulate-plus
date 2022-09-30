@@ -1,0 +1,1098 @@
+,queries,chartType
+661,show me a highest to lowest bar chart of count by sub-nominal,bar
+144,"histogram of nominal, number of bins 8",bar
+530,Display column graph of average nominal by nominal broken down by nominal,bar
+234,Show me a bar graph of the nominal for each nominal | Make the bars stacked with the nominal,bar
+425,Visualize in one chart nominal and nominals by product by nominal,heatmap
+344,Show nominal timeline by movie genre,line
+1364,can you make a map of nominals filtered by very high nominal,map
+1054,which nominal are you referring,none
+761,show me a scatterplot of nominal ratings vs imdb ratings,heatmap
+765,"show me a histogram of the count of each nominal, sorted in descending number of releases. ",bar
+869,give me the hourly population,none
+29,show me nominal against nominal split by nominal,heatmap
+774,Stacked Barchart Ship Status X=Region Y=SUM(Profit),bar
+475,"For each movie, show its budget and gross on a scatter plot and include the genre",heatmap
+1067,how many people are insured in nominal,none
+1345,answer clearly if i were talking about like,none
+1304,can you make a map by area size,map
+104,Show how genres have been associated with nominales from 1995 to 2009.,line
+1316,can you make a map filtered by southwest plus urban plus very high nominal index,map
+544,Avg(Profit) Split by Ship Mode by nominal and segement,bar
+26,"For each nominal, nominal by nominal scatterplot",heatmap
+835,are you can you show me a map of nominal,map
+681,relation between nominal and IMDB ratings,heatmap
+170,What is the relationship between nominal and nominal for each nominal?,heatmap
+160,Plot the total nominal for each nominal using a stacked bar chart. Break down within each genre by nominal.,bar
+1205,perfect,none
+481,"Gross, nominal and genre as a line chart",line
+1097,erase all that,none
+1159,what's another word filter,none
+227,Show me the count of each order quantity,bar
+657,"show me a bar chart of count by sub-nominal, sorted by count highest to lowest",bar
+832,colon cancer test,none
+1359,can you make a histogram of nominal filtered by nominal,bar
+64,count of orders by order quantity,bar
+396,Show average mgp for each type of cylinder,bar
+483,How many movies are of each length?,bar
+82,Scatter Production Budget vs Worldwide Gross. Color Code Major Genre.,heatmap
+782,Ship Mode Bar Chart AVG(Profit) by Segment),bar
+668,how many movies are there for each nominal,bar
+605,Show me average nominal trended over ascending nominals,line
+219,"Create Bar chart | X axis is Ship Mode | Y axis is AVG(Profit) | Separate by First Class, Same Day, Second Class, Standard Class | Color by Segment",bar
+1160,can you check this map by nominal,map
+1076,oh,none
+1209,the awesomest,none
+843,it's going to give us record,none
+1175,how do you make the map of the southwest and suburban elderly population,map
+818,so right now we just can't have people in probably,none
+781,Region Scatterplot Profit by Sales,heatmap
+1001,borderline cases versus the different type,none
+1025,coronavirus cases,none
+803,Average MPG by nominal histogram,bar
+621,create a line graph of average nominal by nominal grouped by nominal,line
+379,How many products have 3 or more quantity ordered ?,bar
+266,Visualize the general trend of car nominal nominals over the nominals,line
+1227,already can you flip the x & y axis fitness chart,none
+1090,i know you want to see a map of doctors nominal right yeah,map
+429,Plot ROWCOUNT vs Origin,bar
+1075,nation phone number for translator,none
+753,show me small multiple scatter plots of movie nominal vs gross worldwide where each multiple is a specific rating,heatmap
+519,"Groupby (nominal) | For each nominal, groupby (nominal) | For each (nominal, nominal), calculate the sum of nominal",bar
+949,dc mcallister,none
+354,give me a bar chart of nominal sum by nominals stacked by nominals,bar
+86,plot nominal versus nominal with a separate plot for each nominal. Make the axes identical.,heatmap
+355,What was the average nominal of movies by nominal?,line
+1252,we're getting a lot of nominal,none
+155,vertical bar chart of number of nominals by nominal,bar
+1248,young just try the other ones dancing,none
+1244,coleman furnace filter,none
+769,Show the average nominal by nominal,bar
+644,"show me a scatter chart of nominal by nominal, color coded by nominal",heatmap
+1354,,
+1071,but rank resources to more privileged areas of war,none
+868,i don't think so,none
+825,v s on nominal,none
+1165,you want to take another nap instead,none
+253,"3 scatter plots, one each for every Europe, Japan, and USA, to show nominal on X Axis and Acceleration on Y Axis",heatmap
+184,Group cars by countries and nominal,bar
+911,nominal,none
+116,"""Is there a correlation between cars' nominal and nominal?",heatmap
+941,subway south east and south west,none
+771,Bar Graph AVG(Profit) by State,bar
+1273,expect that down for some reason,none
+1337,the kids model picture,none
+294,plot nominal,bar
+792,scatterplot MPG vs Displacement separated by nominal,heatmap
+716,Bar chart of nominal versus average nominal,bar
+52,Columns of Count vs Order Quantity,bar
+15,give me a scatterplot of imdb rating as x axis and nominal rating as y axis,heatmap
+802,Average nominal by cylidners and nominal of nominal in separate panels,bar
+220,Create line graph | Axes are Order Date and SUM(Sales) | Color by nominal,line
+784,chart average nominal over time,line
+1167,nominal on cell,none
+406,Show distribution of nominal,bar
+149,vertical bar chart of average nominal by nominal,bar
+1192,the met last time,none
+849,so i guess we can say based on,none
+1240,type,none
+611,"create scatter plot of nominal vs nominal by car nominal, group by nominal",heatmap
+1099,i like how do you answer that how are the nominals at difference,none
+161,Plot the average nominal for each nominal. Sort alphabetically.,bar
+265,Visualize distribution of MPG v/s nominal across nominal,heatmap
+1355,it gone forever,none
+770,Show correlation between nominal and nominal,heatmap
+810,what is the breakdown of cars by the number of nominal in each nominal?,bar
+1275,can you remove the null value,none
+426,"Plot Acceleration vs Weight, grouped by Origin",heatmap
+606,budget vs nominal regarding different nominals,bar
+1100,history of here i was like,none
+466,Show a scatter plot of imdb rating vs nominal rating,heatmap
+67,total count for each subnominal item,bar
+1093,very hot,none
+1180,bernie tiede,none
+998,on south africa southeast area,none
+821,what grades are in middle,none
+113,What is the correlation between nominal and MPG of cars with different nominals?,heatmap
+282,"Average nominal by Creative Type, with separate graphs by Content Rating",bar
+246,Show number of cars from each nominal,bar
+1303,i know,none
+250,Bar graph to show nominal on X Axis and count of cars on Y Axis,bar
+320,how is nominal related to nominal,heatmap
+1056,house of correlate with amount of code,none
+476,Average ww gross by genre,bar
+833,how much people can get access to doctor,none
+132,"bars of avg nominal, colored by nominal, with small multiples by nominal",bar
+577,budget by nominal per nominal,heatmap
+1312,i want to make a map of all the area codes so that,map
+1327,can release the iphone is not caring when it's running,none
+719,Bar chart of average nominal for cars with each number of nominal in each place of nominal. Color by nominal. Separate into multiple charts by number of nominal.,bar
+1129,i love you,none
+671,Create column graph of all movies by nominal,bar
+1320,not go away,none
+1291,i want to find out,none
+407,Show histogram of nominal,bar
+479,Total gross by genre and nominal,line
+25,Acceleration by nominal scatterplot facet by nominal,heatmap
+39,give me the number of movies by nominal,bar
+717,Scatterplot of nominal vs nominal. Color by nominal.,heatmap
+1270,thank you,none
+1254,how do you make a map of the nominal,map
+247,Graph to show the nominal for cars from different countries segregated based on number of nominal,bar
+417,"Plot the average of Acceleration, grouped by Cylinders, colored by Origin",bar
+627,Show me the average nominal by nominal,bar
+848,which nominals of the us should we prioritize,none
+380,How many products are ordered in single quantity ?,bar
+121,Please show me how the average nominals change in a timeline.,line
+1154,rt nagar she's not between nominal and nominal,none
+847,so g of powderly percentage,none
+458,Global boxoffice by genre and mpaa rating,bar
+617,What is the range of nominals for all cars?,bar
+447,count by nominal and nominal,bar
+1073,i'll say a prayer area,none
+77,scatter nominalating vs Rotten Tomatoes Rating,heatmap
+1330,let's go can you not combine them,none
+1091,and they compared it to,none
+715,Bar chart of nominal,bar
+199,Create a bar chart showing average nominal by nominal,bar
+369,Show me count of movie runtimes ,bar
+700,"Production budget for each nominal, by nominal",bar
+276,"Bar chart, x axis nominal, y axis count of rows",bar
+500,Group by Cylinders | Plot Cylinders by AVG MPG,bar
+701,"average nominal by nominal, 1995 to 2009",line
+150,number of nominals by nominal,bar
+1206,high nominal rate,none
+522,What was the average nominal of movies by genre?,bar
+1218,can you combine your maps,none
+174,How much did average nominal vary by nominal?,bar
+908,is there a,none
+351,show me nominal averaged by nominals,bar
+137,"average nominal over nominals, colored by nominal",line
+5,Cylinders average nominal,bar
+390,what is the nominal distribution per genre,bar
+245,Give different scatter plots of nominal vs nominal for each nominal,heatmap
+72,total nominal by order date in 2016-2017,line
+532,"For each data element, draw a circle at (its nominal, nominal) with the proper color by the nominal",heatmap
+445,count by nominal,bar
+430,Plot Count(cars) vs Origin,bar
+947,vulnerability map nominal,none
+1023,where is it,none
+762,show me a scatterplot of nominal margin vs nominal; color movies by their genre,heatmap
+2,draw bars | show me nominal,bar
+929,what's the what's the nominal rate for area type,map
+677,Scatterplot of nominal vs. nominal,heatmap
+1068,everleigh and,none
+1060,high nominal areas,none
+261,Visualize accelaration v/s nominal across distribution across different nominals,heatmap
+535,The count of orders by sub-nominal | Bar chart | Descending order,bar
+285,"Bar chart of total nominal by nominal, by nominal",bar
+1265,open actually the whole thing,none
+896,i mean get something about monroe and,none
+1246,party city make a heat not start of nominal vs nominal,map
+1078,good night,none
+422,I want to know how many orders there are by the quantity of the order,bar
+751,show me small multiple scatter plots of movie nominal vs gross worldwide where each multiple is a specific rating,line
+686,"line chart of nominal vs. order date of furniture, office supplies, technology. Distnighish by color",line
+831,but it doesn't help us at all,none
+872,oh and see this,none
+300,draw a bar chart of count by sub-nominal,bar
+287,Bar chart of average nominal by nominal,bar
+1130,already can you make a heat map for counties versus nominal,heatmap
+1255,cuz i tried in the midwest by population by nominal rate,none
+1277,but some correlations of,none
+459,How much money did movies of each genre and rating make?,bar
+218,Create Scatterplot | X-axis is Profit | Y-axis is Sales,heatmap
+909,map of race,none
+1133,how do you make a heat heat map chart of nominal,map
+1002,how many cases,none
+526,Display nominal by release date,line
+1289,can you make a map between nominal and nominal,map
+501,"Coloring by Orign, Plot Displacement by MPG",heatmap
+658,"show me a bar chart of count by sub-nominal, sorted by count descending",bar
+1195,can you make a heat map of nominal versus nominal,heatmap
+586,show me the average nominal by nominal in a line chart,line
+128,Create a multiple scatterplot that represents nominal and nominal for different nominals,heatmap
+427,Show me how many products were ordered by sub-nominal,bar
+731,Yearly average Production Budget,line
+416,Show me nominals by number of nominal per product,heatmap
+197,"Create a line chart showing order date and sum of nominal, divided by nominal",line
+1249,auntie vicky heat make a sheet map of nominal,none
+1183,so i got the song,none
+1271,kayaks for sale,none
+663,count of movies by binned nominal,bar
+680,relation between nominal rating and IMDB rating,heatmap
+683,wordwide gross versus nominal for each nominal,heatmap
+183,How many nominal do cars manufactured in different countries have?,bar
+9,show me average budget split by nominal colored by nominal,bar
+463,What is the average nominal in each nominal,line
+708,Show a scatterplot of nominal vs Weight | Facet it by Origin.,heatmap
+228,Show me the nominal for each order date,line
+520,"For each (nominal, nominal), plot the sum of the nominal into a stacked bar",bar
+938,map of nominal,none
+1324,chase's versus killer,none
+240,Show the relationship between number of cars and nominal in each nominal,bar
+703,show me a distribution of nominal grouped by car nominal,bar
+400,Show distribution by counties,bar
+153,bar chart of count of nominals by nominal,bar
+933,social social coronavirus,none
+1226,naked,none
+117,Please show me the distribution of nominals by 500 interval.,bar
+604,"Show me a histogram of nominal, rounded to 500",bar
+987,dematic racism,none
+888,to broaden,none
+1199,can you make a sheet map chart of colored wrist forces nominal,map
+655,average nominal by nominal,line
+1363,can you make a bar graph of nominal filtered by very high nominal,map
+969,i was just to question one first and go down for this,none
+612,create a histogram of the count of nominals by nominal,bar
+286,Count of movies by Creative Type,bar
+542,The distribution of nominal and nominal by nominals | Colored scatter plot,heatmap
+214,"What is the total nominal for each nominal, based on nominal?",bar
+1242,how do you make a map of nominal versus nominal,map
+557,Sum(Profit) and Sum(Sales) render cluster,heatmap
+8,Line chart avg nominal per nominal Color by nominal,line
+932,can i get map of people,map
+1283,army time,none
+793,How does nominal vary by nominal for cars from different nominals?,heatmap
+7,give me line charts of nominal over nominal by nominals,line
+410,Plot MPG vs Displacement colored by Origin,heatmap
+162,"Plot the nominal v.s. nominal on a scatter plot, broken down by nominal.",heatmap
+256,Bar graph to show number of cars from different Origins,bar
+845,this could be anywhere in the whole states,none
+935,the only colored vest in different nominal,none
+615,What is the distribution of nominal across all cars?,bar
+502,Plot Year by AVG Weight,line
+385,What are the nominals across different nominals?,bar
+1194,you make a sheet mask of a chart of nominal versus nominal,map
+1027,ecstasy doctor in spanish in spanish,none
+152,bar chart of number of nominals by nominal,bar
+651,show me one bar chart of average nominal split by nominal for each nominal,bar
+972,can you look up everything,none
+474,Give me a scatter plot of budget vs gross broken down by movie but with genre as a legend,heatmap
+393,Show nominal and MPG in a XY chart | Add nominal in legend,heatmap
+74,average nominal by nominal,bar
+21,give me scatterplots of nominal versus nominal by different nominals,heatmap
+230,"Show me the nominal of furniture, office supplies, and technology over time",line
+1299,i think we can ready answer,none
+1164,change the color scheme to blue,none
+895,has a lot of rural area,none
+1315,stockton police cars,none
+273,"Scatter plot, x axis Displacement, Y axis MPG, Color by Origin",heatmap
+610,nominal vs nominal,heatmap
+875,i like this one we should keep this,none
+643,avg ww gross by genre,bar
+741,"Count by Cylinders and Origin, Stacked",bar
+242,Show a bar chart showing nominal distribution of cars,bar
+229,Show me the count of each subnominal of product,bar
+858,you already,none
+645,"show me a scatter chart of nominal by nominal, split by nominal",heatmap
+205,Create a line chart showing total nominal over time,line
+140,average nominal over time,line
+433,What is our nominal based on shipping mode by customer nominal?,bar
+200,What is the relationship between nominal and nominal?,heatmap
+934,nominal,none
+59,"Clustered Column chart, Average of Profit by nominal, small multiples on nominal",bar
+814,i don't think he's picking up,none
+688,nominal distribution,bar
+370,Plot nominal against nominal for the different rating categories of movies.,heatmap
+516,Help me see outliers in IMDB and Rotten Tomatoes ratings,heatmap
+1234,can you make a map of social vulnerability by nominal,map
+1123,can we see a chart of population by county,map
+1124,rt filter the map by nominal,map
+36,Which countries have the highest nominal for cars of different nominal? ,bar
+208,What is the relationship between nominal and nominal for each nominal?,heatmap
+591,"Show nominal by COUNT(Model) in a bar chart', 'Add nominal to legend",bar
+1019,the lower the cases,none
+472,Give me a scatter chart of nominal vs nominal for each nominal,heatmap
+805,How does nominal behave compared to nominal?,heatmap
+626,Show me the cumulative nominal by order date,line
+988,it's just me and my sister now,none
+337,show me bar charts of average nominal by nominals grouped by nominal,bar
+876,is the green one,none
+178,What is the total nominal for each nominal across time?,line
+323,show number of cars produced by each nominal,bar
+1348,chris,none
+877,none,none
+653,average nominal with nominal as legend and trellised by nominal,bar
+4,histogram of nominal,bar
+1153,make a heat map chart of nominal versus nominal filter by salty's,map
+603,"Show me count of nominals grouped by nominal, stacked by Origin",bar
+1212,can you create a chart of covid vs allergies and nominal per county,map
+434,average length of movies,bar
+33,show me bars | show me nominal,bar
+367,Which genre movie makes most nominal,bar
+1128,are you can you make a map for all counties,map
+1298,put spinach in action by nominal,none
+576,IMDB rating by nominal rating,heatmap
+1069,obey hi i love you and in nominal and i probably wait,none
+105,Show how films' Rotten Tomato ratings compare with IMDB ratings.,heatmap
+1136,can you make a chart of of nominal versus nominal,map
+974,search for going to bed if you don't eat,none
+1221,can you make a map of nominal versus nominal,map
+1031,show a map of covid cases,map
+238,What is the relation between nominal and nominal,heatmap
+545,Split nominal by nominal and Sum(Profit) render Stacked barchart,bar
+35,show me movies by nominals,bar
+192,What's the mileage for cars based on the number of nominal present?,bar
+165,Plot a histogram of movie nominal.,bar
+884,guys in november but specific,none
+710,Compare AVG (MPG) with Cylinders,bar
+334,Movie run time distribution,bar
+384,Density of nominal across nominals and their nominalability,heatmap
+360,show the total number of nominal over time,line
+353,"show number of orders for the sub categories as bar chart, and sort the bars by count, highest first",bar
+570,"total number fo nominals based on number of nominal, with breakdown by nominal",bar
+460,"What was the average budget for each nominal and nominal, as multiple column charts",bar
+548,Show Avg(Profit) by nominal asc render best,bar
+368,"show nominal vs nominal as scatter plot', 'use a different color for each nominal",heatmap
+1352,i swear i was working earlier,none
+533,Create histogram of nominal,bar
+1191,stop disturbing i think the correlation is there playing doctors in high-risk on the population as well,none
+705,where do the cars nominalate from?,bar
+85,Avg(Poduction Budget) Grouped by Content Rating and sub-grouped by Creative Type,bar
+371,Are IMDb rating and nominal rating related,heatmap
+78,Average Worldwide Gross by Major Genre,bar
+24,Acceleration by nominal scatterplot per nominal,heatmap
+362,"What's the average nominal of the different rated movies, separated by nominal.",bar
+1317,how do you say the same thing just makes it,none
+740,Count by Weight Buckets,bar
+739,Average Acceleration by Engine Cylinders and Origin,bar
+339,Line chart average nominal over nominal,line
+994,you try it,none
+630,"Show me the total nominal over time for these categories: furniture, office supplies, and technology",line
+510,scatter plot of nominal vs nominal for G rated movies | scatter plot of nominal vs nominal for PG rated movies | scatter plot of nominal vs nominal for PG-13 rated movies | scatter plot of nominal vs nominal for R rated movies,heatmap
+389,Profitable Sales across nominals,heatmap
+550,Count asc Sub-Category render best,bar
+106,Show the number of films categorized by their nominals.,bar
+129,"how does nominal relate to nominal for individual nominals, partitioned by nominal",heatmap
+945,they're like 10 minutes,none
+210,What is the relationship between nominal and nominal for each nominal?,heatmap
+217,Create Bar Chart | X-axis is Order Quanitity | Y-Axis is COUNT,bar
+1141,are the midwest,none
+32,scatterplot budget and nominal colored by genre,heatmap
+1170,it's a no value,none
+293,"plot separately nominal by average nominal', 'color by nominal",bar
+254,One scatter plot to show nominal on X Axis and MPG on Y Axis | Scatter points to be different for each change in value of field Origin,heatmap
+982,vagina soreness doesn't look like,none
+361,show the average nominal by nominal,bar
+187,Show distribution of cars by nominal,bar
+102,show me how nominal is related to nominal per nominal,heatmap
+1036,thanks,none
+1343,what can you do,none
+1096,how are the nominals difference,none
+798,Scatterplot of nominal by MPG colored by nominal,heatmap
+518,Give me a histogram of nominal for movies,bar
+695,nominal for each genre for each nominal 1995 to now,line
+263,Visualize distribution of nominals by number of cyclinders grouped by nominal,bar
+1163,rt select all of the nominals in this math,map
+758,show me how total gross revenue of all movies changes over a nominal for each genre,line
+511,"Stacked bar chart of total nominal for each genre, separated by rating",bar
+836,play sister say,none
+290,plot nominal by average nominal,line
+706,How has AVG (Horsepower) evolved over time? | Segregate it by the car nominal.,line
+352,Show a time series plot by nominal of the nominal sum of movies by genre.,line
+193,Does higher cylinder count mean mean lower mileage?,bar
+1152,i'm hungry,none
+1150,what are you saying,none
+1347,but i want to make the charger so that we can specifically,none
+1269,for the meantime it doesn't seem like it would be useful for these questions at the very least,none
+381,show me average Miles Per Gallaon by nominal in a bar chart,bar
+1140,vacancy harry potter,none
+999,thanks alyssa,none
+176,Which nominal had the most movies?,bar
+171,What is the relationship between nominal and average nominal?,line
+1148,hamilton place mall,none
+730,Total Count based on Running Time,bar
+1233,can you make a map of nominal by cases,map
+735,Average Production Budget by Creative Type filtered by Content Rating,bar
+1213,can you make a fart sound of covid-19 and nominal for county,map
+684,Stacked bar chart of Profit disaggregated by shipping time across different nominals,bar
+709,Correlate Acceleration and Horsepower.,heatmap
+180,What is the distribution of nominals for each movie?,bar
+1085,map of african-americans and then you look at the map of nominal,none
+138,"average nominal over time, colored by nominal",line
+296,plot nominal histogram,bar
+405,Plot wight across nominal for each nominal separately,heatmap
+1280,cuz i know if we just look at these two maps right here,none
+55,"Line chart, Sum of nominal by order date, on nominal",line
+862,that wasn't what i asked for,none
+345,plot IMDB rating against nominal rating,heatmap
+662,"show me a bar chart of count by sub-nominal, highest first",bar
+23,plot average worldwide growth over nominal,bar
+342,show me average nominal over nominal,line
+718,Scatterplot of nominal vs. nominal. Break into multiple scatterplots by nominal,heatmap
+1173,already making map of southwest plus suburban plus high elderly population plus variable access the doctors,map
+1182,histogram,none
+913,the guys mole,none
+775,Show a line chart  the semi-annual nominal,line
+508,line chart of AVG nominal of each nominal,line
+289,plot nominal by nominal | color by nominal,heatmap
+1120,all right,none
+498,Group by Origin | plot Year by AVG Horsepower,line
+779,Scatterplot Sales by Profit,heatmap
+523,"scatter(x=nominal,y=nominal) for nominal",heatmap
+1325,i like this song,none
+580,Show me the total nominal over time by nominal for the nominals,line
+1335,miss a,none
+764,show me a bar plot where the x axis is movie genre and the y axis is average worldwide revenue,bar
+1174,stop speaking up and then she'll be ready,none
+1356,but that's for everybody that's a lot of,none
+569,"show average nominal by nominal of nominal, with separate charts for # of nominal",bar
+1361,can you make a histogram of nominal and nominal,bar
+1137,what is the price of mexican food,none
+1155,already know jesse's not between nominal and nominal,none
+625,Show me the total nominal by order date,line
+1350,jamaica map by nominal,none
+431,By nominal show our nominals based on the shipping status of the order,bar
+704,correlate MPG and Displacement of cars | color the points by the car's nominal,heatmap
+1121,party can you filter the histogram by county sites,bar
+372,what is the nominal trend of the different product categories?,line
+164,Plot the average nominal each nominal across all movies.,line
+892,what has a higher density of population,none
+811,How many cars have various numbers of nominal in each nominal?,bar
+157,How do the company earn in each nominal?,bar
+274,"Bar chart, x axis nominal, y axis mean MPG",bar
+970,you're definitely,none
+960,that doesn't help,none
+478,Total gross by nominal and genre,line
+859,i already how much show me access to doctor,map
+797,Histogram of car nominal,bar
+582,How much did nominals gross in total,bar
+1311,very high correlation of servants also having high nominal rate,none
+42,Show me a scatterplot of nominalability by nominal for each nominal. ,heatmap
+1094,like this are here maybe not,none
+251,Stacked bar chart to show number of nominal on X Axis and count of cars  segregated nominal wise on Y Axis ,bar
+601,Show me MPG vs Displacement distinguished by Origin,heatmap
+723,Relationship of Rotten Tomatoes rating to IMDB rating.,heatmap
+97,Show me nominal over nominal,line
+1,Relationship between nominalating and Rotten Tomatoes Rating,heatmap
+607,nominal vs nominal in genres,line
+469,Which nominals have the most movies?,bar
+592,show nominal and avg(Weight) in a line chart,line
+760,show me how gross revenue of genres changes over time,line
+103,Show how nominals are associated with gross receipts by genre. ,bar
+928,or,none
+10,Movie gross and budge relationship based on genre,heatmap
+45,Column Chart of AVG (Profit) vs alphabetical order State,bar
+609,gross across genres regarding nominal,bar
+1319,what did i do something wrong,none
+401,Plot average nominal across time by countries,line
+1267,what she wanted,none
+808,"For each nominal, how does a car's MPG vary with nominal?",heatmap
+517,Show me a boring bar chart of movie nominal and count,bar
+428,Plot Count vs Origin,bar
+1223,perfect,none
+346,Histogram by nominal | Count of binned nominal,bar
+225,create scatterplot | axes are nominal and nominal | separate by nominal // or // dual x axis nominal,heatmap
+480,Gross by genre and nominal,line
+513,"bar chart for each rating, showing avg nominal per nominal",bar
+1176,thank you,none
+583,Show me a scatterplot of movies by imdb rating and nominal rating,heatmap
+331,How has nominal changed over time by nominal? ,line
+871,stage,none
+148,bar chart of average nominal by nominal,bar
+1334,he's like i said go to the doctors,none
+1232,is there something called messages,none
+563,"Show me each car's nominal by nominal, and split out separate charts for each nominal",heatmap
+233,Show me the nominal versus nominal,heatmap
+22,Which cylinder cars have the highest fuel economy?,bar
+450,nominal by nominal ,bar
+995,how do you show us a map of nominal,none
+554,Count Order Quantity asc order render best,bar
+1211,nominal,none
+524,"Groupby (sub-nominal)  | For each sub-nominal, count the number of elements (== count)",bar
+910,what is,none
+249,Bar graph to show number of nominal on X Axis and Average MPG on Y Axis,bar
+467,Give me a scatter plot showing a comparison of ratings between imdb and nominal,heatmap
+291,plot nominal by nominal,heatmap
+315,how nominal varies for different cylinder type,bar
+822,thank you,none
+936,yeah,none
+855,call right now,none
+1058,i'm saying like they they can't afford to be sick so should we would direct resources to them,none
+437,Draw the axes for the average of Weight vs Year,line
+898,are you taking it,none
+926,i think you have to ask ask the right question,none
+387,Distribution of product sub categories by ordered quantity,bar
+222,Create scatterplot | Axes are nominal and nominal | color by nominal,heatmap
+53,Stacked columns of Sum (nominal) nominaled by Ship Status vs Region,bar
+1297,very high nominal index,none
+449,nominal by nominal ,heatmap
+944,i'll thank you,none
+901,choose not to talk now i guess,none
+1310,he really loves giving this afternoon,none
+906,an ass like what's the population ratio of air type in nominal,none
+1017,i heard the nominal,none
+622,create a histogram of nominal count by nominal,bar
+43,Show me total nominal by month for the two-nominal period between Jan 2016 and Dec 2017.,line
+118,Please show me a histogram of nominals with 500 intervals.,bar
+749,line chart sum of nominal by order date categorized by nominal,line
+221,Create line graph | Axes are Order Date and SUM(Sales Forecast),line
+865,find chart of quantitative versus temporal,line
+1053,who are you referring to,none
+1235,no i wanted to,none
+1178,like this specifically filter,none
+918,eskimos know that data,none
+767,Can you create a graph showing nominal and nominal by nominal?,heatmap
+1013,airline charter party,none
+864,okay,none
+441,Profit vs. Sales Cluster,heatmap
+555,Sum(Sales Forecast) by Order Date asc render line,line
+727,Worldwide Gross relationship to Production Budget separated by Content Rating,heatmap
+34,Plot IMDB rating against Rotten Tomatoes rating.,heatmap
+1250,parisian,none
+154,vertical bar chart of count of nominals by nominal,bar
+252,Line chart to show average nominal of cars based on the nominal in which they were produced,line
+394,budget over time,line
+917,the part the poorest part,none
+597,Show me Average MPG per Cylinders,bar
+112,Show how nominal is related to nominals for each nominal.,heatmap
+588,show me the count of movies by nominal buckets,bar
+295,plot cylinder histogram | stack by nominal,bar
+326,show cars produced by diiferent nominal in various nominal,bar
+1117,tell me what are you can help you make me feel like dancing,none
+504,"Group by Origin | Faceting on Cylinder, plot Cylinder by AVG Acceleration",bar
+916,send a text,none
+608,counts of movies by nominal,bar
+44,Line Graph of SUM (Sales Forecast) vs Order Date,line
+340,Show a count of movies by nominal.,bar
+207,Create a bar chart showing order quantity vs. count,bar
+378,should me nominal compared to nominal in a scatter chart,heatmap
+962,that makes sense of the end so she wanted the same,none
+1161,nominal,none
+68,plot nominal amount by nominal amount and nominal,heatmap
+1365,cuz anybody nice if we can get it can you make a chart of nominal versus covid virus,map
+618,create a bar chart showing the average MPG grouped by nominal,bar
+1000,number of cases per nominal,none
+1039,that expose themselves because they have more,none
+224,create stacked bar chart | axes are nominal and SUM(Profit) | color by nominal,bar
+363,show the nominal vs nominal as scatter plots | use one plot for each nominal,heatmap
+1101,aerotek,none
+527,The average nominal of orders by each nominal | Bar chart,bar
+306,"make a bar chart of avgerage nominal by nominal, with nominal on x axis.",bar
+979,what's the weather this sound think this is,none
+487,Count movies by length in 20 minute buckets,bar
+79,histogram of Running Time,bar
+594,Show nominal in a histogram ,bar
+1257,manicures,none
+206,How many orders were placed for each order quantity?,bar
+971,directing resources in general,none
+141,line chart of average nominal over nominal,line
+489,What is the nominal vs nominal ratio of the four nominals,heatmap
+564,Histogram of number of cars by nominal,bar
+850,nominal we can't directly sources mostly southwest,none
+1366,okay,none
+903,still see a correlation between anything,none
+1179,an nominal,none
+951,what is the nominal of alaska,map
+317,how nominal varies with number of nominal by nominal,bar
+748,line chart sum of nominal by order date,line
+1231,as for the middle east or the middle of the midwest,none
+712,Scatterplot of nominal vs nominal,heatmap
+899,line chart of nominal in nominals,line
+1285,making sheet map chart of nominal and nominal,none
+1288,make a note between nominal and nominal,none
+1052,very low on the first this area they have doctor likely to take risk,none
+93,Make vertical bar charts of the average of the Production Budget categorized by Creative Type and parameterized by Content Rating across the page. | Put an alphabetized legend for Creative type on the right side of the page. Do not use an x-axis or nominal axis but use the same axis for each chart. Use only major average of Production Budget gridlines.,bar
+28,"Show the total nominal by nominal of film, broken down by movie rating.",bar
+1144,see if it makes sense that i really slow in the midwest,none
+804,How does nominal change with nominal?,heatmap
+743,Acceleration distribution by Weight and Origin,heatmap
+307,"make a scatterplot of nominal vs nominal, with nominal on x-axis",heatmap
+319,how nominal varies each nominal,line
+659,"show me a bar chart of count by sub-nominal, descending sort by count",bar
+1051,clippy,none
+1353,that's a lot of scrolling,none
+1063,i'm going to write my answer,none
+235,bar chart for nominal v/s nominal,bar
+38,show me bars | show me nominal | show me average of nominal,bar
+541,Create stacked column graph of nominal by nominal by nominal,bar
+499,"Faceting on Origin, plot Weight by Acceleration",heatmap
+114,count the number of cars based on their nominals.,bar
+754,show me average nominal of each nominal across nominals.,bar
+1008,the lower the volume ability the higher the cases,none
+1326,they all started in november and december,none
+997,tell us a story still,none
+1340,can you remove non-contiguous from this chart,none
+244,For each nominal show the relationship between average nominal and number of nominal,bar
+813,How has the average nominal of cars changed over the nominals?,line
+1109,already make a map of the united states,map
+733,Total Worldwide Gross by Major Genre with Content Rating labels,bar
+338,Average nominal over nominal,line
+314,show nominal for each cylinder type,bar
+95,Make a simple scatter plot of worldwide Gross by Production Budget categorized by Major Genre.,heatmap
+468,Count movies by nominal,bar
+1112,covid-19,none
+436,Show me our forecasted number of nominal between Jan 2016 and December 2017,line
+664,"""what's the distribution of nominals by movie",bar
+902,let me hear this rap music,none
+894,the quantitative are actually like in the mid-range throughout the whole pandemic,none
+693,Bar chart scale -10000-50000 average nominal vs. nominal all orders,bar
+50,Multi-line Graph of Sum (Sales) by Category vs Order Date ,line
+17,Are there any American 5 cylinder cars?,bar
+531,Chart scatter plot of nominal by nominal broken down by nominal,heatmap
+827,then you can try some playing them lake,none
+816,so we should make a map of all the nominal with nominal people at the moment,map
+188,Histogram of cars by nominal,bar
+357,show nominal and nominal as a scatter plot,heatmap
+584,Show me the total nominal for all nominals in a stacked bar chart and color it out by nominal,bar
+571,"Show average nominal over time, separated by nominal of nominal",line
+1241,why is this blank,none
+453,What is the total nominal earned by each nominal and nominal?,bar
+515,Plot IMBD vs Rotten Tomatoes ratings for all movies,heatmap
+1202,can you make a chart of covid,map
+30,Acceleration by nominal scatterplot,heatmap
+1026,there is good news somewhere,none
+1015,artificial is a chart of nominal and cases,none
+1261,for the meantime i think it's heights,none
+806,How many cars are from each nominal?,bar
+41,Show me a bar chart showing the average nominalability for orders by shipping mode and nominal.,bar
+507,bar chart of number of movies in each creative nominal,bar
+1309,make a histogram of nominal filtered by urban,bar
+568,"chart each nominal MPG by nominal, and idetnify coutnry of nominal",heatmap
+455,Give me a stacked column chart of nominal by genre and rating,bar
+145,"stacked bar of count of nominals by nominal, colored by nominal",bar
+57,"Line chart, Sum of Sales Forecast by Order Date",line
+497,Show the total gross across genres over time,line
+491,What is the nominal vs nominal ratio of all the zones,heatmap
+109,How do the nominals of the cars from different nominals change with nominals?,line
+996,different nominal,none
+1370,in addition to that we see with the heat not try to cover the rest versus ice if the doctors,none
+1172,,none
+277,"Histogram of nominal, bin width of 500, min x axis 1500, max x axis 5500",bar
+40,Show me a bar chart of the total nominalability of each nominal with a breakdown based on shipping time.,bar
+1046," very low, drizzt has higher risk has hired",none
+1225,can you make this into a heat map,heatmap
+619,"create a stacked bar chart of the count of nominals by cylinder, group by nominal",bar
+956,what's nominal,none
+977,bless,none
+313,show how nominal varies each nominal by nominal,line
+589,"Show me scatterplots of nominal and woldwide gross for each title, by nominal",heatmap
+202,What is the average nominal of each nominal divided by nominal?,bar
+734,Average Worldwide Gross by Major Genre,bar
+123,Create a scatterplot of nominal in columns and Sales in rows,heatmap
+943,ana lorde,none
+942,so the south is where your the quantitative are,none
+454,Total ww gross by genre and nominal,bar
+579,prod budget by gross for movies per genre,heatmap
+768,Show average nominal by nominal broken out by each nominal,bar
+1146,are you making seating chart of nominal versus nexus the doctor's filtered by southeast and high nominal rate,map
+14,show me imdb rating versus nominal rating,heatmap
+1236,why are you there already can you zoom in on the zoom app,none
+1253,rt-10 you make a nominal map for area code,map
+333,"For each nominal, average nominal Color by nominal",bar
+952,i think we have an answer of this nominal needs more resources,none
+756,"show me how each rating, broken down by nominal, affects the average nominal",bar
+922,i thought we did that,none
+649,total ww gross by genre and rating,bar
+398,show time series plot of average nominal,line
+666,ww gross over time by genre,line
+728,Worldwide Gross through time for each Major Genre,line
+1095,but most of them are pretty mix so we can draw any conclusions,none
+801,Distribution of nominal,bar
+485,Show a histogram of the number of movies by how long they are,bar
+237,Show the scatter plot between horse power and nominal,heatmap
+921,oregon state something about being in different nominals,none
+312,visualize in scatter plot the Displacement and MPG by orgin,heatmap
+1228,i can definitely see this is like kind of like jarvis,none
+388,nominal between Jan 2016 and July 2017,line
+125,create a series of bar chats for different nominals that represent average of nominal for different nominals,bar
+243,"for nominal in USA, JAPAN and EUROPE show MPG vs Displacement ",heatmap
+1214,babies r us,none
+438,Draw the axes for AVG(Weight) vs Year,line
+1010,cuz these people have more resources,none
+874,,none
+1368,which nominals of the us should be prioritized it seems like it heavy correlation between the two color coded more in the southwest or the southeast i mean and just the southern countries in general we were trying to mess around with my area size the heat the heat map so we see from this there's a heavy correlation in the southeast and most of the southern country is brisk and something we should prioritize without written resources,none
+1369,in addition to that we noticed that,none
+411,Plot nominal vs Horsepower,heatmap
+257,show me the order count grouped by quantity,bar
+656,avg nominal over time,line
+421,"Plot the Count of cars vs Cylinders, colored by Origin, stacked by Origin",bar
+927,how much of the suburban people are in nominal,none
+631,"Show me a bar chart of total nominal by nominal, and stack the bars by nominal",bar
+69,nominal amount per nominal amount by nominal,heatmap
+100,show me the categorization of nominals,bar
+456,"For each genre and rating, what is the total world-wide gross earnings?",bar
+412,budget vs gross income across movie genres,heatmap
+707,Compare AVG (Acceleration) with Cylinders. | Segregate the nominal by their nominal.,bar
+374,Sum nominal in a bar chart,bar
+1262,that's why,none
+992,hospice,none
+366,"For each nominal, plot a bar graph where each bar indicates the average nominal of each nominal",bar
+376,show me average nominal based on nominal and nominal of nominal,bar
+1322,and if it just delete them,none
+975,naps panic,none
+955,definition of social point,none
+672,Create scatter graph of IMDB rating by Rotten Tomatoes Rating ,heatmap
+440,Product Single Order Quantity Trend,bar
+796,Distribution of car nominal,bar
+598,Show me count of nominals by nominal,bar
+1259,denise cazares dealing with three different things,none
+549,Count Sub-Category Asc,bar
+566,how many nominals are proudced by each nominal,bar
+633,"Show me a series of scatter charts of nominal by nominal, one chart for each nominal",heatmap
+486,Count movies by how long they are to the nearest 20 minutes,bar
+461,"For each nominal, show a column chart of average nominal by nominal",bar
+1276," i don't know, maybe chances specific far",none
+173,What nominal had the lowest average nominal?,bar
+71,total nominal by nominal and nominal,bar
+139,average nominal over nominal,line
+1006,okay was it supposed to be a reason for not nominal,none
+1215,it seems like very high covid-19,none
+773,Scatterplot Region X=Sales Y=Profit ,heatmap
+1055,the northeast and probably 7 midwest and 5th,none
+984,i really feel like this would have helped a lot,none
+347,"give me wordwide gross versus nominal, colored by nominals",heatmap
+1256,thank you for the appointment can you make a map of nominal versus nominal versus elderly population,map
+444,Profit by State,bar
+967,criminal cases,none
+1301,can you make a map of nominals,map
+834,are you smart,none
+682,scatter plot showing nominal and IMDB ratings,heatmap
+322,show scatter plot of accelration and horse power,heatmap
+349,Show a count of movies binned by nominal in 20-minute increments.,bar
+482,Give me a histogram of the number of movies by nominal,bar
+783,Category Line Graph Sum(Sales) by Order date,line
+209,"Create a scatter plot showing nominal vs. nominal, with each point colored by nominal",heatmap
+879,us,none
+931,what,none
+667,total nominal by nominal and nominal,line
+1041,treated right resources to poor people even though there's lower cases,none
+1362,cheapest early baby,none
+905,all right,none
+1292,pro fitness in hauppauge,none
+963,so let's try this combination mobile,none
+1038,it's a question of privilege,none
+46,Column Chart of Avg (Profit) by Segment vs each Ship Mode,bar
+166,Plot nominal rating v.s. IMDB rating on a scatter plot.,heatmap
+158,The nominal of nominal in each nominal,heatmap
+722,Scatter Plot of Rotten Tomatoes rating by the IMDB rating.,heatmap
+1102,you see how are the nominals difference how do you answer that,none
+175,How many movies are there are of each nominal?,bar
+168,"Compare the number of nominals in USA, Japan and Europe ?",bar
+873,i do like that one,none
+1104,okay,none
+679,Scatterplot matrix of different U.S. nominals of nominal vs. nominal,heatmap
+642,average nominal by nominal,bar
+1020,kissing don't have access but then stayed,none
+279,"Histogram of nominal, in 20 minute bands",bar
+1050,what is that,none
+1007,so,none
+1127,i didn't say,none
+1321,that's cool,none
+465,Compare imdb rating to nominal rating,heatmap
+635,"Show me a scatter chart of nominal by nominal, one chart for each nominal",heatmap
+964,if you can,none
+92,Make simple scatter plots of the Worldwide Gross versus Production Budget. Parameterize by Content Rating.,heatmap
+1296,make a map of nominal versus,map
+1243,arlington you make a heat map of,heatmap
+552,Sum(Sales) 1 Sum(Profit) 2 by nominal render cluster,heatmap
+600,Show me MPG vs Displacement colored by Origin,heatmap
+1043,arrested,none
+284,Scatterplot of Rotten Tomatoes Rating by nominalating,heatmap
+1064,australia,none
+359,show a histogram for order quantity,bar
+590,Show Horsepower by Acceleration in a XYplot,heatmap
+1204,sofia carson,none
+711,How does AVG (Weight) evolve over the nominals?,line
+789,chart average MPG to nominal,bar
+1328,because a correlation with,none
+172,What nominal had the highest average nominal?,bar
+595,Show Me Acceleration vs. Horespower For each Model,heatmap
+1224,don't you stuff too,none
+1018,higher self of vulnerability,none
+269,Plot average MPG by number of nominal,bar
+900,or you,none
+147,"vertical stacked bar of number of nominals by nominal, colored by nominal",bar
+891,aldi's is the poorest,none
+1203,if it says it can't find it sometimes it means you might already have the chart on the wall,none
+587,"i want to see the average nominal of each nominal in a column chart, and grouped together by nominal",bar
+391,Show nominal count by nominal in a bar chart,bar
+364,Stack bar chart of SUM(nominal) vs. movie genre based on nominal,bar
+788,show a stacked bar chart of number of vehicles to number for nominal grouped by nominal,bar
+308,Plot count of cars by nominal,bar
+986,why would it be no,none
+1229,i think we just wanted to look into them i don't see what it is,none
+1105,so what are you going to do now is basically,none
+264,Plot count of nominals by grouped by nominal,bar
+1342,can you remove the rockies from this chart,none
+423,"Draw axes for the average of Horsepower vs Year, colored by Origin",line
+260,Visualize average accelaration based on number of cyclinders a nominal has summed across different nominals,bar
+1077,all might x,none
+275,"Scatterplot, x axis nominal, y axis nominal, facet by nominal",heatmap
+316,show nominal by nominal by nominal,bar
+881,okay,none
+1107,stop,none
+820,okay,none
+1080,how many cases are african american,none
+37,Show me count of movies categorized by nominal,bar
+167,"Plot the nominal versus nominal for individual movies, coloring each movie by its genre.",heatmap
+1201,generalized chart chart of nominal versus nominal,none
+828,party show me a map of nominal versus nominal,map
+310,show scatterplot of cars nominal to nominal by nominal,heatmap
+255,"Line chart showing Year on X Axis and Average Horsepower on Y Axis', 'Different lines for different Origin",line
+546,Split nominal by nominal and Sum(Profit) render best,bar
+395,Plot average nominal against cyliners,bar
+301,"by nominal, draw a scatterplot of nominal and nominal, with nominal on the x axis",heatmap
+726,Worldwide Gross relationship to Production Budget filtered by Content Rating,heatmap
+957,so that's right,none
+80,Average Production Budget by Year,line
+1106,just keep,none
+537,"For each nominal, draw a bar that has its average nominal as the height",bar
+558,Sum(Profit) 1and Sum(Sales) 2 render cluster,heatmap
+1070,have you decided,none
+1005,nominal,none
+108,Show how nominales are related to nominals by genre.,heatmap
+48,Descending Column Chart of Count vs Sub-nominal,bar
+283,"Line graph of total Worldwide Gross by Major Genre, across Release Year",line
+443,Profit vs. Sales Cluster by Region,heatmap
+375,show me the average nominal in a line chart,line
+335,Display budget by gross of movies broken down by nominal,heatmap
+186,Compare nominal vs nominal across different countries,heatmap
+298,"draw a line chart of monthly nominal by order date, with a different colored line for each nominal",line
+3,Cylinders count bar chart Color by nominal,bar
+759,show me a line plot of sum of gross revenue for each genre over time,line
+19,How does nominal relate to fuel economy for cars from Europe v. USA? ,heatmap
+720,Line graph of nominal vs. average nominal,line
+1258,i want you to come by,none
+258,"select nominal, nominal from table group by(nominal)",heatmap
+341,plot average nominal over nominal,line
+851,cardinals,none
+925,how much poison is a euro are in nominal and other partner at 9 probably,none
+1114,kobe bryant pictures,none
+91,"make a simple line chart of the average of the Production Budget as a function of  Release Year.  | use no symbols, use a 1 pt line, and use gridlines for both average and nominal.",line
+473,"For each nominal, compare budget vs gross in a scatter plot",heatmap
+181,Is there a relationship between IMDB rating and nominal rating?,heatmap
+1284,nominal and nominal,none
+632,"Show me a stacked bar chart of total nominal by nominal, stacked by nominal",bar
+1004,kobe cases vs,none
+1329,can you make a line chart of cases versus date colored by nominal and nominal,line
+60,"Column chart, Average of nominal by nominal",bar
+1268,put the wrong thing,none
+1282,every type of mixed together,none
+1045,that i should doesn't make sense,none
+231,Show me the nominal versus nominal of each nominal,heatmap
+660,"show me a bar chart of count by sub-nominal, highest count to lowest",bar
+599,Show me Acceleration vs. Weight broken out by Origin,heatmap
+493,What is the average nominal of different nominals on the nominals of transport,bar
+1057,hi jen,none
+780,show a line chart of semi nominal by nominal,line
+236,what is the average MPG for different nominal,bar
+1087,be quiet,none
+602,"Show me the Average Horespower per nominal, trended by ascending nominals",line
+1084,i don't think they are going to have a map then you just,none
+311,show how MPG varies with nominal by different nominal,heatmap
+464,Give me a line chart of average budget by nominal,line
+697,"Stacked bar chart of gross for each nominal, by nominal",bar
+1341,can you remove the rockies from this chart,none
+647,imdb rating vs nominal rating by movie,heatmap
+1082,how much is african american population are,none
+561,Sum(Sales)  by Order Date split by Category render line asc,line
+1147,can you make a heat map chart of nominal versus nominal filtered by southeast and higher nominal rate,map
+685,Bart chart quantity vs. product type all orders,bar
+959,ocho boner ability is one dimension of vulnerability to multiple stressors and shocks including abuse social exclusion natural hazards,none
+1230,traxxas palmetto beach,none
+538,Chart scatter plot of nominal by worldwide growth coded by nominal,heatmap
+419,nominal vs nominal regarding movie rating,heatmap
+1122,show battlebots baseball tournament,none
+1346,like then city seems to be the midwest and the southeast,none
+321,nominal to nominal,heatmap
+692,Gross versus genre,bar
+639,show me a bar chart of count by order quantity,bar
+755,show me small multiples of average nominal for each nominal across different ratings,bar
+1032,i guess he doesn't have it map of cases,none
+1086,chris listen to us anymore,none
+495,plot a histogram of the total count of orders,bar
+1132,rt vicky heat map of nominal versus nominal,map
+893,the date,none
+1314,of the nominals,none
+101,show me how the number of nominal is related to miles per gallon,bar
+309,show nominal of cars by nominal for different orgin,heatmap
+923,well i tried to but,none
+702,show me the distribution of car nominal,bar
+88,Make a simple bar chart of count of Titles versus the Running Time. | Extend axes to labels and use only Count or lateral gridlines.,bar
+1065,it was an nominal provision,none
+1138,are they can you make it visualization for mapping midwest rule and high nominal rate,map
+1313,can you make a map of all nominal,map
+1358,i just had a ride,none
+1047,okay so i'm guessing is kissing a factor of it but,none
+725,Worldwide Gross relationship to Production budget and Major Genre,heatmap
+1188,no nominal,none
+823,sol southwest,none
+452,how does Rotten Tomatoes Rating change as nominalating?,heatmap
+854,sonic shirt,none
+937,how do you show a map of nominal,map
+304,"by nominal, draw a bar chart of average nominal by split by nominal",bar
+1044,play that does make sense,none
+980,display effect,none
+190,How many cars do each nominal manufacture?,bar
+1295,make a map of nominal filtered by high nominal,map
+559,Sum(Profit) x and Sum(Sales) y render cluster,heatmap
+159,"Show me the average nominal for each movie type, broken down by nominal.",bar
+1003,versus type,none
+201,Create a scatter plot showing nominal vs. nominal,heatmap
+65,count by sub-nominal distinct item ,bar
+1247,truck companies pushing press conference oregon,none
+867,i don't think we need this,none
+640,nominal vs ww gross by movie and nominal,heatmap
+1145,for which reason selfie,none
+111,The distribution of the number of nominal of cars based on different nominals.,bar
+350,How production budge changes over nominals?,line
+961,a lack of limited access to critical services such as communication transportation power supply so basically nominal,none
+528,"Groupby (Order Date) | For each Order Date, calculate sum of the nominal",line
+885,hi screen cases,none
+966,this by nominal cases versus,none
+177,Which nominal had the fewest movies?,bar
+414,Plot AVG(MPG) vs Cylinders,bar
+494,how much is the nominal for nominal for each,heatmap
+1279,we can look at it,none
+512,"scatter plot of nominal vs nominal, colored by genre",heatmap
+408,"Show average horse power across nominal, each nominal shown separately",bar
+694,line graph of nominal for each genre for each nominal starting in 1995 to present,line
+386,What product nominal has more orders placed?,bar
+1139,access to the doctors for tonight,none
+1186,this is what we need,none
+303,"draw a histogram showing the count by order quantity, with a 2 order bin size",bar
+302,draw a line chart of daily nominals,line
+812,What is the average nominal of cars by nominal nominal?,line
+991,does this app has,none
+636,Show me a scatter chart of nominal by nominal,heatmap
+115,what is the correlation between nominal and nominal?,heatmap
+521,The distribution of the order quantity | Histogram,bar
+330,Movie count based on nominal,bar
+777,Linegraph SUM(Sales Forecast) by Order Date,line
+509,scatter plot of IMDB rating vs Rotten tomatoes rating,heatmap
+75,plot nominal amount by nominal amount,heatmap
+336,Have cars gotten lighter over time?,line
+1323,nicole,none
+880,alaska and hawaii,none
+1220,can you make a map of nominal and nominal,map
+807,"how does MPG compare to nominal, broken out by nominal?",heatmap
+442,Profit vs. Sales Cluster by Region,heatmap
+1074,how many cases are in are there in 0 area with high nominal rate,none
+446,average nominal by nominal ,line
+596,Show cylinfers and AVG(MPG) in a bar chart,bar
+194,How does mileage relate to cylinder count?,bar
+673,Create timeline of nominal by nominal displayed by nominal,line
+1196,read new message,none
+560,Sum(Sales)  by Order Date split by Category render line ,line
+223,create bar graph | axes are sub-nominal and count | order by descending,bar
+1177,attributes,none
+763,show me the average gross revenue of for each genrea,bar
+1264,make a bar chart of southeast plus vero plus very high nominal rate,bar
+120,Please show me a bar chart with the x-axis representing the number of nominal and the y-axis depicting the average MPG.,bar
+744,Average Horsepower per nominal and nominal,line
+897,nominals,none
+51,Scatter Plot of Sales vs Profit,heatmap
+169,What nominal of movie had the highest nominal for each nominal?,bar
+1014,line chart of nominal,none
+1037,are you show us a map of covid quantitative per nominal,line
+634,Show me a scatter chart of nominal by nominal for each nominal,heatmap
+133,"how does nominal relate to nominal for car nominals, small multiples by nominal",heatmap
+1181,nominal lies we see the the southeast on the most,none
+920,call noemi mazing like the data could be wrong with it couldn't get any data regarding it says what a coincidence,none
+81,Sum(Worldwide Gross) grouped by Genre and sub grouped by Content Rating,bar
+585,"plot all titles on a scatter plot chart by nominal an nominal, and color the dots by nominal",heatmap
+270,"Mean nominal group by Cylinders and Origin, X axis Origin, Color Origin, Each plot Cylinders",bar
+142,line chart of average nominal over time,line
+198,What is the average nominal for each nominal?,bar
+940,there's a little bit of coordination,none
+1021,they're more scared of being sick cuz they can't afford to be sick,none
+56,"Scatter plot, nominal by nominal",heatmap
+1263,erica herman,none
+547,Show Avg(Profit) by nominal asc,bar
+1168,are you making map of nominal versus nominal,none
+699,Relation between nominal and nominal for each nominal,heatmap
+119,Please show me multiple correlation charts of nominals and nominals of cars based on their nominals.,heatmap
+1237,zoom into this map,none
+614,create a scatterplot of nominal vs nominal by nominal,heatmap
+107,Show the trend in average nominals from 1995 to 2010.,line
+581,Show me how many movies were made by nominal,bar
+1012,i'll transportation communication,none
+912,show me a map of nominal distribution,map
+1185,can you make a heat map of nominal,heatmap
+248,Scatter plot to show nominal on X axis and Acceleration on Y Axis,heatmap
+1040,they have the privilege of being,none
+993,nominal,none
+12,How many heavy cars are in the dataset? ,bar
+1108,make us some map,map
+1143,i don't like the weather today,none
+280,Scatterplot of Worldwide Gross by Production Budget with different colors by nominal,heatmap
+73,total nominal by order date where nominal in 2016 or 2017,line
+815,testing testing,none
+1135,paul messina,none
+204,What is the nominal for each date?,line
+1338,let me try this can you remove grill from this map,none
+49,Scatter Plot for each nominal of Profit vs Sales,heatmap
+490,What is the average nominal of each nominal,bar
+292,plot nominal by average nominal,bar
+953,what is nominal race,none
+87,plot a simple line chart that Sums the Worldwide Gross of major films versus nominal parameterized by Major Genre. | Do not use symbols and show only major gridlines. Extend the axis to the labels. ,line
+1200,can you make a chart of nominal versus nominal,map
+742,Avg nominal by Year,line
+163,Plot the total nominal over time for each nominal.,line
+47,Scatter Plot of Profit by nominal vs Sales,heatmap
+98,show me nominal vs nominal,heatmap
+1125,can you filter the map by nominal,map
+553,Count Order Quantity asc render best,bar
+737,Count by Creative Type,bar
+745,Horsepower distribution by nominal,heatmap
+403,Show distribution of nominal by nominal,bar
+1318,map nominal by song,none
+1079,grass,none
+819,how to find your shirt map of meech,none
+484,Count the movies by how long they are,bar
+131,"average nominal by nominal, with small multiples by nominal",bar
+1349,can we make a map of nominals,map
+675,The distribution of nominal and nominal | Scatter plot,heatmap
+654,average nominal over time,line
+534,"groupby (nominal) | for each nominal, draw a scatter plot where a dot is located at (its nominal, nominal)",heatmap
+215,"Create a stacked bar chart showing nominal and nominal, colored by nominal",bar
+135,how does nominal relate to nominal for individual car nominals,heatmap
+1290,hello,none
+1062,go out more and kids get sick more often,none
+1189,greenville covid-19,none
+790,chart count to nominal,bar
+404,Scatter plot of nominal across nominal,heatmap
+439,Product Sales Revenue by Month,line
+669,which nominals had the most movies?,bar
+1118,discuss,none
+435,Show me the average nominal by nominal where the order was placed,bar
+890,how much people in the southeast nominal has practice doctor,none
+1024,acela nicole driscoll i think different from cases,none
+650,"show me a series of bar charts of average nominal, split by nominal, one chart per nominal",bar
+195,What were the total nominal for each date in each nominal?,line
+1331,give me the line chart of cases versus date colored by nominal + nominal,none
+259,"select nominal, class from table group by nominal",bar
+94,Make a simple scatter plot of Rotten Tomatoes Rating versus nominalating.   | Use only major gridlines.,heatmap
+325,show nominal by count,bar
+1198,can you make a heat map of nominal versus nominal,heatmap
+1245,can you make a map of covid vs filtered by area tape,map
+383,show me nominal by nominal and by nominal of nominal,heatmap
+861,what is this,none
+382,show me MPG by nominal and nominal in scatter chart,heatmap
+268,plot the distribution of nominal v/s nominal ,heatmap
+1351,can you make a map by nominal,map
+1116,cornerstone church,none
+746,Average MPG by nominal,bar
+1151,namaste to jack in the box,none
+1158,it is not by nominal,none
+58,"Scatter Plot, Profit by Sales, on Region",heatmap
+1260,can you make a bar chart of nominal versus nominal in elderly population,bar
+736,Average Production Budget by Creative Type separated by Content Rating,bar
+239,Through a visualization show average nominal of cars for each nominal from 1997 to 2011,line
+593,Show me Average Acceleration grouped by nominal and broken out by Origin,bar
+729,Yearly Worldwide Gross for each Major Genre,line
+27,Which countries have the most cars in this dataset?,bar
+620,create a bar chart of average nominal grouped by nominal | split splots by nominal,bar
+126,Creare a scatterplot of nominal and nominal that represent different nominals ,heatmap
+267,Visualize the distribution of nominals by nominal into 8 buckets,bar
+288,plot nominal by average nominal | color by nominal,line
+840,nominal,none
+976,i really,none
+556,Sum(Sales Forecast) by Order Date asc render best,line
+839,are you can you make me a pie chart of nominal per,line
+90,"make a simple, vertical bar chart of the average of Worldwide nominal as a function of the Major Genre.  | Alphabetize the Major Genre, use the color Blue for the bars and extend the grids to the labels only outside the chart.   | Make horizontal gridlines for the Average.",bar
+830,how do you make a bar graph of highest nominal and highest nominal by nominal,bar
+262,Trend for average nominal over time across different nominal,line
+1029,already show a map of covid cases,map

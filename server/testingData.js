@@ -14,9 +14,7 @@ let data = [];
 function readCSV() {
   let isCommandData = [];
   let promise = new Promise((resolve, reject) => {
-    fs.createReadStream(
-      path.resolve(__dirname, "../server/assets/isCommandData5.csv")
-    )
+    fs.createReadStream(path.resolve(__dirname, "../server/assets/test.csv"))
       .pipe(csv.parse({ headers: true }))
       .on("data", (row) => {
         isCommandData.push(row);
@@ -35,7 +33,9 @@ function readCSV() {
 module.exports = () => {
   let isCommandData = [];
   let promise = new Promise((resolve, reject) => {
-    fs.createReadStream(path.resolve(__dirname, "../server/assets/train.csv"))
+    fs.createReadStream(
+      path.resolve(__dirname, "../server/assets/isCommandData5.csv")
+    )
       .pipe(csv.parse({ headers: true }))
       .on("data", (row) => {
         isCommandData.push(row);
