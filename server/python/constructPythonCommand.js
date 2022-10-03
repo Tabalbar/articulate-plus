@@ -37,6 +37,7 @@ module.exports = (pythonResponse, chartMsg) => {
     },
     pivotCharts: false,
   };
+
   if (pythonResponse == null) {
     console.log("pythonResponse is null");
     chartMsg.pythonCharts = [];
@@ -63,6 +64,7 @@ module.exports = (pythonResponse, chartMsg) => {
       break;
     }
   }
+
   if (!createVis) {
     chartMsg.pythonCharts = [];
     console.log(pythonChartMsg.dialogue_act);
