@@ -27,75 +27,28 @@ module.exports = (
   );
   chart.height = 300;
   if (isPython) {
-    chart.data = {
-      values: pythonData,
-    };
-    chart.transform.push({
-      lookup: extractedHeaders[0],
-      from: {
-        data: {
-          url: "https://vega.github.io/vega-lite/data/us-10m.json",
-          format: { type: "topojson", feature: "counties" },
-        },
-        key: "id",
-      },
-      as: "geo",
-    });
-    chart.projection = { type: "albersUsa" };
-    chart.mark = "geoshape";
-    chart.encoding = {
-      color: {
-        field: extractedHeaders[1],
-        type: "nominal",
-        legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
-        scale: {
-          range: options.useCovidDataset
-            ? covidColors(extractedHeaders[1])
-            : [],
-        },
-        sort: options.useCovidDataset
-          ? covidSort(extractedHeaders[1], chartMsg.data)
-          : [],
-      },
-      shape: { field: "geo", type: "geojson" },
-    };
-    // chart.condition = {
-    //   test: `datum[${extractedHeaders[1]}] === null`,
-    //   value: "#aaa",
-    // };
-    // let unique = [
-    //   ...new Set(pythonData.map((item) => item[extractedHeaders[1]])),
-    // ];
-    // console.log(unique);
     // chart.data = {
-    //   url: "https://raw.githubusercontent.com/vega/vega/master/docs/data/us-10m.json",
-    //   format: { type: "topojson", feature: "counties" },
+    //   values: pythonData,
     // };
     // chart.transform.push({
-    //   lookup: "id",
+    //   lookup: extractedHeaders[0],
     //   from: {
     //     data: {
-    //       values: pythonData,
+    //       url: "https://vega.github.io/vega-lite/data/us-10m.json",
+    //       format: { type: "topojson", feature: "counties" },
     //     },
-    //     key: extractedHeaders[0],
-    //     fields: [extractedHeaders[1]],
+    //     key: "id",
     //   },
+    //   as: "geo",
     // });
     // chart.projection = { type: "albersUsa" };
     // chart.mark = "geoshape";
     // chart.encoding = {
     //   color: {
-    //     condition: {
-    //       test: `datum['${extractedHeaders[1]}'] === null`,
-    //       value: "#aaa",
-    //     },
     //     field: extractedHeaders[1],
     //     type: "nominal",
     //     legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
     //     scale: {
-    //       domain: options.useCovidDataset
-    //         ? covidSort(extractedHeaders[1], chartMsg.data)
-    //         : [],
     //       range: options.useCovidDataset
     //         ? covidColors(extractedHeaders[1])
     //         : [],
@@ -104,7 +57,54 @@ module.exports = (
     //       ? covidSort(extractedHeaders[1], chartMsg.data)
     //       : [],
     //   },
+    //   shape: { field: "geo", type: "geojson" },
     // };
+    chart.condition = {
+      test: `datum[${extractedHeaders[1]}] === null`,
+      value: "#aaa",
+    };
+    let unique = [
+      ...new Set(pythonData.map((item) => item[extractedHeaders[1]])),
+    ];
+    console.log(unique);
+    chart.data = {
+      url: "https://raw.githubusercontent.com/vega/vega/master/docs/data/us-10m.json",
+      format: { type: "topojson", feature: "counties" },
+    };
+    chart.transform.push({
+      lookup: "id",
+      from: {
+        data: {
+          values: pythonData,
+        },
+        key: extractedHeaders[0],
+        fields: [extractedHeaders[1]],
+      },
+    });
+    chart.projection = { type: "albersUsa" };
+    chart.mark = "geoshape";
+    chart.encoding = {
+      color: {
+        condition: {
+          test: `datum['${extractedHeaders[1]}'] === null`,
+          value: "#aaa",
+        },
+        field: extractedHeaders[1],
+        type: "nominal",
+        legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
+        scale: {
+          domain: options.useCovidDataset
+            ? covidSort(extractedHeaders[1], chartMsg.data)
+            : [],
+          range: options.useCovidDataset
+            ? covidColors(extractedHeaders[1])
+            : [],
+        },
+        sort: options.useCovidDataset
+          ? covidSort(extractedHeaders[1], chartMsg.data)
+          : [],
+      },
+    };
   } else {
     chart.transform.push({
       lookup: "fips",
