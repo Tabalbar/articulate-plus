@@ -9,6 +9,7 @@ const covidSort = require("./covidHelpers/covidSort");
 const createTitle = require("./helpers/specifications/createTitle");
 const createTransform = require("./helpers/specifications/createTransform");
 const createChartTemplate = require("./createChartTemplate");
+const findType = require("./helpers/findType");
 
 module.exports = (
   chartMsg,

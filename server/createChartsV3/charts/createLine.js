@@ -31,11 +31,13 @@ module.exports = (
       chart.encoding.x = {
         field: extractedHeaders[0],
         type: findType(extractedHeaders[0], chartMsg.data),
+        timeUnit: "yearmonth",
         axis: {
-          grid: false,
           labelAngle: -50,
-          labelFontSize: 10,
-          titleFontSize: 10,
+          title: "",
+          labelFontSize: 15,
+          titleFontSize: 15,
+          format: "%b %y",
         },
       };
       chart.encoding.y = {
