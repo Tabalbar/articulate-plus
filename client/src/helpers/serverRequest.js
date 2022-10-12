@@ -138,7 +138,8 @@ export async function serverRequest(
 
   if (count == 0) {
     // console.log(count);
-    assistantResponse = noCharts[Math.floor(Math.random() * noCharts.length)];
+    /**FLAGGED FOR NOW******* */
+    // assistantResponse = noCharts[Math.floor(Math.random() * noCharts.length)];
     // if (tmpChartMsg.errMsg.msg == "duplicate") {
     //   assistantResponse =
     //     duplicate[Math.floor(Math.random() * duplicate.length)];
