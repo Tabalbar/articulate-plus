@@ -206,13 +206,24 @@ class SmarthubSession:
         rule_context = existing_vis_discourse_rules_engine.execute(rule_context)
 
         best_action = rule_context.curr_spec.spec
+       
 
         if best_action:
-            print("best action")
-            # print(best_action.get_json_str())
+            print("***VISUALIZATION SPECIFICATION***\n")
+            print(best_action.get_json_str())
+            with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+                log_file.write("\n***VISUALIZATION SPECIFICATION***\n")
+                log_file.write(best_action.get_json_str())
+                log_file.write("\n")
        
         print("***HISTORY***\n")
         print(state_tracker)
+        with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+            log_file.write("***HISTORY***\n")
+            log_file.write(str(state_tracker))
+            log_file.write("\n")
+
+
 
         return best_action.get_json_str()
         
@@ -233,11 +244,17 @@ class SmarthubSession:
 
     def process_multimodal_input(self, utterance, gesture_target_id):
         # Step 1: tokenized the utterance which facilitates extraction of data attributes.
+        with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+            log_file.write("\ninput utterance: "+ str(utterance))
+            log_file.write("\n")
         tokenized_utterance = self.entity_tokenizer(utterance)
 
         # Step 2: predict referring expressions
         referring_expressions = LanguageUnderstandingModels.predict_referring_expressions(tokenized_utterance)
         print("predicted referring expressions: {}".format([r.words for r in referring_expressions]))
+        with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+            log_file.write("predicted referring expressions: {}".format([r.words for r in referring_expressions]))
+            log_file.write("\n")
 
         # Step 3: predict dialogue act
         context_utterances = [tokenized_utterance]
@@ -246,6 +263,8 @@ class SmarthubSession:
             gesture_target_id=gesture_target_id,
             referring_expressions=referring_expressions)
         print("predicted dialogue act: {}".format(dialogue_act))
+        with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+            log_file.write("predicted dialogue act: {}".format(dialogue_act))
 
         top_dialogue_act_label, bottom_dialogue_act_label = dialogue_act
 
@@ -304,7 +323,7 @@ class SmarthubSession:
 
 
 
-    def run(self, utterance, gesture_target_id = -1 ):
+    def run(self,utterance, gesture_target_id = -1):
         # while True:  # loop runs forever in current session
         # utterance, gesture_target_id = FakeMultimodalService.listen()
         # if (utterance == 'stop'or utterance == 'end conversation'):

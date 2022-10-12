@@ -91,8 +91,44 @@ class VisualizationSpecificationConstructor:
                 vertical_axis = list(visualization_specification.vertical_axis)[0]
                 group = list(visualization_specification.horizontal_axis)[0]
                 for i in range(len(rows)):
-                    spec = dict({horizontal_axis: rows[i][1], group: rows[i][0], vertical_axis: rows[i][2]})
-                    visualization_specification.data_vega_lite_spec.append(spec)
+                    if rows[i][0] == "not-available" and rows[i][0] == "not-available":
+                        continue
+                    elif rows[i][0] != "not-available" and rows[i][1] == "not-available":
+                        if horizontal_axis in rows[i][0].split("-"):
+                            horizontal_axis_val = rows[i][0]
+                            group_val = rows[i][1]
+                            spec = dict({horizontal_axis: horizontal_axis_val, group: group_val, vertical_axis: rows[i][2]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                        else:
+                            horizontal_axis_val = rows[i][1]
+                            group_val = rows[i][0]
+                            spec = dict({horizontal_axis: horizontal_axis_val, group: group_val, vertical_axis: rows[i][2]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                    elif rows[i][0] == "not-available" and rows[i][1] != "not-available":
+                        if horizontal_axis in rows[i][1].split("-"):
+                            horizontal_axis_val = rows[i][1]
+                            group_val = rows[i][0]
+                            spec = dict({horizontal_axis: horizontal_axis_val, group: group_val, vertical_axis: rows[i][2]})
+                            visualization_specification.data_vega_lite_spec.append(spec) 
+                        else:
+                            horizontal_axis_val = rows[i][0]
+                            group_val = rows[i][1]
+                            spec = dict({horizontal_axis: horizontal_axis_val, group: group_val, vertical_axis: rows[i][2]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                    else:
+                        if horizontal_axis in rows[i][0].split("-"):
+                            horizontal_axis_val = rows[i][0]
+                            group_val = rows[i][1]
+                            spec = dict({horizontal_axis: horizontal_axis_val, group: group_val, vertical_axis: rows[i][2]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                        else:
+                            horizontal_axis_val = rows[i][1]
+                            group_val = rows[i][0]
+                            spec = dict({horizontal_axis: horizontal_axis_val, group: group_val, vertical_axis: rows[i][2]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                # for i in range(len(rows)):
+                #     spec = dict({horizontal_axis: rows[i][1], group: rows[i][0], vertical_axis: rows[i][2]})
+                #     visualization_specification.data_vega_lite_spec.append(spec)
             elif len(visualization_specification.horizontal_axis) == 1:
                 horizontal_axis = list(visualization_specification.horizontal_axis)[0]
                 vertical_axis = list(visualization_specification.vertical_axis)[0]
@@ -105,23 +141,85 @@ class VisualizationSpecificationConstructor:
         elif visualization_specification.plot_headline.plot_type == 'heat map':
             print("heat map")
             if visualization_specification.plot_headline.map_type == "geographical":
-                aggregator = list(visualization_specification.horizontal_axis)[0]
-                for i in range(len(rows)):
-                    if str(type(rows[i][1])) == "<class 'int'>" :
-                        spec = dict({"fips": rows[i][1], aggregator: rows[i][0]})
-                        visualization_specification.data_vega_lite_spec.append(spec)
-                    else:
-                        spec = dict({"fips": rows[i][0], aggregator: rows[i][1]})
-                        visualization_specification.data_vega_lite_spec.append(spec)
-
+                print("in geographical map")
+                if not visualization_specification.horizontal_axis:
+                    print("no horizontal axis")
+                    for i in range(len(rows)):
+                        if str(type(rows[i][1])) == "<class 'int'>" :
+                            spec = dict({"fips": rows[i][1], "num_cases": rows[i][0]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                        else:
+                            spec = dict({"fips": rows[i][0], "num_cases": rows[i][1]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                else:
+                    aggregator = list(visualization_specification.horizontal_axis)[0]
+                    for i in range(len(rows)):
+                        if str(type(rows[i][1])) == "<class 'int'>" :
+                            spec = dict({"fips": rows[i][1], aggregator: rows[i][0]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                        else:
+                            spec = dict({"fips": rows[i][0], aggregator: rows[i][1]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
             else:
                 print("non-geographical heat map")
                 aggregator_1 = list(visualization_specification.horizontal_axis)[0]
                 aggregator_2 = list(visualization_specification.horizontal_axis)[1]
                 vertical_axis = list(visualization_specification.vertical_axis)[0]
+                agg_1_text = aggregator_1.split("_")[-2]
+                # agg_2_text = aggregator_2.split("_")[0]
                 for i in range(len(rows)):
-                    spec = dict({aggregator_1: rows[i][1], aggregator_2: rows[i][0], vertical_axis: rows[i][2]})
-                    visualization_specification.data_vega_lite_spec.append(spec)
+                    if rows[i][0] == "not-available" and rows[i][0] == "not-available":
+                        continue
+                    elif rows[i][0] != "not-available" and rows[i][1] == "not-available":
+                        if agg_1_text in rows[i][0].split("-"):
+                            aggregator_1_value = rows[i][0]
+                            aggregator_2_value = rows[i][1]
+                            spec = dict({vertical_axis: rows[i][2], aggregator_1: aggregator_1_value, aggregator_2: aggregator_2_value})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                        else:
+                            aggregator_1_value = rows[i][1]
+                            aggregator_2_value = rows[i][0]
+                            spec = dict({vertical_axis: rows[i][2], aggregator_1: aggregator_1_value, aggregator_2: aggregator_2_value})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                    elif rows[i][0] == "not-available" and rows[i][1] != "not-available":
+                        if agg_1_text in rows[i][1].split("-"):
+                            aggregator_1_value = rows[i][1]
+                            aggregator_2_value = rows[i][0]
+                            spec = dict({vertical_axis: rows[i][2], aggregator_1: aggregator_1_value, aggregator_2: aggregator_2_value})
+                            visualization_specification.data_vega_lite_spec.append(spec) 
+                        else:
+                            aggregator_1_value = rows[i][0]
+                            aggregator_2_value = rows[i][1]
+                            spec = dict({vertical_axis: rows[i][2], aggregator_1: aggregator_1_value, aggregator_2: aggregator_2_value})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                    else:
+                        if agg_1_text in rows[i][0].split("-"):
+                            aggregator_1_value = rows[i][0]
+                            aggregator_2_value = rows[i][1]
+                            spec = dict({vertical_axis: rows[i][2], aggregator_1: aggregator_1_value, aggregator_2: aggregator_2_value})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                        else:
+                            aggregator_1_value = rows[i][1]
+                            aggregator_2_value = rows[i][0]
+                            spec = dict({vertical_axis: rows[i][2], aggregator_1: aggregator_1_value, aggregator_2: aggregator_2_value})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                           
+
+                    # if agg_1_text in rows[i][0].split("-"):
+                    #     # print("in if----")
+                    #     # print(aggregator_1)
+                    #     aggregator_1_value = rows[i][0]
+                    #     print(aggregator_1_value)
+                    #     aggregator_2_value = rows[i][1]
+                    #     spec = dict({vertical_axis: rows[i][2], aggregator_1: aggregator_1_value, aggregator_2: aggregator_2_value})
+                    # else:
+                    #     # print("in else----")
+                    #     # print(aggregator_2)
+                    #     aggregator_1_value = rows[i][1]
+                    #     aggregator_2_value = rows[i][0]
+                    #     print(aggregator_2_value)
+                    #     spec = dict({vertical_axis: rows[i][2], aggregator_1: aggregator_1_value, aggregator_2: aggregator_2_value})
+                    
 
         else:
             print("not one of the above three plot types")

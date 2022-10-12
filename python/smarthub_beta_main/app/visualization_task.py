@@ -15,13 +15,13 @@ class VisualizationTask:
         self.horizontal_axis = set()
         self.horizontal_axis_grouping = set()
         self.vertical_axis = set()
-
         self.filters = defaultdict(set)
         self.aggregators = set()
         self.context_filters = defaultdict(set)
         self.context_aggregators = set()
         self.plot_type = None
         self.is_plot_type_specified = None
+        self.manually_added_aggregator = None
         self.map_type = None
         self.summary = None
         self.sql = SQLConstructor()

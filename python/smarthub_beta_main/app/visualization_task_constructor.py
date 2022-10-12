@@ -1,4 +1,5 @@
 from copy import deepcopy
+from macpath import split
 
 from dev.text_tokenizer_pipeline import EntityPOSAndTemporalFilter, TemporalUtils
 from .visualization_task import VisualizationTask
@@ -19,6 +20,7 @@ class VisualizationTaskConstructor:
             previous_task.filters, previous_task.aggregators
         print("Prev filter: "+str(previous_filters))
         print("Prev aggregator: "+ str(previous_aggregators))
+        print("Prev plot type: "+ str(previous_task.plot_type))
         
 
         # get the current filters and aggregators.
@@ -34,9 +36,9 @@ class VisualizationTaskConstructor:
         # update merged task utterances to the current task utterances.
         merged_task.context_utterances = current_task.context_utterances
 
-        # update merged task plot type with the current task plot type.
-        merged_task.plot_type = current_task.plot_type
-        
+        # update merged task plot type with the current task plot type if the current task plot type was specified. (Can I see this as a bar chart)
+        if current_task.is_plot_type_specified:
+            merged_task.plot_type = current_task.plot_type
 
         # if plot type altered (map to another or another to map), accordingly update
         # sql query with removing latitude and longitude or adding latitude and longitude.
@@ -254,7 +256,8 @@ class VisualizationTaskConstructor:
                         if not token._.is_entity_name:
                             print("line 257")
                             visualization_task.plot_type = token._.entity_value[0]
-                            is_plot_tye_override = True
+                            print(visualization_task.plot_type)
+                            is_plot_type_override = True
                             visualization_task.is_plot_type_specified = True
                 else:
                     print("line 264")
@@ -262,9 +265,55 @@ class VisualizationTaskConstructor:
                     # e.g., plot type="map" in "Show me thefts for each neighborhood as a map <vis attribute>"
                     if not token._.is_entity_name:
                         print("TOKEN entity visualization :"+str(token))
-                        visualization_task.plot_type = token._.entity_value[0]
-                        visualization_task.is_plot_type_specified = True
-
+                        split_tokens = str(token).split(" ")
+                        if len(split_tokens) >= 2:
+                            for i in range(len(split_tokens)):
+                                if split_tokens[i] == 'map':
+                                    print("271")
+                                    visualization_task.plot_type = token._.entity_value[0]
+                                    visualization_task.is_plot_type_specified = True
+                                elif 'region' in split_tokens[i]:
+                                    visualization_task.add_aggregator("region",
+                                                  tuple(["pacific","rockies","northeast","southeast","midwest","southwest","noncontiguous"]))
+                                    visualization_task.add_aggregator_map("region")
+                                    visualization_task.manually_added_aggregator = 'region'
+                                elif 'cardio' in split_tokens[i] or 'heart' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("cardiovascular_disease_rate")
+                                    visualization_task.manually_added_aggregator = 'cardiovascular_disease_rate'
+                                elif 'elderly' in split_tokens[i] or 'old' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("elderly_percentage")
+                                    visualization_task.manually_added_aggregator = 'elderly_percentage'
+                                elif 'county' in split_tokens[i] or 'counties' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("county_type")
+                                    visualization_task.manually_added_aggregator = 'county_type'
+                                elif 'doctor' in split_tokens[i] or 'physician' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("access_to_doctor")
+                                    visualization_task.manually_added_aggregator = 'access_to_doctor'
+                                elif 'uninsured' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("uninsured_rate")
+                                    visualization_task.manually_added_aggregator = 'uninsured_rate'
+                                elif 'diabetes' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("diabetes_rate")
+                                    visualization_task.manually_added_aggregator = 'diabetes_rate'
+                                elif 'poverty' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("poverty_rate")
+                                    visualization_task.manually_added_aggregator = 'poverty_rate'
+                                elif 'african' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("african_american_population")
+                                    visualization_task.manually_added_aggregator = 'african_american_population'
+                                elif 'hispanic' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("hispanic_population")
+                                    visualization_task.manually_added_aggregator = 'hispanic_population'
+                                elif 'covid' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("covid_vulnerability_rank")
+                                    visualization_task.manually_added_aggregator = 'covid_vulnerability_rank'
+                                elif 'social' in split_tokens[i]:
+                                    visualization_task.add_aggregator_map("social_vulnerability_rank")
+                                    visualization_task.manually_added_aggregator = 'social_vulnerability_rank'
+                        else:
+                            visualization_task.plot_type = token._.entity_value[0]
+                            visualization_task.is_plot_type_specified = True
+                                                     
                 continue
             # if referring_expression:
             #     print("*******referring expression**********")
@@ -286,6 +335,7 @@ class VisualizationTaskConstructor:
                                                   tuple([child for child in token._.entity_children if
                                                          child is not None and '\\' not in child]))
                 if token._.is_continuous_temporal:
+                    print("line 335")
                     visualization_task.plot_type = "line chart"
                 else:
                     visualization_task.add_horizontal_axis_grouping(token._.entity)
@@ -303,7 +353,7 @@ class VisualizationTaskConstructor:
         visualization_task.redistribute_horizontal_axis_variables()
         if bottom_dialogue_act_label in ['createvis', 'modifyvis']:
             #number of cases
-            if 'new_cases' in visualization_task.filters or 'line' in visualization_task.plot_type :
+            if 'new_cases' in visualization_task.filters and 'map' not in visualization_task.plot_type: #or 'line' in visualization_task.plot_type 
                 print("Number of cases")
                 if visualization_task.aggregators:
                     print("Number of cases with aggregator")
@@ -326,6 +376,14 @@ class VisualizationTaskConstructor:
                     visualization_task.remove_filter('new_cases')
                     visualization_task.remove_filter('date')
                     visualization_task.plot_type = "line"
+            elif 'new_cases' in visualization_task.filters and 'map' in visualization_task.plot_type:
+                visualization_task.remove_vertical_axis("NUM_COUNTIES")
+                visualization_task.sql.add_select_sum("NUM_CASES")
+                visualization_task.sql.add_select("fips")
+                visualization_task.sql.add_group_by("fips")
+                visualization_task.remove_filter('new_cases')
+                visualization_task.plot_type = "heat map"
+                visualization_task.map_type = "geographical"
             #Case 1a: ONLY one aggregators are there in the utterance and the plot will be map type
             #I want to see the rate of diabetes <aggregator> in the US. (general query, one aggregator)
             else:
@@ -361,10 +419,7 @@ class VisualizationTaskConstructor:
                                 visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[1][0])
                                 visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[0][0])
                             # visualization_task.add_first_aggregator(list(visualization_task.aggregators)[0][0])
-                            # visualization_task.add_aggregator(list(visualization_task.aggregators)[1][0])
-                        elif not visualization_task.aggregators:
-                            print("*****No aggregator******")
-                            print("Filters--->"+ str(visualization_task.filters))
+                            # visualization_task.add_aggregator(list(visualization_task.aggregators)[1][0]
 
 
                     #Case 1b: user asks for a bar chart
@@ -374,13 +429,22 @@ class VisualizationTaskConstructor:
                         visualization_task.sql.add_select(temp[0])
                         # visualization_task.add_aggregator(temp[0])
                 #Case 1c: ONLY one aggregators are there in the utterance and map plot type specified by user
-                elif 'map' in visualization_task.plot_type and visualization_task.aggregators:
-                    visualization_task.map_type = "geographical"
-                    visualization_task.remove_vertical_axis("NUM_COUNTIES")
-                    visualization_task.sql.add_select("fips")
-                    temp = next(iter(visualization_task.aggregators))
-                    visualization_task.sql.add_select(temp[0])
-                    visualization_task.add_aggregator_map(temp[0])
+                elif 'map' in visualization_task.plot_type:
+                    if visualization_task.aggregators:
+                        visualization_task.map_type = "geographical"
+                        visualization_task.remove_vertical_axis("NUM_COUNTIES")
+                        visualization_task.sql.add_select("fips")
+                        temp = next(iter(visualization_task.aggregators))
+                        visualization_task.sql.add_select(temp[0])
+                        visualization_task.add_aggregator_map(temp[0])
+                    elif visualization_task.manually_added_aggregator:
+                        print("line 391")
+                        visualization_task.map_type = "geographical"
+                        visualization_task.remove_vertical_axis("NUM_COUNTIES")
+                        visualization_task.sql.add_select("fips")
+                        visualization_task.sql.add_select(visualization_task.manually_added_aggregator)
+                        visualization_task.add_horizontal_axis(visualization_task.manually_added_aggregator)
+
                 #Utterances can have filters
                 # elif 'map' not in visualization_task.plot_type and visualization_task.aggregators:
                 #     if not is_plot_type_specified and not is_plot_type_override:
@@ -402,6 +466,10 @@ class VisualizationTaskConstructor:
                         visualization_task.add_horizontal_axis(temp[0])
                         visualization_task.add_vertical_axis("NUM_COUNTIES")
                         visualization_task.sql.remove_all_order_bys()
+                    elif visualization_task.is_plot_type_specified:
+                        print("***in line 459***")
+                        visualization_task.add_vertical_axis("NUM_COUNTIES")
+                        visualization_task.sql.remove_all_order_bys()
                     else:
                         visualization_task.remove_vertical_axis("NUM_COUNTIES")
                         visualization_task.add_vertical_axis_sum("NUM_CASES")
@@ -417,9 +485,7 @@ class VisualizationTaskConstructor:
             visualization_task.update_specification()
 
             visualization_task.get_summary()
-
-        elif bottom_dialogue_act_label in ['clarification', 'preference', 'factbased']:
-            print("Clarification/Preference/factbased")
+            
         else:
             # for requests other than create vis or modify vis ones, i.e., win mgmt requests,
             # clear the sql query and remove total crime from y-axis.
