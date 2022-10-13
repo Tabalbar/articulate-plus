@@ -91,7 +91,7 @@ module.exports = (
           value: "#aaa",
         },
         field: extractedHeaders[1],
-        type: "nominal",
+        type: extractedHeaders[1] === "num_cases" ? "quantitative" : "nominal",
         legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
         scale: {
           domain: options.useCovidDataset
@@ -106,6 +106,10 @@ module.exports = (
           : [],
       },
     };
+
+    if (extractedHeaders[1] == "num_cases") {
+      delete chart.encoding.color.scale;
+    }
   } else {
     chart.transform.push({
       lookup: "fips",
