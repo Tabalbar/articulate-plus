@@ -75,13 +75,134 @@ class VisualizationSpecificationConstructor:
                 print("line chart with aggregator")
                 # dates = VisualizationSpecificationConstructor.convert_date()
                 key = next(iter(visualization_specification.horizontal_axis))
-                vertical_axis = next(iter(visualization_specification.vertical_axis))
-                for i in range(len(rows)):
-                    value = rows[i][0]
-                    vertical_axis_value = rows[i][2]
-                    for j in range(len(rows)):
-                        spec = dict({"date": VisualizationSpecificationConstructor.convert_date(rows[i][1]), key:value, vertical_axis: vertical_axis_value})
-                    visualization_specification.data_vega_lite_spec.append(spec)
+                print("key: "+ key)
+                if key in 'region':
+                    vertical_axis = next(iter(visualization_specification.vertical_axis))
+                    for i in range(len(rows)):
+                        if rows[i][0] in ['northeast','southeast','southwest','midwest','rockies','pacific','noncontiguous']:
+                            value = rows[i][0]
+                            if str(type(rows[i][1])) == "<class 'float'>" :
+                                vertical_axis_value = rows[i][1]
+                                date_value = rows[i][2]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                            else:
+                                vertical_axis_value = rows[i][2]
+                                date_value = rows[i][1]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                        elif rows[i][1] in ['northeast','southeast','southwest','midwest','rockies','pacific','noncontiguous']:
+                            value = rows[i][1]
+                            if str(type(rows[i][0])) == "<class 'float'>" :
+                                vertical_axis_value = rows[i][0]
+                                date_value = rows[i][2]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                            else:
+                                vertical_axis_value = rows[i][2]
+                                date_value = rows[i][0]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                        else:
+                            value = rows[i][2]
+                            if str(type(rows[i][0])) == "<class 'float'>" :
+                                vertical_axis_value = rows[i][0]
+                                date_value = rows[i][1]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                            else:
+                                vertical_axis_value = rows[i][1]
+                                date_value = rows[i][0]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                elif key in 'county_type':
+                    vertical_axis = next(iter(visualization_specification.vertical_axis))
+                    for i in range(len(rows)):
+                        if rows[i][0] in ["rural","urban","suburban","small-city","OTHER"]:
+                            value = rows[i][0]
+                            if str(type(rows[i][1])) == "<class 'float'>" :
+                                vertical_axis_value = rows[i][1]
+                                date_value = rows[i][2]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                            else:
+                                vertical_axis_value = rows[i][2]
+                                date_value = rows[i][1]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                        elif rows[i][1] in ['northeast','southeast','southwest','midwest','rockies','pacific','noncontiguous-']:
+                            value = rows[i][1]
+                            if str(type(rows[i][0])) == "<class 'float'>" :
+                                vertical_axis_value = rows[i][0]
+                                date_value = rows[i][2]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                            else:
+                                vertical_axis_value = rows[i][2]
+                                date_value = rows[i][0]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                        else:
+                            value = rows[i][2]
+                            if str(type(rows[i][0])) == "<class 'float'>" :
+                                vertical_axis_value = rows[i][0]
+                                date_value = rows[i][1]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                            else:
+                                vertical_axis_value = rows[i][1]
+                                date_value = rows[i][0]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                        
+
+
+                else:
+                    key_text = key.split("_")[-2]
+                    vertical_axis = next(iter(visualization_specification.vertical_axis))
+                # print(rows)
+                    for i in range(len(rows)):
+                        if rows[i][0] == "not-available" or rows[i][1] == "not-available" or rows[i][2] == "not-available":
+                            continue
+                        if key_text in rows[i][0].split("-"):
+                            value = rows[i][0]
+                            if str(type(rows[i][1])) == "<class 'float'>" :
+                                vertical_axis_value = rows[i][1]
+                                date_value = rows[i][2]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                            else:
+                                vertical_axis_value = rows[i][2]
+                                date_value = rows[i][1]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                        elif key_text in rows[i][1].split("-"):
+                            value = rows[i][1]
+                            if str(type(rows[i][0])) == "<class 'float'>" :
+                                vertical_axis_value = rows[i][0]
+                                date_value = rows[i][2]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                            else:
+                                vertical_axis_value = rows[i][2]
+                                date_value = rows[i][0]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                        else:
+                            value = rows[i][2]
+                            if str(type(rows[i][0])) == "<class 'float'>" :
+                                vertical_axis_value = rows[i][0]
+                                date_value = rows[i][1]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+                            else:
+                                vertical_axis_value = rows[i][1]
+                                date_value = rows[i][0]
+                                spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
+                                visualization_specification.data_vega_lite_spec.append(spec)
+
+
+  
 
         elif visualization_specification.plot_headline.plot_type == 'bar chart':
             print("bar chart")
@@ -138,6 +259,7 @@ class VisualizationSpecificationConstructor:
                     visualization_specification.data_vega_lite_spec.append(spec)
             else:
                 print("****no horizontal axis***")
+                visualization_specification.data_vega_lite_spec.append
         elif visualization_specification.plot_headline.plot_type == 'heat map':
             print("heat map")
             if visualization_specification.plot_headline.map_type == "geographical":
@@ -160,7 +282,7 @@ class VisualizationSpecificationConstructor:
                         else:
                             spec = dict({"fips": rows[i][0], aggregator: rows[i][1]})
                             visualization_specification.data_vega_lite_spec.append(spec)
-            else:
+            elif visualization_specification.horizontal_axis:
                 print("non-geographical heat map")
                 aggregator_1 = list(visualization_specification.horizontal_axis)[0]
                 aggregator_2 = list(visualization_specification.horizontal_axis)[1]
@@ -278,6 +400,9 @@ class VisualizationSpecificationConstructor:
             date_val = "2020-08-30"
         elif date == "9/30/20":
             date_val = "2020-09-30"
+        else:
+            print("In convert_date else")
+            print(str(date))
 
         return date_val
 

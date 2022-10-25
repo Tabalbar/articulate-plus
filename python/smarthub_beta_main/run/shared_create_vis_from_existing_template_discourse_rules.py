@@ -122,8 +122,10 @@ class Utilities:
                 visualization_specification=rule_context.curr_spec.spec,
                 minimum_similarity_cutoff=0.40,
                 search_history_id_before=rule_context.curr_spec.spec.plot_headline.id)
+        
 
         if not prev_spec:
+            print("if not prev_spec")
             _, prev_spec = rule_context.CURR_DIALOGUE_HISTORY.search_visualization_specification_by_history_id(
                 target_history_id=-1)
 
@@ -143,6 +145,11 @@ class Utilities:
                 minimum_similarity_cutoff=0.01,
                 search_history_id_before=prev_spec.plot_headline.id + 1)
 
+        print("cos sim "+ str(cos_sim[idx]))
+        with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+            log_file.write("\ncos sim :" + str(cos_sim[idx]))
+            log_file.write("\n")
+        
         return cos_sim[idx], prev_spec
 
     @staticmethod
@@ -150,5 +157,9 @@ class Utilities:
         dialogue_history_distance, _ = \
             rule_context.CURR_DIALOGUE_HISTORY.search_visualization_specification_by_history_id(
                 target_history_id=history_id, search_history_id_before=rule_context.curr_spec.spec.plot_headline.id)
+        print("Distance to previous visualization specification :"+ str(dialogue_history_distance))
+        with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+            log_file.write("\nDistance to previous visualization specification :"+ str(dialogue_history_distance))
+            log_file.write("\n")
 
         return dialogue_history_distance

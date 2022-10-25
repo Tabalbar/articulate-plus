@@ -21,7 +21,11 @@ class VisualizationTaskConstructor:
         print("Prev filter: "+str(previous_filters))
         print("Prev aggregator: "+ str(previous_aggregators))
         print("Prev plot type: "+ str(previous_task.plot_type))
-        
+        with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+            log_file.write("\nPrev filter: "+str(previous_filters))
+            log_file.write("\nPrev aggregator: "+ str(previous_aggregators))
+            log_file.write("\nPrev plot type: "+ str(previous_task.plot_type))
+            log_file.write("\n")
 
         # get the current filters and aggregators.
         current_filters, current_aggregators = \
@@ -29,6 +33,10 @@ class VisualizationTaskConstructor:
         print("Current filter: "+str(current_filters))
         print("Current aggregator: "+ str(current_aggregators))
         print("current task plot type: "+str(current_task.plot_type))
+        with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+            log_file.write("\nCurrent filter: "+str(current_filters))
+            log_file.write("\nCurrent aggregator: "+ str(current_aggregators))
+            log_file.write("\ncurrent task plot type: "+str(current_task.plot_type))
 
         # create merged task as a identical copy of prev task.
         merged_task = deepcopy(previous_task)
@@ -48,8 +56,8 @@ class VisualizationTaskConstructor:
                 # print("............in inner if.............")
                 # "TOTAL CRIME" is not in the vertical axis always (i.e., only when dialogue act is create\modify vis).
                 merged_task.remove_vertical_axis("NUM_COUNTIES")
-            elif "NUM_CASES" in merged_task.vertical_axis:
-                 merged_task.remove_vertical_axis("NUM_CASES")
+            # elif "NUM_CASES" in merged_task.vertical_axis:
+                #  merged_task.remove_vertical_axis("NUM_CASES")
                 # merged_task.remove_aggregator(current_task.aggregators)
             # print("*****************"+ str(current_aggregators[0]))
             # merged_task.sql.add_select(current_aggregators[0])
@@ -133,13 +141,20 @@ class VisualizationTaskConstructor:
                 #   curr request = "Can you show me this same graph but for years <aggregator> this time?"
                 # hence, prev temporal aggregator = "month", curr temporal aggregator = 'year'.
                 merged_task.remove_aggregator(prev_temporal_attribute)
-            elif not current_aggregators.intersection(previous_aggregators):
+            if not current_aggregators.intersection(previous_aggregators):
                 # otherwise if curr task and prev task do not share any aggregators, remove all prev task aggregators.
                 # e.g.,
                 #   prev request = "Show me theft <filter> broken down by year <aggregator>?"
                 #   curr request = "Can you show me this same graph but for location <aggregator> this time?"
                 # hence, prev aggregator = "year", curr aggregator = 'location'.
+                print("line 150")
+                merged_task.sql.remove_group_by('fips')
+                merged_task.sql.remove_select('fips')
                 merged_task.remove_all_aggregators()
+                merged_task.add_vertical_axis("NUM_COUNTIES")
+                # temp = next(iter(merged_task.aggregators))
+                # merged_task.sql.add_select(temp[0])
+                # merged_task.add_aggregator_map(temp[0])
 
             # if curr and prev task contain temporal aggregators, remove the prev task one
             # from merged task, replacing with curr task temporal aggregator + all other prev task aggregators
@@ -277,37 +292,70 @@ class VisualizationTaskConstructor:
                                                   tuple(["pacific","rockies","northeast","southeast","midwest","southwest","noncontiguous"]))
                                     visualization_task.add_aggregator_map("region")
                                     visualization_task.manually_added_aggregator = 'region'
+
                                 elif 'cardio' in split_tokens[i] or 'heart' in split_tokens[i]:
+                                    visualization_task.add_aggregator("cardiovascular_disease_rate",
+                                                  tuple(["very-high-cardiovascular-disease-rate","high-cardiovascular-disease-rate","moderate-cardiovascular-disease-rate","low-cardiovascular-disease-rate","very-low-cardiovascular-disease-rate","not-available"]))
                                     visualization_task.add_aggregator_map("cardiovascular_disease_rate")
                                     visualization_task.manually_added_aggregator = 'cardiovascular_disease_rate'
+
                                 elif 'elderly' in split_tokens[i] or 'old' in split_tokens[i]:
+                                    visualization_task.add_aggregator("elderly_percentage",
+                                                  tuple(["very-high-elderly-percentage","high-elderly-percentage","moderate-elderly-percentage","low-elderly-percentage","very-low-elderly-percentage"]))
                                     visualization_task.add_aggregator_map("elderly_percentage")
                                     visualization_task.manually_added_aggregator = 'elderly_percentage'
+
                                 elif 'county' in split_tokens[i] or 'counties' in split_tokens[i]:
+                                    visualization_task.add_aggregator("county_type",
+                                                  tuple(["rural","urban","suburban","small-city"]))
                                     visualization_task.add_aggregator_map("county_type")
                                     visualization_task.manually_added_aggregator = 'county_type'
+
                                 elif 'doctor' in split_tokens[i] or 'physician' in split_tokens[i]:
+                                    visualization_task.add_aggregator("access_to_doctor",
+                                                  tuple(["very-high-access-to-doctors","high-access-to-doctors","moderate-access-to-doctors","low-access-to-doctors","very-low-access-to-doctors","not-available"]))
                                     visualization_task.add_aggregator_map("access_to_doctor")
                                     visualization_task.manually_added_aggregator = 'access_to_doctor'
+
                                 elif 'uninsured' in split_tokens[i]:
+                                    visualization_task.add_aggregator("uninsured_rate",
+                                                  tuple(["very-high-uninsured-rate","high-uninsured-rate","moderate-uninsured-rate","low-uninsured-rate","very-low-uninsured-rate","not-available"]))
                                     visualization_task.add_aggregator_map("uninsured_rate")
                                     visualization_task.manually_added_aggregator = 'uninsured_rate'
+
                                 elif 'diabetes' in split_tokens[i]:
+                                    visualization_task.add_aggregator("diabetes_rate",
+                                                  tuple(["very-high-diabetes-rate","high-diabetes-rate","moderate-diabetes-rate","low-diabetes-rate","very-low-diabetes-rate"]))
                                     visualization_task.add_aggregator_map("diabetes_rate")
                                     visualization_task.manually_added_aggregator = 'diabetes_rate'
+
                                 elif 'poverty' in split_tokens[i]:
+                                    visualization_task.add_aggregator("poverty_rate",
+                                                  tuple(["very-high-poverty-rate","high-poverty-rate","moderate-poverty-rate","low-poverty-rate","very-low-poverty-rate"]))
                                     visualization_task.add_aggregator_map("poverty_rate")
                                     visualization_task.manually_added_aggregator = 'poverty_rate'
+
                                 elif 'african' in split_tokens[i]:
+                                    visualization_task.add_aggregator("african_american_population",
+                                                  tuple(["very-high-african-american-population","high-african-american-population","moderate-african-american-population","low-african-american-population","very-low-african-american-population","not-available"]))
                                     visualization_task.add_aggregator_map("african_american_population")
                                     visualization_task.manually_added_aggregator = 'african_american_population'
+
                                 elif 'hispanic' in split_tokens[i]:
+                                    visualization_task.add_aggregator("hispanic_population",
+                                                  tuple(["medium-hispanic-population","medium-hispanic-population","medium-hispanic-population","medium-hispanic-population","midwest","southwest","noncontiguous"]))
                                     visualization_task.add_aggregator_map("hispanic_population")
                                     visualization_task.manually_added_aggregator = 'hispanic_population'
+
                                 elif 'covid' in split_tokens[i]:
+                                    visualization_task.add_aggregator("covid_vulnerability_rank",
+                                                  tuple(["very-high-covid-vulnerability-rank","high-covid-vulnerability-rank","moderate-covid-vulnerability-rank","low-covid-vulnerability-rank","very-low-covid-vulnerability-rank"]))
                                     visualization_task.add_aggregator_map("covid_vulnerability_rank")
                                     visualization_task.manually_added_aggregator = 'covid_vulnerability_rank'
+
                                 elif 'social' in split_tokens[i]:
+                                    visualization_task.add_aggregator("social_vulnerability_rank",
+                                                  tuple(["very-high-social-vulnerability-rank","high-social-vulnerability-rank","moderate-social-vulnerability-rank","low-social-vulnerability-rank","high-low-social-vulnerability-rank"]))
                                     visualization_task.add_aggregator_map("social_vulnerability_rank")
                                     visualization_task.manually_added_aggregator = 'social_vulnerability_rank'
                         else:
@@ -470,16 +518,16 @@ class VisualizationTaskConstructor:
                         print("***in line 459***")
                         visualization_task.add_vertical_axis("NUM_COUNTIES")
                         visualization_task.sql.remove_all_order_bys()
-                    else:
-                        visualization_task.remove_vertical_axis("NUM_COUNTIES")
-                        visualization_task.add_vertical_axis_sum("NUM_CASES")
-                        visualization_task.sql.add_select("date")
-                        visualization_task.sql.add_group_by("date")
-                        visualization_task.add_horizontal_axis("date")
-                        # visualization_task.add_aggregator("date")
-                        visualization_task.remove_filter('new_cases')
-                        visualization_task.remove_filter('date')
-                        visualization_task.plot_type = "line"
+                    # else:
+                    #     visualization_task.remove_vertical_axis("NUM_COUNTIES")
+                    #     visualization_task.add_vertical_axis_sum("NUM_CASES")
+                    #     visualization_task.sql.add_select("date")
+                    #     visualization_task.sql.add_group_by("date")
+                    #     visualization_task.add_horizontal_axis("date")
+                    #     # visualization_task.add_aggregator("date")
+                    #     visualization_task.remove_filter('new_cases')
+                    #     visualization_task.remove_filter('date')
+                    #     visualization_task.plot_type = "line"
 
 
             visualization_task.update_specification()

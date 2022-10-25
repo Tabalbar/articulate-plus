@@ -96,7 +96,7 @@ module.exports = (
         scale: {
           domain: options.useCovidDataset
             ? extractedHeaders[1] === "num_cases"
-              ? [0, 5000]
+              ? [1000, 70000]
               : covidSort(extractedHeaders[1], chartMsg.data)
             : [],
           range: options.useCovidDataset
