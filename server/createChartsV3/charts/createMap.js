@@ -84,30 +84,81 @@ module.exports = (
     });
     chart.projection = { type: "albersUsa" };
     chart.mark = "geoshape";
-    chart.encoding = {
-      color: {
-        condition: {
-          test: `datum['${extractedHeaders[1]}'] === null`,
-          value: "#aaa",
+    if (extractedHeaders[1] == "num_cases") {
+      (layerPush1 = {
+        mark: "geoshape",
+        encoding: {
+          color: {
+            condition: { test: "datum['num_cases'] === null", value: "#aaa" },
+            field: "num_cases",
+            type: "nominal",
+            legend: false,
+            scale: { domain: [] },
+            sort: [null],
+          },
         },
-        field: extractedHeaders[1],
-        type: extractedHeaders[1] === "num_cases" ? "quantitative" : "nominal",
-        legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
-        scale: {
-          domain: options.useCovidDataset
-            ? extractedHeaders[1] === "num_cases"
-              ? [1000, 70000]
-              : covidSort(extractedHeaders[1], chartMsg.data)
-            : [],
-          range: options.useCovidDataset
-            ? covidColors(extractedHeaders[1])
+      }),
+        console.log("success");
+
+      layerPush2 = {
+        mark: "geoshape",
+        encoding: {
+          color: {
+            condition: {
+              test: `datum['${extractedHeaders[1]}'] === null`,
+              value: "#aaa",
+            },
+            field: extractedHeaders[1],
+            type: "quantitative",
+            legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
+            scale: {
+              domain: options.useCovidDataset
+                ? extractedHeaders[1] === "num_cases"
+                  ? [1000, 70000]
+                  : covidSort(extractedHeaders[1], chartMsg.data)
+                : [],
+              range: options.useCovidDataset
+                ? covidColors(extractedHeaders[1])
+                : [],
+            },
+            sort: options.useCovidDataset
+              ? covidSort(extractedHeaders[1], chartMsg.data)
+              : [],
+          },
+        },
+      };
+
+      chart.layer = [];
+
+      chart.layer.push(layerPush1);
+      chart.layer.push(layerPush2);
+    } else {
+      chart.encoding = {
+        color: {
+          condition: {
+            test: `datum['${extractedHeaders[1]}'] === null`,
+            value: "#aaa",
+          },
+          field: extractedHeaders[1],
+          type:
+            extractedHeaders[1] === "num_cases" ? "quantitative" : "nominal",
+          legend: { labelFontSize: 15, titleFontSize: 15, labelLimit: 2000 },
+          scale: {
+            domain: options.useCovidDataset
+              ? extractedHeaders[1] === "num_cases"
+                ? [1000, 70000]
+                : covidSort(extractedHeaders[1], chartMsg.data)
+              : [],
+            range: options.useCovidDataset
+              ? covidColors(extractedHeaders[1])
+              : [],
+          },
+          sort: options.useCovidDataset
+            ? covidSort(extractedHeaders[1], chartMsg.data)
             : [],
         },
-        sort: options.useCovidDataset
-          ? covidSort(extractedHeaders[1], chartMsg.data)
-          : [],
-      },
-    };
+      };
+    }
 
     // if (extractedHeaders[1] == "num_cases") {
     //   delete chart.encoding.color.scale;
