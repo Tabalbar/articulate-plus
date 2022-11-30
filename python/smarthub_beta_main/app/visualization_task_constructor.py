@@ -47,11 +47,12 @@ class VisualizationTaskConstructor:
         # update merged task plot type with the current task plot type if the current task plot type was specified. (Can I see this as a bar chart)
         if current_task.is_plot_type_specified:
             merged_task.plot_type = current_task.plot_type
+        
 
         # if plot type altered (map to another or another to map), accordingly update
         # sql query with removing latitude and longitude or adding latitude and longitude.
         if 'map' not in previous_task.plot_type and 'map' in current_task.plot_type:
-            # print(" In if 'map' not in previous_task.plot_type and 'map' in current_task.plot_type:")
+            print(" In if 'map' not in previous_task.plot_type and 'map' in current_task.plot_type:")
             if "NUM_COUNTIES" in merged_task.vertical_axis:
                 # print("............in inner if.............")
                 # "TOTAL CRIME" is not in the vertical axis always (i.e., only when dialogue act is create\modify vis).
@@ -88,6 +89,14 @@ class VisualizationTaskConstructor:
                     merged_task.sql.add_select("fips")
                     merged_task.plot_type = "heat map"
                     merged_task.map_type = "geographical"
+            elif 'map' in current_task.plot_type:
+                print("map in current task plot type and previous task plot type")
+                # temp = next(iter(merged_task.aggregators))
+                # merged_task.sql.add_select(temp[0])
+                # merged_task.add_aggregator_map(temp[0])
+                merged_task.plot_type = "heat map"
+                merged_task.map_type = "geographical"
+
 
         if current_filters:
             # get curr task filter attributes.
@@ -132,6 +141,7 @@ class VisualizationTaskConstructor:
 
             # get the prev task temporal aggregators.
             prev_temporal_attribute = TemporalUtils.get_first_temporal_attribute(previous_aggregators)
+            # merged_task.add_all_aggregators(current_aggregators)
 
             if curr_temporal_attribute and prev_temporal_attribute:
                 # if both prev and curr tasks contain temporal aggregators, remove prev task one
@@ -141,6 +151,7 @@ class VisualizationTaskConstructor:
                 #   curr request = "Can you show me this same graph but for years <aggregator> this time?"
                 # hence, prev temporal aggregator = "month", curr temporal aggregator = 'year'.
                 merged_task.remove_aggregator(prev_temporal_attribute)
+                merged_task.add_all_aggregators(current_aggregators)
             if not current_aggregators.intersection(previous_aggregators):
                 # otherwise if curr task and prev task do not share any aggregators, remove all prev task aggregators.
                 # e.g.,
@@ -148,13 +159,35 @@ class VisualizationTaskConstructor:
                 #   curr request = "Can you show me this same graph but for location <aggregator> this time?"
                 # hence, prev aggregator = "year", curr aggregator = 'location'.
                 print("line 150")
-                merged_task.sql.remove_group_by('fips')
-                merged_task.sql.remove_select('fips')
                 merged_task.remove_all_aggregators()
-                merged_task.add_vertical_axis("NUM_COUNTIES")
-                # temp = next(iter(merged_task.aggregators))
-                # merged_task.sql.add_select(temp[0])
-                # merged_task.add_aggregator_map(temp[0])
+                merged_task.add_all_aggregators(current_aggregators)
+                curr_agg = next(iter(current_task.aggregators))
+                print("Current aggregator: "+str(current_task.aggregators))
+                if len(current_aggregators) == 1:
+                    print("one aggregator")
+                    merged_task.sql.add_select("fips")
+                    merged_task.sql.add_select(curr_agg[0])
+                    merged_task.add_aggregator_map(curr_agg[0])
+                    merged_task.sql.add_select("fips")
+                    if merged_task.vertical_axis:
+                        print("Removed vertical axis")
+                        merged_task.remove_vertical_axis("NUM_COUNTIES")
+                    merged_task.plot_type = "heat map"
+                    merged_task.map_type = "geographical"
+                else:
+                    print("two aggregators")
+                    merged_task.plot_type = "heat map"
+                    merged_task.map_type = "non_geographical" #non-geographical heat map
+                    merged_task.sql.add_select(list(merged_task.aggregators)[0][0])
+                    merged_task.sql.add_select(list(merged_task.aggregators)[0][0])
+                    merged_task.add_horizontal_axis(list(merged_task.aggregators)[0][0])
+                    merged_task.add_horizontal_axis(list(merged_task.aggregators)[0][0])
+                    merged_task.sql.remove_group_by('fips')
+                    merged_task.sql.remove_select('fips')
+                    merged_task.add_vertical_axis("NUM_COUNTIES")
+
+
+                
 
             # if curr and prev task contain temporal aggregators, remove the prev task one
             # from merged task, replacing with curr task temporal aggregator + all other prev task aggregators
@@ -166,7 +199,7 @@ class VisualizationTaskConstructor:
             #   otherwise if they do share some aggregators, then:
             #       retain the non-shared prev task aggregators + non-shared curr task aggregators +
             #       shared aggregators.
-            merged_task.add_all_aggregators(current_aggregators)
+            # merged_task.add_all_aggregators(current_aggregators)
         # else:
         #     merged_task.remove_all_aggregators()
 
@@ -274,6 +307,7 @@ class VisualizationTaskConstructor:
                             print(visualization_task.plot_type)
                             is_plot_type_override = True
                             visualization_task.is_plot_type_specified = True
+                            
                 else:
                     print("line 264")
                     # if no ref exps exists, then just directly update plot type.
@@ -294,6 +328,7 @@ class VisualizationTaskConstructor:
                                     visualization_task.manually_added_aggregator = 'region'
 
                                 elif 'cardio' in split_tokens[i] or 'heart' in split_tokens[i]:
+                                    print("in cardio")
                                     visualization_task.add_aggregator("cardiovascular_disease_rate",
                                                   tuple(["very-high-cardiovascular-disease-rate","high-cardiovascular-disease-rate","moderate-cardiovascular-disease-rate","low-cardiovascular-disease-rate","very-low-cardiovascular-disease-rate","not-available"]))
                                     visualization_task.add_aggregator_map("cardiovascular_disease_rate")
@@ -324,6 +359,7 @@ class VisualizationTaskConstructor:
                                     visualization_task.manually_added_aggregator = 'uninsured_rate'
 
                                 elif 'diabetes' in split_tokens[i]:
+                                    print("in diabetes")
                                     visualization_task.add_aggregator("diabetes_rate",
                                                   tuple(["very-high-diabetes-rate","high-diabetes-rate","moderate-diabetes-rate","low-diabetes-rate","very-low-diabetes-rate"]))
                                     visualization_task.add_aggregator_map("diabetes_rate")
@@ -468,8 +504,30 @@ class VisualizationTaskConstructor:
                                 visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[0][0])
                             # visualization_task.add_first_aggregator(list(visualization_task.aggregators)[0][0])
                             # visualization_task.add_aggregator(list(visualization_task.aggregators)[1][0]
+                        elif len(visualization_task.aggregators) > 2:
+                            visualization_task.remove_all_aggregators()
+                            visualization_task.remove_all_filters()
+                            with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+                                log_file.write("\nMore than 2 aggregators in request : dropped")
 
-
+                           
+                            
+                            # print("more than two aggregators :"+ str(len(list(visualization_task.aggregators))))
+                            # print(str(list(visualization_task.aggregators)))                   
+                            # count = 0
+                            # for j in (list(visualization_task.aggregators)):
+                            #     print(list(visualization_task.aggregators)[count][0])
+                            #     if count > 1:
+                                    
+                            #         visualization_task.remove_aggregator(j[0])
+                            #         count +=1
+                            #     else:
+                            #         visualization_task.plot_type = "heat map"
+                            #         visualization_task.map_type = "non_geographical" #non-geographical heat map
+                            #         visualization_task.sql.add_select(list(visualization_task.aggregators)[count][0])
+                            #         visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[count][0])
+                            #         count +=1
+                                   
                     #Case 1b: user asks for a bar chart
                     elif visualization_task.is_plot_type_specified and visualization_task.plot_type == "bar chart":
                         print("line 372")
@@ -478,20 +536,79 @@ class VisualizationTaskConstructor:
                         # visualization_task.add_aggregator(temp[0])
                 #Case 1c: ONLY one aggregators are there in the utterance and map plot type specified by user
                 elif 'map' in visualization_task.plot_type:
-                    if visualization_task.aggregators:
-                        visualization_task.map_type = "geographical"
-                        visualization_task.remove_vertical_axis("NUM_COUNTIES")
-                        visualization_task.sql.add_select("fips")
-                        temp = next(iter(visualization_task.aggregators))
-                        visualization_task.sql.add_select(temp[0])
-                        visualization_task.add_aggregator_map(temp[0])
+                    print("**map in vis plot type**")
+                    if visualization_task.aggregators and not visualization_task.manually_added_aggregator:
+                        print("in vis aggregators")
+                        if len(visualization_task.aggregators) == 1:
+
+                            # if visualization_task.any_aggregator_geographically_relevant():
+                            #     print("one geographically relevant aggregator")
+                            #     visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[0][0])
+                            #     visualization_task.sql.add_group_by(list(visualization_task.aggregators)[0][0])
+                            # else:
+                            visualization_task.remove_vertical_axis("NUM_COUNTIES")
+                            temp = next(iter(visualization_task.aggregators))
+                            visualization_task.sql.add_select(temp[0])
+                            visualization_task.add_aggregator_map(temp[0])
+                            visualization_task.sql.add_select("fips")
+                            # visualization_task.plot_type = "heat map"
+                            visualization_task.map_type = "geographical"
+                        elif len(visualization_task.aggregators) == 2:
+                            visualization_task.plot_type = "heat map"
+                            visualization_task.map_type = "non_geographical" #non-geographical heat map
+                            visualization_task.sql.add_select(list(visualization_task.aggregators)[0][0])
+                            visualization_task.sql.add_select(list(visualization_task.aggregators)[1][0])
+                            visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[1][0])
+                            visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[0][0])
+                            
+                        else:
+                            print("more than two aggregators")
+                            visualization_task.remove_all_aggregators()
+                            visualization_task.remove_all_filters()
+                            with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+                                log_file.write("\nIn map and plot type specified, more than 2 aggregators in request : dropped")
+
+                        # visualization_task.map_type = "geographical"
+                        # visualization_task.remove_vertical_axis("NUM_COUNTIES")
+                        # visualization_task.sql.add_select("fips")
+                        # temp = next(iter(visualization_task.aggregators))
+                        # visualization_task.sql.add_select(temp[0])
+                        # visualization_task.add_aggregator_map(temp[0])
                     elif visualization_task.manually_added_aggregator:
-                        print("line 391")
-                        visualization_task.map_type = "geographical"
-                        visualization_task.remove_vertical_axis("NUM_COUNTIES")
-                        visualization_task.sql.add_select("fips")
-                        visualization_task.sql.add_select(visualization_task.manually_added_aggregator)
-                        visualization_task.add_horizontal_axis(visualization_task.manually_added_aggregator)
+                        print("in manual vis aggregators")
+                        # visualization_task.remove_all_aggregators()
+                        if len(visualization_task.aggregators) == 1:
+                            visualization_task.map_type = "geographical"
+                            visualization_task.remove_vertical_axis("NUM_COUNTIES")
+                            visualization_task.sql.add_select("fips")
+                            visualization_task.sql.add_select(visualization_task.manually_added_aggregator)
+                            visualization_task.add_horizontal_axis(visualization_task.manually_added_aggregator)
+                        elif len(visualization_task.aggregators) == 2:
+                            if visualization_task.any_aggregator_geographically_relevant():
+                                print("*****geographically relevant aggregator in manually added aggregators******")
+                                visualization_task.plot_type = 'bar chart'
+                                visualization_task.sql.add_select(list(visualization_task.aggregators)[0][0])
+                                visualization_task.sql.add_select(list(visualization_task.aggregators)[1][0])
+                                visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[1][0])
+                                visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[0][0])
+                            else:
+                                visualization_task.plot_type = "heat map"
+                                visualization_task.map_type = "non_geographical" #non-geographical heat map
+                                visualization_task.sql.remove_group_by('fips')
+                                visualization_task.sql.remove_select('fips')
+                                visualization_task.sql.add_select(list(visualization_task.aggregators)[0][0])
+                                visualization_task.sql.add_select(list(visualization_task.aggregators)[1][0])
+                                visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[1][0])
+                                visualization_task.add_horizontal_axis(list(visualization_task.aggregators)[0][0])
+                        else:
+                            print("more than two manual aggregators")
+                            visualization_task.remove_all_aggregators()
+                            visualization_task.remove_all_filters()
+                            
+                            with open('python_log.txt', 'a', encoding='utf-8') as log_file:
+                                log_file.write("\nIn map and plot type specified, more than 2 manual aggregators in request : dropped")
+
+
 
                 #Utterances can have filters
                 # elif 'map' not in visualization_task.plot_type and visualization_task.aggregators:
@@ -544,7 +661,7 @@ class VisualizationTaskConstructor:
             visualization_task.remove_all_filters()
             visualization_task.remove_all_aggregators()
             visualization_task.remove_sql()
-            visualization_task.sql.add_from('counties_cdc_cases')
+            # visualization_task.sql.add_from('counties_cdc_cases')
             visualization_task.summary = bottom_dialogue_act_label + ' operation on visualization'
             visualization_task.remove_vertical_axis("NUM_COUNTIES")
 

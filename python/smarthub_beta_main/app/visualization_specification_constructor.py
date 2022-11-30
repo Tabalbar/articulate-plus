@@ -201,17 +201,26 @@ class VisualizationSpecificationConstructor:
                                 spec = dict({"date": VisualizationSpecificationConstructor.convert_date(date_value), key:value, vertical_axis: vertical_axis_value})
                                 visualization_specification.data_vega_lite_spec.append(spec)
 
-
-  
-
         elif visualization_specification.plot_headline.plot_type == 'bar chart':
             print("bar chart")
-            if len(visualization_specification.horizontal_axis) > 1:
-                print("********here")
-                horizontal_axis = list(visualization_specification.horizontal_axis)[1]
-                vertical_axis = list(visualization_specification.vertical_axis)[0]
-                group = list(visualization_specification.horizontal_axis)[0]
+            if len(visualization_specification.horizontal_axis) == 2:
+                print("********grouped bar chart***************")
+                county_type_list = ["rural","urban","suburban","small-city","OTHER"]
+                region_list = ['northeast','southeast','southwest','midwest','rockies','pacific','noncontiguous']
+                     
+                if list(visualization_specification.horizontal_axis)[0] == "county_type" or list(visualization_specification.horizontal_axis)[0] == "region":
+                    print("group in horizontal axis[0]")
+                    group = list(visualization_specification.horizontal_axis)[0]
+                    horizontal_axis = list(visualization_specification.horizontal_axis)[1]
+                    vertical_axis = list(visualization_specification.vertical_axis)[0]
+                else:
+                    print("group in horizontal axis[1]")
+                    group = list(visualization_specification.horizontal_axis)[1]
+                    horizontal_axis = list(visualization_specification.horizontal_axis)[0]
+                    vertical_axis = list(visualization_specification.vertical_axis)[0]
+           
                 for i in range(len(rows)):
+
                     if rows[i][0] == "not-available" and rows[i][0] == "not-available":
                         continue
                     elif rows[i][0] != "not-available" and rows[i][1] == "not-available":
@@ -237,14 +246,32 @@ class VisualizationSpecificationConstructor:
                             spec = dict({horizontal_axis: horizontal_axis_val, group: group_val, vertical_axis: rows[i][2]})
                             visualization_specification.data_vega_lite_spec.append(spec)
                     else:
-                        if horizontal_axis in rows[i][0].split("-"):
+                        if rows[i][0] in county_type_list and rows[i][1] in region_list:
                             horizontal_axis_val = rows[i][0]
                             group_val = rows[i][1]
+                            spec = dict({"county_type": horizontal_axis_val, "region": group_val, vertical_axis: rows[i][2]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+                        elif rows[i][1] in county_type_list and rows[i][0] in region_list:
+                            horizontal_axis_val = rows[i][1]
+                            group_val = rows[i][0]
+                            spec = dict({"county_type": horizontal_axis_val, "region": group_val, vertical_axis: rows[i][2]})
+                            visualization_specification.data_vega_lite_spec.append(spec)
+
+                        elif rows[i][1] in county_type_list or rows[i][1] in region_list:
+                            print("rows[i][1] in county type list/region list")
+                            # if horizontal_axis in rows[i][0].split("-"):
+                            horizontal_axis_val = rows[i][0]
+                            print("horizontal_axis_val: "+horizontal_axis_val)
+                            group_val = rows[i][1]
+                            print("group_val: "+group_val)
                             spec = dict({horizontal_axis: horizontal_axis_val, group: group_val, vertical_axis: rows[i][2]})
                             visualization_specification.data_vega_lite_spec.append(spec)
                         else:
+                            print("rows[i][1] in county type list/region list")
                             horizontal_axis_val = rows[i][1]
+                            print("horizontal_axis_val: "+horizontal_axis_val)
                             group_val = rows[i][0]
+                            print("group_val: "+group_val)
                             spec = dict({horizontal_axis: horizontal_axis_val, group: group_val, vertical_axis: rows[i][2]})
                             visualization_specification.data_vega_lite_spec.append(spec)
                 # for i in range(len(rows)):
@@ -253,13 +280,16 @@ class VisualizationSpecificationConstructor:
             elif len(visualization_specification.horizontal_axis) == 1:
                 horizontal_axis = list(visualization_specification.horizontal_axis)[0]
                 vertical_axis = list(visualization_specification.vertical_axis)[0]
-                # group = list(visualization_specification.horizontal_axis)[0]
-                for i in range(len(rows)):
-                    spec = dict({horizontal_axis: rows[i][0], vertical_axis: rows[i][1]})
-                    visualization_specification.data_vega_lite_spec.append(spec)
+                group = "date"
+                if vertical_axis == 'NUM_CASES':
+                    return
+                else:
+                    for i in range(len(rows)):
+                        spec = dict({horizontal_axis: rows[i][0], vertical_axis: rows[i][1]})
+                        visualization_specification.data_vega_lite_spec.append(spec)
             else:
-                print("****no horizontal axis***")
-                visualization_specification.data_vega_lite_spec.append
+                print("****no horizontal axis or more than two horizontal axes***")
+                # visualization_specification.data_vega_lite_spec.append
         elif visualization_specification.plot_headline.plot_type == 'heat map':
             print("heat map")
             if visualization_specification.plot_headline.map_type == "geographical":
@@ -282,12 +312,19 @@ class VisualizationSpecificationConstructor:
                         else:
                             spec = dict({"fips": rows[i][0], aggregator: rows[i][1]})
                             visualization_specification.data_vega_lite_spec.append(spec)
-            elif visualization_specification.horizontal_axis:
+            elif len(visualization_specification.horizontal_axis) == 2:
                 print("non-geographical heat map")
                 aggregator_1 = list(visualization_specification.horizontal_axis)[0]
                 aggregator_2 = list(visualization_specification.horizontal_axis)[1]
                 vertical_axis = list(visualization_specification.vertical_axis)[0]
-                agg_1_text = aggregator_1.split("_")[-2]
+                if aggregator_1 in ['region', 'county_type']:
+                    #check for any one of these two geographcal attributes
+                    agg_1_text = list(visualization_specification.horizontal_axis)[0]
+                else:
+                    agg_1_text = aggregator_1.split("_")[-2]
+                if agg_1_text == "vulnerability":
+                    agg_1_text = aggregator_1.split("_")[-3]
+                print("****aggregator 1 text: "+str(agg_1_text))
                 # agg_2_text = aggregator_2.split("_")[0]
                 for i in range(len(rows)):
                     if rows[i][0] == "not-available" and rows[i][0] == "not-available":
@@ -327,7 +364,10 @@ class VisualizationSpecificationConstructor:
                             visualization_specification.data_vega_lite_spec.append(spec)
                            
 
-                    # if agg_1_text in rows[i][0].split("-"):
+                    
+            elif len(visualization_specification.horizontal_axis) >= 2:
+                print("In vega-lite spec creation and horizontal axis length >=3")
+            # if agg_1_text in rows[i][0].split("-"):
                     #     # print("in if----")
                     #     # print(aggregator_1)
                     #     aggregator_1_value = rows[i][0]

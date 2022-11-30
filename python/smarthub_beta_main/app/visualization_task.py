@@ -231,6 +231,8 @@ class VisualizationTask:
 
     def remove_aggregator(self, attribute):
         print("............In remove aggregator...........")
+        print("Removing: "+str(attribute))
+        print("self.aggregator: "+str(self.aggregators))
         cpy_aggregators = copy(self.aggregators)
         for candidate, entity_children in cpy_aggregators:
             if candidate == attribute:
