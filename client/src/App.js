@@ -258,7 +258,7 @@ function App() {
     setForceUpdate((prev) => !prev);
   };
   const [globalZIndex, setGlobalZIndex] = useState(1);
-
+  console.log(chartMsg);
   return (
     <>
       <ChakraProvider>

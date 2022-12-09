@@ -8,21 +8,48 @@ const createChartTemplate = require("../createChartsV3/charts/createChartTemplat
 const findType = require("../createChartsV3/charts/helpers/findType");
 const covidColors = require("../createChartsV3/charts/covidHelpers/covidColors");
 const covidSort = require("../createChartsV3/charts/covidHelpers/covidSort");
+const createHeatmap = require("../createChartsV3/charts/createHeatmap");
+const removeOtherTypes = require("../createChartsV3/charts/helpers/removeOtherTypes");
+const switchHeaders = require("../createChartsV3/charts/helpers/switchHeaders");
+const createLine = require("../createChartsV3/charts/createLine");
+const createBar = require("../createChartsV3/charts/createBar");
+const createMap = require("../createChartsV3/charts/createMap");
 
 module.exports = (pythonResponse, chartMsg) => {
+  let options = {
+    useCovidDataset: true,
+    sentimentAnalysis: false,
+    window: {
+      toggle: false,
+      pastSentences: 0,
+    },
+    neuralNetwork: false,
+    useSynonyms: false,
+    randomCharts: {
+      toggle: false,
+      minutes: 10,
+    },
+    threshold: 3,
+    filter: {
+      toggle: false,
+      pastSentences: 0,
+      threshold: 5,
+    },
+    pivotCharts: false,
+  };
   if (pythonResponse == null) {
     console.log("pythonResponse is null");
     chartMsg.pythonCharts = [];
 
-    return chartMsg;
+    return "none";
   }
   const pythonChartMsg = JSON.parse(pythonResponse);
-  if (!pythonChartMsg.hasOwnProperty("visualization_task")) {
-    console.log("no vis task");
-    chartMsg.pythonCharts = [];
+  // if (!pythonChartMsg.hasOwnProperty("visualization_task")) {
+  //   console.log("no vis task");
+  //   chartMsg.pythonCharts = [];
 
-    return chartMsg;
-  }
+  //   return chartMsg;
+  // }
 
   let chart = createChartTemplate(chartMsg, {}, {});
 
@@ -40,106 +67,98 @@ module.exports = (pythonResponse, chartMsg) => {
     chartMsg.pythonCharts = [];
     console.log(pythonChartMsg.dialogue_act);
     console.log("Not classified as createvis or modifyvis");
-    return chartMsg;
+    return "none";
   }
-
-  // let tmpData = [];
-  // for (let i = 0; i < pythonChartMsg.data_query_results.length; i++) {
-  //   let tmp = pythonChartMsg.data_query_results[i];
-  //   tmp = tmp.replace("(", "");
-  //   tmp = tmp.replace(")", "");
-  //   tmp = tmp.replace(/'/g, "");
-  //   tmp = tmp.replace('"', "");
-  //   // tmp = tmp.replace(/-/g, " ");,/
-  //   tmp = tmp.split(",");
-  //   let tmpObj = {};
-  //   console.log(tmp);
-  //   for (let j = 0; j < tmp.length; j++) {
-  //     tmp[j] = tmp[j].trim();
-  //     let attribute = checkDataType(tmp[j], chartMsg);
-  //     if (attribute === "map") {
-  //     }
-  //     tmpObj[attribute] = tmp[j];
-  //   }
-  //   tmpData.push(tmpObj);
-  // }
-
-  // chart = createTransform(
-  //   chart,
-  //   chartMsg,
-  //   pythonChartMsg.visualization_task.filters
-  // );
-
-  // // let extractedHeaders = [];
-  // // for (
-  // //   let i = 0;
-  // //   i < pythonChartMsg.visualization_task.horizontal_axis.length;
-  // //   i++
-  // // ) {
-  // //   extractedHeaders.push(pythonChartMsg.visualization_task.horizontal_axis[i]);
-  // // }
-  // console.log(pythonChartMsg.visualization_task.horizontal_axis, "******");
-  // const horizontal_axis = Object.keys(tmpData[0]);
-  // console.log(horizontal_axis);
-
-  // if (horizontal_axis.length === 0) {
-  //   console.log("no horizontal axis given");
-  //   return [];
-  // }
 
   let plotType = pythonChartMsg.visualization_task.plot_type;
-  let extractedHeaders = "";
-  let filteredHeaders = "";
-  let keys = Object.keys(pythonChartMsg.visualization_task.filters);
+  let filters = pythonChartMsg.visualization_task.filters;
 
-  for (let i = 0; i < keys.length; i++) {
-    for (
-      let j = 0;
-      j < pythonChartMsg.visualization_task.filters[keys[i]].length;
-      j++
-    ) {
-      filteredHeaders +=
-        pythonChartMsg.visualization_task.filters[keys[i]][j] + " ";
-    }
-  }
+  chartMsg.pythonData = pythonChartMsg.data_vega_lite_spec;
 
-  for (
-    let i = 0;
-    i < pythonChartMsg.visualization_task.horizontal_axis.length;
-    i++
-  ) {
-    extractedHeaders +=
-      pythonChartMsg.visualization_task.horizontal_axis[i] + " ";
-  }
+  let extractedHeaders = Object.keys(chartMsg.pythonData[0]);
   switch (plotType) {
+    case "heat map":
+      if (extractedHeaders[1] == "fips" || extractedHeaders[0] == "fips") {
+        for (let i = 0; i < extractedHeaders.length; i++) {
+          if (extractedHeaders[i] == "fips") {
+            switchHeaders(extractedHeaders, 0, i);
+          }
+        }
+        chart = createMap(
+          chartMsg,
+          extractedHeaders,
+          filters,
+          {},
+          {},
+          options,
+          true,
+          chartMsg.pythonData
+        );
+        console.log(chart, "*****");
+      } else {
+        for (let i = 0; i < extractedHeaders.length; i++) {
+          if (extractedHeaders[i] == "NUM_COUNTIES") {
+            switchHeaders(extractedHeaders, 2, i);
+          }
+        }
+        console.log(extractedHeaders);
+        chart = createHeatmap(
+          chartMsg,
+          extractedHeaders,
+          filters,
+          {},
+          {},
+          options,
+          true
+        );
+      }
+
+      break;
+    case "line":
+      for (let i = 0; i < extractedHeaders.length; i++) {
+        if (extractedHeaders[i] == "date") {
+          switchHeaders(extractedHeaders, 0, i);
+        }
+      }
+      for (let i = 1; i < extractedHeaders.length; i++) {
+        if (extractedHeaders[i] == "NUM_CASES") {
+          switchHeaders(extractedHeaders, 1, i);
+        }
+      }
+      chart = createLine(
+        chartMsg,
+        extractedHeaders,
+        filters,
+        {},
+        {},
+        options,
+        true
+      );
+      break;
     case "bar chart":
-      // chart = createBarChart(
-      //   chart,
-      //   chartMsg.pythonCharts.data,
-      //   horizontal_axis,
-      //   chartMsg
-      // );
-      plotType = "histogram";
-      break;
-    case "line chart":
-      // chart = createLineChart(chart, data, filters, horizontal_axis, chartMsg);
-      plotType = "line";
-      break;
-    case "tree map":
+      for (let i = 0; i < extractedHeaders.length; i++) {
+        if (extractedHeaders[i] == "NUM_COUNTIES") {
+          switchHeaders(extractedHeaders, 0, i);
+        }
+      }
+
+      chart = createBar(
+        chartMsg,
+        extractedHeaders,
+        filters,
+        {},
+        {},
+        options,
+        true
+      );
       // chart = createMap(chart, data, filters, horizontal_axis, chartMsg);
-      plotType = "map";
       break;
     default:
       plotType = "histogram";
   }
-
-  let command =
-    "Show me a " + plotType + " of " + extractedHeaders + filteredHeaders;
-
-  command = command.replace("_", " ");
-  // chartMsg.pythonCharts = [chart];
-  // chartMsg.pythonCharts.data = tmpData;
-  return { plotType: plotType, command: command };
+  chart.pythonData = chartMsg.pythonData;
+  chart.filters = createTransform(chartMsg, filters);
+  return chart;
 };
 
 // chart.encoding.x = {
@@ -184,14 +203,6 @@ const createBarChart = (chart, data, horizontalAxis, chartMsg) => {
   return chart;
 };
 
-const createLineChart = (chart, data, filters, horizontalAxis, chartMsg) => {
-  chart.mark = "line";
-};
-
-const createMap = (chart, data, filters, horizontalAxis, chartMsg) => {
-  chart.mark = "map";
-};
-
 // createTransform = (filters) => {};
 
 const checkDataType = (dataPoint, chartMsg) => {
@@ -213,35 +224,19 @@ const checkDataType = (dataPoint, chartMsg) => {
   return attribute;
 };
 
-const createTransform = (chart, chartMsg, extractedFilteredValues) => {
+const createTransform = (chartMsg, extractedFilteredValues) => {
   let accessors = [];
+  let filters = [];
   // console.log(extractedFilteredValues);
   let keys = Object.keys(extractedFilteredValues);
   for (let i = 0; i < keys.length; i++) {
     if (extractedFilteredValues[keys[i]].length > 0) {
       if (findType(keys[i], chartMsg.data) === "nominal") {
-        // console.log({
-        //   field: keys[i],
-        //   oneOf: extractedFilteredValues[keys[i]],
-        // });
-        chart.transform.push({
+        filters.push({
           filter: { field: keys[i], oneOf: extractedFilteredValues[keys[i]] },
         });
       }
-      // else if (findType(keys[i], chartMsg.data) === "temporal") {
-      //   chart.transform.push({
-      //     filter: {
-      //       timeUnit: "year",
-      //       field: keys[i],
-      //       range: [
-      //         extractedFilteredValues[keys[i]][0],
-      //         extractedFilteredValues[keys[i]][1],
-      //       ],
-      //     },
-      //   });
-      // }
     }
   }
-
-  return chart;
+  return filters;
 };
