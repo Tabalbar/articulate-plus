@@ -123,7 +123,7 @@ const CompareCharts = require("./CompareCharts");
 const countHeaderFrequency = require("./createChartsV3/overhearing/countHeaderFrequency");
 const constructPythonCommand = require("./python/constructPythonCommand");
 
-const pivotChartsV2 = require("./createChartsV3/pivotCharts/pivotChartsV2");
+// const pivotChartsV2 = require("./createChartsV3/pivotCharts/pivotChartsV2");
 
 const createCharts = require("./createChartsV3/createCharts");
 const chartOptions = require("./createChartsV3/charts/helpers/chartOptions");
