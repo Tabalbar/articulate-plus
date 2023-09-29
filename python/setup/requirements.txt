@@ -127,7 +127,7 @@ ptyprocess==0.7.0
 py-params==0.9.7
 pycodestyle==2.7.0
 pycparser==2.20
-pydantic==1.8.2
+pydantic==2.4.0
 pydocstyle==6.0.0
 pyflakes==2.3.0
 Pygments==2.8.1
