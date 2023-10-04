@@ -209,7 +209,7 @@ typing-extensions==3.7.4.3
 typish==1.9.1
 ujson==4.0.2
 Unidecode==1.1.1
-urllib3==1.25.11
+urllib3==1.26.17
 wasabi==0.8.2
 watchdog==1.0.2
 wcwidth==0.2.5
