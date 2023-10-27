@@ -27,7 +27,7 @@ click==7.1.2
 cloudpickle==1.6.0
 clusteval==2.0.0
 coverage==5.3
-cryptography==3.4.6
+cryptography==41.0.5
 cycler==0.10.0
 cymem==2.0.3
 decorator==4.4.2
@@ -214,7 +214,7 @@ wasabi==0.8.2
 watchdog==1.0.2
 wcwidth==0.2.5
 webencodings==0.5.1
-Werkzeug==2.0.2
+Werkzeug==3.0.1
 Whoosh==2.7.4
 wrapt==1.12.1
 wurlitzer==2.0.1
