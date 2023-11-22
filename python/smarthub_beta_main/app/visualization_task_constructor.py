@@ -170,8 +170,9 @@ class VisualizationTaskConstructor:
                     merged_task.add_aggregator_map(curr_agg[0])
                     merged_task.sql.add_select("fips")
                     if merged_task.vertical_axis:
-                        print("Removed vertical axis")
-                        merged_task.remove_vertical_axis("NUM_COUNTIES")
+                        print("To remove vertical axis")
+                        print(next(iter(merged_task.vertical_axis)))
+                        merged_task.remove_vertical_axis(next(iter(merged_task.vertical_axis)))
                     merged_task.plot_type = "heat map"
                     merged_task.map_type = "geographical"
                 else:

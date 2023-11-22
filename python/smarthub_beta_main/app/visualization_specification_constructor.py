@@ -443,6 +443,7 @@ class VisualizationSpecificationConstructor:
         else:
             print("In convert_date else")
             print(str(date))
+            date_val =""
 
         return date_val
 
