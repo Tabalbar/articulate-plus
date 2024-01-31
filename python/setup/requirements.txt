@@ -27,7 +27,7 @@ click==7.1.2
 cloudpickle==1.6.0
 clusteval==2.0.0
 coverage==5.3
-cryptography==3.4.6
+cryptography==42.0.2
 cycler==0.10.0
 cymem==2.0.3
 decorator==4.4.2
