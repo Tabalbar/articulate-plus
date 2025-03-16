@@ -73,7 +73,7 @@ jsonschema==3.2.0
 jupyter-client==6.1.12
 jupyter-core==4.7.1
 jupyterlab-pygments==0.1.2
-Keras==2.2.4
+Keras==3.9.0
 Keras-Applications==1.0.8
 keras-bert==0.84.0
 keras-contrib @ git+https://www.github.com/keras-team/keras-contrib.git@3fc5ef709e061416f4bc8a92ca3750c824b5d2b0
