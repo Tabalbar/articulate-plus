@@ -47,7 +47,7 @@ gensim==3.8.3
 google-pasta==0.2.0
 GPUtil==1.4.0
 graphviz==0.14.2
-grpcio==1.33.2
+grpcio==1.58.3
 h5py==2.10.0
 helpdev==0.7.1
 html2text==2020.1.16
