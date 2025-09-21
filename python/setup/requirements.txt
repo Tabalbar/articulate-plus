@@ -73,7 +73,7 @@ jsonschema==3.2.0
 jupyter-client==6.1.12
 jupyter-core==4.7.1
 jupyterlab-pygments==0.1.2
-Keras==2.2.4
+Keras==3.11.3
 Keras-Applications==1.0.8
 keras-bert==0.84.0
 keras-contrib @ git+https://www.github.com/keras-team/keras-contrib.git@3fc5ef709e061416f4bc8a92ca3750c824b5d2b0
@@ -202,7 +202,7 @@ torch==1.7.1
 tornado==6.1
 tqdm==4.51.0
 traitlets==5.0.5
-transformers==3.5.1
+transformers==4.53.0
 typed-ast==1.4.2
 typer==0.3.2
 typing-extensions==3.7.4.3
