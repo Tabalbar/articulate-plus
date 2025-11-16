@@ -198,7 +198,7 @@ threadpoolctl==2.1.0
 three-merge==0.1.1
 tokenizers==0.9.3
 toml==0.10.2
-torch==1.7.1
+torch==2.9.0
 tornado==6.1
 tqdm==4.51.0
 traitlets==5.0.5
