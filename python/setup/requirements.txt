@@ -198,7 +198,7 @@ threadpoolctl==2.1.0
 three-merge==0.1.1
 tokenizers==0.9.3
 toml==0.10.2
-torch==1.7.1
+torch==2.9.0
 tornado==6.1
 tqdm==4.51.0
 traitlets==5.0.5
@@ -209,12 +209,12 @@ typing-extensions==3.7.4.3
 typish==1.9.1
 ujson==4.0.2
 Unidecode==1.1.1
-urllib3==1.25.11
+urllib3==2.6.3
 wasabi==0.8.2
 watchdog==1.0.2
 wcwidth==0.2.5
 webencodings==0.5.1
-Werkzeug==2.0.2
+Werkzeug==3.1.5
 Whoosh==2.7.4
 wrapt==1.12.1
 wurlitzer==2.0.1
