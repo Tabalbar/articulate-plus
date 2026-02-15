@@ -27,7 +27,7 @@ click==7.1.2
 cloudpickle==1.6.0
 clusteval==2.0.0
 coverage==5.3
-cryptography==3.4.6
+cryptography==46.0.5
 cycler==0.10.0
 cymem==2.0.3
 decorator==4.4.2
@@ -73,7 +73,7 @@ jsonschema==3.2.0
 jupyter-client==6.1.12
 jupyter-core==4.7.1
 jupyterlab-pygments==0.1.2
-Keras==2.2.4
+Keras==3.13.2
 Keras-Applications==1.0.8
 keras-bert==0.84.0
 keras-contrib @ git+https://www.github.com/keras-team/keras-contrib.git@3fc5ef709e061416f4bc8a92ca3750c824b5d2b0
